@@ -24,6 +24,12 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+
+        Route::resourceVerbs([
+            'create' => 'crear',
+            'edit' => 'editar',
+        ]);
+
         RateLimiter::for('api', function (Request $request) {
             return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
         });
@@ -32,6 +38,16 @@ class RouteServiceProvider extends ServiceProvider
             Route::middleware('api')
                 ->prefix('api')
                 ->group(base_path('routes/api.php'));
+
+            
+            // Route::middleware('api')
+            //     ->prefix('api/v1') 
+            //     ->group(base_path('routes/api.php'));
+ 
+            // // For future v2 integration:
+            // Route::middleware('api')
+            //     ->prefix('api/v2')
+            //     ->group(base_path('routes/api_v2.php'));
 
             Route::middleware('web')
                 ->group(base_path('routes/web.php'));

@@ -24,10 +24,6 @@ class ResourcesServiceProvider extends ServiceProvider
             )
             ->give(\Domains\Permissions\Repositories\PermissionReadOnlyRepository::class);
 
-
-
-        $this->app->bind(CreateResourceRequest::class, CreateRoleRequest::class);
-        $this->app->bind(UpdateResourceRequest::class, UpdateRoleRequest::class);
         
         // Bind ReadOnlyRepositoryInterface to RoleReadOnlyRepository
         $this->app->when(\App\Http\Controllers\API\RESTful\V1\RoleController::class)
@@ -42,9 +38,6 @@ class ResourcesServiceProvider extends ServiceProvider
                 \Core\Data\Repositories\Contracts\ReadWriteRepositoryInterface::class
             )
             ->give(\Domains\Roles\Repositories\RoleReadWriteRepository::class);
-
-        $this->app->bind(CreateResourceRequest::class, CreateUserRequest::class);
-        $this->app->bind(UpdateResourceRequest::class, UpdateUserRequest::class);
 
         // Bind ReadOnlyRepositoryInterface to UserReadOnlyRepository
         $this->app->when(\App\Http\Controllers\API\RESTful\V1\UserController::class)

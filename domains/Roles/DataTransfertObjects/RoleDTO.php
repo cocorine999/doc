@@ -2,22 +2,21 @@
 
 declare(strict_types=1);
 
-namespace Domains\Permissions\DataTransfertObjects;
+namespace Domains\Roles\DataTransfertObjects;
 
-use App\Models\Permission;
-use Core\Utils\Rules\ExistsForAuthUserAndUUID;
+use App\Models\Role;
 use Core\Utils\DataTransfertObjects\BaseDTO;
 
 
 /**
- * Class ***`CreatePermissionDTO`***
+ * Class ***`PermissionDTO`***
  *
  * This class extends the ***`BaseDTO`*** class.
- * It represents the data transfer object for creating a new ***`Permission`*** model.
+ * It represents the data transfer object for creating a new ***`Role`*** model.
  *
- * @package ***`\Domains\Permissions\DataTransfertObjects`***
+ * @package ***`\Domains\roles\DataTransfertObjects`***
  */
-class CreatePermissionDTO extends BaseDTO
+class RoleDTO extends BaseDTO
 {
 
     public function __construct()
@@ -32,7 +31,7 @@ class CreatePermissionDTO extends BaseDTO
      */
     protected function getModelClass(): string
     {
-        return Permission::class;
+        return Role::class;
     }
 
     /**
@@ -43,9 +42,8 @@ class CreatePermissionDTO extends BaseDTO
     public function rules(array $rules = []): array
     {
         $rules = array_merge([
-            "name"            		=> ["string", "required"],
-			"description"     		=> ["string", "sometimes"],
-            'can_be_deleted'         => ['sometimes', 'boolean', 'in:'.true.','.false]
+            'roles'           => 'required|array|min:1',
+            'roles.*'         => ['distinct', "exists:roles,id"]
         ], $rules);
 
         return $this->rules = parent::rules($rules);

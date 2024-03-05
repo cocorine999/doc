@@ -20,7 +20,7 @@ class CreateUserRequest extends CreateResourceRequest
 {
 
     public function __construct(){
-        parent::__construct(new CreateUserDTO, 'user');
+        parent::__construct(new CreateUserDTO);
     }
 
     /**

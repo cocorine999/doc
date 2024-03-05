@@ -4,12 +4,15 @@ declare(strict_types = 1);
 
 namespace App\Http\Controllers\API\RESTful\V1;
 
+use App\Http\Requests\ResourceRequest;
+use App\Http\Requests\Users\v1\CreateUserRequest;
+use App\Http\Requests\Users\v1\UpdateUserRequest;
 use Core\Utils\Controllers\RESTful\RESTfulResourceController;
-use Domains\Users\Companies\Services\RESTful\Contracts\CompanyRESTfulReadWriteServiceContract;
-use Domains\Users\People\Services\RESTful\Contracts\PersonRESTfulReadWriteServiceContract;
+use Domains\Roles\DataTransfertObjects\RoleDTO;
 use Domains\Users\Services\RESTful\Contracts\UserRESTfulQueryServiceContract;
 use Illuminate\Http\JsonResponse;
 use Domains\Users\Services\RESTful\Contracts\UserRESTfulReadWriteServiceContract;
+use Illuminate\Http\Request;
 
 /**
  * **`UserController`**
@@ -30,55 +33,46 @@ class UserController extends RESTfulResourceController
     public function __construct(UserRESTfulReadWriteServiceContract $userRESTfulReadWriteService, UserRESTfulQueryServiceContract $userRESTfulQueryService)
     {
         parent::__construct($userRESTfulReadWriteService, $userRESTfulQueryService);
+
+        // Set specific request classes for store and update methods
+        $this->setRequestClass('store', CreateUserRequest::class);
+        $this->setRequestClass('update', UpdateUserRequest::class);
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Assign User privileges to a user.
      *
-     * @param  \Core\Utils\Requests\CreateResourceRequest $request The request object containing the data for creating the resource.
-     * @return \Illuminate\Http\JsonResponse     The JSON response indicating the status of the operation.
-     */
-    public function store(\Core\Utils\Requests\CreateResourceRequest $request): JsonResponse
-    {
-        // Use the userRESTfulReadWriteService to create the user.
-        return parent::store($request);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Core\Utils\Requests\UpdateResourceRequest $request The request object containing the data for updating the resource.
-     * @param  string                   $id      The identifier of the resource to be updated.
-     * @return \Illuminate\Http\JsonResponse     The JSON response indicating the status of the operation.
-     */
-    public function update(\Core\Utils\Requests\UpdateResourceRequest $request, string $id): JsonResponse
-    {
-        // Update the user using the userRESTfulReadWriteService and pass the DTO instance
-        return parent::update($request, $id);
-    }
-
-    /**
-     * Assign role privileges to a user.
-     *
-     * @param  \Core\Utils\Requests\UpdateResourceRequest $request The request object containing the data for updating the resource.
+     * @param  Request $request The request object containing the data for updating the resource.
      * @param  string                                     $id      The identifier of the resource to be updated.
      * @return \Illuminate\Http\JsonResponse                       The JSON response indicating the status of the role privileges granted operation.
      */
-    public function assignRolePrivileges(\Core\Utils\Requests\UpdateResourceRequest $request, string $id): JsonResponse
+    public function assignRolePrivileges(Request $request, string $id): JsonResponse
     {
-        return $this->restJsonReadWriteService->assignRolePrivileges($id, $request->getDto());
+        $createRequest = app(ResourceRequest::class, [new RoleDTO]);
+
+        if ($createRequest) {
+            $createRequest->validate($createRequest->rules());
+        }
+        
+        return $this->restJsonReadWriteService->assignRolePrivileges($id, $createRequest->getDto());
     }
 
     /**
      * Revoke role privileges from a user.
      *
-     * @param  \Core\Utils\Requests\UpdateResourceRequest $request The request object containing the data for updating the resource.
+     * @param  Request $request The request object containing the data for updating the resource.
      * @param  string                                     $id      The identifier of the resource to be updated.
      * @return \Illuminate\Http\JsonResponse                       The JSON response indicating the status of the role privileges revoked operation.
      */
-    public function revokeRolePrivileges(\Core\Utils\Requests\UpdateResourceRequest $request, string $id): JsonResponse
+    public function revokeRolePrivileges(Request $request, string $id): JsonResponse
     {
-        return $this->restJsonReadWriteService->revokeRolePrivileges($id, $request->getDto());
+        $createRequest = app(ResourceRequest::class, [new RoleDTO]);
+
+        if ($createRequest) {
+            $createRequest->validate($createRequest->rules());
+        }
+
+        return $this->restJsonReadWriteService->revokeRolePrivileges($id, $createRequest->getDto());
     }
 
     /**

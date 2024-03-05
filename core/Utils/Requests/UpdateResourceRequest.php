@@ -12,6 +12,9 @@ namespace Core\Utils\Requests;
  */
 abstract class UpdateResourceRequest extends ResourceRequest
 {
+    /**
+     * @var string|null
+     */
     protected $resource;
 
     /**
@@ -20,7 +23,7 @@ abstract class UpdateResourceRequest extends ResourceRequest
      * @param \Core\Utils\DataTransfertObjects\DTOInterface $dto The Data Transfer Object (DTO) instance to associate with this request.
      * @param string $resource_name
      */
-    public function __construct(\Core\Utils\DataTransfertObjects\DTOInterface $dto, string $resource_name)
+    public function __construct(\Core\Utils\DataTransfertObjects\DTOInterface $dto, string $resource_name = null)
     {
         $this->resource = $resource_name;
         parent::__construct($dto);

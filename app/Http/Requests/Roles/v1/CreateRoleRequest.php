@@ -6,7 +6,6 @@ namespace App\Http\Requests\Roles\v1;
 
 use Core\Utils\Requests\CreateResourceRequest;
 use Domains\Roles\DataTransfertObjects\CreateRoleDTO;
-use Domains\Roles\DataTransfertObjects\UpdateRoleDTO;
 
 /**
  * Class **`CreateRoleRequest`**
@@ -20,7 +19,7 @@ class CreateRoleRequest extends CreateResourceRequest
 {
 
     public function __construct(){
-        parent::__construct(new CreateRoleDTO, 'role');
+        parent::__construct(new CreateRoleDTO);
     }
 
     /**

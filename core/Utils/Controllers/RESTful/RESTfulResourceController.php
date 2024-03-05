@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 use Core\Logic\Services\RestJson\Contracts\RestJsonQueryServiceContract;
 use Core\Logic\Services\RestJson\Contracts\RestJsonReadWriteServiceContract;
 use Core\Utils\Controllers\RESTful\Contracts\RESTfulResourceControllerContract;
+use Core\Utils\Requests\ResourceRequest;
+use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
@@ -39,6 +41,11 @@ use Illuminate\Http\Request;
  */
 class RESTfulResourceController extends Controller implements RESTfulResourceControllerContract
 {
+    /**
+     * @var array
+     */
+    protected $requestClasses = [];
+
     /**
      * The RESTful service contract responsible for handling CRUD operations.
      *
@@ -77,6 +84,28 @@ class RESTfulResourceController extends Controller implements RESTfulResourceCon
     }
 
     /**
+     * Set the request class for a specific method.
+     *
+     * @param string $method
+     * @param string $requestClass
+     */
+    protected function setRequestClass(string $method, string $requestClass): void
+    {
+        $this->requestClasses[$method] = $requestClass;
+    }
+
+    /**
+     * Get the request class for a specific method.
+     *
+     * @param string $method
+     * @return string|null
+     */
+    protected function getRequestClass(string $method): ?string
+    {
+        return $this->requestClasses[$method] ?? null;
+    }
+
+    /**
      * Get the RESTful service contract responsible for handling CRUD operations.
      *
      * @return \Core\Logic\Services\RestJson\Contracts\RestJsonReadWriteServiceContract|null The RESTful service contract, or null if not set.
@@ -96,6 +125,19 @@ class RESTfulResourceController extends Controller implements RESTfulResourceCon
         $this->restJsonReadWriteService = $service;
     }
 
+    /**
+     * Resolve the request instance for the given method.
+     *
+     * @param string $method
+     * @param array $parameters
+     * @return \Core\Utils\Requests\ResourceRequest
+     */
+    protected function createRequest(string $method, array $parameters): ?ResourceRequest
+    {
+        $requestClass = $this->getRequestClass($method);
+
+        return $requestClass ? app($requestClass) : null;
+    }
 
     /**
      * Display a listing of the resource.
@@ -115,12 +157,19 @@ class RESTfulResourceController extends Controller implements RESTfulResourceCon
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Core\Utils\Requests\CreateResourceRequest $request The request object containing the data for creating the resource.
+     * @param  Request $request The request object containing the data for creating the resource.
      * @return \Illuminate\Http\JsonResponse     The JSON response indicating the status of the operation.
      */
-    public function store(\Core\Utils\Requests\CreateResourceRequest $request): JsonResponse
-    {
-        return $this->restJsonReadWriteService->create($request->getDto());
+    public function store(Request $request): JsonResponse
+    { 
+        $createRequest = $this->createRequest('store', [$request]);
+
+        if ($createRequest) {
+
+            $createRequest->validate($createRequest->rules());
+        
+            return $this->restJsonReadWriteService->create($createRequest->getDto());
+        }
     }
 
     /**
@@ -140,13 +189,20 @@ class RESTfulResourceController extends Controller implements RESTfulResourceCon
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Core\Utils\Requests\UpdateResourceRequest $request The request object containing the data for updating the resource.
+     * @param  Request $request The request object containing the data for updating the resource.
      * @param  string                   $id      The identifier of the resource to be updated.
      * @return \Illuminate\Http\JsonResponse     The JSON response indicating the status of the operation.
      */
-    public function update(\Core\Utils\Requests\UpdateResourceRequest $request, string $id): JsonResponse
+    public function update(Request $request, string $id): JsonResponse
     {
-        return $this->restJsonReadWriteService->update($id, $request->getDto());
+        $createRequest = $this->createRequest('update', [$request]);
+
+        if ($createRequest) {
+
+            $createRequest->validate($createRequest->rules());
+            
+            return $this->restJsonReadWriteService->update($id, $createRequest->getDto());
+        }
     }
 
     /**

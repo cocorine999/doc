@@ -5,26 +5,25 @@ declare(strict_types=1);
 namespace Domains\Permissions\DataTransfertObjects;
 
 use App\Models\Permission;
-use Core\Utils\Rules\ExistsForAuthUserAndUUID;
 use Core\Utils\DataTransfertObjects\BaseDTO;
 
 
 /**
- * Class ***`UpdatePermissionDTO`***
+ * Class ***`PermissionDTO`***
  *
  * This class extends the ***`BaseDTO`*** class.
- * It represents the data transfer object for updating a new ***`Role`*** model.
+ * It represents the data transfer object for creating a new ***`Permission`*** model.
  *
- * @package ***`\Domains\Roles\DataTransfertObjects`***
+ * @package ***`\Domains\Permissions\DataTransfertObjects`***
  */
-class UpdatePermissionDTO extends BaseDTO
+class PermissionDTO extends BaseDTO
 {
 
     public function __construct()
     {
         parent::__construct();
     }
-    
+
     /**
      * Get the class name of the model associated with the DTO.
      *
@@ -43,8 +42,8 @@ class UpdatePermissionDTO extends BaseDTO
     public function rules(array $rules = []): array
     {
         $rules = array_merge([
-            "name"            		=> ["string", "required"],
-			"description"     		=> ["string", "sometimes"]
+            'permissions'           => 'required|array|min:1',
+            'permissions.*'         => ['distinct', "exists:permissions,id"]
         ], $rules);
 
         return $this->rules = parent::rules($rules);
@@ -58,8 +57,8 @@ class UpdatePermissionDTO extends BaseDTO
     public function messages(array $messages = []): array
     {
         $default_messages = array_merge([
-            'can_be_delete.boolean' => 'Le champ can_be_delete doit être un booléen.',
-            'can_be_delete.in'      => 'Le can_be_delete doit être "true" ou "false".'
+            'can_be_deleted.boolean' => 'Le champ can_be_deleted doit être un booléen.',
+            'can_be_deleted.in'      => 'Le can_be_delete doit être "true" ou "false".'
         ], $messages);
 
         $messages = array_merge([], $default_messages);

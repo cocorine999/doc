@@ -43,10 +43,10 @@ interface RESTfulResourceControllerContract
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Core\Utils\Requests\CreateResourceRequest $request The request object containing the data for creating the resource.
+     * @param  Request $request The request object containing the data for creating the resource.
      * @return JsonResponse     The JSON response indicating the status of the operation.
      */
-    public function store(\Core\Utils\Requests\CreateResourceRequest $request): JsonResponse;
+    public function store(Request $request): JsonResponse;
 
     /**
      * Display the specified resource.
@@ -60,11 +60,11 @@ interface RESTfulResourceControllerContract
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Core\Utils\Requests\UpdateResourceRequest $request The request object containing the data for updating the resource.
+     * @param  Request $request The request object containing the data for updating the resource.
      * @param  string  $id      The identifier of the resource to be updated.
      * @return JsonResponse     The JSON response indicating the status of the operation.
      */
-    public function update(\Core\Utils\Requests\UpdateResourceRequest $request, string $id): JsonResponse;
+    public function update(Request $request, string $id): JsonResponse;
 
     /**
      * Remove the specified resource from storage.

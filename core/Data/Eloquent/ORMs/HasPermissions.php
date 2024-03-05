@@ -150,6 +150,11 @@ trait HasPermissions
             $permissionIds = [$permissionIds->id];
         }
 
+        else if(is_array($permissionIds))
+        {
+            $permissionIds = $this->getPermissionsBy($permissionIds, 'id', 'id')->toArray();
+        }
+
         $existingPermissionIds = $this->permissions()->wherePivotIn('permission_id', $permissionIds)->pluck('permission_id')->toArray();
 
         $newPermissionIds = array_diff($permissionIds, $existingPermissionIds);
@@ -187,10 +192,10 @@ trait HasPermissions
      * @param  \App\Models\Permission|string|array $permissions
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function getPermissionsBy($permissions, string $filter = 'slug')
+    public function getPermissionsBy($permissions, string $key = 'slug', $filter = 'id')
     {
-        return collect($permissions)->flatten()->map(function ($permission) use ($filter) {
-            return $permission instanceof Permission ? $permission->{$filter} : Permission::where("{$filter}", $permission)->value($filter);
+        return collect($permissions)->flatten()->map(function ($permission) use ($key, $filter) {
+            return $permission instanceof Permission ? $permission->{$filter} : Permission::where("{$key}", $permission)->value($filter);
         })->filter();
     }
 

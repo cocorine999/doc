@@ -17,21 +17,15 @@ class ModulesServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-
         // Binds the implementation of PermissionRESTfulReadWriteServiceContract to the PermissionRESTfulReadWriteService class.
         $this->app->bind(
             \Domains\Permissions\Services\RESTful\Contracts\PermissionRESTfulReadWriteServiceContract::class,
             function ($app) {
-                // Resolve the dependencies required by \Domains\Permissions\Services\RESTful\PermissionRESTfulReadWriteService$
-                $permissionReadWriteRepository = $app->make(\Domains\Permissions\Repositories\PermissionReadWriteRepository::class);
- 
-                $writeService = $app->make(
-                    \Core\Logic\Services\Contracts\ReadWriteServiceContract::class,
-                    [$permissionReadWriteRepository]
-                );
- 
+                // Resolve the necessary dependencies for PermissionRESTfulReadWriteService
+                $readWriteService = $app->make(\Core\Logic\Services\Contracts\ReadWriteServiceContract::class);
+                
                 // Create and return an instance of PermissionRESTfulReadWriteService
-                return new \Domains\Permissions\Services\RESTful\PermissionRESTfulReadWriteService($writeService);
+                return new \Domains\Permissions\Services\RESTful\PermissionRESTfulReadWriteService($readWriteService);
             }
         );
 
@@ -39,13 +33,8 @@ class ModulesServiceProvider extends ServiceProvider
         $this->app->bind(
             \Domains\Permissions\Services\RESTful\Contracts\PermissionRESTfulQueryServiceContract::class,
             function ($app) {
-                // Resolve the dependencies required by \Domains\Permissions\Services\RESTful\PermissionRESTfulQueryService$
-                $permissionReadOnlyRepository = $app->make(\Domains\Permissions\Repositories\PermissionReadOnlyRepository::class);
- 
-                $queryService = $app->make(
-                    \Core\Logic\Services\Contracts\QueryServiceContract::class,
-                    [$permissionReadOnlyRepository]
-                );
+                // Resolve the dependencies required by PermissionRESTfulQueryService
+                $queryService = $app->make(\Core\Logic\Services\Contracts\QueryServiceContract::class);
  
                 // Create and return an instance of PermissionRESTfulQueryService
                 return new \Domains\Permissions\Services\RESTful\PermissionRESTfulQueryService($queryService);
@@ -56,16 +45,11 @@ class ModulesServiceProvider extends ServiceProvider
         $this->app->bind(
             \Domains\Roles\Services\RESTful\Contracts\RoleRESTfulReadWriteServiceContract::class,
             function ($app) {
-                // Resolve the dependencies required by \Domains\Roles\Services\RESTful\RoleRESTfulReadWriteService$
-                $roleReadWriteRepository = $app->make(\Domains\Roles\Repositories\RoleReadWriteRepository::class);
- 
-                $writeService = $app->make(
-                    \Core\Logic\Services\Contracts\ReadWriteServiceContract::class,
-                    [$roleReadWriteRepository]
-                );
- 
+                // Resolve the necessary dependencies for RoleRESTfulReadWriteService
+                $readWriteService = $app->make(\Core\Logic\Services\Contracts\ReadWriteServiceContract::class);
+                
                 // Create and return an instance of RoleRESTfulReadWriteService
-                return new \Domains\Roles\Services\RESTful\RoleRESTfulReadWriteService($writeService);
+                return new \Domains\Roles\Services\RESTful\RoleRESTfulReadWriteService($readWriteService);
             }
         );
 
@@ -73,53 +57,11 @@ class ModulesServiceProvider extends ServiceProvider
         $this->app->bind(
             \Domains\Roles\Services\RESTful\Contracts\RoleRESTfulQueryServiceContract::class,
             function ($app) {
-                // Resolve the dependencies required by \Domains\Roles\Services\RESTful\RoleRESTfulQueryService$
-                $roleReadOnlyRepository = $app->make(\Domains\Roles\Repositories\RoleReadOnlyRepository::class);
- 
-                $queryService = $app->make(
-                    \Core\Logic\Services\Contracts\QueryServiceContract::class,
-                    [$roleReadOnlyRepository]
-                );
+                // Resolve the dependencies required by RoleRESTfulQueryService
+                $queryService = $app->make(\Core\Logic\Services\Contracts\QueryServiceContract::class);
  
                 // Create and return an instance of RoleRESTfulQueryService
                 return new \Domains\Roles\Services\RESTful\RoleRESTfulQueryService($queryService);
-            }
-        );
-
-        $this->app->bind(CreateResourceRequest::class, CreateRoleRequest::class);
-        $this->app->bind(UpdateResourceRequest::class, UpdateRoleRequest::class);
-
-        // Binds the implementation of UserRESTfulReadWriteServiceContract to the UserRESTfulReadWriteService class.
-        $this->app->bind(
-            \Domains\Users\Services\RESTful\Contracts\UserRESTfulReadWriteServiceContract::class,
-            function ($app) {
-                // Resolve the dependencies required by \Domains\Users\Services\RESTful\UserRESTfulReadWriteService$
-                $roleReadWriteRepository = $app->make(\Domains\Users\Repositories\UserReadWriteRepository::class);
- 
-                $writeService = $app->make(
-                    \Core\Logic\Services\Contracts\ReadWriteServiceContract::class,
-                    [$roleReadWriteRepository]
-                );
- 
-                // Create and return an instance of UserRESTfulReadWriteService
-                return new \Domains\Users\Services\RESTful\UserRESTfulReadWriteService($writeService);
-            }
-        );
-
-        // Binds the implementation of UserRESTfulQueryServiceContract to the UserRESTfulQueryService class.
-        $this->app->bind(
-            \Domains\Users\Services\RESTful\Contracts\UserRESTfulQueryServiceContract::class,
-            function ($app) {
-                // Resolve the dependencies required by \Domains\Users\Services\RESTful\UserRESTfulQueryService$
-                $userReadOnlyRepository = $app->make(\Domains\Users\Repositories\UserReadOnlyRepository::class);
- 
-                $queryService = $app->make(
-                    \Core\Logic\Services\Contracts\QueryServiceContract::class,
-                    [$userReadOnlyRepository]
-                );
- 
-                // Create and return an instance of UserRESTfulQueryService
-                return new \Domains\Users\Services\RESTful\UserRESTfulQueryService($queryService);
             }
         );
 
@@ -127,16 +69,11 @@ class ModulesServiceProvider extends ServiceProvider
         $this->app->bind(
             \Domains\Users\People\Services\RESTful\Contracts\PersonRESTfulReadWriteServiceContract::class,
             function ($app) {
-                // Resolve the dependencies required by \Domains\Users\People\Services\RESTful\PersonRESTfulReadWriteService$
-                $personReadWriteRepository = $app->make(\Domains\Users\People\Repositories\PersonReadWriteRepository::class);
- 
-                $writeService = $app->make(
-                    \Core\Logic\Services\Contracts\ReadWriteServiceContract::class,
-                    [$personReadWriteRepository]
-                );
- 
+                // Resolve the necessary dependencies for PersonRESTfulReadWriteService
+                $readWriteService = $app->make(\Core\Logic\Services\Contracts\ReadWriteServiceContract::class);
+                
                 // Create and return an instance of PersonRESTfulReadWriteService
-                return new \Domains\Users\People\Services\RESTful\PersonRESTfulReadWriteService($writeService);
+                return new \Domains\Users\People\Services\RESTful\PersonRESTfulReadWriteService($readWriteService);
             }
         );
 
@@ -144,13 +81,8 @@ class ModulesServiceProvider extends ServiceProvider
         $this->app->bind(
             \Domains\Users\People\Services\RESTful\Contracts\PersonRESTfulQueryServiceContract::class,
             function ($app) {
-                // Resolve the dependencies required by \Domains\Users\People\Services\RESTful\PersonRESTfulQueryService$
-                $personReadOnlyRepository = $app->make(\Domains\Users\People\Repositories\PersonReadOnlyRepository::class);
- 
-                $queryService = $app->make(
-                    \Core\Logic\Services\Contracts\QueryServiceContract::class,
-                    [$personReadOnlyRepository]
-                );
+
+                $queryService = $app->make(\Core\Logic\Services\Contracts\QueryServiceContract::class);
  
                 // Create and return an instance of PersonRESTfulQueryService
                 return new \Domains\Users\People\Services\RESTful\PersonRESTfulQueryService($queryService);
@@ -161,16 +93,11 @@ class ModulesServiceProvider extends ServiceProvider
         $this->app->bind(
             \Domains\Users\Companies\Services\RESTful\Contracts\CompanyRESTfulReadWriteServiceContract::class,
             function ($app) {
-                // Resolve the dependencies required by \Domains\Users\Companies\Services\RESTful\CompanyRESTfulReadWriteService$
-                $companyReadWriteRepository = $app->make(\Domains\Users\Companies\Repositories\CompanyReadWriteRepository::class);
- 
-                $writeService = $app->make(
-                    \Core\Logic\Services\Contracts\ReadWriteServiceContract::class,
-                    [$companyReadWriteRepository]
-                );
- 
+                // Resolve the necessary dependencies for CompanyRESTfulReadWriteService
+                $readWriteService = $app->make(\Core\Logic\Services\Contracts\ReadWriteServiceContract::class);
+                
                 // Create and return an instance of CompanyRESTfulReadWriteService
-                return new \Domains\Users\Companies\Services\RESTful\CompanyRESTfulReadWriteService($writeService);
+                return new \Domains\Users\Companies\Services\RESTful\CompanyRESTfulReadWriteService($readWriteService);
             }
         );
 
@@ -178,21 +105,38 @@ class ModulesServiceProvider extends ServiceProvider
         $this->app->bind(
             \Domains\Users\Companies\Services\RESTful\Contracts\CompanyRESTfulQueryServiceContract::class,
             function ($app) {
-                // Resolve the dependencies required by \Domains\Companies\Services\RESTful\CompanyRESTfulQueryService$
-                $companyReadOnlyRepository = $app->make(\Domains\Users\Companies\Repositories\CompanyReadOnlyRepository::class);
- 
-                $queryService = $app->make(
-                    \Core\Logic\Services\Contracts\QueryServiceContract::class,
-                    [$companyReadOnlyRepository]
-                );
+                // Resolve the necessary dependencies for CompanyRESTfulQueryService
+                $queryService = $app->make(\Core\Logic\Services\Contracts\QueryServiceContract::class);
  
                 // Create and return an instance of CompanyRESTfulQueryService
                 return new \Domains\Users\Companies\Services\RESTful\CompanyRESTfulQueryService($queryService);
             }
         );
 
-        $this->app->bind(CreateResourceRequest::class, CreateUserRequest::class);
-        $this->app->bind(UpdateResourceRequest::class, UpdateUserRequest::class);
+        // Binds the implementation of UserRESTfulReadWriteServiceContract to the UserRESTfulReadWriteService class.
+        $this->app->bind(
+            \Domains\Users\Services\RESTful\Contracts\UserRESTfulReadWriteServiceContract::class,
+            function ($app) {
+                // Resolve the necessary dependencies for UserRESTfulReadWriteService
+                $readWriteService = $app->make(\Core\Logic\Services\Contracts\ReadWriteServiceContract::class);
+
+                // Create and return an instance of UserRESTfulReadWriteService
+                return new \Domains\Users\Services\RESTful\UserRESTfulReadWriteService($readWriteService);
+            }
+        );
+
+        // Binds the implementation of UserRESTfulQueryServiceContract to the UserRESTfulQueryService class.
+        $this->app->bind(
+            \Domains\Users\Services\RESTful\Contracts\UserRESTfulQueryServiceContract::class,
+            function ($app) {
+                // Resolve the necessary dependencies for UserRESTfulQueryService
+                $queryService = $app->make(\Core\Logic\Services\Contracts\QueryServiceContract::class);
+
+                // Create and return an instance of UserRESTfulQueryService
+                return new \Domains\Users\Services\RESTful\UserRESTfulQueryService($queryService);
+            }
+        );
+        
     }
 
     /**

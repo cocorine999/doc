@@ -44,13 +44,15 @@ class CreatePeopleTable extends Migration
                 $this->uuidPrimaryKey($table);
 
                 // Define a unique string column for the role name
-                $table->string('last_name')->unique();
+                $table->string('last_name');
 
                 // Define a unique string column for the role name
-                $table->string('first_name')->unique();
+                $table->string('first_name');
 
                 // Middle name as JSONB, defaulting to an empty JSON object
-                $table->jsonb('middle_name')->default('{}');
+                //$table->jsonb('middle_name')->default('{}');
+                $table->jsonb('middle_name')->default(json_encode([]));
+
 
                 // "sex" column with default value "male"
                 $table->enum('sex', SexEnum::values())->default(SexEnum::DEFAULT);
@@ -87,7 +89,7 @@ class CreatePeopleTable extends Migration
                     column: 'created_by',   // The column to which the foreign key is added ('created_by' in this case)
                     references: 'users',    // The referenced table (users) to establish the foreign key relationship
                     onDelete: 'cascade',    // Action to perform when the referenced record is deleted (cascade deletion)
-                    nullable: false          // Specify whether the foreign key column can be nullable (false means it not allows NULL)
+                    nullable: true          // Specify whether the foreign key column can be nullable (false means it not allows NULL)
                 );
 
                 /**

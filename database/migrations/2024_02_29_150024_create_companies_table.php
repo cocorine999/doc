@@ -41,7 +41,7 @@ class CreateCompaniesTable extends Migration
                 $this->uuidPrimaryKey($table);
 
                 // Unique name for each company
-                $table->string('name')->unique()->comment('Name of the company');
+                $table->string('name')->comment('Name of the company');
 
                 // Unique registration_number for each company
                 $table->string('registration_number')->nullable()->unique()->comment('Name of the company');
@@ -63,7 +63,7 @@ class CreateCompaniesTable extends Migration
                     column: 'created_by',   // The column to which the foreign key is added ('created_by' in this case)
                     references: 'users',    // The referenced table (users) to establish the foreign key relationship
                     onDelete: 'cascade',    // Action to perform when the referenced record is deleted (cascade deletion)
-                    nullable: false          // Specify whether the foreign key column can be nullable (false means it not allows NULL)
+                    nullable: true          // Specify whether the foreign key column can be nullable (false means it not allows NULL)
                 );
 
                 // Create a composite index for efficient searching on the combination of name, created_by, status and can_be_delete

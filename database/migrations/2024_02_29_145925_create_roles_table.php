@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Schema;
 class CreateRolesTable extends Migration
 {
     use CanDeleteTrait, HasCompositeKey, HasForeignKey, HasTimestampsAndSoftDeletes, HasUuidPrimaryKey;
-    
+        
     /**
      * Run the migrations.
      * 

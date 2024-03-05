@@ -42,12 +42,6 @@ use Illuminate\Database\Eloquent\Relations\MorphOne;
  */
 class Person extends ModelContract
 {
-    /**
-     * The database connection that should be used by the model.
-     *
-     * @var string
-     */
-    protected $connection = 'pgsql';
 
     /**
      * The table associated with the model.
@@ -110,6 +104,7 @@ class Person extends ModelContract
         'last_name',
         'first_name',
         'middle_name',
+        'sex'
     ];
 
     /**
@@ -166,7 +161,7 @@ class Person extends ModelContract
      * 
      * @return Attribute
      */
-    protected function first_name(): Attribute
+    protected function firstName(): Attribute
     {
         return Attribute::make(
             get: fn (string $value) => ucfirst($value),
@@ -179,7 +174,7 @@ class Person extends ModelContract
      * 
      * @return Attribute
      */
-    protected function last_name(): Attribute
+    protected function lastName(): Attribute
     {
         return Attribute::make(
             get: fn (string $value) => strtoupper($value),
@@ -192,15 +187,12 @@ class Person extends ModelContract
      * 
      * @return Attribute
      */
-    protected function middle_name(): Attribute
+    protected function middleName(): Attribute
     {
         return Attribute::make(
-            get: fn (string $value) => implode(', ', json_decode($value)),
-            set: function (string|array $value) {
-                if (is_array($value)) {
-                    $value = json_encode($value);
-                }
-                $this->attributes['middle_name'] = $value;
+            get: function ($value) {
+                $decodedValue = json_decode($value, true);
+                return is_array($decodedValue) ? implode(' ', $decodedValue) : $value;
             }
         );
     }

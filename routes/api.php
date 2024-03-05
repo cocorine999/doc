@@ -106,11 +106,10 @@ Route::namespace("App\Http\Controllers\API\RESTful")->middleware([])->group(func
 
 
                 Route::group(['prefix'=> 'users'], function () {
-                    // Get all users
-                    Route::put('{user}/grant-access', 'UserController@grantAccess')->name('users.grantAccess');
-                    Route::put('{user}/revoke-access', 'UserController@revokeAccess')->name('users.revokeAccess');
-                    Route::get('{user}/roles', 'UserController@fetchRoles')->name('users.fetchRoles');
-                    Route::get('{user}/access', 'UserController@fetchRoles')->name('users.fetchAccess');
+                    // Get user privileges
+                    Route::put('{user}/assign-roles', 'UserController@assignRolePrivileges')->name('users.assignRolePrivileges');
+                    Route::put('{user}/revoke-roles', 'UserController@revokeRolePrivileges')->name('users.revokeRolePrivileges');
+                    Route::get('{user}/roles', 'UserController@fetchUserRoles')->name('users.fetchUserRoles');
                 });
 
 

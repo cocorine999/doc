@@ -5,7 +5,7 @@ namespace App\Observers;
 use Core\Data\Eloquent\Contract\ModelContract;
 use Core\Data\Eloquent\Observers\ModelContractObserver;
 
-class RoleObserver extends ModelContractObserver
+class PersonObserver extends ModelContractObserver
 {
     /**
      * Listen to the role creating event.
@@ -18,6 +18,8 @@ class RoleObserver extends ModelContractObserver
     public function creating(ModelContract $model): void
     {
         parent::creating($model);
+
+        dd($model->id);
         
         $model->key = generate_key($model->name);
     }

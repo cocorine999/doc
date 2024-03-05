@@ -23,5 +23,15 @@ use Core\Logic\Services\RestJson\Contracts\RestJsonQueryServiceContract;
  */
 interface UserRESTfulQueryServiceContract extends RestJsonQueryServiceContract
 {
+    /**
+     * Fetch user granted role.
+     *
+     * @param string $userId The identifier of the user for which role will be fetched.
+     * 
+     * @return \Illuminate\Http\JsonResponse The JSON response containing the role granted to a user.
+     * 
+     * @throws \Core\Utils\Exceptions\ServiceException If there is an issue with the service operation.
+     */
+    public function fetchUserRoles(string $userId): \Illuminate\Http\JsonResponse;
 
 }

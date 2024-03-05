@@ -5,6 +5,8 @@ declare(strict_types = 1);
 namespace App\Http\Controllers\API\RESTful\V1;
 
 use Core\Utils\Controllers\RESTful\RESTfulResourceController;
+use Domains\Users\Companies\Services\RESTful\Contracts\CompanyRESTfulReadWriteServiceContract;
+use Domains\Users\People\Services\RESTful\Contracts\PersonRESTfulReadWriteServiceContract;
 use Domains\Users\Services\RESTful\Contracts\UserRESTfulQueryServiceContract;
 use Illuminate\Http\JsonResponse;
 use Domains\Users\Services\RESTful\Contracts\UserRESTfulReadWriteServiceContract;
@@ -56,29 +58,38 @@ class UserController extends RESTfulResourceController
     }
 
     /**
-     * Grant access to a user.
+     * Assign role privileges to a user.
      *
      * @param  \Core\Utils\Requests\UpdateResourceRequest $request The request object containing the data for updating the resource.
      * @param  string                                     $id      The identifier of the resource to be updated.
-     * @return \Illuminate\Http\JsonResponse                       The JSON response indicating the status of the access grant operation.
+     * @return \Illuminate\Http\JsonResponse                       The JSON response indicating the status of the role privileges granted operation.
      */
-    public function assignRole(\Core\Utils\Requests\UpdateResourceRequest $request, string $id): JsonResponse
+    public function assignRolePrivileges(\Core\Utils\Requests\UpdateResourceRequest $request, string $id): JsonResponse
     {
-        return parent::index();
-        //return $this->restJsonReadWriteService->grantAccess($id, $request->getDto());
+        return $this->restJsonReadWriteService->assignRolePrivileges($id, $request->getDto());
     }
 
     /**
-     * Revoke access to a user.
+     * Revoke role privileges from a user.
      *
      * @param  \Core\Utils\Requests\UpdateResourceRequest $request The request object containing the data for updating the resource.
      * @param  string                                     $id      The identifier of the resource to be updated.
-     * @return \Illuminate\Http\JsonResponse                       The JSON response indicating the status of the access grant operation.
+     * @return \Illuminate\Http\JsonResponse                       The JSON response indicating the status of the role privileges revoked operation.
      */
-    public function revokeRole(\Core\Utils\Requests\UpdateResourceRequest $request, string $id): JsonResponse
+    public function revokeRolePrivileges(\Core\Utils\Requests\UpdateResourceRequest $request, string $id): JsonResponse
     {
-        return parent::index();
-        //return $this->restJsonReadWriteService->revokeAccess($id, $request->getDto());
+        return $this->restJsonReadWriteService->revokeRolePrivileges($id, $request->getDto());
+    }
+
+    /**
+     * Fetch user granted role privileges.
+     *
+     * @param  string                                     $id      The identifier of the resource details that will be fetch.
+     * @return \Illuminate\Http\JsonResponse                       The JSON response indicating the status of the role privileges fetched operation.
+     */
+    public function fetchUserRoles(string $id): JsonResponse
+    {
+        return $this->restJsonQueryService->fetchUserRoles($id);
     }
 
 }

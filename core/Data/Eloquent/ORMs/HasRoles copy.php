@@ -9,9 +9,9 @@ use Illuminate\Support\Str;
 
 
 /**
- * Trait ***`HasRoles`***
+ * Trait ***`HasRole`***
  *
- * The `HasRoles` trait provides functionality related to assigning and managing roles for a model.
+ * The `HasRole` trait provides functionality related to assigning and managing roles for a model.
  *
  * Usage:
  * - This trait should be used in models that have a "roles" association.
@@ -30,11 +30,11 @@ use Illuminate\Support\Str;
  * Example Usage:
  * ```
  * use Illuminate\Database\Eloquent\Model;
- * use Core\Data\Eloquent\ORMs\HasRoles;
+ * use Core\Data\Eloquent\ORMs\HasRole;
  *
  * class User extends Model
  * {
- *     use HasRoles;
+ *     use HasRole;
  *
  *     // Model implementation
  * }
@@ -53,7 +53,7 @@ use Illuminate\Support\Str;
  *
  * @package Core\Data\Eloquent\ORMs
  */
-trait HasRoles
+trait HasRole
 {
     /**
      * Define a many-to-many relationship with the Role model.
@@ -101,7 +101,6 @@ trait HasRoles
      */
     public function assignRole($roleIds, string $filter = 'id', array $data = []): self
     {
-
         if(is_string($roleIds))
         {
             if(Str::isUuid($roleIds)){
@@ -115,10 +114,9 @@ trait HasRoles
         {
             $roleIds = [$roleIds->id];
         }
-
         else if(is_array($roleIds))
         {
-            $roleIds = $this->checkRoleIds($roleIds, 'id', 'id')->toArray();
+            $roleIds = $this->checkRoleIds($roleIds, 'id', 'id');
         }
 
         $existingRoleIds = $this->roles()->wherePivotIn('role_id', $roleIds)->pluck('role_id')->toArray();
@@ -164,17 +162,11 @@ trait HasRoles
      * @param  array $data
      * @return self
      */
-    public function grantPrivileges($roleIds, string $filter = 'id', array $data = []): self
+    public function grantAccess($roleIds, array $data = []): self
     {
-
         if(is_string($roleIds))
         {
-            if(Str::isUuid($roleIds)){
-                $roleIds = [Role::where("id", $roleIds)->firstOrFail()->id];
-            }
-            else{
-                $roleIds = [Role::where("$filter", $roleIds)->firstOrFail()->id];
-            }
+            $roleIds = [$roleIds];
         }
         else if($roleIds instanceof Role)
         {
@@ -183,7 +175,7 @@ trait HasRoles
 
         else if(is_array($roleIds))
         {
-            $roleIds = $this->checkRoleIds($roleIds, 'id', 'id')->toArray();
+            $roleIds = $this->checkRoleIds($roleIds, 'id', 'id');
         }
 
         $existingRoleIds = $this->roles()->wherePivotIn('role_id', $roleIds)->pluck('role_id')->toArray();
@@ -191,7 +183,7 @@ trait HasRoles
         $newRoleIds = array_diff($roleIds, $existingRoleIds);
 
         if (!empty($newRoleIds)) {
-            $this->roles()->attach($newRoleIds);
+            $this->roles()->attach($newRoleIds, $data);
         }
 
         return $this;
@@ -205,7 +197,7 @@ trait HasRoles
      * @param  string $filter
      * @return self
      */
-    public function revokePrivileges($roles, array $data = [], string $filter = 'id'): self
+    public function revokeAccess($roles, array $data = [], string $filter = 'id'): self
     {
         $roleIds = $this->getRolesBy($roles, $filter)->toArray();
 

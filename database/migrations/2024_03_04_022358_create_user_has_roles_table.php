@@ -61,6 +61,16 @@ class CreateUserHasRolesTable extends Migration
                     nullable: false          // Specify whether the foreign key column can be nullable (false means it not allows to be NULL)
                 );
 
+                
+                // Define a foreign key for 'attached_by', referencing the 'users' table
+                $this->foreignKey(
+                    table: $table,          // The table where the foreign key is being added
+                    column: 'attached_by',  // The column to which the foreign key is added ('attached_by' in this case)
+                    references: 'users',    // The referenced table (users) to establish the foreign key relationship
+                    onDelete: 'cascade',    // Action to perform when the referenced record is deleted (cascade deletion)
+                    nullable: false         // Specify whether the foreign key column can be nullable (false means it not allows to be NULL)
+                );
+
                 // Add a boolean column 'status' to the table
                 $table->boolean('status')
                     ->default(TRUE) // Set the default value to TRUE

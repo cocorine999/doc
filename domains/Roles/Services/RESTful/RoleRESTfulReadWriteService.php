@@ -52,6 +52,7 @@ class RoleRESTfulReadWriteService extends RestJsonReadWriteService implements Ro
 
         try {
             $role = $this->readWriteService->create($data);
+            
             $this->grantAccess($role->id, $data);
             
             // Commit the transaction

@@ -161,6 +161,10 @@ return [
          */
 
         Laravel\Passport\PassportServiceProvider::class,
+        App\Providers\ModulesServiceProvider::class,
+        App\Providers\ResourcesServiceProvider::class,
+        App\Providers\RepositoriesServiceProvider::class,
+        App\Providers\QueryBuilderServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -170,8 +174,6 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        App\Providers\RepositoriesServiceProvider::class,
-        App\Providers\ModulesServiceProvider::class,
     ])->toArray(),
 
     /*

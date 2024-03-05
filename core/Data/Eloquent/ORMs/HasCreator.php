@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 namespace Core\Data\Eloquent\ORMs;
 
+use App\Models\Permission;
 use App\Models\User;
 use Core\Utils\Exceptions\QueryException as CoreQueryException;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\QueryException;
@@ -100,7 +102,7 @@ trait HasCreator
      */
     public function creator(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'created_by');
+        return $this->belongsTo(User::class, "{$this->authorable()}");
     }
 
     /**
@@ -167,7 +169,7 @@ trait HasCreator
                 $user = User::where('full_name', $user)->firstOrFail();
             }
 
-            return $query->where('created_by', $user->id);
+            return $query->where("{$this->authorable()}", $user->id);
         } catch (QueryException $exception) {
             throw new CoreQueryException(message: $exception->getMessage(), code: $exception->getCode());
         } catch (ModelNotFoundException $exception) {
@@ -184,27 +186,36 @@ trait HasCreator
      */
     public static function bootHasCreator(): void
     {
-        static::creating(function ($model) {
+        static::creating(function (Model $model) {
 
             $user = null;
             
             // Set the default creator if not already set
-            if (!$model->created_by) {
+            if (!$model->{$model->authorable()}) {
                 if (auth()->check()) {
                     $model->setCreator(auth()->user());
                 }
                 else {
                     try {
                         
-                        /* $user = User::whereHas('roles', function ($query) {
+                        $user = User::whereHas('roles', function ($query) {
                             // For example, check for a specific role name
-                            $query->where('slug', 'admin');
-                        })->orWhereHas('rolesThroughProfiles', function ($query) {
-                            // For example, check for a specific role name
-                            $query->where('slug', 'admin');
+                            $query->where('key', 'super_administrateur');
                         })->where("status", TRUE)->first(); ///->firstOrFail();  */
 
-                        $model->setCreator($user);
+                        if(!$user)
+                        {
+                            $userExistInDB = User::count();
+                            if(!$userExistInDB && $model instanceof User){
+                                $model->{$model->authorable()} = $model->id;
+                            }
+                            else if($userExistInDB){
+                                $model->{$model->authorable()} = User::first()->id;
+                            }
+                        }
+                        else{
+                            $model->setCreator($user);
+                        }
                     } catch (QueryException $exception) {
                         ///throw $exception;
                         ///throw new CoreQueryException(message: $exception->getMessage(), code: $exception->getCode());

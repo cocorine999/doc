@@ -6,7 +6,13 @@ namespace Domains\Users\Services\RESTful;
 
 use Core\Logic\Services\Contracts\QueryServiceContract;
 use Core\Logic\Services\RestJson\RestJsonQueryService;
+use Core\Utils\Exceptions\ServiceException;
+use Core\Utils\Helpers\Responses\Json\JsonResponseTrait;
+use Domains\Users\Companies\Services\RESTful\Contracts\CompanyRESTfulQueryServiceContract;
+use Domains\Users\People\Services\RESTful\Contracts\PersonRESTfulQueryServiceContract;
 use Domains\Users\Services\RESTful\Contracts\UserRESTfulQueryServiceContract;
+use Illuminate\Http\Response;
+use Throwable;
 
 /**
  * Class ***`UserRESTfulQueryService`***
@@ -28,5 +34,32 @@ class UserRESTfulQueryService extends RestJsonQueryService implements UserRESTfu
     public function __construct(QueryServiceContract $queryService)
     {
         parent::__construct($queryService);
+    }
+
+    /**
+     * Fetch user granted role privileges.
+     *
+     * @param string $userId The identifier of the user for which role will be fetched.
+     * 
+     * @return \Illuminate\Http\JsonResponse The JSON response containing the role granted to a user.
+     * 
+     * @throws \Core\Utils\Exceptions\ServiceException If there is an issue with the service operation.
+     */
+    public function fetchUserRoles(string $userId): \Illuminate\Http\JsonResponse
+    {
+        try {
+            $user_roles = $this->queryService->findById($userId)->roles;
+
+            // Check if data is present to customize the message.
+            $message = empty($user_roles) ? 'No granted role found.' : 'User granted roles fetched successfully';
+
+            return JsonResponseTrait::success(
+                message: $message,
+                data: $user_roles,
+                status_code: Response::HTTP_OK
+            );
+        } catch (Throwable $exception) {
+            throw new ServiceException(message: $exception->getMessage(), previous: $exception);
+        }
     }
 }

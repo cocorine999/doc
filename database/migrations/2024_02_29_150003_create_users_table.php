@@ -102,8 +102,7 @@ class CreateUsersTable extends Migration
                 )->default(UserAccountStatus::DEFAULT);
 
             // Create a composite index for efficient searching on the combination of status and can_be_delete
-            $this->compositeKeys(table: $table, keys: [/* 'matricule', 'username',  */'type_of_account', 'userable_type', 'userable_id', 
-            'phone_number', 'email', 'status', 'can_be_delete']);
+            $this->compositeKeys(table: $table, keys: [/* 'matricule', 'username',  */'type_of_account', 'phone_number', 'email', 'status', 'can_be_delete']);
 
             // Add timestamp and soft delete columns to the table
             $this->addTimestampsAndSoftDeletesColumns($table);

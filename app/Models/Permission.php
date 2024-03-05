@@ -6,7 +6,6 @@ namespace App\Models;
 
 use Core\Data\Eloquent\Contract\ModelContract;
 use Core\Utils\Helpers\Sluggable\HasSlug;
-use Core\Data\Eloquent\ORMs\HasRoles;
 
 /**
  * Class ***`Permission`***
@@ -23,14 +22,7 @@ use Core\Data\Eloquent\ORMs\HasRoles;
  */
 class Permission extends ModelContract
 {
-    use HasSlug, HasRoles;
-
-    /**
-     * The database connection that should be used by the model.
-     *
-     * @var string
-     */
-    protected $connection = 'pgsql';
+    use HasSlug;
 
     /**
      * The table associated with the model.

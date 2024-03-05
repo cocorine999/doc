@@ -14,7 +14,6 @@ use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -63,13 +62,6 @@ use Illuminate\Notifications\Notifiable;
 class User extends ModelContract implements AuthenticatableContract, AuthorizableContract, CanResetPasswordContract
 {
     use Authenticatable, Authorizable, CanResetPassword, Notifiable, HasRoles;
-
-    /**
-     * The database connection that should be used by the model.
-     *
-     * @var string
-     */
-    protected $connection = 'pgsql';
 
     /**
      * The table associated with the model.
@@ -161,6 +153,7 @@ class User extends ModelContract implements AuthenticatableContract, Authorizabl
         'username',
         'phone_number',
         'email',
+        'address',
     ];
 
     /**
@@ -202,6 +195,16 @@ class User extends ModelContract implements AuthenticatableContract, Authorizabl
     }
 
     /**
+     * The "booted" method of the model.
+     *
+     * @return void
+     */
+    protected static function booted(): void
+    {
+        static::observe(\App\Observers\UserObserver::class);
+    }
+
+    /**
      * Get the user who created the credential.
      *
      * @return HasOne|null
@@ -229,5 +232,33 @@ class User extends ModelContract implements AuthenticatableContract, Authorizabl
     public function userable(): MorphTo
     {
         return $this->morphTo();
+    }
+
+    /**
+     * Interact with the user's last name.
+     * 
+     * @return Attribute
+     */
+    protected function username(): Attribute
+    {
+        return Attribute::make(
+            get: fn (string $value) => $value,
+            set: fn (string $value) => $this->manageUsername($value)
+        );
+    }
+
+    private function manageUsername(string $value)
+    {
+        // Remove special characters (except dot) and trim whitespace
+        $baseUsername = strtolower(trim(preg_replace('/[^a-zA-Z0-9.]/', '', $value)));
+        $username = $baseUsername;
+        $suffix = 1;
+    
+        while (!$this->isUnique("username", $username)) {
+            $username = $baseUsername . $suffix;
+            $suffix++;
+        }
+
+        return strtolower($username);
     }
 }

@@ -6,7 +6,7 @@ namespace Domains\Users\People\Services\RESTful;
 
 use Core\Logic\Services\Contracts\QueryServiceContract;
 use Core\Logic\Services\RestJson\RestJsonQueryService;
-use Domains\Users\Companies\Services\RESTful\Contracts\PersonRESTfulQueryServiceContract;
+use Domains\Users\People\Services\RESTful\Contracts\PersonRESTfulQueryServiceContract;
 
 /**
  * Class ***`PersonRESTfulQueryService`***

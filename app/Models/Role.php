@@ -27,13 +27,6 @@ class Role extends ModelContract
     use HasSlug, HasPermissions;
 
     /**
-     * The database connection that should be used by the model.
-     *
-     * @var string
-     */
-    protected $connection = 'pgsql';
-
-    /**
      * The table associated with the model.
      *
      * @var string

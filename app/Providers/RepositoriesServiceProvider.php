@@ -84,6 +84,39 @@ class RepositoriesServiceProvider extends ServiceProvider
                 \Core\Data\Repositories\Contracts\ReadWriteRepositoryInterface::class
             )
             ->give(\Domains\Users\Repositories\UserReadOnlyRepository::class);
+            
+
+
+        // Bind ReadWriteRepositoryInterface to UniteMesureReadWriteRepository
+        $this->app->when(\Domains\UniteMesures\Services\RESTful\UniteMesureRESTfulReadWriteService::class)
+        ->needs(
+            \Core\Data\Repositories\Contracts\ReadWriteRepositoryInterface::class
+        )
+        ->give(\Domains\UniteMesures\Repositories\UniteMesureReadWriteRepository::class);
+
+        // Bind ReadWriteRepositoryInterface to UniteMesureReadOnlyRepository
+        $this->app->when(\Domains\UniteMesures\Services\RESTful\UniteMesureRESTfulQueryService::class)
+            ->needs(
+                \Core\Data\Repositories\Contracts\ReadWriteRepositoryInterface::class
+            )
+            ->give(\Domains\UniteMesures\Repositories\UniteMesureReadOnlyRepository::class);
+
+            
+        // Bind ReadWriteRepositoryInterface to UniteTravailleReadWriteRepository
+        $this->app->when(\Domains\UniteTravailles\Services\RESTful\UniteTravailleRESTfulReadWriteService::class)
+        ->needs(
+            \Core\Data\Repositories\Contracts\ReadWriteRepositoryInterface::class
+        )
+        ->give(\Domains\UniteTravailles\Repositories\UniteTravailleReadWriteRepository::class);
+
+        // Bind ReadWriteRepositoryInterface to UniteMesureReadOnlyRepository
+        $this->app->when(\Domains\UniteMesures\Services\RESTful\UniteMesureRESTfulQueryService::class)
+            ->needs(
+                \Core\Data\Repositories\Contracts\ReadWriteRepositoryInterface::class
+            )
+            ->give(\Domains\UniteMesures\Repositories\UniteMesureReadOnlyRepository::class);
+
+
     }
 
     /**

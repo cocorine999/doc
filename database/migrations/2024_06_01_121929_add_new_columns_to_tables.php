@@ -100,6 +100,23 @@ class AddNewColumnsToTables extends Migration
                 }
             }
 
+            if (Schema::hasTable('categories_of_employees')) {
+                // Check if the "category_id" column does not exist in the "categories_of_employees" table
+                if (!Schema::hasColumn('categories_of_employees', 'category_id')) {
+                    // Modify the "categories_of_employees" table
+                    Schema::table('categories_of_employees', function (Blueprint $table) {
+                        // Define a foreign key for 'category_id', referencing the 'categories_of_employees' table
+                        $this->foreignKey(
+                            table: $table,                // The table where the foreign key is being added
+                            column: 'category_id',        // The column to which the foreign key is added ('category_id' in this case)
+                            references: 'categories_of_employees',    // The referenced table (categories_of_employees) to establish the foreign key relationship
+                            onDelete: 'cascade',         // Action to perform when the referenced record is deleted (cascade deletion)
+                            nullable: true              // Specify whether the foreign key column can be nullable (false means it is not allows to be NULL)
+                        );
+                    });
+                }
+            }
+
             // Commit the transaction
             DB::commit();
         } catch (\Throwable $exception) {

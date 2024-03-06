@@ -9,16 +9,16 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
- * Class ***`Poste`***
+ * Class ***`CategoryOfEmploye`***
  *
- * This model represents the `postes` table in the database.
+ * This model represents the `categories_of_employees` table in the database.
  * It extends the ModelContract class and provides access to the database table associated with the model.
  *
  * @property  string    $name;
  *
  * @package ***`\App\Models`***
  */
-class Poste extends ModelContract
+class CategoryOfEmploye extends ModelContract
 {
     /**
      * The database connection that should be used by the model.
@@ -32,7 +32,7 @@ class Poste extends ModelContract
      *
      * @var string
      */
-    protected $table = 'postes';
+    protected $table = 'categories_of_employees';
 
     /**
      * The attributes that are mass assignable.
@@ -42,6 +42,7 @@ class Poste extends ModelContract
     protected $fillable = [
         'name',
         'department_id',
+        'category_id',
     ];
 
     /**
@@ -68,17 +69,27 @@ class Poste extends ModelContract
      * @var array<int, string>
      */
     protected $appends = [
-        'departement_name'
+        //'departement_name'
     ];
 
     /**
      * Get the Unit mesure of the unitTravaille.
      *
-     * @return BelongsTo
+     * @return BelongsTo|null
      */
-    public function departement(): BelongsTo
+    public function departement(): ?BelongsTo
     {
         return $this->belongsTo(Departement::class, 'department_id');
+    }
+
+    /**
+     * Get the Unit mesure of the unitTravaille.
+     *
+     * @return BelongsTo|null
+     */
+    public function categoryOfEmployees(): ?BelongsTo
+    {
+        return $this->belongsTo(CategoryOfEmploye::class, 'category_id');
     }
 
     /**
@@ -91,7 +102,7 @@ class Poste extends ModelContract
         return $this->departement->name ;
     }
     /**
-     * Interact with the Poste's name.
+     * Interact with the CategoryOfEmploye's name.
      */
     protected function name(): Attribute
     {

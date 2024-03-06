@@ -144,6 +144,21 @@ class RepositoriesServiceProvider extends ServiceProvider
                 \Core\Data\Repositories\Contracts\ReadWriteRepositoryInterface::class
             )
             ->give(\Domains\UniteTravailles\Repositories\UniteTravailleReadOnlyRepository::class);
+
+
+        // Bind ReadWriteRepositoryInterface to CategoryOfEmployeReadWriteRepository
+        $this->app->when(\Domains\CategoriesOfEmployees\Services\RESTful\CategoryOfEmployeRESTfulReadWriteService::class)
+            ->needs(
+                \Core\Data\Repositories\Contracts\ReadWriteRepositoryInterface::class
+            )
+            ->give(\Domains\CategoriesOfEmployees\Repositories\CategoryOfEmployeReadWriteRepository::class);
+
+        // Bind ReadWriteRepositoryInterface to CategoryOfEmployeReadOnlyRepository
+        $this->app->when(\Domains\CategoriesOfEmployees\Services\RESTful\CategoryOfEmployeRESTfulQueryService::class)
+            ->needs(
+                \Core\Data\Repositories\Contracts\ReadWriteRepositoryInterface::class
+            )
+            ->give(\Domains\CategoriesOfEmployees\Repositories\CategoryOfEmployeReadOnlyRepository::class);
     }
 
     /**

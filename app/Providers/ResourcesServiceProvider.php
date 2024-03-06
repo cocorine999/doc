@@ -100,19 +100,35 @@ class ResourcesServiceProvider extends ServiceProvider
             ->give(\Domains\UniteMesures\Repositories\UniteMesureReadWriteRepository::class);
 
         
-        // Bind ReadOnlyRepositoryInterface to UniteTravailleReadOnlyRepository
-        $this->app->when(\App\Http\Controllers\API\RESTful\V1\UniteTravailleController::class)
-            ->needs(
-                \Core\Data\Repositories\Contracts\ReadOnlyRepositoryInterface::class
-            )
-            ->give(\Domains\UniteTravailles\Repositories\UniteTravailleReadOnlyRepository::class);
+            // Bind ReadOnlyRepositoryInterface to UniteTravailleReadOnlyRepository
+            $this->app->when(\App\Http\Controllers\API\RESTful\V1\UniteTravailleController::class)
+                ->needs(
+                    \Core\Data\Repositories\Contracts\ReadOnlyRepositoryInterface::class
+                )
+                ->give(\Domains\UniteTravailles\Repositories\UniteTravailleReadOnlyRepository::class);
 
-        // Bind ReadWriteRepositoryInterface to UniteTravailleReadWriteRepository
-        $this->app->when(\App\Http\Controllers\API\RESTful\V1\UniteTravailleController::class)
-            ->needs(
-                \Core\Data\Repositories\Contracts\ReadWriteRepositoryInterface::class
-            )
-            ->give(\Domains\UniteTravailles\Repositories\UniteTravailleReadWriteRepository::class);
+            // Bind ReadWriteRepositoryInterface to UniteTravailleReadWriteRepository
+            $this->app->when(\App\Http\Controllers\API\RESTful\V1\UniteTravailleController::class)
+                ->needs(
+                    \Core\Data\Repositories\Contracts\ReadWriteRepositoryInterface::class
+                )
+                ->give(\Domains\UniteTravailles\Repositories\UniteTravailleReadWriteRepository::class);
+
+            
+        
+            // Bind ReadOnlyRepositoryInterface to CategoryOfEmployeReadOnlyRepository
+            $this->app->when(\App\Http\Controllers\API\RESTful\V1\CategoryOfEmployeController::class)
+                ->needs(
+                    \Core\Data\Repositories\Contracts\ReadOnlyRepositoryInterface::class
+                )
+                ->give(\Domains\CategoriesOfEmployees\Repositories\CategoryOfEmployeReadOnlyRepository::class);
+
+            // Bind ReadWriteRepositoryInterface to CategoryOfEmployeReadWriteRepository
+            $this->app->when(\App\Http\Controllers\API\RESTful\V1\CategoryOfEmployeController::class)
+                ->needs(
+                    \Core\Data\Repositories\Contracts\ReadWriteRepositoryInterface::class
+                )
+                ->give(\Domains\CategoriesOfEmployees\Repositories\CategoryOfEmployeReadWriteRepository::class);
         }
 
     /**

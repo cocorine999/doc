@@ -233,6 +233,31 @@ class ModulesServiceProvider extends ServiceProvider
                 return new \Domains\UniteTravailles\Services\RESTful\UniteTravailleRESTfulQueryService($queryService);
             }
         );
+
+
+        // Binds the implementation of CategoryOfEmployeRESTfulReadWriteServiceContract to the CategoryOfEmployeRESTfulReadWriteService class.
+        $this->app->bind(
+            \Domains\CategoriesOfEmployees\Services\RESTful\Contracts\CategoryOfEmployeRESTfulReadWriteServiceContract::class,
+            function ($app) {
+                // Resolve the necessary dependencies for CategoryOfEmployeRESTfulReadWriteService
+                $readWriteService = $app->make(\Core\Logic\Services\Contracts\ReadWriteServiceContract::class);
+
+                // Create and return an instance of CategoryOfEmployeRESTfulReadWriteService
+                return new \Domains\CategoriesOfEmployees\Services\RESTful\CategoryOfEmployeRESTfulReadWriteService($readWriteService);
+            }
+        );
+
+        // Binds the implementation of CategoryOfEmployeRESTfulQueryServiceContract to the CategoryOfEmployeRESTfulQueryService class.
+        $this->app->bind(
+            \Domains\CategoriesOfEmployees\Services\RESTful\Contracts\CategoryOfEmployeRESTfulQueryServiceContract::class,
+            function ($app) {
+                // Resolve the necessary dependencies for CategoryOfEmployeRESTfulQueryService
+                $queryService = $app->make(\Core\Logic\Services\Contracts\QueryServiceContract::class);
+
+                // Create and return an instance of CategoryOfEmployeRESTfulQueryService
+                return new \Domains\CategoriesOfEmployees\Services\RESTful\CategoryOfEmployeRESTfulQueryService($queryService);
+            }
+        );
         
     }
 

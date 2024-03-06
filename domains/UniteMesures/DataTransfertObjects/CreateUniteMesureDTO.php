@@ -44,6 +44,7 @@ class CreateUniteMesureDTO extends BaseDTO
     {
         $rules = array_merge([
             "name"            		=> ["string", "required", 'unique:unite_mesures,name'],
+            "symbol"                => ["required", "string", 'unique:unite_mesures,symbol'],
             'can_be_deleted'        => ['sometimes', 'boolean', 'in:'.true.','.false],
         ], $rules);
 

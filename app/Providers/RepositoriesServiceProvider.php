@@ -84,15 +84,15 @@ class RepositoriesServiceProvider extends ServiceProvider
                 \Core\Data\Repositories\Contracts\ReadWriteRepositoryInterface::class
             )
             ->give(\Domains\Users\Repositories\UserReadOnlyRepository::class);
-            
 
 
+    
         // Bind ReadWriteRepositoryInterface to UniteMesureReadWriteRepository
         $this->app->when(\Domains\UniteMesures\Services\RESTful\UniteMesureRESTfulReadWriteService::class)
-        ->needs(
-            \Core\Data\Repositories\Contracts\ReadWriteRepositoryInterface::class
-        )
-        ->give(\Domains\UniteMesures\Repositories\UniteMesureReadWriteRepository::class);
+            ->needs(
+                \Core\Data\Repositories\Contracts\ReadWriteRepositoryInterface::class
+            )
+            ->give(\Domains\UniteMesures\Repositories\UniteMesureReadWriteRepository::class);
 
         // Bind ReadWriteRepositoryInterface to UniteMesureReadOnlyRepository
         $this->app->when(\Domains\UniteMesures\Services\RESTful\UniteMesureRESTfulQueryService::class)
@@ -101,22 +101,49 @@ class RepositoriesServiceProvider extends ServiceProvider
             )
             ->give(\Domains\UniteMesures\Repositories\UniteMesureReadOnlyRepository::class);
 
-            
+    
+        // Bind ReadWriteRepositoryInterface to DepartementReadWriteRepository
+        $this->app->when(\Domains\Departements\Services\RESTful\DepartementRESTfulReadWriteService::class)
+            ->needs(
+                \Core\Data\Repositories\Contracts\ReadWriteRepositoryInterface::class
+            )
+            ->give(\Domains\Departements\Repositories\DepartementReadWriteRepository::class);
+
+        // Bind ReadWriteRepositoryInterface to DepartementReadOnlyRepository
+        $this->app->when(\Domains\Departements\Services\RESTful\DepartementRESTfulQueryService::class)
+            ->needs(
+                \Core\Data\Repositories\Contracts\ReadWriteRepositoryInterface::class
+            )
+            ->give(\Domains\Departements\Repositories\DepartementReadOnlyRepository::class);
+
+    
+        // Bind ReadWriteRepositoryInterface to PosteReadWriteRepository
+        $this->app->when(\Domains\Postes\Services\RESTful\PosteRESTfulReadWriteService::class)
+            ->needs(
+                \Core\Data\Repositories\Contracts\ReadWriteRepositoryInterface::class
+            )
+            ->give(\Domains\Postes\Repositories\PosteReadWriteRepository::class);
+
+        // Bind ReadWriteRepositoryInterface to PosteReadOnlyRepository
+        $this->app->when(\Domains\Postes\Services\RESTful\PosteRESTfulQueryService::class)
+            ->needs(
+                \Core\Data\Repositories\Contracts\ReadWriteRepositoryInterface::class
+            )
+            ->give(\Domains\Postes\Repositories\PosteReadOnlyRepository::class);
+
         // Bind ReadWriteRepositoryInterface to UniteTravailleReadWriteRepository
         $this->app->when(\Domains\UniteTravailles\Services\RESTful\UniteTravailleRESTfulReadWriteService::class)
-        ->needs(
-            \Core\Data\Repositories\Contracts\ReadWriteRepositoryInterface::class
-        )
-        ->give(\Domains\UniteTravailles\Repositories\UniteTravailleReadWriteRepository::class);
-
-        // Bind ReadWriteRepositoryInterface to UniteMesureReadOnlyRepository
-        $this->app->when(\Domains\UniteMesures\Services\RESTful\UniteMesureRESTfulQueryService::class)
             ->needs(
                 \Core\Data\Repositories\Contracts\ReadWriteRepositoryInterface::class
             )
-            ->give(\Domains\UniteMesures\Repositories\UniteMesureReadOnlyRepository::class);
+            ->give(\Domains\UniteTravailles\Repositories\UniteTravailleReadWriteRepository::class);
 
-
+        // Bind ReadWriteRepositoryInterface to UniteTravailleReadOnlyRepository
+        $this->app->when(\Domains\UniteTravailles\Services\RESTful\UniteTravailleRESTfulQueryService::class)
+            ->needs(
+                \Core\Data\Repositories\Contracts\ReadWriteRepositoryInterface::class
+            )
+            ->give(\Domains\UniteTravailles\Repositories\UniteTravailleReadOnlyRepository::class);
     }
 
     /**

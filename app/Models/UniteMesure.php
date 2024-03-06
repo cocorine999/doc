@@ -5,8 +5,6 @@ declare(strict_types=1);
 namespace App\Models;
 
 use Core\Data\Eloquent\Contract\ModelContract;
-use Core\Data\Eloquent\ORMs\HasPermissions;
-use Core\Utils\Helpers\Sluggable\HasSlug;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 
 /**
@@ -21,8 +19,6 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
  */
 class UniteMesure extends ModelContract
 {
-    use HasSlug, HasPermissions;
-
     /**
      * The database connection that should be used by the model.
      *
@@ -44,7 +40,8 @@ class UniteMesure extends ModelContract
      * @var array<int, string>
      */
     protected $fillable = [
-        'name'
+        'name',
+        'symbol'
     ];
 
 
@@ -54,7 +51,8 @@ class UniteMesure extends ModelContract
      * @var array<int, string>
      */
     protected $visible = [
-        'name'
+        'name',
+        'symbol'
     ];
 
     /**
@@ -64,6 +62,7 @@ class UniteMesure extends ModelContract
      */
     protected $casts = [
         'name'         => 'string',
+        'symbol'       => 'string',
     ];
 
     /**
@@ -73,6 +72,17 @@ class UniteMesure extends ModelContract
     {
         return Attribute::make(
             get: fn (string $value) => ucfirst($value),
+            set: fn (string $value) => strtolower($value)
+        );
+    }
+
+    /**
+     * Interact with the UniteMesure's symbol.
+     */
+    protected function symbol(): Attribute
+    {
+        return Attribute::make(
+            get: fn (string $value) => strtolower($value),
             set: fn (string $value) => strtolower($value)
         );
     }

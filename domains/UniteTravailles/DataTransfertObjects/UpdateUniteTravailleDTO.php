@@ -6,6 +6,7 @@ namespace Domains\UniteTravailles\DataTransfertObjects;
 
 use App\Models\UniteTravaille;
 use Core\Utils\DataTransfertObjects\BaseDTO;
+use Core\Utils\Enums\TypeUniteTravailleEnum;
 use Illuminate\Validation\Rules\Enum;
 
 /**
@@ -43,9 +44,8 @@ class UpdateUniteTravailleDTO extends BaseDTO
     {
         $rules = array_merge([
             "name"            		=> ["string", "required", 'unique:unite_travailles,name,' . $this->ignoreValues['unite_travaille'] . ',id'],
-            "hint"                  => ["sometimes","decimal"],
-            "rate"                  => ["sometimes","decimal"],
-            "symbol"                => ["sometimes","string"],
+            "hint"                  => ["sometimes", "numeric", "regex:/^\d+(\.\d{1,2})?$/"],
+            "rate"                  => ["sometimes", "numeric", "regex:/^\d+(\.\d{1,2})?$/"],
             "article_id"            => ["sometimes",'exists:articles,id'],
             "type_of_unite_travaille" => ['sometimes', "string", new Enum(TypeUniteTravailleEnum::class)],
             'can_be_deleted'        => ['sometimes', 'boolean', 'in:'.true.','.false],

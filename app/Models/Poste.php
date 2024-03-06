@@ -5,8 +5,6 @@ declare(strict_types=1);
 namespace App\Models;
 
 use Core\Data\Eloquent\Contract\ModelContract;
-use Core\Data\Eloquent\ORMs\HasPermissions;
-use Core\Utils\Helpers\Sluggable\HasSlug;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
@@ -22,8 +20,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  */
 class Poste extends ModelContract
 {
-    use HasSlug, HasPermissions;
-
     /**
      * The database connection that should be used by the model.
      *
@@ -54,7 +50,7 @@ class Poste extends ModelContract
      * @var array<int, string>
      */
     protected $visible = [
-        'name', 'department_id'
+        'name'
     ];
 
     /**
@@ -90,7 +86,7 @@ class Poste extends ModelContract
      *
      * @return string The user's full name.
      */
-    public function getDepartementAttribute(): string
+    public function getDepartementNameAttribute(): string
     {
         return $this->departement->name ;
     }

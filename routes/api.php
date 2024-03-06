@@ -152,6 +152,8 @@ Route::namespace("App\Http\Controllers\API\RESTful")->middleware([])->group(func
 
                 Route::apiResource('unite_travailles', 'UniteTravailleController');
 
+                Route::apiResource('categories_of_employees', 'CategoryOfEmployeController');
+
             });
 
         });

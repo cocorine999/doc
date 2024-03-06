@@ -129,6 +129,31 @@ Route::namespace("App\Http\Controllers\API\RESTful")->middleware([])->group(func
                 }); */
             });
 
+
+
+
+            /*
+            |--------------------------------------------------------------------------
+            | Departement Routes
+            |--------------------------------------------------------------------------
+            |
+            | This group contains the API resource routes for the 'departements' module.
+            | These routes are handled by the 'DepartementController' controller.
+            | The route parameter 'users' is aliased as 'id_user'.
+            |
+            */
+            Route::group([], function () {
+
+                Route::apiResource('departements', 'DepartementController');
+
+                Route::apiResource('postes', 'PosteController');
+
+                Route::apiResource('unite_mesures', 'UniteMesureController');
+
+                Route::apiResource('unite_travailles', 'UniteTravailleController');
+
+            });
+
         });
     });
 });

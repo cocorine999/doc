@@ -136,6 +136,103 @@ class ModulesServiceProvider extends ServiceProvider
                 return new \Domains\Users\Services\RESTful\UserRESTfulQueryService($queryService);
             }
         );
+
+
+        // Binds the implementation of UniteMesureRESTfulReadWriteServiceContract to the UniteMesureRESTfulReadWriteService class.
+        $this->app->bind(
+            \Domains\UniteMesures\Services\RESTful\Contracts\UniteMesureRESTfulReadWriteServiceContract::class,
+            function ($app) {
+                // Resolve the necessary dependencies for UniteMesureRESTfulReadWriteService
+                $readWriteService = $app->make(\Core\Logic\Services\Contracts\ReadWriteServiceContract::class);
+
+                // Create and return an instance of UniteMesureRESTfulReadWriteService
+                return new \Domains\UniteMesures\Services\RESTful\UniteMesureRESTfulReadWriteService($readWriteService);
+            }
+        );
+
+        // Binds the implementation of UniteMesureRESTfulQueryServiceContract to the UniteMesureRESTfulQueryService class.
+        $this->app->bind(
+            \Domains\UniteMesures\Services\RESTful\Contracts\UniteMesureRESTfulQueryServiceContract::class,
+            function ($app) {
+                // Resolve the necessary dependencies for UniteMesureRESTfulQueryService
+                $queryService = $app->make(\Core\Logic\Services\Contracts\QueryServiceContract::class);
+
+                // Create and return an instance of UniteMesureRESTfulQueryService
+                return new \Domains\UniteMesures\Services\RESTful\UniteMesureRESTfulQueryService($queryService);
+            }
+        );
+
+        // Binds the implementation of DepartementRESTfulReadWriteServiceContract to the DepartementRESTfulReadWriteService class.
+        $this->app->bind(
+            \Domains\Departements\Services\RESTful\Contracts\DepartementRESTfulReadWriteServiceContract::class,
+            function ($app) {
+                // Resolve the necessary dependencies for DepartementRESTfulReadWriteService
+                $readWriteService = $app->make(\Core\Logic\Services\Contracts\ReadWriteServiceContract::class);
+
+                // Create and return an instance of DepartementRESTfulReadWriteService
+                return new \Domains\Departements\Services\RESTful\DepartementRESTfulReadWriteService($readWriteService);
+            }
+        );
+
+        // Binds the implementation of DepartementRESTfulQueryServiceContract to the DepartementRESTfulQueryService class.
+        $this->app->bind(
+            \Domains\Departements\Services\RESTful\Contracts\DepartementRESTfulQueryServiceContract::class,
+            function ($app) {
+                // Resolve the necessary dependencies for DepartementRESTfulQueryService
+                $queryService = $app->make(\Core\Logic\Services\Contracts\QueryServiceContract::class);
+
+                // Create and return an instance of DepartementRESTfulQueryService
+                return new \Domains\Departements\Services\RESTful\DepartementRESTfulQueryService($queryService);
+            }
+        );
+
+        // Binds the implementation of PosteRESTfulReadWriteServiceContract to the PosteRESTfulReadWriteService class.
+        $this->app->bind(
+            \Domains\Postes\Services\RESTful\Contracts\PosteRESTfulReadWriteServiceContract::class,
+            function ($app) {
+                // Resolve the necessary dependencies for PosteRESTfulReadWriteService
+                $readWriteService = $app->make(\Core\Logic\Services\Contracts\ReadWriteServiceContract::class);
+
+                // Create and return an instance of PosteRESTfulReadWriteService
+                return new \Domains\Postes\Services\RESTful\PosteRESTfulReadWriteService($readWriteService);
+            }
+        );
+
+        // Binds the implementation of PosteRESTfulQueryServiceContract to the PosteRESTfulQueryService class.
+        $this->app->bind(
+            \Domains\Postes\Services\RESTful\Contracts\PosteRESTfulQueryServiceContract::class,
+            function ($app) {
+                // Resolve the necessary dependencies for PosteRESTfulQueryService
+                $queryService = $app->make(\Core\Logic\Services\Contracts\QueryServiceContract::class);
+
+                // Create and return an instance of PosteRESTfulQueryService
+                return new \Domains\Postes\Services\RESTful\PosteRESTfulQueryService($queryService);
+            }
+        );
+
+        // Binds the implementation of UniteTravailleRESTfulReadWriteServiceContract to the UniteTravailleRESTfulReadWriteService class.
+        $this->app->bind(
+            \Domains\UniteTravailles\Services\RESTful\Contracts\UniteTravailleRESTfulReadWriteServiceContract::class,
+            function ($app) {
+                // Resolve the necessary dependencies for UniteTravailleRESTfulReadWriteService
+                $readWriteService = $app->make(\Core\Logic\Services\Contracts\ReadWriteServiceContract::class);
+
+                // Create and return an instance of UniteTravailleRESTfulReadWriteService
+                return new \Domains\UniteTravailles\Services\RESTful\UniteTravailleRESTfulReadWriteService($readWriteService);
+            }
+        );
+
+        // Binds the implementation of UniteTravailleRESTfulQueryServiceContract to the UniteTravailleRESTfulQueryService class.
+        $this->app->bind(
+            \Domains\UniteTravailles\Services\RESTful\Contracts\UniteTravailleRESTfulQueryServiceContract::class,
+            function ($app) {
+                // Resolve the necessary dependencies for UniteTravailleRESTfulQueryService
+                $queryService = $app->make(\Core\Logic\Services\Contracts\QueryServiceContract::class);
+
+                // Create and return an instance of UniteTravailleRESTfulQueryService
+                return new \Domains\UniteTravailles\Services\RESTful\UniteTravailleRESTfulQueryService($queryService);
+            }
+        );
         
     }
 

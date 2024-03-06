@@ -45,9 +45,8 @@ class CreateUniteTravailleDTO extends BaseDTO
     {
         $rules = array_merge([
             "name"            		=> ["string", "required", 'min:2', 'max:25' ,'unique:unite_travailles,name'],
-            "hint"                  => ["required","decimal"],
-            "rate"                  => ["required","decimal"],
-            "symbol"                => ["required","string"],
+            "hint"                  => ["required", "numeric|regex:/^\d+(\.\d{1,2})?$/"],
+            "rate"                  => ["required", "numeric|regex:/^\d+(\.\d{1,2})?$/"],
             "unite_mesure_id"       => ["required",'exists:unite_mesures,id'],
             "article_id"            => ["sometimes",'exists:articles,id'],
             "type_of_unite_travaille" => ['required', "string", new Enum(TypeUniteTravailleEnum::class)],

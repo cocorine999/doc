@@ -43,6 +43,9 @@ class CreateUniteMesuresTable extends Migration
                 
                 // Define a unique string column for the unite_mesure name
                 $table->string('name')->unique()->comment('The unique name of the unite_mesure');
+                
+                // Define a string column for the unite_travailles symbol
+                $table->string('symbol')->comment('The symbol of the unite_mesure');
 
                 // Add a boolean column 'status' to the table
                 $table->boolean('status')

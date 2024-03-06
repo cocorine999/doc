@@ -5,8 +5,7 @@ declare(strict_types=1);
 namespace App\Models;
 
 use Core\Data\Eloquent\Contract\ModelContract;
-use Core\Data\Eloquent\ORMs\HasPermissions;
-use Core\Utils\Helpers\Sluggable\HasSlug;
+use Core\Utils\Enums\TypeUniteTravailleEnum;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
@@ -22,8 +21,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  */
 class UniteTravaille extends ModelContract
 {
-    use HasSlug, HasPermissions;
-
     /**
      * The database connection that should be used by the model.
      *
@@ -47,7 +44,6 @@ class UniteTravaille extends ModelContract
         'name',
         'hint',
         'rate',
-        'symbol',
         'unite_mesure_id',
         'article_id',
         'type_of_unite_travaille'
@@ -61,6 +57,20 @@ class UniteTravaille extends ModelContract
     protected $visible = [
         'name', 'hint','rate',
         'type_of_unite_travaille',
+    ];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'name'                      => 'string',
+        'hint'                      => 'decimal:2',
+        'rate'                      => 'decimal:2',
+        'unite_mesure_id'           => 'string',
+        'article_id'                => 'string',
+        'type_of_unite_travaille'   => TypeUniteTravailleEnum::class,
     ];
 
     /**
@@ -78,7 +88,7 @@ class UniteTravaille extends ModelContract
      * @var array<int, string>
      */
     protected $appends = [
-        'unite_mesure','article_name'
+        'unite_mesure_symbol'
     ];
 
     /**
@@ -96,9 +106,9 @@ class UniteTravaille extends ModelContract
      *
      * @return string The user's full name.
      */
-    public function getUniteMesureAttribute(): string
+    public function getUniteMesureSymbolAttribute(): string
     {
-        return $this->uniteMesure->name ;
+        return $this->uniteMesure->symbol ;
     }
 
     /**
@@ -112,22 +122,18 @@ class UniteTravaille extends ModelContract
     }
 
     /**
-     * Get the user's full name attribute.
-     *
-     * @return string The user's full name.
-     */
-    public function getArticleNameAttribute(): string
-    {
-        return $this->article->name ;
-    }
-
-    /**
      * Interact with the UniteTravaille's name.
      */
     protected function name(): Attribute
     {
         return Attribute::make(
-            get: fn (string $value) => ucfirst($value),
+            get: function (string|null $value) {
+                return ucfirst($value);
+                if($this->type_of_unite_travaille->value === 'article'){
+                    return ucfirst($this->article->name);
+                }
+                else return ucfirst($value);
+            },
             set: fn (string $value) => strtolower($value)
         );
     }

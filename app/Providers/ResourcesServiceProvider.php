@@ -52,7 +52,68 @@ class ResourcesServiceProvider extends ServiceProvider
                 \Core\Data\Repositories\Contracts\ReadWriteRepositoryInterface::class
             )
             ->give(\Domains\Users\Repositories\UserReadWriteRepository::class);
-    }
+
+        
+
+        // Bind ReadOnlyRepositoryInterface to DepartementReadOnlyRepository
+        $this->app->when(\App\Http\Controllers\API\RESTful\V1\DepartementController::class)
+            ->needs(
+                \Core\Data\Repositories\Contracts\ReadOnlyRepositoryInterface::class
+            )
+            ->give(\Domains\Departements\Repositories\DepartementReadOnlyRepository::class);
+
+        // Bind ReadWriteRepositoryInterface to DepartementReadWriteRepository
+        $this->app->when(\App\Http\Controllers\API\RESTful\V1\DepartementController::class)
+            ->needs(
+                \Core\Data\Repositories\Contracts\ReadWriteRepositoryInterface::class
+            )
+            ->give(\Domains\Departements\Repositories\DepartementReadWriteRepository::class);
+
+        
+        // Bind ReadOnlyRepositoryInterface to PosteReadOnlyRepository
+        $this->app->when(\App\Http\Controllers\API\RESTful\V1\PosteController::class)
+            ->needs(
+                \Core\Data\Repositories\Contracts\ReadOnlyRepositoryInterface::class
+            )
+            ->give(\Domains\Postes\Repositories\PosteReadOnlyRepository::class);
+
+        // Bind ReadWriteRepositoryInterface to PosteReadWriteRepository
+        $this->app->when(\App\Http\Controllers\API\RESTful\V1\PosteController::class)
+            ->needs(
+                \Core\Data\Repositories\Contracts\ReadWriteRepositoryInterface::class
+            )
+            ->give(\Domains\Postes\Repositories\PosteReadWriteRepository::class);
+
+        
+        // Bind ReadOnlyRepositoryInterface to UniteMesureReadOnlyRepository
+        $this->app->when(\App\Http\Controllers\API\RESTful\V1\UniteMesureController::class)
+            ->needs(
+                \Core\Data\Repositories\Contracts\ReadOnlyRepositoryInterface::class
+            )
+            ->give(\Domains\UniteMesures\Repositories\UniteMesureReadOnlyRepository::class);
+
+        // Bind ReadWriteRepositoryInterface to UniteMesureReadWriteRepository
+        $this->app->when(\App\Http\Controllers\API\RESTful\V1\UniteMesureController::class)
+            ->needs(
+                \Core\Data\Repositories\Contracts\ReadWriteRepositoryInterface::class
+            )
+            ->give(\Domains\UniteMesures\Repositories\UniteMesureReadWriteRepository::class);
+
+        
+        // Bind ReadOnlyRepositoryInterface to UniteTravailleReadOnlyRepository
+        $this->app->when(\App\Http\Controllers\API\RESTful\V1\UniteTravailleController::class)
+            ->needs(
+                \Core\Data\Repositories\Contracts\ReadOnlyRepositoryInterface::class
+            )
+            ->give(\Domains\UniteTravailles\Repositories\UniteTravailleReadOnlyRepository::class);
+
+        // Bind ReadWriteRepositoryInterface to UniteTravailleReadWriteRepository
+        $this->app->when(\App\Http\Controllers\API\RESTful\V1\UniteTravailleController::class)
+            ->needs(
+                \Core\Data\Repositories\Contracts\ReadWriteRepositoryInterface::class
+            )
+            ->give(\Domains\UniteTravailles\Repositories\UniteTravailleReadWriteRepository::class);
+        }
 
     /**
      * Bootstrap services.

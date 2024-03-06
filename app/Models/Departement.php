@@ -5,8 +5,6 @@ declare(strict_types=1);
 namespace App\Models;
 
 use Core\Data\Eloquent\Contract\ModelContract;
-use Core\Data\Eloquent\ORMs\HasPermissions;
-use Core\Utils\Helpers\Sluggable\HasSlug;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 
 /**
@@ -21,7 +19,6 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
  */
 class Departement extends ModelContract
 {
-    use HasSlug, HasPermissions;
 
     /**
      * The database connection that should be used by the model.

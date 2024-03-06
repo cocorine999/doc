@@ -43,6 +43,7 @@ class UpdateUniteMesureDTO extends BaseDTO
     {
         $rules = array_merge([
             "name"            		=> ["string", "required", 'unique:unite_mesures,name,' . $this->ignoreValues['unite_mesure'] . ',id'],
+            "symbol"            	=> ["string", "required", 'unique:unite_mesures,symbol,' . $this->ignoreValues['unite_mesure'] . ',id'],
             'can_be_deleted'        => ['sometimes', 'boolean', 'in:'.true.','.false],
         ], $rules);
 

@@ -9,7 +9,6 @@ use Core\Logic\Services\RestJson\Contracts\RestJsonQueryServiceContract;
 use Core\Logic\Services\RestJson\Contracts\RestJsonReadWriteServiceContract;
 use Core\Utils\Controllers\RESTful\Contracts\RESTfulResourceControllerContract;
 use Core\Utils\Requests\ResourceRequest;
-use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
@@ -103,6 +102,17 @@ class RESTfulResourceController extends Controller implements RESTfulResourceCon
     protected function getRequestClass(string $method): ?string
     {
         return $this->requestClasses[$method] ?? null;
+    }
+
+    /**
+     * Get the request class for a specific method.
+     *
+     * @param string $method
+     * @return array
+     */
+    protected function getRequestClasses(): array
+    {
+        return $this->requestClasses;
     }
 
     /**

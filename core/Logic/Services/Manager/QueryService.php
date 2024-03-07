@@ -10,7 +10,6 @@ use Core\Logic\Services\Contracts\QueryServiceContract;
 use Illuminate\Database\Eloquent\Model;
 use Throwable;
 
-
 /**
  * `QueryService`
  *
@@ -21,20 +20,6 @@ use Throwable;
  */
 class QueryService extends AbstractService implements QueryServiceContract
 {
-
-    /**
-     * The read-only repository instance.
-     *
-     * This property holds a reference to a repository or data source
-     * that provides read-only access to some data. It is used within
-     * this class to retrieve data without the ability to modify the
-     * underlying data source.
-     *
-     *
-     * @var \Core\Data\Repositories\Contracts\ReadOnlyRepositoryInterface|null
-     */
-    protected ReadOnlyRepositoryInterface $readOnlyRepository;
-
     /**
      * Constructor for the **`QueryService`** abstract class.
      *
@@ -43,7 +28,6 @@ class QueryService extends AbstractService implements QueryServiceContract
     public function __construct(ReadOnlyRepositoryInterface $readOnlyRepository)
     {
         parent::__construct($readOnlyRepository);
-        $this->readOnlyRepository = $readOnlyRepository;
     }
 
     /**
@@ -57,7 +41,7 @@ class QueryService extends AbstractService implements QueryServiceContract
     public function all(array $columns = ['*'])
     {
         try {
-            return $this->readOnlyRepository->all($columns);
+            return $this->repository->all($columns);
         } catch (Throwable $exception) {
             throw new \Core\Utils\Exceptions\ServiceException(message: $exception->getMessage(), previous: $exception);
         }
@@ -77,7 +61,7 @@ class QueryService extends AbstractService implements QueryServiceContract
     public function paginate(int $perPage = 15, array $columns = ['*'], string $orderBy = "created_at", string $order = "desc", string $pageName = 'page', ?int $page = null)
     {
         try {
-            return $this->readOnlyRepository->getModel()->orderBy($orderBy, $order)->paginate(perPage: $perPage, columns: $columns, pageName: $pageName, page: $page);
+            return $this->repository->getModel()->orderBy($orderBy, $order)->paginate(perPage: $perPage, columns: $columns, pageName: $pageName, page: $page);
         } catch (Throwable $exception) {
             throw new ServiceException(message: $exception->getMessage(), previous: $exception);
         }
@@ -95,7 +79,7 @@ class QueryService extends AbstractService implements QueryServiceContract
     public function findById($id, array $columns = ['*'])
     {
         try {
-            return $this->readOnlyRepository->find($id, $columns);
+            return $this->repository->find($id, $columns);
         } catch (Throwable $exception) {
             throw new ServiceException(message: $exception->getMessage(), previous: $exception);
         }
@@ -113,7 +97,7 @@ class QueryService extends AbstractService implements QueryServiceContract
     public function where(array $criteria, array $columns = ['*'])
     {
         try {
-            return $this->readOnlyRepository->where($criteria, $columns);
+            return $this->repository->where($criteria, $columns);
         } catch (Throwable $exception) {
             throw new ServiceException(message: $exception->getMessage(), previous: $exception);
         }
@@ -130,7 +114,7 @@ class QueryService extends AbstractService implements QueryServiceContract
     public function count(array $criteria): int
     {
         try {
-            return $this->readOnlyRepository->count($criteria);
+            return $this->repository->count($criteria);
         } catch (Throwable $exception) {
             throw new ServiceException(message: $exception->getMessage(), previous: $exception);
         }
@@ -148,7 +132,7 @@ class QueryService extends AbstractService implements QueryServiceContract
     public function executeQuery(string $query, array $params = [])
     {
         try {
-            return $this->readOnlyRepository->where($params);
+            return $this->repository->where($params);
         } catch (Throwable $exception) {
             throw new ServiceException(message: $exception->getMessage(), previous: $exception);
         }
@@ -167,7 +151,7 @@ class QueryService extends AbstractService implements QueryServiceContract
     public function trash(array $columns = ['*'])
     {
         try {
-            return $this->readOnlyRepository->trash($columns);
+            return $this->repository->trash($columns);
         } catch (Throwable $exception) {
             throw new ServiceException(message: $exception->getMessage(), previous: $exception);
         }
@@ -185,7 +169,7 @@ class QueryService extends AbstractService implements QueryServiceContract
     public function getTrash($id, array $columns = ['*']): ?Model
     {
         try {
-            return $this->readOnlyRepository->getModel()->onlyTrash($id)->select($columns)->get();
+            return $this->repository->getModel()->onlyTrash($id)->select($columns)->get();
         } catch (Throwable $exception) {
             throw new ServiceException(message: $exception->getMessage(), previous: $exception);
         }

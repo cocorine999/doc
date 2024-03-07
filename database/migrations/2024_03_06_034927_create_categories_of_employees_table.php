@@ -47,15 +47,6 @@ class CreateCategoriesOfEmployeesTable extends Migration
                 // Define a nullable medium text column for category description
                 $table->mediumText('description')->nullable()->comment('Description of the category');
 
-                // Define a foreign key for 'department_id', referencing the 'departements' table
-                $this->foreignKey(
-                    table: $table,             // The table where the foreign key is being added
-                    column: 'department_id',   // The column to which the foreign key is added ('department_id' in this case)
-                    references: 'departements', // The referenced table (departements) to establish the foreign key relationship
-                    onDelete: 'cascade',        // Action to perform when the referenced record is deleted (cascade deletion)
-                    nullable: true             // Specify whether the foreign key column can be nullable (false means it is not allows to be NULL)
-                );
-
                 // Add a boolean column 'status' to the table
                 $table->boolean('status')
                     ->default(TRUE) // Set the default value to TRUE

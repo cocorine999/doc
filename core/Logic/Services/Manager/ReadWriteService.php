@@ -11,7 +11,6 @@ use Core\Logic\Services\Contracts\ReadWriteServiceContract;
 use Illuminate\Database\Eloquent\Model;
 use Throwable;
 
-
 /**
  * Class `ReadWriteService`
  *
@@ -23,14 +22,6 @@ use Throwable;
  */
 class ReadWriteService extends QueryService implements ReadWriteServiceContract
 {
-
-    /**
-     * The read-write repository for accessing and manipulating data.
-     *
-     * @var \Core\Data\Repositories\Contracts\ReadWriteRepositoryInterface|null
-     */
-    protected ReadWriteRepositoryInterface $readWriteRepository;
-
     /**
      * Constructor for the ReadWriteService abstract class.
      *
@@ -39,7 +30,6 @@ class ReadWriteService extends QueryService implements ReadWriteServiceContract
     public function __construct(ReadWriteRepositoryInterface $readWriteRepository)
     {
         parent::__construct($readWriteRepository);
-        $this->readWriteRepository = $readWriteRepository;
     }
 
     /**
@@ -53,7 +43,7 @@ class ReadWriteService extends QueryService implements ReadWriteServiceContract
     public function create(DTOInterface $data)
     {
         try {
-            return $this->readWriteRepository->create($data->toArray());
+            return $this->repository->create($data->toArray());
         } catch (Throwable $exception) {
             throw new ServiceException(message: $exception->getMessage(), previous: $exception);
         }
@@ -71,7 +61,7 @@ class ReadWriteService extends QueryService implements ReadWriteServiceContract
     public function update($id, DTOInterface $data)
     {
         try {
-            return $this->readWriteRepository->update($id, $data->toArray());
+            return $this->repository->update($id, $data->toArray());
         } catch (Throwable $exception) {
             throw new ServiceException(message: $exception->getMessage(), previous: $exception);
         }
@@ -88,7 +78,7 @@ class ReadWriteService extends QueryService implements ReadWriteServiceContract
     public function softDelete($ids)
     {
         try {
-            return $this->readWriteRepository->softDelete($ids);
+            return $this->repository->softDelete($ids);
         } catch (Throwable $exception) {
             throw new ServiceException(message: $exception->getMessage(), previous: $exception);
         }
@@ -105,7 +95,7 @@ class ReadWriteService extends QueryService implements ReadWriteServiceContract
     public function permanentlyDelete($ids): bool
     {
         try {
-            return $this->readWriteRepository->permanentlyDelete($ids);
+            return $this->repository->permanentlyDelete($ids);
         } catch (Throwable $exception) {
             throw new ServiceException(message: $exception->getMessage(), previous: $exception);
         }
@@ -122,7 +112,7 @@ class ReadWriteService extends QueryService implements ReadWriteServiceContract
     public function restore($ids): bool
     {
         try {
-            return $this->readWriteRepository->restore($ids);
+            return $this->repository->restore($ids);
         } catch (Throwable $exception) {
             throw new ServiceException(message: $exception->getMessage(), previous: $exception);
         }
@@ -138,7 +128,7 @@ class ReadWriteService extends QueryService implements ReadWriteServiceContract
     public function restoreAll(): bool
     {
         try {
-            return $this->readWriteRepository->restoreAll();
+            return $this->repository->restoreAll();
         } catch (Throwable $exception) {
             throw new ServiceException(message: $exception->getMessage(), previous: $exception);
         }
@@ -154,7 +144,7 @@ class ReadWriteService extends QueryService implements ReadWriteServiceContract
     public function emptyTrash(): bool
     {
         try {
-            return $this->readWriteRepository->emptyTrash();
+            return $this->repository->emptyTrash();
         } catch (Throwable $exception) {
             throw new ServiceException(message: $exception->getMessage(), previous: $exception);
         }
@@ -170,7 +160,7 @@ class ReadWriteService extends QueryService implements ReadWriteServiceContract
     public function permanentlyDeleteAll(): bool
     {
         try {
-            return $this->readWriteRepository->permanentlyDeleteAll();
+            return $this->repository->permanentlyDeleteAll();
         } catch (Throwable $exception) {
             throw new ServiceException(message: $exception->getMessage(), previous: $exception);
         }

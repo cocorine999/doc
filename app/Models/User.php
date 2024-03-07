@@ -95,7 +95,7 @@ class User extends ModelContract implements AuthenticatableContract, Authorizabl
         'username',
         'phone_number',
         'email',
-        'address',
+        'address'
     ];
 
     /**

@@ -67,14 +67,13 @@ class UserReadWriteRepository extends EloquentReadWriteRepository
             }
             else if($data['type_of_account'] === TypeOfAccountEnum::MORAL->value)
             {
-                $this->model->userable = $this->personReadWriteRepository->create($data);
+                $this->model->userable = $this->companyReadWriteRepository->create($data);
             }
             else throw new Exception("Unknown type of account", 1);
 
             if(!$this->model->userable) throw new Exception("Error occur while creating userable", 1);
 
             $this->model = $this->model->userable->user()->create($data);
-            //$this->model = $this->model->userable->user()->create($data);
 
             $this->model->refresh();
 

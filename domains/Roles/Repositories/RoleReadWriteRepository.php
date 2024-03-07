@@ -54,7 +54,6 @@ class RoleReadWriteRepository extends EloquentReadWriteRepository
         } catch (QueryException $exception) {
             throw new QueryException(message: "Error while granting access to role.", previous: $exception);
         } catch (Throwable $exception) {
-            dd($exception);
             throw new RepositoryException(message: "Error while granting access to role.", previous: $exception);
         }
     }

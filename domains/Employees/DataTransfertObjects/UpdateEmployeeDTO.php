@@ -2,28 +2,28 @@
 
 declare(strict_types=1);
 
-namespace Domains\Users\DataTransfertObjects;
+namespace Domains\Employees\DataTransfertObjects;
 
-use App\Models\User;
+use App\Models\Employee;
 use Core\Utils\DataTransfertObjects\BaseDTO;
-use Core\Utils\Rules\PhoneNumberRule;
+
 
 /**
- * Class ***`CreateUserDTO`***
+ * Class ***`UpdateEmployeeDTO`***
  *
  * This class extends the ***`BaseDTO`*** class.
- * It represents the data transfer object for creating a new ***`User`*** model.
+ * It represents the data transfer object for updating a new ***`Employee`*** model.
  *
- * @package ***`\Domains\Users\DataTransfertObjects`***
+ * @package ***`\Domains\Employees\DataTransfertObjects`***
  */
-class CreateUserDTO extends BaseDTO
+class UpdateEmployeeDTO extends BaseDTO
 {
 
     public function __construct()
     {
         parent::__construct();
     }
-
+    
     /**
      * Get the class name of the model associated with the DTO.
      *
@@ -31,7 +31,7 @@ class CreateUserDTO extends BaseDTO
      */
     protected function getModelClass(): string
     {
-        return User::class;
+        return Employee::class;
     }
 
     /**
@@ -42,12 +42,9 @@ class CreateUserDTO extends BaseDTO
     public function rules(array $rules = []): array
     {
         $rules = array_merge([
-            'type_of_account'       => ['required', 'in:personal,moral'],
-            'username'              => ['sometimes', 'string', 'min:6', 'max:30', 'unique:users,username'],
-            'email'                 => ['sometimes', 'email', 'max:120', 'unique:users,email'],
-			"address"     		    => ["string", "sometimes"],
-            'phone_number'          => ['required', new PhoneNumberRule()],
-            'role_id'               => 'required|exists:roles,id'
+            "name"            		=> ["string", "required", 'unique:employees,name,' . $this->ignoreValues['employee'] . ',id'],
+            "user_id"         => ["sometimes",'exists:users,id'],
+            'can_be_deleted'        => ['sometimes', 'boolean', 'in:'.true.','.false],
         ], $rules);
 
         return $this->rules = parent::rules($rules);
@@ -61,8 +58,8 @@ class CreateUserDTO extends BaseDTO
     public function messages(array $messages = []): array
     {
         $default_messages = array_merge([
-            'can_be_deleted.boolean' => 'Le champ can_be_deleted doit être un booléen.',
-            'can_be_deleted.in'      => 'Le can_be_delete doit être "true" ou "false".'
+            'can_be_delete.boolean' => 'Le champ can_be_delete doit être un booléen.',
+            'can_be_delete.in'      => 'Le can_be_delete doit être "true" ou "false".'
         ], $messages);
 
         $messages = array_merge([], $default_messages);

@@ -7,18 +7,19 @@ namespace App\Models;
 use Core\Data\Eloquent\Contract\ModelContract;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 /**
- * Class ***`Poste`***
+ * Class ***`Employee`***
  *
- * This model represents the `postes` table in the database.
+ * This model represents the `unite_mesures` table in the database.
  * It extends the ModelContract class and provides access to the database table associated with the model.
  *
  * @property  string    $name;
  *
  * @package ***`\App\Models`***
  */
-class Poste extends ModelContract
+class Employee extends ModelContract
 {
     /**
      * The database connection that should be used by the model.
@@ -32,7 +33,8 @@ class Poste extends ModelContract
      *
      * @var string
      */
-    protected $table = 'postes';
+    protected $table = 'employees';
+
 
     /**
      * The attributes that are mass assignable.
@@ -40,9 +42,9 @@ class Poste extends ModelContract
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'department_id',
+        'activity','registration_number'
     ];
+    
 
     /**
      * The attributes that should be visible in arrays.
@@ -50,8 +52,20 @@ class Poste extends ModelContract
      * @var array<int, string>
      */
     protected $visible = [
-        'name'
+        'name',
+        'user_id'
     ];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'registration_number'         => 'string',
+        'activity'         => 'string',
+    ];
+    
 
     /**
      * The relationships that should always be loaded.
@@ -59,40 +73,41 @@ class Poste extends ModelContract
      * @var array<int, string>
      */
     protected $with = [
-        
-    ];
-    
-    /**
-     * The accessors to append to the model's array and JSON representation.
-     *
-     * @var array<int, string>
-     */
-    protected $appends = [
-        'departement_name'
+        'contractual'
     ];
 
     /**
-     * Get the Unit mesure of the unitTravaille.
+     * Get the profil details.
      *
-     * @return BelongsTo
+     * @return MorphTo
      */
-    public function departement(): BelongsTo
+    public function contractual(): MorphTo
     {
-        return $this->belongsTo(Departement::class, 'department_id');
+        return $this->morphTo();
     }
-
+    
     /**
      * Get the user's full name attribute.
      *
      * @return string The user's full name.
      */
-    public function getDepartementNameAttribute(): string
+    public function getUserNameAttribute(): string
     {
-        return $this->departement->name ;
+        return $this->user->name ;
     }
     
     /**
-     * Interact with the Poste's name.
+     * Get the Unit mesure of the unitTravaille.
+     *
+     * @return BelongsTo
+     */
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    /**
+     * Interact with the Employee's name.
      */
     protected function name(): Attribute
     {
@@ -101,4 +116,5 @@ class Poste extends ModelContract
             set: fn (string $value) => strtolower($value)
         );
     }
+
 }

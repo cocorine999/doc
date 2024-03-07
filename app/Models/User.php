@@ -80,10 +80,11 @@ class User extends ModelContract implements AuthenticatableContract, Authorizabl
         'userable_id',
         'account_status',
         'userable_type', 'userable_id',
+        'profilable_type', 'profilable_id',
         'email_verified', 'email_verified_at',
         'account_verified', 'account_verified_at',
         'account_activated', 'account_activated_at',
-    ];
+    ];// 
 
     /**
      * The attributes that are mass assignable.
@@ -166,6 +167,8 @@ class User extends ModelContract implements AuthenticatableContract, Authorizabl
         'username'                  => 'string',
         'userable_type'             => 'string',
         'userable_id'               => 'string',
+        'profilable_type'           => 'string',
+        'profilable_id'             => 'string',
         'phone_number'              => PhoneNumberCast::class,
         'email'                     => 'string',
         'address'                   => 'string',
@@ -230,6 +233,16 @@ class User extends ModelContract implements AuthenticatableContract, Authorizabl
      * @return MorphTo
      */
     public function userable(): MorphTo
+    {
+        return $this->morphTo();
+    }
+    
+    /**
+     * Get the profil details.
+     *
+     * @return MorphTo
+     */
+    public function profilable(): MorphTo
     {
         return $this->morphTo();
     }

@@ -19,7 +19,6 @@ use Illuminate\Http\Response;
  */
 Class JsonResponseTrait
 {
-
     /**
      * Create a JSON response.
      *

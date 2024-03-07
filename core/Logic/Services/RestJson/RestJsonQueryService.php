@@ -58,7 +58,6 @@ abstract class RestJsonQueryService implements RestJsonQueryServiceContract
         return $this->queryService;
     }
 
-
     /**
      * Get all records.
      *
@@ -70,7 +69,7 @@ abstract class RestJsonQueryService implements RestJsonQueryServiceContract
     public function all(array $columns = ['*']): \Illuminate\Http\JsonResponse
     {
         try {
-            return JsonResponseTrait::success(data: $this->queryService->all($columns));
+            return JsonResponseTrait::success(message: "", data: $this->queryService->all($columns));
         } catch (Throwable $exception) {
             throw new ServiceException(message: $exception->getMessage(), previous: $exception);
         }

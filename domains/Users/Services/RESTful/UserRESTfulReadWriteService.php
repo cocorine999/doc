@@ -4,18 +4,12 @@ declare(strict_types=1);
 
 namespace Domains\Users\Services\RESTful;
 
-use App\Models\Company;
-use App\Models\Person;
 use Core\Logic\Services\Contracts\ReadWriteServiceContract;
 use Core\Logic\Services\RestJson\RestJsonReadWriteService;
 use Core\Utils\DataTransfertObjects\DTOInterface;
-use Core\Utils\Enums\Users\TypeOfAccountEnum;
 use Core\Utils\Exceptions\QueryException;
 use Core\Utils\Exceptions\ServiceException;
 use Core\Utils\Helpers\Responses\Json\JsonResponseTrait;
-use Domains\Users\People\Services\RESTful\PersonRESTfulReadWriteService;
-use Domains\Users\Companies\Services\RESTful\Contracts\CompanyRESTfulReadWriteServiceContract;
-use Domains\Users\People\Services\RESTful\Contracts\PersonRESTfulReadWriteServiceContract;
 use Domains\Users\Services\RESTful\Contracts\UserRESTfulReadWriteServiceContract;
 use Exception;
 use Illuminate\Http\JsonResponse;

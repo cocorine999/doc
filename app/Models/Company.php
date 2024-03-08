@@ -40,14 +40,6 @@ class Company extends ModelContract
     ];
 
     /**
-     * The model's default attribute values.
-     *
-     * @var array<string, mixed>
-     */
-    protected $attributes = [
-    ];
-
-    /**
      * The attributes that should be visible in arrays.
      *
      * @var array<int, string>

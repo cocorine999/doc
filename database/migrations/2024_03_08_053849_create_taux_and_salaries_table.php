@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-use Core\Utils\Enums\TypeUniteTravailleEnum;
 use Core\Utils\Traits\Database\Migrations\CanDeleteTrait;
 use Core\Utils\Traits\Database\Migrations\HasCompositeKey;
 use Core\Utils\Traits\Database\Migrations\HasForeignKey;
@@ -42,17 +41,11 @@ class CreateTauxAndSalariesTable extends Migration
                 // Define a UUID primary key for the 'taux' table
                 $this->uuidPrimaryKey($table);
 
-                // Define the hint float column for the taux 
-                $table->decimal('hint')->comment('The hint of the taux');
-
-                //Define the rate float column for the taux
-                $table->decimal('rate')->comment('The rate of the taux');
-
-                // Define a foreign key for 'unite_travaille_id', referencing the 'unite_travailles' table
+                // Define a foreign key for 'montant_id', referencing the 'montants' table
                 $this->foreignKey(
                     table: $table,          // The table where the foreign key is being added
-                    column: 'unite_travaille_id',   // The column to which the foreign key is added ('unite_travaille_id' in this case)
-                    references: 'unite_travailles',    // The referenced table (unite_travailles) to establish the foreign key relationship
+                    column: 'montant_id',   // The column to which the foreign key is added ('montant_id' in this case)
+                    references: 'montants',    // The referenced table (montants) to establish the foreign key relationship
                     onDelete: 'cascade',    // Action to perform when the referenced record is deleted (cascade deletion)
                     nullable: true          // Specify whether the foreign key column can be nullable (true means it allows to be NULL)
                 );
@@ -64,6 +57,18 @@ class CreateTauxAndSalariesTable extends Migration
                     references: 'unite_mesures',    // The referenced table (unite_mesures) to establish the foreign key relationship
                     onDelete: 'cascade',    // Action to perform when the referenced record is deleted (cascade deletion)
                     nullable: false          // Specify whether the foreign key column can be nullable (false means it not allows to be NULL)
+                );
+
+                //Define the hint float column for the taux
+                $table->decimal('hint')->comment('The hint of the taux');
+
+                // Define a foreign key for 'unite_travaille_id', referencing the 'unite_travailles' table
+                $this->foreignKey(
+                    table: $table,          // The table where the foreign key is being added
+                    column: 'unite_travaille_id',   // The column to which the foreign key is added ('unite_travaille_id' in this case)
+                    references: 'unite_travailles',    // The referenced table (unite_travailles) to establish the foreign key relationship
+                    onDelete: 'cascade',    // Action to perform when the referenced record is deleted (cascade deletion)
+                    nullable: true          // Specify whether the foreign key column can be nullable (true means it allows to be NULL)
                 );
 
                 // Add a boolean column 'status' to the table
@@ -86,8 +91,8 @@ class CreateTauxAndSalariesTable extends Migration
                     nullable: false          // Specify whether the foreign key column can be nullable (false means it not allows NULL)
                 );
                 
-                // Create a composite index for efficient searching on the combination of hint, rate, status and can_be_delete
-                $this->compositeKeys(table: $table, keys: ['hint', 'rate', 'status', 'can_be_delete']);
+                // Create a composite index for efficient searching on the combination of montant_id, unite_travaille_id, hint, status and can_be_delete
+                $this->compositeKeys(table: $table, keys: ['montant_id', 'unite_travaille_id', 'hint', 'status', 'can_be_delete']);
 
                 // Add timestamp and soft delete columns to the table
                 $this->addTimestampsAndSoftDeletesColumns($table);
@@ -101,7 +106,7 @@ class CreateTauxAndSalariesTable extends Migration
 
             // Handle the exception (e.g., logging, notification, etc.)
             throw new \Core\Utils\Exceptions\DatabaseMigrationException(
-                message: 'Failed to migrate "taux" table: ' . $exception->getMessage(),
+                message: 'Failed to migrate "taux_and_salaries" table: ' . $exception->getMessage(),
                 previous: $exception
             );
         }
@@ -120,8 +125,8 @@ class CreateTauxAndSalariesTable extends Migration
         DB::beginTransaction();
 
         try {
-            // Drop the "taux" table if it exists
-            Schema::dropIfExists('taux');
+            // Drop the "taux_and_salaries" table if it exists
+            Schema::dropIfExists('taux_and_salaries');
 
             // Commit the transaction
             DB::commit();
@@ -131,7 +136,7 @@ class CreateTauxAndSalariesTable extends Migration
 
             // Handle the exception (e.g., logging, notification, etc.)
             throw new \Core\Utils\Exceptions\DatabaseMigrationException(
-                message: 'Failed to drop "taux" table: ' . $exception->getMessage(),
+                message: 'Failed to drop "taux_and_salaries" table: ' . $exception->getMessage(),
                 previous: $exception
             );
         }

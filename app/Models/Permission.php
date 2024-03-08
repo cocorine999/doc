@@ -53,23 +53,6 @@ class Permission extends ModelContract
     ];
 
     /**
-     * The attributes that should be treated as dates.
-     *
-     * @var array<int, string>
-     */
-    protected $dates = [
-        
-    ];
-
-    /**
-     * The model's default attribute values.
-     *
-     * @var array<string, mixed>
-     */
-    protected $attributes = [
-    ];
-
-    /**
      * The attributes that should be hidden for arrays.
      *
      * @var array<int, string>
@@ -98,23 +81,5 @@ class Permission extends ModelContract
         'slug'         => 'string',
         'key'          => 'string',
         'description'  => 'string'
-    ];
-
-    /**
-     * The accessors to append to the model's array and JSON representation.
-     *
-     * @var array<int, string>
-     */
-    protected $appends = [
-
-    ];
-
-    /**
-     * The relationships that should always be loaded.
-     *
-     * @var array<int, string>
-     */
-    protected $with = [
-
     ];
 }

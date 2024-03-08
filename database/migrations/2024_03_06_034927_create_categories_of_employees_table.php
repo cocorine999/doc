@@ -67,7 +67,7 @@ class CreateCategoriesOfEmployeesTable extends Migration
                     nullable: false          // Specify whether the foreign key column can be nullable (false means it not allows NULL)
                 );
 
-                // Create a composite index for efficient searching on the combination of name, slug, key, status and can_be_delete
+                // Create a composite index for efficient searching on the combination of name, status and can_be_delete
                 $this->compositeKeys(table: $table, keys: ['name', 'status', 'can_be_delete']);
 
                 // Add timestamp and soft delete columns to the table

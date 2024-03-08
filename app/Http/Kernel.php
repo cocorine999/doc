@@ -42,6 +42,7 @@ class Kernel extends HttpKernel
 
             \Core\Utils\Middleware\ForceJsonResponseMiddleware::class,
             'throttle:60,1',
+            \Core\Utils\Middleware\CORSMiddleware::class,
             // \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
             \Illuminate\Routing\Middleware\ThrottleRequests::class.':api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,

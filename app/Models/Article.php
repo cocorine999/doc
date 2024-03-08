@@ -21,7 +21,7 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
  */
 class Article extends ModelContract
 {
-    use HasSlug, HasPermissions;
+    use HasSlug;
 
     /**
      * The database connection that should be used by the model.

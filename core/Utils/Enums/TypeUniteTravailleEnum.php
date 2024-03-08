@@ -32,7 +32,7 @@ enum TypeUniteTravailleEnum: string implements EnumContract
     use IsEnum;
 
     /**
-     * Represents the typeunitetravaille "male".
+     * Represents the typeunitetravaille "article".
      *
      * @var string
      */

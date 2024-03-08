@@ -50,7 +50,7 @@ class CreateDepartementsTable extends Migration
                     ->comment('Record status: 
                             - TRUE: Active record or soft delete record
                             - FALSE: permanently Deleted and can be archived in another datastore'
-                        ); // Describe the meaning of the 'status' column
+                    ); // Describe the meaning of the 'status' column
 
                 // Add a boolean column 'can_be_delete' with default value false
                 $this->addCanDeleteColumn(table: $table, column_name: 'can_be_delete', can_be_delete: true);
@@ -65,7 +65,7 @@ class CreateDepartementsTable extends Migration
                 );
                 
 
-                // Create a composite index for efficient searching on the combination of name, slug, key, status and can_be_delete
+                // Create a composite index for efficient searching on the combination of name, status and can_be_delete
                 $this->compositeKeys(table: $table, keys: ['name', 'status', 'can_be_delete']);
 
                 // Add timestamp and soft delete columns to the table

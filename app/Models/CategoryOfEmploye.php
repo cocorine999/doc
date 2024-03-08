@@ -7,6 +7,7 @@ namespace App\Models;
 use Core\Data\Eloquent\Contract\ModelContract;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
  * Class ***`CategoryOfEmploye`***
@@ -54,24 +55,6 @@ class CategoryOfEmploye extends ModelContract
     ];
 
     /**
-     * The relationships that should always be loaded.
-     *
-     * @var array<int, string>
-     */
-    protected $with = [
-        
-    ];
-    
-    /**
-     * The accessors to append to the model's array and JSON representation.
-     *
-     * @var array<int, string>
-     */
-    protected $appends = [
-
-    ];
-
-    /**
      * Get the Unit mesure of the unitTravaille.
      *
      * @return BelongsTo|null
@@ -90,5 +73,20 @@ class CategoryOfEmploye extends ModelContract
             get: fn (string $value) => ucfirst($value),
             set: fn (string $value) => strtolower($value)
         );
+    }
+
+    /**
+     * Define a many-to-many relationship with the TauxAndSalary model.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function taux(): BelongsToMany
+    {
+        return $this->belongsToMany(TauxAndSalary::class, 'categorie_taux', 'category_employee_id', 'taux_id')
+                    ->withPivot('est_le_taux_de_base', 'status', 'deleted_at', 'can_be_delete')
+                    ->withTimestamps() // Enable automatic timestamps for the pivot table
+                    ->wherePivot('status', true) // Filter records where the status is true
+                    ->wherePivot('deleted_at', null) // Filter records where the deleted_at column is null
+                    ->using(CategorieTaux::class); // Specify the intermediate model for the pivot relationship
     }
 }

@@ -44,15 +44,8 @@ class Credential extends ModelContract
      */
     protected $fillable = [
         'identifier',
-        'password'
-    ];
-
-    /**
-     * The model's default attribute values.
-     *
-     * @var array<string, mixed>
-     */
-    protected $attributes = [
+        'password',
+        'user_id'
     ];
 
     /**
@@ -81,24 +74,6 @@ class Credential extends ModelContract
     protected $casts = [
         'identifier'       => 'string',
         'password'         => 'hashed',
-    ];
-
-    /**
-     * The accessors to append to the model's array and JSON representation.
-     *
-     * @var array<int, string>
-     */
-    protected $appends = [
-
-    ];
-
-    /**
-     * The relationships that should always be loaded.
-     *
-     * @var array<int, string>
-     */
-    protected $with = [
-
     ];
 
     /**

@@ -43,23 +43,6 @@ class Departement extends ModelContract
     ];
 
     /**
-     * The attributes that should be treated as dates.
-     *
-     * @var array<int, string>
-     */
-    protected $dates = [
-        
-    ];
-
-    /**
-     * The model's default attribute values.
-     *
-     * @var array<string, mixed>
-     */
-    protected $attributes = [
-    ];
-
-    /**
      * The attributes that should be visible in arrays.
      *
      * @var array<int, string>
@@ -69,12 +52,12 @@ class Departement extends ModelContract
     ];
 
     /**
-     * The accessors to append to the model's array and JSON representation.
+     * The attributes that should be cast to native types.
      *
-     * @var array<int, string>
+     * @var array<string, string>
      */
-    protected $appends = [
-
+    protected $casts = [
+        'name'       => 'string'
     ];
     
     /**

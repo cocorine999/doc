@@ -2,21 +2,22 @@
 
 declare(strict_types=1);
 
-namespace Domains\Users\DataTransfertObjects;
+namespace Domains\Employees\DataTransfertObjects;
 
-use App\Models\User;
+use App\Models\Employee;
+use Core\Utils\Rules\ExistsForAuthUserAndUUID;
 use Core\Utils\DataTransfertObjects\BaseDTO;
-use Core\Utils\Rules\PhoneNumberRule;
+
 
 /**
- * Class ***`CreateUserDTO`***
+ * Class ***`CreateEmployeeDTO`***
  *
  * This class extends the ***`BaseDTO`*** class.
- * It represents the data transfer object for creating a new ***`User`*** model.
+ * It represents the data transfer object for creating a new ***`Employee`*** model.
  *
- * @package ***`\Domains\Users\DataTransfertObjects`***
+ * @package ***`\Domains\Employees\DataTransfertObjects`***
  */
-class CreateUserDTO extends BaseDTO
+class CreateEmployeeDTO extends BaseDTO
 {
 
     public function __construct()
@@ -31,7 +32,7 @@ class CreateUserDTO extends BaseDTO
      */
     protected function getModelClass(): string
     {
-        return User::class;
+        return Employee::class;
     }
 
     /**
@@ -42,12 +43,9 @@ class CreateUserDTO extends BaseDTO
     public function rules(array $rules = []): array
     {
         $rules = array_merge([
-            'type_of_account'       => ['required', 'in:personal,moral'],
-            'username'              => ['sometimes', 'string', 'min:6', 'max:30', 'unique:users,username'],
-            'email'                 => ['sometimes', 'email', 'max:120', 'unique:users,email'],
-			"address"     		    => ["string", "sometimes"],
-            'phone_number'          => ['required', new PhoneNumberRule()],
-            'role_id'               => 'required|exists:roles,id'
+            "name"            		=> ["required", "string", 'unique:employees,name'],
+            "user_id"         => ["required", "exists:users,id"],
+            'can_be_deleted'        => ['sometimes', 'boolean', 'in:'.true.','.false],
         ], $rules);
 
         return $this->rules = parent::rules($rules);

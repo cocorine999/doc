@@ -5,42 +5,36 @@ declare(strict_types=1);
 namespace App\Models;
 
 use Core\Data\Eloquent\Contract\ModelContract;
-use Core\Data\Eloquent\ORMs\HasPermissions;
-use Core\Utils\Helpers\Sluggable\HasSlug;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 /**
- * Class ***`Role`***
+ * Class ***`Employee`***
  *
- * This model represents the `roles` table in the database.
+ * This model represents the `unite_mesures` table in the database.
  * It extends the ModelContract class and provides access to the database table associated with the model.
  *
  * @property  string    $name;
- * @property  string    $slug;
- * @property  string    $key;
- * @property  string    $description;
  *
  * @package ***`\App\Models`***
  */
-class Role extends ModelContract
+class Employee extends ModelContract
 {
-    use HasSlug, HasPermissions;
+    /**
+     * The database connection that should be used by the model.
+     *
+     * @var string
+     */
+    protected $connection = 'pgsql';
 
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'roles';
+    protected $table = 'employees';
 
-    /**
-     * The attributes that aren't mass assignable.
-     *
-     * @var array<int, string>
-     */
-    public $guarded = [
-        'slug', 'key'
-    ];
 
     /**
      * The attributes that are mass assignable.
@@ -48,20 +42,9 @@ class Role extends ModelContract
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'slug',
-        'key',
-        'description'
+        'activity','registration_number'
     ];
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array<int, string>
-     */
-    protected $hidden = [
-        'key'
-    ];
+    
 
     /**
      * The attributes that should be visible in arrays.
@@ -69,8 +52,8 @@ class Role extends ModelContract
      * @var array<int, string>
      */
     protected $visible = [
-        'name', 'slug',
-        'description'
+        'name',
+        'user_id'
     ];
 
     /**
@@ -79,11 +62,10 @@ class Role extends ModelContract
      * @var array<string, string>
      */
     protected $casts = [
-        'name'         => 'string',
-        'slug'         => 'string',
-        'key'          => 'string',
-        'description'  => 'string'
+        'registration_number'         => 'string',
+        'activity'         => 'string',
     ];
+    
 
     /**
      * The relationships that should always be loaded.
@@ -91,22 +73,41 @@ class Role extends ModelContract
      * @var array<int, string>
      */
     protected $with = [
-        'permissions'
+        'contractual'
     ];
 
     /**
-     * The "booted" method of the model.
+     * Get the profil details.
      *
-     * @return void
+     * @return MorphTo
      */
-    protected static function booted(): void
+    public function contractual(): MorphTo
     {
-        static::observe(\App\Observers\RoleObserver::class);
+        return $this->morphTo();
+    }
+    
+    /**
+     * Get the user's full name attribute.
+     *
+     * @return string The user's full name.
+     */
+    public function getUserNameAttribute(): string
+    {
+        return $this->user->name ;
+    }
+    
+    /**
+     * Get the Unit mesure of the unitTravaille.
+     *
+     * @return BelongsTo
+     */
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'user_id');
     }
 
-
     /**
-     * Interact with the role's name.
+     * Interact with the Employee's name.
      */
     protected function name(): Attribute
     {
@@ -115,4 +116,5 @@ class Role extends ModelContract
             set: fn (string $value) => strtolower($value)
         );
     }
+
 }

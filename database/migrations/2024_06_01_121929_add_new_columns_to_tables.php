@@ -117,6 +117,23 @@ class AddNewColumnsToTables extends Migration
                 }
             }
 
+            if (Schema::hasTable('contracts')) {
+                // Check if the "contract_id" column does not exist in the "contracts" table
+                if (!Schema::hasColumn('contracts', 'contract_id')) {
+                    // Modify the "contracts" table
+                    Schema::table('contracts', function (Blueprint $table) {
+                        // Define a foreign key for 'contract_id', referencing the 'contracts' table
+                        $this->foreignKey(
+                            table: $table,                // The table where the foreign key is being added
+                            column: 'contract_id',        // The column to which the foreign key is added ('category_id' in this case)
+                            references: 'contracts',    // The referenced table (contracts) to establish the foreign key relationship
+                            onDelete: 'cascade',         // Action to perform when the referenced record is deleted (cascade deletion)
+                            nullable: true              // Specify whether the foreign key column can be nullable (false means it is not allows to be NULL)
+                        );
+                    });
+                }
+            }
+
             // Commit the transaction
             DB::commit();
         } catch (\Throwable $exception) {

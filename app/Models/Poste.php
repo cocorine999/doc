@@ -7,6 +7,8 @@ namespace App\Models;
 use Core\Data\Eloquent\Contract\ModelContract;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 /**
  * Class ***`Poste`***
@@ -54,12 +56,13 @@ class Poste extends ModelContract
     ];
 
     /**
-     * The relationships that should always be loaded.
+     * The attributes that should be cast to native types.
      *
-     * @var array<int, string>
+     * @var array<string, string>
      */
-    protected $with = [
-        
+    protected $casts = [
+        'name'              => 'string',
+        'department_id'     => 'string'
     ];
     
     /**
@@ -100,5 +103,31 @@ class Poste extends ModelContract
             get: fn (string $value) => ucfirst($value),
             set: fn (string $value) => strtolower($value)
         );
+    }
+
+    /**
+     * Define a many-to-many relationship with the TauxAndSalary model.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function salaries(): BelongsToMany
+    {
+        return $this->belongsToMany(TauxAndSalary::class, 'poste_salaries', 'poste_id', 'salary_id')
+                    ->withPivot('est_le_salaire_de_base', 'status', 'deleted_at', 'can_be_delete')
+                    ->withTimestamps() // Enable automatic timestamps for the pivot table
+                    ->wherePivot('status', true) // Filter records where the status is true
+                    ->using(PosteSalary::class); // Specify the intermediate model for the pivot relationship
+    }
+
+    /**
+     * Define a one-to-one relationship with the PosteSalary model representing the base salary.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function salaryBase(): HasOne
+    {
+        return $this->hasOne(PosteSalary::class, 'poste_id')
+                    ->where('est_le_salaire_de_base', true)
+                    ->where('status', true);
     }
 }

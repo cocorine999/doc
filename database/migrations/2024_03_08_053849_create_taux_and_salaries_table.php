@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-use Core\Utils\Enums\TypeUniteTravailleEnum;
 use Core\Utils\Traits\Database\Migrations\CanDeleteTrait;
 use Core\Utils\Traits\Database\Migrations\HasCompositeKey;
 use Core\Utils\Traits\Database\Migrations\HasForeignKey;
@@ -14,13 +13,13 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * Class ***`CreateUniteTravaillesTable`***
+ * Class ***`CreateTauxAndSalariesTable`***
  *
- * A migration class for creating the "unite_travailles" table with UUID primary key and timestamps.
+ * A migration class for creating the "taux" table with UUID primary key and timestamps.
  *
- * @package ***`\Database\Migrations\CreateUniteTravaillesTable`***
+ * @package ***`\Database\Migrations\CreateTauxAndSalariesTable`***
  */
-class CreateUniteTravaillesTable extends Migration
+class CreateTauxAndSalariesTable extends Migration
 {
     use CanDeleteTrait, HasCompositeKey, HasForeignKey, HasTimestampsAndSoftDeletes, HasUuidPrimaryKey;
     
@@ -38,12 +37,18 @@ class CreateUniteTravaillesTable extends Migration
 
         try {
 
-            Schema::create('unite_travailles', function (Blueprint $table) {
-                // Define a UUID primary key for the 'unite_travailles' table
+            Schema::create('taux_and_salaries', function (Blueprint $table) {
+                // Define a UUID primary key for the 'taux' table
                 $this->uuidPrimaryKey($table);
 
-                // "type_of_unite_travaille" column with default value "article"
-                $table->enum('type_of_unite_travaille', TypeUniteTravailleEnum::values())->default(TypeUniteTravailleEnum::DEFAULT);
+                // Define a foreign key for 'montant_id', referencing the 'montants' table
+                $this->foreignKey(
+                    table: $table,          // The table where the foreign key is being added
+                    column: 'montant_id',   // The column to which the foreign key is added ('montant_id' in this case)
+                    references: 'montants',    // The referenced table (montants) to establish the foreign key relationship
+                    onDelete: 'cascade',    // Action to perform when the referenced record is deleted (cascade deletion)
+                    nullable: true          // Specify whether the foreign key column can be nullable (true means it allows to be NULL)
+                );
                 
                 // Define a foreign key for 'unite_mesure_id', referencing the 'unite_mesures' table
                 $this->foreignKey(
@@ -54,11 +59,14 @@ class CreateUniteTravaillesTable extends Migration
                     nullable: false          // Specify whether the foreign key column can be nullable (false means it not allows to be NULL)
                 );
 
-                // Define a foreign key for 'article_id', referencing the 'articles' table
+                //Define the hint float column for the taux
+                $table->decimal('hint')->comment('The hint of the taux');
+
+                // Define a foreign key for 'unite_travaille_id', referencing the 'unite_travailles' table
                 $this->foreignKey(
                     table: $table,          // The table where the foreign key is being added
-                    column: 'article_id',   // The column to which the foreign key is added ('article_id' in this case)
-                    references: 'articles',    // The referenced table (articles) to establish the foreign key relationship
+                    column: 'unite_travaille_id',   // The column to which the foreign key is added ('unite_travaille_id' in this case)
+                    references: 'unite_travailles',    // The referenced table (unite_travailles) to establish the foreign key relationship
                     onDelete: 'cascade',    // Action to perform when the referenced record is deleted (cascade deletion)
                     nullable: true          // Specify whether the foreign key column can be nullable (true means it allows to be NULL)
                 );
@@ -82,9 +90,9 @@ class CreateUniteTravaillesTable extends Migration
                     onDelete: 'cascade',    // Action to perform when the referenced record is deleted (cascade deletion)
                     nullable: false          // Specify whether the foreign key column can be nullable (false means it not allows NULL)
                 );
-
-                // Create a composite index for efficient searching on the combination of type_of_unite_travaille, 'unite_mesure_id', status and can_be_delete
-                $this->compositeKeys(table: $table, keys: ['type_of_unite_travaille', 'unite_mesure_id', 'status', 'can_be_delete']);
+                
+                // Create a composite index for efficient searching on the combination of montant_id, unite_travaille_id, hint, status and can_be_delete
+                $this->compositeKeys(table: $table, keys: ['montant_id', 'unite_travaille_id', 'hint', 'status', 'can_be_delete']);
 
                 // Add timestamp and soft delete columns to the table
                 $this->addTimestampsAndSoftDeletesColumns($table);
@@ -98,7 +106,7 @@ class CreateUniteTravaillesTable extends Migration
 
             // Handle the exception (e.g., logging, notification, etc.)
             throw new \Core\Utils\Exceptions\DatabaseMigrationException(
-                message: 'Failed to migrate "unite_travailles" table: ' . $exception->getMessage(),
+                message: 'Failed to migrate "taux_and_salaries" table: ' . $exception->getMessage(),
                 previous: $exception
             );
         }
@@ -117,8 +125,8 @@ class CreateUniteTravaillesTable extends Migration
         DB::beginTransaction();
 
         try {
-            // Drop the "unite_travailles" table if it exists
-            Schema::dropIfExists('unite_travailles');
+            // Drop the "taux_and_salaries" table if it exists
+            Schema::dropIfExists('taux_and_salaries');
 
             // Commit the transaction
             DB::commit();
@@ -128,7 +136,7 @@ class CreateUniteTravaillesTable extends Migration
 
             // Handle the exception (e.g., logging, notification, etc.)
             throw new \Core\Utils\Exceptions\DatabaseMigrationException(
-                message: 'Failed to drop "unite_travailles" table: ' . $exception->getMessage(),
+                message: 'Failed to drop "taux_and_salaries" table: ' . $exception->getMessage(),
                 previous: $exception
             );
         }

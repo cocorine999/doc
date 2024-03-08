@@ -6,18 +6,22 @@ namespace App\Models;
 
 use Core\Data\Eloquent\Contract\ModelContract;
 use Core\Utils\Enums\TypeUniteTravailleEnum;
-use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
- * Class ***`UniteTravaille`***
+ * Class UniteTravaille
  *
  * This model represents the `unite_travailles` table in the database.
  * It extends the ModelContract class and provides access to the database table associated with the model.
  *
- * @property  string    $name;
+ * @property TypeUniteTravailleEnum     $type_of_unite_travaille - The type of unite travaille, using the `TypeUniteTravailleEnum` enumeration.
+ * @property string                     $unite_mesure_id         - The ID of the associated unit of measure.
+ * @property string|null                $article_id              - The ID of the associated article (nullable).
+ * @property string                     $unite_mesure_symbol     - Accessor for the symbol of the associated unit of measure.
  *
- * @package ***`\App\Models`***
+ * @package \App\Models
  */
 class UniteTravaille extends ModelContract
 {
@@ -41,12 +45,9 @@ class UniteTravaille extends ModelContract
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'hint',
-        'rate',
+        'type_of_unite_travaille',
         'unite_mesure_id',
-        'article_id',
-        'type_of_unite_travaille'
+        'article_id'
     ];
 
     /**
@@ -55,7 +56,6 @@ class UniteTravaille extends ModelContract
      * @var array<int, string>
      */
     protected $visible = [
-        'name', 'hint','rate',
         'type_of_unite_travaille',
     ];
 
@@ -65,21 +65,9 @@ class UniteTravaille extends ModelContract
      * @var array<string, string>
      */
     protected $casts = [
-        'name'                      => 'string',
-        'hint'                      => 'decimal:2',
-        'rate'                      => 'decimal:2',
+        'type_of_unite_travaille'   => TypeUniteTravailleEnum::class,
         'unite_mesure_id'           => 'string',
         'article_id'                => 'string',
-        'type_of_unite_travaille'   => TypeUniteTravailleEnum::class,
-    ];
-
-    /**
-     * The relationships that should always be loaded.
-     *
-     * @var array<int, string>
-     */
-    protected $with = [
-        
     ];
     
     /**
@@ -122,19 +110,32 @@ class UniteTravaille extends ModelContract
     }
 
     /**
-     * Interact with the UniteTravaille's name.
+     * Define a many-to-many relationship with the Montant model.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    protected function name(): Attribute
+    public function montants(): BelongsToMany
     {
-        return Attribute::make(
-            get: function (string|null $value) {
-                return ucfirst($value);
-                if($this->type_of_unite_travaille->value === 'article'){
-                    return ucfirst($this->article->name);
-                }
-                else return ucfirst($value);
-            },
-            set: fn (string $value) => strtolower($value)
-        );
+        return $this->belongsToMany(Montant::class, 'taux_and_salaries', 'unite_travaille_id', 'montant_id')
+                    ->as('taux') // Set the alias for the pivot relationship
+                    ->withPivot('hint', 'unite_mesure_id', 'status', 'deleted_at', 'can_be_delete')
+                    ->withTimestamps() // Enable automatic timestamps for the pivot table
+                    ->wherePivot('status', true) // Filter records where the status is true
+                    ->wherePivot('deleted_at', null) // Filter records where the deleted_at column is null
+                    ->using(TauxAndSalary::class); // Specify the intermediate model for the pivot relationship
     }
+
+    /**
+     * Define a one-to-many relationship with the TauxAndSalary model, representing the rates associated with this work unit.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function taux(): HasMany
+    {
+        return $this->hasMany(TauxAndSalary::class, 'unite_travaille_id')
+                    ->where('status', true) // Filter rates with active status
+                    ->whereNull('deleted_at') // Exclude deleted rates
+                    ->latest(); // Order by the latest created_at timestamp
+    }
+
 }

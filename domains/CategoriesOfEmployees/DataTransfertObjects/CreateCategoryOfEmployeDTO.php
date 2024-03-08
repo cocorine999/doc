@@ -43,7 +43,6 @@ class CreateCategoryOfEmployeDTO extends BaseDTO
     {
         $rules = array_merge([
             "name"            	  => ["required", "string", "unique:categories_of_employees,name"],
-            "department_id"       => ["sometimes", "nullable","exists:departements,id"],
             "category_id"         => ["sometimes","exists:categories_of_employees,id"],
             "can_be_deleted"        => ["sometimes", "boolean", "in:".true.",".false],
         ], $rules);

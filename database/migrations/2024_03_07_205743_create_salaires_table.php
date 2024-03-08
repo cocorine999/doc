@@ -62,6 +62,14 @@ class CreateSalairesTable extends Migration
                     nullable: false          // Specify whether the foreign key column can be nullable (false means it not allows to be NULL)
                 );
     
+                // Define a foreign key for 'poste_salarie_id', referencing the 'poste_salaries' table
+                $this->foreignKey(
+                    table: $table,          // The table where the foreign key is being added
+                    column: 'poste_salarie_id',   // The column to which the foreign key is added ('poste_salarie_id' in this case)
+                    references: 'poste_salaries',    // The referenced table (poste_salaries) to establish the foreign key relationship
+                    onDelete: 'cascade',    // Action to perform when the referenced record is deleted (cascade deletion)
+                    nullable: true          // Specify whether the foreign key column can be nullable (false means it not allows to be NULL)
+                );
                 
                 // Add a boolean column 'status' to the table
                 $table->boolean('status')

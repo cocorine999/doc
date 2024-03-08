@@ -66,6 +66,15 @@ class CreateNonContractuelCategoriesTable extends Migration
                     onDelete: 'cascade',    // Action to perform when the referenced record is deleted (cascade deletion)
                     nullable: false          // Specify whether the foreign key column can be nullable (false means it not allows NULL)
                 );
+                
+                // Define a foreign key for 'categorie_taux', pointing to the 'categorie_taux' table
+                $this->foreignKey(
+                    table: $table,          // The table where the foreign key is being added
+                    column: 'categorie_taux_id',   // The column to which the foreign key is added ('categorie_taux_id' in this case)
+                    references: 'categorie_taux',    // The referenced table (categorie_taux) to establish the foreign key relationship
+                    onDelete: 'cascade',    // Action to perform when the referenced record is deleted (cascade deletion)
+                    nullable: true          // Specify whether the foreign key column can be nullable (false means it not allows NULL)
+                );
     
                 // Add a boolean column 'status' to the table
                 $table->boolean('status')

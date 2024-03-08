@@ -14,13 +14,13 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * Class ***`CreateLigneEcrituresComptableTable`***
+ * Class ***`CreateLignesEcritureComptableTable`***
  *
  * A migration class for creating the "lignes_ecriture_comptable" table with UUID primary key and timestamps.
  *
- * @package ***`\Database\Migrations\CreateLigneEcrituresComptableTable`***
+ * @package ***`\Database\Migrations\CreateLignesEcritureComptableTable`***
  */
-class CreateLigneEcrituresComptableTable extends Migration
+class CreateLignesEcritureComptableTable extends Migration
 {
     use CanDeleteTrait, HasCompositeKey, HasForeignKey, HasTimestampsAndSoftDeletes, HasUuidPrimaryKey;
     

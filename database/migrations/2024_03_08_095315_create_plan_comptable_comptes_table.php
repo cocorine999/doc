@@ -41,20 +41,20 @@ class CreatePlanComptableComptesTable extends Migration
                 // Define a UUID primary key for the 'plan_comptable_comptes' table
                 $this->uuidPrimaryKey($table);
     
-                // Define a foreign key for 'classe_id', referencing the 'classes' table
+                // Define a foreign key for 'classe_id', referencing the 'classes_de_compte' table
                 $this->foreignKey(
                         table: $table,          // The table where the foreign key is being added
                         column: 'classe_id',   // The column to which the foreign key is added ('classe_id' in this case)
-                        references: 'classes',    // The referenced table (classes) to establish the foreign key relationship
+                        references: 'classes_de_compte',    // The referenced table (classes_de_compte) to establish the foreign key relationship
                         onDelete: 'cascade',    // Action to perform when the referenced record is deleted (cascade deletion)
                         nullable: true          // Specify whether the foreign key column can be nullable (true means it allows to be NULL)
                     );
                 
-                // Define a foreign key for 'plan_comptable_id', referencing the 'plan_comptables' table
+                // Define a foreign key for 'plan_comptable_id', referencing the 'plans_comptable' table
                 $this->foreignKey(
                         table: $table,          // The table where the foreign key is being added
                         column: 'plan_comptable_id',   // The column to which the foreign key is added ('plan_comptable_id' in this case)
-                        references: 'plan_comptables',    // The referenced table (plan_comptables) to establish the foreign key relationship
+                        references: 'plans_comptable',    // The referenced table (plans_comptable) to establish the foreign key relationship
                         onDelete: 'cascade',    // Action to perform when the referenced record is deleted (cascade deletion)
                         nullable: false          // Specify whether the foreign key column can be nullable (false means it not allows to be NULL)
                     );

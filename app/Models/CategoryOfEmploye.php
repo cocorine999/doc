@@ -41,7 +41,6 @@ class CategoryOfEmploye extends ModelContract
      */
     protected $fillable = [
         'name',
-        'department_id',
         'category_id',
     ];
 
@@ -69,18 +68,8 @@ class CategoryOfEmploye extends ModelContract
      * @var array<int, string>
      */
     protected $appends = [
-        //'departement_name'
-    ];
 
-    /**
-     * Get the Unit mesure of the unitTravaille.
-     *
-     * @return BelongsTo|null
-     */
-    public function departement(): ?BelongsTo
-    {
-        return $this->belongsTo(Departement::class, 'department_id');
-    }
+    ];
 
     /**
      * Get the Unit mesure of the unitTravaille.
@@ -92,15 +81,6 @@ class CategoryOfEmploye extends ModelContract
         return $this->belongsTo(CategoryOfEmploye::class, 'category_id');
     }
 
-    /**
-     * Get the user's full name attribute.
-     *
-     * @return string The user's full name.
-     */
-    public function getDepartementNameAttribute(): string
-    {
-        return $this->departement->name ;
-    }
     /**
      * Interact with the CategoryOfEmploye's name.
      */

@@ -43,8 +43,6 @@ class UpdateCategoryOfEmployeDTO extends BaseDTO
     {
         $rules = array_merge([
             "name"            	  => ["string", "required", 'unique:categories_of_employees,name,' . $this->ignoreValues['categories_of_employee'] . ',id'],
-            "department_id"       => ["sometimes",'exists:departements,id'],
-            //"category_id"         => ["sometimes",'exists:categories_of_employees,id'],
             'can_be_deleted'      => ['sometimes', 'boolean', 'in:'.true.','.false],
         ], $rules);
 

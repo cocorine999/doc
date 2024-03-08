@@ -8,7 +8,7 @@ use Core\Utils\Enums\Contract\EnumContract;
 use Core\Utils\Traits\IsEnum;
 
 /**
- * Class ***`TypeContratEnum`***
+ * Class ***`StatusExerciceEnum`***
  *
  * This class represents the type that typecontrat can have
  *
@@ -27,51 +27,37 @@ use Core\Utils\Traits\IsEnum;
  * 
  * @package ***`\Core\Utils\Enums\Users`***
  */
-enum TypeContratEnum: string implements EnumContract
+enum StatusExerciceEnum: string implements EnumContract
 {
     use IsEnum;
 
     /**
-     * Represents the typecontrat "cdd".
+     * Represents the typecontrat "ouvert".
      *
      * @var string
      */
-    case CDD = 'cdd';
+    case OPEN = 'ouvert';
 
     /**
-     * Represents the typecontrat "cdi".
+     * Represents the typecontrat "fermer".
      *
      * @var string
      */
-    case CDI = 'cdi';
-
-    /**
-     * Represents the typecontrat "alternance".
-     *
-     * @var string
-     */
-    case ALTERNANCE = 'alternance';
-
-    /**
-     * Represents the typecontrat "ctt".
-     *
-     * @var string
-     */
-    case CTT = 'ctt';
+    case CLOSE = 'fermer';
      
     /**
      * The default typecontrat value.
      * 
      * @return string
      */
-    public const DEFAULT          = self::CDD->value; //self::CDD;
+    public const DEFAULT          = self::OPEN->value; //self::OPEN;
     
     /**
      * The fallback typecontrat value.
      * 
      * @return string
      */
-    public const FALLBACK         = self::CDD->value; //self::EN_SERVICE;
+    public const FALLBACK         = self::OPEN->value; //self::EN_SERVICE;
 
     /**
      * Get the labels for the typecontrat.
@@ -81,10 +67,8 @@ enum TypeContratEnum: string implements EnumContract
     public static function labels(): array
     {
         return [
-            self::CDD->value                => 'en_cours',
-            self::CDI->value                => 'cdi',
-            self::ALTERNANCE->value         => 'alternance',
-            self::CTT->value                => 'ctt',
+            self::OPEN->value                => 'Exercice en cours',
+            self::CLOSE->value               => 'Exercice cloturer'
 
         ];
     }
@@ -97,10 +81,8 @@ enum TypeContratEnum: string implements EnumContract
     public static function descriptions(): array
     {
         return [
-            self::CDD->value            => 'Represents the "cdi".',
-            self::CDI->value            => 'Represents the "cdd".',
-            self::ALTERNANCE->value     => 'Represents the "alternance".',
-            self::CTT->value            => 'Represents the "ctt".',
+            self::OPEN->value            => 'Exercice est toujours ouvert et en cours',
+            self::CLOSE->value           => 'Exercice est cloturer donc fermer.'
         ];
         
     }

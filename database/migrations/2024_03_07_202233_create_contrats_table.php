@@ -121,8 +121,8 @@ class CreateContractsTable extends Migration
                     nullable: false          // Specify whether the foreign key column can be nullable (false means it not allows NULL)
                 );
                 
-                // Create a composite index for efficient searching on the combination of name, slug, key, status and can_be_delete
-                $this->compositeKeys(table: $table, keys: ['reference', 'status', 'can_be_delete']);
+                // Create a composite index for efficient searching on the combination of type_contract, slug, key, status and can_be_delete
+                $this->compositeKeys(table: $table, keys: ['reference', 'type_contract', 'status', 'can_be_delete']);
 
                 // Add timestamp and soft delete columns to the table
                 $this->addTimestampsAndSoftDeletesColumns($table);

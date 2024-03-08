@@ -2,9 +2,7 @@
 
 declare(strict_types=1);
 
-use Core\Utils\Enums\StatutEmployeeEnum;
-use Core\Utils\Enums\TypeEmployeeEnum;
-use Core\Utils\Enums\TypeUniteTravailleEnum;
+use Core\Utils\Enums\TypeCompteEnum;
 use Core\Utils\Traits\Database\Migrations\CanDeleteTrait;
 use Core\Utils\Traits\Database\Migrations\HasCompositeKey;
 use Core\Utils\Traits\Database\Migrations\HasForeignKey;
@@ -16,13 +14,13 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * Class ***`CreateEmployeesTable`***
+ * Class ***`CreateJournauxTable`***
  *
- * A migration class for creating the "employees" table with UUID primary key and timestamps.
+ * A migration class for creating the "journaux" table with UUID primary key and timestamps.
  *
- * @package ***`\Database\Migrations\CreateEmployeesTable`***
+ * @package ***`\Database\Migrations\CreateJournauxTable`***
  */
-class CreateEmployeesTable extends Migration
+class CreateJournauxTable extends Migration
 {
     use CanDeleteTrait, HasCompositeKey, HasForeignKey, HasTimestampsAndSoftDeletes, HasUuidPrimaryKey;
     
@@ -40,18 +38,27 @@ class CreateEmployeesTable extends Migration
 
         try {
 
-            Schema::create('employees', function (Blueprint $table) {
-                // Define a UUID primary key for the 'employees' table
+            Schema::create('journaux', function (Blueprint $table) {
+                // Define a UUID primary key for the 'journaux' table
                 $this->uuidPrimaryKey($table);
+
+                // Define the decimal column 'total' for storing the monetary amount with 8 digits, 2 of which are decimal places
+                $table->decimal('total', 12, 2)->comment('');
+
+                // Define the decimal column 'total_debit' for storing the monetary amount with 8 digits, 2 of which are decimal places
+                $table->decimal('total_debit', 12, 2)->comment('');
                 
-                // Define a unique string column for the employees matricule
-                $table->string('matricule')->unique()->comment('The unique matricule of the employees');
-
-                // Define if the employees type
-                $table->enum('type_employee', TypeEmployeeEnum::values())->default(TypeEmployeeEnum::DEFAULT);
-
-                // Define if the employees statut
-                $table->enum('statut_employee', StatutEmployeeEnum::values())->default(StatutEmployeeEnum::DEFAULT);
+                // Define the decimal column 'total_credit' for storing the monetary amount with 8 digits, 2 of which are decimal places
+                $table->decimal('total_credit', 12, 2)->comment('');         
+                
+                // Define a foreign key for 'exercice_id', referencing the 'exercices_comptable' table
+                $this->foreignKey(
+                    table: $table,          // The table where the foreign key is being added
+                    column: 'exercice_id',   // The column to which the foreign key is added ('exercice_id' in this case)
+                    references: 'exercices_comptable',    // The referenced table (exercices_comptable) to establish the foreign key relationship
+                    onDelete: 'cascade',    // Action to perform when the referenced record is deleted (cascade deletion)
+                    nullable: false          // Specify whether the foreign key column can be nullable (false means it not allows to be NULL)
+                );
 
                 // Add a boolean column 'status' to the table
                 $table->boolean('status')
@@ -59,7 +66,7 @@ class CreateEmployeesTable extends Migration
                     ->comment('Record status: 
                             - TRUE: Active record or soft delete record
                             - FALSE: permanently Deleted and can be archived in another datastore'
-                        ); // Describe the meaning of the 'status' column
+                    ); // Describe the meaning of the 'status' column
 
                 // Add a boolean column 'can_be_delete' with default value false
                 $this->addCanDeleteColumn(table: $table, column_name: 'can_be_delete', can_be_delete: true);
@@ -73,8 +80,9 @@ class CreateEmployeesTable extends Migration
                     nullable: false          // Specify whether the foreign key column can be nullable (false means it not allows NULL)
                 );
                 
-                // Create a composite index for efficient searching on the combination of name, slug, key, status and can_be_delete
-                $this->compositeKeys(table: $table, keys: ['name', 'status', 'can_be_delete']);
+
+                // Create a composite index for efficient searching on the combination of total, total_debit, total_credit, status and can_be_delete
+                $this->compositeKeys(table: $table, keys: ['total', 'total_debit', 'total_credit', 'status', 'can_be_delete']);
 
                 // Add timestamp and soft delete columns to the table
                 $this->addTimestampsAndSoftDeletesColumns($table);
@@ -88,7 +96,7 @@ class CreateEmployeesTable extends Migration
 
             // Handle the exception (e.g., logging, notification, etc.)
             throw new \Core\Utils\Exceptions\DatabaseMigrationException(
-                message: 'Failed to migrate "employees" table: ' . $exception->getMessage(),
+                message: 'Failed to migrate "journaux" table: ' . $exception->getMessage(),
                 previous: $exception
             );
         }
@@ -107,8 +115,8 @@ class CreateEmployeesTable extends Migration
         DB::beginTransaction();
 
         try {
-            // Drop the "employees" table if it exists
-            Schema::dropIfExists('employees');
+            // Drop the "journaux" table if it exists
+            Schema::dropIfExists('journaux');
 
             // Commit the transaction
             DB::commit();
@@ -118,7 +126,7 @@ class CreateEmployeesTable extends Migration
 
             // Handle the exception (e.g., logging, notification, etc.)
             throw new \Core\Utils\Exceptions\DatabaseMigrationException(
-                message: 'Failed to drop "employees" table: ' . $exception->getMessage(),
+                message: 'Failed to drop "journaux" table: ' . $exception->getMessage(),
                 previous: $exception
             );
         }

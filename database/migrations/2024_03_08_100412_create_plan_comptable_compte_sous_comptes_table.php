@@ -2,9 +2,6 @@
 
 declare(strict_types=1);
 
-use Core\Utils\Enums\StatutEmployeeEnum;
-use Core\Utils\Enums\TypeEmployeeEnum;
-use Core\Utils\Enums\TypeUniteTravailleEnum;
 use Core\Utils\Traits\Database\Migrations\CanDeleteTrait;
 use Core\Utils\Traits\Database\Migrations\HasCompositeKey;
 use Core\Utils\Traits\Database\Migrations\HasForeignKey;
@@ -16,13 +13,13 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * Class ***`CreateEmployeeNonContractuelsTable`***
+ * Class ***`CreatePlanComptableCompteSousComptesTable`***
  *
- * A migration class for creating the "employee_non_contractuels" table with UUID primary key and timestamps.
+ * A migration class for creating the "plan_comptable_compte_sous_comptes" table with UUID primary key and timestamps.
  *
- * @package ***`\Database\Migrations\CreateEmployeeNonContractuelsTable`***
+ * @package ***`\Database\Migrations\CreatePlanComptableCompteSousComptesTable`***
  */
-class CreateEmployeeNonContractuelsTable extends Migration
+class CreatePlanComptableCompteSousComptesTable extends Migration
 {
     use CanDeleteTrait, HasCompositeKey, HasForeignKey, HasTimestampsAndSoftDeletes, HasUuidPrimaryKey;
     
@@ -40,20 +37,26 @@ class CreateEmployeeNonContractuelsTable extends Migration
 
         try {
 
-            Schema::create('employee_non_contractuels', function (Blueprint $table) {
-                // Define a UUID primary key for the 'employee_non_contractuels' table
+            Schema::create('plan_comptable_compte_sous_comptes', function (Blueprint $table) {
+                // Define a UUID primary key for the 'plan_comptable_compte_sous_comptes' table
                 $this->uuidPrimaryKey($table);
 
-                //Define if the employee is convert to a contractual
-                $table->boolean('est_convertir')->default(false)->comment('The conversion of the employee to a contractual');
-                
-                // Define a foreign key for 'categories_of_employees', pointing to the 'categories_of_employees' table
+                // Define a foreign key for 'plan_comptable_compte_id', referencing the 'plan_comptable_comptes' table
+                $this->foreignKey(
+                    table: $table,         // The table where the foreign key is being added
+                    column: 'plan_comptable_compte_id',   // The column to which the foreign key is added ('plan_comptable_compte_id' in this case)
+                    references: 'plan_comptable_comptes', // The referenced table (plan_comptable_comptes) to establish the foreign key relationship
+                    onDelete: 'cascade',   // Action to perform when the referenced record is deleted (cascade deletion)
+                    nullable: false        // Specify whether the foreign key column can be nullable (false means it not allows to be NULL)
+                );
+    
+                // Define a foreign key for 'sous_compte_id', referencing the 'sous_comptes' table
                 $this->foreignKey(
                     table: $table,          // The table where the foreign key is being added
-                    column: 'categories_of_employee_id',   // The column to which the foreign key is added ('categories_of_employee_id' in this case)
-                    references: 'categories_of_employees',    // The referenced table (categories_of_employees) to establish the foreign key relationship
+                    column: 'sous_compte_id',   // The column to which the foreign key is added ('sous_compte_id' in this case)
+                    references: 'sous_comptes',    // The referenced table (sous_comptes) to establish the foreign key relationship
                     onDelete: 'cascade',    // Action to perform when the referenced record is deleted (cascade deletion)
-                    nullable: false          // Specify whether the foreign key column can be nullable (false means it not allows NULL)
+                    nullable: false          // Specify whether the foreign key column can be nullable (true means it allows to be NULL)
                 );
 
                 // Add a boolean column 'status' to the table
@@ -76,8 +79,8 @@ class CreateEmployeeNonContractuelsTable extends Migration
                     nullable: false          // Specify whether the foreign key column can be nullable (false means it not allows NULL)
                 );
                 
-                // Create a composite index for efficient searching on the combination of est_convertir, slug, key, status and can_be_delete
-                $this->compositeKeys(table: $table, keys: ['est_convertir', 'status', 'can_be_delete']);
+                // Create a composite index for efficient searching on the combination of status and can_be_delete
+                $this->compositeKeys(table: $table, keys: ['status', 'can_be_delete']);
 
                 // Add timestamp and soft delete columns to the table
                 $this->addTimestampsAndSoftDeletesColumns($table);
@@ -91,7 +94,7 @@ class CreateEmployeeNonContractuelsTable extends Migration
 
             // Handle the exception (e.g., logging, notification, etc.)
             throw new \Core\Utils\Exceptions\DatabaseMigrationException(
-                message: 'Failed to migrate "employee_non_contractuels" table: ' . $exception->getMessage(),
+                message: 'Failed to migrate "plan_comptable_compte_sous_comptes" table: ' . $exception->getMessage(),
                 previous: $exception
             );
         }
@@ -110,8 +113,8 @@ class CreateEmployeeNonContractuelsTable extends Migration
         DB::beginTransaction();
 
         try {
-            // Drop the "employee_non_contractuels" table if it exists
-            Schema::dropIfExists('employee_non_contractuels');
+            // Drop the "plan_comptable_compte_sous_comptes" table if it exists
+            Schema::dropIfExists('plan_comptable_compte_sous_comptes');
 
             // Commit the transaction
             DB::commit();
@@ -121,7 +124,7 @@ class CreateEmployeeNonContractuelsTable extends Migration
 
             // Handle the exception (e.g., logging, notification, etc.)
             throw new \Core\Utils\Exceptions\DatabaseMigrationException(
-                message: 'Failed to drop "employee_non_contractuels" table: ' . $exception->getMessage(),
+                message: 'Failed to drop "plan_comptable_compte_sous_comptes" table: ' . $exception->getMessage(),
                 previous: $exception
             );
         }

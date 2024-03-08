@@ -16,13 +16,13 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * Class ***`CreateEmployeeNonContractuelsTable`***
+ * Class ***`CreateEmployeesTable`***
  *
- * A migration class for creating the "employee_non_contractuels" table with UUID primary key and timestamps.
+ * A migration class for creating the "employees" table with UUID primary key and timestamps.
  *
- * @package ***`\Database\Migrations\CreateEmployeeNonContractuelsTable`***
+ * @package ***`\Database\Migrations\CreateEmployeesTable`***
  */
-class CreateEmployeeNonContractuelsTable extends Migration
+class CreateEmployeesTable extends Migration
 {
     use CanDeleteTrait, HasCompositeKey, HasForeignKey, HasTimestampsAndSoftDeletes, HasUuidPrimaryKey;
     
@@ -40,21 +40,18 @@ class CreateEmployeeNonContractuelsTable extends Migration
 
         try {
 
-            Schema::create('employee_non_contractuels', function (Blueprint $table) {
-                // Define a UUID primary key for the 'employee_non_contractuels' table
+            Schema::create('employees', function (Blueprint $table) {
+                // Define a UUID primary key for the 'employees' table
                 $this->uuidPrimaryKey($table);
-
-                //Define if the employee is convert to a contractual
-                $table->boolean('est_convertir')->default(false)->comment('The conversion of the employee to a contractual');
                 
-                // Define a foreign key for 'categories_of_employees', pointing to the 'categories_of_employees' table
-                $this->foreignKey(
-                    table: $table,          // The table where the foreign key is being added
-                    column: 'categories_of_employee_id',   // The column to which the foreign key is added ('categories_of_employee_id' in this case)
-                    references: 'categories_of_employees',    // The referenced table (categories_of_employees) to establish the foreign key relationship
-                    onDelete: 'cascade',    // Action to perform when the referenced record is deleted (cascade deletion)
-                    nullable: false          // Specify whether the foreign key column can be nullable (false means it not allows NULL)
-                );
+                // Define a unique string column for the employees matricule
+                $table->string('matricule')->unique()->comment('The unique matricule of the employees');
+
+                // Define if the employees type
+                $table->enum('type_employee', TypeEmployeeEnum::values())->default(TypeEmployeeEnum::DEFAULT);
+
+                // Define if the employees statut
+                $table->enum('statut_employee', StatutEmployeeEnum::values())->default(StatutEmployeeEnum::DEFAULT);
 
                 // Add a boolean column 'status' to the table
                 $table->boolean('status')
@@ -76,8 +73,8 @@ class CreateEmployeeNonContractuelsTable extends Migration
                     nullable: false          // Specify whether the foreign key column can be nullable (false means it not allows NULL)
                 );
                 
-                // Create a composite index for efficient searching on the combination of est_convertir, slug, key, status and can_be_delete
-                $this->compositeKeys(table: $table, keys: ['est_convertir', 'status', 'can_be_delete']);
+                // Create a composite index for efficient searching on the combination of name, slug, key, status and can_be_delete
+                $this->compositeKeys(table: $table, keys: ['matricule', 'type_employee', 'statut_employee', 'status', 'can_be_delete']);
 
                 // Add timestamp and soft delete columns to the table
                 $this->addTimestampsAndSoftDeletesColumns($table);
@@ -91,7 +88,7 @@ class CreateEmployeeNonContractuelsTable extends Migration
 
             // Handle the exception (e.g., logging, notification, etc.)
             throw new \Core\Utils\Exceptions\DatabaseMigrationException(
-                message: 'Failed to migrate "employee_non_contractuels" table: ' . $exception->getMessage(),
+                message: 'Failed to migrate "employees" table: ' . $exception->getMessage(),
                 previous: $exception
             );
         }
@@ -110,8 +107,8 @@ class CreateEmployeeNonContractuelsTable extends Migration
         DB::beginTransaction();
 
         try {
-            // Drop the "employee_non_contractuels" table if it exists
-            Schema::dropIfExists('employee_non_contractuels');
+            // Drop the "employees" table if it exists
+            Schema::dropIfExists('employees');
 
             // Commit the transaction
             DB::commit();
@@ -121,7 +118,7 @@ class CreateEmployeeNonContractuelsTable extends Migration
 
             // Handle the exception (e.g., logging, notification, etc.)
             throw new \Core\Utils\Exceptions\DatabaseMigrationException(
-                message: 'Failed to drop "employee_non_contractuels" table: ' . $exception->getMessage(),
+                message: 'Failed to drop "employees" table: ' . $exception->getMessage(),
                 previous: $exception
             );
         }

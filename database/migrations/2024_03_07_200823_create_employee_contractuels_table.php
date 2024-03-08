@@ -2,9 +2,6 @@
 
 declare(strict_types=1);
 
-use Core\Utils\Enums\StatutEmployeeEnum;
-use Core\Utils\Enums\TypeEmployeeEnum;
-use Core\Utils\Enums\TypeUniteTravailleEnum;
 use Core\Utils\Traits\Database\Migrations\CanDeleteTrait;
 use Core\Utils\Traits\Database\Migrations\HasCompositeKey;
 use Core\Utils\Traits\Database\Migrations\HasForeignKey;
@@ -66,7 +63,7 @@ class CreateEmployeeContractuelsTable extends Migration
                 );
                 
                 // Create a composite index for efficient searching on the combination of name, slug, key, status and can_be_delete
-                $this->compositeKeys(table: $table, keys: ['name', 'status', 'can_be_delete']);
+                $this->compositeKeys(table: $table, keys: ['status', 'can_be_delete']);
 
                 // Add timestamp and soft delete columns to the table
                 $this->addTimestampsAndSoftDeletesColumns($table);

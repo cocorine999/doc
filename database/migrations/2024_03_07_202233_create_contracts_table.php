@@ -3,10 +3,7 @@
 declare(strict_types=1);
 
 use Core\Utils\Enums\StatutContratEnum;
-use Core\Utils\Enums\StatutEmployeeEnum;
 use Core\Utils\Enums\TypeContratEnum;
-use Core\Utils\Enums\TypeEmployeeEnum;
-use Core\Utils\Enums\TypeUniteTravailleEnum;
 use Core\Utils\Traits\Database\Migrations\CanDeleteTrait;
 use Core\Utils\Traits\Database\Migrations\HasCompositeKey;
 use Core\Utils\Traits\Database\Migrations\HasForeignKey;
@@ -121,9 +118,9 @@ class CreateContractsTable extends Migration
                     nullable: false          // Specify whether the foreign key column can be nullable (false means it not allows NULL)
                 );
                 
-                // Create a composite index for efficient searching on the combination of type_contract, slug, key, status and can_be_delete
-                $this->compositeKeys(table: $table, keys: ['reference', 'type_contract', 'status', 'can_be_delete']);
-
+                // Create a composite index for efficient searching on the combination of reference, type_contract, contract_status, status and can_be_delete
+                $this->compositeKeys(table: $table, keys: ['reference', 'type_contract', 'contract_status', 'status', 'can_be_delete']);
+                
                 // Add timestamp and soft delete columns to the table
                 $this->addTimestampsAndSoftDeletesColumns($table);
             });

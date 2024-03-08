@@ -2,11 +2,6 @@
 
 declare(strict_types=1);
 
-use Core\Utils\Enums\StatutContratEnum;
-use Core\Utils\Enums\StatutEmployeeEnum;
-use Core\Utils\Enums\TypeContratEnum;
-use Core\Utils\Enums\TypeEmployeeEnum;
-use Core\Utils\Enums\TypeUniteTravailleEnum;
 use Core\Utils\Traits\Database\Migrations\CanDeleteTrait;
 use Core\Utils\Traits\Database\Migrations\HasCompositeKey;
 use Core\Utils\Traits\Database\Migrations\HasForeignKey;
@@ -67,6 +62,14 @@ class CreateSalairesTable extends Migration
                     nullable: false          // Specify whether the foreign key column can be nullable (false means it not allows to be NULL)
                 );
     
+                // Define a foreign key for 'poste_salarie_id', referencing the 'poste_salaries' table
+                $this->foreignKey(
+                    table: $table,          // The table where the foreign key is being added
+                    column: 'poste_salarie_id',   // The column to which the foreign key is added ('poste_salarie_id' in this case)
+                    references: 'poste_salaries',    // The referenced table (poste_salaries) to establish the foreign key relationship
+                    onDelete: 'cascade',    // Action to perform when the referenced record is deleted (cascade deletion)
+                    nullable: true          // Specify whether the foreign key column can be nullable (false means it not allows to be NULL)
+                );
                 
                 // Add a boolean column 'status' to the table
                 $table->boolean('status')
@@ -89,7 +92,7 @@ class CreateSalairesTable extends Migration
                 );
                 
                 // Create a composite index for efficient searching on the combination of name, slug, key, status and can_be_delete
-                $this->compositeKeys(table: $table, keys: ['reference', 'status', 'can_be_delete']);
+                $this->compositeKeys(table: $table, keys: [ 'status', 'can_be_delete']);
 
                 // Add timestamp and soft delete columns to the table
                 $this->addTimestampsAndSoftDeletesColumns($table);

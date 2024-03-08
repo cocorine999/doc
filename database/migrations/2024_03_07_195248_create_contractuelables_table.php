@@ -2,9 +2,6 @@
 
 declare(strict_types=1);
 
-use Core\Utils\Enums\StatutEmployeeEnum;
-use Core\Utils\Enums\TypeEmployeeEnum;
-use Core\Utils\Enums\TypeUniteTravailleEnum;
 use Core\Utils\Traits\Database\Migrations\CanDeleteTrait;
 use Core\Utils\Traits\Database\Migrations\HasCompositeKey;
 use Core\Utils\Traits\Database\Migrations\HasForeignKey;
@@ -45,7 +42,14 @@ class CreateContractuelablesTable extends Migration
                 
                 $this->uuidPrimaryKey($table);
 
-                $table->unsignedBigInteger('employee_id');
+                // Define a foreign key for 'employee_id', pointing to the 'employees' table
+                $this->foreignKey(
+                    table: $table,          // The table where the foreign key is being added
+                    column: 'employee_id',   // The column to which the foreign key is added ('employee_id' in this case)
+                    references: 'employees',    // The referenced table (employees) to establish the foreign key relationship
+                    onDelete: 'cascade',    // Action to perform when the referenced record is deleted (cascade deletion)
+                    nullable: false          // Specify whether the foreign key column can be nullable (false means it not allows NULL)
+                );
 
                 /**
                  * Polymorphic relationship columns:
@@ -78,7 +82,7 @@ class CreateContractuelablesTable extends Migration
                 );
                 
                 // Create a composite index for efficient searching on the combination of name, slug, key, status and can_be_delete
-                $this->compositeKeys(table: $table, keys: ['name', 'status', 'can_be_delete']);
+                $this->compositeKeys(table: $table, keys: ['status', 'can_be_delete']);
 
                 // Add timestamp and soft delete columns to the table
                 $this->addTimestampsAndSoftDeletesColumns($table);

@@ -2,9 +2,6 @@
 
 declare(strict_types=1);
 
-use Core\Utils\Enums\StatutEmployeeEnum;
-use Core\Utils\Enums\TypeEmployeeEnum;
-use Core\Utils\Enums\TypeUniteTravailleEnum;
 use Core\Utils\Traits\Database\Migrations\CanDeleteTrait;
 use Core\Utils\Traits\Database\Migrations\HasCompositeKey;
 use Core\Utils\Traits\Database\Migrations\HasForeignKey;
@@ -76,8 +73,8 @@ class CreateEmployeeNonContractuelsTable extends Migration
                     nullable: false          // Specify whether the foreign key column can be nullable (false means it not allows NULL)
                 );
                 
-                // Create a composite index for efficient searching on the combination of est_convertir, slug, key, status and can_be_delete
-                $this->compositeKeys(table: $table, keys: ['est_convertir', 'status', 'can_be_delete']);
+                // Create a composite index for efficient searching on the combination of name, slug, key, status and can_be_delete
+                $this->compositeKeys(table: $table, keys: ['status', 'can_be_delete']);
 
                 // Add timestamp and soft delete columns to the table
                 $this->addTimestampsAndSoftDeletesColumns($table);

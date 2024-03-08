@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\Models;
 
 use Core\Data\Eloquent\Contract\ModelContract;
+use Core\Utils\Enums\StatutEmployeeEnum;
+use Core\Utils\Enums\TypeEmployeeEnum;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
@@ -12,7 +14,7 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 /**
  * Class ***`Employee`***
  *
- * This model represents the `unite_mesures` table in the database.
+ * This model represents the `employees` table in the database.
  * It extends the ModelContract class and provides access to the database table associated with the model.
  *
  * @property  string    $name;
@@ -42,9 +44,19 @@ class Employee extends ModelContract
      * @var array<int, string>
      */
     protected $fillable = [
-        'activity','registration_number'
+        'matricule','type_employee','statut_employee'
     ];
-    
+
+    /**
+     * The model's default attribute values.
+     *
+     * @var array<string, mixed>
+     */
+    protected $attributes = [
+        'type_employee'          => TypeEmployeeEnum::DEFAULT,
+        'statut_employee'           => StatutEmployeeEnum::DEFAULT,
+    ];
+
 
     /**
      * The attributes that should be visible in arrays.
@@ -52,8 +64,8 @@ class Employee extends ModelContract
      * @var array<int, string>
      */
     protected $visible = [
-        'name',
-        'user_id'
+        'matricule',
+        'type_employee'
     ];
 
     /**
@@ -62,19 +74,11 @@ class Employee extends ModelContract
      * @var array<string, string>
      */
     protected $casts = [
-        'registration_number'         => 'string',
-        'activity'         => 'string',
+        'matricule'             => 'string',
+        'type_employee'         => TypeEmployeeEnum::class,
+        'statut_employee'       => StatutEmployeeEnum::class,
     ];
     
-
-    /**
-     * The relationships that should always be loaded.
-     *
-     * @var array<int, string>
-     */
-    protected $with = [
-        'contractual'
-    ];
 
     /**
      * Get the profil details.
@@ -85,6 +89,7 @@ class Employee extends ModelContract
     {
         return $this->morphTo();
     }
+    
     
     /**
      * Get the user's full name attribute.

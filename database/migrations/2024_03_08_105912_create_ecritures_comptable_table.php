@@ -65,15 +65,15 @@ class CreateEcrituresComptableTable extends Migration
                     references: 'journaux', // The referenced table (journaux) to establish the foreign key relationship
                     onDelete: 'cascade',   // Action to perform when the referenced record is deleted (cascade deletion)
                     nullable: false        // Specify whether the foreign key column can be nullable (false means it not allows to be NULL)
-                );        
+                );
                 
-                // Define a foreign key for 'operation_id', referencing the 'operations_comptable' table
+                // Define a foreign key for 'operation_disponible_id', referencing the 'operations_comptable' table
                 $this->foreignKey(
-                    table: $table,          // The table where the foreign key is being added
-                    column: 'operation_id',   // The column to which the foreign key is added ('operation_id' in this case)
-                    references: 'operations_comptable',    // The referenced table (operations_comptable) to establish the foreign key relationship
-                    onDelete: 'cascade',    // Action to perform when the referenced record is deleted (cascade deletion)
-                    nullable: true          // Specify whether the foreign key column can be nullable (false means it not allows to be NULL)
+                    table: $table,         // The table where the foreign key is being added
+                    column: 'operation_disponible_id',   // The column to which the foreign key is added ('operation_disponible_id' in this case)
+                    references: 'operations_comptable', // The referenced table (operations_comptable) to establish the foreign key relationship
+                    onDelete: 'cascade',   // Action to perform when the referenced record is deleted (cascade deletion)
+                    nullable: true        // Specify whether the foreign key column can be nullable (false means it not allows to be NULL)
                 );
 
                 // Add a boolean column 'status' to the table

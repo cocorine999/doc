@@ -41,6 +41,10 @@ class CreatePlanComptableCompteSousComptesTable extends Migration
                 // Define a UUID primary key for the 'plan_comptable_compte_sous_comptes' table
                 $this->uuidPrimaryKey($table);
 
+                // Define a unique string column for the account number
+                $table->string('account_number')->unique()
+                    ->comment('The unique account number');
+
                 // Define a foreign key for 'plan_comptable_compte_id', referencing the 'plan_comptable_comptes' table
                 $this->foreignKey(
                     table: $table,         // The table where the foreign key is being added
@@ -50,13 +54,22 @@ class CreatePlanComptableCompteSousComptesTable extends Migration
                     nullable: false        // Specify whether the foreign key column can be nullable (false means it not allows to be NULL)
                 );
     
-                // Define a foreign key for 'sous_compte_id', referencing the 'sous_comptes' table
+                // Define a foreign key for 'sous_compte_id', referencing the 'comptes' table
                 $this->foreignKey(
                     table: $table,          // The table where the foreign key is being added
                     column: 'sous_compte_id',   // The column to which the foreign key is added ('sous_compte_id' in this case)
-                    references: 'sous_comptes',    // The referenced table (sous_comptes) to establish the foreign key relationship
+                    references: 'comptes',    // The referenced table (comptes) to establish the foreign key relationship
                     onDelete: 'cascade',    // Action to perform when the referenced record is deleted (cascade deletion)
                     nullable: false          // Specify whether the foreign key column can be nullable (true means it allows to be NULL)
+                );
+    
+                // Define a foreign key for 'sub_division_id', referencing the 'comptes' table
+                $this->foreignKey(
+                    table: $table,          // The table where the foreign key is being added
+                    column: 'sub_division_id',   // The column to which the foreign key is added ('sub_division_id' in this case)
+                    references: 'comptes',    // The referenced table (comptes) to establish the foreign key relationship
+                    onDelete: 'cascade',    // Action to perform when the referenced record is deleted (cascade deletion)
+                    nullable: true          // Specify whether the foreign key column can be nullable (true means it allows to be NULL)
                 );
 
                 // Add a boolean column 'status' to the table

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Core\Utils\Enums\StatusExerciceEnum;
+use Core\Utils\Enums\StatusOperationDisponibleEnum;
 use Core\Utils\Traits\Database\Migrations\CanDeleteTrait;
 use Core\Utils\Traits\Database\Migrations\HasCompositeKey;
 use Core\Utils\Traits\Database\Migrations\HasForeignKey;
@@ -57,15 +57,9 @@ class CreateOperationsComptableTable extends Migration
                 // Define the decimal column 'total_credit' to store the total credit amount for the account, with 12 digits, 2 of which represent decimal places
                 $table->decimal('total_credit', 12, 2)
                     ->comment('Total credit amount for the account.');
-                
-                // Define a foreign key for 'journal_id', referencing the 'journaux' table
-                $this->foreignKey(
-                    table: $table,         // The table where the foreign key is being added
-                    column: 'journal_id',   // The column to which the foreign key is added ('journal_id' in this case)
-                    references: 'journaux', // The referenced table (journaux) to establish the foreign key relationship
-                    onDelete: 'cascade',   // Action to perform when the referenced record is deleted (cascade deletion)
-                    nullable: false        // Specify whether the foreign key column can be nullable (false means it not allows to be NULL)
-                );
+
+                // "status_exercice" column with default value "ouvert"
+                $table->enum('status_operation', StatusOperationDisponibleEnum::values())->default(StatusOperationDisponibleEnum::DEFAULT);
 
                 // Add a boolean column 'status' to the table
                 $table->boolean('status')

@@ -60,15 +60,6 @@ class CreateComptesTable extends Migration
                     references: 'categories_de_compte',    // The referenced table (categories_de_compte) to establish the foreign key relationship
                     onDelete: 'cascade',    // Action to perform when the referenced record is deleted (cascade deletion)
                     nullable: false          // Specify whether the foreign key column can be nullable (false means it not allows to be NULL)
-                );                
-                
-                // Define a foreign key for 'classe_id', referencing the 'classes_de_compte' table
-                $this->foreignKey(
-                    table: $table,          // The table where the foreign key is being added
-                    column: 'classe_id',   // The column to which the foreign key is added ('classe_id' in this case)
-                    references: 'classes_de_compte',    // The referenced table (classes_de_compte) to establish the foreign key relationship
-                    onDelete: 'cascade',    // Action to perform when the referenced record is deleted (cascade deletion)
-                    nullable: false          // Specify whether the foreign key column can be nullable (false means it not allows to be NULL)
                 );
 
                 // Add a boolean column 'status' to the table

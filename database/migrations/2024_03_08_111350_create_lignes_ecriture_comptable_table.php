@@ -52,16 +52,9 @@ class CreateLignesEcritureComptableTable extends Migration
                 // Define the decimal column 'montant' for storing the monetary amount with 12 digits, 2 of which are decimal places
                 $table->decimal('montant', 12, 2)->comment('');
 
-                $table->uuidMorphs('ligneable');
+                $table->uuidMorphs('accountable');
 
-                // Define a foreign key for 'plan_comptable_compte_id', referencing the 'plan_comptable_comptes' table
-                $this->foreignKey(
-                    table: $table,         // The table where the foreign key is being added
-                    column: 'plan_comptable_compte_id',   // The column to which the foreign key is added ('plan_comptable_compte_id' in this case)
-                    references: 'plan_comptable_comptes', // The referenced table (plan_comptable_comptes) to establish the foreign key relationship
-                    onDelete: 'cascade',   // Action to perform when the referenced record is deleted (cascade deletion)
-                    nullable: false        // Specify whether the foreign key column can be nullable (false means it not allows to be NULL)
-                );
+                $table->uuidMorphs('ligneable');
 
                 // Add a boolean column 'status' to the table
                 $table->boolean('status')

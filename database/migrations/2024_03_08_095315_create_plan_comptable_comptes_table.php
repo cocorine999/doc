@@ -40,6 +40,10 @@ class CreatePlanComptableComptesTable extends Migration
             Schema::create('plan_comptable_comptes', function (Blueprint $table) {
                 // Define a UUID primary key for the 'plan_comptable_comptes' table
                 $this->uuidPrimaryKey($table);
+
+                // Define a unique string column for the account number
+                $table->string('account_number')->unique()
+                    ->comment('The unique account number');
     
                 // Define a foreign key for 'classe_id', referencing the 'classes_de_compte' table
                 $this->foreignKey(

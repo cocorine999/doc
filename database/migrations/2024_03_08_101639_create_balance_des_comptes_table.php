@@ -57,14 +57,7 @@ class CreateBalanceDesComptesTable extends Migration
                 $table->date('date_cloture')->nullable()
                     ->comment('Indicate when the balance date is end up');
 
-                // Define a foreign key for 'plan_comptable_compte_id', referencing the 'plan_comptable_comptes' table
-                $this->foreignKey(
-                    table: $table,         // The table where the foreign key is being added
-                    column: 'plan_comptable_compte_id',   // The column to which the foreign key is added ('plan_comptable_compte_id' in this case)
-                    references: 'plan_comptable_comptes', // The referenced table (plan_comptable_comptes) to establish the foreign key relationship
-                    onDelete: 'cascade',   // Action to perform when the referenced record is deleted (cascade deletion)
-                    nullable: false        // Specify whether the foreign key column can be nullable (false means it not allows to be NULL)
-                );
+                $table->uuidMorphs('balanceable');
                 
                 // Define a foreign key for 'exercice_comptable_id', referencing the 'exercices_comptable' table
                 $this->foreignKey(

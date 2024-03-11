@@ -58,12 +58,6 @@ class CreateUsersTable extends Migration
                 // Nullable and unique email address of the user
                 $table->string('email')->unique()->nullable()->comment('Email address of the user');
 
-                // Column for storing encrypted identifiers
-                $table->string('identifier')->comment('Encrypted identifier for the user');
-
-                // Column for storing encrypted passwords
-                $table->string('password')->comment('Encrypted password for the user');
-
                 /**
                  * Polymorphic relationship columns:
                  * - 'userable_type' (string): Type of the related model

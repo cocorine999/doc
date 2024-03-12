@@ -58,11 +58,11 @@ class AddNewColumnsToTables extends Migration
                 }
             }
 
-            if (Schema::hasTable('role_permissions')) {
-                // Check if the "attached_by" column does not exist in the "role_permissions" table
-                if (!Schema::hasColumn('role_permissions', 'attached_by')) {
-                    // Modify the "role_permissions" table
-                    Schema::table('role_permissions', function (Blueprint $table) {
+            if (Schema::hasTable('role_has_permissions')) {
+                // Check if the "attached_by" column does not exist in the "role_has_permissions" table
+                if (!Schema::hasColumn('role_has_permissions', 'attached_by')) {
+                    // Modify the "role_has_permissions" table
+                    Schema::table('role_has_permissions', function (Blueprint $table) {
 
                         // Define a foreign key for 'attached_by', referencing the 'users' table
                         $this->foreignKey(

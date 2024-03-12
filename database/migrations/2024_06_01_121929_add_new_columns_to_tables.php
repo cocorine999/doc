@@ -162,10 +162,6 @@ class AddNewColumnsToTables extends Migration
 
         try {
 
-            if (!Schema::hasTable('roles')) {
-                throw new \Core\Utils\Exceptions\DatabaseMigrationException("Cannot add new columns into 'roles' table that does not exist.");
-            }
-
             // Commit the transaction
             DB::commit();
         } catch (\Throwable $exception) {

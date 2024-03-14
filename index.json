@@ -1,0 +1,359 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "LABEL TRUST API DOCUMENTATION",
+        "description": "API documentation for permissions, roles, users, and authentication",
+        "termsOfService": "https://www.labelstrust.com/terms.html",
+        "contact": {
+            "email": "contact@labelstrust.com",
+            "name": "Contact du support API,",
+            "url": "https://www.labelstrust.com"
+        },
+        "license": {
+            "name": "Hokwe Co 2.0",
+            "url": "https://www.labelstrust.com/license.html"
+        }
+    },
+    "tags": [
+        {
+            "name": "Permissions",
+            "description": "APIs related to permissions management",
+            "externalDocs": {
+                "description": "Find out more",
+                "url": "http://swagger.io"
+            }
+        },
+        {
+            "name": "Roles",
+            "description": "APIs related to roles management",
+            "externalDocs": {
+                "description": "Find out more",
+                "url": "http://swagger.io"
+            }
+        },
+        {
+            "name": "Users",
+            "description": "APIs related to users management",
+            "externalDocs": {
+                "description": "Find out more about our store",
+                "url": "http://swagger.io"
+            }
+        },
+        {
+            "name": "Authentication",
+            "description": "APIs related to user authentication and authorization"
+        }
+    ],
+    "servers": [
+        {
+            "url": "{{ip_address}}:{{port}}/api",
+            "description": "Local development environment",
+            "variables": {
+                "ip_address": {
+                    "default": "http://localhost",
+                    "description": "Ip address"
+                },
+                "port": {
+                    "enum": [
+                        "80",
+                        "8000",
+                        "8001"
+                    ],
+                    "default": "8000"
+                }
+            }
+        },
+        {
+            "url": "{{ip_address}}:{{port}}/api",
+            "description": "Development code review environment",
+            "variables": {
+                "ip_address": {
+                    "enum": [
+                        "http://54.198.204.208",
+                        "https://dev.labelstrust.com"
+                    ],
+                    "default": "http://54.198.204.208",
+                    "description": "Ip address"
+                },
+                "port": {
+                    "enum": [
+                        "80",
+                        "8000",
+                        "8001"
+                    ],
+                    "default": "80"
+                }
+            }
+        },
+        {
+            "url": "{{ip_address}}:{{port}}/api",
+            "description": "Testing environment",
+            "variables": {
+                "ip_address": {
+                    "default": "https://test.labelstrust.com",
+                    "description": "Ip address"
+                },
+                "port": {
+                    "enum": [
+                        "80",
+                        "8000",
+                        "8001"
+                    ],
+                    "default": "80"
+                }
+            }
+        },
+        {
+            "url": "{{ip_address}}:{{port}}/api",
+            "description": "Staging environment",
+            "variables": {
+                "ip_address": {
+                    "default": "https://staging.labelstrust.com",
+                    "description": "Ip address"
+                },
+                "port": {
+                    "enum": [
+                        "80",
+                        "8000",
+                        "8001"
+                    ],
+                    "default": "80"
+                }
+            }
+        }
+    ],
+    "paths": {
+        "/permissions": {
+            "get": {
+                "summary": "Retrieve permissions",
+                "description": "Retrieves permissions information based on certain criteria.",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Page number of permissions.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 1
+                        }
+                    },
+                    {
+                        "name": "per_page",
+                        "in": "query",
+                        "description": "Number of permissions per page.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 10
+                        }
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "description": "Comma-separated list of fields to include in the response.",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "description": "Indicates whether the request was successful."
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "description": "Additional information about the response."
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "description": "Additional information about the response.",
+                                            "properties": {
+                                                "current_page": {
+                                                    "type": "integer",
+                                                    "description": "The current page number.",
+                                                    "default": 1
+                                                },
+                                                "data": {
+                                                    "type": "array",
+                                                    "description": "Additional information about the response.",
+                                                    "items": {
+                                                        "$ref": "#/components/schemas/Permission"
+                                                    }
+                                                },
+                                                "total": {
+                                                    "type": "integer",
+                                                    "description": "The number of permissions per page.",
+                                                    "default": 15
+                                                },
+                                                "per_page": {
+                                                    "type": "integer",
+                                                    "description": "The total number of permissions available.",
+                                                    "default": 15
+                                                },
+                                                "next_page_url": {
+                                                    "type": "string",
+                                                    "description": "The URL of the next page."
+                                                },
+                                                "prev_page_url": {
+                                                    "type": "string",
+                                                    "description": "The URL of the previous page."
+                                                }
+                                            }
+                                        },
+                                        "permissions": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Permission"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/spacecrafts/{spacecraftId}": {
+            "parameters": [
+                {
+                    "name": "spacecraftId",
+                    "description": "The unique identifier of the spacecraft",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/components/schemas/SpacecraftId"
+                    }
+                }
+            ],
+            "get": {
+                "summary": "Read a spacecraft",
+                "responses": {
+                    "200": {
+                        "description": "The spacecraft corresponding to the provided `spacecraftId`",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Spacecraft"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "No spacecraft found for the provided `spacecraftId`",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Unexpected error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Permission": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Unique identifier for the permission"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Name of the permission"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Description of the permission"
+                    },
+                    "resource": {
+                        "type": "string",
+                        "description": "Resource associated with the permission"
+                    }
+                }
+            },
+            "SpacecraftId": {
+                "description": "The unique identifier of a spacecraft",
+                "type": "string"
+            },
+            "Spacecraft": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "name",
+                    "type"
+                ],
+                "properties": {
+                    "id": {
+                        "$ref": "#/components/schemas/SpacecraftId"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "capsule",
+                            "probe",
+                            "satellite",
+                            "spaceplane",
+                            "station"
+                        ]
+                    },
+                    "description": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Error": {
+                "type": "object",
+                "required": [
+                    "message"
+                ],
+                "properties": {
+                    "message": {
+                        "description": "A human readable error message",
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "securitySchemes": {
+            "ApiKey": {
+                "type": "apiKey",
+                "in": "header",
+                "name": "X-Api-Key"
+            }
+        }
+    },
+    "security": [
+        {
+            "ApiKey": []
+        }
+    ]
+}

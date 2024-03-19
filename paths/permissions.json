@@ -36,9 +36,37 @@
                                         "data": {
                                             "type": "array",
                                             "description": "List of permissions.",
-                                            "items": {
-                                                "$ref": "./../components/schemas/models/permission.json#/Permission"
-                                            }
+                                            "items": [
+                                                {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "id": {
+                                                            "$ref": "./../identifier.json#/Identifier",
+                                                            "description": "Unique identifier for the permission"
+                                                        },
+                                                        "name": {
+                                                            "$ref": "./../field-name.json#/FieldName",
+                                                            "default": "Can create an user",
+                                                            "description": "Name of the permission"
+                                                        },
+                                                        "slug": {
+                                                            "type": "string",
+                                                            "description": "Slug of the permission",
+                                                            "example": "can-ceate-an-user"
+                                                        },
+                                                        "description": {
+                                                            "type": "string",
+                                                            "example": "This permission has administrative privileges.",
+                                                            "default": "No description provided",
+                                                            "description": "Description of the permission"
+                                                        },
+                                                        "created_at": {
+                                                            "$ref": "./../date-format.json#/DateFormat",
+                                                            "description": "Date and time when the permission was created (YYYY-MM-DD HH:MM:SS)"
+                                                        }
+                                                    }
+                                                }
+                                            ]
                                         },
                                         "first_page_url": {
                                             "type": "string",

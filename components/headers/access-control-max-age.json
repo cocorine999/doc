@@ -1,0 +1,7 @@
+{
+    "description": "Indicates how long the results of a preflight request can be cached.",
+    "schema": {
+        "type": "string"
+    },
+    "example": "86400"
+}

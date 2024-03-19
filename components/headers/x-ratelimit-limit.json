@@ -1,0 +1,6 @@
+{
+  "description": "The maximum number of requests allowed in a given time window",
+  "schema": {
+    "type": "integer"
+  }
+}

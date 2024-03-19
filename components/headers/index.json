@@ -1,0 +1,23 @@
+{
+    "X-RateLimit-Limit": {
+        "$ref": "./x-ratelimit-limit.json"
+    },
+    "X-RateLimit-Remaining": {
+        "$ref": "./x-ratelimit-remaining.json"
+    },
+    "Access-Control-Allow-Origin": {
+        "$ref": "./access-control-allow-origin.json"
+    },
+    "Access-Control-Allow-Methods": {
+        "$ref": "./access-control-allow-methods.json"
+    },
+    "Access-Control-Allow-Credentials": {
+        "$ref": "./access-control-allow-credentials.json"
+    },
+    "Access-Control-Max-Age": {
+        "$ref": "./access-control-max-age.json"
+    },
+    "Access-Control-Allow-Headers": {
+        "$ref": "./access-control-allow-headers.json"
+    }
+}

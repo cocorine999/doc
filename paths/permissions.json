@@ -5,6 +5,9 @@
         "responses": {
             "200": {
                 "description": "Successfully Response",
+                "headers": {
+                    "$ref": "./components/headers/index.json"
+                },
                 "content": {
                     "application/json": {
                         "schema": {

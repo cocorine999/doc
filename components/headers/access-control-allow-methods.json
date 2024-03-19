@@ -1,0 +1,7 @@
+{
+    "description": "Specifies the methods allowed when accessing the resource.",
+    "schema": {
+        "type": "string"
+    },
+    "example": "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+}

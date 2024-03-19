@@ -1,0 +1,6 @@
+{
+  "description": "Indicates whether the response can be shared with resources from the given origin",
+  "schema": {
+    "type": "string"
+  }
+}

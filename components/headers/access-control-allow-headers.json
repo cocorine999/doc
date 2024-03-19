@@ -1,0 +1,7 @@
+{
+    "description": "Used in response to a preflight request to indicate which HTTP headers can be used when making the request.",
+    "schema": {
+        "type": "string"
+    },
+    "example": "Content-Type, Authorization"
+}

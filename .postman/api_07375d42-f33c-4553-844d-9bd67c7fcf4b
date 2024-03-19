@@ -9,10 +9,19 @@ id = 07375d42-f33c-4553-844d-9bd67c7fcf4b
 
 [config.relations.collections]
 rootDirectory = docs/postman/collections
+files[] = {"id":"33313317-5db20712-f1ab-4d21-8bc6-6004b090b681","path":"API Collection.json","metaData":{"generateCollectionPreferences":"{\"requestNameSource\":\"Fallback\",\"indentCharacter\":\"Space\",\"parametersResolution\":\"Example\",\"folderStrategy\":\"Paths\",\"includeAuthInfoInExample\":true,\"enableOptionalParameters\":true,\"keepImplicitHeaders\":false,\"includeDeprecated\":true,\"alwaysInheritAuthentication\":false,\"updateCollectionSync\":true,\"requestParametersResolution\":\"Example\",\"exampleParametersResolution\":\"Example\"}"}}
 
 [config.relations.collections.metaData]
 
 [config.relations.apiDefinition]
+files[] = {"path":"components/headers/access-control-allow-credentials.json","metaData":{}}
+files[] = {"path":"components/headers/access-control-allow-headers.json","metaData":{}}
+files[] = {"path":"components/headers/access-control-allow-methods.json","metaData":{}}
+files[] = {"path":"components/headers/access-control-allow-origin.json","metaData":{}}
+files[] = {"path":"components/headers/access-control-max-age.json","metaData":{}}
+files[] = {"path":"components/headers/index.json","metaData":{}}
+files[] = {"path":"components/headers/x-ratelimit-limit.json","metaData":{}}
+files[] = {"path":"components/headers/x-ratelimit-remaining.json","metaData":{}}
 files[] = {"path":"components/parameters/accept.json","metaData":{}}
 files[] = {"path":"components/schemas/date-format.json","metaData":{}}
 files[] = {"path":"components/schemas/field-name.json","metaData":{}}

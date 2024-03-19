@@ -1,0 +1,19 @@
+{
+    "openapi": "3.0.3",
+    "components": {
+        "responses": {
+            "BadRequest": {
+                "$ref": "error.json#/components/responses/BadRequest"
+            },
+            "RateLimitExceeded": {
+                "$ref": "error.json#/components/responses/RateLimitExceeded"
+            },
+            "InternalServerError": {
+                "$ref": "error.json#/components/responses/InternalServerError"
+            },
+            "ServiceUnavailable": {
+                "$ref": "error.json#/components/responses/ServiceUnavailable"
+            }
+        }
+    }
+}

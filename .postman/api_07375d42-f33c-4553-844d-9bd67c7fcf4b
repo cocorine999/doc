@@ -9,12 +9,23 @@ id = 07375d42-f33c-4553-844d-9bd67c7fcf4b
 
 [config.relations.collections]
 rootDirectory = docs/postman/collections
+files[] = {"id":"33313317-6234b823-1ded-493d-8529-044150a79485","path":"API Collection.json","metaData":{"generateCollectionPreferences":"{\"requestNameSource\":\"Fallback\",\"indentCharacter\":\"Space\",\"parametersResolution\":\"Example\",\"folderStrategy\":\"Paths\",\"includeAuthInfoInExample\":true,\"enableOptionalParameters\":true,\"keepImplicitHeaders\":false,\"includeDeprecated\":true,\"alwaysInheritAuthentication\":false,\"updateCollectionSync\":true,\"requestParametersResolution\":\"Example\",\"exampleParametersResolution\":\"Example\"}"}}
 
 [config.relations.collections.metaData]
 
 [config.relations.apiDefinition]
+files[] = {"path":"components/parameters/accept.json","metaData":{}}
+files[] = {"path":"components/schemas/date-format.json","metaData":{}}
+files[] = {"path":"components/schemas/field-name.json","metaData":{}}
+files[] = {"path":"components/schemas/identifier.json","metaData":{}}
+files[] = {"path":"components/schemas/models/permission.json","metaData":{}}
+files[] = {"path":"error.json","metaData":{}}
 files[] = {"path":"index.json","metaData":{}}
+files[] = {"path":"paths/permissions.json","metaData":{}}
+files[] = {"path":"paths/roles/index.json","metaData":{}}
+files[] = {"path":"paths/users/index.json","metaData":{}}
+files[] = {"path":"responses.json","metaData":{}}
 
 [config.relations.apiDefinition.metaData]
-type = openapi:3_1
+type = openapi:3
 rootFiles[] = index.json

@@ -1,0 +1,108 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "title": "Roles API",
+        "version": "1.0.0"
+    },
+    //"paths": {},
+    "components": {
+        "schemas": {
+            "Identifier": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{8}-[0-9a-x]{4}-[1-5][0-9a-z]{3}-[89AB][0-9a-q]{3}-[0-9a-f]{12}$",
+                "minLength": 32,
+                "maxLength": 36,
+                "example": "b257f261-9r73-4e4-64d-d733b56fq3af",
+                "description": "UUID unique au sein de notre systeme"
+            },
+            "FieldName": {
+                "type": "string",
+                "minLength": 3,
+                "maxLength": 50,
+                "example": "Name",
+                "default": "Name"
+            },
+            "DateFormat": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}$",
+                "example": "2024-03-13 16:58:10",
+                "minLength": 19,
+                "maxLength": 35,
+                "description": "Format for validating date and time strings in the format YYYY-MM-DD HH:MM:SS."
+            },
+            "Role": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "$ref": "#/components/schemas/Identifier",
+                        "description": "Unique identifier for the role"
+                    },
+                    "name": {
+                        "$ref": "#/components/schemas/FieldName",
+                        "default": "Administrator",
+                        "description": "Name of the role"
+                    },
+                    "slug": {
+                        "type": "string",
+                        "description": "Slug of the permission"
+                    },
+                    "description": {
+                        "type": "string",
+                        "example": "This role has administrative privileges.",
+                        "default": "No description provided",
+                        "description": "Description of the role"
+                    },
+                    "created_at": {
+                        "$ref": "#/components/schemas/DateFormat",
+                        "description": "Date and time when the role was created (YYYY-MM-DD HH:MM:SS)"
+                    },
+                    "permissions": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Permission"
+                        },
+                        "description": "List of permissions associated with the role"
+                    }
+                }
+            },
+            "RoleRequest": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "$ref": "#/components/schemas/FieldName",
+                        "type": "string",
+                        "minLength": 3,
+                        "maxLength": 50,
+                        "example": "Administrator",
+                        "default": "Administrator",
+                        "description": "Nom du role. Example: 'Administrator'."
+                    },
+                    "description": {
+                        "type": "string",
+                        "default": "No description provided",
+                        "example": "This role has administrative privileges.",
+                        "description": "Description du role. Example: 'This role has administrative privileges.'",
+                        "nullable": true
+                    },
+                    "permissions": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Identifier"
+                        },
+                        "default": [],
+                        "example": [
+                            "d63e94f1-aa2d-4e7f-80c2-fecfe7d8c078",
+                            "e9e61b77-22cc-4245-a6c5-620065bba29d"
+                        ],
+                        "description": "List of permission identifiers"
+                    },
+                    "required": [
+                        "name",
+                        "permissions"
+                    ]
+                }
+            }
+        }
+    }
+}

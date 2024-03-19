@@ -1,0 +1,9 @@
+{
+    "FieldName": {
+        "type": "string",
+        "minLength": 3,
+        "maxLength": 50,
+        "example": "Name",
+        "default": "Name"
+    }
+}

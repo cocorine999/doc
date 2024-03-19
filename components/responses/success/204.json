@@ -1,0 +1,33 @@
+{
+    "NoContent": {
+        "description": "No Content. The request was successful, but there is no content to return in the response payload.",
+        "content": {
+            "application/json": {
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "status": {
+                            "type": "boolean",
+                            "description": "Indicates whether the request was successful.",
+                            "default": true,
+                            "example": true
+                        },
+                        "message": {
+                            "type": "string",
+                            "description": "Additional information about the response.",
+                            "nullable": true,
+                            "default": null,
+                            "example": "Request processed successfully, but no content to return."
+                        },
+                        "status_code": {
+                            "type": "integer",
+                            "description": "The HTTP status code indicating a successful request with no content.",
+                            "default": 204,
+                            "example": 204
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

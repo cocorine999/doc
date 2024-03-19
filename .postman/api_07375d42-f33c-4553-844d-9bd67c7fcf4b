@@ -9,7 +9,6 @@ id = 07375d42-f33c-4553-844d-9bd67c7fcf4b
 
 [config.relations.collections]
 rootDirectory = docs/postman/collections
-files[] = {"id":"33313317-5db20712-f1ab-4d21-8bc6-6004b090b681","path":"API Collection.json","metaData":{"generateCollectionPreferences":"{\"requestNameSource\":\"Fallback\",\"indentCharacter\":\"Space\",\"parametersResolution\":\"Example\",\"folderStrategy\":\"Paths\",\"includeAuthInfoInExample\":true,\"enableOptionalParameters\":true,\"keepImplicitHeaders\":false,\"includeDeprecated\":true,\"alwaysInheritAuthentication\":false,\"updateCollectionSync\":true,\"requestParametersResolution\":\"Example\",\"exampleParametersResolution\":\"Example\"}"}}
 
 [config.relations.collections.metaData]
 
@@ -23,10 +22,32 @@ files[] = {"path":"components/headers/index.json","metaData":{}}
 files[] = {"path":"components/headers/x-ratelimit-limit.json","metaData":{}}
 files[] = {"path":"components/headers/x-ratelimit-remaining.json","metaData":{}}
 files[] = {"path":"components/parameters/accept.json","metaData":{}}
+files[] = {"path":"components/responses/errors/400.json","metaData":{}}
+files[] = {"path":"components/responses/errors/401.json","metaData":{}}
+files[] = {"path":"components/responses/errors/402.json","metaData":{}}
+files[] = {"path":"components/responses/errors/403.json","metaData":{}}
+files[] = {"path":"components/responses/errors/404.json","metaData":{}}
+files[] = {"path":"components/responses/errors/405.json","metaData":{}}
+files[] = {"path":"components/responses/errors/408.json","metaData":{}}
+files[] = {"path":"components/responses/errors/415.json","metaData":{}}
+files[] = {"path":"components/responses/errors/422.json","metaData":{}}
+files[] = {"path":"components/responses/errors/429.json","metaData":{}}
+files[] = {"path":"components/responses/errors/500.json","metaData":{}}
+files[] = {"path":"components/responses/errors/503.json","metaData":{}}
+files[] = {"path":"components/responses/errors/507.json","metaData":{}}
+files[] = {"path":"components/responses/errors/index.json","metaData":{}}
+files[] = {"path":"components/responses/index.json","metaData":{}}
+files[] = {"path":"components/responses/success/200.json","metaData":{}}
+files[] = {"path":"components/responses/success/201.json","metaData":{}}
+files[] = {"path":"components/responses/success/204.json","metaData":{}}
+files[] = {"path":"components/responses/success/206.json","metaData":{}}
+files[] = {"path":"components/responses/success/index.json","metaData":{}}
+files[] = {"path":"components/schemas/api-responses/api-error.json","metaData":{}}
 files[] = {"path":"components/schemas/date-format.json","metaData":{}}
 files[] = {"path":"components/schemas/field-name.json","metaData":{}}
 files[] = {"path":"components/schemas/identifier.json","metaData":{}}
 files[] = {"path":"components/schemas/models/permission.json","metaData":{}}
+files[] = {"path":"components/schemas/models/role.json","metaData":{}}
 files[] = {"path":"error.json","metaData":{}}
 files[] = {"path":"index.json","metaData":{}}
 files[] = {"path":"paths/permissions.json","metaData":{}}

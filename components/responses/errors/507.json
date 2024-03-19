@@ -1,0 +1,40 @@
+{
+    "InsufficientStorage": {
+        "description": "Insufficient Storage. The server is unable to store the representation needed to complete the request.",
+        "content": {
+            "application/json": {
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "status": {
+                            "type": "boolean",
+                            "description": "Indicates whether the request was unsuccessful.",
+                            "default": false,
+                            "example": false
+                        },
+                        "message": {
+                            "type": "string",
+                            "description": "A brief description of the error, if any.",
+                            "nullable": true,
+                            "default": null,
+                            "example": "Insufficient storage space to complete the request."
+                        },
+                        "error": {
+                            "type": "string",
+                            "description": "Additional information about the error, if available.",
+                            "nullable": true,
+                            "default": null,
+                            "example": null
+                        },
+                        "status_code": {
+                            "type": "integer",
+                            "description": "The HTTP status code indicating an insufficient storage error.",
+                            "default": 507,
+                            "example": 507
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

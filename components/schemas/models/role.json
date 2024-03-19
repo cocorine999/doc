@@ -1,0 +1,43 @@
+{
+    "Role": {
+        "type": "object",
+        "required": [
+            "id",
+            "name",
+            "slug"
+        ],
+        "properties": {
+            "id": {
+                "$ref": "./../identifier.json#/Identifier",
+                "description": "Unique identifier for the role"
+            },
+            "name": {
+                "$ref": "./../field-name.json#/FieldName",
+                "default": "Can create an user",
+                "description": "Name of the role"
+            },
+            "slug": {
+                "type": "string",
+                "description": "Slug of the role",
+                "example": "can-ceate-an-user"
+            },
+            "description": {
+                "type": "string",
+                "example": "This role has administrative privileges.",
+                "default": "No description provided",
+                "description": "Description of the role"
+            },
+            "permissions": {
+                "type": "array",
+                "items": {
+                    "$ref": "./permission.json#/Permission"
+                },
+                "description": "List of permissions associated with the role"
+            },
+            "created_at": {
+                "$ref": "./../date-format.json#/DateFormat",
+                "description": "Date and time when the role was created (YYYY-MM-DD HH:MM:SS)"
+            }
+        }
+    }
+}

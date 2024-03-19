@@ -1,0 +1,44 @@
+{
+    "ApiError": {
+        "type": "object",
+        "description": "",
+        "properties": {
+            "status": {
+                "type": "boolean",
+                "enum": [
+                    true,
+                    false
+                ],
+                "default": false,
+                "example": false,
+                "description": "Indicates whether the request was unsuccessful."
+            },
+            "message": {
+                "type": "string",
+                "description": "A brief description of the error, if any."
+            },
+            "error": {
+                "type": "string",
+                "description": "Additional information about the error, if available."
+            },
+            "status_code": {
+                "type": "integer",
+                "description": "The HTTP status code associated with the error.",
+                "enum": [
+                    400,
+                    401,
+                    403,
+                    404,
+                    405,
+                    409,
+                    422,
+                    500,
+                    503,
+                    507
+                ],
+                "default": 500,
+                "example": 500
+            }
+        }
+    }
+}

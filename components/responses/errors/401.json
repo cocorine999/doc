@@ -1,0 +1,40 @@
+{
+    "Unauthorized": {
+        "description": "Unauthorized. The request requires user authentication or, if the request included authorization credentials, authorization has been refused for those credentials.",
+        "content": {
+            "application/json": {
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "status": {
+                            "type": "boolean",
+                            "description": "Indicates whether the request was unsuccessful.",
+                            "default": false,
+                            "example": false
+                        },
+                        "message": {
+                            "type": "string",
+                            "description": "A brief description of the error, if any.",
+                            "nullable": true,
+                            "default": null,
+                            "example": "You are not authorized to access this resource."
+                        },
+                        "error": {
+                            "type": "string",
+                            "description": "Additional information about the error, if available.",
+                            "nullable": true,
+                            "default": null,
+                            "example": null
+                        },
+                        "status_code": {
+                            "type": "integer",
+                            "description": "The HTTP status code indicating an unauthorized error.",
+                            "default": 401,
+                            "example": 401
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

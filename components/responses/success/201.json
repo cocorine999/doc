@@ -1,0 +1,40 @@
+{
+    "Created": {
+        "description": "Created. The request was successful, and a new resource has been created.",
+        "content": {
+            "application/json": {
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "status": {
+                            "type": "boolean",
+                            "description": "Indicates whether the request was successful.",
+                            "default": true,
+                            "example": true
+                        },
+                        "message": {
+                            "type": "string",
+                            "description": "Additional information about the response.",
+                            "nullable": true,
+                            "default": null,
+                            "example": "Resource created successfully."
+                        },
+                        "data": {
+                            "type": "object",
+                            "description": "Information about the newly created resource.",
+                            "properties": {
+                                // Define properties of the newly created resource here
+                            }
+                        },
+                        "status_code": {
+                            "type": "integer",
+                            "description": "The HTTP status code indicating a successful creation of a new resource.",
+                            "default": 201,
+                            "example": 201
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

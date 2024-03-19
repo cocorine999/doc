@@ -1,0 +1,43 @@
+{
+    "RateLimitExceeded": {
+        "description": "Too Many Requests: Rate Limit Exceeded",
+        "content": {
+            "application/json": {
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "status": {
+                            "type": "boolean",
+                            "description": "Indicates whether the request was unsuccessful.",
+                            "default": false,
+                            "example": false
+                        },
+                        "message": {
+                            "type": "string",
+                            "description": "A brief description of the error, if any.",
+                            "nullable": true,
+                            "default": null,
+                            "example": "Rate Limit Exceeded"
+                        },
+                        "error": {
+                            "type": [
+                                "object",
+                                "string"
+                            ],
+                            "description": "Additional information about the error, if available.",
+                            "nullable": true,
+                            "default": null,
+                            "example": null
+                        },
+                        "status_code": {
+                            "type": "integer",
+                            "description": "The HTTP status code indicating the client has exceeded the rate limit for the endpoint.",
+                            "default": 429,
+                            "example": 429
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

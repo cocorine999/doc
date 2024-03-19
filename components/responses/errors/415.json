@@ -1,0 +1,40 @@
+{
+    "UnsupportedMediaType": {
+        "description": "Unsupported Media Type. The server refuses to accept the request because the payload format is in an unsupported format.",
+        "content": {
+            "application/json": {
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "status": {
+                            "type": "boolean",
+                            "description": "Indicates whether the request was unsuccessful.",
+                            "default": false,
+                            "example": false
+                        },
+                        "message": {
+                            "type": "string",
+                            "description": "A brief description of the error, if any.",
+                            "nullable": true,
+                            "default": null,
+                            "example": "Unsupported Media Type. The server refuses to accept the request because the payload format is in an unsupported format."
+                        },
+                        "error": {
+                            "type": "string",
+                            "description": "Additional information about the error, if available.",
+                            "nullable": true,
+                            "default": null,
+                            "example": null
+                        },
+                        "status_code": {
+                            "type": "integer",
+                            "description": "The HTTP status code indicating an unsupported media type error.",
+                            "default": 415,
+                            "example": 415
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

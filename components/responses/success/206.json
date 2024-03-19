@@ -1,0 +1,38 @@
+{
+    "PartialContent": {
+        "description": "Partial Content. The server is delivering only part of the resource due to a range header sent by the client.",
+        "content": {
+            "application/json": {
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "status": {
+                            "type": "boolean",
+                            "description": "Indicates whether the request was successful.",
+                            "default": true,
+                            "example": true
+                        },
+                        "message": {
+                            "type": "string",
+                            "description": "Additional information about the response.",
+                            "nullable": true,
+                            "default": null,
+                            "example": "Partial content successfully delivered."
+                        },
+                        "data": {
+                            "type": "object",
+                            "description": "Contains the partial content of the requested resource."
+                            // Define your partial content data schema here
+                        },
+                        "status_code": {
+                            "type": "integer",
+                            "description": "The HTTP status code indicating a partial content response.",
+                            "default": 206,
+                            "example": 206
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

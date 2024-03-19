@@ -1,0 +1,40 @@
+{
+    "NotFound": {
+        "description": "Not Found. The requested resource could not be found.",
+        "content": {
+            "application/json": {
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "status": {
+                            "type": "boolean",
+                            "description": "Indicates whether the request was unsuccessful.",
+                            "default": false,
+                            "example": false
+                        },
+                        "message": {
+                            "type": "string",
+                            "description": "A brief description of the error, if any.",
+                            "nullable": true,
+                            "default": null,
+                            "example": "The requested resource could not be found."
+                        },
+                        "error": {
+                            "type": "string",
+                            "description": "Additional information about the error, if available.",
+                            "nullable": true,
+                            "default": null,
+                            "example": null
+                        },
+                        "status_code": {
+                            "type": "integer",
+                            "description": "The HTTP status code indicating a not found error.",
+                            "default": 404,
+                            "example": 404
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

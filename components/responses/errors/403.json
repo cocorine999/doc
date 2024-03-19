@@ -1,0 +1,40 @@
+{
+    "Forbidden": {
+        "description": "Forbidden. The server understood the request, but refuses to authorize it.",
+        "content": {
+            "application/json": {
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "status": {
+                            "type": "boolean",
+                            "description": "Indicates whether the request was unsuccessful.",
+                            "default": false,
+                            "example": false
+                        },
+                        "message": {
+                            "type": "string",
+                            "description": "A brief description of the error, if any.",
+                            "nullable": true,
+                            "default": null,
+                            "example": "Access to the requested resource is forbidden."
+                        },
+                        "error": {
+                            "type": "string",
+                            "description": "Additional information about the error, if available.",
+                            "nullable": true,
+                            "default": null,
+                            "example": null
+                        },
+                        "status_code": {
+                            "type": "integer",
+                            "description": "The HTTP status code indicating a forbidden error.",
+                            "default": 403,
+                            "example": 403
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

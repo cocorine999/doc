@@ -1,12 +1,33 @@
 {
     "get": {
         "summary": "Retrieve a list of permissions",
+        "operationId": "fetchListOfPermissions",
         "description": "Retrieves permissions information based on certain criteria.",
         "responses": {
             "200": {
                 "description": "Successfully Response",
                 "headers": {
-                    "$ref": "./components/headers/index.json"
+                    "X-RateLimit-Limit": {
+                        "$ref": "./../components/headers/x-ratelimit-limit.json"
+                    },
+                    "X-RateLimit-Remaining": {
+                        "$ref": "./../components/headers/x-ratelimit-remaining.json"
+                    },
+                    "Access-Control-Allow-Origin": {
+                        "$ref": "./../components/headers/access-control-allow-origin.json"
+                    },
+                    "Access-Control-Allow-Methods": {
+                        "$ref": "./../components/headers/access-control-allow-methods.json"
+                    },
+                    "Access-Control-Allow-Credentials": {
+                        "$ref": "./../components/headers/access-control-allow-credentials.json"
+                    },
+                    "Access-Control-Max-Age": {
+                        "$ref": "./../components/headers/access-control-max-age.json"
+                    },
+                    "Access-Control-Allow-Headers": {
+                        "$ref": "./../components/headers/access-control-allow-headers.json"
+                    }
                 },
                 "content": {
                     "application/json": {
@@ -40,7 +61,7 @@
                                             "type": "array",
                                             "description": "List of permissions.",
                                             "items": {
-                                                "$ref": "./components/schemas/models/permission.json#/Permission"
+                                                "$ref": "./../components/schemas/models/permission.json#/Permission"
                                             }
                                         },
                                         "first_page_url": {
@@ -147,156 +168,22 @@
                 }
             },
             "400": {
-                "description": "Bad Request",
-                "content": {
-                    "application/json": {
-                        "schema": {
-                            "type": "object",
-                            "properties": {
-                                "status": {
-                                    "type": "boolean",
-                                    "description": "Indicates whether the request was unsuccessful.",
-                                    "default": false,
-                                    "example": false
-                                },
-                                "message": {
-                                    "type": "string",
-                                    "description": "A brief description of the error, if any.",
-                                    "nullable": true,
-                                    "default": null,
-                                    "example": "The request body is missing the required 'name' parameter."
-                                },
-                                "error": {
-                                    "type": "string",
-                                    "description": "Additional information about the error, if available.",
-                                    "nullable": true,
-                                    "default": null,
-                                    "example": null
-                                },
-                                "status_code": {
-                                    "type": "integer",
-                                    "description": "The HTTP status code indicating the request could not be processed due to incorrect syntax, invalid parameters, or missing required parameters.",
-                                    "default": 400,
-                                    "example": 400
-                                }
-                            }
-                        }
-                    }
-                }
+                "$ref": "./../components/responses/errors/400.json#BadRequest"
+            },
+            "405": {
+                "$ref": "./../components/responses/errors/405.json#MethodNotAllowed"
+            },
+            "408": {
+                "$ref": "./../components/responses/errors/408.json#RequestTimeout"
             },
             "429": {
-                "description": "Too Many Requests: Rate Limit Exceeded",
-                "content": {
-                    "application/json": {
-                        "schema": {
-                            "type": "object",
-                            "properties": {
-                                "status": {
-                                    "type": "boolean",
-                                    "description": "Indicates whether the request was unsuccessful.",
-                                    "default": false,
-                                    "example": false
-                                },
-                                "message": {
-                                    "type": "string",
-                                    "description": "A brief description of the error, if any.",
-                                    "nullable": true,
-                                    "default": null,
-                                    "example": "Rate Limit Exceeded"
-                                },
-                                "error": {
-                                    "type": "string",
-                                    "description": "Additional information about the error, if available.",
-                                    "nullable": true,
-                                    "default": null,
-                                    "example": null
-                                },
-                                "status_code": {
-                                    "type": "integer",
-                                    "description": "The HTTP status code indicating the client has exceeded the rate limit for the endpoint.",
-                                    "default": 429,
-                                    "example": 429
-                                }
-                            }
-                        }
-                    }
-                }
+                "$ref": "./../components/responses/errors/429.json#RateLimitExceeded"
             },
             "500": {
-                "description": "Internal server error",
-                "content": {
-                    "application/json": {
-                        "schema": {
-                            "type": "object",
-                            "properties": {
-                                "status": {
-                                    "type": "boolean",
-                                    "description": "Indicates whether the request was unsuccessful.",
-                                    "default": false,
-                                    "example": false
-                                },
-                                "message": {
-                                    "type": "string",
-                                    "description": "A brief description of the error, if any.",
-                                    "nullable": true,
-                                    "default": null,
-                                    "example": "Internal Server Error occurred while processing the request."
-                                },
-                                "error": {
-                                    "type": "string",
-                                    "description": "Additional information about the error, if available.",
-                                    "nullable": true,
-                                    "default": null,
-                                    "example": null
-                                },
-                                "status_code": {
-                                    "type": "integer",
-                                    "description": "The HTTP status code indicating an unexpected error occurred on the server while processing the request.",
-                                    "default": 500,
-                                    "example": 500
-                                }
-                            }
-                        }
-                    }
-                }
+                "$ref": "./../components/responses/errors/500.json#InternalServerError"
             },
             "503": {
-                "description": "Service Unavailable",
-                "content": {
-                    "application/json": {
-                        "schema": {
-                            "type": "object",
-                            "properties": {
-                                "status": {
-                                    "type": "boolean",
-                                    "description": "Indicates whether the request was unsuccessful.",
-                                    "default": false,
-                                    "example": false
-                                },
-                                "message": {
-                                    "type": "string",
-                                    "description": "A brief description of the error, if any.",
-                                    "nullable": true,
-                                    "default": null,
-                                    "example": "Service Unavailable"
-                                },
-                                "error": {
-                                    "type": "string",
-                                    "description": "Additional information about the error, if available.",
-                                    "nullable": true,
-                                    "default": null,
-                                    "example": null
-                                },
-                                "status_code": {
-                                    "type": "integer",
-                                    "description": "The HTTP status code indicating the service is temporarily unavailable.",
-                                    "default": 503,
-                                    "example": 503
-                                }
-                            }
-                        }
-                    }
-                }
+                "$ref": "./../components/responses/errors/503.json#ServiceUnavailable"
             }
         }
     }

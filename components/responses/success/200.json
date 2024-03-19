@@ -1,0 +1,38 @@
+{
+    "OK": {
+        "description": "OK. The request was successful.",
+        "content": {
+            "application/json": {
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "status": {
+                            "type": "boolean",
+                            "description": "Indicates whether the request was successful.",
+                            "default": true,
+                            "example": true
+                        },
+                        "message": {
+                            "type": "string",
+                            "description": "Additional information about the response.",
+                            "nullable": true,
+                            "default": null,
+                            "example": "Request successful."
+                        },
+                        "data": {
+                            "type": "object",
+                            "description": "Optional data returned by the request.",
+                            "nullable": true
+                        },
+                        "status_code": {
+                            "type": "integer",
+                            "description": "The HTTP status code indicating a successful request.",
+                            "default": 200,
+                            "example": 200
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

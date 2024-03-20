@@ -19,7 +19,7 @@
                             "default": null,
                             "example": "The requested resource could not be found."
                         },
-                        "error": {
+                        "errors": {
                             "type": "string",
                             "description": "Additional information about the error, if available.",
                             "nullable": true,

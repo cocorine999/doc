@@ -1,0 +1,174 @@
+{
+    "tags": [
+        "role"
+    ],
+    "summary": "Retrive an existing role by id",
+    "operationId": "getRole",
+    "description": "Retrieve an existing role by its unique identifier.",
+    "parameters": [
+        {
+            "$ref": "../../components/parameters/role_id.json"
+        },
+        {
+            "name": "filter",
+            "in": "query",
+            "description": "Comma-separated list of fields to include in the response.",
+            "required": false,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "$ref": "../field_name.json#/FieldName",
+                        "default": "Can create an user",
+                        "description": "Name of the role"
+                    },
+                    "slug": {
+                        "type": "string",
+                        "description": "Slug of the role",
+                        "example": "can-ceate-an-user"
+                    },
+                    "relations": {
+                        "type": "object",
+                        "permissions": {
+                            "type": "array",
+                            "items": {
+                                "name": {
+                                    "$ref": "../field_name.json#/FieldName",
+                                    "default": "Can create an user",
+                                    "description": "Name of the permission"
+                                },
+                                "slug": {
+                                    "type": "string",
+                                    "description": "Slug of the permission",
+                                    "example": "can-ceate-an-user"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "example": [
+                {
+                    "name": "Super administrateur",
+                    "slug": "super-administrateur",
+                    "relations": {
+                        "permissions": [
+                            {
+                                "name": "CreateUser",
+                                "slug": "create-user-permission"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "Administrateur",
+                    "slug": "administrateur"
+                }
+            ]
+        },
+        {
+            "name": "fields",
+            "in": "query",
+            "description": "Comma-separated list of fields to include in the response.",
+            "required": false,
+            "schema": {
+                "type": "string"
+            },
+            "example": "name,slug"
+        },
+        {
+            "$ref": "../../components/headers/authorization_header.json"
+        },
+        {
+            "$ref": "../../components/headers/content_type.json"
+        },
+        {
+            "$ref": "../../components/headers/accept.json"
+        }
+    ],
+    "responses": {
+        "200": {
+            "description": "Successfully retrieved role",
+            "headers": {
+                "X-RateLimit-Limit": {
+                    "$ref": "../../components/headers/x_ratelimit_limit.json"
+                },
+                "X-RateLimit-Remaining": {
+                    "$ref": "../../components/headers/x_ratelimit_remaining.json"
+                },
+                "Access-Control-Allow-Origin": {
+                    "$ref": "../../components/headers/access_control_allow_origin.json"
+                },
+                "Access-Control-Allow-Methods": {
+                    "$ref": "../../components/headers/access_control_allow_methods.json"
+                },
+                "Access-Control-Allow-Credentials": {
+                    "$ref": "../../components/headers/access_control_allow_credentials.json"
+                },
+                "Access-Control-Max-Age": {
+                    "$ref": "../../components/headers/access_control_max_age.json"
+                },
+                "Access-Control-Allow-Headers": {
+                    "$ref": "../../components/headers/access_control_allow_headers.json"
+                }
+            },
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "status": {
+                                "type": "boolean",
+                                "description": "Indicates the success status of the request.",
+                                "default": true,
+                                "example": true
+                            },
+                            "message": {
+                                "type": "string",
+                                "description": "Additional information about the response.",
+                                "default": "Role retrieved successfully",
+                                "example": "Role retrieved successfully"
+                            },
+                            "data": {
+                                "$ref": "../../components/schemas/models/role.json#/Role"
+                            },
+                            "status_code": {
+                                "type": "integer",
+                                "description": "Indicates the HTTP status code of the response.",
+                                "default": 200,
+                                "example": 200
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "400": {
+            "$ref": "../../components/responses/errors/400.json#BadRequest"
+        },
+        "404": {
+            "$ref": "../../components/responses/errors/404.json#NotFound"
+        },
+        "401": {
+            "$ref": "../../components/responses/errors/401.json#Unauthorized"
+        },
+        "403": {
+            "$ref": "../../components/responses/errors/403.json#Forbidden"
+        },
+        "405": {
+            "$ref": "../../components/responses/errors/405.json#MethodNotAllowed"
+        },
+        "408": {
+            "$ref": "../../components/responses/errors/408.json#RequestTimeout"
+        },
+        "429": {
+            "$ref": "../../components/responses/errors/429.json#RateLimitExceeded"
+        },
+        "500": {
+            "$ref": "../../components/responses/errors/500.json#InternalServerError"
+        },
+        "503": {
+            "$ref": "../../components/responses/errors/503.json#ServiceUnavailable"
+        }
+    }
+}

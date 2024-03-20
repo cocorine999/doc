@@ -1,0 +1,30 @@
+{
+    "RoleRequest": {
+        "required": [
+            "name",
+            "permissions"
+        ],
+        "type": "object",
+        "properties": {
+            "name": {
+                "$ref": "../../schemas/field_name.json#/FieldName",
+                "default": "Can create an user",
+                "description": "Name of the role"
+            },
+            "description": {
+                "type": "string",
+                "example": "This role has administrative privileges.",
+                "default": "No description provided",
+                "description": "Description of the role",
+                "nullable": true
+            },
+            "permissions": {
+                "type": "array",
+                "items": {
+                    "$ref": "../../schemas/identifier.json#/Identifier"
+                },
+                "description": "List of permission identifiers"
+            }
+        }
+    }
+}

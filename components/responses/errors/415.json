@@ -19,7 +19,7 @@
                             "default": null,
                             "example": "Unsupported Media Type. The server refuses to accept the request because the payload format is in an unsupported format."
                         },
-                        "error": {
+                        "errors": {
                             "type": "string",
                             "description": "Additional information about the error, if available.",
                             "nullable": true,

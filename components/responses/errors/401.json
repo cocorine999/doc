@@ -19,7 +19,7 @@
                             "default": null,
                             "example": "You are not authorized to access this resource."
                         },
-                        "error": {
+                        "errors": {
                             "type": "string",
                             "description": "Additional information about the error, if available.",
                             "nullable": true,

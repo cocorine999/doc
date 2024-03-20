@@ -19,11 +19,8 @@
                             "default": null,
                             "example": "Rate Limit Exceeded"
                         },
-                        "error": {
-                            "type": [
-                                "object",
-                                "string"
-                            ],
+                        "errors": {
+                            "type": "string",
                             "description": "Additional information about the error, if available.",
                             "nullable": true,
                             "default": null,

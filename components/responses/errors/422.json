@@ -19,8 +19,8 @@
                             "default": null,
                             "example": "The request body contains invalid data."
                         },
-                        "error": {
-                            "type": "string",
+                        "errors": {
+                            "type": "object",
                             "description": "Additional information about the error, if available.",
                             "nullable": true,
                             "default": null,

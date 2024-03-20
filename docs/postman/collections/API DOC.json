@@ -1,0 +1,5327 @@
+{
+	"info": {
+		"_postman_id": "082929c4-a7e4-4012-b1be-bc9a0f52ccaf",
+		"name": "API DOC",
+		"description": "API documentation for permissions, roles, users, and authentication\n\nContact Support:\n Name: Contact du support API,\n Email: contact@labelstrust.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "33313317-082929c4-a7e4-4012-b1be-bc9a0f52ccaf"
+	},
+	"item": [
+		{
+			"name": "permissions",
+			"item": [
+				{
+					"name": "Retrieve a list of permissions",
+					"id": "50b93d7e-62df-4a8b-90b7-1a1dcd2e60d2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/permissions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"permissions"
+							]
+						},
+						"description": "Retrieves permissions information based on certain criteria."
+					},
+					"response": [
+						{
+							"id": "eee03ee1-7144-4c6b-b51e-983afff59927",
+							"name": "Successfully Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/permissions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"permissions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-RateLimit-Limit",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-RateLimit-Remaining",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Access-Control-Allow-Origin",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Access-Control-Allow-Methods",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Access-Control-Allow-Credentials",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Access-Control-Max-Age",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Access-Control-Allow-Headers",
+									"value": ""
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": true,\n  \"message\": \"List of permissions retrieve successfully\",\n  \"data\": {\n    \"current_page\": 1,\n    \"data\": [\n      {\n        \"id\": \"7157f347-ctb0-4jig-B94d-345b12a0802f\",\n        \"name\": \"Name\",\n        \"slug\": \"can-ceate-an-user\",\n        \"description\": \"This permission has administrative privileges.\",\n        \"created_at\": \"2024-03-13 16:58:10\"\n      },\n      {\n        \"id\": \"cdc75ae3-gmxh-311d-8b7p-90f99bbd25cb\",\n        \"name\": \"Name\",\n        \"slug\": \"can-ceate-an-user\",\n        \"description\": \"This permission has administrative privileges.\",\n        \"created_at\": \"2024-03-13 16:58:10\"\n      }\n    ],\n    \"first_page_url\": \"veniam ex sit ipsum ullamco\",\n    \"from\": 1,\n    \"last_page\": 1,\n    \"last_page_url\": \"velit exercitation dolor\",\n    \"links\": [\n      {\n        \"url\": null,\n        \"label\": \"&laquo; Previous\",\n        \"active\": true\n      },\n      {\n        \"url\": null,\n        \"label\": \"&laquo; Previous\",\n        \"active\": true\n      }\n    ],\n    \"next_page_url\": null,\n    \"path\": \"Excepteur Lorem\",\n    \"per_page\": 15,\n    \"prev_page_url\": null,\n    \"to\": null,\n    \"total\": 0\n  },\n  \"status_code\": 200\n}"
+						},
+						{
+							"id": "924bd47a-c43a-4d28-b6f2-74871e57fb25",
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/permissions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"permissions"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": false,\n  \"message\": \"The request body is missing the required 'name' parameter.\",\n  \"errors\": null,\n  \"status_code\": 400\n}"
+						},
+						{
+							"id": "5bb210cc-d6ba-4d03-b8bf-fdb6de34bd56",
+							"name": "Method Not Allowed. The request method is known by the server but has been disabled and cannot be used.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/permissions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"permissions"
+									]
+								}
+							},
+							"status": "Method Not Allowed",
+							"code": 405,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": false,\n  \"message\": \"Method Not Allowed. The request method is known by the server but has been disabled and cannot be used.\",\n  \"errors\": null,\n  \"status_code\": 405\n}"
+						},
+						{
+							"id": "fd1b8caf-683b-4092-b41e-10283ebc4ed1",
+							"name": "Request Timeout. The server timed out waiting for the request.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/permissions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"permissions"
+									]
+								}
+							},
+							"status": "Request Timeout",
+							"code": 408,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": false,\n  \"message\": \"Request Timeout. The server timed out waiting for the request.\",\n  \"errors\": null,\n  \"status_code\": 408\n}"
+						},
+						{
+							"id": "b9fff950-83d6-4daf-97f4-f73562120416",
+							"name": "Too Many Requests: Rate Limit Exceeded",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/permissions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"permissions"
+									]
+								}
+							},
+							"status": "Too Many Requests",
+							"code": 429,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": false,\n  \"message\": \"Rate Limit Exceeded\",\n  \"errors\": null,\n  \"status_code\": 429\n}"
+						},
+						{
+							"id": "e88c2a3e-211c-43c5-81e4-76f265e08c4d",
+							"name": "Internal Server Error. An unexpected error occurred while processing the request.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/permissions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"permissions"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-RateLimit-Limit",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-RateLimit-Remaining",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Access-Control-Allow-Origin",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Access-Control-Allow-Methods",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Access-Control-Allow-Credentials",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Access-Control-Max-Age",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Access-Control-Allow-Headers",
+									"value": ""
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": false,\n  \"message\": \"Internal Server Error occurred while processing the request.\",\n  \"errors\": null,\n  \"status_code\": 500\n}"
+						},
+						{
+							"id": "5602e3ff-5ad9-486a-9b53-520ebc7c75cf",
+							"name": "Service Unavailable",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/permissions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"permissions"
+									]
+								}
+							},
+							"status": "Service Unavailable",
+							"code": 503,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": false,\n  \"message\": \"Service Unavailable\",\n  \"errors\": null,\n  \"status_code\": 503\n}"
+						}
+					]
+				}
+			],
+			"id": "0cbacca0-27fa-455c-8203-36d79d07f1ff"
+		},
+		{
+			"name": "roles",
+			"item": [
+				{
+					"name": "{roleId}",
+					"item": [
+						{
+							"name": "grant-access",
+							"item": [
+								{
+									"name": "Grant access to a role.",
+									"id": "0e32b925-fc4e-4118-bd7c-269368561535",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"permissions\": [\n    \"d4ad1ac8-93jk-2yjz-9bbm-421a8d304721\",\n    \"91d0c950-ik68-4lc5-96e7-42939e5357d1\"\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/roles/:roleId/grant-access",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"roles",
+												":roleId",
+												"grant-access"
+											],
+											"variable": [
+												{
+													"key": "roleId",
+													"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+													"description": "(Required) The unique identifier of the role."
+												}
+											]
+										},
+										"description": "Grant permissions access to role."
+									},
+									"response": [
+										{
+											"id": "ddae7c4c-6634-4050-9997-002f72eaf2c9",
+											"name": "Successful response",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: apikey",
+														"key": "X-Api-Key",
+														"value": "<API Key>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"permissions\": [\n    \"d4ad1ac8-93jk-2yjz-9bbm-421a8d304721\",\n    \"91d0c950-ik68-4lc5-96e7-42939e5357d1\"\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/roles/:roleId/grant-access",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"roles",
+														":roleId",
+														"grant-access"
+													],
+													"variable": [
+														{
+															"key": "roleId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"status\": true,\n  \"message\": \"Access granted to role successfully.\",\n  \"data\": true,\n  \"status_code\": 200\n}"
+										}
+									]
+								}
+							],
+							"id": "cdcd02fc-bd38-4fad-96e3-5577f5a4ff23"
+						},
+						{
+							"name": "revoke-access",
+							"item": [
+								{
+									"name": "Revoke access to a role.",
+									"id": "615a57e9-9ca8-44d3-bc2d-f0fc769768a1",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"permissions\": [\n    \"d4ad1ac8-93jk-2yjz-9bbm-421a8d304721\",\n    \"91d0c950-ik68-4lc5-96e7-42939e5357d1\"\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/roles/:roleId/revoke-access",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"roles",
+												":roleId",
+												"revoke-access"
+											],
+											"variable": [
+												{
+													"key": "roleId",
+													"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+													"description": "(Required) The unique identifier of the role."
+												}
+											]
+										},
+										"description": "Revoke permissions access to role."
+									},
+									"response": [
+										{
+											"id": "d4a6de25-8ba5-409b-97eb-66573c8eecbd",
+											"name": "Successful response",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: apikey",
+														"key": "X-Api-Key",
+														"value": "<API Key>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"permissions\": [\n    \"d4ad1ac8-93jk-2yjz-9bbm-421a8d304721\",\n    \"91d0c950-ik68-4lc5-96e7-42939e5357d1\"\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/roles/:roleId/revoke-access",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"roles",
+														":roleId",
+														"revoke-access"
+													],
+													"variable": [
+														{
+															"key": "roleId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"status\": true,\n  \"message\": \"Access granted to role successfully.\",\n  \"data\": true,\n  \"status_code\": 200\n}"
+										}
+									]
+								}
+							],
+							"id": "4dda260c-7777-4c79-8194-1df61f878fa0"
+						},
+						{
+							"name": "Retrieve a role",
+							"id": "826c500b-51a1-4673-94d9-022742a71ae5",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/roles/:roleId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"roles",
+										":roleId"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "cupidatat adipisicing nulla incididunt dolor",
+											"description": "Comma-separated list of fields to include in the response.",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "roleId",
+											"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+											"description": "(Required) The unique identifier of the role"
+										}
+									]
+								},
+								"description": "Retrieve role information based on certain criteria."
+							},
+							"response": [
+								{
+									"id": "a4efa31b-719b-4355-a395-1d7f37c93a86",
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-Api-Key",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/roles/:roleId?fields=cupidatat adipisicing nulla incididunt dolor",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"roles",
+												":roleId"
+											],
+											"query": [
+												{
+													"description": "Comma-separated list of fields to include in the response.",
+													"key": "fields",
+													"value": "cupidatat adipisicing nulla incididunt dolor"
+												}
+											],
+											"variable": [
+												{
+													"key": "roleId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"992b4f32-7oau-31r4-88iq-52a6561514d7\",\n    \"name\": \"eiusmod tempor ad anim irure\",\n    \"description\": \"\"\n  },\n  \"status_code\": 200\n}"
+								}
+							]
+						},
+						{
+							"name": "Update a role",
+							"id": "f1395eb6-3c88-424c-adb4-41b6554e6028",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Nom du champ\",\n  \"permissions\": [\n    \"8828ee5b-u560-3dvc-9l9q-e7cf1ac9c181\",\n    \"59e6ddd9-ixu1-46sh-97gb-d1852480de38\"\n  ],\n  \"description\": \"et incididunt non amet\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/roles/:roleId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"roles",
+										":roleId"
+									],
+									"variable": [
+										{
+											"key": "roleId",
+											"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+											"description": "(Required) The unique identifier of the role"
+										}
+									]
+								},
+								"description": "Update role information based on certain criteria."
+							},
+							"response": [
+								{
+									"id": "021e2487-1de8-435d-afee-6927000f4ac8",
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-Api-Key",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"Nom du champ\",\n  \"permissions\": [\n    \"8828ee5b-u560-3dvc-9l9q-e7cf1ac9c181\",\n    \"59e6ddd9-ixu1-46sh-97gb-d1852480de38\"\n  ],\n  \"description\": \"et incididunt non amet\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/roles/:roleId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"roles",
+												":roleId"
+											],
+											"variable": [
+												{
+													"key": "roleId"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"6aced208-38ut-5cih-Af5d-1ab95796493f\",\n    \"name\": \"nisi reprehenderit sed\",\n    \"description\": \"consequat aliqua\"\n  },\n  \"status_code\": 201\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete a role",
+							"id": "2e2b9cfa-0e15-421c-af42-217331eebe17",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/roles/:roleId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"roles",
+										":roleId"
+									],
+									"variable": [
+										{
+											"key": "roleId",
+											"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+											"description": "(Required) The unique identifier of the role"
+										}
+									]
+								},
+								"description": "Delete role information based on certain criteria."
+							},
+							"response": [
+								{
+									"id": "c85996e3-db22-4ed1-81f3-c4e8f8003b26",
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-Api-Key",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/roles/:roleId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"roles",
+												":roleId"
+											],
+											"variable": [
+												{
+													"key": "roleId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": true,\n  \"message\": null,\n  \"data\": null,\n  \"status_code\": 200\n}"
+								}
+							]
+						}
+					],
+					"id": "54750c91-aaff-4452-9be3-4947a82406bb"
+				},
+				{
+					"name": "Retrieve list of roles",
+					"id": "fc66226a-731c-4b00-a1cc-c0f50522de52",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/roles?fields=name,slug",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"roles"
+							],
+							"query": [
+								{
+									"description": "Comma-separated list of fields to include in the response.",
+									"key": "fields",
+									"value": "name,slug"
+								}
+							]
+						},
+						"description": "Retrieves roles information based on certain criteria."
+					},
+					"response": [
+						{
+							"id": "b89509a2-df53-48be-a562-5900ac4bb55e",
+							"name": "Successfully Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/roles?fields=name,slug",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"roles"
+									],
+									"query": [
+										{
+											"description": "Comma-separated list of fields to include in the response.",
+											"key": "fields",
+											"value": "name,slug"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-RateLimit-Limit",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-RateLimit-Remaining",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Access-Control-Allow-Origin",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Access-Control-Allow-Methods",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Access-Control-Allow-Credentials",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Access-Control-Max-Age",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Access-Control-Allow-Headers",
+									"value": ""
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": true,\n  \"message\": \"List of roles retrieve successfully\",\n  \"data\": {\n    \"current_page\": 2,\n    \"data\": [\n      {\n        \"id\": \"6fd75889-v5bg-2ek6-8a3b-a704318e02b5\",\n        \"name\": \"Name\",\n        \"slug\": \"can-ceate-an-user\",\n        \"description\": \"This role has administrative privileges.\",\n        \"permissions\": [\n          {\n            \"id\": \"8f2a0872-uxrk-1fl8-Be9p-6b4dde739f96\",\n            \"name\": \"Name\",\n            \"slug\": \"can-ceate-an-user\",\n            \"description\": \"This permission has administrative privileges.\",\n            \"created_at\": \"2024-03-13 16:58:10\"\n          },\n          {\n            \"id\": \"34201602-cil8-55ir-Bqim-ed54dff9b00d\",\n            \"name\": \"Name\",\n            \"slug\": \"can-ceate-an-user\",\n            \"description\": \"This permission has administrative privileges.\",\n            \"created_at\": \"2024-03-13 16:58:10\"\n          }\n        ],\n        \"created_at\": \"2024-03-13 16:58:10\"\n      },\n      {\n        \"id\": \"d3ff310a-x9ed-2nwg-9b0o-851f34e01402\",\n        \"name\": \"Name\",\n        \"slug\": \"can-ceate-an-user\",\n        \"description\": \"This role has administrative privileges.\",\n        \"permissions\": [\n          {\n            \"id\": \"705a0ff9-dbgs-53kv-87fc-c80e593ee75d\",\n            \"name\": \"Name\",\n            \"slug\": \"can-ceate-an-user\",\n            \"description\": \"This permission has administrative privileges.\",\n            \"created_at\": \"2024-03-13 16:58:10\"\n          },\n          {\n            \"id\": \"999cdd0f-4um7-4i4b-A7bb-2f0110ad576f\",\n            \"name\": \"Name\",\n            \"slug\": \"can-ceate-an-user\",\n            \"description\": \"This permission has administrative privileges.\",\n            \"created_at\": \"2024-03-13 16:58:10\"\n          }\n        ],\n        \"created_at\": \"2024-03-13 16:58:10\"\n      }\n    ],\n    \"first_page_url\": \"roles?page=1\",\n    \"from\": 1,\n    \"last_page\": 7,\n    \"last_page_url\": \"roles?page=7\",\n    \"links\": [\n      {\n        \"url\": null,\n        \"label\": \"&laquo; Previous\",\n        \"active\": true\n      },\n      {\n        \"url\": null,\n        \"label\": \"&laquo; Previous\",\n        \"active\": true\n      }\n    ],\n    \"next_page_url\": \"roles?page=3\",\n    \"path\": \"roles\",\n    \"per_page\": 15,\n    \"prev_page_url\": \"roles?page=1\",\n    \"to\": 3,\n    \"total\": 100\n  },\n  \"status_code\": 200\n}"
+						},
+						{
+							"id": "f0702fa2-8a4a-4433-b903-69d223d34941",
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/roles?fields=name,slug",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"roles"
+									],
+									"query": [
+										{
+											"description": "Comma-separated list of fields to include in the response.",
+											"key": "fields",
+											"value": "name,slug"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": false,\n  \"message\": \"The request body is missing the required 'name' parameter.\",\n  \"errors\": null,\n  \"status_code\": 400\n}"
+						},
+						{
+							"id": "b50a486d-c637-4543-826b-61dc2d9ba590",
+							"name": "Method Not Allowed. The request method is known by the server but has been disabled and cannot be used.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/roles?fields=name,slug",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"roles"
+									],
+									"query": [
+										{
+											"description": "Comma-separated list of fields to include in the response.",
+											"key": "fields",
+											"value": "name,slug"
+										}
+									]
+								}
+							},
+							"status": "Method Not Allowed",
+							"code": 405,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": false,\n  \"message\": \"Method Not Allowed. The request method is known by the server but has been disabled and cannot be used.\",\n  \"errors\": null,\n  \"status_code\": 405\n}"
+						},
+						{
+							"id": "f55fd2ac-3083-43d0-9f7d-ad44a2385b64",
+							"name": "Request Timeout. The server timed out waiting for the request.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/roles?fields=name,slug",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"roles"
+									],
+									"query": [
+										{
+											"description": "Comma-separated list of fields to include in the response.",
+											"key": "fields",
+											"value": "name,slug"
+										}
+									]
+								}
+							},
+							"status": "Request Timeout",
+							"code": 408,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": false,\n  \"message\": \"Request Timeout. The server timed out waiting for the request.\",\n  \"errors\": null,\n  \"status_code\": 408\n}"
+						},
+						{
+							"id": "72705043-3a86-475e-a078-a929a24b549d",
+							"name": "Unprocessable Entity. The server understands the content type of the request entity but was unable to process the contained instructions.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/roles?fields=name,slug",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"roles"
+									],
+									"query": [
+										{
+											"description": "Comma-separated list of fields to include in the response.",
+											"key": "fields",
+											"value": "name,slug"
+										}
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": false,\n  \"message\": \"The request body contains invalid data.\",\n  \"errors\": null,\n  \"status_code\": 422\n}"
+						},
+						{
+							"id": "40824e6e-8bc5-4624-8dca-7def0a7a22f3",
+							"name": "Too Many Requests: Rate Limit Exceeded",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/roles?fields=name,slug",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"roles"
+									],
+									"query": [
+										{
+											"description": "Comma-separated list of fields to include in the response.",
+											"key": "fields",
+											"value": "name,slug"
+										}
+									]
+								}
+							},
+							"status": "Too Many Requests",
+							"code": 429,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": false,\n  \"message\": \"Rate Limit Exceeded\",\n  \"errors\": null,\n  \"status_code\": 429\n}"
+						},
+						{
+							"id": "66ed25c0-d754-4c7f-a2f6-9b10ef90b3e7",
+							"name": "Internal Server Error. An unexpected error occurred while processing the request.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/roles?fields=name,slug",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"roles"
+									],
+									"query": [
+										{
+											"description": "Comma-separated list of fields to include in the response.",
+											"key": "fields",
+											"value": "name,slug"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-RateLimit-Limit",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-RateLimit-Remaining",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Access-Control-Allow-Origin",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Access-Control-Allow-Methods",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Access-Control-Allow-Credentials",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Access-Control-Max-Age",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Access-Control-Allow-Headers",
+									"value": ""
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": false,\n  \"message\": \"Internal Server Error occurred while processing the request.\",\n  \"errors\": null,\n  \"status_code\": 500\n}"
+						},
+						{
+							"id": "6239cf9e-9de7-4f2f-ae3c-29689d1051cf",
+							"name": "Service Unavailable",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/roles?fields=name,slug",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"roles"
+									],
+									"query": [
+										{
+											"description": "Comma-separated list of fields to include in the response.",
+											"key": "fields",
+											"value": "name,slug"
+										}
+									]
+								}
+							},
+							"status": "Service Unavailable",
+							"code": 503,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": false,\n  \"message\": \"Service Unavailable\",\n  \"errors\": null,\n  \"status_code\": 503\n}"
+						}
+					]
+				},
+				{
+					"name": "Create a new role",
+					"id": "416f950b-3594-4a64-8c77-10ca7ea65132",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"b791d7b7-t76c-2zqr-882c-aa4706142f94\",\n    \"28a430ac-6umk-16c9-Akdl-7ad3843d9e09\"\n  ],\n  \"description\": \"This role has administrative privileges.\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/roles",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"roles"
+							]
+						},
+						"description": "Create a new role with the provided data."
+					},
+					"response": [
+						{
+							"id": "dc4af678-90e7-4c04-86ca-78d219a044ff",
+							"name": "Successfully Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"b791d7b7-t76c-2zqr-882c-aa4706142f94\",\n    \"28a430ac-6umk-16c9-Akdl-7ad3843d9e09\"\n  ],\n  \"description\": \"This role has administrative privileges.\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/roles",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"roles"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-RateLimit-Limit",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-RateLimit-Remaining",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Access-Control-Allow-Origin",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Access-Control-Allow-Methods",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Access-Control-Allow-Credentials",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Access-Control-Max-Age",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Access-Control-Allow-Headers",
+									"value": ""
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": true,\n  \"message\": \"Role created successfully\",\n  \"data\": {\n    \"id\": \"230874d1-48r3-48m3-9cif-cf1156a22b5b\",\n    \"name\": \"Name\",\n    \"slug\": \"can-ceate-an-user\",\n    \"description\": \"This role has administrative privileges.\",\n    \"permissions\": [\n      {\n        \"id\": \"0d24052f-r5f7-5ev0-Aj41-a42d305b54f9\",\n        \"name\": \"Name\",\n        \"slug\": \"can-ceate-an-user\",\n        \"description\": \"This permission has administrative privileges.\",\n        \"created_at\": \"2024-03-13 16:58:10\"\n      },\n      {\n        \"id\": \"caa1ead3-nufa-1arj-B6fk-36c17ffe0bf0\",\n        \"name\": \"Name\",\n        \"slug\": \"can-ceate-an-user\",\n        \"description\": \"This permission has administrative privileges.\",\n        \"created_at\": \"2024-03-13 16:58:10\"\n      }\n    ],\n    \"created_at\": \"2024-03-13 16:58:10\"\n  },\n  \"status_code\": 201\n}"
+						},
+						{
+							"id": "5f54ce12-ec7c-4aaf-bffd-5dd41b2afdf5",
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"b791d7b7-t76c-2zqr-882c-aa4706142f94\",\n    \"28a430ac-6umk-16c9-Akdl-7ad3843d9e09\"\n  ],\n  \"description\": \"This role has administrative privileges.\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/roles",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"roles"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": false,\n  \"message\": \"The request body is missing the required 'name' parameter.\",\n  \"errors\": null,\n  \"status_code\": 400\n}"
+						},
+						{
+							"id": "c53afb26-eb99-46a3-bc42-bf437c9d0ce8",
+							"name": "Unauthorized. The request requires user authentication or, if the request included authorization credentials, authorization has been refused for those credentials.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"b791d7b7-t76c-2zqr-882c-aa4706142f94\",\n    \"28a430ac-6umk-16c9-Akdl-7ad3843d9e09\"\n  ],\n  \"description\": \"This role has administrative privileges.\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/roles",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"roles"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": false,\n  \"message\": \"You are not authorized to access this resource.\",\n  \"errors\": null,\n  \"status_code\": 401\n}"
+						},
+						{
+							"id": "0374a828-59ba-4b4b-8f37-11e26003dd29",
+							"name": "Forbidden. The server understood the request, but refuses to authorize it.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"b791d7b7-t76c-2zqr-882c-aa4706142f94\",\n    \"28a430ac-6umk-16c9-Akdl-7ad3843d9e09\"\n  ],\n  \"description\": \"This role has administrative privileges.\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/roles",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"roles"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": false,\n  \"message\": \"Access to the requested resource is forbidden.\",\n  \"errors\": null,\n  \"status_code\": 403\n}"
+						},
+						{
+							"id": "62412544-00dc-4a9e-be65-f882a9645c45",
+							"name": "Method Not Allowed. The request method is known by the server but has been disabled and cannot be used.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"b791d7b7-t76c-2zqr-882c-aa4706142f94\",\n    \"28a430ac-6umk-16c9-Akdl-7ad3843d9e09\"\n  ],\n  \"description\": \"This role has administrative privileges.\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/roles",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"roles"
+									]
+								}
+							},
+							"status": "Method Not Allowed",
+							"code": 405,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": false,\n  \"message\": \"Method Not Allowed. The request method is known by the server but has been disabled and cannot be used.\",\n  \"errors\": null,\n  \"status_code\": 405\n}"
+						},
+						{
+							"id": "98dbe71d-e6e3-4c3a-b6c3-7042e66d36ad",
+							"name": "Request Timeout. The server timed out waiting for the request.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"b791d7b7-t76c-2zqr-882c-aa4706142f94\",\n    \"28a430ac-6umk-16c9-Akdl-7ad3843d9e09\"\n  ],\n  \"description\": \"This role has administrative privileges.\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/roles",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"roles"
+									]
+								}
+							},
+							"status": "Request Timeout",
+							"code": 408,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": false,\n  \"message\": \"Request Timeout. The server timed out waiting for the request.\",\n  \"errors\": null,\n  \"status_code\": 408\n}"
+						},
+						{
+							"id": "c60b44c8-5ab4-4526-9535-768b5c8d0054",
+							"name": "Unprocessable Entity. The server understands the content type of the request entity but was unable to process the contained instructions.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"b791d7b7-t76c-2zqr-882c-aa4706142f94\",\n    \"28a430ac-6umk-16c9-Akdl-7ad3843d9e09\"\n  ],\n  \"description\": \"This role has administrative privileges.\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/roles",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"roles"
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": false,\n  \"message\": \"The request body contains invalid data.\",\n  \"errors\": null,\n  \"status_code\": 422\n}"
+						},
+						{
+							"id": "536feac7-336e-40d2-b860-9799997bc343",
+							"name": "Too Many Requests: Rate Limit Exceeded",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"b791d7b7-t76c-2zqr-882c-aa4706142f94\",\n    \"28a430ac-6umk-16c9-Akdl-7ad3843d9e09\"\n  ],\n  \"description\": \"This role has administrative privileges.\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/roles",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"roles"
+									]
+								}
+							},
+							"status": "Too Many Requests",
+							"code": 429,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": false,\n  \"message\": \"Rate Limit Exceeded\",\n  \"errors\": null,\n  \"status_code\": 429\n}"
+						},
+						{
+							"id": "bcfe6b6b-696b-4007-ba84-f8239e1ca444",
+							"name": "Internal Server Error. An unexpected error occurred while processing the request.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"b791d7b7-t76c-2zqr-882c-aa4706142f94\",\n    \"28a430ac-6umk-16c9-Akdl-7ad3843d9e09\"\n  ],\n  \"description\": \"This role has administrative privileges.\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/roles",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"roles"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-RateLimit-Limit",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-RateLimit-Remaining",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Access-Control-Allow-Origin",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Access-Control-Allow-Methods",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Access-Control-Allow-Credentials",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Access-Control-Max-Age",
+									"value": ""
+								},
+								{
+									"disabled": false,
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Access-Control-Allow-Headers",
+									"value": ""
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": false,\n  \"message\": \"Internal Server Error occurred while processing the request.\",\n  \"errors\": null,\n  \"status_code\": 500\n}"
+						},
+						{
+							"id": "28798c31-6482-465c-ab67-abc6729fcb12",
+							"name": "Service Unavailable",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"b791d7b7-t76c-2zqr-882c-aa4706142f94\",\n    \"28a430ac-6umk-16c9-Akdl-7ad3843d9e09\"\n  ],\n  \"description\": \"This role has administrative privileges.\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/roles",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"roles"
+									]
+								}
+							},
+							"status": "Service Unavailable",
+							"code": 503,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": false,\n  \"message\": \"Service Unavailable\",\n  \"errors\": null,\n  \"status_code\": 503\n}"
+						}
+					]
+				}
+			],
+			"id": "efda0934-65c8-43f3-8e7a-1df9fef92856"
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "{userId}",
+					"item": [
+						{
+							"name": "roles",
+							"item": [
+								{
+									"name": "Retrieve user roles",
+									"id": "6012a32e-1bc5-407c-9c92-77675da3ae69",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/users/:userId/roles?page=1&per_page=10&fields=cupidatat adipisicing nulla incididunt dolor",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												":userId",
+												"roles"
+											],
+											"query": [
+												{
+													"description": "Page number of roles.",
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"description": "Number of roles per page.",
+													"key": "per_page",
+													"value": "10"
+												},
+												{
+													"description": "Comma-separated list of fields to include in the response.",
+													"key": "fields",
+													"value": "cupidatat adipisicing nulla incididunt dolor"
+												}
+											],
+											"variable": [
+												{
+													"key": "userId",
+													"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+													"description": "(Required) The unique identifier of the user."
+												}
+											]
+										},
+										"description": "Retrieves user roles information based on certain criteria."
+									},
+									"response": [
+										{
+											"id": "2e06e2b4-0b1d-4f93-ad1e-144316a02064",
+											"name": "Successful response",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: apikey",
+														"key": "X-Api-Key",
+														"value": "<API Key>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/users/:userId/roles?page=1&per_page=10&fields=cupidatat adipisicing nulla incididunt dolor",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"users",
+														":userId",
+														"roles"
+													],
+													"query": [
+														{
+															"description": "Page number of roles.",
+															"key": "page",
+															"value": "1"
+														},
+														{
+															"description": "Number of roles per page.",
+															"key": "per_page",
+															"value": "10"
+														},
+														{
+															"description": "Comma-separated list of fields to include in the response.",
+															"key": "fields",
+															"value": "cupidatat adipisicing nulla incididunt dolor"
+														}
+													],
+													"variable": [
+														{
+															"key": "userId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"current_page\": 1,\n    \"data\": [\n      {\n        \"id\": \"0aebcd9c-r693-1cnr-88h2-86a175c7076e\",\n        \"name\": \"\",\n        \"description\": \"in enim est esse adipisicing\"\n      },\n      {\n        \"id\": \"b7000666-xdj5-3ont-9db1-735187d403c4\",\n        \"name\": \"incididunt\",\n        \"description\": \"deserunt labore nostrud ex\"\n      }\n    ],\n    \"links\": [\n      {\n        \"url\": \"reprehenderit consequat cillum\",\n        \"label\": \"magna ea quis occaecat exercit\",\n        \"active\": false\n      },\n      {\n        \"url\": \"ad\",\n        \"label\": \"in laboris aute\",\n        \"active\": true\n      }\n    ],\n    \"total\": 36,\n    \"per_page\": 15,\n    \"next_page_url\": \"Ut quis sed\",\n    \"prev_page_url\": \"est incididunt\",\n    \"first_page_url\": \"ut fugiat velit aute\",\n    \"from\": 1,\n    \"last_page\": 1,\n    \"last_page_url\": \"{{baseUrl}}/roles?page=1\",\n    \"path\": \"{{baseUrl}}/roles\",\n    \"to\": 2\n  },\n  \"status_code\": 200\n}"
+										}
+									]
+								}
+							],
+							"id": "ba74a94c-aa48-42fc-a082-9f3351eaf894"
+						},
+						{
+							"name": "assign-roles",
+							"item": [
+								{
+									"name": "Assign roles to a user.",
+									"id": "91ebb0cf-106c-4211-bdb1-59b20a9a7106",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"roles\": [\n    \"02af914e-fk07-30ud-8okl-8b31545f313a\",\n    \"e43e6c4b-xdb3-34q6-840j-1c598b5105e2\"\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users/:userId/assign-roles",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												":userId",
+												"assign-roles"
+											],
+											"variable": [
+												{
+													"key": "userId",
+													"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+													"description": "(Required) The unique identifier of the user."
+												}
+											]
+										},
+										"description": "Grant permissions access to user."
+									},
+									"response": [
+										{
+											"id": "72b6b783-2cba-4aa6-9e5e-63fb60bf6b98",
+											"name": "Successful response",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: apikey",
+														"key": "X-Api-Key",
+														"value": "<API Key>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"roles\": [\n    \"02af914e-fk07-30ud-8okl-8b31545f313a\",\n    \"e43e6c4b-xdb3-34q6-840j-1c598b5105e2\"\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/users/:userId/assign-roles",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"users",
+														":userId",
+														"assign-roles"
+													],
+													"variable": [
+														{
+															"key": "userId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"status\": true,\n  \"message\": \"Access granted to user successfully.\",\n  \"data\": true,\n  \"status_code\": 200\n}"
+										}
+									]
+								}
+							],
+							"id": "7119dd81-0cbd-4a68-aa20-c57dbdc7776b"
+						},
+						{
+							"name": "revoke-roles",
+							"item": [
+								{
+									"name": "Revoke roles from user.",
+									"id": "9d70888c-d703-40e5-87ec-4c3918c1cb7c",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"roles\": [\n    \"02af914e-fk07-30ud-8okl-8b31545f313a\",\n    \"e43e6c4b-xdb3-34q6-840j-1c598b5105e2\"\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users/:userId/revoke-roles",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												":userId",
+												"revoke-roles"
+											],
+											"variable": [
+												{
+													"key": "userId",
+													"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+													"description": "(Required) The unique identifier of the user."
+												}
+											]
+										},
+										"description": "Revoke roles from user."
+									},
+									"response": [
+										{
+											"id": "a3a8ce9e-d810-48a2-bd0d-a75dce6ec62c",
+											"name": "Successful response",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: apikey",
+														"key": "X-Api-Key",
+														"value": "<API Key>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"roles\": [\n    \"02af914e-fk07-30ud-8okl-8b31545f313a\",\n    \"e43e6c4b-xdb3-34q6-840j-1c598b5105e2\"\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/users/:userId/revoke-roles",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"users",
+														":userId",
+														"revoke-roles"
+													],
+													"variable": [
+														{
+															"key": "userId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"status\": true,\n  \"message\": \"Access granted to user successfully.\",\n  \"data\": true,\n  \"status_code\": 200\n}"
+										}
+									]
+								}
+							],
+							"id": "526af012-e1b9-4ff1-ae77-a0a27ead9f0f"
+						},
+						{
+							"name": "Retrieve a user",
+							"id": "5fb609cb-7a60-4b8c-b421-a6c2866de13e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/users/:userId?page=1&per_page=10&fields=cupidatat adipisicing nulla incididunt dolor",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":userId"
+									],
+									"query": [
+										{
+											"description": "Page number of user.",
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"description": "Number of user per page.",
+											"key": "per_page",
+											"value": "10"
+										},
+										{
+											"description": "Comma-separated list of fields to include in the response.",
+											"key": "fields",
+											"value": "cupidatat adipisicing nulla incididunt dolor"
+										}
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+											"description": "(Required) The unique identifier of the user"
+										}
+									]
+								},
+								"description": "Retrieve user information based on certain criteria."
+							},
+							"response": [
+								{
+									"id": "8348f8e1-07d1-403a-9cff-e4048613f20f",
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-Api-Key",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/users/:userId?page=1&per_page=10&fields=cupidatat adipisicing nulla incididunt dolor",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												":userId"
+											],
+											"query": [
+												{
+													"description": "Page number of user.",
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"description": "Number of user per page.",
+													"key": "per_page",
+													"value": "10"
+												},
+												{
+													"description": "Comma-separated list of fields to include in the response.",
+													"key": "fields",
+													"value": "cupidatat adipisicing nulla incididunt dolor"
+												}
+											],
+											"variable": [
+												{
+													"key": "userId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"7f182094-iosc-1rq8-9bia-30fc6c0ce910\",\n    \"type_of_account\": \"personal\",\n    \"login_channel\": \"email\",\n    \"username\": \"exercitation ex reprehenderit dolor e\",\n    \"email\": \"johndoe@gmail.com\",\n    \"phone_number\": {\n      \"country_code\": 229,\n      \"number\": 94531209\n    },\n    \"address\": \"qui officia quis\",\n    \"userable\": {\n      \"id\": \"28a3629a-lxa1-4f47-Bed1-1e31f2fbce31\",\n      \"first_name\": \"elit velit\",\n      \"last_name\": \"DOE\",\n      \"middle_name\": [\n        \"Phillipe\",\n        \"Jack\"\n      ],\n      \"sex\": \"male\",\n      \"marital_status\": \"single\",\n      \"birth_date\": \"6408-42-74 12h:26min\",\n      \"ifu\": 45984960456,\n      \"nip\": 45984960456,\n      \"nationality\": \"do deserunt sed\"\n    }\n  },\n  \"status_code\": 200\n}"
+								}
+							]
+						},
+						{
+							"name": "Update a user",
+							"id": "b4756612-e526-427b-b9a9-6a35cbb17128",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"type_of_account\": \"personal\",\n  \"login_channel\": \"email\",\n  \"phone_number\": {\n    \"country_code\": 229,\n    \"number\": 94531209\n  },\n  \"role_id\": \"bca1ccad-k45m-4b6u-A322-d3279d7f5203\",\n  \"user\": {\n    \"first_name\": \"essein ut\",\n    \"last_name\": \"DOE\",\n    \"sex\": \"male\",\n    \"middle_name\": [\n      \"Phillipe\"\n    ],\n    \"marital_status\": \"single\",\n    \"birth_date\": \"euea quis nisi\",\n    \"ifu\": 45984960456,\n    \"nip\": 45984960456,\n    \"nationality\": \"dolore consectetur reprehenderit\"\n  },\n  \"username\": \"in in et\",\n  \"email\": \"ea ullamco\",\n  \"address\": \"sit veniam \"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/:userId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+											"description": "(Required) The unique identifier of the user"
+										}
+									]
+								},
+								"description": "Update user information based on certain criteria."
+							},
+							"response": [
+								{
+									"id": "841a3089-9267-4448-874e-5b4d1f47d403",
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-Api-Key",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"type_of_account\": \"personal\",\n  \"login_channel\": \"email\",\n  \"phone_number\": {\n    \"country_code\": 229,\n    \"number\": 94531209\n  },\n  \"role_id\": \"bca1ccad-k45m-4b6u-A322-d3279d7f5203\",\n  \"user\": {\n    \"first_name\": \"essein ut\",\n    \"last_name\": \"DOE\",\n    \"sex\": \"male\",\n    \"middle_name\": [\n      \"Phillipe\"\n    ],\n    \"marital_status\": \"single\",\n    \"birth_date\": \"euea quis nisi\",\n    \"ifu\": 45984960456,\n    \"nip\": 45984960456,\n    \"nationality\": \"dolore consectetur reprehenderit\"\n  },\n  \"username\": \"in in et\",\n  \"email\": \"ea ullamco\",\n  \"address\": \"sit veniam \"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users/:userId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												":userId"
+											],
+											"variable": [
+												{
+													"key": "userId"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"3bd3571c-msaj-4xdw-Bll0-3949ecd6cd21\",\n    \"type_of_account\": \"personal\",\n    \"login_channel\": \"email\",\n    \"username\": \"magna in adipisicing ad cupidatat\",\n    \"email\": \"johndoe@gmail.com\",\n    \"phone_number\": {\n      \"country_code\": 229,\n      \"number\": 94531209\n    },\n    \"address\": \"laboris fugiat non\",\n    \"userable\": {\n      \"id\": \"3ca2ad79-pbvf-106d-Bo1d-46065d2bb1a0\",\n      \"first_name\": \"dolor tempor ad aliquip do\",\n      \"last_name\": \"DOE\",\n      \"middle_name\": [\n        \"Phillipe\",\n        \"Jack\"\n      ],\n      \"sex\": \"male\",\n      \"marital_status\": \"single\",\n      \"birth_date\": \"4757-07-94 01h:11min\",\n      \"ifu\": 45984960456,\n      \"nip\": 45984960456,\n      \"nationality\": \"est pariatur exercitation\"\n    }\n  },\n  \"status_code\": 201\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete a user",
+							"id": "f36014e4-2695-4749-9f93-88d80c5a3315",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/users/:userId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+											"description": "(Required) The unique identifier of the user"
+										}
+									]
+								},
+								"description": "Delete user information based on certain criteria."
+							},
+							"response": [
+								{
+									"id": "45da353e-aa8e-411b-a1c5-37ab062a21a4",
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-Api-Key",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/users/:userId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												":userId"
+											],
+											"variable": [
+												{
+													"key": "userId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": true,\n  \"message\": null,\n  \"data\": null,\n  \"status_code\": 200\n}"
+								}
+							]
+						}
+					],
+					"id": "c4cb92b1-0c9b-41ce-b2e9-82f6dce86056"
+				},
+				{
+					"name": "Retrieve users",
+					"id": "ec488931-7cd6-4a15-a6ba-929466609a1c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/users?page=1&per_page=10&fields=cupidatat adipisicing nulla incididunt dolor",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"description": "Page number of users.",
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"description": "Number of users per page.",
+									"key": "per_page",
+									"value": "10"
+								},
+								{
+									"description": "Comma-separated list of fields to include in the response.",
+									"key": "fields",
+									"value": "cupidatat adipisicing nulla incididunt dolor"
+								}
+							]
+						},
+						"description": "Retrieves users information based on certain criteria."
+					},
+					"response": [
+						{
+							"id": "fd8d10eb-8a0c-484d-92b0-d2d67c2dc33e",
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/users?page=1&per_page=10&fields=cupidatat adipisicing nulla incididunt dolor",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"description": "Page number of users.",
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"description": "Number of users per page.",
+											"key": "per_page",
+											"value": "10"
+										},
+										{
+											"description": "Comma-separated list of fields to include in the response.",
+											"key": "fields",
+											"value": "cupidatat adipisicing nulla incididunt dolor"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"current_page\": 1,\n    \"data\": [\n      {\n        \"id\": \"dd8aeec6-7hbw-47qh-8ilm-d0ca4b0cd6a8\",\n        \"type_of_account\": \"personal\",\n        \"login_channel\": \"email\",\n        \"username\": \"laboris\",\n        \"email\": \"johndoe@gmail.com\",\n        \"phone_number\": {\n          \"country_code\": 229,\n          \"number\": 94531209\n        },\n        \"address\": \"dolor id est Lorem\",\n        \"userable\": {\n          \"id\": \"0e9272ce-9o3u-1e4d-9170-2c284b05f8ce\",\n          \"first_name\": \"ad est veniam quis\",\n          \"last_name\": \"DOE\",\n          \"middle_name\": [\n            \"Phillipe\",\n            \"Jack\"\n          ],\n          \"sex\": \"male\",\n          \"marital_status\": \"single\",\n          \"birth_date\": \"2297-84-91 20h:56min\",\n          \"ifu\": 45984960456,\n          \"nip\": 45984960456,\n          \"nationality\": \"in fugiat ut\"\n        }\n      },\n      {\n        \"id\": \"b1fdc7af-i9l6-5fqp-A07h-ef0db2f92d37\",\n        \"type_of_account\": \"personal\",\n        \"login_channel\": \"email\",\n        \"username\": \"proident labo\",\n        \"email\": \"johndoe@gmail.com\",\n        \"phone_number\": {\n          \"country_code\": 229,\n          \"number\": 94531209\n        },\n        \"address\": \"elit minim\",\n        \"userable\": {\n          \"id\": \"74aa6622-i3nv-1ztq-Bonm-939dd8778eef\",\n          \"first_name\": \"Excepteur id et\",\n          \"last_name\": \"DOE\",\n          \"middle_name\": [\n            \"Phillipe\",\n            \"Jack\"\n          ],\n          \"sex\": \"male\",\n          \"marital_status\": \"single\",\n          \"birth_date\": \"1673-09-23 0h:34min1673-09-23 0h:34min\",\n          \"ifu\": 45984960456,\n          \"nip\": 45984960456,\n          \"nationality\": \"etut cillum eiusmod\"\n        }\n      }\n    ],\n    \"links\": [\n      {\n        \"url\": \"eiusmod dolor ut\",\n        \"label\": \"incididunt irure\",\n        \"active\": false\n      },\n      {\n        \"url\": \"proident incididunt reprehenderit\",\n        \"label\": \"et Lorem Ut reprehenderit veniam\",\n        \"active\": false\n      }\n    ],\n    \"total\": 36,\n    \"per_page\": 15,\n    \"next_page_url\": \"voluptate\",\n    \"prev_page_url\": \"Ut eiusmod\",\n    \"first_page_url\": \"dolore non\",\n    \"from\": 1,\n    \"last_page\": 1,\n    \"last_page_url\": \"{{baseUrl}}/users?page=1\",\n    \"path\": \"{{baseUrl}}/users\",\n    \"to\": 2\n  },\n  \"status_code\": 200\n}"
+						}
+					]
+				},
+				{
+					"name": "Store user",
+					"id": "32fcc04b-b753-4ce3-9c88-596b771cca39",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"type_of_account\": \"personal\",\n  \"login_channel\": \"email\",\n  \"phone_number\": {\n    \"country_code\": 229,\n    \"number\": 94531209\n  },\n  \"role_id\": \"bca1ccad-k45m-4b6u-A322-d3279d7f5203\",\n  \"user\": {\n    \"first_name\": \"essein ut\",\n    \"last_name\": \"DOE\",\n    \"sex\": \"male\",\n    \"middle_name\": [\n      \"Phillipe\"\n    ],\n    \"marital_status\": \"single\",\n    \"birth_date\": \"euea quis nisi\",\n    \"ifu\": 45984960456,\n    \"nip\": 45984960456,\n    \"nationality\": \"dolore consectetur reprehenderit\"\n  },\n  \"username\": \"in in et\",\n  \"email\": \"ea ullamco\",\n  \"address\": \"sit veniam \"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						},
+						"description": "Store a new user information based on certain criteria."
+					},
+					"response": [
+						{
+							"id": "83133483-035e-4fc7-9f45-59a73996f073",
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"type_of_account\": \"personal\",\n  \"login_channel\": \"email\",\n  \"phone_number\": {\n    \"country_code\": 229,\n    \"number\": 94531209\n  },\n  \"role_id\": \"bca1ccad-k45m-4b6u-A322-d3279d7f5203\",\n  \"user\": {\n    \"first_name\": \"essein ut\",\n    \"last_name\": \"DOE\",\n    \"sex\": \"male\",\n    \"middle_name\": [\n      \"Phillipe\"\n    ],\n    \"marital_status\": \"single\",\n    \"birth_date\": \"euea quis nisi\",\n    \"ifu\": 45984960456,\n    \"nip\": 45984960456,\n    \"nationality\": \"dolore consectetur reprehenderit\"\n  },\n  \"username\": \"in in et\",\n  \"email\": \"ea ullamco\",\n  \"address\": \"sit veniam \"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": true,\n  \"message\": \"User successful create.\",\n  \"data\": {\n    \"id\": \"2127afa1-nf3u-4aj0-A097-c7718a46fbd8\",\n    \"type_of_account\": \"personal\",\n    \"login_channel\": \"email\",\n    \"username\": \"aliquip id magna\",\n    \"email\": \"johndoe@gmail.com\",\n    \"phone_number\": {\n      \"country_code\": 229,\n      \"number\": 94531209\n    },\n    \"address\": \"nostrud dolor ut\",\n    \"userable\": {\n      \"id\": \"5b3324a3-sq7m-5u48-Aqo9-532c2b85af0f\",\n      \"first_name\": \"eiusmod commodo dolor\",\n      \"last_name\": \"DOE\",\n      \"middle_name\": [\n        \"Phillipe\",\n        \"Jack\"\n      ],\n      \"sex\": \"male\",\n      \"marital_status\": \"single\",\n      \"birth_date\": \"5244-73-04 3h:07min5244-73-04 3h:07min\",\n      \"ifu\": 45984960456,\n      \"nip\": 45984960456,\n      \"nationality\": \"laborum\"\n    }\n  },\n  \"status_code\": 201\n}"
+						}
+					]
+				}
+			],
+			"id": "f232945b-5a61-4dcf-b2f1-317790c6a6c2"
+		},
+		{
+			"name": "departements",
+			"item": [
+				{
+					"name": "{departementId}",
+					"item": [
+						{
+							"name": "Retrieve a departement",
+							"id": "0c3b2de7-f27c-4c06-a1e3-701a04a70c1d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/departements/:departementId?fields=cupidatat adipisicing nulla incididunt dolor",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"departements",
+										":departementId"
+									],
+									"query": [
+										{
+											"description": "Comma-separated list of fields to include in the response.",
+											"key": "fields",
+											"value": "cupidatat adipisicing nulla incididunt dolor"
+										}
+									],
+									"variable": [
+										{
+											"key": "departementId",
+											"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+											"description": "(Required) The unique identifier of the departement"
+										}
+									]
+								},
+								"description": "Retrieve departement information based on certain criteria."
+							},
+							"response": [
+								{
+									"id": "220d8436-ea92-4294-9b80-93fa1b2664f0",
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-Api-Key",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/departements/:departementId?fields=cupidatat adipisicing nulla incididunt dolor",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"departements",
+												":departementId"
+											],
+											"query": [
+												{
+													"description": "Comma-separated list of fields to include in the response.",
+													"key": "fields",
+													"value": "cupidatat adipisicing nulla incididunt dolor"
+												}
+											],
+											"variable": [
+												{
+													"key": "departementId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"01a230fe-u1e2-368j-8881-e69382d9e3eb\",\n    \"name\": \"Production\"\n  },\n  \"status_code\": 200\n}"
+								}
+							]
+						},
+						{
+							"name": "Update a departement",
+							"id": "5e125c80-a1d3-4347-99f9-894ed5e9e47e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Production\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/departements/:departementId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"departements",
+										":departementId"
+									],
+									"variable": [
+										{
+											"key": "departementId",
+											"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+											"description": "(Required) The unique identifier of the departement"
+										}
+									]
+								},
+								"description": "Update departement information based on certain criteria."
+							},
+							"response": [
+								{
+									"id": "11c49937-f548-4dc2-81b9-3e193e9a0969",
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-Api-Key",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"Production\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/departements/:departementId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"departements",
+												":departementId"
+											],
+											"variable": [
+												{
+													"key": "departementId"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": true,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"dd3fea3c-59ar-3wz9-A3nm-26f072f733b8\",\n    \"name\": \"Production\"\n  },\n  \"status_code\": 201\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete a departement",
+							"id": "e2100caa-817a-483c-a769-f651f9e8ea98",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/departements/:departementId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"departements",
+										":departementId"
+									],
+									"variable": [
+										{
+											"key": "departementId",
+											"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+											"description": "(Required) The unique identifier of the departement"
+										}
+									]
+								},
+								"description": "Delete departement information based on certain criteria."
+							},
+							"response": [
+								{
+									"id": "016c8131-ec2c-4d01-8509-f9533e9322ec",
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-Api-Key",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/departements/:departementId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"departements",
+												":departementId"
+											],
+											"variable": [
+												{
+													"key": "departementId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": true,\n  \"message\": null,\n  \"data\": null,\n  \"status_code\": 200\n}"
+								}
+							]
+						}
+					],
+					"id": "6c286754-2e3f-43b2-a3d4-237de78d7297"
+				},
+				{
+					"name": "Retrieve departements",
+					"id": "7f64caf1-7675-4785-9580-44d0791301ab",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/departements?page=1&per_page=10&fields=cupidatat adipisicing nulla incididunt dolor",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"departements"
+							],
+							"query": [
+								{
+									"description": "Page number of departements.",
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"description": "Number of departements per page.",
+									"key": "per_page",
+									"value": "10"
+								},
+								{
+									"description": "Comma-separated list of fields to include in the response.",
+									"key": "fields",
+									"value": "cupidatat adipisicing nulla incididunt dolor"
+								}
+							]
+						},
+						"description": "Retrieves departements information based on certain criteria."
+					},
+					"response": [
+						{
+							"id": "e98ae492-f047-4a01-9577-4b02ceeef52f",
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/departements?page=1&per_page=10&fields=cupidatat adipisicing nulla incididunt dolor",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"departements"
+									],
+									"query": [
+										{
+											"description": "Page number of departements.",
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"description": "Number of departements per page.",
+											"key": "per_page",
+											"value": "10"
+										},
+										{
+											"description": "Comma-separated list of fields to include in the response.",
+											"key": "fields",
+											"value": "cupidatat adipisicing nulla incididunt dolor"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"current_page\": 1,\n    \"data\": [\n      {\n        \"id\": \"7be6a823-uvi5-3i9i-8ik9-bf8656a6ba57\",\n        \"name\": \"Production\"\n      },\n      {\n        \"id\": \"77ecef5b-058l-11m8-Bngf-40d1e8ebd71c\",\n        \"name\": \"Production\"\n      }\n    ],\n    \"links\": [\n      {\n        \"url\": \"sint commodo sunt\",\n        \"label\": \"nisi sunt commodo adipisicing\",\n        \"active\": false\n      },\n      {\n        \"url\": \"nisi\",\n        \"label\": \"mollit voluptate et ullamco\",\n        \"active\": false\n      }\n    ],\n    \"total\": 36,\n    \"per_page\": 15,\n    \"next_page_url\": \"id\",\n    \"prev_page_url\": \"pariatur Ut\",\n    \"first_page_url\": \"ut proident\",\n    \"from\": 1,\n    \"last_page\": 1,\n    \"last_page_url\": \"{{baseUrl}}/departements?page=1\",\n    \"path\": \"{{baseUrl}}/departements\",\n    \"to\": 2\n  },\n  \"status_code\": 200\n}"
+						}
+					]
+				},
+				{
+					"name": "Retrieve departements",
+					"id": "bfa23d82-6291-4cdf-8bb9-5bbb8f7eab84",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Production\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/departements",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"departements"
+							]
+						},
+						"description": "Retrieves departements information based on certain criteria."
+					},
+					"response": [
+						{
+							"id": "309e2b14-5593-43b6-9798-05f02e213992",
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Production\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/departements",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"departements"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"48970678-7kgd-45ze-9e5g-b610ce2bac86\",\n    \"name\": \"Production\"\n  },\n  \"status_code\": 201\n}"
+						}
+					]
+				}
+			],
+			"id": "25b7e0ab-2096-4cc7-a401-47c0f4381a1f"
+		},
+		{
+			"name": "postes",
+			"item": [
+				{
+					"name": "{posteId}",
+					"item": [
+						{
+							"name": "Retrieve a poste",
+							"id": "44c1827f-dc8b-4a38-a0a2-4e34d15bfa63",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/postes/:posteId?fields=cupidatat adipisicing nulla incididunt dolor",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"postes",
+										":posteId"
+									],
+									"query": [
+										{
+											"description": "Comma-separated list of fields to include in the response.",
+											"key": "fields",
+											"value": "cupidatat adipisicing nulla incididunt dolor"
+										}
+									],
+									"variable": [
+										{
+											"key": "posteId",
+											"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+											"description": "(Required) The unique identifier of the poste"
+										}
+									]
+								},
+								"description": "Retrieve poste information based on certain criteria."
+							},
+							"response": [
+								{
+									"id": "a7f12131-ba5c-459e-8c1b-11610f10b5a2",
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-Api-Key",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/postes/:posteId?fields=cupidatat adipisicing nulla incididunt dolor",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"postes",
+												":posteId"
+											],
+											"query": [
+												{
+													"description": "Comma-separated list of fields to include in the response.",
+													"key": "fields",
+													"value": "cupidatat adipisicing nulla incididunt dolor"
+												}
+											],
+											"variable": [
+												{
+													"key": "posteId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"9254b423-g2f9-3n8i-B61m-c354ab4a4a63\",\n    \"name\": \"Chef section\",\n    \"department_id\": \"fb3317c2-lro2-4m4e-A93d-8f452fa39e52\"\n  },\n  \"status_code\": 200\n}"
+								}
+							]
+						},
+						{
+							"name": "Update a poste",
+							"id": "af9baba4-2502-49b1-954f-056f035d7e62",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"incididunt Excepteur amet id\",\n  \"department_id\": \"474ba580-xt0v-4n6h-82ib-5123df7cd0bd\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/postes/:posteId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"postes",
+										":posteId"
+									],
+									"variable": [
+										{
+											"key": "posteId",
+											"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+											"description": "(Required) The unique identifier of the poste"
+										}
+									]
+								},
+								"description": "Update poste information based on certain criteria."
+							},
+							"response": [
+								{
+									"id": "465307f8-2650-4f9c-85c5-8065358c0394",
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-Api-Key",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"incididunt Excepteur amet id\",\n  \"department_id\": \"474ba580-xt0v-4n6h-82ib-5123df7cd0bd\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/postes/:posteId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"postes",
+												":posteId"
+											],
+											"variable": [
+												{
+													"key": "posteId"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": true,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"d8f4ba52-416t-5zwp-A00p-e5203e2f04b8\",\n    \"name\": \"Chef section\",\n    \"department_id\": \"af81805e-wim5-5izl-A4ol-e562ad13302c\"\n  },\n  \"status_code\": 201\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete a poste",
+							"id": "c4324184-60f7-450d-b812-5afe4a759e7e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/postes/:posteId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"postes",
+										":posteId"
+									],
+									"variable": [
+										{
+											"key": "posteId",
+											"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+											"description": "(Required) The unique identifier of the poste"
+										}
+									]
+								},
+								"description": "Delete poste information based on certain criteria."
+							},
+							"response": [
+								{
+									"id": "5a7befc4-3a7a-426d-81b1-5e642d52e497",
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-Api-Key",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/postes/:posteId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"postes",
+												":posteId"
+											],
+											"variable": [
+												{
+													"key": "posteId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": true,\n  \"message\": null,\n  \"data\": null,\n  \"status_code\": 200\n}"
+								}
+							]
+						}
+					],
+					"id": "a5056a3b-4503-4146-bf60-bfa5f0473304"
+				},
+				{
+					"name": "Retrieve postes",
+					"id": "35a310a3-1563-4257-ad89-3546ed7cdd0a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/postes?page=1&per_page=10&fields=cupidatat adipisicing nulla incididunt dolor",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"postes"
+							],
+							"query": [
+								{
+									"description": "Page number of postes.",
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"description": "Number of postes per page.",
+									"key": "per_page",
+									"value": "10"
+								},
+								{
+									"description": "Comma-separated list of fields to include in the response.",
+									"key": "fields",
+									"value": "cupidatat adipisicing nulla incididunt dolor"
+								}
+							]
+						},
+						"description": "Retrieves postes information based on certain criteria."
+					},
+					"response": [
+						{
+							"id": "9c88cb00-f42f-433d-a19e-e06833b0e75f",
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/postes?page=1&per_page=10&fields=cupidatat adipisicing nulla incididunt dolor",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"postes"
+									],
+									"query": [
+										{
+											"description": "Page number of postes.",
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"description": "Number of postes per page.",
+											"key": "per_page",
+											"value": "10"
+										},
+										{
+											"description": "Comma-separated list of fields to include in the response.",
+											"key": "fields",
+											"value": "cupidatat adipisicing nulla incididunt dolor"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"current_page\": 1,\n    \"data\": [\n      {\n        \"id\": \"801530a2-qe0a-3gxg-94df-bc0848494080\",\n        \"name\": \"Chef section\",\n        \"department_id\": \"7f3266d5-bsdl-2hec-Bidh-29c246b245e3\"\n      },\n      {\n        \"id\": \"ad68f72c-awqa-4klv-82m9-1e8341a8a7ff\",\n        \"name\": \"Chef section\",\n        \"department_id\": \"5459ff0a-0wk4-59te-Ag9b-67d35b8b3b2b\"\n      }\n    ],\n    \"links\": [\n      {\n        \"url\": \"Excepteur esse id\",\n        \"label\": \"in\",\n        \"active\": true\n      },\n      {\n        \"url\": \"in enim\",\n        \"label\": \"laborum aliquip\",\n        \"active\": false\n      }\n    ],\n    \"total\": 36,\n    \"per_page\": 15,\n    \"next_page_url\": \"aute\",\n    \"prev_page_url\": \"irure quis aliquip eiusmod\",\n    \"first_page_url\": \"i\",\n    \"from\": 1,\n    \"last_page\": 1,\n    \"last_page_url\": \"{{baseUrl}}/postes?page=1\",\n    \"path\": \"{{baseUrl}}/postes\",\n    \"to\": 2\n  },\n  \"status_code\": 200\n}"
+						}
+					]
+				},
+				{
+					"name": "Retrieve postes",
+					"id": "2ab22aa4-af67-4834-8bda-26ba434de3e3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"incididunt Excepteur amet id\",\n  \"department_id\": \"474ba580-xt0v-4n6h-82ib-5123df7cd0bd\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/postes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"postes"
+							]
+						},
+						"description": "Retrieves postes information based on certain criteria."
+					},
+					"response": [
+						{
+							"id": "9032d379-3c8b-49b9-9c9e-934478c30c53",
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"incididunt Excepteur amet id\",\n  \"department_id\": \"474ba580-xt0v-4n6h-82ib-5123df7cd0bd\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/postes",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"postes"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"e04c7ab4-7ht6-2dyd-Bal1-6363ac9ee577\",\n    \"name\": \"Chef section\",\n    \"department_id\": \"06a1ae10-hvr3-4yo2-89l7-c17eb1f96d6c\"\n  },\n  \"status_code\": 201\n}"
+						}
+					]
+				}
+			],
+			"id": "d05889bf-4842-4d25-ad28-03f995a10417"
+		},
+		{
+			"name": "categories_of_employees",
+			"item": [
+				{
+					"name": "{categoryOfEmployeeId}",
+					"item": [
+						{
+							"name": "taux",
+							"item": [
+								{
+									"name": "Retrieve category of employee taux.",
+									"id": "b0237cea-4c6a-42e4-9a07-5a45b84b2759",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/categories_of_employees/:categoryOfEmployeeId/taux?page=1&per_page=10&fields=cupidatat adipisicing nulla incididunt dolor",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"categories_of_employees",
+												":categoryOfEmployeeId",
+												"taux"
+											],
+											"query": [
+												{
+													"description": "Page number of roles.",
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"description": "Number of roles per page.",
+													"key": "per_page",
+													"value": "10"
+												},
+												{
+													"description": "Comma-separated list of fields to include in the response.",
+													"key": "fields",
+													"value": "cupidatat adipisicing nulla incididunt dolor"
+												}
+											],
+											"variable": [
+												{
+													"key": "categoryOfEmployeeId",
+													"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+													"description": "(Required) The unique identifier of the user."
+												}
+											]
+										},
+										"description": "Retrieve category of employee taux."
+									},
+									"response": [
+										{
+											"id": "758b6278-5193-43da-a856-a0e60140052c",
+											"name": "Successful response",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: apikey",
+														"key": "X-Api-Key",
+														"value": "<API Key>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/categories_of_employees/:categoryOfEmployeeId/taux?page=1&per_page=10&fields=cupidatat adipisicing nulla incididunt dolor",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"categories_of_employees",
+														":categoryOfEmployeeId",
+														"taux"
+													],
+													"query": [
+														{
+															"description": "Page number of roles.",
+															"key": "page",
+															"value": "1"
+														},
+														{
+															"description": "Number of roles per page.",
+															"key": "per_page",
+															"value": "10"
+														},
+														{
+															"description": "Comma-separated list of fields to include in the response.",
+															"key": "fields",
+															"value": "cupidatat adipisicing nulla incididunt dolor"
+														}
+													],
+													"variable": [
+														{
+															"key": "categoryOfEmployeeId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"current_page\": 1,\n    \"data\": [\n      {\n        \"id\": \"bb102634-6hen-5y5w-B3lp-c226bc50b917\",\n        \"hint\": 1,\n        \"rate\": 180000,\n        \"rate_measure_unit_symbol\": \"xof\",\n        \"work_unit\": {\n          \"type\": \"article\",\n          \"symbol\": \"kg\"\n        }\n      },\n      {\n        \"id\": \"720a7a78-sbi6-2wbb-9ih6-177e3020b07a\",\n        \"hint\": 1,\n        \"rate\": 180000,\n        \"rate_measure_unit_symbol\": \"xof\",\n        \"work_unit\": {\n          \"type\": \"article\",\n          \"symbol\": \"kg\"\n        }\n      }\n    ],\n    \"links\": [\n      {\n        \"url\": \"\",\n        \"label\": \"mollit quis sunt cupi\",\n        \"active\": false\n      },\n      {\n        \"url\": \"dolor cupidatat ullamco\",\n        \"label\": \"dolore fugiat\",\n        \"active\": true\n      }\n    ],\n    \"total\": 36,\n    \"per_page\": 15,\n    \"next_page_url\": \"magna velit quis\",\n    \"prev_page_url\": \"consequat fugiat in\",\n    \"first_page_url\": \"cillum officia\",\n    \"from\": 1,\n    \"last_page\": 1,\n    \"last_page_url\": \"{{baseUrl}}/roles?page=1\",\n    \"path\": \"{{baseUrl}}/roles\",\n    \"to\": 2\n  },\n  \"status_code\": 200\n}"
+										}
+									]
+								}
+							],
+							"id": "98540b63-a923-4451-81ab-e0201cbaaded"
+						},
+						{
+							"name": "attach-taux",
+							"item": [
+								{
+									"name": "Attach taux to a category of employees.",
+									"id": "2b269659-d6e9-4d94-a32f-d8273c4136f0",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"taux\": [\n    {\n      \"taux_id\": \"e76613b8-iw1s-1i9w-9fc3-d6a2677aba10\",\n      \"est_le_taux_de_base\": false\n    },\n    {\n      \"taux_id\": \"ef2ad720-8nvg-3c9t-8cb6-01e6b8204bfc\",\n      \"est_le_taux_de_base\": false\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/categories_of_employees/:categoryOfEmployeeId/attach-taux",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"categories_of_employees",
+												":categoryOfEmployeeId",
+												"attach-taux"
+											],
+											"variable": [
+												{
+													"key": "categoryOfEmployeeId",
+													"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+													"description": "(Required) The unique identifier of the user."
+												}
+											]
+										},
+										"description": "Attach taux to a category of employees."
+									},
+									"response": [
+										{
+											"id": "45514551-e77a-4d81-9415-27ab97765041",
+											"name": "Successful response",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: apikey",
+														"key": "X-Api-Key",
+														"value": "<API Key>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"taux\": [\n    {\n      \"taux_id\": \"e76613b8-iw1s-1i9w-9fc3-d6a2677aba10\",\n      \"est_le_taux_de_base\": false\n    },\n    {\n      \"taux_id\": \"ef2ad720-8nvg-3c9t-8cb6-01e6b8204bfc\",\n      \"est_le_taux_de_base\": false\n    }\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/categories_of_employees/:categoryOfEmployeeId/attach-taux",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"categories_of_employees",
+														":categoryOfEmployeeId",
+														"attach-taux"
+													],
+													"variable": [
+														{
+															"key": "categoryOfEmployeeId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"status\": true,\n  \"message\": \"Access granted to user successfully.\",\n  \"data\": true,\n  \"status_code\": 200\n}"
+										}
+									]
+								}
+							],
+							"id": "1982634e-9611-479d-9fb2-0ecdf441aff0"
+						},
+						{
+							"name": "revoke-taux",
+							"item": [
+								{
+									"name": "Revoke taux from category of employees.",
+									"id": "3e52c270-5109-49f6-b1ca-937bbaf653e2",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"taux\": [\n    {\n      \"taux_id\": \"e76613b8-iw1s-1i9w-9fc3-d6a2677aba10\",\n      \"est_le_taux_de_base\": false\n    },\n    {\n      \"taux_id\": \"ef2ad720-8nvg-3c9t-8cb6-01e6b8204bfc\",\n      \"est_le_taux_de_base\": false\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/categories_of_employees/:categoryOfEmployeeId/revoke-taux",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"categories_of_employees",
+												":categoryOfEmployeeId",
+												"revoke-taux"
+											],
+											"variable": [
+												{
+													"key": "categoryOfEmployeeId",
+													"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+													"description": "(Required) The unique identifier of the user."
+												}
+											]
+										},
+										"description": "Revoke roles from user."
+									},
+									"response": [
+										{
+											"id": "b15a6b3c-698e-4f53-9a15-40b77b87e089",
+											"name": "Successful response",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: apikey",
+														"key": "X-Api-Key",
+														"value": "<API Key>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"taux\": [\n    {\n      \"taux_id\": \"e76613b8-iw1s-1i9w-9fc3-d6a2677aba10\",\n      \"est_le_taux_de_base\": false\n    },\n    {\n      \"taux_id\": \"ef2ad720-8nvg-3c9t-8cb6-01e6b8204bfc\",\n      \"est_le_taux_de_base\": false\n    }\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/categories_of_employees/:categoryOfEmployeeId/revoke-taux",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"categories_of_employees",
+														":categoryOfEmployeeId",
+														"revoke-taux"
+													],
+													"variable": [
+														{
+															"key": "categoryOfEmployeeId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"status\": true,\n  \"message\": \"Access granted to user successfully.\",\n  \"data\": true,\n  \"status_code\": 200\n}"
+										}
+									]
+								}
+							],
+							"id": "3fd84239-8cbe-4a0b-b47b-82ea97280811"
+						},
+						{
+							"name": "Retrieve a category of employee",
+							"id": "1a757f78-dfc3-4356-af77-a9f14cdc3149",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/categories_of_employees/:categoryOfEmployeeId?fields=cupidatat adipisicing nulla incididunt dolor",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"categories_of_employees",
+										":categoryOfEmployeeId"
+									],
+									"query": [
+										{
+											"description": "Comma-separated list of fields to include in the response.",
+											"key": "fields",
+											"value": "cupidatat adipisicing nulla incididunt dolor"
+										}
+									],
+									"variable": [
+										{
+											"key": "categoryOfEmployeeId",
+											"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+											"description": "(Required) The unique identifier of the category of employee"
+										}
+									]
+								},
+								"description": "Retrieve category of employee information based on certain criteria."
+							},
+							"response": [
+								{
+									"id": "c6afacd8-4240-49a5-adb9-43677e47835f",
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-Api-Key",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/categories_of_employees/:categoryOfEmployeeId?fields=cupidatat adipisicing nulla incididunt dolor",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"categories_of_employees",
+												":categoryOfEmployeeId"
+											],
+											"query": [
+												{
+													"description": "Comma-separated list of fields to include in the response.",
+													"key": "fields",
+													"value": "cupidatat adipisicing nulla incididunt dolor"
+												}
+											],
+											"variable": [
+												{
+													"key": "categoryOfEmployeeId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"79f6d4ef-cl9e-26u1-8i87-1ce8561a5632\",\n    \"name\": \"deserunt velit ut esse\",\n    \"description\": \"ut in reprehenderit nis\",\n    \"category_id\": \"aad7e5ce-1ua5-4zpg-8jec-18cfdff3a50a\"\n  },\n  \"status_code\": 200\n}"
+								}
+							]
+						},
+						{
+							"name": "Update a category of employee",
+							"id": "2b459b16-58c3-4216-b110-8fce116ccaea",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"non aliqua et\",\n  \"description\": \"sit\",\n  \"category_id\": \"proident in reprehenderit ipsum\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/categories_of_employees/:categoryOfEmployeeId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"categories_of_employees",
+										":categoryOfEmployeeId"
+									],
+									"variable": [
+										{
+											"key": "categoryOfEmployeeId",
+											"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+											"description": "(Required) The unique identifier of the category of employee"
+										}
+									]
+								},
+								"description": "Update category of employee information based on certain criteria."
+							},
+							"response": [
+								{
+									"id": "347ca217-3171-41c5-96f0-7e7260bdbd75",
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-Api-Key",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"non aliqua et\",\n  \"description\": \"sit\",\n  \"category_id\": \"proident in reprehenderit ipsum\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/categories_of_employees/:categoryOfEmployeeId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"categories_of_employees",
+												":categoryOfEmployeeId"
+											],
+											"variable": [
+												{
+													"key": "categoryOfEmployeeId"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": true,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"d2326709-vvsw-4ccu-A467-65c02f62acbd\",\n    \"name\": \"occaecat sed dolore\",\n    \"description\": \"minim id\",\n    \"category_id\": \"55e02d7f-vgkd-5bdz-A3d2-9db650b5c8a1\"\n  },\n  \"status_code\": 201\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete a category of employee",
+							"id": "fb561036-239f-4bc3-8958-469233056b17",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/categories_of_employees/:categoryOfEmployeeId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"categories_of_employees",
+										":categoryOfEmployeeId"
+									],
+									"variable": [
+										{
+											"key": "categoryOfEmployeeId",
+											"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+											"description": "(Required) The unique identifier of the category of employee"
+										}
+									]
+								},
+								"description": "Delete category of employee information based on certain criteria."
+							},
+							"response": [
+								{
+									"id": "60dd5dad-bbe9-47d2-97ab-a8f88b1468b8",
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-Api-Key",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/categories_of_employees/:categoryOfEmployeeId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"categories_of_employees",
+												":categoryOfEmployeeId"
+											],
+											"variable": [
+												{
+													"key": "categoryOfEmployeeId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": true,\n  \"message\": null,\n  \"data\": null,\n  \"status_code\": 200\n}"
+								}
+							]
+						}
+					],
+					"id": "7bd00206-ce06-43d2-bc48-a5fd152a80c4"
+				},
+				{
+					"name": "Retrieve categories of employees",
+					"id": "de2f10d5-7ad6-46ba-87d7-f19f50c9e66d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/categories_of_employees?page=1&per_page=10&fields=cupidatat adipisicing nulla incididunt dolor",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categories_of_employees"
+							],
+							"query": [
+								{
+									"description": "Page number of categories of employees.",
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"description": "Number of categories of employees per page.",
+									"key": "per_page",
+									"value": "10"
+								},
+								{
+									"description": "Comma-separated list of fields to include in the response.",
+									"key": "fields",
+									"value": "cupidatat adipisicing nulla incididunt dolor"
+								}
+							]
+						},
+						"description": "Retrieves categories of employees information based on certain criteria."
+					},
+					"response": [
+						{
+							"id": "f0d8867a-1935-4f87-821e-fc35d0fbfb75",
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/categories_of_employees?page=1&per_page=10&fields=cupidatat adipisicing nulla incididunt dolor",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"categories_of_employees"
+									],
+									"query": [
+										{
+											"description": "Page number of categories of employees.",
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"description": "Number of categories of employees per page.",
+											"key": "per_page",
+											"value": "10"
+										},
+										{
+											"description": "Comma-separated list of fields to include in the response.",
+											"key": "fields",
+											"value": "cupidatat adipisicing nulla incididunt dolor"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"current_page\": 1,\n    \"data\": [\n      {\n        \"id\": \"48f6188c-7707-30s8-Boll-45b7ea21317c\",\n        \"name\": \"ad anim cupidatat fugiat tempor\",\n        \"description\": \"Excepteur nulla adipisicing veniam\",\n        \"category_id\": \"1170621f-wpoh-5493-Aoq4-2da1b71e80cc\"\n      },\n      {\n        \"id\": \"e8d30fdf-ql21-1lw2-Bqk8-1223276e6061\",\n        \"name\": \"enim occaecat Ut\",\n        \"description\": \"ullamco qui culpa esse\",\n        \"category_id\": \"261e7beb-2en6-22kj-9l08-36187338c379\"\n      }\n    ],\n    \"links\": [\n      {\n        \"url\": \"cillum aliquip aute Excepteur\",\n        \"label\": \"Lorem id commodo fugiat\",\n        \"active\": true\n      },\n      {\n        \"url\": \"Ut voluptate in proident aliqua\",\n        \"label\": \"id veniam ipsum non\",\n        \"active\": true\n      }\n    ],\n    \"total\": 36,\n    \"per_page\": 15,\n    \"next_page_url\": \"est dolor tempor proident\",\n    \"prev_page_url\": \"do id eu\",\n    \"first_page_url\": \"enim magna in\",\n    \"from\": 1,\n    \"last_page\": 1,\n    \"last_page_url\": \"{{baseUrl}}/categories_of_employees?page=1\",\n    \"path\": \"{{baseUrl}}/categories_of_employees\",\n    \"to\": 2\n  },\n  \"status_code\": 200\n}"
+						}
+					]
+				},
+				{
+					"name": "Retrieve categories of employees",
+					"id": "07b51b36-2811-4adb-9217-694ab137b630",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"non aliqua et\",\n  \"description\": \"sit\",\n  \"category_id\": \"proident in reprehenderit ipsum\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/categories_of_employees",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categories_of_employees"
+							]
+						},
+						"description": "Retrieves categories of employees information based on certain criteria."
+					},
+					"response": [
+						{
+							"id": "42983e18-602d-4d86-8fec-996095db8716",
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"non aliqua et\",\n  \"description\": \"sit\",\n  \"category_id\": \"proident in reprehenderit ipsum\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/categories_of_employees",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"categories_of_employees"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"fb3307d7-8evh-3dd3-9gq2-f3f5e5eafc62\",\n    \"name\": \"do\",\n    \"description\": \"adipisicing aute irure in dolore\",\n    \"category_id\": \"1f75477e-iwx0-3xg1-Bk07-21bd7deaaede\"\n  },\n  \"status_code\": 201\n}"
+						}
+					]
+				}
+			],
+			"id": "104fbfe7-9521-4e72-97f4-91bdb19a1ab5"
+		},
+		{
+			"name": "login",
+			"item": [
+				{
+					"name": "Authentication",
+					"id": "d7b5e867-a8b4-43b4-a952-d4acb5880e33",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"identifier\": \"Lorem in\",\n  \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"login"
+							]
+						},
+						"description": "User authentication"
+					},
+					"response": [
+						{
+							"id": "8d7915e1-492c-481c-9e9d-a107ff6f1ed4",
+							"name": "Successful authenticate",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"identifier\": \"Lorem in\",\n  \"password\": \"password\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"type\": \"Bearer\",\n    \"expires_in\": \"1296000\",\n    \"access_token\": \"Auth access token\",\n    \"refresh_token\": \"Auth refresh token\"\n  },\n  \"status_code\": 200\n}"
+						}
+					]
+				}
+			],
+			"id": "6d740404-3f7e-4ac3-8f95-838d1d0aaf4d"
+		},
+		{
+			"name": "logout",
+			"item": [
+				{
+					"name": "Logout",
+					"id": "d507f1fc-66a0-479b-ac4e-45a8b6a3d166",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/logout",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"logout"
+							]
+						},
+						"description": "User logout"
+					},
+					"response": [
+						{
+							"id": "4394861b-aaab-45ff-bdae-20015bca36db",
+							"name": "Successful logout",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/logout",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": true,\n  \"message\": \"User logged out successfully.\",\n  \"data\": null,\n  \"status_code\": 200\n}"
+						}
+					]
+				}
+			],
+			"id": "5a39ae9f-7b5e-4c50-a504-19dac9d1f889"
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Retrieve the authenticate user",
+					"id": "1ec2d8fb-b882-4925-b632-ac1ea0685557",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/auth?fields=cupidatat adipisicing nulla incididunt dolor",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth"
+							],
+							"query": [
+								{
+									"description": "Comma-separated list of fields to include in the response.",
+									"key": "fields",
+									"value": "cupidatat adipisicing nulla incididunt dolor"
+								}
+							]
+						},
+						"description": "Retrieve the details of the authenticate user"
+					},
+					"response": [
+						{
+							"id": "64f79048-c734-4e46-91d8-f76b274b0309",
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/auth?fields=cupidatat adipisicing nulla incididunt dolor",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth"
+									],
+									"query": [
+										{
+											"description": "Comma-separated list of fields to include in the response.",
+											"key": "fields",
+											"value": "cupidatat adipisicing nulla incididunt dolor"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": true,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"0f9079ef-p3s0-153a-Akc7-2c2c0f44364f\",\n    \"type_of_account\": \"personal\",\n    \"login_channel\": \"email\",\n    \"username\": \"dolor\",\n    \"email\": \"johndoe@gmail.com\",\n    \"phone_number\": {\n      \"country_code\": 229,\n      \"number\": 94531209\n    },\n    \"address\": \"aute nostrud mollit ut cillum\",\n    \"userable\": {\n      \"id\": \"a1f451ef-h40s-5rtq-9q82-3f5d8d0e0f03\",\n      \"first_name\": \"anim fug\",\n      \"last_name\": \"DOE\",\n      \"middle_name\": [\n        \"Phillipe\",\n        \"Jack\"\n      ],\n      \"sex\": \"male\",\n      \"marital_status\": \"single\",\n      \"birth_date\": \"9930-71-07 22h:05min\",\n      \"ifu\": 45984960456,\n      \"nip\": 45984960456,\n      \"nationality\": \"Excepteur enim Lorem ad\"\n    }\n  },\n  \"status_code\": 200\n}"
+						}
+					]
+				}
+			],
+			"id": "8ac1673d-03e8-4c72-8958-92d7ce5dd876"
+		},
+		{
+			"name": "spacecrafts",
+			"item": [
+				{
+					"name": "{spacecraftId}",
+					"item": [
+						{
+							"name": "Read a spacecraft",
+							"id": "0dc6faf1-3076-4f55-91dc-fe0e61efce75",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/spacecrafts/:spacecraftId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"spacecrafts",
+										":spacecraftId"
+									],
+									"variable": [
+										{
+											"key": "spacecraftId",
+											"value": "a",
+											"description": "(Required) The unique identifier of the spacecraft"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "c2e9db47-a3aa-4a99-9bb2-59d7522f4f80",
+									"name": "The spacecraft corresponding to the provided `spacecraftId`",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-Api-Key",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/spacecrafts/:spacecraftId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"spacecrafts",
+												":spacecraftId"
+											],
+											"variable": [
+												{
+													"key": "spacecraftId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"magna Duis qui aliquip\",\n  \"name\": \"laboris Ut ut nisi\",\n  \"type\": \"satellite\",\n  \"description\": \"Lorem amet\"\n}"
+								},
+								{
+									"id": "60c84708-d990-4bf0-84aa-20358b804252",
+									"name": "No spacecraft found for the provided `spacecraftId`",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-Api-Key",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/spacecrafts/:spacecraftId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"spacecrafts",
+												":spacecraftId"
+											],
+											"variable": [
+												{
+													"key": "spacecraftId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"dolor cupidatat ex anim\"\n}"
+								},
+								{
+									"id": "307af4d5-6a6e-4ccd-8860-53b7e753d1b8",
+									"name": "Unexpected error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-Api-Key",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/spacecrafts/:spacecraftId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"spacecrafts",
+												":spacecraftId"
+											],
+											"variable": [
+												{
+													"key": "spacecraftId"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"dolor cupidatat ex anim\"\n}"
+								}
+							]
+						}
+					],
+					"id": "be178c34-ed37-4e71-a027-9da803304ce9"
+				}
+			],
+			"id": "ead389f1-41f5-4d71-8148-0855f1630898"
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "X-Api-Key",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "{{apiKey}}",
+				"type": "string"
+			},
+			{
+				"key": "in",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"variable": [
+		{
+			"id": "e889935d-b94f-49fb-849e-4517597d3a26",
+			"key": "ip_address",
+			"value": "http://localhost"
+		},
+		{
+			"id": "8119c0c1-b3e1-4ebe-b8bd-c8cb1953cb36",
+			"key": "port",
+			"value": "8000"
+		},
+		{
+			"id": "1690f1a2-7738-44b7-b605-f5866949ed24",
+			"key": "baseUrl",
+			"value": "http://localhost:{{port}}/api"
+		}
+	]
+}

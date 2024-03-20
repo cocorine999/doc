@@ -3,30 +3,41 @@
         "summary": "Retrieve a list of permissions",
         "operationId": "fetchListOfPermissions",
         "description": "Retrieves permissions information based on certain criteria.",
+        "parameters": [
+            {
+                "$ref": "../../components/headers/authorization_header.json"
+            },
+            {
+                "$ref": "../../components/headers/content_type.json"
+            },
+            {
+                "$ref": "../../components/headers/accept.json"
+            }
+        ],
         "responses": {
             "200": {
                 "description": "Successfully Response",
                 "headers": {
                     "X-RateLimit-Limit": {
-                        "$ref": "./../components/headers/x-ratelimit-limit.json"
+                        "$ref": "../components/headers/x_ratelimit_limit.json"
                     },
                     "X-RateLimit-Remaining": {
-                        "$ref": "./../components/headers/x-ratelimit-remaining.json"
+                        "$ref": "../components/headers/x_ratelimit_remaining.json"
                     },
                     "Access-Control-Allow-Origin": {
-                        "$ref": "./../components/headers/access-control-allow-origin.json"
+                        "$ref": "../components/headers/access_control_allow_origin.json"
                     },
                     "Access-Control-Allow-Methods": {
-                        "$ref": "./../components/headers/access-control-allow-methods.json"
+                        "$ref": "../components/headers/access_control_allow_methods.json"
                     },
                     "Access-Control-Allow-Credentials": {
-                        "$ref": "./../components/headers/access-control-allow-credentials.json"
+                        "$ref": "../components/headers/access_control_allow_credentials.json"
                     },
                     "Access-Control-Max-Age": {
-                        "$ref": "./../components/headers/access-control-max-age.json"
+                        "$ref": "../components/headers/access_control_max_age.json"
                     },
                     "Access-Control-Allow-Headers": {
-                        "$ref": "./../components/headers/access-control-allow-headers.json"
+                        "$ref": "../components/headers/access_control_allow_headers.json"
                     }
                 },
                 "content": {
@@ -61,7 +72,7 @@
                                             "type": "array",
                                             "description": "List of permissions.",
                                             "items": {
-                                                "$ref": "./../components/schemas/models/permission.json#/Permission"
+                                                "$ref": "../components/schemas/models/permission.json#/Permission"
                                             }
                                         },
                                         "first_page_url": {
@@ -165,25 +176,35 @@
                             }
                         }
                     }
+                },
+                "links": {
+                    "PermissionsToRoleCreation": {
+                        "operationId": "createRole",
+                        "requestBody": {
+                            "permissions": "$response.body#/data/data/0/id",
+                            "description": "The permission IDs returned in the response can be used when creating a role."
+                        },
+                        "description": "Link to attach permission IDs returned in the response to a role during creation."
+                    }
                 }
             },
             "400": {
-                "$ref": "./../components/responses/errors/400.json#BadRequest"
+                "$ref": "../components/responses/errors/400.json#BadRequest"
             },
             "405": {
-                "$ref": "./../components/responses/errors/405.json#MethodNotAllowed"
+                "$ref": "../components/responses/errors/405.json#MethodNotAllowed"
             },
             "408": {
-                "$ref": "./../components/responses/errors/408.json#RequestTimeout"
+                "$ref": "../components/responses/errors/408.json#RequestTimeout"
             },
             "429": {
-                "$ref": "./../components/responses/errors/429.json#RateLimitExceeded"
+                "$ref": "../components/responses/errors/429.json#RateLimitExceeded"
             },
             "500": {
-                "$ref": "./../components/responses/errors/500.json#InternalServerError"
+                "$ref": "../components/responses/errors/500.json#InternalServerError"
             },
             "503": {
-                "$ref": "./../components/responses/errors/503.json#ServiceUnavailable"
+                "$ref": "../components/responses/errors/503.json#ServiceUnavailable"
             }
         }
     }

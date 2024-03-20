@@ -15,24 +15,6 @@
             "url": "https://www.labelstrust.com/license.html"
         }
     },
-    "tags": [
-        {
-            "name": "Permissions",
-            "description": "APIs related to permissions management. These endpoints allow clients to manage permissions associated with various resources."
-        },
-        {
-            "name": "Roles",
-            "description": "APIs related to roles management. These endpoints enable clients to manage roles assigned to users."
-        },
-        {
-            "name": "Users",
-            "description": "APIs related to users management. These endpoints allow clients to create, retrieve, update, and delete user accounts."
-        },
-        {
-            "name": "Authentication",
-            "description": "APIs related to user authentication and authorization. These endpoints handle user login, logout, and token management."
-        }
-    ],
     "servers": [
         {
             "url": "http://localhost:{{port}}/api",
@@ -111,281 +93,44 @@
             }
         }
     ],
+    "tags": [
+        {
+            "name": "Permissions",
+            "description": "APIs related to permissions management. These endpoints allow clients to manage permissions associated with various resources."
+        },
+        {
+            "name": "Roles",
+            "description": "APIs related to roles management. These endpoints enable clients to manage roles assigned to users."
+        },
+        {
+            "name": "Users",
+            "description": "APIs related to users management. These endpoints allow clients to create, retrieve, update, and delete user accounts."
+        },
+        {
+            "name": "Authentication",
+            "description": "APIs related to user authentication and authorization. These endpoints handle user login, logout, and token management."
+        }
+    ],
     "paths": {
         "/permissions": {
-            "description": "Permission",
+            "tags": [
+                "Permissions"
+            ],
+            "description": "Permissions",
             "$ref": "paths/permissions.json"
         },
         "/roles": {
             "get": {
-                "summary": "Retrieve a list of roles.",
-                "operationId": "getRoles",
-                "description": "Retrieves roles information based on certain criteria.",
-                "parameters": [
-                    {
-                        "name": "page",
-                        "in": "query",
-                        "description": "Page number of roles.",
-                        "required": false,
-                        "schema": {
-                            "type": "integer",
-                            "default": 1
-                        }
-                    },
-                    {
-                        "name": "per_page",
-                        "in": "query",
-                        "description": "Number of roles per page.",
-                        "required": false,
-                        "schema": {
-                            "type": "integer",
-                            "default": 10
-                        }
-                    },
-                    {
-                        "name": "fields",
-                        "in": "query",
-                        "description": "Comma-separated list of fields to include in the response.",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "Content-Type",
-                        "in": "header",
-                        "description": "The content type of the request body.",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "default": "application/json"
-                        }
-                    },
-                    {
-                        "name": "Accept",
-                        "in": "header",
-                        "description": "The content types the client is willing to accept.",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "default": "application/json"
-                        }
-                    }
+                "tags": [
+                    "Roles"
                 ],
-                "responses": {
-                    "200": {
-                        "description": "A list of roles",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "status": {
-                                            "type": "boolean",
-                                            "description": "Indicates whether the request was successful.",
-                                            "default": true,
-                                            "example": false
-                                        },
-                                        "message": {
-                                            "type": "string",
-                                            "description": "Additional information about the response.",
-                                            "nullable": true,
-                                            "example": null
-                                        },
-                                        "data": {
-                                            "properties": {
-                                                "current_page": {
-                                                    "type": "integer",
-                                                    "description": "The current page number.",
-                                                    "default": 1,
-                                                    "minimum": 1,
-                                                    "example": 1
-                                                },
-                                                "data": {
-                                                    "type": "array",
-                                                    "description": "Additional information about the response.",
-                                                    "items": {
-                                                        "$ref": "#/components/schemas/Role"
-                                                    }
-                                                },
-                                                "links": {
-                                                    "type": "array",
-                                                    "items": {
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "url": {
-                                                                "type": "string",
-                                                                "description": "The URL of the page.",
-                                                                "nullable": true
-                                                            },
-                                                            "label": {
-                                                                "type": "string",
-                                                                "description": "The label of the page.",
-                                                                "nullable": true
-                                                            },
-                                                            "active": {
-                                                                "type": "boolean",
-                                                                "description": "Indicates whether the page is active."
-                                                            }
-                                                        }
-                                                    }
-                                                },
-                                                "total": {
-                                                    "type": "integer",
-                                                    "description": "The total number of items per page. Defaults to 15.",
-                                                    "default": 15,
-                                                    "example": 36,
-                                                    "minimum": 1
-                                                },
-                                                "per_page": {
-                                                    "type": "integer",
-                                                    "description": "The total number of items available per page. Defaults to 15, with a minimum of 10 and a maximum of 25.",
-                                                    "default": 15,
-                                                    "example": 15,
-                                                    "minimum": 10,
-                                                    "maximum": 25
-                                                },
-                                                "next_page_url": {
-                                                    "type": "string",
-                                                    "description": "The URL of the next page. Can be null if there is no next page.",
-                                                    "nullable": true
-                                                },
-                                                "prev_page_url": {
-                                                    "type": "string",
-                                                    "description": "The URL of the previous page. Can be null if there is no previous page.",
-                                                    "nullable": true
-                                                },
-                                                "first_page_url": {
-                                                    "type": "string",
-                                                    "description": "The URL of the first page."
-                                                },
-                                                "from": {
-                                                    "type": "integer",
-                                                    "minimum": 1,
-                                                    "default": 1,
-                                                    "example": 1,
-                                                    "description": "The starting index of the data on the current page. Minimum value is 1."
-                                                },
-                                                "last_page": {
-                                                    "type": "integer",
-                                                    "minimum": 1,
-                                                    "default": 1,
-                                                    "example": 1,
-                                                    "description": "The last page number. Minimum value is 3."
-                                                },
-                                                "last_page_url": {
-                                                    "type": "string",
-                                                    "description": "The URL of the last page.",
-                                                    "nullable": true,
-                                                    "default": "{{baseUrl}}/roles?page=1",
-                                                    "example": "{{baseUrl}}/roles?page=1"
-                                                },
-                                                "path": {
-                                                    "type": "string",
-                                                    "description": "The path of the current page.",
-                                                    "default": "{{baseUrl}}/roles",
-                                                    "example": "{{baseUrl}}/roles"
-                                                },
-                                                "to": {
-                                                    "type": "integer",
-                                                    "description": "The ending index of the data on the current page. Example value is 2. Can be null.",
-                                                    "example": 2,
-                                                    "default": 1,
-                                                    "nullable": true
-                                                }
-                                            }
-                                        },
-                                        "status_code": {
-                                            "type": "integer",
-                                            "enum": [
-                                                200,
-                                                201,
-                                                204
-                                            ],
-                                            "default": 200,
-                                            "example": 200
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+                "$ref": "paths/roles/list_role.json"
             },
             "post": {
-                "summary": "Create a new role",
-                "operationId": "createRole",
-                "description": "Store a new role information based on certain criteria.",
-                "parameters": [
-                    {
-                        "name": "Content-Type",
-                        "in": "header",
-                        "description": "The content type of the request body.",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "default": "application/json"
-                        }
-                    },
-                    {
-                        "name": "Accept",
-                        "in": "header",
-                        "description": "The content types the client is willing to accept.",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "default": "application/json"
-                        }
-                    }
+                "tags": [
+                    "Roles"
                 ],
-                "requestBody": {
-                    "description": "The created role.",
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "description": "Indicates whether the request was successful.",
-                                "$ref": "#/components/schemas/RoleRequest"
-                            }
-                        }
-                    },
-                    "required": true
-                },
-                "responses": {
-                    "201": {
-                        "description": "Role created successfully",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "status": {
-                                            "type": "boolean",
-                                            "description": "Indicates whether the request was successful.",
-                                            "default": true,
-                                            "example": false
-                                        },
-                                        "message": {
-                                            "type": "string",
-                                            "description": "Additional information about the response.",
-                                            "nullable": true,
-                                            "example": null
-                                        },
-                                        "data": {
-                                            "type": "object",
-                                            "$ref": "#/components/schemas/Role",
-                                            "description": "Additional information about the response."
-                                        },
-                                        "status_code": {
-                                            "type": "integer",
-                                            "default": 201,
-                                            "example": 201
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+                "$ref": "paths/roles/create_role.json"
             }
         },
         "/roles/{roleId}": {

@@ -8,11 +8,11 @@
         ],
         "properties": {
             "id": {
-                "$ref": "./../identifier.json#/Identifier",
+                "$ref": "../identifier.json#/Identifier",
                 "description": "Unique identifier for the role"
             },
             "name": {
-                "$ref": "./../field-name.json#/FieldName",
+                "$ref": "../field_name.json#/FieldName",
                 "default": "Can create an user",
                 "description": "Name of the role"
             },
@@ -35,7 +35,7 @@
                 "description": "List of permissions associated with the role"
             },
             "created_at": {
-                "$ref": "./../date-format.json#/DateFormat",
+                "$ref": "../date_format.json#/DateFormat",
                 "description": "Date and time when the role was created (YYYY-MM-DD HH:MM:SS)"
             }
         }

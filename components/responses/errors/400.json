@@ -19,11 +19,8 @@
                             "default": null,
                             "example": "The request body is missing the required 'name' parameter."
                         },
-                        "error": {
-                            "type": [
-                                "object",
-                                "string"
-                            ],
+                        "errors": {
+                            "type": "string",
                             "description": "Additional information about the error, if available.",
                             "nullable": true,
                             "default": null,

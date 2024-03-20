@@ -19,7 +19,7 @@
                             "default": null,
                             "example": "Payment Required. The client must make a payment to access the requested resource."
                         },
-                        "error": {
+                        "errors": {
                             "type": "string",
                             "description": "Additional information about the error, if available.",
                             "nullable": true,

@@ -19,7 +19,7 @@
                             "default": null,
                             "example": "Access to the requested resource is forbidden."
                         },
-                        "error": {
+                        "errors": {
                             "type": "string",
                             "description": "Additional information about the error, if available.",
                             "nullable": true,

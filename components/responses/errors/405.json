@@ -19,7 +19,7 @@
                             "default": null,
                             "example": "Method Not Allowed. The request method is known by the server but has been disabled and cannot be used."
                         },
-                        "error": {
+                        "errors": {
                             "type": "string",
                             "description": "Additional information about the error, if available.",
                             "nullable": true,

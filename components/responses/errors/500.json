@@ -1,6 +1,29 @@
 {
     "InternalServerError": {
         "description": "Internal Server Error. An unexpected error occurred while processing the request.",
+        "headers": {
+            "X-RateLimit-Limit": {
+                "$ref": "../../headers/x_ratelimit_limit.json"
+            },
+            "X-RateLimit-Remaining": {
+                "$ref": "../../headers/x_ratelimit_remaining.json"
+            },
+            "Access-Control-Allow-Origin": {
+                "$ref": "../../headers/access_control_allow_origin.json"
+            },
+            "Access-Control-Allow-Methods": {
+                "$ref": "../../headers/access_control_allow_methods.json"
+            },
+            "Access-Control-Allow-Credentials": {
+                "$ref": "../../headers/access_control_allow_credentials.json"
+            },
+            "Access-Control-Max-Age": {
+                "$ref": "../../headers/access_control_max_age.json"
+            },
+            "Access-Control-Allow-Headers": {
+                "$ref": "../../headers/access_control_allow_headers.json"
+            }
+        },
         "content": {
             "application/json": {
                 "schema": {
@@ -19,7 +42,7 @@
                             "default": null,
                             "example": "Internal Server Error occurred while processing the request."
                         },
-                        "error": {
+                        "errors": {
                             "type": "string",
                             "description": "Additional information about the error, if available.",
                             "nullable": true,

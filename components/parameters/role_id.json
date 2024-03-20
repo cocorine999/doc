@@ -1,0 +1,11 @@
+{
+    "RoleId": {
+        "name": "roleId",
+        "description": "The unique identifier of the role",
+        "in": "path",
+        "required": true,
+        "schema": {
+            "$ref": "#/components/schemas/Identifier"
+        }
+    }
+}

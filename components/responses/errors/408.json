@@ -19,7 +19,7 @@
                             "default": null,
                             "example": "Request Timeout. The server timed out waiting for the request."
                         },
-                        "error": {
+                        "errors": {
                             "type": "string",
                             "description": "Additional information about the error, if available.",
                             "nullable": true,

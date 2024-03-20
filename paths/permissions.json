@@ -5,6 +5,12 @@
         "description": "Retrieves permissions information based on certain criteria.",
         "parameters": [
             {
+                "$ref": "../../components/parameters/page.json"
+            },
+            {
+                "$ref": "../../components/parameters/per_page.json"
+            },
+            {
                 "name": "fields",
                 "in": "query",
                 "description": "Comma-separated list of fields to include in the response.",

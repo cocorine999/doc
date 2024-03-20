@@ -1,0 +1,13 @@
+{
+    "name": "per_page",
+    "in": "query",
+    "description": "The total number of items available per page. Defaults to 15, with a minimum of 10 and a maximum of 25.",
+    "required": false,
+    "schema": {
+        "type": "integer",
+        "default": 15,
+        "example": 15,
+        "minimum": 10,
+        "maximum": 25
+    }
+}

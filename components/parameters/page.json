@@ -1,0 +1,12 @@
+{
+    "name": "page",
+    "in": "query",
+    "description": "The page number to retrieve.",
+    "required": false,
+    "schema": {
+        "type": "integer",
+        "default": 1,
+        "example": 1,
+        "minimum": 1
+    }
+}

@@ -1,70 +1,10 @@
 {
-    "tags": [
-        "role"
-    ],
     "summary": "Retrive an existing role by id",
-    "operationId": "getRole",
     "description": "Retrieve an existing role by its unique identifier.",
+    "operationId": "getRole",
     "parameters": [
         {
-            "$ref": "../../components/parameters/role_id.json"
-        },
-        {
-            "name": "filter",
-            "in": "query",
-            "description": "Comma-separated list of fields to include in the response.",
-            "required": false,
-            "schema": {
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "$ref": "../field_name.json#/FieldName",
-                        "default": "Can create an user",
-                        "description": "Name of the role"
-                    },
-                    "slug": {
-                        "type": "string",
-                        "description": "Slug of the role",
-                        "example": "can-ceate-an-user"
-                    },
-                    "relations": {
-                        "type": "object",
-                        "permissions": {
-                            "type": "array",
-                            "items": {
-                                "name": {
-                                    "$ref": "../field_name.json#/FieldName",
-                                    "default": "Can create an user",
-                                    "description": "Name of the permission"
-                                },
-                                "slug": {
-                                    "type": "string",
-                                    "description": "Slug of the permission",
-                                    "example": "can-ceate-an-user"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "example": [
-                {
-                    "name": "Super administrateur",
-                    "slug": "super-administrateur",
-                    "relations": {
-                        "permissions": [
-                            {
-                                "name": "CreateUser",
-                                "slug": "create-user-permission"
-                            }
-                        ]
-                    }
-                },
-                {
-                    "name": "Administrateur",
-                    "slug": "administrateur"
-                }
-            ]
+            "$ref": "../../components/parameters/role_id.json#/RoleId"
         },
         {
             "name": "fields",
@@ -74,7 +14,7 @@
             "schema": {
                 "type": "string"
             },
-            "example": "name,slug"
+            "example": "id,name,slug"
         },
         {
             "$ref": "../../components/headers/authorization_header.json"
@@ -141,19 +81,35 @@
                         }
                     }
                 }
+            },
+            "links": {
+                "UpdateRoleDetailsByRoleId": {
+                    "operationId": "updateRole",
+                    "parameters": {
+                        "roleId": "$response.body#/data/id"
+                    },
+                    "description": "Link to update role information based on role ID."
+                },
+                "DeleteRoleByRoleId": {
+                    "operationId": "deleteRole",
+                    "parameters": {
+                        "roleId": "$response.body#/data/id"
+                    },
+                    "description": "Link to delete role based on role ID."
+                }
             }
         },
         "400": {
             "$ref": "../../components/responses/errors/400.json#BadRequest"
-        },
-        "404": {
-            "$ref": "../../components/responses/errors/404.json#NotFound"
         },
         "401": {
             "$ref": "../../components/responses/errors/401.json#Unauthorized"
         },
         "403": {
             "$ref": "../../components/responses/errors/403.json#Forbidden"
+        },
+        "404": {
+            "$ref": "../../components/responses/errors/404.json#NotFound"
         },
         "405": {
             "$ref": "../../components/responses/errors/405.json#MethodNotAllowed"

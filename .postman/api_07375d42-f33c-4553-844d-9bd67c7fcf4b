@@ -9,7 +9,7 @@ id = 07375d42-f33c-4553-844d-9bd67c7fcf4b
 
 [config.relations.collections]
 rootDirectory = docs/postman/collections
-files[] = {"id":"33313317-082929c4-a7e4-4012-b1be-bc9a0f52ccaf","path":"API DOC.json","metaData":{"generateCollectionPreferences":"{\"requestNameSource\":\"Fallback\",\"indentCharacter\":\"Space\",\"parametersResolution\":\"Example\",\"folderStrategy\":\"Paths\",\"includeAuthInfoInExample\":true,\"enableOptionalParameters\":true,\"keepImplicitHeaders\":false,\"includeDeprecated\":true,\"alwaysInheritAuthentication\":false,\"updateCollectionSync\":true,\"requestParametersResolution\":\"Example\",\"exampleParametersResolution\":\"Example\"}"}}
+files[] = {"id":"33313317-d46714d0-9940-4c60-9071-5251631e7208","path":"test.json","metaData":{"generateCollectionPreferences":"{\"requestNameSource\":\"Fallback\",\"indentCharacter\":\"Space\",\"parametersResolution\":\"Example\",\"folderStrategy\":\"Paths\",\"includeAuthInfoInExample\":true,\"enableOptionalParameters\":true,\"keepImplicitHeaders\":false,\"includeDeprecated\":true,\"alwaysInheritAuthentication\":false,\"updateCollectionSync\":true,\"requestParametersResolution\":\"Example\",\"exampleParametersResolution\":\"Example\"}"}}
 
 [config.relations.collections.metaData]
 
@@ -62,11 +62,12 @@ files[] = {"path":"paths/permissions.json","metaData":{}}
 files[] = {"path":"paths/roles/create_role.json","metaData":{}}
 files[] = {"path":"paths/roles/delete_role.json","metaData":{}}
 files[] = {"path":"paths/roles/find_role.json","metaData":{}}
+files[] = {"path":"paths/roles/grant_access.json","metaData":{}}
 files[] = {"path":"paths/roles/index.json","metaData":{}}
 files[] = {"path":"paths/roles/list_role.json","metaData":{}}
+files[] = {"path":"paths/roles/revoke_access.json","metaData":{}}
 files[] = {"path":"paths/roles/update_role.json","metaData":{}}
 files[] = {"path":"paths/users/index.json","metaData":{}}
-files[] = {"path":"responses.json","metaData":{}}
 
 [config.relations.apiDefinition.metaData]
 type = openapi:3

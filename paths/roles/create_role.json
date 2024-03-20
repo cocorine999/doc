@@ -86,6 +86,20 @@
                         "roleId": "$response.body#/data/id"
                     },
                     "description": "Link to get role information based on role ID."
+                },
+                "UpdateRoleDetailsByRoleId": {
+                    "operationId": "updateRole",
+                    "parameters": {
+                        "roleId": "$response.body#/data/id"
+                    },
+                    "description": "Link to update role information based on role ID."
+                },
+                "DeleteRoleByRoleId": {
+                    "operationId": "deleteRole",
+                    "parameters": {
+                        "roleId": "$response.body#/data/id"
+                    },
+                    "description": "Link to delete role based on role ID."
                 }
             }
         },

@@ -8,12 +8,12 @@
         "properties": {
             "name": {
                 "$ref": "../../schemas/field_name.json#/FieldName",
-                "default": "Can create an user",
+                "default": "Employee",
                 "description": "Name of the role"
             },
             "description": {
                 "type": "string",
-                "example": "This role has administrative privileges.",
+                "example": "This role has employee privileges.",
                 "default": "No description provided",
                 "description": "Description of the role",
                 "nullable": true

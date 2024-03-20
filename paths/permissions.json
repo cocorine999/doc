@@ -5,6 +5,16 @@
         "description": "Retrieves permissions information based on certain criteria.",
         "parameters": [
             {
+                "name": "fields",
+                "in": "query",
+                "description": "Comma-separated list of fields to include in the response.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "id,name,slug"
+            },
+            {
                 "$ref": "../../components/headers/authorization_header.json"
             },
             {
@@ -181,7 +191,15 @@
                     "PermissionsToRoleCreation": {
                         "operationId": "createRole",
                         "requestBody": {
-                            "permissions": "$response.body#/data/data/0/id",
+                            "permissions": ["$response.body#/data/data/0/id"],
+                            "description": "The permission IDs returned in the response can be used when creating a role."
+                        },
+                        "description": "Link to attach permission IDs returned in the response to a role during creation."
+                    },
+                    "PermissionsToRoleUpdate": {
+                        "operationId": "updateRole",
+                        "requestBody": {
+                            "permissions": ["$response.body#/data/data/0/id"],
                             "description": "The permission IDs returned in the response can be used when creating a role."
                         },
                         "description": "Link to attach permission IDs returned in the response to a role during creation."

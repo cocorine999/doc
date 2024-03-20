@@ -135,246 +135,22 @@
         },
         "/roles/{roleId}": {
             "get": {
-                "summary": "Retrieve a role",
-                "description": "Retrieve role information based on certain criteria.",
-                "parameters": [
-                    {
-                        "name": "roleId",
-                        "description": "The unique identifier of the role",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/components/schemas/Identifier"
-                        }
-                    },
-                    {
-                        "name": "fields",
-                        "in": "query",
-                        "description": "Comma-separated list of fields to include in the response.",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "Content-Type",
-                        "in": "header",
-                        "description": "The content type of the request body.",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "default": "application/json"
-                        }
-                    },
-                    {
-                        "name": "Accept",
-                        "in": "header",
-                        "description": "The content types the client is willing to accept.",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "default": "application/json"
-                        }
-                    }
+                "tags": [
+                    "Roles"
                 ],
-                "responses": {
-                    "200": {
-                        "description": "Successful response",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "status": {
-                                            "type": "boolean",
-                                            "description": "Indicates whether the request was successful.",
-                                            "default": true,
-                                            "example": false
-                                        },
-                                        "message": {
-                                            "type": "string",
-                                            "description": "Additional information about the response.",
-                                            "nullable": true,
-                                            "example": null
-                                        },
-                                        "data": {
-                                            "description": "Additional information about the response.",
-                                            "$ref": "#/components/schemas/Role"
-                                        },
-                                        "status_code": {
-                                            "type": "integer",
-                                            "default": 200,
-                                            "example": 200
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+                "$ref": "paths/roles/find_role.json"
             },
             "put": {
-                "summary": "Update a role",
-                "description": "Update role information based on certain criteria.",
-                "parameters": [
-                    {
-                        "name": "roleId",
-                        "description": "The unique identifier of the role",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/components/schemas/Identifier"
-                        }
-                    },
-                    {
-                        "name": "Content-Type",
-                        "in": "header",
-                        "description": "The content type of the request body.",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "default": "application/json"
-                        }
-                    },
-                    {
-                        "name": "Accept",
-                        "in": "header",
-                        "description": "The content types the client is willing to accept.",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "default": "application/json"
-                        }
-                    }
+                "tags": [
+                    "Roles"
                 ],
-                "requestBody": {
-                    "description": "Update new role in the store",
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "description": "Indicates whether the request was successful.",
-                                "$ref": "#/components/schemas/RoleRequest",
-                                "required": [
-                                    "name"
-                                ]
-                            }
-                        }
-                    },
-                    "required": true
-                },
-                "responses": {
-                    "201": {
-                        "description": "Successful response",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "status": {
-                                            "type": "boolean",
-                                            "description": "Indicates whether the request was successful.",
-                                            "default": true,
-                                            "example": false
-                                        },
-                                        "message": {
-                                            "type": "string",
-                                            "description": "Additional information about the response.",
-                                            "nullable": true,
-                                            "example": null
-                                        },
-                                        "data": {
-                                            "type": [
-                                                "object",
-                                                "boolean"
-                                            ],
-                                            "$ref": "#/components/schemas/Role",
-                                            "description": "Additional information about the response.",
-                                            "example": true
-                                        },
-                                        "status_code": {
-                                            "type": "integer",
-                                            "default": 201,
-                                            "example": 201
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+                "$ref": "paths/roles/update_role.json"
             },
             "delete": {
-                "summary": "Delete a role",
-                "description": "Delete role information based on certain criteria.",
-                "parameters": [
-                    {
-                        "name": "roleId",
-                        "description": "The unique identifier of the role",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/components/schemas/Identifier"
-                        }
-                    },
-                    {
-                        "name": "Content-Type",
-                        "in": "header",
-                        "description": "The content type of the request body.",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "default": "application/json"
-                        }
-                    },
-                    {
-                        "name": "Accept",
-                        "in": "header",
-                        "description": "The content types the client is willing to accept.",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "default": "application/json"
-                        }
-                    }
+                "tags": [
+                    "Roles"
                 ],
-                "responses": {
-                    "200": {
-                        "description": "Successful response",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "status": {
-                                            "type": "boolean",
-                                            "description": "Indicates whether the request was successful.",
-                                            "default": true,
-                                            "example": true
-                                        },
-                                        "message": {
-                                            "type": "string",
-                                            "description": "Additional information about the response.",
-                                            "nullable": true,
-                                            "example": null
-                                        },
-                                        "data": {
-                                            "description": "Additional information about the response.",
-                                            "type": "boolean",
-                                            "nullable": true,
-                                            "default": null,
-                                            "example": null
-                                        },
-                                        "status_code": {
-                                            "type": "integer",
-                                            "default": 200,
-                                            "example": 200
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+                "$ref": "paths/roles/delete_role.json"
             }
         },
         "/roles/{roleId}/grant-access": {
@@ -4109,33 +3885,6 @@
                 "example": "2019/05/17 09h:23min",
                 "minLength": 20,
                 "maxLength": 50
-            },
-            "RoleRequest": {
-                "required": [
-                    "name",
-                    "permissions"
-                ],
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "type": "string",
-                        "minLength": 3,
-                        "maxLength": 50,
-                        "example": "Nom du champ",
-                        "description": "Description du nom du champ of the categories of employees"
-                    },
-                    "description": {
-                        "type": "string",
-                        "description": "Description of the categories of employees",
-                        "nullable": true
-                    },
-                    "permissions": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/Identifier"
-                        }
-                    }
-                }
             },
             "DepartementRequest": {
                 "required": [

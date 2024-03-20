@@ -11,7 +11,7 @@
             "schema": {
                 "type": "string"
             },
-            "example": "name,slug"
+            "example": "id,name,slug"
         },
         {
             "$ref": "../../components/headers/authorization_header.json"
@@ -198,6 +198,20 @@
                         "roleId": "$response.body#/data/data/0/id"
                     },
                     "description": "Link to get role information based on role ID."
+                },
+                "UpdateRoleDetailsByRoleId": {
+                    "operationId": "updateRole",
+                    "parameters": {
+                        "roleId": "$response.body#/data/data/0/id"
+                    },
+                    "description": "Link to update role information based on role ID."
+                },
+                "DeleteRoleByRoleId": {
+                    "operationId": "deleteRole",
+                    "parameters": {
+                        "roleId": "$response.body#/data/data/0/id"
+                    },
+                    "description": "Link to delete role based on role ID."
                 }
             }
         },

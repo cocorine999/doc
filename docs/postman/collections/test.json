@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "082929c4-a7e4-4012-b1be-bc9a0f52ccaf",
-		"name": "API DOC",
+		"_postman_id": "d46714d0-9940-4c60-9071-5251631e7208",
+		"name": "test",
 		"description": "API documentation for permissions, roles, users, and authentication\n\nContact Support:\n Name: Contact du support API,\n Email: contact@labelstrust.com",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "33313317-082929c4-a7e4-4012-b1be-bc9a0f52ccaf"
+		"_uid": "33313317-d46714d0-9940-4c60-9071-5251631e7208"
 	},
 	"item": [
 		{
@@ -12,7 +12,7 @@
 			"item": [
 				{
 					"name": "Retrieve a list of permissions",
-					"id": "50b93d7e-62df-4a8b-90b7-1a1dcd2e60d2",
+					"id": "2418d8ec-9926-4661-98b0-9b4466ad302c",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -25,19 +25,26 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/permissions",
+							"raw": "{{baseUrl}}/permissions?fields=id,name,slug",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"permissions"
+							],
+							"query": [
+								{
+									"description": "Comma-separated list of fields to include in the response.",
+									"key": "fields",
+									"value": "id,name,slug"
+								}
 							]
 						},
 						"description": "Retrieves permissions information based on certain criteria."
 					},
 					"response": [
 						{
-							"id": "eee03ee1-7144-4c6b-b51e-983afff59927",
+							"id": "fe5bad44-bdcc-42b3-849c-c9d9155f360c",
 							"name": "Successfully Response",
 							"originalRequest": {
 								"method": "GET",
@@ -53,12 +60,22 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/permissions",
+									"raw": "http://localhost:8000/api/permissions?fields=id,name,slug",
+									"protocol": "http",
 									"host": [
-										"{{baseUrl}}"
+										"localhost"
 									],
+									"port": "8000",
 									"path": [
+										"api",
 										"permissions"
+									],
+									"query": [
+										{
+											"description": "Comma-separated list of fields to include in the response.",
+											"key": "fields",
+											"value": "id,name,slug"
+										}
 									]
 								}
 							},
@@ -135,10 +152,10 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n  \"status\": true,\n  \"message\": \"List of permissions retrieve successfully\",\n  \"data\": {\n    \"current_page\": 1,\n    \"data\": [\n      {\n        \"id\": \"7157f347-ctb0-4jig-B94d-345b12a0802f\",\n        \"name\": \"Name\",\n        \"slug\": \"can-ceate-an-user\",\n        \"description\": \"This permission has administrative privileges.\",\n        \"created_at\": \"2024-03-13 16:58:10\"\n      },\n      {\n        \"id\": \"cdc75ae3-gmxh-311d-8b7p-90f99bbd25cb\",\n        \"name\": \"Name\",\n        \"slug\": \"can-ceate-an-user\",\n        \"description\": \"This permission has administrative privileges.\",\n        \"created_at\": \"2024-03-13 16:58:10\"\n      }\n    ],\n    \"first_page_url\": \"veniam ex sit ipsum ullamco\",\n    \"from\": 1,\n    \"last_page\": 1,\n    \"last_page_url\": \"velit exercitation dolor\",\n    \"links\": [\n      {\n        \"url\": null,\n        \"label\": \"&laquo; Previous\",\n        \"active\": true\n      },\n      {\n        \"url\": null,\n        \"label\": \"&laquo; Previous\",\n        \"active\": true\n      }\n    ],\n    \"next_page_url\": null,\n    \"path\": \"Excepteur Lorem\",\n    \"per_page\": 15,\n    \"prev_page_url\": null,\n    \"to\": null,\n    \"total\": 0\n  },\n  \"status_code\": 200\n}"
+							"body": "{\n  \"status\": true,\n  \"message\": \"List of permissions retrieve successfully\",\n  \"data\": {\n    \"current_page\": 1,\n    \"data\": [\n      {\n        \"id\": \"9d77be0b-4bnv-53c7-Bl4p-27bcfe35e754\",\n        \"name\": \"Name\",\n        \"slug\": \"can-ceate-an-user\",\n        \"description\": \"This permission has administrative privileges.\",\n        \"created_at\": \"2024-03-13 16:58:10\"\n      },\n      {\n        \"id\": \"64639a24-phm9-1kq2-Bg8h-3ee67633e18a\",\n        \"name\": \"Name\",\n        \"slug\": \"can-ceate-an-user\",\n        \"description\": \"This permission has administrative privileges.\",\n        \"created_at\": \"2024-03-13 16:58:10\"\n      }\n    ],\n    \"first_page_url\": \"sed veniam\",\n    \"from\": 1,\n    \"last_page\": 1,\n    \"last_page_url\": \"nostrud consequat commodo\",\n    \"links\": [\n      {\n        \"url\": null,\n        \"label\": \"&laquo; Previous\",\n        \"active\": true\n      },\n      {\n        \"url\": null,\n        \"label\": \"&laquo; Previous\",\n        \"active\": true\n      }\n    ],\n    \"next_page_url\": null,\n    \"path\": \"aliqua\",\n    \"per_page\": 15,\n    \"prev_page_url\": null,\n    \"to\": null,\n    \"total\": 0\n  },\n  \"status_code\": 200\n}"
 						},
 						{
-							"id": "924bd47a-c43a-4d28-b6f2-74871e57fb25",
+							"id": "8176c25d-24e2-4cbc-a83c-d7006d47b28f",
 							"name": "Bad Request",
 							"originalRequest": {
 								"method": "GET",
@@ -154,12 +171,19 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/permissions",
+									"raw": "{{baseUrl}}/permissions?fields=id,name,slug",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"permissions"
+									],
+									"query": [
+										{
+											"description": "Comma-separated list of fields to include in the response.",
+											"key": "fields",
+											"value": "id,name,slug"
+										}
 									]
 								}
 							},
@@ -176,7 +200,7 @@
 							"body": "{\n  \"status\": false,\n  \"message\": \"The request body is missing the required 'name' parameter.\",\n  \"errors\": null,\n  \"status_code\": 400\n}"
 						},
 						{
-							"id": "5bb210cc-d6ba-4d03-b8bf-fdb6de34bd56",
+							"id": "f3da873f-aad9-49bf-99ff-edb3410ec6b5",
 							"name": "Method Not Allowed. The request method is known by the server but has been disabled and cannot be used.",
 							"originalRequest": {
 								"method": "GET",
@@ -192,12 +216,19 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/permissions",
+									"raw": "{{baseUrl}}/permissions?fields=id,name,slug",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"permissions"
+									],
+									"query": [
+										{
+											"description": "Comma-separated list of fields to include in the response.",
+											"key": "fields",
+											"value": "id,name,slug"
+										}
 									]
 								}
 							},
@@ -214,7 +245,7 @@
 							"body": "{\n  \"status\": false,\n  \"message\": \"Method Not Allowed. The request method is known by the server but has been disabled and cannot be used.\",\n  \"errors\": null,\n  \"status_code\": 405\n}"
 						},
 						{
-							"id": "fd1b8caf-683b-4092-b41e-10283ebc4ed1",
+							"id": "661194b9-2ed1-40a5-a5ce-bad1d495861a",
 							"name": "Request Timeout. The server timed out waiting for the request.",
 							"originalRequest": {
 								"method": "GET",
@@ -230,12 +261,19 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/permissions",
+									"raw": "{{baseUrl}}/permissions?fields=id,name,slug",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"permissions"
+									],
+									"query": [
+										{
+											"description": "Comma-separated list of fields to include in the response.",
+											"key": "fields",
+											"value": "id,name,slug"
+										}
 									]
 								}
 							},
@@ -252,7 +290,7 @@
 							"body": "{\n  \"status\": false,\n  \"message\": \"Request Timeout. The server timed out waiting for the request.\",\n  \"errors\": null,\n  \"status_code\": 408\n}"
 						},
 						{
-							"id": "b9fff950-83d6-4daf-97f4-f73562120416",
+							"id": "485b9ee9-f34b-40d8-a2be-fc84b135b6d3",
 							"name": "Too Many Requests: Rate Limit Exceeded",
 							"originalRequest": {
 								"method": "GET",
@@ -268,12 +306,19 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/permissions",
+									"raw": "{{baseUrl}}/permissions?fields=id,name,slug",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"permissions"
+									],
+									"query": [
+										{
+											"description": "Comma-separated list of fields to include in the response.",
+											"key": "fields",
+											"value": "id,name,slug"
+										}
 									]
 								}
 							},
@@ -290,7 +335,7 @@
 							"body": "{\n  \"status\": false,\n  \"message\": \"Rate Limit Exceeded\",\n  \"errors\": null,\n  \"status_code\": 429\n}"
 						},
 						{
-							"id": "e88c2a3e-211c-43c5-81e4-76f265e08c4d",
+							"id": "d76569fc-2789-47c7-b8aa-ecdfbab37eca",
 							"name": "Internal Server Error. An unexpected error occurred while processing the request.",
 							"originalRequest": {
 								"method": "GET",
@@ -306,12 +351,19 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/permissions",
+									"raw": "{{baseUrl}}/permissions?fields=id,name,slug",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"permissions"
+									],
+									"query": [
+										{
+											"description": "Comma-separated list of fields to include in the response.",
+											"key": "fields",
+											"value": "id,name,slug"
+										}
 									]
 								}
 							},
@@ -391,7 +443,7 @@
 							"body": "{\n  \"status\": false,\n  \"message\": \"Internal Server Error occurred while processing the request.\",\n  \"errors\": null,\n  \"status_code\": 500\n}"
 						},
 						{
-							"id": "5602e3ff-5ad9-486a-9b53-520ebc7c75cf",
+							"id": "772f8221-6d7a-499d-864e-c0147cc879da",
 							"name": "Service Unavailable",
 							"originalRequest": {
 								"method": "GET",
@@ -407,12 +459,19 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/permissions",
+									"raw": "{{baseUrl}}/permissions?fields=id,name,slug",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"permissions"
+									],
+									"query": [
+										{
+											"description": "Comma-separated list of fields to include in the response.",
+											"key": "fields",
+											"value": "id,name,slug"
+										}
 									]
 								}
 							},
@@ -431,7 +490,7 @@
 					]
 				}
 			],
-			"id": "0cbacca0-27fa-455c-8203-36d79d07f1ff"
+			"id": "3c750ec4-f68a-46af-b626-fb3c45753d99"
 		},
 		{
 			"name": "roles",
@@ -444,7 +503,7 @@
 							"item": [
 								{
 									"name": "Grant access to a role.",
-									"id": "0e32b925-fc4e-4118-bd7c-269368561535",
+									"id": "4961457a-f4b5-4c8e-96f2-103c789b0e84",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
@@ -462,7 +521,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"permissions\": [\n    \"d4ad1ac8-93jk-2yjz-9bbm-421a8d304721\",\n    \"91d0c950-ik68-4lc5-96e7-42939e5357d1\"\n  ]\n}",
+											"raw": "{\n  \"permissions\": [\n    \"9b95a590-bc03-42a9-b789-a20deb95e66b\"\n  ]\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -483,7 +542,7 @@
 											"variable": [
 												{
 													"key": "roleId",
-													"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+													"value": "9b9c30fe-f1a5-4bd6-8345-df42c24c2c92",
 													"description": "(Required) The unique identifier of the role."
 												}
 											]
@@ -492,7 +551,7 @@
 									},
 									"response": [
 										{
-											"id": "ddae7c4c-6634-4050-9997-002f72eaf2c9",
+											"id": "823cf42a-5e14-471e-b302-6fadec09b6ee",
 											"name": "Successful response",
 											"originalRequest": {
 												"method": "PUT",
@@ -513,7 +572,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"permissions\": [\n    \"d4ad1ac8-93jk-2yjz-9bbm-421a8d304721\",\n    \"91d0c950-ik68-4lc5-96e7-42939e5357d1\"\n  ]\n}",
+													"raw": "{\n  \"permissions\": [\n    \"470748ef-99tc-4fyq-8mjh-39294058136e\",\n    \"7c6db813-cahe-1l4s-Ahcn-9913411c1dd6\"\n  ]\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -522,11 +581,14 @@
 													}
 												},
 												"url": {
-													"raw": "{{baseUrl}}/roles/:roleId/grant-access",
+													"raw": "http://localhost:8000/api/roles/:roleId/grant-access",
+													"protocol": "http",
 													"host": [
-														"{{baseUrl}}"
+														"localhost"
 													],
+													"port": "8000",
 													"path": [
+														"api",
 														"roles",
 														":roleId",
 														"grant-access"
@@ -553,14 +615,14 @@
 									]
 								}
 							],
-							"id": "cdcd02fc-bd38-4fad-96e3-5577f5a4ff23"
+							"id": "76e94d35-ee20-4794-b854-45734f0adb50"
 						},
 						{
 							"name": "revoke-access",
 							"item": [
 								{
 									"name": "Revoke access to a role.",
-									"id": "615a57e9-9ca8-44d3-bc2d-f0fc769768a1",
+									"id": "44e3d65b-56bf-459f-a0fd-81d0d80ecfb4",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
@@ -578,7 +640,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"permissions\": [\n    \"d4ad1ac8-93jk-2yjz-9bbm-421a8d304721\",\n    \"91d0c950-ik68-4lc5-96e7-42939e5357d1\"\n  ]\n}",
+											"raw": "{\n  \"permissions\": [\n    \"9b95a590-bc03-42a9-b789-a20deb95e66b\"\n  ]\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -599,7 +661,7 @@
 											"variable": [
 												{
 													"key": "roleId",
-													"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+													"value": "9b9c30fe-f1a5-4bd6-8345-df42c24c2c92",
 													"description": "(Required) The unique identifier of the role."
 												}
 											]
@@ -608,7 +670,7 @@
 									},
 									"response": [
 										{
-											"id": "d4a6de25-8ba5-409b-97eb-66573c8eecbd",
+											"id": "9a9f298f-42c5-4523-9e81-5f226c030e0c",
 											"name": "Successful response",
 											"originalRequest": {
 												"method": "PUT",
@@ -629,7 +691,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"permissions\": [\n    \"d4ad1ac8-93jk-2yjz-9bbm-421a8d304721\",\n    \"91d0c950-ik68-4lc5-96e7-42939e5357d1\"\n  ]\n}",
+													"raw": "{\n  \"permissions\": [\n    \"470748ef-99tc-4fyq-8mjh-39294058136e\",\n    \"7c6db813-cahe-1l4s-Ahcn-9913411c1dd6\"\n  ]\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -638,11 +700,14 @@
 													}
 												},
 												"url": {
-													"raw": "{{baseUrl}}/roles/:roleId/revoke-access",
+													"raw": "http://localhost:8000/api/roles/:roleId/revoke-access",
+													"protocol": "http",
 													"host": [
-														"{{baseUrl}}"
+														"localhost"
 													],
+													"port": "8000",
 													"path": [
+														"api",
 														"roles",
 														":roleId",
 														"revoke-access"
@@ -669,11 +734,11 @@
 									]
 								}
 							],
-							"id": "4dda260c-7777-4c79-8194-1df61f878fa0"
+							"id": "081f5cbc-2d19-4a1c-8d16-2a36fb9a94f7"
 						},
 						{
-							"name": "Retrieve a role",
-							"id": "826c500b-51a1-4673-94d9-022742a71ae5",
+							"name": "Retrive an existing role by id",
+							"id": "8cf9e747-0638-4fce-87bf-397673efc7f3",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -686,7 +751,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/roles/:roleId",
+									"raw": "{{baseUrl}}/roles/:roleId?fields=id,name,slug",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -697,25 +762,24 @@
 									"query": [
 										{
 											"key": "fields",
-											"value": "cupidatat adipisicing nulla incididunt dolor",
-											"description": "Comma-separated list of fields to include in the response.",
-											"disabled": true
+											"value": "id,name,slug",
+											"description": "Comma-separated list of fields to include in the response."
 										}
 									],
 									"variable": [
 										{
 											"key": "roleId",
-											"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+											"value": "9b9c30fe-f1a5-4bd6-8345-df42c24c2c92",
 											"description": "(Required) The unique identifier of the role"
 										}
 									]
 								},
-								"description": "Retrieve role information based on certain criteria."
+								"description": "Retrieve an existing role by its unique identifier."
 							},
 							"response": [
 								{
-									"id": "a4efa31b-719b-4355-a395-1d7f37c93a86",
-									"name": "Successful response",
+									"id": "5b269fe8-14f1-4a5a-9f12-a49c91d1f979",
+									"name": "Successfully retrieved role",
 									"originalRequest": {
 										"method": "GET",
 										"header": [
@@ -730,11 +794,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/roles/:roleId?fields=cupidatat adipisicing nulla incididunt dolor",
+											"raw": "http://localhost:8000/api/roles/:roleId?fields=id,name,slug",
+											"protocol": "http",
 											"host": [
-												"{{baseUrl}}"
+												"localhost"
 											],
+											"port": "8000",
 											"path": [
+												"api",
 												"roles",
 												":roleId"
 											],
@@ -742,7 +809,7 @@
 												{
 													"description": "Comma-separated list of fields to include in the response.",
 													"key": "fields",
-													"value": "cupidatat adipisicing nulla incididunt dolor"
+													"value": "id,name,slug"
 												}
 											],
 											"variable": [
@@ -759,16 +826,601 @@
 										{
 											"key": "Content-Type",
 											"value": "application/json"
+										},
+										{
+											"disabled": false,
+											"description": {
+												"content": "",
+												"type": "text/plain"
+											},
+											"key": "X-RateLimit-Limit",
+											"value": ""
+										},
+										{
+											"disabled": false,
+											"description": {
+												"content": "",
+												"type": "text/plain"
+											},
+											"key": "X-RateLimit-Remaining",
+											"value": ""
+										},
+										{
+											"disabled": false,
+											"description": {
+												"content": "",
+												"type": "text/plain"
+											},
+											"key": "Access-Control-Allow-Origin",
+											"value": ""
+										},
+										{
+											"disabled": false,
+											"description": {
+												"content": "",
+												"type": "text/plain"
+											},
+											"key": "Access-Control-Allow-Methods",
+											"value": ""
+										},
+										{
+											"disabled": false,
+											"description": {
+												"content": "",
+												"type": "text/plain"
+											},
+											"key": "Access-Control-Allow-Credentials",
+											"value": ""
+										},
+										{
+											"disabled": false,
+											"description": {
+												"content": "",
+												"type": "text/plain"
+											},
+											"key": "Access-Control-Max-Age",
+											"value": ""
+										},
+										{
+											"disabled": false,
+											"description": {
+												"content": "",
+												"type": "text/plain"
+											},
+											"key": "Access-Control-Allow-Headers",
+											"value": ""
 										}
 									],
 									"cookie": [],
-									"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"992b4f32-7oau-31r4-88iq-52a6561514d7\",\n    \"name\": \"eiusmod tempor ad anim irure\",\n    \"description\": \"\"\n  },\n  \"status_code\": 200\n}"
+									"body": "{\n  \"status\": true,\n  \"message\": \"Role retrieved successfully\",\n  \"data\": {\n    \"id\": \"128f5019-racu-4pt9-9bh4-852a045df558\",\n    \"name\": \"Name\",\n    \"slug\": \"can-ceate-an-user\",\n    \"description\": \"This role has administrative privileges.\",\n    \"permissions\": [\n      {\n        \"id\": \"0637d43a-cjeg-28yn-Bdga-f57ab13202da\",\n        \"name\": \"Name\",\n        \"slug\": \"can-ceate-an-user\",\n        \"description\": \"This permission has administrative privileges.\",\n        \"created_at\": \"2024-03-13 16:58:10\"\n      },\n      {\n        \"id\": \"22ae41e2-8t7j-3051-Ajac-5b9fc258b0bc\",\n        \"name\": \"Name\",\n        \"slug\": \"can-ceate-an-user\",\n        \"description\": \"This permission has administrative privileges.\",\n        \"created_at\": \"2024-03-13 16:58:10\"\n      }\n    ],\n    \"created_at\": \"2024-03-13 16:58:10\"\n  },\n  \"status_code\": 200\n}"
+								},
+								{
+									"id": "7bd0e9cc-1044-40db-af74-0b8e6f733168",
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-Api-Key",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/roles/:roleId?fields=id,name,slug",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"roles",
+												":roleId"
+											],
+											"query": [
+												{
+													"description": "Comma-separated list of fields to include in the response.",
+													"key": "fields",
+													"value": "id,name,slug"
+												}
+											],
+											"variable": [
+												{
+													"key": "roleId"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": false,\n  \"message\": \"The request body is missing the required 'name' parameter.\",\n  \"errors\": null,\n  \"status_code\": 400\n}"
+								},
+								{
+									"id": "774b37c7-86dd-4489-a298-f3d01f1c67d0",
+									"name": "Unauthorized. The request requires user authentication or, if the request included authorization credentials, authorization has been refused for those credentials.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-Api-Key",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/roles/:roleId?fields=id,name,slug",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"roles",
+												":roleId"
+											],
+											"query": [
+												{
+													"description": "Comma-separated list of fields to include in the response.",
+													"key": "fields",
+													"value": "id,name,slug"
+												}
+											],
+											"variable": [
+												{
+													"key": "roleId"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": false,\n  \"message\": \"You are not authorized to access this resource.\",\n  \"errors\": null,\n  \"status_code\": 401\n}"
+								},
+								{
+									"id": "2997ed32-a089-46a7-9591-f1e35c1b0005",
+									"name": "Forbidden. The server understood the request, but refuses to authorize it.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-Api-Key",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/roles/:roleId?fields=id,name,slug",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"roles",
+												":roleId"
+											],
+											"query": [
+												{
+													"description": "Comma-separated list of fields to include in the response.",
+													"key": "fields",
+													"value": "id,name,slug"
+												}
+											],
+											"variable": [
+												{
+													"key": "roleId"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": false,\n  \"message\": \"Access to the requested resource is forbidden.\",\n  \"errors\": null,\n  \"status_code\": 403\n}"
+								},
+								{
+									"id": "4380107f-c0e8-4a1f-ac29-e5de3cf50877",
+									"name": "Not Found. The requested resource could not be found.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-Api-Key",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/roles/:roleId?fields=id,name,slug",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"roles",
+												":roleId"
+											],
+											"query": [
+												{
+													"description": "Comma-separated list of fields to include in the response.",
+													"key": "fields",
+													"value": "id,name,slug"
+												}
+											],
+											"variable": [
+												{
+													"key": "roleId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": false,\n  \"message\": \"The requested resource could not be found.\",\n  \"errors\": null,\n  \"status_code\": 404\n}"
+								},
+								{
+									"id": "9d8e8026-65c3-4edc-ab7e-0f25c336dc98",
+									"name": "Method Not Allowed. The request method is known by the server but has been disabled and cannot be used.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-Api-Key",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/roles/:roleId?fields=id,name,slug",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"roles",
+												":roleId"
+											],
+											"query": [
+												{
+													"description": "Comma-separated list of fields to include in the response.",
+													"key": "fields",
+													"value": "id,name,slug"
+												}
+											],
+											"variable": [
+												{
+													"key": "roleId"
+												}
+											]
+										}
+									},
+									"status": "Method Not Allowed",
+									"code": 405,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": false,\n  \"message\": \"Method Not Allowed. The request method is known by the server but has been disabled and cannot be used.\",\n  \"errors\": null,\n  \"status_code\": 405\n}"
+								},
+								{
+									"id": "8cf5a0f7-13ce-4a8f-8f65-d6aa9adc4ae3",
+									"name": "Request Timeout. The server timed out waiting for the request.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-Api-Key",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/roles/:roleId?fields=id,name,slug",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"roles",
+												":roleId"
+											],
+											"query": [
+												{
+													"description": "Comma-separated list of fields to include in the response.",
+													"key": "fields",
+													"value": "id,name,slug"
+												}
+											],
+											"variable": [
+												{
+													"key": "roleId"
+												}
+											]
+										}
+									},
+									"status": "Request Timeout",
+									"code": 408,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": false,\n  \"message\": \"Request Timeout. The server timed out waiting for the request.\",\n  \"errors\": null,\n  \"status_code\": 408\n}"
+								},
+								{
+									"id": "f815f161-9b7c-414b-aa76-24dc7d23e26d",
+									"name": "Too Many Requests: Rate Limit Exceeded",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-Api-Key",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/roles/:roleId?fields=id,name,slug",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"roles",
+												":roleId"
+											],
+											"query": [
+												{
+													"description": "Comma-separated list of fields to include in the response.",
+													"key": "fields",
+													"value": "id,name,slug"
+												}
+											],
+											"variable": [
+												{
+													"key": "roleId"
+												}
+											]
+										}
+									},
+									"status": "Too Many Requests",
+									"code": 429,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": false,\n  \"message\": \"Rate Limit Exceeded\",\n  \"errors\": null,\n  \"status_code\": 429\n}"
+								},
+								{
+									"id": "0c5aa5bd-08aa-4729-8aae-90e75760286c",
+									"name": "Internal Server Error. An unexpected error occurred while processing the request.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-Api-Key",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/roles/:roleId?fields=id,name,slug",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"roles",
+												":roleId"
+											],
+											"query": [
+												{
+													"description": "Comma-separated list of fields to include in the response.",
+													"key": "fields",
+													"value": "id,name,slug"
+												}
+											],
+											"variable": [
+												{
+													"key": "roleId"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"disabled": false,
+											"description": {
+												"content": "",
+												"type": "text/plain"
+											},
+											"key": "X-RateLimit-Limit",
+											"value": ""
+										},
+										{
+											"disabled": false,
+											"description": {
+												"content": "",
+												"type": "text/plain"
+											},
+											"key": "X-RateLimit-Remaining",
+											"value": ""
+										},
+										{
+											"disabled": false,
+											"description": {
+												"content": "",
+												"type": "text/plain"
+											},
+											"key": "Access-Control-Allow-Origin",
+											"value": ""
+										},
+										{
+											"disabled": false,
+											"description": {
+												"content": "",
+												"type": "text/plain"
+											},
+											"key": "Access-Control-Allow-Methods",
+											"value": ""
+										},
+										{
+											"disabled": false,
+											"description": {
+												"content": "",
+												"type": "text/plain"
+											},
+											"key": "Access-Control-Allow-Credentials",
+											"value": ""
+										},
+										{
+											"disabled": false,
+											"description": {
+												"content": "",
+												"type": "text/plain"
+											},
+											"key": "Access-Control-Max-Age",
+											"value": ""
+										},
+										{
+											"disabled": false,
+											"description": {
+												"content": "",
+												"type": "text/plain"
+											},
+											"key": "Access-Control-Allow-Headers",
+											"value": ""
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": false,\n  \"message\": \"Internal Server Error occurred while processing the request.\",\n  \"errors\": null,\n  \"status_code\": 500\n}"
+								},
+								{
+									"id": "e1b6e70f-5018-4b7a-9de6-64d790ae1e68",
+									"name": "Service Unavailable",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-Api-Key",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/roles/:roleId?fields=id,name,slug",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"roles",
+												":roleId"
+											],
+											"query": [
+												{
+													"description": "Comma-separated list of fields to include in the response.",
+													"key": "fields",
+													"value": "id,name,slug"
+												}
+											],
+											"variable": [
+												{
+													"key": "roleId"
+												}
+											]
+										}
+									},
+									"status": "Service Unavailable",
+									"code": 503,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": false,\n  \"message\": \"Service Unavailable\",\n  \"errors\": null,\n  \"status_code\": 503\n}"
 								}
 							]
 						},
 						{
-							"name": "Update a role",
-							"id": "f1395eb6-3c88-424c-adb4-41b6554e6028",
+							"name": "Update an existing role",
+							"id": "416f3443-adc4-416e-a0ff-c572132199b6",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -786,7 +1438,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"name\": \"Nom du champ\",\n  \"permissions\": [\n    \"8828ee5b-u560-3dvc-9l9q-e7cf1ac9c181\",\n    \"59e6ddd9-ixu1-46sh-97gb-d1852480de38\"\n  ],\n  \"description\": \"et incididunt non amet\"\n}",
+									"raw": "{\n  \"name\": \"Employe\",\n  \"permissions\": [\n    \"9b95a590-c02b-489a-a955-ea0ca7dbd4c0\"\n  ],\n  \"description\": \"This role has employee privileges.\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -806,17 +1458,17 @@
 									"variable": [
 										{
 											"key": "roleId",
-											"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+											"value": "9b9c30fe-f1a5-4bd6-8345-df42c24c2c92",
 											"description": "(Required) The unique identifier of the role"
 										}
 									]
 								},
-								"description": "Update role information based on certain criteria."
+								"description": "Create a new role with the provided data."
 							},
 							"response": [
 								{
-									"id": "021e2487-1de8-435d-afee-6927000f4ac8",
-									"name": "Successful response",
+									"id": "98c8e2dd-e153-492a-83fa-f0614cf3b701",
+									"name": "Successfully Response",
 									"originalRequest": {
 										"method": "PUT",
 										"header": [
@@ -836,7 +1488,131 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"name\": \"Nom du champ\",\n  \"permissions\": [\n    \"8828ee5b-u560-3dvc-9l9q-e7cf1ac9c181\",\n    \"59e6ddd9-ixu1-46sh-97gb-d1852480de38\"\n  ],\n  \"description\": \"et incididunt non amet\"\n}",
+											"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"a4297413-6lh1-4850-8eca-4ff5d87f20a0\",\n    \"d3fdea34-4g12-13fu-A88d-3f7738300f41\"\n  ],\n  \"description\": \"This role has employee privileges.\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/roles/:roleId",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"roles",
+												":roleId"
+											],
+											"variable": [
+												{
+													"key": "roleId"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"disabled": false,
+											"description": {
+												"content": "",
+												"type": "text/plain"
+											},
+											"key": "X-RateLimit-Limit",
+											"value": ""
+										},
+										{
+											"disabled": false,
+											"description": {
+												"content": "",
+												"type": "text/plain"
+											},
+											"key": "X-RateLimit-Remaining",
+											"value": ""
+										},
+										{
+											"disabled": false,
+											"description": {
+												"content": "",
+												"type": "text/plain"
+											},
+											"key": "Access-Control-Allow-Origin",
+											"value": ""
+										},
+										{
+											"disabled": false,
+											"description": {
+												"content": "",
+												"type": "text/plain"
+											},
+											"key": "Access-Control-Allow-Methods",
+											"value": ""
+										},
+										{
+											"disabled": false,
+											"description": {
+												"content": "",
+												"type": "text/plain"
+											},
+											"key": "Access-Control-Allow-Credentials",
+											"value": ""
+										},
+										{
+											"disabled": false,
+											"description": {
+												"content": "",
+												"type": "text/plain"
+											},
+											"key": "Access-Control-Max-Age",
+											"value": ""
+										},
+										{
+											"disabled": false,
+											"description": {
+												"content": "",
+												"type": "text/plain"
+											},
+											"key": "Access-Control-Allow-Headers",
+											"value": ""
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": true,\n  \"message\": \"Role updated successfully\",\n  \"data\": {\n    \"id\": \"628e1697-vvu7-2wwt-A1hq-762cf689ad1a\",\n    \"name\": \"Name\",\n    \"slug\": \"can-ceate-an-user\",\n    \"description\": \"This role has administrative privileges.\",\n    \"permissions\": [\n      {\n        \"id\": \"3ab2d39d-e5di-160f-Aa7k-eed66cac508a\",\n        \"name\": \"Name\",\n        \"slug\": \"can-ceate-an-user\",\n        \"description\": \"This permission has administrative privileges.\",\n        \"created_at\": \"2024-03-13 16:58:10\"\n      },\n      {\n        \"id\": \"9d3c267b-6uwx-31nz-Abk9-39b0f6340bef\",\n        \"name\": \"Name\",\n        \"slug\": \"can-ceate-an-user\",\n        \"description\": \"This permission has administrative privileges.\",\n        \"created_at\": \"2024-03-13 16:58:10\"\n      }\n    ],\n    \"created_at\": \"2024-03-13 16:58:10\"\n  },\n  \"status_code\": 201\n}"
+								},
+								{
+									"id": "fba46d93-dc41-455c-986b-4df3f7c856c5",
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-Api-Key",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"a4297413-6lh1-4850-8eca-4ff5d87f20a0\",\n    \"d3fdea34-4g12-13fu-A88d-3f7738300f41\"\n  ],\n  \"description\": \"This role has employee privileges.\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -860,8 +1636,8 @@
 											]
 										}
 									},
-									"status": "Created",
-									"code": 201,
+									"status": "Bad Request",
+									"code": 400,
 									"_postman_previewlanguage": "json",
 									"header": [
 										{
@@ -870,13 +1646,598 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"6aced208-38ut-5cih-Af5d-1ab95796493f\",\n    \"name\": \"nisi reprehenderit sed\",\n    \"description\": \"consequat aliqua\"\n  },\n  \"status_code\": 201\n}"
+									"body": "{\n  \"status\": false,\n  \"message\": \"The request body is missing the required 'name' parameter.\",\n  \"errors\": null,\n  \"status_code\": 400\n}"
+								},
+								{
+									"id": "59214de2-f598-4f2a-b24b-e578b4b4dc42",
+									"name": "Unauthorized. The request requires user authentication or, if the request included authorization credentials, authorization has been refused for those credentials.",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-Api-Key",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"a4297413-6lh1-4850-8eca-4ff5d87f20a0\",\n    \"d3fdea34-4g12-13fu-A88d-3f7738300f41\"\n  ],\n  \"description\": \"This role has employee privileges.\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/roles/:roleId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"roles",
+												":roleId"
+											],
+											"variable": [
+												{
+													"key": "roleId"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": false,\n  \"message\": \"You are not authorized to access this resource.\",\n  \"errors\": null,\n  \"status_code\": 401\n}"
+								},
+								{
+									"id": "e66f4b0b-ecdf-4392-9c2d-4a28f5a6d561",
+									"name": "Forbidden. The server understood the request, but refuses to authorize it.",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-Api-Key",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"a4297413-6lh1-4850-8eca-4ff5d87f20a0\",\n    \"d3fdea34-4g12-13fu-A88d-3f7738300f41\"\n  ],\n  \"description\": \"This role has employee privileges.\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/roles/:roleId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"roles",
+												":roleId"
+											],
+											"variable": [
+												{
+													"key": "roleId"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": false,\n  \"message\": \"Access to the requested resource is forbidden.\",\n  \"errors\": null,\n  \"status_code\": 403\n}"
+								},
+								{
+									"id": "7c62f71b-055b-400d-bd4d-3dbbeb820dd9",
+									"name": "Not Found. The requested resource could not be found.",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-Api-Key",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"a4297413-6lh1-4850-8eca-4ff5d87f20a0\",\n    \"d3fdea34-4g12-13fu-A88d-3f7738300f41\"\n  ],\n  \"description\": \"This role has employee privileges.\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/roles/:roleId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"roles",
+												":roleId"
+											],
+											"variable": [
+												{
+													"key": "roleId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": false,\n  \"message\": \"The requested resource could not be found.\",\n  \"errors\": null,\n  \"status_code\": 404\n}"
+								},
+								{
+									"id": "582fdeca-bd4b-4945-863d-abc8c6873e17",
+									"name": "Method Not Allowed. The request method is known by the server but has been disabled and cannot be used.",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-Api-Key",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"a4297413-6lh1-4850-8eca-4ff5d87f20a0\",\n    \"d3fdea34-4g12-13fu-A88d-3f7738300f41\"\n  ],\n  \"description\": \"This role has employee privileges.\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/roles/:roleId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"roles",
+												":roleId"
+											],
+											"variable": [
+												{
+													"key": "roleId"
+												}
+											]
+										}
+									},
+									"status": "Method Not Allowed",
+									"code": 405,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": false,\n  \"message\": \"Method Not Allowed. The request method is known by the server but has been disabled and cannot be used.\",\n  \"errors\": null,\n  \"status_code\": 405\n}"
+								},
+								{
+									"id": "44e76b2e-a3f5-4021-ab9c-693b204475cc",
+									"name": "Request Timeout. The server timed out waiting for the request.",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-Api-Key",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"a4297413-6lh1-4850-8eca-4ff5d87f20a0\",\n    \"d3fdea34-4g12-13fu-A88d-3f7738300f41\"\n  ],\n  \"description\": \"This role has employee privileges.\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/roles/:roleId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"roles",
+												":roleId"
+											],
+											"variable": [
+												{
+													"key": "roleId"
+												}
+											]
+										}
+									},
+									"status": "Request Timeout",
+									"code": 408,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": false,\n  \"message\": \"Request Timeout. The server timed out waiting for the request.\",\n  \"errors\": null,\n  \"status_code\": 408\n}"
+								},
+								{
+									"id": "c653a21f-0aa8-4947-ad30-87037bd32a16",
+									"name": "Unprocessable Entity. The server understands the content type of the request entity but was unable to process the contained instructions.",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-Api-Key",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"a4297413-6lh1-4850-8eca-4ff5d87f20a0\",\n    \"d3fdea34-4g12-13fu-A88d-3f7738300f41\"\n  ],\n  \"description\": \"This role has employee privileges.\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/roles/:roleId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"roles",
+												":roleId"
+											],
+											"variable": [
+												{
+													"key": "roleId"
+												}
+											]
+										}
+									},
+									"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": false,\n  \"message\": \"The request body contains invalid data.\",\n  \"errors\": null,\n  \"status_code\": 422\n}"
+								},
+								{
+									"id": "5799a14c-28ab-4528-b3de-2f1f7db53b3d",
+									"name": "Too Many Requests: Rate Limit Exceeded",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-Api-Key",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"a4297413-6lh1-4850-8eca-4ff5d87f20a0\",\n    \"d3fdea34-4g12-13fu-A88d-3f7738300f41\"\n  ],\n  \"description\": \"This role has employee privileges.\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/roles/:roleId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"roles",
+												":roleId"
+											],
+											"variable": [
+												{
+													"key": "roleId"
+												}
+											]
+										}
+									},
+									"status": "Too Many Requests",
+									"code": 429,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": false,\n  \"message\": \"Rate Limit Exceeded\",\n  \"errors\": null,\n  \"status_code\": 429\n}"
+								},
+								{
+									"id": "042a1214-3e1f-4c76-ba2a-a06776ce2f77",
+									"name": "Internal Server Error. An unexpected error occurred while processing the request.",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-Api-Key",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"a4297413-6lh1-4850-8eca-4ff5d87f20a0\",\n    \"d3fdea34-4g12-13fu-A88d-3f7738300f41\"\n  ],\n  \"description\": \"This role has employee privileges.\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/roles/:roleId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"roles",
+												":roleId"
+											],
+											"variable": [
+												{
+													"key": "roleId"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"disabled": false,
+											"description": {
+												"content": "",
+												"type": "text/plain"
+											},
+											"key": "X-RateLimit-Limit",
+											"value": ""
+										},
+										{
+											"disabled": false,
+											"description": {
+												"content": "",
+												"type": "text/plain"
+											},
+											"key": "X-RateLimit-Remaining",
+											"value": ""
+										},
+										{
+											"disabled": false,
+											"description": {
+												"content": "",
+												"type": "text/plain"
+											},
+											"key": "Access-Control-Allow-Origin",
+											"value": ""
+										},
+										{
+											"disabled": false,
+											"description": {
+												"content": "",
+												"type": "text/plain"
+											},
+											"key": "Access-Control-Allow-Methods",
+											"value": ""
+										},
+										{
+											"disabled": false,
+											"description": {
+												"content": "",
+												"type": "text/plain"
+											},
+											"key": "Access-Control-Allow-Credentials",
+											"value": ""
+										},
+										{
+											"disabled": false,
+											"description": {
+												"content": "",
+												"type": "text/plain"
+											},
+											"key": "Access-Control-Max-Age",
+											"value": ""
+										},
+										{
+											"disabled": false,
+											"description": {
+												"content": "",
+												"type": "text/plain"
+											},
+											"key": "Access-Control-Allow-Headers",
+											"value": ""
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": false,\n  \"message\": \"Internal Server Error occurred while processing the request.\",\n  \"errors\": null,\n  \"status_code\": 500\n}"
+								},
+								{
+									"id": "e0a9d958-c2b8-4d83-92db-d50ea435023d",
+									"name": "Service Unavailable",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-Api-Key",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"a4297413-6lh1-4850-8eca-4ff5d87f20a0\",\n    \"d3fdea34-4g12-13fu-A88d-3f7738300f41\"\n  ],\n  \"description\": \"This role has employee privileges.\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/roles/:roleId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"roles",
+												":roleId"
+											],
+											"variable": [
+												{
+													"key": "roleId"
+												}
+											]
+										}
+									},
+									"status": "Service Unavailable",
+									"code": 503,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": false,\n  \"message\": \"Service Unavailable\",\n  \"errors\": null,\n  \"status_code\": 503\n}"
 								}
 							]
 						},
 						{
 							"name": "Delete a role",
-							"id": "2e2b9cfa-0e15-421c-af42-217331eebe17",
+							"id": "4f51599e-b929-4a2d-8397-cdbfb5d87c90",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -900,7 +2261,7 @@
 									"variable": [
 										{
 											"key": "roleId",
-											"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+											"value": "9b9c30fe-f1a5-4bd6-8345-df42c24c2c92",
 											"description": "(Required) The unique identifier of the role"
 										}
 									]
@@ -909,7 +2270,7 @@
 							},
 							"response": [
 								{
-									"id": "c85996e3-db22-4ed1-81f3-c4e8f8003b26",
+									"id": "79e33a1f-1118-4585-bd74-db7d4184d967",
 									"name": "Successful response",
 									"originalRequest": {
 										"method": "DELETE",
@@ -925,11 +2286,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/roles/:roleId",
+											"raw": "http://localhost:8000/api/roles/:roleId",
+											"protocol": "http",
 											"host": [
-												"{{baseUrl}}"
+												"localhost"
 											],
+											"port": "8000",
 											"path": [
+												"api",
 												"roles",
 												":roleId"
 											],
@@ -955,11 +2319,11 @@
 							]
 						}
 					],
-					"id": "54750c91-aaff-4452-9be3-4947a82406bb"
+					"id": "ac5fb93b-1055-4b2a-9c49-9efa90034ae1"
 				},
 				{
 					"name": "Retrieve list of roles",
-					"id": "fc66226a-731c-4b00-a1cc-c0f50522de52",
+					"id": "3687e367-0395-4187-8995-166786fa4d6f",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -972,7 +2336,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/roles?fields=name,slug",
+							"raw": "{{baseUrl}}/roles?fields=id,name,slug",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -983,7 +2347,7 @@
 								{
 									"description": "Comma-separated list of fields to include in the response.",
 									"key": "fields",
-									"value": "name,slug"
+									"value": "id,name,slug"
 								}
 							]
 						},
@@ -991,7 +2355,7 @@
 					},
 					"response": [
 						{
-							"id": "b89509a2-df53-48be-a562-5900ac4bb55e",
+							"id": "beb99e6d-03cb-4dd9-bebd-60df00876cf1",
 							"name": "Successfully Response",
 							"originalRequest": {
 								"method": "GET",
@@ -1007,7 +2371,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/roles?fields=name,slug",
+									"raw": "{{baseUrl}}/roles?fields=id,name,slug",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -1018,7 +2382,7 @@
 										{
 											"description": "Comma-separated list of fields to include in the response.",
 											"key": "fields",
-											"value": "name,slug"
+											"value": "id,name,slug"
 										}
 									]
 								}
@@ -1096,10 +2460,10 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n  \"status\": true,\n  \"message\": \"List of roles retrieve successfully\",\n  \"data\": {\n    \"current_page\": 2,\n    \"data\": [\n      {\n        \"id\": \"6fd75889-v5bg-2ek6-8a3b-a704318e02b5\",\n        \"name\": \"Name\",\n        \"slug\": \"can-ceate-an-user\",\n        \"description\": \"This role has administrative privileges.\",\n        \"permissions\": [\n          {\n            \"id\": \"8f2a0872-uxrk-1fl8-Be9p-6b4dde739f96\",\n            \"name\": \"Name\",\n            \"slug\": \"can-ceate-an-user\",\n            \"description\": \"This permission has administrative privileges.\",\n            \"created_at\": \"2024-03-13 16:58:10\"\n          },\n          {\n            \"id\": \"34201602-cil8-55ir-Bqim-ed54dff9b00d\",\n            \"name\": \"Name\",\n            \"slug\": \"can-ceate-an-user\",\n            \"description\": \"This permission has administrative privileges.\",\n            \"created_at\": \"2024-03-13 16:58:10\"\n          }\n        ],\n        \"created_at\": \"2024-03-13 16:58:10\"\n      },\n      {\n        \"id\": \"d3ff310a-x9ed-2nwg-9b0o-851f34e01402\",\n        \"name\": \"Name\",\n        \"slug\": \"can-ceate-an-user\",\n        \"description\": \"This role has administrative privileges.\",\n        \"permissions\": [\n          {\n            \"id\": \"705a0ff9-dbgs-53kv-87fc-c80e593ee75d\",\n            \"name\": \"Name\",\n            \"slug\": \"can-ceate-an-user\",\n            \"description\": \"This permission has administrative privileges.\",\n            \"created_at\": \"2024-03-13 16:58:10\"\n          },\n          {\n            \"id\": \"999cdd0f-4um7-4i4b-A7bb-2f0110ad576f\",\n            \"name\": \"Name\",\n            \"slug\": \"can-ceate-an-user\",\n            \"description\": \"This permission has administrative privileges.\",\n            \"created_at\": \"2024-03-13 16:58:10\"\n          }\n        ],\n        \"created_at\": \"2024-03-13 16:58:10\"\n      }\n    ],\n    \"first_page_url\": \"roles?page=1\",\n    \"from\": 1,\n    \"last_page\": 7,\n    \"last_page_url\": \"roles?page=7\",\n    \"links\": [\n      {\n        \"url\": null,\n        \"label\": \"&laquo; Previous\",\n        \"active\": true\n      },\n      {\n        \"url\": null,\n        \"label\": \"&laquo; Previous\",\n        \"active\": true\n      }\n    ],\n    \"next_page_url\": \"roles?page=3\",\n    \"path\": \"roles\",\n    \"per_page\": 15,\n    \"prev_page_url\": \"roles?page=1\",\n    \"to\": 3,\n    \"total\": 100\n  },\n  \"status_code\": 200\n}"
+							"body": "{\n  \"status\": true,\n  \"message\": \"List of roles retrieve successfully\",\n  \"data\": {\n    \"current_page\": 2,\n    \"data\": [\n      {\n        \"id\": \"0cfb09cf-aqqi-5uuy-A8qk-487862454c82\",\n        \"name\": \"Name\",\n        \"slug\": \"can-ceate-an-user\",\n        \"description\": \"This role has administrative privileges.\",\n        \"permissions\": [\n          {\n            \"id\": \"743a7bef-obr2-4mog-81a7-676d2377a1a3\",\n            \"name\": \"Name\",\n            \"slug\": \"can-ceate-an-user\",\n            \"description\": \"This permission has administrative privileges.\",\n            \"created_at\": \"2024-03-13 16:58:10\"\n          },\n          {\n            \"id\": \"f9ff2605-xqtk-1plt-Afn8-c42ef22008fc\",\n            \"name\": \"Name\",\n            \"slug\": \"can-ceate-an-user\",\n            \"description\": \"This permission has administrative privileges.\",\n            \"created_at\": \"2024-03-13 16:58:10\"\n          }\n        ],\n        \"created_at\": \"2024-03-13 16:58:10\"\n      },\n      {\n        \"id\": \"f07ed162-ivve-4qnc-Bl4o-fdb32352fb9e\",\n        \"name\": \"Name\",\n        \"slug\": \"can-ceate-an-user\",\n        \"description\": \"This role has administrative privileges.\",\n        \"permissions\": [\n          {\n            \"id\": \"7e93a139-wl1j-2qee-Bqaa-617125f8ad69\",\n            \"name\": \"Name\",\n            \"slug\": \"can-ceate-an-user\",\n            \"description\": \"This permission has administrative privileges.\",\n            \"created_at\": \"2024-03-13 16:58:10\"\n          },\n          {\n            \"id\": \"ca939072-qs12-1zxo-Bie9-0d15e4583ffd\",\n            \"name\": \"Name\",\n            \"slug\": \"can-ceate-an-user\",\n            \"description\": \"This permission has administrative privileges.\",\n            \"created_at\": \"2024-03-13 16:58:10\"\n          }\n        ],\n        \"created_at\": \"2024-03-13 16:58:10\"\n      }\n    ],\n    \"first_page_url\": \"roles?page=1\",\n    \"from\": 1,\n    \"last_page\": 7,\n    \"last_page_url\": \"roles?page=7\",\n    \"links\": [\n      {\n        \"url\": null,\n        \"label\": \"&laquo; Previous\",\n        \"active\": true\n      },\n      {\n        \"url\": null,\n        \"label\": \"&laquo; Previous\",\n        \"active\": true\n      }\n    ],\n    \"next_page_url\": \"roles?page=3\",\n    \"path\": \"roles\",\n    \"per_page\": 15,\n    \"prev_page_url\": \"roles?page=1\",\n    \"to\": 3,\n    \"total\": 100\n  },\n  \"status_code\": 200\n}"
 						},
 						{
-							"id": "f0702fa2-8a4a-4433-b903-69d223d34941",
+							"id": "c1e96168-2d2d-47b1-b099-d368ef3f5b3d",
 							"name": "Bad Request",
 							"originalRequest": {
 								"method": "GET",
@@ -1115,7 +2479,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/roles?fields=name,slug",
+									"raw": "{{baseUrl}}/roles?fields=id,name,slug",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -1126,7 +2490,7 @@
 										{
 											"description": "Comma-separated list of fields to include in the response.",
 											"key": "fields",
-											"value": "name,slug"
+											"value": "id,name,slug"
 										}
 									]
 								}
@@ -1144,7 +2508,7 @@
 							"body": "{\n  \"status\": false,\n  \"message\": \"The request body is missing the required 'name' parameter.\",\n  \"errors\": null,\n  \"status_code\": 400\n}"
 						},
 						{
-							"id": "b50a486d-c637-4543-826b-61dc2d9ba590",
+							"id": "137bad7a-73f4-4980-afb5-e8fdaa192da0",
 							"name": "Method Not Allowed. The request method is known by the server but has been disabled and cannot be used.",
 							"originalRequest": {
 								"method": "GET",
@@ -1160,7 +2524,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/roles?fields=name,slug",
+									"raw": "{{baseUrl}}/roles?fields=id,name,slug",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -1171,7 +2535,7 @@
 										{
 											"description": "Comma-separated list of fields to include in the response.",
 											"key": "fields",
-											"value": "name,slug"
+											"value": "id,name,slug"
 										}
 									]
 								}
@@ -1189,7 +2553,7 @@
 							"body": "{\n  \"status\": false,\n  \"message\": \"Method Not Allowed. The request method is known by the server but has been disabled and cannot be used.\",\n  \"errors\": null,\n  \"status_code\": 405\n}"
 						},
 						{
-							"id": "f55fd2ac-3083-43d0-9f7d-ad44a2385b64",
+							"id": "94281f9e-b7da-4966-b915-a16c6c920323",
 							"name": "Request Timeout. The server timed out waiting for the request.",
 							"originalRequest": {
 								"method": "GET",
@@ -1205,7 +2569,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/roles?fields=name,slug",
+									"raw": "{{baseUrl}}/roles?fields=id,name,slug",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -1216,7 +2580,7 @@
 										{
 											"description": "Comma-separated list of fields to include in the response.",
 											"key": "fields",
-											"value": "name,slug"
+											"value": "id,name,slug"
 										}
 									]
 								}
@@ -1234,7 +2598,7 @@
 							"body": "{\n  \"status\": false,\n  \"message\": \"Request Timeout. The server timed out waiting for the request.\",\n  \"errors\": null,\n  \"status_code\": 408\n}"
 						},
 						{
-							"id": "72705043-3a86-475e-a078-a929a24b549d",
+							"id": "8f822ea8-19d3-4957-b3eb-b27a7c8c776e",
 							"name": "Unprocessable Entity. The server understands the content type of the request entity but was unable to process the contained instructions.",
 							"originalRequest": {
 								"method": "GET",
@@ -1250,7 +2614,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/roles?fields=name,slug",
+									"raw": "{{baseUrl}}/roles?fields=id,name,slug",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -1261,7 +2625,7 @@
 										{
 											"description": "Comma-separated list of fields to include in the response.",
 											"key": "fields",
-											"value": "name,slug"
+											"value": "id,name,slug"
 										}
 									]
 								}
@@ -1279,7 +2643,7 @@
 							"body": "{\n  \"status\": false,\n  \"message\": \"The request body contains invalid data.\",\n  \"errors\": null,\n  \"status_code\": 422\n}"
 						},
 						{
-							"id": "40824e6e-8bc5-4624-8dca-7def0a7a22f3",
+							"id": "62b5bc34-d522-444e-9e9b-613eece06bbd",
 							"name": "Too Many Requests: Rate Limit Exceeded",
 							"originalRequest": {
 								"method": "GET",
@@ -1295,7 +2659,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/roles?fields=name,slug",
+									"raw": "{{baseUrl}}/roles?fields=id,name,slug",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -1306,7 +2670,7 @@
 										{
 											"description": "Comma-separated list of fields to include in the response.",
 											"key": "fields",
-											"value": "name,slug"
+											"value": "id,name,slug"
 										}
 									]
 								}
@@ -1324,7 +2688,7 @@
 							"body": "{\n  \"status\": false,\n  \"message\": \"Rate Limit Exceeded\",\n  \"errors\": null,\n  \"status_code\": 429\n}"
 						},
 						{
-							"id": "66ed25c0-d754-4c7f-a2f6-9b10ef90b3e7",
+							"id": "f22ceafb-1355-4b61-a590-5bd77b79bac2",
 							"name": "Internal Server Error. An unexpected error occurred while processing the request.",
 							"originalRequest": {
 								"method": "GET",
@@ -1340,7 +2704,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/roles?fields=name,slug",
+									"raw": "{{baseUrl}}/roles?fields=id,name,slug",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -1351,7 +2715,7 @@
 										{
 											"description": "Comma-separated list of fields to include in the response.",
 											"key": "fields",
-											"value": "name,slug"
+											"value": "id,name,slug"
 										}
 									]
 								}
@@ -1432,7 +2796,7 @@
 							"body": "{\n  \"status\": false,\n  \"message\": \"Internal Server Error occurred while processing the request.\",\n  \"errors\": null,\n  \"status_code\": 500\n}"
 						},
 						{
-							"id": "6239cf9e-9de7-4f2f-ae3c-29689d1051cf",
+							"id": "9e830d2d-023b-49e3-835e-38cf19eac1f4",
 							"name": "Service Unavailable",
 							"originalRequest": {
 								"method": "GET",
@@ -1448,7 +2812,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/roles?fields=name,slug",
+									"raw": "{{baseUrl}}/roles?fields=id,name,slug",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -1459,7 +2823,7 @@
 										{
 											"description": "Comma-separated list of fields to include in the response.",
 											"key": "fields",
-											"value": "name,slug"
+											"value": "id,name,slug"
 										}
 									]
 								}
@@ -1480,7 +2844,7 @@
 				},
 				{
 					"name": "Create a new role",
-					"id": "416f950b-3594-4a64-8c77-10ca7ea65132",
+					"id": "2a82f133-7aff-42ff-9b22-a71e5e82c3dd",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1498,7 +2862,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"b791d7b7-t76c-2zqr-882c-aa4706142f94\",\n    \"28a430ac-6umk-16c9-Akdl-7ad3843d9e09\"\n  ],\n  \"description\": \"This role has administrative privileges.\"\n}",
+							"raw": "{\n  \"name\": \"Employee\",\n  \"permissions\": [\n    \"9b95a590-8c81-441a-874d-0b101d7d6a3e\"\n  ],\n  \"description\": \"This role has employee privileges.\"\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -1519,7 +2883,7 @@
 					},
 					"response": [
 						{
-							"id": "dc4af678-90e7-4c04-86ca-78d219a044ff",
+							"id": "5acd7eac-6450-4dbf-9696-8e68125d65d1",
 							"name": "Successfully Response",
 							"originalRequest": {
 								"method": "POST",
@@ -1540,7 +2904,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"b791d7b7-t76c-2zqr-882c-aa4706142f94\",\n    \"28a430ac-6umk-16c9-Akdl-7ad3843d9e09\"\n  ],\n  \"description\": \"This role has administrative privileges.\"\n}",
+									"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"a4297413-6lh1-4850-8eca-4ff5d87f20a0\",\n    \"d3fdea34-4g12-13fu-A88d-3f7738300f41\"\n  ],\n  \"description\": \"This role has employee privileges.\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -1631,10 +2995,10 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n  \"status\": true,\n  \"message\": \"Role created successfully\",\n  \"data\": {\n    \"id\": \"230874d1-48r3-48m3-9cif-cf1156a22b5b\",\n    \"name\": \"Name\",\n    \"slug\": \"can-ceate-an-user\",\n    \"description\": \"This role has administrative privileges.\",\n    \"permissions\": [\n      {\n        \"id\": \"0d24052f-r5f7-5ev0-Aj41-a42d305b54f9\",\n        \"name\": \"Name\",\n        \"slug\": \"can-ceate-an-user\",\n        \"description\": \"This permission has administrative privileges.\",\n        \"created_at\": \"2024-03-13 16:58:10\"\n      },\n      {\n        \"id\": \"caa1ead3-nufa-1arj-B6fk-36c17ffe0bf0\",\n        \"name\": \"Name\",\n        \"slug\": \"can-ceate-an-user\",\n        \"description\": \"This permission has administrative privileges.\",\n        \"created_at\": \"2024-03-13 16:58:10\"\n      }\n    ],\n    \"created_at\": \"2024-03-13 16:58:10\"\n  },\n  \"status_code\": 201\n}"
+							"body": "{\n  \"status\": true,\n  \"message\": \"Role created successfully\",\n  \"data\": {\n    \"id\": \"6bcc231a-tjw6-3vls-Bc14-74cb74e06e16\",\n    \"name\": \"Name\",\n    \"slug\": \"can-ceate-an-user\",\n    \"description\": \"This role has administrative privileges.\",\n    \"permissions\": [\n      {\n        \"id\": \"67ad4f00-oh5d-3ec4-9opm-de9de2e1adde\",\n        \"name\": \"Name\",\n        \"slug\": \"can-ceate-an-user\",\n        \"description\": \"This permission has administrative privileges.\",\n        \"created_at\": \"2024-03-13 16:58:10\"\n      },\n      {\n        \"id\": \"34d878fe-6lne-3g98-804l-92bcaeadd20d\",\n        \"name\": \"Name\",\n        \"slug\": \"can-ceate-an-user\",\n        \"description\": \"This permission has administrative privileges.\",\n        \"created_at\": \"2024-03-13 16:58:10\"\n      }\n    ],\n    \"created_at\": \"2024-03-13 16:58:10\"\n  },\n  \"status_code\": 201\n}"
 						},
 						{
-							"id": "5f54ce12-ec7c-4aaf-bffd-5dd41b2afdf5",
+							"id": "2658f796-8a17-403a-9a68-8b897ad5c386",
 							"name": "Bad Request",
 							"originalRequest": {
 								"method": "POST",
@@ -1655,7 +3019,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"b791d7b7-t76c-2zqr-882c-aa4706142f94\",\n    \"28a430ac-6umk-16c9-Akdl-7ad3843d9e09\"\n  ],\n  \"description\": \"This role has administrative privileges.\"\n}",
+									"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"a4297413-6lh1-4850-8eca-4ff5d87f20a0\",\n    \"d3fdea34-4g12-13fu-A88d-3f7738300f41\"\n  ],\n  \"description\": \"This role has employee privileges.\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -1686,7 +3050,7 @@
 							"body": "{\n  \"status\": false,\n  \"message\": \"The request body is missing the required 'name' parameter.\",\n  \"errors\": null,\n  \"status_code\": 400\n}"
 						},
 						{
-							"id": "c53afb26-eb99-46a3-bc42-bf437c9d0ce8",
+							"id": "768cd3b6-f53a-40b8-a0c3-2185931eee6d",
 							"name": "Unauthorized. The request requires user authentication or, if the request included authorization credentials, authorization has been refused for those credentials.",
 							"originalRequest": {
 								"method": "POST",
@@ -1707,7 +3071,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"b791d7b7-t76c-2zqr-882c-aa4706142f94\",\n    \"28a430ac-6umk-16c9-Akdl-7ad3843d9e09\"\n  ],\n  \"description\": \"This role has administrative privileges.\"\n}",
+									"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"a4297413-6lh1-4850-8eca-4ff5d87f20a0\",\n    \"d3fdea34-4g12-13fu-A88d-3f7738300f41\"\n  ],\n  \"description\": \"This role has employee privileges.\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -1738,7 +3102,7 @@
 							"body": "{\n  \"status\": false,\n  \"message\": \"You are not authorized to access this resource.\",\n  \"errors\": null,\n  \"status_code\": 401\n}"
 						},
 						{
-							"id": "0374a828-59ba-4b4b-8f37-11e26003dd29",
+							"id": "dacf8b47-21d6-4a6e-a501-08d832f2734f",
 							"name": "Forbidden. The server understood the request, but refuses to authorize it.",
 							"originalRequest": {
 								"method": "POST",
@@ -1759,7 +3123,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"b791d7b7-t76c-2zqr-882c-aa4706142f94\",\n    \"28a430ac-6umk-16c9-Akdl-7ad3843d9e09\"\n  ],\n  \"description\": \"This role has administrative privileges.\"\n}",
+									"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"a4297413-6lh1-4850-8eca-4ff5d87f20a0\",\n    \"d3fdea34-4g12-13fu-A88d-3f7738300f41\"\n  ],\n  \"description\": \"This role has employee privileges.\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -1790,7 +3154,7 @@
 							"body": "{\n  \"status\": false,\n  \"message\": \"Access to the requested resource is forbidden.\",\n  \"errors\": null,\n  \"status_code\": 403\n}"
 						},
 						{
-							"id": "62412544-00dc-4a9e-be65-f882a9645c45",
+							"id": "a9eef6fc-ea3a-42e6-bcf8-ba1f6c66cafb",
 							"name": "Method Not Allowed. The request method is known by the server but has been disabled and cannot be used.",
 							"originalRequest": {
 								"method": "POST",
@@ -1811,7 +3175,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"b791d7b7-t76c-2zqr-882c-aa4706142f94\",\n    \"28a430ac-6umk-16c9-Akdl-7ad3843d9e09\"\n  ],\n  \"description\": \"This role has administrative privileges.\"\n}",
+									"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"a4297413-6lh1-4850-8eca-4ff5d87f20a0\",\n    \"d3fdea34-4g12-13fu-A88d-3f7738300f41\"\n  ],\n  \"description\": \"This role has employee privileges.\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -1842,7 +3206,7 @@
 							"body": "{\n  \"status\": false,\n  \"message\": \"Method Not Allowed. The request method is known by the server but has been disabled and cannot be used.\",\n  \"errors\": null,\n  \"status_code\": 405\n}"
 						},
 						{
-							"id": "98dbe71d-e6e3-4c3a-b6c3-7042e66d36ad",
+							"id": "cdaa36e9-ffd9-4469-beea-1c72ded8acae",
 							"name": "Request Timeout. The server timed out waiting for the request.",
 							"originalRequest": {
 								"method": "POST",
@@ -1863,7 +3227,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"b791d7b7-t76c-2zqr-882c-aa4706142f94\",\n    \"28a430ac-6umk-16c9-Akdl-7ad3843d9e09\"\n  ],\n  \"description\": \"This role has administrative privileges.\"\n}",
+									"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"a4297413-6lh1-4850-8eca-4ff5d87f20a0\",\n    \"d3fdea34-4g12-13fu-A88d-3f7738300f41\"\n  ],\n  \"description\": \"This role has employee privileges.\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -1894,7 +3258,7 @@
 							"body": "{\n  \"status\": false,\n  \"message\": \"Request Timeout. The server timed out waiting for the request.\",\n  \"errors\": null,\n  \"status_code\": 408\n}"
 						},
 						{
-							"id": "c60b44c8-5ab4-4526-9535-768b5c8d0054",
+							"id": "8aeaa0d6-23b4-471a-a72b-9ec2a1f818dc",
 							"name": "Unprocessable Entity. The server understands the content type of the request entity but was unable to process the contained instructions.",
 							"originalRequest": {
 								"method": "POST",
@@ -1915,7 +3279,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"b791d7b7-t76c-2zqr-882c-aa4706142f94\",\n    \"28a430ac-6umk-16c9-Akdl-7ad3843d9e09\"\n  ],\n  \"description\": \"This role has administrative privileges.\"\n}",
+									"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"a4297413-6lh1-4850-8eca-4ff5d87f20a0\",\n    \"d3fdea34-4g12-13fu-A88d-3f7738300f41\"\n  ],\n  \"description\": \"This role has employee privileges.\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -1946,7 +3310,7 @@
 							"body": "{\n  \"status\": false,\n  \"message\": \"The request body contains invalid data.\",\n  \"errors\": null,\n  \"status_code\": 422\n}"
 						},
 						{
-							"id": "536feac7-336e-40d2-b860-9799997bc343",
+							"id": "7db1935f-d37b-410c-a565-a575829af7e5",
 							"name": "Too Many Requests: Rate Limit Exceeded",
 							"originalRequest": {
 								"method": "POST",
@@ -1967,7 +3331,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"b791d7b7-t76c-2zqr-882c-aa4706142f94\",\n    \"28a430ac-6umk-16c9-Akdl-7ad3843d9e09\"\n  ],\n  \"description\": \"This role has administrative privileges.\"\n}",
+									"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"a4297413-6lh1-4850-8eca-4ff5d87f20a0\",\n    \"d3fdea34-4g12-13fu-A88d-3f7738300f41\"\n  ],\n  \"description\": \"This role has employee privileges.\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -1998,7 +3362,7 @@
 							"body": "{\n  \"status\": false,\n  \"message\": \"Rate Limit Exceeded\",\n  \"errors\": null,\n  \"status_code\": 429\n}"
 						},
 						{
-							"id": "bcfe6b6b-696b-4007-ba84-f8239e1ca444",
+							"id": "ee6a4a32-27da-4b4e-a337-1a1a742a8b25",
 							"name": "Internal Server Error. An unexpected error occurred while processing the request.",
 							"originalRequest": {
 								"method": "POST",
@@ -2019,7 +3383,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"b791d7b7-t76c-2zqr-882c-aa4706142f94\",\n    \"28a430ac-6umk-16c9-Akdl-7ad3843d9e09\"\n  ],\n  \"description\": \"This role has administrative privileges.\"\n}",
+									"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"a4297413-6lh1-4850-8eca-4ff5d87f20a0\",\n    \"d3fdea34-4g12-13fu-A88d-3f7738300f41\"\n  ],\n  \"description\": \"This role has employee privileges.\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -2113,7 +3477,7 @@
 							"body": "{\n  \"status\": false,\n  \"message\": \"Internal Server Error occurred while processing the request.\",\n  \"errors\": null,\n  \"status_code\": 500\n}"
 						},
 						{
-							"id": "28798c31-6482-465c-ab67-abc6729fcb12",
+							"id": "ac803079-ad5f-409d-8710-a5c93dbeb078",
 							"name": "Service Unavailable",
 							"originalRequest": {
 								"method": "POST",
@@ -2134,7 +3498,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"b791d7b7-t76c-2zqr-882c-aa4706142f94\",\n    \"28a430ac-6umk-16c9-Akdl-7ad3843d9e09\"\n  ],\n  \"description\": \"This role has administrative privileges.\"\n}",
+									"raw": "{\n  \"name\": \"Name\",\n  \"permissions\": [\n    \"a4297413-6lh1-4850-8eca-4ff5d87f20a0\",\n    \"d3fdea34-4g12-13fu-A88d-3f7738300f41\"\n  ],\n  \"description\": \"This role has employee privileges.\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -2167,7 +3531,7 @@
 					]
 				}
 			],
-			"id": "efda0934-65c8-43f3-8e7a-1df9fef92856"
+			"id": "8bd0355b-5bca-4dfd-abaa-94cf78d2a9d5"
 		},
 		{
 			"name": "users",
@@ -2180,7 +3544,7 @@
 							"item": [
 								{
 									"name": "Retrieve user roles",
-									"id": "6012a32e-1bc5-407c-9c92-77675da3ae69",
+									"id": "68bf1819-f60f-465a-896d-8e4c8e0aff2a",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
@@ -2193,7 +3557,7 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/users/:userId/roles?page=1&per_page=10&fields=cupidatat adipisicing nulla incididunt dolor",
+											"raw": "{{baseUrl}}/users/:userId/roles?page=1&per_page=10&fields=mollit proident",
 											"host": [
 												"{{baseUrl}}"
 											],
@@ -2216,13 +3580,13 @@
 												{
 													"description": "Comma-separated list of fields to include in the response.",
 													"key": "fields",
-													"value": "cupidatat adipisicing nulla incididunt dolor"
+													"value": "mollit proident"
 												}
 											],
 											"variable": [
 												{
 													"key": "userId",
-													"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+													"value": "a89dabbb-l1jl-46j0-91jj-d2312af815c2",
 													"description": "(Required) The unique identifier of the user."
 												}
 											]
@@ -2231,7 +3595,7 @@
 									},
 									"response": [
 										{
-											"id": "2e06e2b4-0b1d-4f93-ad1e-144316a02064",
+											"id": "e1528119-36bf-4e6b-bfa3-df5a2873fc3f",
 											"name": "Successful response",
 											"originalRequest": {
 												"method": "GET",
@@ -2247,7 +3611,7 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/users/:userId/roles?page=1&per_page=10&fields=cupidatat adipisicing nulla incididunt dolor",
+													"raw": "{{baseUrl}}/users/:userId/roles?page=1&per_page=10&fields=mollit proident",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -2270,7 +3634,7 @@
 														{
 															"description": "Comma-separated list of fields to include in the response.",
 															"key": "fields",
-															"value": "cupidatat adipisicing nulla incididunt dolor"
+															"value": "mollit proident"
 														}
 													],
 													"variable": [
@@ -2290,19 +3654,19 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"current_page\": 1,\n    \"data\": [\n      {\n        \"id\": \"0aebcd9c-r693-1cnr-88h2-86a175c7076e\",\n        \"name\": \"\",\n        \"description\": \"in enim est esse adipisicing\"\n      },\n      {\n        \"id\": \"b7000666-xdj5-3ont-9db1-735187d403c4\",\n        \"name\": \"incididunt\",\n        \"description\": \"deserunt labore nostrud ex\"\n      }\n    ],\n    \"links\": [\n      {\n        \"url\": \"reprehenderit consequat cillum\",\n        \"label\": \"magna ea quis occaecat exercit\",\n        \"active\": false\n      },\n      {\n        \"url\": \"ad\",\n        \"label\": \"in laboris aute\",\n        \"active\": true\n      }\n    ],\n    \"total\": 36,\n    \"per_page\": 15,\n    \"next_page_url\": \"Ut quis sed\",\n    \"prev_page_url\": \"est incididunt\",\n    \"first_page_url\": \"ut fugiat velit aute\",\n    \"from\": 1,\n    \"last_page\": 1,\n    \"last_page_url\": \"{{baseUrl}}/roles?page=1\",\n    \"path\": \"{{baseUrl}}/roles\",\n    \"to\": 2\n  },\n  \"status_code\": 200\n}"
+											"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"current_page\": 1,\n    \"data\": [\n      {\n        \"id\": \"990de008-gfxo-4huy-B2ga-0f013c073c87\",\n        \"name\": \"aute nisi\",\n        \"description\": \"et eu Lorem sit\"\n      },\n      {\n        \"id\": \"6baac6a0-e9il-2p74-Bpq0-d446bf1aefd3\",\n        \"name\": \"ut adipisicing officia in\",\n        \"description\": \"in\"\n      }\n    ],\n    \"links\": [\n      {\n        \"url\": \"in pariatur\",\n        \"label\": \"Excepteur minim exercitation eiusmod\",\n        \"active\": false\n      },\n      {\n        \"url\": \"exercitation id laborum culpa\",\n        \"label\": \"aute aliquip adipisicing\",\n        \"active\": false\n      }\n    ],\n    \"total\": 36,\n    \"per_page\": 15,\n    \"next_page_url\": \"quis deserunt\",\n    \"prev_page_url\": \"in ex labore ut\",\n    \"first_page_url\": \"et\",\n    \"from\": 1,\n    \"last_page\": 1,\n    \"last_page_url\": \"{{baseUrl}}/roles?page=1\",\n    \"path\": \"{{baseUrl}}/roles\",\n    \"to\": 2\n  },\n  \"status_code\": 200\n}"
 										}
 									]
 								}
 							],
-							"id": "ba74a94c-aa48-42fc-a082-9f3351eaf894"
+							"id": "3f859991-f509-46b9-aa89-7e3d5f8a27e0"
 						},
 						{
 							"name": "assign-roles",
 							"item": [
 								{
 									"name": "Assign roles to a user.",
-									"id": "91ebb0cf-106c-4211-bdb1-59b20a9a7106",
+									"id": "e59c63f4-c960-4340-a004-e989ebaf6149",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
@@ -2320,7 +3684,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"roles\": [\n    \"02af914e-fk07-30ud-8okl-8b31545f313a\",\n    \"e43e6c4b-xdb3-34q6-840j-1c598b5105e2\"\n  ]\n}",
+											"raw": "{\n  \"roles\": [\n    \"764f4d46-61qw-3blb-8j11-4994f4c5e6f8\",\n    \"b9230695-vdld-2yjy-Bpn9-c7b43ba369a8\"\n  ]\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -2341,7 +3705,7 @@
 											"variable": [
 												{
 													"key": "userId",
-													"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+													"value": "a89dabbb-l1jl-46j0-91jj-d2312af815c2",
 													"description": "(Required) The unique identifier of the user."
 												}
 											]
@@ -2350,7 +3714,7 @@
 									},
 									"response": [
 										{
-											"id": "72b6b783-2cba-4aa6-9e5e-63fb60bf6b98",
+											"id": "4335b899-af9f-43e5-a312-d6f79fdd4530",
 											"name": "Successful response",
 											"originalRequest": {
 												"method": "PUT",
@@ -2371,7 +3735,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"roles\": [\n    \"02af914e-fk07-30ud-8okl-8b31545f313a\",\n    \"e43e6c4b-xdb3-34q6-840j-1c598b5105e2\"\n  ]\n}",
+													"raw": "{\n  \"roles\": [\n    \"764f4d46-61qw-3blb-8j11-4994f4c5e6f8\",\n    \"b9230695-vdld-2yjy-Bpn9-c7b43ba369a8\"\n  ]\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -2411,14 +3775,14 @@
 									]
 								}
 							],
-							"id": "7119dd81-0cbd-4a68-aa20-c57dbdc7776b"
+							"id": "f2f7ce1b-2bcd-4e95-8f83-a5cab0347274"
 						},
 						{
 							"name": "revoke-roles",
 							"item": [
 								{
 									"name": "Revoke roles from user.",
-									"id": "9d70888c-d703-40e5-87ec-4c3918c1cb7c",
+									"id": "2107a9c6-db84-402c-9881-f9c68b14a58e",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
@@ -2436,7 +3800,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"roles\": [\n    \"02af914e-fk07-30ud-8okl-8b31545f313a\",\n    \"e43e6c4b-xdb3-34q6-840j-1c598b5105e2\"\n  ]\n}",
+											"raw": "{\n  \"roles\": [\n    \"764f4d46-61qw-3blb-8j11-4994f4c5e6f8\",\n    \"b9230695-vdld-2yjy-Bpn9-c7b43ba369a8\"\n  ]\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -2457,7 +3821,7 @@
 											"variable": [
 												{
 													"key": "userId",
-													"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+													"value": "a89dabbb-l1jl-46j0-91jj-d2312af815c2",
 													"description": "(Required) The unique identifier of the user."
 												}
 											]
@@ -2466,7 +3830,7 @@
 									},
 									"response": [
 										{
-											"id": "a3a8ce9e-d810-48a2-bd0d-a75dce6ec62c",
+											"id": "f9878dd1-d78c-4a1e-b933-e8f2210d7187",
 											"name": "Successful response",
 											"originalRequest": {
 												"method": "PUT",
@@ -2487,7 +3851,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"roles\": [\n    \"02af914e-fk07-30ud-8okl-8b31545f313a\",\n    \"e43e6c4b-xdb3-34q6-840j-1c598b5105e2\"\n  ]\n}",
+													"raw": "{\n  \"roles\": [\n    \"764f4d46-61qw-3blb-8j11-4994f4c5e6f8\",\n    \"b9230695-vdld-2yjy-Bpn9-c7b43ba369a8\"\n  ]\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -2527,11 +3891,11 @@
 									]
 								}
 							],
-							"id": "526af012-e1b9-4ff1-ae77-a0a27ead9f0f"
+							"id": "13c1072f-f7b4-4dca-83ce-3c98897ee70e"
 						},
 						{
 							"name": "Retrieve a user",
-							"id": "5fb609cb-7a60-4b8c-b421-a6c2866de13e",
+							"id": "5585c37a-966c-49be-a156-1b1919fba09b",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -2544,7 +3908,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/users/:userId?page=1&per_page=10&fields=cupidatat adipisicing nulla incididunt dolor",
+									"raw": "{{baseUrl}}/users/:userId?page=1&per_page=10&fields=mollit proident",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -2566,13 +3930,13 @@
 										{
 											"description": "Comma-separated list of fields to include in the response.",
 											"key": "fields",
-											"value": "cupidatat adipisicing nulla incididunt dolor"
+											"value": "mollit proident"
 										}
 									],
 									"variable": [
 										{
 											"key": "userId",
-											"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+											"value": "a89dabbb-l1jl-46j0-91jj-d2312af815c2",
 											"description": "(Required) The unique identifier of the user"
 										}
 									]
@@ -2581,7 +3945,7 @@
 							},
 							"response": [
 								{
-									"id": "8348f8e1-07d1-403a-9cff-e4048613f20f",
+									"id": "c9366bf9-1c33-44ad-ae1d-d7bd724d73ca",
 									"name": "Successful response",
 									"originalRequest": {
 										"method": "GET",
@@ -2597,7 +3961,7 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/users/:userId?page=1&per_page=10&fields=cupidatat adipisicing nulla incididunt dolor",
+											"raw": "{{baseUrl}}/users/:userId?page=1&per_page=10&fields=mollit proident",
 											"host": [
 												"{{baseUrl}}"
 											],
@@ -2619,7 +3983,7 @@
 												{
 													"description": "Comma-separated list of fields to include in the response.",
 													"key": "fields",
-													"value": "cupidatat adipisicing nulla incididunt dolor"
+													"value": "mollit proident"
 												}
 											],
 											"variable": [
@@ -2639,13 +4003,13 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"7f182094-iosc-1rq8-9bia-30fc6c0ce910\",\n    \"type_of_account\": \"personal\",\n    \"login_channel\": \"email\",\n    \"username\": \"exercitation ex reprehenderit dolor e\",\n    \"email\": \"johndoe@gmail.com\",\n    \"phone_number\": {\n      \"country_code\": 229,\n      \"number\": 94531209\n    },\n    \"address\": \"qui officia quis\",\n    \"userable\": {\n      \"id\": \"28a3629a-lxa1-4f47-Bed1-1e31f2fbce31\",\n      \"first_name\": \"elit velit\",\n      \"last_name\": \"DOE\",\n      \"middle_name\": [\n        \"Phillipe\",\n        \"Jack\"\n      ],\n      \"sex\": \"male\",\n      \"marital_status\": \"single\",\n      \"birth_date\": \"6408-42-74 12h:26min\",\n      \"ifu\": 45984960456,\n      \"nip\": 45984960456,\n      \"nationality\": \"do deserunt sed\"\n    }\n  },\n  \"status_code\": 200\n}"
+									"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"c6ea2d4e-o8ig-5jcp-Bhfp-ac1eea4b1ac6\",\n    \"type_of_account\": \"personal\",\n    \"login_channel\": \"email\",\n    \"username\": \"consectetur nulla occaecat dolore\",\n    \"email\": \"johndoe@gmail.com\",\n    \"phone_number\": {\n      \"country_code\": 229,\n      \"number\": 94531209\n    },\n    \"address\": \"Duis commodo ex consequ\",\n    \"userable\": {\n      \"id\": \"111dbdb2-p143-4alm-Acim-d1a6f8c0013a\",\n      \"first_name\": \"dolor Lorem i\",\n      \"last_name\": \"DOE\",\n      \"middle_name\": [\n        \"Phillipe\",\n        \"Jack\"\n      ],\n      \"sex\": \"male\",\n      \"marital_status\": \"single\",\n      \"birth_date\": \"5399-20-27 21h:27min\",\n      \"ifu\": 45984960456,\n      \"nip\": 45984960456,\n      \"nationality\": \"aute ex et\"\n    }\n  },\n  \"status_code\": 200\n}"
 								}
 							]
 						},
 						{
 							"name": "Update a user",
-							"id": "b4756612-e526-427b-b9a9-6a35cbb17128",
+							"id": "aa04b4d7-11f6-4a43-b723-ed0fcbc9ebaf",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -2663,7 +4027,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"type_of_account\": \"personal\",\n  \"login_channel\": \"email\",\n  \"phone_number\": {\n    \"country_code\": 229,\n    \"number\": 94531209\n  },\n  \"role_id\": \"bca1ccad-k45m-4b6u-A322-d3279d7f5203\",\n  \"user\": {\n    \"first_name\": \"essein ut\",\n    \"last_name\": \"DOE\",\n    \"sex\": \"male\",\n    \"middle_name\": [\n      \"Phillipe\"\n    ],\n    \"marital_status\": \"single\",\n    \"birth_date\": \"euea quis nisi\",\n    \"ifu\": 45984960456,\n    \"nip\": 45984960456,\n    \"nationality\": \"dolore consectetur reprehenderit\"\n  },\n  \"username\": \"in in et\",\n  \"email\": \"ea ullamco\",\n  \"address\": \"sit veniam \"\n}",
+									"raw": "{\n  \"type_of_account\": \"personal\",\n  \"login_channel\": \"email\",\n  \"phone_number\": {\n    \"country_code\": 229,\n    \"number\": 94531209\n  },\n  \"role_id\": \"d0a6319c-w5jl-1by3-9dm3-9fae6a8c9e51\",\n  \"user\": {\n    \"first_name\": \"enimamet labore ut velit\",\n    \"last_name\": \"DOE\",\n    \"sex\": \"male\",\n    \"middle_name\": [\n      \"Phillipe\"\n    ],\n    \"marital_status\": \"single\",\n    \"birth_date\": \"sit velit dolor cul\",\n    \"ifu\": 45984960456,\n    \"nip\": 45984960456,\n    \"nationality\": \"ali\"\n  },\n  \"username\": \"eu ut do\",\n  \"email\": \"an\",\n  \"address\": \"ut pariatur est\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -2683,7 +4047,7 @@
 									"variable": [
 										{
 											"key": "userId",
-											"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+											"value": "a89dabbb-l1jl-46j0-91jj-d2312af815c2",
 											"description": "(Required) The unique identifier of the user"
 										}
 									]
@@ -2692,7 +4056,7 @@
 							},
 							"response": [
 								{
-									"id": "841a3089-9267-4448-874e-5b4d1f47d403",
+									"id": "7dc828b8-f792-4db2-ae5c-e1de33345d71",
 									"name": "Successful response",
 									"originalRequest": {
 										"method": "PUT",
@@ -2713,7 +4077,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"type_of_account\": \"personal\",\n  \"login_channel\": \"email\",\n  \"phone_number\": {\n    \"country_code\": 229,\n    \"number\": 94531209\n  },\n  \"role_id\": \"bca1ccad-k45m-4b6u-A322-d3279d7f5203\",\n  \"user\": {\n    \"first_name\": \"essein ut\",\n    \"last_name\": \"DOE\",\n    \"sex\": \"male\",\n    \"middle_name\": [\n      \"Phillipe\"\n    ],\n    \"marital_status\": \"single\",\n    \"birth_date\": \"euea quis nisi\",\n    \"ifu\": 45984960456,\n    \"nip\": 45984960456,\n    \"nationality\": \"dolore consectetur reprehenderit\"\n  },\n  \"username\": \"in in et\",\n  \"email\": \"ea ullamco\",\n  \"address\": \"sit veniam \"\n}",
+											"raw": "{\n  \"type_of_account\": \"personal\",\n  \"login_channel\": \"email\",\n  \"phone_number\": {\n    \"country_code\": 229,\n    \"number\": 94531209\n  },\n  \"role_id\": \"d0a6319c-w5jl-1by3-9dm3-9fae6a8c9e51\",\n  \"user\": {\n    \"first_name\": \"enimamet labore ut velit\",\n    \"last_name\": \"DOE\",\n    \"sex\": \"male\",\n    \"middle_name\": [\n      \"Phillipe\"\n    ],\n    \"marital_status\": \"single\",\n    \"birth_date\": \"sit velit dolor cul\",\n    \"ifu\": 45984960456,\n    \"nip\": 45984960456,\n    \"nationality\": \"ali\"\n  },\n  \"username\": \"eu ut do\",\n  \"email\": \"an\",\n  \"address\": \"ut pariatur est\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -2747,13 +4111,13 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"3bd3571c-msaj-4xdw-Bll0-3949ecd6cd21\",\n    \"type_of_account\": \"personal\",\n    \"login_channel\": \"email\",\n    \"username\": \"magna in adipisicing ad cupidatat\",\n    \"email\": \"johndoe@gmail.com\",\n    \"phone_number\": {\n      \"country_code\": 229,\n      \"number\": 94531209\n    },\n    \"address\": \"laboris fugiat non\",\n    \"userable\": {\n      \"id\": \"3ca2ad79-pbvf-106d-Bo1d-46065d2bb1a0\",\n      \"first_name\": \"dolor tempor ad aliquip do\",\n      \"last_name\": \"DOE\",\n      \"middle_name\": [\n        \"Phillipe\",\n        \"Jack\"\n      ],\n      \"sex\": \"male\",\n      \"marital_status\": \"single\",\n      \"birth_date\": \"4757-07-94 01h:11min\",\n      \"ifu\": 45984960456,\n      \"nip\": 45984960456,\n      \"nationality\": \"est pariatur exercitation\"\n    }\n  },\n  \"status_code\": 201\n}"
+									"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"2ede33dd-mkp9-13cx-9fq4-e997ad100c5f\",\n    \"type_of_account\": \"personal\",\n    \"login_channel\": \"email\",\n    \"username\": \"ad laborum\",\n    \"email\": \"johndoe@gmail.com\",\n    \"phone_number\": {\n      \"country_code\": 229,\n      \"number\": 94531209\n    },\n    \"address\": \"proident minim enim\",\n    \"userable\": {\n      \"id\": \"8da19a8f-06ig-5t80-99la-b024c743f612\",\n      \"first_name\": \"ut do Excepteur\",\n      \"last_name\": \"DOE\",\n      \"middle_name\": [\n        \"Phillipe\",\n        \"Jack\"\n      ],\n      \"sex\": \"male\",\n      \"marital_status\": \"single\",\n      \"birth_date\": \"1626-03-62 7h:38min1626-03-62 7h:38min\",\n      \"ifu\": 45984960456,\n      \"nip\": 45984960456,\n      \"nationality\": \"in aliqua reprehenderit\"\n    }\n  },\n  \"status_code\": 201\n}"
 								}
 							]
 						},
 						{
 							"name": "Delete a user",
-							"id": "f36014e4-2695-4749-9f93-88d80c5a3315",
+							"id": "820cf918-bcc5-4b1a-af22-05c9fb575a93",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -2777,7 +4141,7 @@
 									"variable": [
 										{
 											"key": "userId",
-											"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+											"value": "a89dabbb-l1jl-46j0-91jj-d2312af815c2",
 											"description": "(Required) The unique identifier of the user"
 										}
 									]
@@ -2786,7 +4150,7 @@
 							},
 							"response": [
 								{
-									"id": "45da353e-aa8e-411b-a1c5-37ab062a21a4",
+									"id": "419fa405-fdc2-4ee9-9b7c-9206aa705a3a",
 									"name": "Successful response",
 									"originalRequest": {
 										"method": "DELETE",
@@ -2832,11 +4196,11 @@
 							]
 						}
 					],
-					"id": "c4cb92b1-0c9b-41ce-b2e9-82f6dce86056"
+					"id": "1be232fb-fdaf-4552-b8e3-24cbfa167c39"
 				},
 				{
 					"name": "Retrieve users",
-					"id": "ec488931-7cd6-4a15-a6ba-929466609a1c",
+					"id": "c431517c-268a-48ca-b879-6b303bbe5548",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -2849,7 +4213,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/users?page=1&per_page=10&fields=cupidatat adipisicing nulla incididunt dolor",
+							"raw": "{{baseUrl}}/users?page=1&per_page=10&fields=mollit proident",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -2870,7 +4234,7 @@
 								{
 									"description": "Comma-separated list of fields to include in the response.",
 									"key": "fields",
-									"value": "cupidatat adipisicing nulla incididunt dolor"
+									"value": "mollit proident"
 								}
 							]
 						},
@@ -2878,7 +4242,7 @@
 					},
 					"response": [
 						{
-							"id": "fd8d10eb-8a0c-484d-92b0-d2d67c2dc33e",
+							"id": "6fea1445-e94b-4a80-8a9b-18da848009e3",
 							"name": "Successful response",
 							"originalRequest": {
 								"method": "GET",
@@ -2894,7 +4258,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/users?page=1&per_page=10&fields=cupidatat adipisicing nulla incididunt dolor",
+									"raw": "{{baseUrl}}/users?page=1&per_page=10&fields=mollit proident",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -2915,7 +4279,7 @@
 										{
 											"description": "Comma-separated list of fields to include in the response.",
 											"key": "fields",
-											"value": "cupidatat adipisicing nulla incididunt dolor"
+											"value": "mollit proident"
 										}
 									]
 								}
@@ -2930,13 +4294,13 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"current_page\": 1,\n    \"data\": [\n      {\n        \"id\": \"dd8aeec6-7hbw-47qh-8ilm-d0ca4b0cd6a8\",\n        \"type_of_account\": \"personal\",\n        \"login_channel\": \"email\",\n        \"username\": \"laboris\",\n        \"email\": \"johndoe@gmail.com\",\n        \"phone_number\": {\n          \"country_code\": 229,\n          \"number\": 94531209\n        },\n        \"address\": \"dolor id est Lorem\",\n        \"userable\": {\n          \"id\": \"0e9272ce-9o3u-1e4d-9170-2c284b05f8ce\",\n          \"first_name\": \"ad est veniam quis\",\n          \"last_name\": \"DOE\",\n          \"middle_name\": [\n            \"Phillipe\",\n            \"Jack\"\n          ],\n          \"sex\": \"male\",\n          \"marital_status\": \"single\",\n          \"birth_date\": \"2297-84-91 20h:56min\",\n          \"ifu\": 45984960456,\n          \"nip\": 45984960456,\n          \"nationality\": \"in fugiat ut\"\n        }\n      },\n      {\n        \"id\": \"b1fdc7af-i9l6-5fqp-A07h-ef0db2f92d37\",\n        \"type_of_account\": \"personal\",\n        \"login_channel\": \"email\",\n        \"username\": \"proident labo\",\n        \"email\": \"johndoe@gmail.com\",\n        \"phone_number\": {\n          \"country_code\": 229,\n          \"number\": 94531209\n        },\n        \"address\": \"elit minim\",\n        \"userable\": {\n          \"id\": \"74aa6622-i3nv-1ztq-Bonm-939dd8778eef\",\n          \"first_name\": \"Excepteur id et\",\n          \"last_name\": \"DOE\",\n          \"middle_name\": [\n            \"Phillipe\",\n            \"Jack\"\n          ],\n          \"sex\": \"male\",\n          \"marital_status\": \"single\",\n          \"birth_date\": \"1673-09-23 0h:34min1673-09-23 0h:34min\",\n          \"ifu\": 45984960456,\n          \"nip\": 45984960456,\n          \"nationality\": \"etut cillum eiusmod\"\n        }\n      }\n    ],\n    \"links\": [\n      {\n        \"url\": \"eiusmod dolor ut\",\n        \"label\": \"incididunt irure\",\n        \"active\": false\n      },\n      {\n        \"url\": \"proident incididunt reprehenderit\",\n        \"label\": \"et Lorem Ut reprehenderit veniam\",\n        \"active\": false\n      }\n    ],\n    \"total\": 36,\n    \"per_page\": 15,\n    \"next_page_url\": \"voluptate\",\n    \"prev_page_url\": \"Ut eiusmod\",\n    \"first_page_url\": \"dolore non\",\n    \"from\": 1,\n    \"last_page\": 1,\n    \"last_page_url\": \"{{baseUrl}}/users?page=1\",\n    \"path\": \"{{baseUrl}}/users\",\n    \"to\": 2\n  },\n  \"status_code\": 200\n}"
+							"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"current_page\": 1,\n    \"data\": [\n      {\n        \"id\": \"7217de95-w5ak-450q-Ae49-0aecf255990d\",\n        \"type_of_account\": \"personal\",\n        \"login_channel\": \"email\",\n        \"username\": \"est et\",\n        \"email\": \"johndoe@gmail.com\",\n        \"phone_number\": {\n          \"country_code\": 229,\n          \"number\": 94531209\n        },\n        \"address\": \"dolore enim dolore\",\n        \"userable\": {\n          \"id\": \"105f50e7-6rv2-48bw-B084-90c4f00e8b65\",\n          \"first_name\": \"ut aute\",\n          \"last_name\": \"DOE\",\n          \"middle_name\": [\n            \"Phillipe\",\n            \"Jack\"\n          ],\n          \"sex\": \"male\",\n          \"marital_status\": \"single\",\n          \"birth_date\": \"6973-24-30 09h:01min\",\n          \"ifu\": 45984960456,\n          \"nip\": 45984960456,\n          \"nationality\": \"cillum aliquip dolor \"\n        }\n      },\n      {\n        \"id\": \"43affe5c-prh8-26i1-Aj9f-eca2862d1083\",\n        \"type_of_account\": \"personal\",\n        \"login_channel\": \"email\",\n        \"username\": \"dolor Ut\",\n        \"email\": \"johndoe@gmail.com\",\n        \"phone_number\": {\n          \"country_code\": 229,\n          \"number\": 94531209\n        },\n        \"address\": \"Ut n\",\n        \"userable\": {\n          \"id\": \"e1d8dea8-kwdb-5l81-82fh-bffb1051ece5\",\n          \"first_name\": \"quis Excepteur culpa in\",\n          \"last_name\": \"DOE\",\n          \"middle_name\": [\n            \"Phillipe\",\n            \"Jack\"\n          ],\n          \"sex\": \"male\",\n          \"marital_status\": \"single\",\n          \"birth_date\": \"2855-29-87 06h:33min\",\n          \"ifu\": 45984960456,\n          \"nip\": 45984960456,\n          \"nationality\": \"consectetur nisi\"\n        }\n      }\n    ],\n    \"links\": [\n      {\n        \"url\": \"eu amet ut do sed\",\n        \"label\": \"sint Excepteur commodo nulla\",\n        \"active\": true\n      },\n      {\n        \"url\": \"commodo\",\n        \"label\": \"eu\",\n        \"active\": false\n      }\n    ],\n    \"total\": 36,\n    \"per_page\": 15,\n    \"next_page_url\": \"Ut culpa\",\n    \"prev_page_url\": \"tempor cupidatat ipsum\",\n    \"first_page_url\": \"eiusmod exercitation elit\",\n    \"from\": 1,\n    \"last_page\": 1,\n    \"last_page_url\": \"{{baseUrl}}/users?page=1\",\n    \"path\": \"{{baseUrl}}/users\",\n    \"to\": 2\n  },\n  \"status_code\": 200\n}"
 						}
 					]
 				},
 				{
 					"name": "Store user",
-					"id": "32fcc04b-b753-4ce3-9c88-596b771cca39",
+					"id": "7ddeab86-a12c-4250-9be0-2cbd2c447b9e",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -2954,7 +4318,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"type_of_account\": \"personal\",\n  \"login_channel\": \"email\",\n  \"phone_number\": {\n    \"country_code\": 229,\n    \"number\": 94531209\n  },\n  \"role_id\": \"bca1ccad-k45m-4b6u-A322-d3279d7f5203\",\n  \"user\": {\n    \"first_name\": \"essein ut\",\n    \"last_name\": \"DOE\",\n    \"sex\": \"male\",\n    \"middle_name\": [\n      \"Phillipe\"\n    ],\n    \"marital_status\": \"single\",\n    \"birth_date\": \"euea quis nisi\",\n    \"ifu\": 45984960456,\n    \"nip\": 45984960456,\n    \"nationality\": \"dolore consectetur reprehenderit\"\n  },\n  \"username\": \"in in et\",\n  \"email\": \"ea ullamco\",\n  \"address\": \"sit veniam \"\n}",
+							"raw": "{\n  \"type_of_account\": \"personal\",\n  \"login_channel\": \"email\",\n  \"phone_number\": {\n    \"country_code\": 229,\n    \"number\": 94531209\n  },\n  \"role_id\": \"d0a6319c-w5jl-1by3-9dm3-9fae6a8c9e51\",\n  \"user\": {\n    \"first_name\": \"enimamet labore ut velit\",\n    \"last_name\": \"DOE\",\n    \"sex\": \"male\",\n    \"middle_name\": [\n      \"Phillipe\"\n    ],\n    \"marital_status\": \"single\",\n    \"birth_date\": \"sit velit dolor cul\",\n    \"ifu\": 45984960456,\n    \"nip\": 45984960456,\n    \"nationality\": \"ali\"\n  },\n  \"username\": \"eu ut do\",\n  \"email\": \"an\",\n  \"address\": \"ut pariatur est\"\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -2975,7 +4339,7 @@
 					},
 					"response": [
 						{
-							"id": "83133483-035e-4fc7-9f45-59a73996f073",
+							"id": "7a16f955-cd4b-4b65-b1fb-92561a672ee4",
 							"name": "Successful response",
 							"originalRequest": {
 								"method": "POST",
@@ -2996,7 +4360,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"type_of_account\": \"personal\",\n  \"login_channel\": \"email\",\n  \"phone_number\": {\n    \"country_code\": 229,\n    \"number\": 94531209\n  },\n  \"role_id\": \"bca1ccad-k45m-4b6u-A322-d3279d7f5203\",\n  \"user\": {\n    \"first_name\": \"essein ut\",\n    \"last_name\": \"DOE\",\n    \"sex\": \"male\",\n    \"middle_name\": [\n      \"Phillipe\"\n    ],\n    \"marital_status\": \"single\",\n    \"birth_date\": \"euea quis nisi\",\n    \"ifu\": 45984960456,\n    \"nip\": 45984960456,\n    \"nationality\": \"dolore consectetur reprehenderit\"\n  },\n  \"username\": \"in in et\",\n  \"email\": \"ea ullamco\",\n  \"address\": \"sit veniam \"\n}",
+									"raw": "{\n  \"type_of_account\": \"personal\",\n  \"login_channel\": \"email\",\n  \"phone_number\": {\n    \"country_code\": 229,\n    \"number\": 94531209\n  },\n  \"role_id\": \"d0a6319c-w5jl-1by3-9dm3-9fae6a8c9e51\",\n  \"user\": {\n    \"first_name\": \"enimamet labore ut velit\",\n    \"last_name\": \"DOE\",\n    \"sex\": \"male\",\n    \"middle_name\": [\n      \"Phillipe\"\n    ],\n    \"marital_status\": \"single\",\n    \"birth_date\": \"sit velit dolor cul\",\n    \"ifu\": 45984960456,\n    \"nip\": 45984960456,\n    \"nationality\": \"ali\"\n  },\n  \"username\": \"eu ut do\",\n  \"email\": \"an\",\n  \"address\": \"ut pariatur est\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -3024,12 +4388,12 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n  \"status\": true,\n  \"message\": \"User successful create.\",\n  \"data\": {\n    \"id\": \"2127afa1-nf3u-4aj0-A097-c7718a46fbd8\",\n    \"type_of_account\": \"personal\",\n    \"login_channel\": \"email\",\n    \"username\": \"aliquip id magna\",\n    \"email\": \"johndoe@gmail.com\",\n    \"phone_number\": {\n      \"country_code\": 229,\n      \"number\": 94531209\n    },\n    \"address\": \"nostrud dolor ut\",\n    \"userable\": {\n      \"id\": \"5b3324a3-sq7m-5u48-Aqo9-532c2b85af0f\",\n      \"first_name\": \"eiusmod commodo dolor\",\n      \"last_name\": \"DOE\",\n      \"middle_name\": [\n        \"Phillipe\",\n        \"Jack\"\n      ],\n      \"sex\": \"male\",\n      \"marital_status\": \"single\",\n      \"birth_date\": \"5244-73-04 3h:07min5244-73-04 3h:07min\",\n      \"ifu\": 45984960456,\n      \"nip\": 45984960456,\n      \"nationality\": \"laborum\"\n    }\n  },\n  \"status_code\": 201\n}"
+							"body": "{\n  \"status\": true,\n  \"message\": \"User successful create.\",\n  \"data\": {\n    \"id\": \"e38c8f2a-ijvq-2gib-Aop4-d8215a7e7364\",\n    \"type_of_account\": \"personal\",\n    \"login_channel\": \"email\",\n    \"username\": \"aute\",\n    \"email\": \"johndoe@gmail.com\",\n    \"phone_number\": {\n      \"country_code\": 229,\n      \"number\": 94531209\n    },\n    \"address\": \"Duis esse id et\",\n    \"userable\": {\n      \"id\": \"f37c64e1-xaq1-50ok-989m-b6b08c03f1ed\",\n      \"first_name\": \"nisi ci\",\n      \"last_name\": \"DOE\",\n      \"middle_name\": [\n        \"Phillipe\",\n        \"Jack\"\n      ],\n      \"sex\": \"male\",\n      \"marital_status\": \"single\",\n      \"birth_date\": \"0718-32-02 7h:53min0718-32-02 7h:53min\",\n      \"ifu\": 45984960456,\n      \"nip\": 45984960456,\n      \"nationality\": \"irure nulla incididunt ad amet\"\n    }\n  },\n  \"status_code\": 201\n}"
 						}
 					]
 				}
 			],
-			"id": "f232945b-5a61-4dcf-b2f1-317790c6a6c2"
+			"id": "7da5a5f8-b183-48ea-809e-120653d2577e"
 		},
 		{
 			"name": "departements",
@@ -3039,7 +4403,7 @@
 					"item": [
 						{
 							"name": "Retrieve a departement",
-							"id": "0c3b2de7-f27c-4c06-a1e3-701a04a70c1d",
+							"id": "9b79bf60-a074-45d7-a8d2-e9fb0aad354e",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -3052,7 +4416,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/departements/:departementId?fields=cupidatat adipisicing nulla incididunt dolor",
+									"raw": "{{baseUrl}}/departements/:departementId?fields=mollit proident",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -3064,13 +4428,13 @@
 										{
 											"description": "Comma-separated list of fields to include in the response.",
 											"key": "fields",
-											"value": "cupidatat adipisicing nulla incididunt dolor"
+											"value": "mollit proident"
 										}
 									],
 									"variable": [
 										{
 											"key": "departementId",
-											"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+											"value": "a89dabbb-l1jl-46j0-91jj-d2312af815c2",
 											"description": "(Required) The unique identifier of the departement"
 										}
 									]
@@ -3079,7 +4443,7 @@
 							},
 							"response": [
 								{
-									"id": "220d8436-ea92-4294-9b80-93fa1b2664f0",
+									"id": "c6380240-89ef-4847-add4-8b417a36cdbc",
 									"name": "Successful response",
 									"originalRequest": {
 										"method": "GET",
@@ -3095,7 +4459,7 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/departements/:departementId?fields=cupidatat adipisicing nulla incididunt dolor",
+											"raw": "{{baseUrl}}/departements/:departementId?fields=mollit proident",
 											"host": [
 												"{{baseUrl}}"
 											],
@@ -3107,7 +4471,7 @@
 												{
 													"description": "Comma-separated list of fields to include in the response.",
 													"key": "fields",
-													"value": "cupidatat adipisicing nulla incididunt dolor"
+													"value": "mollit proident"
 												}
 											],
 											"variable": [
@@ -3127,13 +4491,13 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"01a230fe-u1e2-368j-8881-e69382d9e3eb\",\n    \"name\": \"Production\"\n  },\n  \"status_code\": 200\n}"
+									"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"d53c1941-e6el-5sor-B5gj-51bdb85991bd\",\n    \"name\": \"Production\"\n  },\n  \"status_code\": 200\n}"
 								}
 							]
 						},
 						{
 							"name": "Update a departement",
-							"id": "5e125c80-a1d3-4347-99f9-894ed5e9e47e",
+							"id": "ee97e551-fc6d-4b8a-8fcb-bab26003f32f",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -3171,7 +4535,7 @@
 									"variable": [
 										{
 											"key": "departementId",
-											"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+											"value": "a89dabbb-l1jl-46j0-91jj-d2312af815c2",
 											"description": "(Required) The unique identifier of the departement"
 										}
 									]
@@ -3180,7 +4544,7 @@
 							},
 							"response": [
 								{
-									"id": "11c49937-f548-4dc2-81b9-3e193e9a0969",
+									"id": "7c786712-6898-472f-885b-eccd559ce8a7",
 									"name": "Successful response",
 									"originalRequest": {
 										"method": "PUT",
@@ -3235,13 +4599,13 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n  \"status\": true,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"dd3fea3c-59ar-3wz9-A3nm-26f072f733b8\",\n    \"name\": \"Production\"\n  },\n  \"status_code\": 201\n}"
+									"body": "{\n  \"status\": true,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"5dc6db0f-qout-4ywq-9kfm-765f7fffa9e4\",\n    \"name\": \"Production\"\n  },\n  \"status_code\": 201\n}"
 								}
 							]
 						},
 						{
 							"name": "Delete a departement",
-							"id": "e2100caa-817a-483c-a769-f651f9e8ea98",
+							"id": "31de6b7a-bfab-4361-b12c-34f54e39a053",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -3265,7 +4629,7 @@
 									"variable": [
 										{
 											"key": "departementId",
-											"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+											"value": "a89dabbb-l1jl-46j0-91jj-d2312af815c2",
 											"description": "(Required) The unique identifier of the departement"
 										}
 									]
@@ -3274,7 +4638,7 @@
 							},
 							"response": [
 								{
-									"id": "016c8131-ec2c-4d01-8509-f9533e9322ec",
+									"id": "4fb6178e-be3b-47aa-81bb-af35ccb851d1",
 									"name": "Successful response",
 									"originalRequest": {
 										"method": "DELETE",
@@ -3320,11 +4684,11 @@
 							]
 						}
 					],
-					"id": "6c286754-2e3f-43b2-a3d4-237de78d7297"
+					"id": "5cea40ab-402a-4d75-a1c5-cc3c4f983143"
 				},
 				{
 					"name": "Retrieve departements",
-					"id": "7f64caf1-7675-4785-9580-44d0791301ab",
+					"id": "a791111f-9b50-4027-b42d-40752928755e",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -3337,7 +4701,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/departements?page=1&per_page=10&fields=cupidatat adipisicing nulla incididunt dolor",
+							"raw": "{{baseUrl}}/departements?page=1&per_page=10&fields=mollit proident",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -3358,7 +4722,7 @@
 								{
 									"description": "Comma-separated list of fields to include in the response.",
 									"key": "fields",
-									"value": "cupidatat adipisicing nulla incididunt dolor"
+									"value": "mollit proident"
 								}
 							]
 						},
@@ -3366,7 +4730,7 @@
 					},
 					"response": [
 						{
-							"id": "e98ae492-f047-4a01-9577-4b02ceeef52f",
+							"id": "ee54b197-48ee-40fb-84b2-29455acc4cc9",
 							"name": "Successful response",
 							"originalRequest": {
 								"method": "GET",
@@ -3382,7 +4746,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/departements?page=1&per_page=10&fields=cupidatat adipisicing nulla incididunt dolor",
+									"raw": "{{baseUrl}}/departements?page=1&per_page=10&fields=mollit proident",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -3403,7 +4767,7 @@
 										{
 											"description": "Comma-separated list of fields to include in the response.",
 											"key": "fields",
-											"value": "cupidatat adipisicing nulla incididunt dolor"
+											"value": "mollit proident"
 										}
 									]
 								}
@@ -3418,13 +4782,13 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"current_page\": 1,\n    \"data\": [\n      {\n        \"id\": \"7be6a823-uvi5-3i9i-8ik9-bf8656a6ba57\",\n        \"name\": \"Production\"\n      },\n      {\n        \"id\": \"77ecef5b-058l-11m8-Bngf-40d1e8ebd71c\",\n        \"name\": \"Production\"\n      }\n    ],\n    \"links\": [\n      {\n        \"url\": \"sint commodo sunt\",\n        \"label\": \"nisi sunt commodo adipisicing\",\n        \"active\": false\n      },\n      {\n        \"url\": \"nisi\",\n        \"label\": \"mollit voluptate et ullamco\",\n        \"active\": false\n      }\n    ],\n    \"total\": 36,\n    \"per_page\": 15,\n    \"next_page_url\": \"id\",\n    \"prev_page_url\": \"pariatur Ut\",\n    \"first_page_url\": \"ut proident\",\n    \"from\": 1,\n    \"last_page\": 1,\n    \"last_page_url\": \"{{baseUrl}}/departements?page=1\",\n    \"path\": \"{{baseUrl}}/departements\",\n    \"to\": 2\n  },\n  \"status_code\": 200\n}"
+							"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"current_page\": 1,\n    \"data\": [\n      {\n        \"id\": \"343e7154-c1iu-2577-8m4m-e30867b24e88\",\n        \"name\": \"Production\"\n      },\n      {\n        \"id\": \"6398752c-g8a8-1yt9-9idb-3f9f7f27047f\",\n        \"name\": \"Production\"\n      }\n    ],\n    \"links\": [\n      {\n        \"url\": \"proident labore elit\",\n        \"label\": \"adipi\",\n        \"active\": false\n      },\n      {\n        \"url\": \"laboris sit labore \",\n        \"label\": \"v\",\n        \"active\": false\n      }\n    ],\n    \"total\": 36,\n    \"per_page\": 15,\n    \"next_page_url\": \"vo\",\n    \"prev_page_url\": \"irure mollit\",\n    \"first_page_url\": \"exercitation enim\",\n    \"from\": 1,\n    \"last_page\": 1,\n    \"last_page_url\": \"{{baseUrl}}/departements?page=1\",\n    \"path\": \"{{baseUrl}}/departements\",\n    \"to\": 2\n  },\n  \"status_code\": 200\n}"
 						}
 					]
 				},
 				{
 					"name": "Retrieve departements",
-					"id": "bfa23d82-6291-4cdf-8bb9-5bbb8f7eab84",
+					"id": "3f1afc56-6bfe-4498-a896-dc82f324af3f",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -3463,7 +4827,7 @@
 					},
 					"response": [
 						{
-							"id": "309e2b14-5593-43b6-9798-05f02e213992",
+							"id": "fd4b4496-93cc-4df2-85ac-770506852f0c",
 							"name": "Successful response",
 							"originalRequest": {
 								"method": "POST",
@@ -3512,12 +4876,12 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"48970678-7kgd-45ze-9e5g-b610ce2bac86\",\n    \"name\": \"Production\"\n  },\n  \"status_code\": 201\n}"
+							"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"d66e5042-chux-1g0d-8dk6-b4996e9ae095\",\n    \"name\": \"Production\"\n  },\n  \"status_code\": 201\n}"
 						}
 					]
 				}
 			],
-			"id": "25b7e0ab-2096-4cc7-a401-47c0f4381a1f"
+			"id": "2ea59c72-65a6-432f-85f2-9f2ef9636d16"
 		},
 		{
 			"name": "postes",
@@ -3527,7 +4891,7 @@
 					"item": [
 						{
 							"name": "Retrieve a poste",
-							"id": "44c1827f-dc8b-4a38-a0a2-4e34d15bfa63",
+							"id": "323b62f6-dbcd-4dbe-824c-0e42d74f4453",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -3540,7 +4904,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/postes/:posteId?fields=cupidatat adipisicing nulla incididunt dolor",
+									"raw": "{{baseUrl}}/postes/:posteId?fields=mollit proident",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -3552,13 +4916,13 @@
 										{
 											"description": "Comma-separated list of fields to include in the response.",
 											"key": "fields",
-											"value": "cupidatat adipisicing nulla incididunt dolor"
+											"value": "mollit proident"
 										}
 									],
 									"variable": [
 										{
 											"key": "posteId",
-											"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+											"value": "a89dabbb-l1jl-46j0-91jj-d2312af815c2",
 											"description": "(Required) The unique identifier of the poste"
 										}
 									]
@@ -3567,7 +4931,7 @@
 							},
 							"response": [
 								{
-									"id": "a7f12131-ba5c-459e-8c1b-11610f10b5a2",
+									"id": "534573e8-d62e-4a5d-9c7e-3b9c00766b89",
 									"name": "Successful response",
 									"originalRequest": {
 										"method": "GET",
@@ -3583,7 +4947,7 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/postes/:posteId?fields=cupidatat adipisicing nulla incididunt dolor",
+											"raw": "{{baseUrl}}/postes/:posteId?fields=mollit proident",
 											"host": [
 												"{{baseUrl}}"
 											],
@@ -3595,7 +4959,7 @@
 												{
 													"description": "Comma-separated list of fields to include in the response.",
 													"key": "fields",
-													"value": "cupidatat adipisicing nulla incididunt dolor"
+													"value": "mollit proident"
 												}
 											],
 											"variable": [
@@ -3615,13 +4979,13 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"9254b423-g2f9-3n8i-B61m-c354ab4a4a63\",\n    \"name\": \"Chef section\",\n    \"department_id\": \"fb3317c2-lro2-4m4e-A93d-8f452fa39e52\"\n  },\n  \"status_code\": 200\n}"
+									"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"15912bd1-d7i9-5hq0-Amo2-0ef97b5715a6\",\n    \"name\": \"Chef section\",\n    \"department_id\": \"4cec454e-t4ow-4b3h-Aja4-3c9cf5f5cde8\"\n  },\n  \"status_code\": 200\n}"
 								}
 							]
 						},
 						{
 							"name": "Update a poste",
-							"id": "af9baba4-2502-49b1-954f-056f035d7e62",
+							"id": "151fbde3-6482-4e3b-8b5b-d98a30ca1dd0",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -3639,7 +5003,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"name\": \"incididunt Excepteur amet id\",\n  \"department_id\": \"474ba580-xt0v-4n6h-82ib-5123df7cd0bd\"\n}",
+									"raw": "{\n  \"name\": \"proident ipsum ven\",\n  \"department_id\": \"f799acc6-bpce-1xii-99dm-64f48caee3c6\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -3659,7 +5023,7 @@
 									"variable": [
 										{
 											"key": "posteId",
-											"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+											"value": "a89dabbb-l1jl-46j0-91jj-d2312af815c2",
 											"description": "(Required) The unique identifier of the poste"
 										}
 									]
@@ -3668,7 +5032,7 @@
 							},
 							"response": [
 								{
-									"id": "465307f8-2650-4f9c-85c5-8065358c0394",
+									"id": "7e7332be-19f3-4141-beca-5950574f7dc4",
 									"name": "Successful response",
 									"originalRequest": {
 										"method": "PUT",
@@ -3689,7 +5053,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"name\": \"incididunt Excepteur amet id\",\n  \"department_id\": \"474ba580-xt0v-4n6h-82ib-5123df7cd0bd\"\n}",
+											"raw": "{\n  \"name\": \"proident ipsum ven\",\n  \"department_id\": \"f799acc6-bpce-1xii-99dm-64f48caee3c6\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -3723,13 +5087,13 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n  \"status\": true,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"d8f4ba52-416t-5zwp-A00p-e5203e2f04b8\",\n    \"name\": \"Chef section\",\n    \"department_id\": \"af81805e-wim5-5izl-A4ol-e562ad13302c\"\n  },\n  \"status_code\": 201\n}"
+									"body": "{\n  \"status\": true,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"cc606573-dwxf-5d52-9n4p-b05a304518e4\",\n    \"name\": \"Chef section\",\n    \"department_id\": \"e78c2360-1hk7-27y9-8lb8-ec117591d1d2\"\n  },\n  \"status_code\": 201\n}"
 								}
 							]
 						},
 						{
 							"name": "Delete a poste",
-							"id": "c4324184-60f7-450d-b812-5afe4a759e7e",
+							"id": "4c951719-62b8-425f-b168-d76774eba1b1",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -3753,7 +5117,7 @@
 									"variable": [
 										{
 											"key": "posteId",
-											"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+											"value": "a89dabbb-l1jl-46j0-91jj-d2312af815c2",
 											"description": "(Required) The unique identifier of the poste"
 										}
 									]
@@ -3762,7 +5126,7 @@
 							},
 							"response": [
 								{
-									"id": "5a7befc4-3a7a-426d-81b1-5e642d52e497",
+									"id": "3b2eb92b-52f6-4c9a-837c-50a1fda18bd0",
 									"name": "Successful response",
 									"originalRequest": {
 										"method": "DELETE",
@@ -3808,11 +5172,11 @@
 							]
 						}
 					],
-					"id": "a5056a3b-4503-4146-bf60-bfa5f0473304"
+					"id": "024b41ed-ef9d-4b60-b503-df9b27e9bdab"
 				},
 				{
 					"name": "Retrieve postes",
-					"id": "35a310a3-1563-4257-ad89-3546ed7cdd0a",
+					"id": "66bea607-2424-4df3-84c8-a9f65c63f226",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -3825,7 +5189,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/postes?page=1&per_page=10&fields=cupidatat adipisicing nulla incididunt dolor",
+							"raw": "{{baseUrl}}/postes?page=1&per_page=10&fields=mollit proident",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -3846,7 +5210,7 @@
 								{
 									"description": "Comma-separated list of fields to include in the response.",
 									"key": "fields",
-									"value": "cupidatat adipisicing nulla incididunt dolor"
+									"value": "mollit proident"
 								}
 							]
 						},
@@ -3854,7 +5218,7 @@
 					},
 					"response": [
 						{
-							"id": "9c88cb00-f42f-433d-a19e-e06833b0e75f",
+							"id": "88831612-2a6e-4318-84ba-d383f11929bc",
 							"name": "Successful response",
 							"originalRequest": {
 								"method": "GET",
@@ -3870,7 +5234,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/postes?page=1&per_page=10&fields=cupidatat adipisicing nulla incididunt dolor",
+									"raw": "{{baseUrl}}/postes?page=1&per_page=10&fields=mollit proident",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -3891,7 +5255,7 @@
 										{
 											"description": "Comma-separated list of fields to include in the response.",
 											"key": "fields",
-											"value": "cupidatat adipisicing nulla incididunt dolor"
+											"value": "mollit proident"
 										}
 									]
 								}
@@ -3906,13 +5270,13 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"current_page\": 1,\n    \"data\": [\n      {\n        \"id\": \"801530a2-qe0a-3gxg-94df-bc0848494080\",\n        \"name\": \"Chef section\",\n        \"department_id\": \"7f3266d5-bsdl-2hec-Bidh-29c246b245e3\"\n      },\n      {\n        \"id\": \"ad68f72c-awqa-4klv-82m9-1e8341a8a7ff\",\n        \"name\": \"Chef section\",\n        \"department_id\": \"5459ff0a-0wk4-59te-Ag9b-67d35b8b3b2b\"\n      }\n    ],\n    \"links\": [\n      {\n        \"url\": \"Excepteur esse id\",\n        \"label\": \"in\",\n        \"active\": true\n      },\n      {\n        \"url\": \"in enim\",\n        \"label\": \"laborum aliquip\",\n        \"active\": false\n      }\n    ],\n    \"total\": 36,\n    \"per_page\": 15,\n    \"next_page_url\": \"aute\",\n    \"prev_page_url\": \"irure quis aliquip eiusmod\",\n    \"first_page_url\": \"i\",\n    \"from\": 1,\n    \"last_page\": 1,\n    \"last_page_url\": \"{{baseUrl}}/postes?page=1\",\n    \"path\": \"{{baseUrl}}/postes\",\n    \"to\": 2\n  },\n  \"status_code\": 200\n}"
+							"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"current_page\": 1,\n    \"data\": [\n      {\n        \"id\": \"ed058fcf-9l0u-58ss-B228-96bc2f194795\",\n        \"name\": \"Chef section\",\n        \"department_id\": \"9c8ec84d-n5h4-5t1t-B3jl-625bd24251b8\"\n      },\n      {\n        \"id\": \"9e014e6c-xkm3-2jbg-A8qg-a00a176212d8\",\n        \"name\": \"Chef section\",\n        \"department_id\": \"890efe02-cc32-3rq9-9l16-197684683c9f\"\n      }\n    ],\n    \"links\": [\n      {\n        \"url\": \"fugiat in\",\n        \"label\": \"Duis ut\",\n        \"active\": false\n      },\n      {\n        \"url\": \"eiusmod\",\n        \"label\": \"in\",\n        \"active\": true\n      }\n    ],\n    \"total\": 36,\n    \"per_page\": 15,\n    \"next_page_url\": \"incididunt\",\n    \"prev_page_url\": \"commodo magna pariatur\",\n    \"first_page_url\": \"est ut la\",\n    \"from\": 1,\n    \"last_page\": 1,\n    \"last_page_url\": \"{{baseUrl}}/postes?page=1\",\n    \"path\": \"{{baseUrl}}/postes\",\n    \"to\": 2\n  },\n  \"status_code\": 200\n}"
 						}
 					]
 				},
 				{
 					"name": "Retrieve postes",
-					"id": "2ab22aa4-af67-4834-8bda-26ba434de3e3",
+					"id": "2e213785-3fa4-4c17-a085-67db6ee12308",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -3930,7 +5294,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"incididunt Excepteur amet id\",\n  \"department_id\": \"474ba580-xt0v-4n6h-82ib-5123df7cd0bd\"\n}",
+							"raw": "{\n  \"name\": \"proident ipsum ven\",\n  \"department_id\": \"f799acc6-bpce-1xii-99dm-64f48caee3c6\"\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -3951,7 +5315,7 @@
 					},
 					"response": [
 						{
-							"id": "9032d379-3c8b-49b9-9c9e-934478c30c53",
+							"id": "bfab7881-295d-44ed-9e45-0112d8c53001",
 							"name": "Successful response",
 							"originalRequest": {
 								"method": "POST",
@@ -3972,7 +5336,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"name\": \"incididunt Excepteur amet id\",\n  \"department_id\": \"474ba580-xt0v-4n6h-82ib-5123df7cd0bd\"\n}",
+									"raw": "{\n  \"name\": \"proident ipsum ven\",\n  \"department_id\": \"f799acc6-bpce-1xii-99dm-64f48caee3c6\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -4000,12 +5364,12 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"e04c7ab4-7ht6-2dyd-Bal1-6363ac9ee577\",\n    \"name\": \"Chef section\",\n    \"department_id\": \"06a1ae10-hvr3-4yo2-89l7-c17eb1f96d6c\"\n  },\n  \"status_code\": 201\n}"
+							"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"195bd044-0qbw-46gr-8ll1-34cbb83287c3\",\n    \"name\": \"Chef section\",\n    \"department_id\": \"7de8531f-ghq9-1dw9-Aomk-7801ecdfce93\"\n  },\n  \"status_code\": 201\n}"
 						}
 					]
 				}
 			],
-			"id": "d05889bf-4842-4d25-ad28-03f995a10417"
+			"id": "cc797cf6-afa7-40a9-8c80-53684311ecdc"
 		},
 		{
 			"name": "categories_of_employees",
@@ -4018,7 +5382,7 @@
 							"item": [
 								{
 									"name": "Retrieve category of employee taux.",
-									"id": "b0237cea-4c6a-42e4-9a07-5a45b84b2759",
+									"id": "cbf94f48-34d6-48a4-90e6-98d7c151060d",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
@@ -4031,7 +5395,7 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/categories_of_employees/:categoryOfEmployeeId/taux?page=1&per_page=10&fields=cupidatat adipisicing nulla incididunt dolor",
+											"raw": "{{baseUrl}}/categories_of_employees/:categoryOfEmployeeId/taux?page=1&per_page=10&fields=mollit proident",
 											"host": [
 												"{{baseUrl}}"
 											],
@@ -4054,13 +5418,13 @@
 												{
 													"description": "Comma-separated list of fields to include in the response.",
 													"key": "fields",
-													"value": "cupidatat adipisicing nulla incididunt dolor"
+													"value": "mollit proident"
 												}
 											],
 											"variable": [
 												{
 													"key": "categoryOfEmployeeId",
-													"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+													"value": "a89dabbb-l1jl-46j0-91jj-d2312af815c2",
 													"description": "(Required) The unique identifier of the user."
 												}
 											]
@@ -4069,7 +5433,7 @@
 									},
 									"response": [
 										{
-											"id": "758b6278-5193-43da-a856-a0e60140052c",
+											"id": "ef0c7393-b50c-4023-a32a-cd79fda92943",
 											"name": "Successful response",
 											"originalRequest": {
 												"method": "GET",
@@ -4085,7 +5449,7 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/categories_of_employees/:categoryOfEmployeeId/taux?page=1&per_page=10&fields=cupidatat adipisicing nulla incididunt dolor",
+													"raw": "{{baseUrl}}/categories_of_employees/:categoryOfEmployeeId/taux?page=1&per_page=10&fields=mollit proident",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -4108,7 +5472,7 @@
 														{
 															"description": "Comma-separated list of fields to include in the response.",
 															"key": "fields",
-															"value": "cupidatat adipisicing nulla incididunt dolor"
+															"value": "mollit proident"
 														}
 													],
 													"variable": [
@@ -4128,19 +5492,19 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"current_page\": 1,\n    \"data\": [\n      {\n        \"id\": \"bb102634-6hen-5y5w-B3lp-c226bc50b917\",\n        \"hint\": 1,\n        \"rate\": 180000,\n        \"rate_measure_unit_symbol\": \"xof\",\n        \"work_unit\": {\n          \"type\": \"article\",\n          \"symbol\": \"kg\"\n        }\n      },\n      {\n        \"id\": \"720a7a78-sbi6-2wbb-9ih6-177e3020b07a\",\n        \"hint\": 1,\n        \"rate\": 180000,\n        \"rate_measure_unit_symbol\": \"xof\",\n        \"work_unit\": {\n          \"type\": \"article\",\n          \"symbol\": \"kg\"\n        }\n      }\n    ],\n    \"links\": [\n      {\n        \"url\": \"\",\n        \"label\": \"mollit quis sunt cupi\",\n        \"active\": false\n      },\n      {\n        \"url\": \"dolor cupidatat ullamco\",\n        \"label\": \"dolore fugiat\",\n        \"active\": true\n      }\n    ],\n    \"total\": 36,\n    \"per_page\": 15,\n    \"next_page_url\": \"magna velit quis\",\n    \"prev_page_url\": \"consequat fugiat in\",\n    \"first_page_url\": \"cillum officia\",\n    \"from\": 1,\n    \"last_page\": 1,\n    \"last_page_url\": \"{{baseUrl}}/roles?page=1\",\n    \"path\": \"{{baseUrl}}/roles\",\n    \"to\": 2\n  },\n  \"status_code\": 200\n}"
+											"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"current_page\": 1,\n    \"data\": [\n      {\n        \"id\": \"43fb90ca-84al-57jc-Aa4m-1601540c28fd\",\n        \"hint\": 1,\n        \"rate\": 180000,\n        \"rate_measure_unit_symbol\": \"xof\",\n        \"work_unit\": {\n          \"type\": \"article\",\n          \"symbol\": \"kg\"\n        }\n      },\n      {\n        \"id\": \"cb0a688f-rj0k-5igm-Bln2-0d4a43d62a07\",\n        \"hint\": 1,\n        \"rate\": 180000,\n        \"rate_measure_unit_symbol\": \"xof\",\n        \"work_unit\": {\n          \"type\": \"article\",\n          \"symbol\": \"kg\"\n        }\n      }\n    ],\n    \"links\": [\n      {\n        \"url\": \"commodo in qui cill\",\n        \"label\": \"cupidatat\",\n        \"active\": true\n      },\n      {\n        \"url\": \"incididunt dolore officia irure in\",\n        \"label\": \"exercitation tempor cupidatat occaecat\",\n        \"active\": true\n      }\n    ],\n    \"total\": 36,\n    \"per_page\": 15,\n    \"next_page_url\": \"fugiat id dolor dolor\",\n    \"prev_page_url\": \"incididunt mollit fugiat pariatur\",\n    \"first_page_url\": \"adipisicing eu sunt consequat\",\n    \"from\": 1,\n    \"last_page\": 1,\n    \"last_page_url\": \"{{baseUrl}}/roles?page=1\",\n    \"path\": \"{{baseUrl}}/roles\",\n    \"to\": 2\n  },\n  \"status_code\": 200\n}"
 										}
 									]
 								}
 							],
-							"id": "98540b63-a923-4451-81ab-e0201cbaaded"
+							"id": "3b552415-a59d-4fa4-8dec-f19a5d70a2aa"
 						},
 						{
 							"name": "attach-taux",
 							"item": [
 								{
 									"name": "Attach taux to a category of employees.",
-									"id": "2b269659-d6e9-4d94-a32f-d8273c4136f0",
+									"id": "ebdb10b4-64e7-411b-9bf0-e846a902f4f5",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
@@ -4158,7 +5522,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"taux\": [\n    {\n      \"taux_id\": \"e76613b8-iw1s-1i9w-9fc3-d6a2677aba10\",\n      \"est_le_taux_de_base\": false\n    },\n    {\n      \"taux_id\": \"ef2ad720-8nvg-3c9t-8cb6-01e6b8204bfc\",\n      \"est_le_taux_de_base\": false\n    }\n  ]\n}",
+											"raw": "{\n  \"taux\": [\n    {\n      \"taux_id\": \"b7473ad0-i7mx-1j9m-9joc-4cdbf3ee2a1d\",\n      \"est_le_taux_de_base\": false\n    },\n    {\n      \"taux_id\": \"7bba0242-hcm1-3yzr-A3pa-4f860bb1b889\",\n      \"est_le_taux_de_base\": false\n    }\n  ]\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -4179,7 +5543,7 @@
 											"variable": [
 												{
 													"key": "categoryOfEmployeeId",
-													"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+													"value": "a89dabbb-l1jl-46j0-91jj-d2312af815c2",
 													"description": "(Required) The unique identifier of the user."
 												}
 											]
@@ -4188,7 +5552,7 @@
 									},
 									"response": [
 										{
-											"id": "45514551-e77a-4d81-9415-27ab97765041",
+											"id": "4304403d-f13b-4b18-b108-f1af37f266b4",
 											"name": "Successful response",
 											"originalRequest": {
 												"method": "PUT",
@@ -4209,7 +5573,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"taux\": [\n    {\n      \"taux_id\": \"e76613b8-iw1s-1i9w-9fc3-d6a2677aba10\",\n      \"est_le_taux_de_base\": false\n    },\n    {\n      \"taux_id\": \"ef2ad720-8nvg-3c9t-8cb6-01e6b8204bfc\",\n      \"est_le_taux_de_base\": false\n    }\n  ]\n}",
+													"raw": "{\n  \"taux\": [\n    {\n      \"taux_id\": \"b7473ad0-i7mx-1j9m-9joc-4cdbf3ee2a1d\",\n      \"est_le_taux_de_base\": false\n    },\n    {\n      \"taux_id\": \"7bba0242-hcm1-3yzr-A3pa-4f860bb1b889\",\n      \"est_le_taux_de_base\": false\n    }\n  ]\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -4249,14 +5613,14 @@
 									]
 								}
 							],
-							"id": "1982634e-9611-479d-9fb2-0ecdf441aff0"
+							"id": "e5b151c0-f1f1-4f00-8397-97ea4f45b1d4"
 						},
 						{
 							"name": "revoke-taux",
 							"item": [
 								{
 									"name": "Revoke taux from category of employees.",
-									"id": "3e52c270-5109-49f6-b1ca-937bbaf653e2",
+									"id": "2a14fa18-b0e5-4c6b-b5aa-d1adff273ae3",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
@@ -4274,7 +5638,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"taux\": [\n    {\n      \"taux_id\": \"e76613b8-iw1s-1i9w-9fc3-d6a2677aba10\",\n      \"est_le_taux_de_base\": false\n    },\n    {\n      \"taux_id\": \"ef2ad720-8nvg-3c9t-8cb6-01e6b8204bfc\",\n      \"est_le_taux_de_base\": false\n    }\n  ]\n}",
+											"raw": "{\n  \"taux\": [\n    {\n      \"taux_id\": \"b7473ad0-i7mx-1j9m-9joc-4cdbf3ee2a1d\",\n      \"est_le_taux_de_base\": false\n    },\n    {\n      \"taux_id\": \"7bba0242-hcm1-3yzr-A3pa-4f860bb1b889\",\n      \"est_le_taux_de_base\": false\n    }\n  ]\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -4295,7 +5659,7 @@
 											"variable": [
 												{
 													"key": "categoryOfEmployeeId",
-													"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+													"value": "a89dabbb-l1jl-46j0-91jj-d2312af815c2",
 													"description": "(Required) The unique identifier of the user."
 												}
 											]
@@ -4304,7 +5668,7 @@
 									},
 									"response": [
 										{
-											"id": "b15a6b3c-698e-4f53-9a15-40b77b87e089",
+											"id": "703d5708-c8d4-4c2b-862a-c8d724b26e56",
 											"name": "Successful response",
 											"originalRequest": {
 												"method": "DELETE",
@@ -4325,7 +5689,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"taux\": [\n    {\n      \"taux_id\": \"e76613b8-iw1s-1i9w-9fc3-d6a2677aba10\",\n      \"est_le_taux_de_base\": false\n    },\n    {\n      \"taux_id\": \"ef2ad720-8nvg-3c9t-8cb6-01e6b8204bfc\",\n      \"est_le_taux_de_base\": false\n    }\n  ]\n}",
+													"raw": "{\n  \"taux\": [\n    {\n      \"taux_id\": \"b7473ad0-i7mx-1j9m-9joc-4cdbf3ee2a1d\",\n      \"est_le_taux_de_base\": false\n    },\n    {\n      \"taux_id\": \"7bba0242-hcm1-3yzr-A3pa-4f860bb1b889\",\n      \"est_le_taux_de_base\": false\n    }\n  ]\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -4365,11 +5729,11 @@
 									]
 								}
 							],
-							"id": "3fd84239-8cbe-4a0b-b47b-82ea97280811"
+							"id": "09b030ab-7914-43ec-a991-62295053f932"
 						},
 						{
 							"name": "Retrieve a category of employee",
-							"id": "1a757f78-dfc3-4356-af77-a9f14cdc3149",
+							"id": "fc042571-0a08-4fbb-96b3-fd3ac13c443b",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -4382,7 +5746,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/categories_of_employees/:categoryOfEmployeeId?fields=cupidatat adipisicing nulla incididunt dolor",
+									"raw": "{{baseUrl}}/categories_of_employees/:categoryOfEmployeeId?fields=mollit proident",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -4394,13 +5758,13 @@
 										{
 											"description": "Comma-separated list of fields to include in the response.",
 											"key": "fields",
-											"value": "cupidatat adipisicing nulla incididunt dolor"
+											"value": "mollit proident"
 										}
 									],
 									"variable": [
 										{
 											"key": "categoryOfEmployeeId",
-											"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+											"value": "a89dabbb-l1jl-46j0-91jj-d2312af815c2",
 											"description": "(Required) The unique identifier of the category of employee"
 										}
 									]
@@ -4409,7 +5773,7 @@
 							},
 							"response": [
 								{
-									"id": "c6afacd8-4240-49a5-adb9-43677e47835f",
+									"id": "f04a7a9c-dc53-4b6a-a5e6-234b3ce4e4ff",
 									"name": "Successful response",
 									"originalRequest": {
 										"method": "GET",
@@ -4425,7 +5789,7 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/categories_of_employees/:categoryOfEmployeeId?fields=cupidatat adipisicing nulla incididunt dolor",
+											"raw": "{{baseUrl}}/categories_of_employees/:categoryOfEmployeeId?fields=mollit proident",
 											"host": [
 												"{{baseUrl}}"
 											],
@@ -4437,7 +5801,7 @@
 												{
 													"description": "Comma-separated list of fields to include in the response.",
 													"key": "fields",
-													"value": "cupidatat adipisicing nulla incididunt dolor"
+													"value": "mollit proident"
 												}
 											],
 											"variable": [
@@ -4457,13 +5821,13 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"79f6d4ef-cl9e-26u1-8i87-1ce8561a5632\",\n    \"name\": \"deserunt velit ut esse\",\n    \"description\": \"ut in reprehenderit nis\",\n    \"category_id\": \"aad7e5ce-1ua5-4zpg-8jec-18cfdff3a50a\"\n  },\n  \"status_code\": 200\n}"
+									"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"ac748483-kuvj-1ouy-8195-479324a58d58\",\n    \"name\": \"et Excepteur commodo aliquip\",\n    \"description\": \"Ut ea eiusmod id ullamco\",\n    \"category_id\": \"80653a99-3q7n-42v9-Bqc2-1590ce710e29\"\n  },\n  \"status_code\": 200\n}"
 								}
 							]
 						},
 						{
 							"name": "Update a category of employee",
-							"id": "2b459b16-58c3-4216-b110-8fce116ccaea",
+							"id": "4d6bdbe5-c81b-4dee-8cbf-2dc91b6c4121",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -4481,7 +5845,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"name\": \"non aliqua et\",\n  \"description\": \"sit\",\n  \"category_id\": \"proident in reprehenderit ipsum\"\n}",
+									"raw": "{\n  \"name\": \"dolore voluptate aute incididunt officia\",\n  \"description\": \"Excepteur consect\",\n  \"category_id\": \"pariatur\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -4501,7 +5865,7 @@
 									"variable": [
 										{
 											"key": "categoryOfEmployeeId",
-											"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+											"value": "a89dabbb-l1jl-46j0-91jj-d2312af815c2",
 											"description": "(Required) The unique identifier of the category of employee"
 										}
 									]
@@ -4510,7 +5874,7 @@
 							},
 							"response": [
 								{
-									"id": "347ca217-3171-41c5-96f0-7e7260bdbd75",
+									"id": "ead99581-a8cb-4010-ba16-758b5bd9dcee",
 									"name": "Successful response",
 									"originalRequest": {
 										"method": "PUT",
@@ -4531,7 +5895,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"name\": \"non aliqua et\",\n  \"description\": \"sit\",\n  \"category_id\": \"proident in reprehenderit ipsum\"\n}",
+											"raw": "{\n  \"name\": \"dolore voluptate aute incididunt officia\",\n  \"description\": \"Excepteur consect\",\n  \"category_id\": \"pariatur\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -4565,13 +5929,13 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n  \"status\": true,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"d2326709-vvsw-4ccu-A467-65c02f62acbd\",\n    \"name\": \"occaecat sed dolore\",\n    \"description\": \"minim id\",\n    \"category_id\": \"55e02d7f-vgkd-5bdz-A3d2-9db650b5c8a1\"\n  },\n  \"status_code\": 201\n}"
+									"body": "{\n  \"status\": true,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"76b4877b-anan-5p66-9qda-d2888a927dc5\",\n    \"name\": \"ullamco elit velit esse ut\",\n    \"description\": \"ve\",\n    \"category_id\": \"7c737af2-xnjm-3tsn-86jg-24f009115be2\"\n  },\n  \"status_code\": 201\n}"
 								}
 							]
 						},
 						{
 							"name": "Delete a category of employee",
-							"id": "fb561036-239f-4bc3-8958-469233056b17",
+							"id": "c33e151d-6e4f-46e1-b4c9-4a7a5e2b5346",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -4595,7 +5959,7 @@
 									"variable": [
 										{
 											"key": "categoryOfEmployeeId",
-											"value": "e1b223f9-c7nc-3yfb-9d36-67773f5c4813",
+											"value": "a89dabbb-l1jl-46j0-91jj-d2312af815c2",
 											"description": "(Required) The unique identifier of the category of employee"
 										}
 									]
@@ -4604,7 +5968,7 @@
 							},
 							"response": [
 								{
-									"id": "60dd5dad-bbe9-47d2-97ab-a8f88b1468b8",
+									"id": "1e2357a0-bfef-49dc-b81f-468cf9f3330f",
 									"name": "Successful response",
 									"originalRequest": {
 										"method": "DELETE",
@@ -4650,11 +6014,11 @@
 							]
 						}
 					],
-					"id": "7bd00206-ce06-43d2-bc48-a5fd152a80c4"
+					"id": "6141bcc7-4869-4435-8942-9108b59aa3c0"
 				},
 				{
 					"name": "Retrieve categories of employees",
-					"id": "de2f10d5-7ad6-46ba-87d7-f19f50c9e66d",
+					"id": "0446ffcd-8b9e-415a-acba-564c35950b1e",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -4667,7 +6031,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/categories_of_employees?page=1&per_page=10&fields=cupidatat adipisicing nulla incididunt dolor",
+							"raw": "{{baseUrl}}/categories_of_employees?page=1&per_page=10&fields=mollit proident",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -4688,7 +6052,7 @@
 								{
 									"description": "Comma-separated list of fields to include in the response.",
 									"key": "fields",
-									"value": "cupidatat adipisicing nulla incididunt dolor"
+									"value": "mollit proident"
 								}
 							]
 						},
@@ -4696,7 +6060,7 @@
 					},
 					"response": [
 						{
-							"id": "f0d8867a-1935-4f87-821e-fc35d0fbfb75",
+							"id": "5d817d85-6a36-4a5a-87df-47fc556ad380",
 							"name": "Successful response",
 							"originalRequest": {
 								"method": "GET",
@@ -4712,7 +6076,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/categories_of_employees?page=1&per_page=10&fields=cupidatat adipisicing nulla incididunt dolor",
+									"raw": "{{baseUrl}}/categories_of_employees?page=1&per_page=10&fields=mollit proident",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -4733,7 +6097,7 @@
 										{
 											"description": "Comma-separated list of fields to include in the response.",
 											"key": "fields",
-											"value": "cupidatat adipisicing nulla incididunt dolor"
+											"value": "mollit proident"
 										}
 									]
 								}
@@ -4748,13 +6112,13 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"current_page\": 1,\n    \"data\": [\n      {\n        \"id\": \"48f6188c-7707-30s8-Boll-45b7ea21317c\",\n        \"name\": \"ad anim cupidatat fugiat tempor\",\n        \"description\": \"Excepteur nulla adipisicing veniam\",\n        \"category_id\": \"1170621f-wpoh-5493-Aoq4-2da1b71e80cc\"\n      },\n      {\n        \"id\": \"e8d30fdf-ql21-1lw2-Bqk8-1223276e6061\",\n        \"name\": \"enim occaecat Ut\",\n        \"description\": \"ullamco qui culpa esse\",\n        \"category_id\": \"261e7beb-2en6-22kj-9l08-36187338c379\"\n      }\n    ],\n    \"links\": [\n      {\n        \"url\": \"cillum aliquip aute Excepteur\",\n        \"label\": \"Lorem id commodo fugiat\",\n        \"active\": true\n      },\n      {\n        \"url\": \"Ut voluptate in proident aliqua\",\n        \"label\": \"id veniam ipsum non\",\n        \"active\": true\n      }\n    ],\n    \"total\": 36,\n    \"per_page\": 15,\n    \"next_page_url\": \"est dolor tempor proident\",\n    \"prev_page_url\": \"do id eu\",\n    \"first_page_url\": \"enim magna in\",\n    \"from\": 1,\n    \"last_page\": 1,\n    \"last_page_url\": \"{{baseUrl}}/categories_of_employees?page=1\",\n    \"path\": \"{{baseUrl}}/categories_of_employees\",\n    \"to\": 2\n  },\n  \"status_code\": 200\n}"
+							"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"current_page\": 1,\n    \"data\": [\n      {\n        \"id\": \"7787834f-nhb9-3g2s-B5ge-9f0596fc5d97\",\n        \"name\": \"incid\",\n        \"description\": \"tempor qui officia consequat\",\n        \"category_id\": \"098c7d79-1s45-1r33-Boh5-5b8d1c4a754f\"\n      },\n      {\n        \"id\": \"2b7cdf0c-wwwm-31pr-8j6f-82204aedd046\",\n        \"name\": \"dolor\",\n        \"description\": \"non esse qui proident\",\n        \"category_id\": \"b57c6914-gnum-3mbj-A366-b5718895b2d2\"\n      }\n    ],\n    \"links\": [\n      {\n        \"url\": \"sunt occa\",\n        \"label\": \"aute id et\",\n        \"active\": true\n      },\n      {\n        \"url\": \"laboris commodo sit\",\n        \"label\": \"veniam\",\n        \"active\": true\n      }\n    ],\n    \"total\": 36,\n    \"per_page\": 15,\n    \"next_page_url\": \"anim ipsum id ex aute\",\n    \"prev_page_url\": \"quis Ut sint\",\n    \"first_page_url\": \"laboris\",\n    \"from\": 1,\n    \"last_page\": 1,\n    \"last_page_url\": \"{{baseUrl}}/categories_of_employees?page=1\",\n    \"path\": \"{{baseUrl}}/categories_of_employees\",\n    \"to\": 2\n  },\n  \"status_code\": 200\n}"
 						}
 					]
 				},
 				{
 					"name": "Retrieve categories of employees",
-					"id": "07b51b36-2811-4adb-9217-694ab137b630",
+					"id": "2b30f1df-4c29-447b-a741-64e61ca01e39",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -4772,7 +6136,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"non aliqua et\",\n  \"description\": \"sit\",\n  \"category_id\": \"proident in reprehenderit ipsum\"\n}",
+							"raw": "{\n  \"name\": \"dolore voluptate aute incididunt officia\",\n  \"description\": \"Excepteur consect\",\n  \"category_id\": \"pariatur\"\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -4793,7 +6157,7 @@
 					},
 					"response": [
 						{
-							"id": "42983e18-602d-4d86-8fec-996095db8716",
+							"id": "5f26d3f2-1757-4495-ae5e-785c5daa96e2",
 							"name": "Successful response",
 							"originalRequest": {
 								"method": "POST",
@@ -4814,7 +6178,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"name\": \"non aliqua et\",\n  \"description\": \"sit\",\n  \"category_id\": \"proident in reprehenderit ipsum\"\n}",
+									"raw": "{\n  \"name\": \"dolore voluptate aute incididunt officia\",\n  \"description\": \"Excepteur consect\",\n  \"category_id\": \"pariatur\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -4842,19 +6206,19 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"fb3307d7-8evh-3dd3-9gq2-f3f5e5eafc62\",\n    \"name\": \"do\",\n    \"description\": \"adipisicing aute irure in dolore\",\n    \"category_id\": \"1f75477e-iwx0-3xg1-Bk07-21bd7deaaede\"\n  },\n  \"status_code\": 201\n}"
+							"body": "{\n  \"status\": false,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"2574d629-dir0-33ph-8mce-c1b2d367b4ce\",\n    \"name\": \"sit proident amet nostr\",\n    \"description\": \"consectet\",\n    \"category_id\": \"5e74361a-husn-4bnw-8pp5-300814b48103\"\n  },\n  \"status_code\": 201\n}"
 						}
 					]
 				}
 			],
-			"id": "104fbfe7-9521-4e72-97f4-91bdb19a1ab5"
+			"id": "7472eb7c-69d6-4367-97b2-0f72b0cc7e48"
 		},
 		{
 			"name": "login",
 			"item": [
 				{
 					"name": "Authentication",
-					"id": "d7b5e867-a8b4-43b4-a952-d4acb5880e33",
+					"id": "bc8c2643-669a-491b-8ee9-8e0aaf70a839",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -4872,7 +6236,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"identifier\": \"Lorem in\",\n  \"password\": \"password\"\n}",
+							"raw": "{\n  \"identifier\": \"idid dolor\",\n  \"password\": \"password\"\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -4893,7 +6257,7 @@
 					},
 					"response": [
 						{
-							"id": "8d7915e1-492c-481c-9e9d-a107ff6f1ed4",
+							"id": "452d0ff4-8829-4712-9631-246a5d8f9d36",
 							"name": "Successful authenticate",
 							"originalRequest": {
 								"method": "POST",
@@ -4914,7 +6278,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"identifier\": \"Lorem in\",\n  \"password\": \"password\"\n}",
+									"raw": "{\n  \"identifier\": \"idid dolor\",\n  \"password\": \"password\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -4947,14 +6311,14 @@
 					]
 				}
 			],
-			"id": "6d740404-3f7e-4ac3-8f95-838d1d0aaf4d"
+			"id": "0d0418fd-1cc5-499e-8caa-62f20bc37320"
 		},
 		{
 			"name": "logout",
 			"item": [
 				{
 					"name": "Logout",
-					"id": "d507f1fc-66a0-479b-ac4e-45a8b6a3d166",
+					"id": "d5adfb07-7396-47f7-8697-161f24e123a0",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -4979,7 +6343,7 @@
 					},
 					"response": [
 						{
-							"id": "4394861b-aaab-45ff-bdae-20015bca36db",
+							"id": "a735f472-18bd-44e7-b63b-eea3d447e972",
 							"name": "Successful logout",
 							"originalRequest": {
 								"method": "POST",
@@ -5019,14 +6383,14 @@
 					]
 				}
 			],
-			"id": "5a39ae9f-7b5e-4c50-a504-19dac9d1f889"
+			"id": "06e95aa5-d9eb-4dad-a34a-4b8ec44dd502"
 		},
 		{
 			"name": "auth",
 			"item": [
 				{
 					"name": "Retrieve the authenticate user",
-					"id": "1ec2d8fb-b882-4925-b632-ac1ea0685557",
+					"id": "527440f3-01a4-4f33-859e-5f80e8eddce1",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -5039,7 +6403,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/auth?fields=cupidatat adipisicing nulla incididunt dolor",
+							"raw": "{{baseUrl}}/auth?fields=mollit proident",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -5050,7 +6414,7 @@
 								{
 									"description": "Comma-separated list of fields to include in the response.",
 									"key": "fields",
-									"value": "cupidatat adipisicing nulla incididunt dolor"
+									"value": "mollit proident"
 								}
 							]
 						},
@@ -5058,7 +6422,7 @@
 					},
 					"response": [
 						{
-							"id": "64f79048-c734-4e46-91d8-f76b274b0309",
+							"id": "d162e86e-5cbc-488c-87ec-9ade44ac8153",
 							"name": "Successful response",
 							"originalRequest": {
 								"method": "GET",
@@ -5074,7 +6438,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/auth?fields=cupidatat adipisicing nulla incididunt dolor",
+									"raw": "{{baseUrl}}/auth?fields=mollit proident",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -5085,7 +6449,7 @@
 										{
 											"description": "Comma-separated list of fields to include in the response.",
 											"key": "fields",
-											"value": "cupidatat adipisicing nulla incididunt dolor"
+											"value": "mollit proident"
 										}
 									]
 								}
@@ -5100,12 +6464,12 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n  \"status\": true,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"0f9079ef-p3s0-153a-Akc7-2c2c0f44364f\",\n    \"type_of_account\": \"personal\",\n    \"login_channel\": \"email\",\n    \"username\": \"dolor\",\n    \"email\": \"johndoe@gmail.com\",\n    \"phone_number\": {\n      \"country_code\": 229,\n      \"number\": 94531209\n    },\n    \"address\": \"aute nostrud mollit ut cillum\",\n    \"userable\": {\n      \"id\": \"a1f451ef-h40s-5rtq-9q82-3f5d8d0e0f03\",\n      \"first_name\": \"anim fug\",\n      \"last_name\": \"DOE\",\n      \"middle_name\": [\n        \"Phillipe\",\n        \"Jack\"\n      ],\n      \"sex\": \"male\",\n      \"marital_status\": \"single\",\n      \"birth_date\": \"9930-71-07 22h:05min\",\n      \"ifu\": 45984960456,\n      \"nip\": 45984960456,\n      \"nationality\": \"Excepteur enim Lorem ad\"\n    }\n  },\n  \"status_code\": 200\n}"
+							"body": "{\n  \"status\": true,\n  \"message\": null,\n  \"data\": {\n    \"id\": \"c5f46032-0xi2-2aeo-95dq-e4ffc57aca47\",\n    \"type_of_account\": \"personal\",\n    \"login_channel\": \"email\",\n    \"username\": \"commodo ut consectetur\",\n    \"email\": \"johndoe@gmail.com\",\n    \"phone_number\": {\n      \"country_code\": 229,\n      \"number\": 94531209\n    },\n    \"address\": \"eiusmod officia\",\n    \"userable\": {\n      \"id\": \"d4332a21-020f-1w0c-B715-6c0cb39ca92c\",\n      \"first_name\": \"irure paria\",\n      \"last_name\": \"DOE\",\n      \"middle_name\": [\n        \"Phillipe\",\n        \"Jack\"\n      ],\n      \"sex\": \"male\",\n      \"marital_status\": \"single\",\n      \"birth_date\": \"2791-21-76 05h:13min\",\n      \"ifu\": 45984960456,\n      \"nip\": 45984960456,\n      \"nationality\": \"consequat occa\"\n    }\n  },\n  \"status_code\": 200\n}"
 						}
 					]
 				}
 			],
-			"id": "8ac1673d-03e8-4c72-8958-92d7ce5dd876"
+			"id": "63aa7fb4-f035-47a9-9afa-999d4b8b685d"
 		},
 		{
 			"name": "spacecrafts",
@@ -5115,7 +6479,7 @@
 					"item": [
 						{
 							"name": "Read a spacecraft",
-							"id": "0dc6faf1-3076-4f55-91dc-fe0e61efce75",
+							"id": "d7fe87f5-a339-4c9e-8ad9-f44ace8bae2a",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -5139,7 +6503,7 @@
 									"variable": [
 										{
 											"key": "spacecraftId",
-											"value": "a",
+											"value": "ut Duis",
 											"description": "(Required) The unique identifier of the spacecraft"
 										}
 									]
@@ -5147,7 +6511,7 @@
 							},
 							"response": [
 								{
-									"id": "c2e9db47-a3aa-4a99-9bb2-59d7522f4f80",
+									"id": "e91aa114-125b-4499-80fc-a5a60cac4481",
 									"name": "The spacecraft corresponding to the provided `spacecraftId`",
 									"originalRequest": {
 										"method": "GET",
@@ -5188,10 +6552,10 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n  \"id\": \"magna Duis qui aliquip\",\n  \"name\": \"laboris Ut ut nisi\",\n  \"type\": \"satellite\",\n  \"description\": \"Lorem amet\"\n}"
+									"body": "{\n  \"id\": \"\",\n  \"name\": \"qui magna proident\",\n  \"type\": \"capsule\",\n  \"description\": \"ad in nisi ut aute\"\n}"
 								},
 								{
-									"id": "60c84708-d990-4bf0-84aa-20358b804252",
+									"id": "73ff5f99-0312-4a8b-8b20-fd0bd564ab9d",
 									"name": "No spacecraft found for the provided `spacecraftId`",
 									"originalRequest": {
 										"method": "GET",
@@ -5232,10 +6596,10 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n  \"message\": \"dolor cupidatat ex anim\"\n}"
+									"body": "{\n  \"message\": \"occaecat\"\n}"
 								},
 								{
-									"id": "307af4d5-6a6e-4ccd-8860-53b7e753d1b8",
+									"id": "471f09b2-4c1a-447f-83a3-89b6e4e12cac",
 									"name": "Unexpected error",
 									"originalRequest": {
 										"method": "GET",
@@ -5276,15 +6640,15 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n  \"message\": \"dolor cupidatat ex anim\"\n}"
+									"body": "{\n  \"message\": \"occaecat\"\n}"
 								}
 							]
 						}
 					],
-					"id": "be178c34-ed37-4e71-a027-9da803304ce9"
+					"id": "b0e2811b-a5d5-4f81-9249-8820baceeea8"
 				}
 			],
-			"id": "ead389f1-41f5-4d71-8148-0855f1630898"
+			"id": "d5f3b3a5-2d9f-4cfb-bd7e-d51bea080d6f"
 		}
 	],
 	"auth": {
@@ -5309,17 +6673,17 @@
 	},
 	"variable": [
 		{
-			"id": "e889935d-b94f-49fb-849e-4517597d3a26",
+			"id": "8badd8c1-6e5a-40de-ac7d-ddd1473b3be0",
 			"key": "ip_address",
 			"value": "http://localhost"
 		},
 		{
-			"id": "8119c0c1-b3e1-4ebe-b8bd-c8cb1953cb36",
+			"id": "abf9fe56-39ff-4639-947c-b1c9650f8c46",
 			"key": "port",
 			"value": "8000"
 		},
 		{
-			"id": "1690f1a2-7738-44b7-b605-f5866949ed24",
+			"id": "71a6ee66-677a-4ade-80bb-4b5e69aae9d3",
 			"key": "baseUrl",
 			"value": "http://localhost:{{port}}/api"
 		}

@@ -9,7 +9,7 @@ id = 07375d42-f33c-4553-844d-9bd67c7fcf4b
 
 [config.relations.collections]
 rootDirectory = docs/postman/collections
-files[] = {"id":"33313317-d46714d0-9940-4c60-9071-5251631e7208","path":"test.json","metaData":{"generateCollectionPreferences":"{\"requestNameSource\":\"Fallback\",\"indentCharacter\":\"Space\",\"parametersResolution\":\"Example\",\"folderStrategy\":\"Paths\",\"includeAuthInfoInExample\":true,\"enableOptionalParameters\":true,\"keepImplicitHeaders\":false,\"includeDeprecated\":true,\"alwaysInheritAuthentication\":false,\"updateCollectionSync\":true,\"requestParametersResolution\":\"Example\",\"exampleParametersResolution\":\"Example\"}"}}
+files[] = {"id":"33313317-d7f598c4-8a89-4c95-8e04-c2ad5afc3d51","path":"Role and Permission Collection.json","metaData":{"generateCollectionPreferences":"{\"requestNameSource\":\"Fallback\",\"indentCharacter\":\"Space\",\"parametersResolution\":\"Example\",\"folderStrategy\":\"Paths\",\"includeAuthInfoInExample\":true,\"enableOptionalParameters\":true,\"keepImplicitHeaders\":false,\"includeDeprecated\":true,\"alwaysInheritAuthentication\":false,\"updateCollectionSync\":true,\"requestParametersResolution\":\"Example\",\"exampleParametersResolution\":\"Example\"}"}}
 
 [config.relations.collections.metaData]
 
@@ -26,10 +26,8 @@ files[] = {"path":"components/headers/index.json","metaData":{}}
 files[] = {"path":"components/headers/x_ratelimit_limit.json","metaData":{}}
 files[] = {"path":"components/headers/x_ratelimit_remaining.json","metaData":{}}
 files[] = {"path":"components/links/permissions.json","metaData":{}}
-files[] = {"path":"components/parameters/accept.json","metaData":{}}
 files[] = {"path":"components/parameters/role_id.json","metaData":{}}
 files[] = {"path":"components/requestBodies/roles/role_request.json","metaData":{}}
-files[] = {"path":"components/requestBodies/users/user_request.json","metaData":{}}
 files[] = {"path":"components/responses/errors/400.json","metaData":{}}
 files[] = {"path":"components/responses/errors/401.json","metaData":{}}
 files[] = {"path":"components/responses/errors/402.json","metaData":{}}
@@ -56,7 +54,6 @@ files[] = {"path":"components/schemas/field_name.json","metaData":{}}
 files[] = {"path":"components/schemas/identifier.json","metaData":{}}
 files[] = {"path":"components/schemas/models/permission.json","metaData":{}}
 files[] = {"path":"components/schemas/models/role.json","metaData":{}}
-files[] = {"path":"error.json","metaData":{}}
 files[] = {"path":"index.json","metaData":{}}
 files[] = {"path":"paths/permissions.json","metaData":{}}
 files[] = {"path":"paths/roles/create_role.json","metaData":{}}

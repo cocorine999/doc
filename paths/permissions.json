@@ -82,7 +82,7 @@
                                             "description": "The current page number.",
                                             "default": 1,
                                             "minimum": 1,
-                                            "example": 1
+                                            "example": 2
                                         },
                                         "data": {
                                             "type": "array",
@@ -93,7 +93,9 @@
                                         },
                                         "first_page_url": {
                                             "type": "string",
-                                            "description": "The URL of the first page."
+                                            "description": "The URL of the first page in the pagination.",
+                                            "example": "permissions?page=1",
+                                            "default": "permissions?page=1"
                                         },
                                         "from": {
                                             "type": "integer",
@@ -107,11 +109,13 @@
                                             "description": "The index of the last item in the current page.",
                                             "minimum": 1,
                                             "default": 1,
-                                            "example": 1
+                                            "example": 7
                                         },
                                         "last_page_url": {
                                             "type": "string",
-                                            "description": "The URL of the last page."
+                                            "description": "The URL of the last page in the pagination sequence.",
+                                            "example": "permissions?page=7",
+                                            "default": "permissions?page=1"
                                         },
                                         "links": {
                                             "type": "array",
@@ -143,14 +147,15 @@
                                         },
                                         "next_page_url": {
                                             "type": "string",
-                                            "description": "The URL of the next page.",
+                                            "description": "The URL to retrieve the next page of results.",
                                             "nullable": true,
                                             "default": null,
-                                            "example": null
+                                            "example": "permissions?page=3"
                                         },
                                         "path": {
                                             "type": "string",
-                                            "description": "The path of the current page."
+                                            "description": "The URL path of the current page.",
+                                            "example": "permissions"
                                         },
                                         "per_page": {
                                             "type": "integer",
@@ -165,12 +170,12 @@
                                             "description": "The URL of the previous page.",
                                             "nullable": true,
                                             "default": null,
-                                            "example": null
+                                            "example": "permissions?page=1"
                                         },
                                         "to": {
                                             "type": "integer",
                                             "description": "The ending index of the data on the current page. Example value is 2. Can be null.",
-                                            "example": null,
+                                            "example": 3,
                                             "default": null,
                                             "nullable": true
                                         },
@@ -179,7 +184,7 @@
                                             "description": "The total number of items.",
                                             "minimum": 0,
                                             "default": 0,
-                                            "example": 0
+                                            "example": 100
                                         }
                                     }
                                 },
@@ -197,7 +202,9 @@
                     "PermissionsToRoleCreation": {
                         "operationId": "createRole",
                         "requestBody": {
-                            "permissions": ["$response.body#/data/data/0/id"],
+                            "permissions": [
+                                "$response.body#/data/data/0/id"
+                            ],
                             "description": "The permission IDs returned in the response can be used when creating a role."
                         },
                         "description": "Link to attach permission IDs returned in the response to a role during creation."
@@ -205,7 +212,9 @@
                     "PermissionsToRoleUpdate": {
                         "operationId": "updateRole",
                         "requestBody": {
-                            "permissions": ["$response.body#/data/data/0/id"],
+                            "permissions": [
+                                "$response.body#/data/data/0/id"
+                            ],
                             "description": "The permission IDs returned in the response can be used when creating a role."
                         },
                         "description": "Link to attach permission IDs returned in the response to a role during creation."

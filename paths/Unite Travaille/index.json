@@ -1,0 +1,267 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "title": "Unites de Mesure API",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:{{port}}/api",
+            "description": "Local development environment",
+            "variables": {
+                "ip_address": {
+                    "default": "http://localhost",
+                    "description": "Ip address"
+                },
+                "port": {
+                    "enum": [
+                        "80",
+                        "8000",
+                        "8001"
+                    ],
+                    "default": "8000"
+                }
+            }
+        },
+        {
+            "url": "http://54.198.204.208:{{port}}/api",
+            "description": "Development code review environment",
+            "variables": {
+                "ip_address": {
+                    "enum": [
+                        "http://54.198.204.208",
+                        "https://dev.labelstrust.com"
+                    ],
+                    "default": "http://54.198.204.208",
+                    "description": "Ip address"
+                },
+                "port": {
+                    "enum": [
+                        "80",
+                        "8000",
+                        "8001"
+                    ],
+                    "default": "80"
+                }
+            }
+        },
+        {
+            "url": "https://test.labelstrust.com:{{port}}/api",
+            "description": "Testing environment",
+            "variables": {
+                "ip_address": {
+                    "default": "https://test.labelstrust.com",
+                    "description": "Ip address"
+                },
+                "port": {
+                    "enum": [
+                        "80",
+                        "8000",
+                        "8001"
+                    ],
+                    "default": "80"
+                }
+            }
+        },
+        {
+            "url": "https://staging.labelstrust.com:{{port}}/api",
+            "description": "Staging environment",
+            "variables": {
+                "ip_address": {
+                    "default": "https://staging.labelstrust.com",
+                    "description": "Ip address"
+                },
+                "port": {
+                    "enum": [
+                        "80",
+                        "8000",
+                        "8001"
+                    ],
+                    "default": "80"
+                }
+            }
+        }
+    ],
+    "paths": {"paths": {
+    "/api/unite_travailles": {
+      "get": {
+        "summary": "Retrieve all units of work",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": null
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/UniteTravaille"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/unite_travailles/{id}": {
+      "get": {
+        "summary": "Retrieve a work unit by its ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UniteTravaille"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update a work unit by its ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUniteTravaille"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Record updated with Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UniteTravaille"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a work unit by its ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Record deleted with Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Record deleted with Success"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "UniteTravaille": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type_of_unite_travaille": {
+            "type": "string"
+          },
+          "unite_mesure_id": {
+            "type": "string"
+          },
+          "article_id": {
+            "type": "string"
+          },
+          "can_be_deleted": {
+            "type": "boolean"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "UpdateUniteTravaille": {
+        "type": "object",
+        "properties": {
+          "type_of_unite_travaille": {
+            "type": "string"
+          },
+          "unite_mesure_id": {
+            "type": "string"
+          },
+          "article_id": {
+            "type": "string"
+          },
+          "can_be_deleted": {
+            "type": "boolean"
+          }
+        },
+        "required": ["type_of_unite_travaille", "unite_mesure_id"]
+      }
+    }
+  }
+}    

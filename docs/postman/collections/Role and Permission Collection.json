@@ -25,7 +25,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/permissions?fields=id,name,slug",
+							"raw": "{{baseUrl}}/permissions?page=1&per_page=15&fields=id,name,slug",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -34,9 +34,19 @@
 							],
 							"query": [
 								{
-									"description": "Comma-separated list of fields to include in the response.",
+									"key": "page",
+									"value": "1",
+									"description": "The page number to retrieve."
+								},
+								{
+									"key": "per_page",
+									"value": "15",
+									"description": "The total number of items available per page. Defaults to 15, with a minimum of 10 and a maximum of 25."
+								},
+								{
 									"key": "fields",
-									"value": "id,name,slug"
+									"value": "id,name,slug",
+									"description": "Comma-separated list of fields to include in the response."
 								}
 							]
 						},

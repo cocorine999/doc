@@ -5,10 +5,10 @@
         "description": "Retrieves permissions information based on certain criteria.",
         "parameters": [
             {
-                "$ref": "../../components/parameters/page.json"
+                "$ref": "../components/parameters/page.json"
             },
             {
-                "$ref": "../../components/parameters/per_page.json"
+                "$ref": "../components/parameters/per_page.json"
             },
             {
                 "name": "fields",
@@ -21,13 +21,13 @@
                 "example": "id,name,slug"
             },
             {
-                "$ref": "../../components/headers/authorization_header.json"
+                "$ref": "../components/headers/authorization_header.json"
             },
             {
-                "$ref": "../../components/headers/content_type.json"
+                "$ref": "../components/headers/content_type.json"
             },
             {
-                "$ref": "../../components/headers/accept.json"
+                "$ref": "../components/headers/accept.json"
             }
         ],
         "responses": {

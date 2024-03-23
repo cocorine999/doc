@@ -4,7 +4,30 @@
         "description": "Retrieves the list of all employees with their details.",
         "responses": {
             "200": {
-                "description": "Succès",
+                "description": "Success",
+                "headers": {
+                    "X-RateLimit-Limit": {
+                        "$ref": "../../components/headers/x_ratelimit_limit.json"
+                    },
+                    "X-RateLimit-Remaining": {
+                        "$ref": "../../components/headers/x_ratelimit_remaining.json"
+                    },
+                    "Access-Control-Allow-Origin": {
+                        "$ref": "../../components/headers/access_control_allow_origin.json"
+                    },
+                    "Access-Control-Allow-Methods": {
+                        "$ref": "../../components/headers/access_control_allow_methods.json"
+                    },
+                    "Access-Control-Allow-Credentials": {
+                        "$ref": "../../components/headers/access_control_allow_credentials.json"
+                    },
+                    "Access-Control-Max-Age": {
+                        "$ref": "../../components/headers/access_control_max_age.json"
+                    },
+                    "Access-Control-Allow-Headers": {
+                        "$ref": "../../components/headers/access_control_allow_headers.json"
+                    }
+                },
                 "content": {
                     "application/json": {
                         "schema": {
@@ -12,12 +35,12 @@
                             "properties": {
                                 "status": {
                                     "type": "boolean",
-                                    "description": "Indicates whether the request completed successfully."
+                                    "description": "Indicates whether the query completed successfully."
                                 },
                                 "message": {
                                     "type": "string",
                                     "nullable": true,
-                                    "description": "Message associated with the response. Null if no errors."
+                                    "description": "Response message, if applicable."
                                 },
                                 "data": {
                                     "type": "object",
@@ -31,16 +54,109 @@
                                             "items": {
                                                 "$ref": "#/components/schemas/Employee"
                                             },
-                                            "description": "List of recovered employees."
+                                            "description": "List of retrieved employees."
+                                        },
+                                        "first_page_url": {
+                                            "type": "string",
+                                            "format": "uri",
+                                            "description": "URL of the first results page."
+                                        },
+                                        "from": {
+                                            "type": "integer",
+                                            "description": "Index of the first entry in the results page."
+                                        },
+                                        "last_page": {
+                                            "type": "integer",
+                                            "description": "Number of the last results page."
+                                        },
+                                        "last_page_url": {
+                                            "type": "string",
+                                            "format": "uri",
+                                            "description": "URL of the last results page."
+                                        },
+                                        "links": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "url": {
+                                                        "type": "string",
+                                                        "format": "uri",
+                                                        "nullable": true,
+                                                        "description": "URL of the linked page."
+                                                    },
+                                                    "label": {
+                                                        "type": "string",
+                                                        "description": "Link label."
+                                                    },
+                                                    "active": {
+                                                        "type": "boolean",
+                                                        "description": "Indicates whether the link is active or not."
+                                                    }
+                                                }
+                                            },
+                                            "description": "Links to other results pages."
+                                        },
+                                        "next_page_url": {
+                                            "type": "string",
+                                            "format": "uri",
+                                            "nullable": true,
+                                            "description": "URL of the next results page."
+                                        },
+                                        "path": {
+                                            "type": "string",
+                                            "format": "uri",
+                                            "description": "Base URL of the request."
+                                        },
+                                        "per_page": {
+                                            "type": "integer",
+                                            "description": "Number of elements per page."
+                                        },
+                                        "prev_page_url": {
+                                            "type": "string",
+                                            "format": "uri",
+                                            "nullable": true,
+                                            "description": "URL of the previous results page."
+                                        },
+                                        "to": {
+                                            "type": "integer",
+                                            "description": "Index of the last entry in the results page."
+                                        },
+                                        "total": {
+                                            "type": "integer",
+                                            "description": "Total number of employees in the system."
                                         }
                                     }
                                 },
                                 "status_code": {
                                     "type": "integer",
-                                    "description": "Response status code."
+                                    "description": "HTTP status code of the response."
                                 }
                             }
                         }
+                    }
+                },
+                "links": {
+                    "GetEmployeeDetailsById": {
+                        "operationId": "getEmployee",
+                        "parameters": {
+                            "employeeId": "$response.body#/data/data/0/id"
+                        },
+                        "description": "Link to get employee details based on employee ID."
+                    },
+                    "UpdateEmployeeDetailsById": {
+                        "operationId": "updateEmployee",
+                        "parameters": {
+                            "employeeId": "$response.body#/data/data/0/id"
+                        },
+                        "description": "Link to update employee details based on employee ID."
+                    },
+                    "DeleteEmployeeById": {
+                        "operationId": "deleteEmployee",
+                        "parameters": {
+                            "employeeId": "$response.body#/data/data/0/id"
+                        },
+                        "description": "Link to delete employee based on employee ID."
                     }
                 }
             }
@@ -61,7 +177,30 @@
         },
         "responses": {
             "201": {
-                "description": "Created successfully",
+                "description": "Employee created successfully.",
+                "headers": {
+                    "X-RateLimit-Limit": {
+                        "$ref": "../../components/headers/x_ratelimit_limit.json"
+                    },
+                    "X-RateLimit-Remaining": {
+                        "$ref": "../../components/headers/x_ratelimit_remaining.json"
+                    },
+                    "Access-Control-Allow-Origin": {
+                        "$ref": "../../components/headers/access_control_allow_origin.json"
+                    },
+                    "Access-Control-Allow-Methods": {
+                        "$ref": "../../components/headers/access_control_allow_methods.json"
+                    },
+                    "Access-Control-Allow-Credentials": {
+                        "$ref": "../../components/headers/access_control_allow_credentials.json"
+                    },
+                    "Access-Control-Max-Age": {
+                        "$ref": "../../components/headers/access_control_max_age.json"
+                    },
+                    "Access-Control-Allow-Headers": {
+                        "$ref": "../../components/headers/access_control_allow_headers.json"
+                    }
+                },
                 "content": {
                     "application/json": {
                         "schema": {
@@ -69,24 +208,79 @@
                             "properties": {
                                 "status": {
                                     "type": "boolean",
-                                    "description": "Indicates whether the request completed successfully."
+                                    "description": "Indicates the success status of the request.",
+                                    "default": true,
+                                    "example": true
                                 },
                                 "message": {
                                     "type": "string",
-                                    "nullable": true,
-                                    "description": "Message associated with the response. Null if no errors."
+                                    "description": "Additional information about the response.",
+                                    "default": "Employee created successfully.",
+                                    "example": "Employee created successfully."
                                 },
                                 "data": {
                                     "$ref": "../../components/schemas/models/employee.json#/Employee"
                                 },
                                 "status_code": {
                                     "type": "integer",
-                                    "description": "Response status code."
+                                    "description": "Indicates the HTTP status code of the response.",
+                                    "default": 201,
+                                    "example": 201
                                 }
                             }
                         }
                     }
+                },
+                "links": {
+                    "GetEmployeeDetailsById": {
+                        "operationId": "getEmployee",
+                        "parameters": {
+                            "employeeId": "$response.body#/data/id"
+                        },
+                        "description": "Link to get employee details based on employee ID."
+                    },
+                    "UpdateEmployeeDetailsById": {
+                        "operationId": "updateEmployee",
+                        "parameters": {
+                            "employeeId": "$response.body#/data/id"
+                        },
+                        "description": "Link to update employee details based on employee ID."
+                    },
+                    "DeleteEmployeeById": {
+                        "operationId": "deleteEmployee",
+                        "parameters": {
+                            "employeeId": "$response.body#/data/id"
+                        },
+                        "description": "Link to delete employee based on employee ID."
+                    }
                 }
+            },
+            "400": {
+                "$ref": "../../components/responses/errors/400.json#BadRequest"
+            },
+            "401": {
+                "$ref": "../../components/responses/errors/401.json#Unauthorized"
+            },
+            "403": {
+                "$ref": "../../components/responses/errors/403.json#Forbidden"
+            },
+            "405": {
+                "$ref": "../../components/responses/errors/405.json#MethodNotAllowed"
+            },
+            "408": {
+                "$ref": "../../components/responses/errors/408.json#RequestTimeout"
+            },
+            "422": {
+                "$ref": "../../components/responses/errors/422.json#UnprocessableEntity"
+            },
+            "429": {
+                "$ref": "../../components/responses/errors/429.json#RateLimitExceeded"
+            },
+            "500": {
+                "$ref": "../../components/responses/errors/500.json#InternalServerError"
+            },
+            "503": {
+                "$ref": "../../components/responses/errors/503.json#ServiceUnavailable"
             }
         }
     }

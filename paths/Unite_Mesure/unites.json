@@ -5,6 +5,29 @@
         "responses": {
             "200": {
                 "description": "Success",
+                "headers": {
+                    "X-RateLimit-Limit": {
+                        "$ref": "../../components/headers/x_ratelimit_limit.json"
+                    },
+                    "X-RateLimit-Remaining": {
+                        "$ref": "../../components/headers/x_ratelimit_remaining.json"
+                    },
+                    "Access-Control-Allow-Origin": {
+                        "$ref": "../../components/headers/access_control_allow_origin.json"
+                    },
+                    "Access-Control-Allow-Methods": {
+                        "$ref": "../../components/headers/access_control_allow_methods.json"
+                    },
+                    "Access-Control-Allow-Credentials": {
+                        "$ref": "../../components/headers/access_control_allow_credentials.json"
+                    },
+                    "Access-Control-Max-Age": {
+                        "$ref": "../../components/headers/access_control_max_age.json"
+                    },
+                    "Access-Control-Allow-Headers": {
+                        "$ref": "../../components/headers/access_control_allow_headers.json"
+                    }
+                },
                 "content": {
                     "application/json": {
                         "schema": {
@@ -112,34 +135,54 @@
                             }
                         }
                     }
-                }
-            }
-        }
-    },
-    "post": {
-        "summary": "Create a new unit of measurement",
-        "description": "Creates a new unit of measurement with the details provided.",
-        "requestBody": {
-            "required": true,
-            "content": {
-                "application/json": {
-                    "schema": {
-                        "$ref": "../../components/requestBodies/Unite_Mesure/uniteofmesurementInput.json#/UniteMesureInput"
+                },
+                "links": {
+                    "GetUnitDetailsByUnitId": {
+                        "operationId": "getUnit",
+                        "parameters": {
+                            "unitId": "$response.body#/data/data/0/id"
+                        },
+                        "description": "Link to get unit information based on unit ID."
+                    },
+                    "UpdateUnitDetailsByUnitId": {
+                        "operationId": "updateUnit",
+                        "parameters": {
+                            "unitId": "$response.body#/data/data/0/id"
+                        },
+                        "description": "Link to update unit information based on unit ID."
+                    },
+                    "DeleteUnitByUnitId": {
+                        "operationId": "deleteUnit",
+                        "parameters": {
+                            "unitId": "$response.body#/data/data/0/id"
+                        },
+                        "description": "Lien pour supprimer une unité basée sur l'identifiant de l'unité."
                     }
-                }
-            }
-        },
-        "responses": {
-            "201": {
-                "description": "Created successfully",
-                "content": {
-                    "application/json": {
-                        "schema": {
-                            "$ref": "../../components/schemas/models/uniteofmesurement.json#/UniteMesure"
+                },
+                "post": {
+                    "summary": "Create a new unit of measurement",
+                    "description": "Creates a new unit of measurement with the details provided.",
+                    "requestBody": {
+                        "required": true,
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "../../components/requestBodies/Unite_Mesure/uniteofmesurementInput.json#/UniteMesureInput"
+                                }
+                            }
+                        }
+                    },
+                    "responses": {
+                        "201": {
+                            "description": "Created successfully",
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "$ref": "../../components/schemas/models/uniteofmesurement.json#/UniteMesure"
+                                    }
+                                }
+                            }
                         }
                     }
                 }
             }
-        }
-    }
-}

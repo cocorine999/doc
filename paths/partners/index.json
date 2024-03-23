@@ -1,0 +1,128 @@
+{
+    "/partners": {
+        "get": {
+            "summary": "Récupérer tous les partenaires",
+            "responses": {
+                "200": {
+                    "description": "Succès",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "../../components/schemas/models/partner.json#/PartnerListResponse"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "post": {
+            "summary": "Créer un nouveau partenaire",
+            "requestBody": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "../../components/requestBodies/partner/partner.json#/PartnerCreate"
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "200": {
+                    "description": "Succès",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "../../components/schemas/models/partner.json#/PartnerResponse"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "/partners/{partnerId}": {
+        
+    "get": {
+        "summary": "Retrieve a partner by ID",
+        "parameters": [
+            {
+                "name": "partnerId",
+                "in": "path",
+                "required": true,
+                "description": "Partner ID",
+                "schema": {
+                    "type": "string"
+                }
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "Success",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "../../components/schemas/models/partner.json#/PartnerResponse"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "put": {
+        "summary": "Edit a partner",
+        "parameters": [
+            {
+                "name": "partnerId",
+                "in": "path",
+                "required": true,
+                "description": "Partner ID",
+                "schema": {
+                    "type": "string"
+                }
+            }
+        ],
+        "requestBody": {
+            "required": true,
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "$ref": "../../components/requestBodies/partner/partner.json#/PartnerUpdate"
+                    }
+                }
+            }
+        },
+        "responses": {
+            "200": {
+                "description": "Success",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "../../components/schemas/models/partner.json#/PartnerResponse"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "delete": {
+        "summary": "Remove a partner",
+        "parameters": [
+            {
+                "name": "partnerId",
+                "in": "path",
+                "required": true,
+                "description": "Partner ID",
+                "schema": {
+                    "type": "string"
+                }
+            }
+        ],
+        "responses": {
+            "204": {
+                "description": "Success"
+            }
+        }
+    }
+    }
+}

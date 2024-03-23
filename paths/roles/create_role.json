@@ -63,11 +63,11 @@
                             "message": {
                                 "type": "string",
                                 "description": "Additional information about the response.",
-                                "default": "Role created successfully",
-                                "example": "Role created successfully"
+                                "default": "Unit created successfully",
+                                "example": "Unit created successfully"
                             },
                             "data": {
-                                "$ref": "../../components/schemas/models/role.json#/Role"
+                                "$ref": "../../components/schemas/models/uniteofmesurement.json#/UniteMesure"
                             },
                             "status_code": {
                                 "type": "integer",

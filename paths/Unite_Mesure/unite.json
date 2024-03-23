@@ -16,14 +16,103 @@
         ],
         "responses": {
             "200": {
-                "description": "Success",
+                "description": "Successfully retrieved unit of measurement",
+                "headers": {
+                    "X-RateLimit-Limit": {
+                        "$ref": "../../components/headers/x_ratelimit_limit.json"
+                    },
+                    "X-RateLimit-Remaining": {
+                        "$ref": "../../components/headers/x_ratelimit_remaining.json"
+                    },
+                    "Access-Control-Allow-Origin": {
+                        "$ref": "../../components/headers/access_control_allow_origin.json"
+                    },
+                    "Access-Control-Allow-Methods": {
+                        "$ref": "../../components/headers/access_control_allow_methods.json"
+                    },
+                    "Access-Control-Allow-Credentials": {
+                        "$ref": "../../components/headers/access_control_allow_credentials.json"
+                    },
+                    "Access-Control-Max-Age": {
+                        "$ref": "../../components/headers/access_control_max_age.json"
+                    },
+                    "Access-Control-Allow-Headers": {
+                        "$ref": "../../components/headers/access_control_allow_headers.json"
+                    }
+                },
                 "content": {
                     "application/json": {
                         "schema": {
-                            "$ref": "../../components/schemas/models/uniteofmesurement.json#/UniteMesure"
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "boolean",
+                                    "description": "Indicates the success status of the request.",
+                                    "default": true,
+                                    "example": true
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "description": "Additional information about the response.",
+                                    "default": "Unit of measurement retrieved successfully",
+                                    "example": "Unit of measurement retrieved successfully"
+                                },
+                                "data": {
+                                    "$ref": "../../components/schemas/models/uniteofmesurement.json#/UniteMesure"
+                                },
+                                "status_code": {
+                                    "type": "integer",
+                                    "description": "Indicates the HTTP status code of the response.",
+                                    "default": 200,
+                                    "example": 200
+                                }
+                            }
                         }
                     }
+                },
+                "links": {
+                    "UpdateUnitDetailsByUnitId": {
+                        "operationId": "updateUnit",
+                        "parameters": {
+                            "unitId": "$response.body#/data/id"
+                        },
+                        "description": "Link to update unit of measurement information based on unit ID."
+                    },
+                    "DeleteUnitByUnitId": {
+                        "operationId": "deleteUnit",
+                        "parameters": {
+                            "unitId": "$response.body#/data/id"
+                        },
+                        "description": "Link to delete unit of measurement based on unit ID."
+                    }
                 }
+            },
+            "400": {
+                "$ref": "../../components/responses/errors/400.json#BadRequest"
+            },
+            "401": {
+                "$ref": "../../components/responses/errors/401.json#Unauthorized"
+            },
+            "403": {
+                "$ref": "../../components/responses/errors/403.json#Forbidden"
+            },
+            "404": {
+                "$ref": "../../components/responses/errors/404.json#NotFound"
+            },
+            "405": {
+                "$ref": "../../components/responses/errors/405.json#MethodNotAllowed"
+            },
+            "408": {
+                "$ref": "../../components/responses/errors/408.json#RequestTimeout"
+            },
+            "429": {
+                "$ref": "../../components/responses/errors/429.json#RateLimitExceeded"
+            },
+            "500": {
+                "$ref": "../../components/responses/errors/500.json#InternalServerError"
+            },
+            "503": {
+                "$ref": "../../components/responses/errors/503.json#ServiceUnavailable"
             }
         }
     },
@@ -55,13 +144,89 @@
         "responses": {
             "201": {
                 "description": "Successful update",
+                "headers": {
+                    "X-RateLimit-Limit": {
+                        "$ref": "../../components/headers/x_ratelimit_limit.json"
+                    },
+                    "X-RateLimit-Remaining": {
+                        "$ref": "../../components/headers/x_ratelimit_remaining.json"
+                    },
+                    "Access-Control-Allow-Origin": {
+                        "$ref": "../../components/headers/access_control_allow_origin.json"
+                    },
+                    "Access-Control-Allow-Methods": {
+                        "$ref": "../../components/headers/access_control_allow_methods.json"
+                    },
+                    "Access-Control-Allow-Credentials": {
+                        "$ref": "../../components/headers/access_control_allow_credentials.json"
+                    },
+                    "Access-Control-Max-Age": {
+                        "$ref": "../../components/headers/access_control_max_age.json"
+                    },
+                    "Access-Control-Allow-Headers": {
+                        "$ref": "../../components/headers/access_control_allow_headers.json"
+                    }
+                },
                 "content": {
                     "application/json": {
                         "schema": {
-                            "$ref": "../../components/schemas/models/uniteofmesurement.json#/UniteMesure"
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "boolean",
+                                    "description": "Indicates the success status of the request.",
+                                    "default": true,
+                                    "example": true
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "description": "Additional information about the response.",
+                                    "default": "Unit updated successfully",
+                                    "example": "Unit updated successfully"
+                                },
+                                "data": {
+                                    "$ref": "../../components/schemas/models/uniteofmesurement.json#/UniteMesure"
+                                },
+                                "status_code": {
+                                    "type": "integer",
+                                    "description": "Indicates the HTTP status code of the response.",
+                                    "default": 201,
+                                    "example": 201
+                                }
+                            }
                         }
                     }
                 }
+            },
+            "400": {
+                "$ref": "../../components/responses/errors/400.json#BadRequest"
+            },
+            "401": {
+                "$ref": "../../components/responses/errors/401.json#Unauthorized"
+            },
+            "403": {
+                "$ref": "../../components/responses/errors/403.json#Forbidden"
+            },
+            "404": {
+                "$ref": "../../components/responses/errors/404.json#NotFound"
+            },
+            "405": {
+                "$ref": "../../components/responses/errors/405.json#MethodNotAllowed"
+            },
+            "408": {
+                "$ref": "../../components/responses/errors/408.json#RequestTimeout"
+            },
+            "422": {
+                "$ref": "../../components/responses/errors/422.json#UnprocessableEntity"
+            },
+            "429": {
+                "$ref": "../../components/responses/errors/429.json#RateLimitExceeded"
+            },
+            "500": {
+                "$ref": "../../components/responses/errors/500.json#InternalServerError"
+            },
+            "503": {
+                "$ref": "../../components/responses/errors/503.json#ServiceUnavailable"
             }
         }
     },
@@ -81,8 +246,64 @@
             }
         ],
         "responses": {
-            "204": {
-                "description": "Unit of measure successfully deleted."
+            "200": {
+                "description": "Unit of measure successfully deleted.",
+                "headers": {
+                    "X-RateLimit-Limit": {
+                        "$ref": "../../components/headers/x_ratelimit_limit.json"
+                    },
+                    "X-RateLimit-Remaining": {
+                        "$ref": "../../components/headers/x_ratelimit_remaining.json"
+                    },
+                    "Access-Control-Allow-Origin": {
+                        "$ref": "../../components/headers/access_control_allow_origin.json"
+                    },
+                    "Access-Control-Allow-Methods": {
+                        "$ref": "../../components/headers/access_control_allow_methods.json"
+                    },
+                    "Access-Control-Allow-Credentials": {
+                        "$ref": "../../components/headers/access_control_allow_credentials.json"
+                    },
+                    "Access-Control-Max-Age": {
+                        "$ref": "../../components/headers/access_control_max_age.json"
+                    },
+                    "Access-Control-Allow-Headers": {
+                        "$ref": "../../components/headers/access_control_allow_headers.json"
+                    }
+                },
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "boolean",
+                                    "description": "Indicates the success status of the request.",
+                                    "default": true,
+                                    "example": true
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "description": "Additional information about the response.",
+                                    "default": "Unit of measure successfully deleted.",
+                                    "example": "Unit of measure successfully deleted."
+                                },
+                                "data": {
+                                    "type": "boolean",
+                                    "description": "Indicates the success status of the request.",
+                                    "default": true,
+                                    "example": true
+                                },
+                                "status_code": {
+                                    "type": "integer",
+                                    "description": "Indicates the HTTP status code of the response.",
+                                    "default": 200,
+                                    "example": 200
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }

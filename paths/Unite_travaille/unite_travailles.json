@@ -1,0 +1,83 @@
+{
+    "get": {
+        "summary": "Retrieve a unit of work by ID",
+        "parameters": [
+            {
+                "name": "uniteTravailleId",
+                "in": "path",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "format": "uuid"
+                }
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "Success",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "../../components/schemas/models/unitetravaille.json#/UniteTravaille"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "put": {
+        "summary": "Edit an existing unit of work",
+        "parameters": [
+            {
+                "name": "uniteTravailleId",
+                "in": "path",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "format": "uuid"
+                }
+            }
+        ],
+        "requestBody": {
+            "required": true,
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "$ref": "../../components/requestBodies/UniteTravaille/unitetravailles.json#/UniteTravailleInput"
+                    }
+                }
+            }
+        },
+        "responses": {
+            "201": {
+                "description": "Updated with Success",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "../../components/schemas/models/unitetravaille.json#/UniteTravaille"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "delete": {
+        "summary": "Delete an existing unit of work",
+        "parameters": [
+            {
+                "name": "uniteTravailleId",
+                "in": "path",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "format": "uuid"
+                }
+            }
+        ],
+        "responses": {
+            "204": {
+                "description": "Unit of work deleted with Success"
+            }
+        }
+    }
+}

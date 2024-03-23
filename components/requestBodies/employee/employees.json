@@ -1,0 +1,74 @@
+{
+    "NewEmployee": {
+        "type": "object",
+        "properties": {
+            "matricule": {
+                "type": "string",
+                "description": "Registration number of the new employee."
+            },
+            "type_employee": {
+                "type": "string",
+                "description": "Employee type of the new employee (regular or non-regular)."
+            },
+            "user": {
+                "type": "object",
+                "properties": {
+                    "username": {
+                        "type": "string",
+                        "description": "Username of the new employee."
+                    },
+                    "phone_number": {
+                        "type": "string",
+                        "description": "New employee's phone number."
+                    },
+                    "address": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Address of new employee."
+                    },
+                    "email": {
+                        "type": "string",
+                        "description": "Email of the new employee."
+                    }
+                },
+                "description": "Details of the user associated with the new employee."
+            }
+        }
+    },
+    "UpdatedEmployee": {
+        "type": "object",
+        "properties": {
+            "matricule": {
+                "type": "string",
+                "description": "New employee number."
+            },
+            "type_employee": {
+                "type": "string",
+                "description": "New Employee Employee Type"
+            },
+            "user": {
+                "type": "object",
+                "properties": {
+                    "username": {
+                        "type": "string",
+                        "description": "New employee username."
+                    },
+                    "phone_number": {
+                        "type": "string",
+                        "description": "New employee phone number."
+                    },
+                    "address": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "New employee address."
+                    },
+                    "email": {
+                        "type": "string",
+                        "description": "New employee email."
+                    }
+                },
+                "description": "New user details associated with the employee."
+            }
+        }
+    }
+}

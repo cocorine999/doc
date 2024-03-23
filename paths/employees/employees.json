@@ -1,0 +1,93 @@
+{
+    "get": {
+        "summary": "Get employee list",
+        "description": "Retrieves the list of all employees with their details.",
+        "responses": {
+            "200": {
+                "description": "Succès",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "boolean",
+                                    "description": "Indicates whether the request completed successfully."
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "nullable": true,
+                                    "description": "Message associated with the response. Null if no errors."
+                                },
+                                "data": {
+                                    "type": "object",
+                                    "properties": {
+                                        "current_page": {
+                                            "type": "integer",
+                                            "description": "Current page number."
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Employee"
+                                            },
+                                            "description": "List of recovered employees."
+                                        }
+                                    }
+                                },
+                                "status_code": {
+                                    "type": "integer",
+                                    "description": "Response status code."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "post": {
+        "summary": "Create a new employee",
+        "description": "Creates a new employee with the details provided.",
+        "requestBody": {
+            "required": true,
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "$ref": "../../components/requestBodies/employee/employees.json#/NewEmployee"
+                    }
+                }
+            }
+        },
+        "responses": {
+            "201": {
+                "description": "Created successfully",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "boolean",
+                                    "description": "Indicates whether the request completed successfully."
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "nullable": true,
+                                    "description": "Message associated with the response. Null if no errors."
+                                },
+                                "data": {
+                                    "$ref": "../../components/schemas/models/employee.json#/Employee"
+                                },
+                                "status_code": {
+                                    "type": "integer",
+                                    "description": "Response status code."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,145 @@
+{
+    "get": {
+        "summary": "Get all units of measurement",
+        "description": "Returns the list of all units of measurement registered in the system.",
+        "responses": {
+            "200": {
+                "description": "Success",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "boolean",
+                                    "description": "Indicates whether the query completed successfully."
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "nullable": true,
+                                    "description": "Response message, if applicable."
+                                },
+                                "data": {
+                                    "type": "object",
+                                    "properties": {
+                                        "current_page": {
+                                            "type": "integer",
+                                            "description": "Current page number."
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "../../components/schemas/models/uniteofmesurement.json#/UniteMesure"
+                                            },
+                                            "description": "List of units of measurement."
+                                        },
+                                        "first_page_url": {
+                                            "type": "string",
+                                            "format": "uri",
+                                            "description": "URL of the first results page."
+                                        },
+                                        "from": {
+                                            "type": "integer",
+                                            "description": "Index of the first entry in the results page."
+                                        },
+                                        "last_page": {
+                                            "type": "integer",
+                                            "description": "Number of the last results page."
+                                        },
+                                        "last_page_url": {
+                                            "type": "string",
+                                            "format": "uri",
+                                            "description": "URL of the last results page."
+                                        },
+                                        "links": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "url": {
+                                                        "type": "string",
+                                                        "format": "uri",
+                                                        "nullable": true,
+                                                        "description": "URL of the linked page."
+                                                    },
+                                                    "label": {
+                                                        "type": "string",
+                                                        "description": "Link label."
+                                                    },
+                                                    "active": {
+                                                        "type": "boolean",
+                                                        "description": "Indicates whether the link is active or not."
+                                                    }
+                                                }
+                                            },
+                                            "description": "Links to other results pages."
+                                        },
+                                        "next_page_url": {
+                                            "type": "string",
+                                            "format": "uri",
+                                            "nullable": true,
+                                            "description": "URL of the next results page."
+                                        },
+                                        "path": {
+                                            "type": "string",
+                                            "format": "uri",
+                                            "description": "Base URL of the request."
+                                        },
+                                        "per_page": {
+                                            "type": "integer",
+                                            "description": "Number of elements per page."
+                                        },
+                                        "prev_page_url": {
+                                            "type": "string",
+                                            "format": "uri",
+                                            "nullable": true,
+                                            "description": "URL of the previous results page."
+                                        },
+                                        "to": {
+                                            "type": "integer",
+                                            "description": "Index of the last entry in the results page."
+                                        },
+                                        "total": {
+                                            "type": "integer",
+                                            "description": "Total number of units of measurement in the system."
+                                        }
+                                    }
+                                },
+                                "status_code": {
+                                    "type": "integer",
+                                    "description": "HTTP status code of the response."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "post": {
+        "summary": "Create a new unit of measurement",
+        "description": "Creates a new unit of measurement with the details provided.",
+        "requestBody": {
+            "required": true,
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "$ref": "../../components/requestBodies/Unite_Mesure/uniteofmesurementInput.json#/UniteMesureInput"
+                    }
+                }
+            }
+        },
+        "responses": {
+            "201": {
+                "description": "Created successfully",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "../../components/schemas/models/uniteofmesurement.json#/UniteMesure"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -82,8 +82,8 @@
             }
         }
     ],
-    "paths": {"paths": {
-    "/api/unite_travailles": {
+  "paths": {
+    "/unite_travailles": {
       "get": {
         "summary": "Retrieve all units of work",
         "responses": {
@@ -92,23 +92,32 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "boolean",
-                      "example": true
-                    },
-                    "message": {
-                      "type": "string",
-                      "example": null
-                    },
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/UniteTravaille"
-                      }
-                    }
-                  }
+                  "$ref": "#/components/schemas/UniteTravailles"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new work unit",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UniteTravailleInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created with Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UniteTravaille"
                 }
               }
             }
@@ -116,16 +125,17 @@
         }
       }
     },
-    "/api/unite_travailles/{id}": {
+    "/unite_travailles/{id}": {
       "get": {
-        "summary": "Retrieve a work unit by its ID",
+        "summary": "Retrieve a unit of work by ID",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
@@ -143,14 +153,15 @@
         }
       },
       "put": {
-        "summary": "Update a work unit by its ID",
+        "summary": "Edit an existing unit of work",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
@@ -159,14 +170,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateUniteTravaille"
+                "$ref": "#/components/schemas/UniteTravailleInput"
               }
             }
           }
         },
         "responses": {
-          "200": {
-            "description": "Record updated with Success",
+          "201": {
+            "description": "Updated with Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -178,41 +189,21 @@
         }
       },
       "delete": {
-        "summary": "Delete a work unit by its ID",
+        "summary": "Delete an existing unit of work",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
         "responses": {
-          "200": {
-            "description": "Record deleted with Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "boolean",
-                      "example": true
-                    },
-                    "message": {
-                      "type": "string",
-                      "example": "Record deleted with Success"
-                    },
-                    "data": {
-                      "type": "object",
-                      "properties": {}
-                    }
-                  }
-                }
-              }
-            }
+          "204": {
+            "description": "Unit of work deleted with Success"
           }
         }
       }
@@ -224,43 +215,48 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string"
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier of the work unit"
           },
           "type_of_unite_travaille": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of work unit"
           },
           "unite_mesure_id": {
-            "type": "string"
+            "type": "string",
+            "description": "Identifier of the associated unit of measurement"
           },
           "article_id": {
-            "type": "string"
+            "type": "string",
+            "description": "Associated article identifier"
           },
           "can_be_deleted": {
-            "type": "boolean"
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time"
+            "type": "boolean",
+            "description": "Indicates whether the unit of work can be deleted"
           }
         }
       },
-      "UpdateUniteTravaille": {
+      "UniteTravailleInput": {
         "type": "object",
         "properties": {
           "type_of_unite_travaille": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of work unit"
           },
           "unite_mesure_id": {
-            "type": "string"
+            "type": "string",
+            "description": "Identifier of the associated unit of measurement"
           },
           "article_id": {
-            "type": "string"
+            "type": "string",
+            "description": "Associated article identifier"
           },
           "can_be_deleted": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether the unit of work can be deleted"
           }
-        },
-        "required": ["type_of_unite_travaille", "unite_mesure_id"]
+        }
       }
     }
   }

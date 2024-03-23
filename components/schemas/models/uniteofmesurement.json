@@ -1,0 +1,20 @@
+{
+    "UniteMesure": {
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Unique identifier of the unit of measurement."
+            },
+            "name": {
+                "type": "string",
+                "description": "Name of the unit of measurement."
+            },
+            "symbol": {
+                "type": "string",
+                "description": "Name of the unit of measurement."
+            }
+        }
+    }
+}

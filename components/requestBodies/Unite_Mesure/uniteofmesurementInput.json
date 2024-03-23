@@ -1,0 +1,15 @@
+{
+    "UniteMesureInput": {
+        "type": "object",
+        "properties": {
+            "name": {
+                "type": "string",
+                "description": "Name of the unit of measurement."
+            },
+            "symbol": {
+                "type": "string",
+                "description": "Symbol for the unit of measurement."
+            }
+        }
+    }
+}

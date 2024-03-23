@@ -1,0 +1,42 @@
+{
+    "get": {
+        "summary": "Récupérer tous les partenaires",
+        "responses": {
+            "200": {
+                "description": "Succès",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "../../components/schemas/models/partner.json#/PartnerListResponse"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "post": {
+        "summary": "Créer un nouveau partenaire",
+        "requestBody": {
+            "required": true,
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "$ref": "../../components/requestBodies/partner/partner.json#/PartnerCreate"
+                    }
+                }
+            }
+        },
+        "responses": {
+            "200": {
+                "description": "Succès",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "../../components/schemas/models/partner.json#/PartnerResponse"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

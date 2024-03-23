@@ -1,0 +1,89 @@
+{
+    "get": {
+        "summary": "Retrieve a unit of measure by ID",
+        "description": "Retrieves details of a single unit of measurement from its unique identifier.",
+        "parameters": [
+            {
+                "name": "uniteMesureId",
+                "in": "path",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "Unique identifier of the unit of measure to retrieve."
+                }
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "Success",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "../../components/schemas/models/uniteofmesurement.json#/UniteMesure"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "put": {
+        "summary": "Update an existing unit of measurement",
+        "description": "Updates the details of an existing unit of measure with the new information provided.",
+        "parameters": [
+            {
+                "name": "uniteMesureId",
+                "in": "path",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "Unique identifier of the unit of measure to retrieve."
+                }
+            }
+        ],
+        "requestBody": {
+            "required": true,
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "$ref": "../../components/requestBodies/Unite_Mesure/uniteofmesurementInput.json#/UniteMesureInput"
+                    }
+                }
+            }
+        },
+        "responses": {
+            "201": {
+                "description": "Successful update",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "../../components/schemas/models/uniteofmesurement.json#/UniteMesure"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "delete": {
+        "summary": "Delete an existing unit of measurement",
+        "description": "Allows you to delete an existing unit of measurement in the system.",
+        "parameters": [
+            {
+                "in": "path",
+                "name": "uniteMesureId",
+                "required": true,
+                "description": "Identifier of the unit of measurement to delete.",
+                "schema": {
+                    "type": "string",
+                    "format": "uuid"
+                }
+            }
+        ],
+        "responses": {
+            "204": {
+                "description": "Unit of measure successfully deleted."
+            }
+        }
+    }
+}

@@ -1,0 +1,175 @@
+{
+    "PartnerListResponse": {
+        "type": "object",
+        "properties": {
+            "status": {
+                "type": "boolean",
+                "description": "Request status."
+            },
+            "message": {
+                "type": "string",
+                "nullable": true,
+                "description": "Message associated with the response."
+            },
+            "data": {
+                "type": "object",
+                "properties": {
+                    "current_page": {
+                        "type": "integer",
+                        "description": "Current page number."
+                    },
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#PartnerResponse"
+                        },
+                        "description": "List of partners."
+                    },
+                    "first_page_url": {
+                        "type": "string",
+                        "description": "URL of the first page."
+                    },
+                    "from": {
+                        "type": "integer",
+                        "description": "Index of the first element of the current page."
+                    },
+                    "last_page": {
+                        "type": "integer",
+                        "description": " Last page number."
+                    },
+                    "last_page_url": {
+                        "type": "string",
+                        "description": "URL of the last page."
+                    },
+                    "links": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "url": {
+                                    "type": "string",
+                                    "nullable": true,
+                                    "description": "Link URL."
+                                },
+                                "label": {
+                                    "type": "string",
+                                    "description": "Link label."
+                                },
+                                "active": {
+                                    "type": "boolean",
+                                    "description": "Link activation indicator."
+                                }
+                            }
+                        },
+                        "description": "List of pagination links."
+                    },
+                    "next_page_url": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "URL of the next page."
+                    },
+                    "path": {
+                        "type": "string",
+                        "description": "Path of the current query."
+                    },
+                    "per_page": {
+                        "type": "integer",
+                        "description": "Number of elements per page."
+                    },
+                    "prev_page_url": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "URL of the previous page."
+                    },
+                    "to": {
+                        "type": "integer",
+                        "description": "Index of the last element of the current page."
+                    },
+                    "total": {
+                        "type": "integer",
+                        "description": "Total number of items."
+                    }
+                }
+            }
+        }
+    },
+    "PartnerResponse": {
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "string",
+                "description": "Partner ID."
+            },
+            "country": {
+                "type": "string",
+                "nullable": true,
+                "description": "Partner country."
+            },
+            "company": {
+                "type": "string",
+                "nullable": true,
+                "description": "Partner company name."
+            },
+            "type_partner": {
+                "type": "string",
+                "description": "Type of partner (customer or supplier)."
+            },
+            "created_at": {
+                "type": "string",
+                "format": "date-time",
+                "description": "Partner creation date."
+            },
+            "suppliers": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "description": "supplier ID."
+                        },
+                        "created_at": {
+                            "type": "string",
+                            "format": "date-time",
+                            "description": "Date of creation of the link with the supplier."
+                        }
+                    }
+                },
+                "description": "List of suppliers associated with the partner."
+            },
+            "user": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "User ID associated with the partner."
+                    },
+                    "username": {
+                        "type": "string",
+                        "description": "Username of the user associated with the partner."
+                    },
+                    "phone_number": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Phone number of the user associated with the partner."
+                    },
+                    "address": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Address of the user associated with the partner."
+                    },
+                    "email": {
+                        "type": "string",
+                        "description": "Email of the user associated with the partner."
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "Date de création de l'utilisateur associé au partenaire."
+                    }
+                },
+                "description": "Details of the user associated with the partner."
+            }
+        }
+    }
+}

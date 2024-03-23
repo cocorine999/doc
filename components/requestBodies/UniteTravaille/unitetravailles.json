@@ -1,0 +1,23 @@
+{
+    "UniteTravailleInput": {
+        "type": "object",
+        "properties": {
+            "type_of_unite_travaille": {
+                "type": "string",
+                "description": "Type of work unit"
+            },
+            "unite_mesure_id": {
+                "type": "string",
+                "description": "Identifier of the associated unit of measurement"
+            },
+            "article_id": {
+                "type": "string",
+                "description": "Associated article identifier"
+            },
+            "can_be_deleted": {
+                "type": "boolean",
+                "description": "Indicates whether the unit of work can be deleted"
+            }
+        }
+    }
+}

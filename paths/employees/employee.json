@@ -1,0 +1,126 @@
+{
+    "get": {
+        "summary": "Get employee details",
+        "description": "Retrieves details of an employee specified by their ID.",
+        "parameters": [
+            {
+                "name": "employee_id",
+                "in": "path",
+                "description": "ID of the employee to retrieve.",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                }
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "Success",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "../../components/schemas/models/employee.json#/Employee"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "put": {
+        "summary": "Update an employee",
+        "description": "Updates the details of an employee specified by their ID.",
+        "parameters": [
+            {
+                "name": "employee_id",
+                "in": "path",
+                "description": "Employee ID to update.",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                }
+            }
+        ],
+        "requestBody": {
+            "required": true,
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "$ref": "../../components/requestBodies/employee/employees.json#/UpdatedEmployee"
+                    }
+                }
+            }
+        },
+        "responses": {
+            "200": {
+                "description": "Successful update",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "boolean",
+                                    "description": "Indicates whether the request completed successfully."
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "nullable": true,
+                                    "description": "Message associated with the response. Null if no errors."
+                                },
+                                "data": {
+                                    "$ref": "../../components/schemas/models/employee.json#/Employee"
+                                },
+                                "status_code": {
+                                    "type": "integer",
+                                    "description": "Response status code."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "delete": {
+        "summary": "Remove an employee",
+        "description": "Deletes an employee specified by their ID.",
+        "parameters": [
+            {
+                "name": "employee_id",
+                "in": "path",
+                "description": "ID of the employee to delete.",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                }
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "Deletion successful",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "boolean",
+                                    "description": "Indicates whether the request completed successfully."
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "nullable": true,
+                                    "description": "Message associated with the response. Null if no errors."
+                                },
+                                "status_code": {
+                                    "type": "integer",
+                                    "description": "Response status code."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

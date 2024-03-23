@@ -1,0 +1,42 @@
+{
+    "get": {
+        "summary": "Retrieve all units of work",
+        "responses": {
+            "200": {
+                "description": "Success",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "../../components/schemas/models/unitetravaille.json#/UniteTravaille"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "post": {
+        "summary": "Create a new work unit",
+        "requestBody": {
+            "required": true,
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "$ref": "../../components/requestBodies/UniteTravaille/unitetravailles.json#/UniteTravailleInput"
+                    }
+                }
+            }
+        },
+        "responses": {
+            "201": {
+                "description": "Created with Success",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "../../components/schemas/models/unitetravaille.json#/UniteTravaille"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

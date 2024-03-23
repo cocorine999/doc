@@ -1,0 +1,74 @@
+{
+    "PartnerCreate": {
+        "type": "object",
+        "properties": {
+            "country": {
+                "type": "string",
+                "nullable": true,
+                "description": "Pays du partenaire."
+            },
+            "company": {
+                "type": "string",
+                "nullable": true,
+                "description": "Nom de la compagnie du partenaire."
+            },
+            "type_partner": {
+                "type": "string",
+                "description": "Type de partenaire (client ou fournisseur)."
+            },
+            "user": {
+                "$ref": "#UserCreate"
+            }
+        },
+        "required": [
+            "type_partner",
+            "user"
+        ]
+    },
+    "PartnerUpdate": {
+        "type": "object",
+        "properties": {
+            "country": {
+                "type": "string",
+                "nullable": true,
+                "description": "Pays du partenaire."
+            },
+            "company": {
+                "type": "string",
+                "nullable": true,
+                "description": "Nom de la compagnie du partenaire."
+            },
+            "type_partner": {
+                "type": "string",
+                "description": "Type de partenaire (client ou fournisseur)."
+            }
+        }
+    },
+    "UserCreate": {
+        "type": "object",
+        "properties": {
+            "username": {
+                "type": "string",
+                "description": "Nom d'utilisateur."
+            },
+            "phone_number": {
+                "type": "string",
+                "nullable": true,
+                "description": "Numéro de téléphone."
+            },
+            "address": {
+                "type": "string",
+                "nullable": true,
+                "description": "Adresse."
+            },
+            "email": {
+                "type": "string",
+                "description": "Email."
+            }
+        },
+        "required": [
+            "username",
+            "email"
+        ]
+    }
+}

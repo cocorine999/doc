@@ -159,6 +159,18 @@
         "/roles/{roleId}/revoke-access": {
             "$ref": "paths/roles/revoke_access.json"
         },
+        "/unite_mesures": {
+            "$ref": "paths/Unite_Mesure/unites.json"
+        },
+        "/unite_mesures/{{uniteMesureId}}": {
+            "$ref": "paths/Unite_Mesure/unite.json"
+        },
+        "/unite_travailles": {
+            "$ref": "paths/Unite_travaille/unite_travaille.json"
+        },
+        "/unite_travailles/{{uniteTravailleId}}": {
+            "$ref": "paths/Unite_travaille/unite_travailles.json"
+        },
         "/users": {
             "get": {
                 "summary": "Retrieve users",

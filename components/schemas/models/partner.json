@@ -59,6 +59,7 @@
                                     "type": "boolean",
                                     "description": "Link activation indicator."
                                 }
+                                
                             }
                         },
                         "description": "List of pagination links."

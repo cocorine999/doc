@@ -176,7 +176,7 @@
         },
         "/employee/{employee_id}":{
             "$ref": "paths/employees/employee.json"
-        },,
+        },
         "/partners":{
             "$ref": "paths/partners/partners.json"
         },

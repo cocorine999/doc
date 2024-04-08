@@ -52,7 +52,7 @@
                                         "data": {
                                             "type": "array",
                                             "items": {
-                                                "$ref": "#/components/schemas/Employee"
+                                                "$ref": "../../components/schemas/models/employee.json#/Employee"
                                             },
                                             "description": "List of retrieved employees."
                                         },
@@ -284,4 +284,5 @@
             }
         }
     }
+   
 }

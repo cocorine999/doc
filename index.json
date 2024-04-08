@@ -171,6 +171,18 @@
         "/unite_travailles/{{uniteTravailleId}}": {
             "$ref": "paths/Unite_travaille/unite_travailles.json"
         },
+        "/employees":{
+            "$ref": "paths/employees/employees.json"
+        },
+        "/employee/{employee_id}":{
+            "$ref": "paths/employees/employee.json"
+        },,
+        "/partners":{
+            "$ref": "paths/partners/partners.json"
+        },
+        "/partners/{partnerId}":{
+            "$ref": "paths/partners/partner.json"
+        },
         "/users": {
             "get": {
                 "summary": "Retrieve users",

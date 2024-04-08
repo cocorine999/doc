@@ -1,0 +1,48 @@
+{
+    "AssignPost": {
+        "type": "object",
+        "properties": {
+            "contract_id": {
+                "type": "string",
+                "description": "ID of the contract."
+            },
+            "reference": {
+                "type": "string",
+                "description": "Reference of the post assignment."
+            },
+            "type_contract": {
+                "type": "string",
+                "description": "Type of contract."
+            },
+            "duree": {
+                "type": "string",
+                "description": "Duration of the contract."
+            },
+            "date_debut": {
+                "type": "string",
+                "format": "date",
+                "description": "Start date of the contract."
+            },
+            "renouvelable": {
+                "type": "string",
+                "description": "Whether the contract is renewable or not."
+            },
+            "poste_id": {
+                "type": "string",
+                "description": "ID of the post."
+            },
+            "montant": {
+                "type": "integer",
+                "description": "Amount of the contract."
+            },
+            "unite_mesures_id": {
+                "type": "string",
+                "description": "ID of the unit measure."
+            },
+            "employee_contractuel_id": {
+                "type": "string",
+                "description": "ID of the contract employee."
+            }
+        }
+    }
+}

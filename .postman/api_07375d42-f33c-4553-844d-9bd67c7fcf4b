@@ -28,6 +28,7 @@ files[] = {"path":"components/headers/x_ratelimit_remaining.json","metaData":{}}
 files[] = {"path":"components/parameters/page.json","metaData":{}}
 files[] = {"path":"components/parameters/per_page.json","metaData":{}}
 files[] = {"path":"components/parameters/role_id.json","metaData":{}}
+files[] = {"path":"components/requestBodies/employee/assign_post.json","metaData":{}}
 files[] = {"path":"components/requestBodies/employee/employees.json","metaData":{}}
 files[] = {"path":"components/requestBodies/partner/partner.json","metaData":{}}
 files[] = {"path":"components/requestBodies/roles/role_request.json","metaData":{}}
@@ -53,6 +54,7 @@ files[] = {"path":"components/schemas/models/role.json","metaData":{}}
 files[] = {"path":"components/schemas/models/uniteofmesurement.json","metaData":{}}
 files[] = {"path":"components/schemas/models/unitetravaille.json","metaData":{}}
 files[] = {"path":"index.json","metaData":{}}
+files[] = {"path":"paths/employees/assign_post.json","metaData":{}}
 files[] = {"path":"paths/employees/employee.json","metaData":{}}
 files[] = {"path":"paths/employees/employees.json","metaData":{}}
 files[] = {"path":"paths/employees/index.json","metaData":{}}
@@ -78,4 +80,4 @@ files[] = {"path":"paths/users/index.json","metaData":{}}
 
 [config.relations.apiDefinition.metaData]
 type = openapi:3
-rootFiles[] = index.json
+rootFiles[] = paths/Unite_Mesure/index.json

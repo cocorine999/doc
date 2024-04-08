@@ -2,7 +2,7 @@
     "openapi": "3.0.3",
     "info": {
         "version": "1.0.0",
-        "title": "LABEL TRUST API DOCUMENTATION",
+        "title": "LABEL TRUST API",
         "description": "API documentation for permissions, roles, users, and authentication",
         "termsOfService": "https://www.labelstrust.com/terms.html",
         "contact": {

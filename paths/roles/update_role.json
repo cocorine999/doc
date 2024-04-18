@@ -14,6 +14,9 @@
         },
         {
             "$ref": "../../components/headers/accept.json"
+        },
+        {
+            "$ref": "../../components/headers/origin.json"
         }
     ],
     "requestBody": {

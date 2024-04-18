@@ -1,0 +1,10 @@
+{
+    "name": "Origin",
+    "in": "header",
+    "description": "The content type of the request body",
+    "required": true,
+    "schema": {
+        "type": "string",
+        "default": "http://127.0.0.1:8000"
+    }
+}

@@ -109,6 +109,14 @@
         {
             "name": "Authentication",
             "description": "APIs related to user authentication and authorization. These endpoints handle user login, logout, and token management."
+        },
+        {
+            "name": "Departements",
+            "description": "APIs related to departements management. These endpoints allow clients to create, retrieve, update, and delete departements."
+        },
+        {
+            "name": "Postes",
+            "description": "APIs related to postes management. These endpoints allow clients to create, retrieve, update, and delete postes."
         }
     ],
     "paths": {
@@ -1095,7 +1103,6 @@
                 }
             }
         },
-
         "/departements": {
             "get": {
                 "tags": [
@@ -1115,19 +1122,19 @@
                 "tags": [
                     "Departements"
                 ],
-                "$ref": "paths/roles/find_departement.json"
+                "$ref": "paths/departements/find_departement.json"
             },
             "put": {
                 "tags": [
                     "Departements"
                 ],
-                "$ref": "paths/roles/update_departement.json"
+                "$ref": "paths/departements/update_departement.json"
             },
             "delete": {
                 "tags": [
                     "Departements"
                 ],
-                "$ref": "paths/roles/delete_departement.json"
+                "$ref": "paths/departements/delete_departement.json"
             }
         },
         "/postes": {

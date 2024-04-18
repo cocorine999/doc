@@ -26,7 +26,7 @@
             "$ref": "../../components/headers/content_type.json"
         },
         {
-            "$ref": "../../components/headers/accept.json"
+            "$ref": "../../components/headers/origin.json"
         }
     ],
     "responses": {

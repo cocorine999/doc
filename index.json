@@ -129,6 +129,10 @@
         {
             "name": "CategoriesDeCompte",
             "description": "APIs related to categories de compte management. These endpoints allow clients to create, retrieve, update, and delete categories de compte."
+        },
+        {
+            "name": "ClassesDeCompte",
+            "description": "APIs related to classes de compte management. These endpoints allow clients to create, retrieve, update, and delete classes de compte."
         }
         
     ],
@@ -2435,7 +2439,43 @@
                 ],
                 "$ref": "paths/categories_de_compte/delete_categorie_de_compte.json"
             }
+        },
+
+        "/classes_de_compte": {
+            "get": {
+                "tags": [
+                    "ClassesDeCompte"
+                ],
+                "$ref": "paths/classes_de_compte/list_classes_de_compte.json"
+            },
+            "post": {
+                "tags": [
+                    "ClassesDeCompte"
+                ],
+                "$ref": "paths/classes_de_compte/create_classe_de_compte.json"
+            }
+        },
+        "/classes_de_compte/{classeDeCompteId}": {
+            "get": {
+                "tags": [
+                    "ClassesDeCompte"
+                ],
+                "$ref": "paths/classes_de_compte/find_classe_de_compte.json"
+            },
+            "put": {
+                "tags": [
+                    "ClassesDeCompte"
+                ],
+                "$ref": "paths/classes_de_compte/update_classe_de_compte.json"
+            },
+            "delete": {
+                "tags": [
+                    "ClassesDeCompte"
+                ],
+                "$ref": "paths/classes_de_compte/delete_classe_de_compte.json"
+            }
         }
+
     },
     "components": {
         "schemas": {

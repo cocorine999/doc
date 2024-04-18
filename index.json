@@ -113,6 +113,10 @@
         {
             "name": "Departements",
             "description": "APIs related to departements management. These endpoints allow clients to create, retrieve, update, and delete departements."
+        },
+        {
+            "name": "Postes",
+            "description": "APIs related to postes management. These endpoints allow clients to create, retrieve, update, and delete postes."
         }
     ],
     "paths": {

@@ -121,7 +121,12 @@
         {
             "name": "Devises",
             "description": "APIs related to devises management. These endpoints allow clients to create, retrieve, update, and delete devises."
+        },
+        {
+            "name": "PeriodesExercice",
+            "description": "APIs related to periodes exercice management. These endpoints allow clients to create, retrieve, update, and delete periodes exercice."
         }
+        
     ],
     "paths": {
         "/permissions": {
@@ -216,41 +221,6 @@
                     "Departements"
                 ],
                 "$ref": "paths/departements/delete_departement.json"
-            }
-        },
-
-        "/devises": {
-            "get": {
-                "tags": [
-                    "Devises"
-                ],
-                "$ref": "paths/devises/list_devises.json"
-            },
-            "post": {
-                "tags": [
-                    "Devises"
-                ],
-                "$ref": "paths/devises/create_devise.json"
-            }
-        },
-        "/devises/{deviseId}": {
-            "get": {
-                "tags": [
-                    "Devises"
-                ],
-                "$ref": "paths/devises/find_devise.json"
-            },
-            "put": {
-                "tags": [
-                    "Devises"
-                ],
-                "$ref": "paths/devises/update_devise.json"
-            },
-            "delete": {
-                "tags": [
-                    "Devises"
-                ],
-                "$ref": "paths/devises/delete_devise.json"
             }
         },
 
@@ -2355,6 +2325,76 @@
                         }
                     }
                 }
+            }
+        },
+
+        "/devises": {
+            "get": {
+                "tags": [
+                    "Devises"
+                ],
+                "$ref": "paths/devises/list_devises.json"
+            },
+            "post": {
+                "tags": [
+                    "Devises"
+                ],
+                "$ref": "paths/devises/create_devise.json"
+            }
+        },
+        "/devises/{deviseId}": {
+            "get": {
+                "tags": [
+                    "Devises"
+                ],
+                "$ref": "paths/devises/find_devise.json"
+            },
+            "put": {
+                "tags": [
+                    "Devises"
+                ],
+                "$ref": "paths/devises/update_devise.json"
+            },
+            "delete": {
+                "tags": [
+                    "Devises"
+                ],
+                "$ref": "paths/devises/delete_devise.json"
+            }
+        },
+
+        "/periodes_exercice": {
+            "get": {
+                "tags": [
+                    "PeriodesExercice"
+                ],
+                "$ref": "paths/periodes_exercice/list_periodes_exercice.json"
+            },
+            "post": {
+                "tags": [
+                    "PeriodesExercice"
+                ],
+                "$ref": "paths/periodes_exercice/create_periode_exercice.json"
+            }
+        },
+        "/periodes_exercice/{periodeExerciceId}": {
+            "get": {
+                "tags": [
+                    "PeriodesExercice"
+                ],
+                "$ref": "paths/periodes_exercice/find_periode_exercice.json"
+            },
+            "put": {
+                "tags": [
+                    "PeriodesExercice"
+                ],
+                "$ref": "paths/periodes_exercice/update_periode_exercice.json"
+            },
+            "delete": {
+                "tags": [
+                    "PeriodesExercice"
+                ],
+                "$ref": "paths/periodes_exercice/delete_periode_exercice.json"
             }
         }
     },

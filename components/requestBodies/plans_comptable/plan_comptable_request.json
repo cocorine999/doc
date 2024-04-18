@@ -9,9 +9,15 @@
             "name": {
                 "type": "string",
                 "nullable": false,
-                "example": "Revenue",
-                "default": "Compte des immobilisations",
-                "description": "Nom de la categorie de compte"
+                "example": "Plan comptable",
+                "default": "Plan comptable",
+                "description": "Nom du plan comptable"
+            },
+            "accounts": {
+                "type": "array",
+                "items": {
+                    "$ref": "account_request.json#/AccountRequest"
+                }
             }
         }
     }

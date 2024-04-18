@@ -1,5 +1,5 @@
 {
-    "Devise": {
+    "Compte": {
         "type": "object",
         "required": [
             "id",

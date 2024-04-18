@@ -133,6 +133,10 @@
         {
             "name": "ClassesDeCompte",
             "description": "APIs related to classes de compte management. These endpoints allow clients to create, retrieve, update, and delete classes de compte."
+        },
+        {
+            "name": "Comptes",
+            "description": "APIs related to comptes management. These endpoints allow clients to create, retrieve, update, and delete comptes."
         }
         
     ],
@@ -2473,6 +2477,41 @@
                     "ClassesDeCompte"
                 ],
                 "$ref": "paths/classes_de_compte/delete_classe_de_compte.json"
+            }
+        },
+
+        "/comptes": {
+            "get": {
+                "tags": [
+                    "Comptes"
+                ],
+                "$ref": "paths/comptes/list_comptes.json"
+            },
+            "post": {
+                "tags": [
+                    "Comptes"
+                ],
+                "$ref": "paths/comptes/create_compte.json"
+            }
+        },
+        "/comptes/{compteId}": {
+            "get": {
+                "tags": [
+                    "Comptes"
+                ],
+                "$ref": "paths/comptes/find_compte.json"
+            },
+            "put": {
+                "tags": [
+                    "Comptes"
+                ],
+                "$ref": "paths/comptes/update_compte.json"
+            },
+            "delete": {
+                "tags": [
+                    "Comptes"
+                ],
+                "$ref": "paths/comptes/delete_compte.json"
             }
         }
 

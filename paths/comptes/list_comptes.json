@@ -1,0 +1,246 @@
+{
+    "summary": "Retrieve list of classes de compte",
+    "operationId": "fetchListOfClassesDeCompte",
+    "description": "Retrieves classes de compte information based on certain criteria.",
+    "parameters": [
+        {
+            "$ref": "../../components/parameters/page.json"
+        },
+        {
+            "$ref": "../../components/parameters/per_page.json"
+        },
+        {
+            "name": "fields",
+            "in": "query",
+            "description": "Comma-separated list of fields to include in the response.",
+            "required": false,
+            "schema": {
+                "type": "string"
+            },
+            "example": "id,name"
+        },
+        {
+            "$ref": "../../components/headers/authorization_header.json"
+        },
+        {
+            "$ref": "../../components/headers/content_type.json"
+        },
+        {
+            "$ref": "../../components/headers/origin.json"
+        }
+    ],
+    "responses": {
+        "200": {
+            "description": "Successfully Response",
+            "headers": {
+                "X-RateLimit-Limit": {
+                    "$ref": "../../components/headers/x_ratelimit_limit.json"
+                },
+                "X-RateLimit-Remaining": {
+                    "$ref": "../../components/headers/x_ratelimit_remaining.json"
+                },
+                "Access-Control-Allow-Origin": {
+                    "$ref": "../../components/headers/access_control_allow_origin.json"
+                },
+                "Access-Control-Allow-Methods": {
+                    "$ref": "../../components/headers/access_control_allow_methods.json"
+                },
+                "Access-Control-Allow-Credentials": {
+                    "$ref": "../../components/headers/access_control_allow_credentials.json"
+                },
+                "Access-Control-Max-Age": {
+                    "$ref": "../../components/headers/access_control_max_age.json"
+                },
+                "Access-Control-Allow-Headers": {
+                    "$ref": "../../components/headers/access_control_allow_headers.json"
+                }
+            },
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "status": {
+                                "type": "boolean",
+                                "description": "Indicates the success status of the request.",
+                                "default": true,
+                                "example": true
+                            },
+                            "message": {
+                                "type": "string",
+                                "description": "Additional information about the response.",
+                                "nullable": true,
+                                "default": null,
+                                "example": "List of classes de compte retrieve successfully"
+                            },
+                            "data": {
+                                "type": "object",
+                                "properties": {
+                                    "current_page": {
+                                        "type": "integer",
+                                        "description": "The current page number.",
+                                        "default": 1,
+                                        "minimum": 1,
+                                        "example": 2
+                                    },
+                                    "data": {
+                                        "type": "array",
+                                        "description": "List of classes de compte.",
+                                        "items": {
+                                            "$ref": "../../components/schemas/models/classe_de_compte.json#/ClasseDeCompte"
+                                        }
+                                    },
+                                    "first_page_url": {
+                                        "type": "string",
+                                        "description": "The URL of the first page in the pagination.",
+                                        "example": "classes_de_compte?page=1",
+                                        "default": "classes_de_compte?page=1"
+                                    },
+                                    "from": {
+                                        "type": "integer",
+                                        "description": "The index of the first item in the current page.",
+                                        "nullable": true,
+                                        "default": null,
+                                        "example": 1
+                                    },
+                                    "last_page": {
+                                        "type": "integer",
+                                        "description": "The index of the last item in the current page.",
+                                        "minimum": 1,
+                                        "default": 1,
+                                        "example": 7
+                                    },
+                                    "last_page_url": {
+                                        "type": "string",
+                                        "description": "The URL of the last page in the pagination sequence.",
+                                        "example": "classes_de_compte?page=7",
+                                        "default": "classes_de_compte?page=1"
+                                    },
+                                    "links": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "url": {
+                                                    "type": "string",
+                                                    "description": "The URL of the page.",
+                                                    "nullable": true,
+                                                    "default": null,
+                                                    "example": null
+                                                },
+                                                "label": {
+                                                    "type": "string",
+                                                    "description": "The label of the page.",
+                                                    "nullable": true,
+                                                    "default": "1",
+                                                    "example": "&laquo; Previous"
+                                                },
+                                                "active": {
+                                                    "type": "boolean",
+                                                    "description": "Indicates whether the page is active.",
+                                                    "default": false,
+                                                    "example": true
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "next_page_url": {
+                                        "type": "string",
+                                        "description": "The URL to retrieve the next page of results.",
+                                        "nullable": true,
+                                        "default": null,
+                                        "example": "classes_de_compte?page=3"
+                                    },
+                                    "path": {
+                                        "type": "string",
+                                        "description": "The URL path of the current page.",
+                                        "example": "classes_de_compte"
+                                    },
+                                    "per_page": {
+                                        "type": "integer",
+                                        "description": "The total number of items available per page. Defaults to 15, with a minimum of 10 and a maximum of 25.",
+                                        "default": 15,
+                                        "example": 15,
+                                        "minimum": 10,
+                                        "maximum": 25
+                                    },
+                                    "prev_page_url": {
+                                        "type": "string",
+                                        "description": "The URL of the previous page.",
+                                        "nullable": true,
+                                        "default": null,
+                                        "example": "classes_de_compte?page=1"
+                                    },
+                                    "to": {
+                                        "type": "integer",
+                                        "description": "The ending index of the data on the current page. Example value is 2. Can be null.",
+                                        "example": 3,
+                                        "default": null,
+                                        "nullable": true
+                                    },
+                                    "total": {
+                                        "type": "integer",
+                                        "description": "The total number of items.",
+                                        "minimum": 0,
+                                        "default": 0,
+                                        "example": 100
+                                    }
+                                }
+                            },
+                            "status_code": {
+                                "type": "integer",
+                                "description": "Indicates whether the request was successful.",
+                                "default": 200,
+                                "example": 200
+                            }
+                        }
+                    }
+                }
+            },
+            "links": {
+                "GetClasseDeCompteDetailsByClasseDeCompteId": {
+                    "operationId": "getClasseDeCompte",
+                    "parameters": {
+                        "classeDeCompteId": "$response.body#/data/data/0/id"
+                    },
+                    "description": "Link to get classe de compte information based on classe de compte ID."
+                },
+                "UpdateClasseDeCompteDetailsByClasseDeCompteId": {
+                    "operationId": "updateClasseDeCompte",
+                    "parameters": {
+                        "classeDeCompteId": "$response.body#/data/data/0/id"
+                    },
+                    "description": "Link to update classe de compte information based on classe de compte ID."
+                },
+                "DeleteClasseDeCompteByClasseDeCompteId": {
+                    "operationId": "deleteClasseDeCompte",
+                    "parameters": {
+                        "classeDeCompteId": "$response.body#/data/data/0/id"
+                    },
+                    "description": "Link to delete classe de compte based on classe de compte ID."
+                }
+            }
+        },
+        "400": {
+            "$ref": "../../components/responses/errors/400.json#BadRequest"
+        },
+        "405": {
+            "$ref": "../../components/responses/errors/405.json#MethodNotAllowed"
+        },
+        "408": {
+            "$ref": "../../components/responses/errors/408.json#RequestTimeout"
+        },
+        "422": {
+            "$ref": "../../components/responses/errors/422.json#UnprocessableEntity"
+        },
+        "429": {
+            "$ref": "../../components/responses/errors/429.json#RateLimitExceeded"
+        },
+        "500": {
+            "$ref": "../../components/responses/errors/500.json#InternalServerError"
+        },
+        "503": {
+            "$ref": "../../components/responses/errors/503.json#ServiceUnavailable"
+        }
+    }
+}

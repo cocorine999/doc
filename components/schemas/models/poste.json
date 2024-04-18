@@ -1,5 +1,5 @@
 {
-    "Departement": {
+    "Poste": {
         "type": "object",
         "required": [
             "id",

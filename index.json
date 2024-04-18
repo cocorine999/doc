@@ -210,6 +210,51 @@
                 "$ref": "paths/departements/delete_departement.json"
             }
         },
+
+        "/postes": {
+            "get": {
+                "tags": [
+                    "Postes"
+                ],
+                "$ref": "paths/postes/list_poste.json"
+            },
+            "post": {
+                "tags": [
+                    "Postes"
+                ],
+                "$ref": "paths/postes/create_poste.json"
+            }
+        },
+        "/postes/{posteId}": {
+            "get": {
+                "tags": [
+                    "Postes"
+                ],
+                "$ref": "paths/postes/find_poste.json"
+            },
+            "put": {
+                "tags": [
+                    "Postes"
+                ],
+                "$ref": "paths/postes/update_poste.json"
+            },
+            "delete": {
+                "tags": [
+                    "Postes"
+                ],
+                "$ref": "paths/postes/delete_poste.json"
+            }
+        },
+        "/postes/{posteId}/salaries": {
+            "$ref": "paths/postes/fetch_poste_salaries.json"
+        },
+        "/postes/{posteId}/attach-salaries": {
+            "$ref": "paths/postes/attach_salaries.json"
+        },
+        "/postes/{posteId}/detach-access": {
+            "$ref": "paths/postes/detach_access.json"
+        },
+
         "/employees":{
             "$ref": "paths/employees/employees.json"
         },
@@ -2262,54 +2307,6 @@
                                             "example": 200
                                         }
                                     }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/spacecrafts/{spacecraftId}": {
-            "parameters": [
-                {
-                    "name": "spacecraftId",
-                    "description": "The unique identifier of the spacecraft",
-                    "in": "path",
-                    "required": true,
-                    "schema": {
-                        "$ref": "#/components/schemas/SpacecraftId"
-                    }
-                }
-            ],
-            "get": {
-                "summary": "Read a spacecraft",
-                "responses": {
-                    "200": {
-                        "description": "The spacecraft corresponding to the provided `spacecraftId`",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Spacecraft"
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "No spacecraft found for the provided `spacecraftId`",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "Unexpected error",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
                                 }
                             }
                         }

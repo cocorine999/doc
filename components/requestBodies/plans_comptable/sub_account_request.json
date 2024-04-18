@@ -16,7 +16,7 @@
                 "$ref": "../../schemas/identifier.json#/Identifier",
                 "description": "The unique identifier of the classe de compte"
             },
-            "compte_id": {
+            "sous_compte_id": {
                 "$ref": "../../schemas/identifier.json#/Identifier",
                 "description": "The unique identifier of the compte"
             },
@@ -28,6 +28,14 @@
                 "type": "array",
                 "items": {
                     "$ref": "sub_account_request.json#/SubAccountRequest"
+                }
+            }
+        },
+        "not": {
+            "required": ["sous_compte_id"],
+            "properties": {
+                "compte_data": {
+                    "type": "object"
                 }
             }
         }

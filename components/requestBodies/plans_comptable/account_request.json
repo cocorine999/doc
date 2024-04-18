@@ -30,6 +30,14 @@
                     "$ref": "sub_account_request.json#/SubAccountRequest"
                 }
             }
+        },
+        "not": {
+            "required": ["compte_id"],
+            "properties": {
+                "compte_data": {
+                    "type": "object"
+                }
+            }
         }
     }
 }

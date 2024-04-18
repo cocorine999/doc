@@ -1,10 +1,10 @@
 {
-    "summary": "Soft-Delete an existing classe de compte by id",
-    "description": "Soft-Delete an existing classe de compte by its unique identifier.",
-    "operationId": "deleteClasseDeCompte",
+    "summary": "Soft-Delete an existing compte by id",
+    "description": "Soft-Delete an existing compte by its unique identifier.",
+    "operationId": "deleteCompte",
     "parameters": [
         {
-            "$ref": "../../components/parameters/classe_de_compte_id.json#/ClasseDeCompteId"
+            "$ref": "../../components/parameters/compte_id.json#/CompteId"
         },
         {
             "$ref": "../../components/headers/authorization_header.json"
@@ -21,7 +21,7 @@
     ],
     "responses": {
         "200": {
-            "description": "Successfully retrieved classe de compte",
+            "description": "Successfully retrieved compte",
             "headers": {
                 "X-RateLimit-Limit": {
                     "$ref": "../../components/headers/x_ratelimit_limit.json"

@@ -1,7 +1,7 @@
 {
-    "summary": "Retrieve list of classes de compte",
-    "operationId": "fetchListOfClassesDeCompte",
-    "description": "Retrieves classes de compte information based on certain criteria.",
+    "summary": "Retrieve list of comptes",
+    "operationId": "fetchListOfComptes",
+    "description": "Retrieves comptes information based on certain criteria.",
     "parameters": [
         {
             "$ref": "../../components/parameters/page.json"
@@ -71,7 +71,7 @@
                                 "description": "Additional information about the response.",
                                 "nullable": true,
                                 "default": null,
-                                "example": "List of classes de compte retrieve successfully"
+                                "example": "List of comptes retrieve successfully"
                             },
                             "data": {
                                 "type": "object",
@@ -85,16 +85,16 @@
                                     },
                                     "data": {
                                         "type": "array",
-                                        "description": "List of classes de compte.",
+                                        "description": "List of comptes.",
                                         "items": {
-                                            "$ref": "../../components/schemas/models/classe_de_compte.json#/ClasseDeCompte"
+                                            "$ref": "../../components/schemas/models/compte.json#/Compte"
                                         }
                                     },
                                     "first_page_url": {
                                         "type": "string",
                                         "description": "The URL of the first page in the pagination.",
-                                        "example": "classes_de_compte?page=1",
-                                        "default": "classes_de_compte?page=1"
+                                        "example": "comptes?page=1",
+                                        "default": "comptes?page=1"
                                     },
                                     "from": {
                                         "type": "integer",
@@ -113,8 +113,8 @@
                                     "last_page_url": {
                                         "type": "string",
                                         "description": "The URL of the last page in the pagination sequence.",
-                                        "example": "classes_de_compte?page=7",
-                                        "default": "classes_de_compte?page=1"
+                                        "example": "comptes?page=7",
+                                        "default": "comptes?page=1"
                                     },
                                     "links": {
                                         "type": "array",
@@ -149,12 +149,12 @@
                                         "description": "The URL to retrieve the next page of results.",
                                         "nullable": true,
                                         "default": null,
-                                        "example": "classes_de_compte?page=3"
+                                        "example": "comptes?page=3"
                                     },
                                     "path": {
                                         "type": "string",
                                         "description": "The URL path of the current page.",
-                                        "example": "classes_de_compte"
+                                        "example": "comptes"
                                     },
                                     "per_page": {
                                         "type": "integer",
@@ -169,7 +169,7 @@
                                         "description": "The URL of the previous page.",
                                         "nullable": true,
                                         "default": null,
-                                        "example": "classes_de_compte?page=1"
+                                        "example": "comptes?page=1"
                                     },
                                     "to": {
                                         "type": "integer",
@@ -198,26 +198,26 @@
                 }
             },
             "links": {
-                "GetClasseDeCompteDetailsByClasseDeCompteId": {
-                    "operationId": "getClasseDeCompte",
+                "GetCompteDetailsByCompteId": {
+                    "operationId": "getCompte",
                     "parameters": {
-                        "classeDeCompteId": "$response.body#/data/data/0/id"
+                        "compteId": "$response.body#/data/data/0/id"
                     },
-                    "description": "Link to get classe de compte information based on classe de compte ID."
+                    "description": "Link to get compte information based on compte ID."
                 },
-                "UpdateClasseDeCompteDetailsByClasseDeCompteId": {
-                    "operationId": "updateClasseDeCompte",
+                "UpdateCompteDetailsByCompteId": {
+                    "operationId": "updateCompte",
                     "parameters": {
-                        "classeDeCompteId": "$response.body#/data/data/0/id"
+                        "compteId": "$response.body#/data/data/0/id"
                     },
-                    "description": "Link to update classe de compte information based on classe de compte ID."
+                    "description": "Link to update compte information based on compte ID."
                 },
-                "DeleteClasseDeCompteByClasseDeCompteId": {
-                    "operationId": "deleteClasseDeCompte",
+                "DeleteCompteByCompteId": {
+                    "operationId": "deleteCompte",
                     "parameters": {
-                        "classeDeCompteId": "$response.body#/data/data/0/id"
+                        "compteId": "$response.body#/data/data/0/id"
                     },
-                    "description": "Link to delete classe de compte based on classe de compte ID."
+                    "description": "Link to delete compte based on compte ID."
                 }
             }
         },

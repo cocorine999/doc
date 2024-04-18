@@ -1,10 +1,10 @@
 {
-    "summary": "Retrive an existing classe de compte by id",
-    "description": "Retrieve an existing classe de compte by its unique identifier.",
-    "operationId": "getClasseDeCompte",
+    "summary": "Retrive an existing compte by id",
+    "description": "Retrieve an existing compte by its unique identifier.",
+    "operationId": "getCompte",
     "parameters": [
         {
-            "$ref": "../../components/parameters/classe_de_compte_id.json#/ClasseDeCompteId"
+            "$ref": "../../components/parameters/compte_id.json#/CompteId"
         },
         {
             "name": "fields",
@@ -31,7 +31,7 @@
     ],
     "responses": {
         "200": {
-            "description": "Successfully retrieved classe de compte",
+            "description": "Successfully retrieved compte",
             "headers": {
                 "X-RateLimit-Limit": {
                     "$ref": "../../components/headers/x_ratelimit_limit.json"
@@ -69,11 +69,11 @@
                             "message": {
                                 "type": "string",
                                 "description": "Additional information about the response.",
-                                "default": "Classe de compte retrieved successfully",
-                                "example": "Classe de compte retrieved successfully"
+                                "default": "Compte retrieved successfully",
+                                "example": "Compte retrieved successfully"
                             },
                             "data": {
-                                "$ref": "../../components/schemas/models/classe_de_compte.json#/ClasseDeCompte"
+                                "$ref": "../../components/schemas/models/compte.json#/Compte"
                             },
                             "status_code": {
                                 "type": "integer",
@@ -86,19 +86,19 @@
                 }
             },
             "links": {
-                "UpdateClasseDeCompteDetailsByClasseDeCompteId": {
-                    "operationId": "updateClasseDeCompte",
+                "UpdateCompteDetailsByCompteId": {
+                    "operationId": "updateCompte",
                     "parameters": {
-                        "classeDeCompteId": "$response.body#/data/id"
+                        "compteId": "$response.body#/data/id"
                     },
-                    "description": "Link to update classe de compte information based on classe de compte ID."
+                    "description": "Link to update compte information based on compte ID."
                 },
-                "DeleteClasseDeCompteByClasseDeCompteId": {
-                    "operationId": "deleteClasseDeCompte",
+                "DeleteCompteByCompteId": {
+                    "operationId": "deleteCompte",
                     "parameters": {
-                        "classeDeCompteId": "$response.body#/data/id"
+                        "compteId": "$response.body#/data/id"
                     },
-                    "description": "Link to delete classe de compte based on classe de compte ID."
+                    "description": "Link to delete compte based on compte ID."
                 }
             }
         },

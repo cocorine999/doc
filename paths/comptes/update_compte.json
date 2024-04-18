@@ -89,14 +89,14 @@
                 "GetCompteDetailsByCompteId": {
                     "operationId": "getCompte",
                     "parameters": {
-                        "classeDeCompteId": "$response.body#/data/id"
+                        "compteId": "$response.body#/data/id"
                     },
                     "description": "Link to get compte information based on compte ID."
                 },
                 "DeleteCompteByCompteId": {
                     "operationId": "deleteCompte",
                     "parameters": {
-                        "classeDeCompteId": "$response.body#/data/id"
+                        "compteId": "$response.body#/data/id"
                     },
                     "description": "Link to delete compte based on compte ID."
                 }

@@ -7,14 +7,14 @@
         ],
         "properties": {
             "name": {
-                "$ref": "../field_name.json#/FieldName",
+                "type": "string",
                 "nullable": false,
                 "example": "Franc CFA",
                 "default": "Franc CFA",
                 "description": "Name of the devise"
             },
             "symbol": {
-                "$ref": "../field_name.json#/FieldName",
+                "type": "string",
                 "nullable": false,
                 "example": "xof",
                 "default": "xof",

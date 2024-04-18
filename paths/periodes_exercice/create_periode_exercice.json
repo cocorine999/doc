@@ -83,21 +83,21 @@
                 "GetPeriodeExerciceDetailsByPeriodeExerciceId": {
                     "operationId": "getPeriodeExercice",
                     "parameters": {
-                        "periode exerciceId": "$response.body#/data/id"
+                        "periodeExerciceId": "$response.body#/data/id"
                     },
                     "description": "Link to get a periode exercice information based on periode exercice ID."
                 },
                 "UpdatePeriodeExerciceDetailsByPeriodeExerciceId": {
                     "operationId": "updatePeriodeExercice",
                     "parameters": {
-                        "periode exerciceId": "$response.body#/data/id"
+                        "periodeExerciceId": "$response.body#/data/id"
                     },
                     "description": "Link to update a periode exercice information based on periode exercice ID."
                 },
                 "DeletePeriodeExerciceByPeriodeExerciceId": {
                     "operationId": "deletePeriodeExercice",
                     "parameters": {
-                        "periode exerciceId": "$response.body#/data/id"
+                        "periodeExerciceId": "$response.body#/data/id"
                     },
                     "description": "Link to delete a periode exercice based on periode exercice ID."
                 }

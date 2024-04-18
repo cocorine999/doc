@@ -88,14 +88,14 @@
                     "parameters": {
                         "periodeExerciceId": "$response.body#/data/id"
                     },
-                    "description": "Link to get devise information based on devise ID."
+                    "description": "Link to get periode exercice information based on periode exercice ID."
                 },
                 "DeletePeriodeExerciceByPeriodeExerciceId": {
                     "operationId": "deletePeriodeExercice",
                     "parameters": {
                         "periodeExerciceId": "$response.body#/data/id"
                     },
-                    "description": "Link to delete devise based on devise ID."
+                    "description": "Link to delete periode exercice based on periode exercice ID."
                 }
             }
         },

@@ -1,8 +1,21 @@
 {
-    "summary": "Create a new plan comptable",
-    "operationId": "createPlanComptable",
-    "description": "Create a new plan comptable with the provided data.",
+    "summary": "Retrieve an existing exercice comptable by id",
+    "description": "Retrieve an existing exercice comptable by its unique identifier.",
+    "operationId": "getExerciceComptable",
     "parameters": [
+        {
+            "$ref": "../../components/parameters/exercice_comptable_id.json#/ExerciceComptableId"
+        },
+        {
+            "name": "fields",
+            "in": "query",
+            "description": "Comma-separated list of fields to include in the response.",
+            "required": false,
+            "schema": {
+                "type": "string"
+            },
+            "example": "id,name"
+        },
         {
             "$ref": "../../components/headers/content_type.json"
         },
@@ -13,19 +26,9 @@
             "$ref": "../../components/headers/origin.json"
         }
     ],
-    "requestBody": {
-        "required": true,
-        "content": {
-            "application/json": {
-                "schema": {
-                    "$ref": "../../components/requestBodies/plans_comptable/plan_comptable_request.json#/PlanComptableRequest"
-                }
-            }
-        }
-    },
     "responses": {
-        "201": {
-            "description": "Successfully Response",
+        "200": {
+            "description": "Successfully retrieved exercice comptable",
             "headers": {
                 "X-RateLimit-Limit": {
                     "$ref": "../../components/headers/x_ratelimit_limit.json"
@@ -63,43 +66,36 @@
                             "message": {
                                 "type": "string",
                                 "description": "Additional information about the response.",
-                                "default": "Plan comptable created successfully",
-                                "example": "Plan comptable created successfully"
+                                "default": "Periode exercice retrieved successfully",
+                                "example": "Periode exercice retrieved successfully"
                             },
                             "data": {
-                                "$ref": "../../components/schemas/models/plan_comptable.json#/PlanComptable"
+                                "$ref": "../../components/schemas/models/exercice_comptable.json#/ExerciceComptable"
                             },
                             "status_code": {
                                 "type": "integer",
                                 "description": "Indicates the HTTP status code of the response.",
-                                "default": 201,
-                                "example": 201
+                                "default": 200,
+                                "example": 200
                             }
                         }
                     }
                 }
             },
             "links": {
-                "GetPlanComptableDetailsByPlanComptableId": {
-                    "operationId": "getPlanComptable",
+                "UpdateExerciceComptableDetailsByExerciceComptableId": {
+                    "operationId": "updateExerciceComptable",
                     "parameters": {
-                        "planComptableId": "$response.body#/data/id"
+                        "periodeExerciceId": "$response.body#/data/id"
                     },
-                    "description": "Link to get plan comptable information based on plan comptable ID."
+                    "description": "Link to update exercice comptable information based on exercice comptable ID."
                 },
-                "UpdatePlanComptableDetailsByPlanComptableId": {
-                    "operationId": "updatePlanComptable",
+                "DeleteExerciceComptableByExerciceComptableId": {
+                    "operationId": "deleteExerciceComptable",
                     "parameters": {
-                        "planComptableId": "$response.body#/data/id"
+                        "periodeExerciceId": "$response.body#/data/id"
                     },
-                    "description": "Link to update plan comptable information based on plan comptable ID."
-                },
-                "DeletePlanComptableByPlanComptableId": {
-                    "operationId": "deletePlanComptable",
-                    "parameters": {
-                        "planComptableId": "$response.body#/data/id"
-                    },
-                    "description": "Link to delete plan comptable based on plan comptable ID."
+                    "description": "Link to delete exercice comptable based on exercice comptable ID."
                 }
             }
         },
@@ -112,14 +108,14 @@
         "403": {
             "$ref": "../../components/responses/errors/403.json#Forbidden"
         },
+        "404": {
+            "$ref": "../../components/responses/errors/404.json#NotFound"
+        },
         "405": {
             "$ref": "../../components/responses/errors/405.json#MethodNotAllowed"
         },
         "408": {
             "$ref": "../../components/responses/errors/408.json#RequestTimeout"
-        },
-        "422": {
-            "$ref": "../../components/responses/errors/422.json#UnprocessableEntity"
         },
         "429": {
             "$ref": "../../components/responses/errors/429.json#RateLimitExceeded"

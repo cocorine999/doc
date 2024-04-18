@@ -1,7 +1,7 @@
 {
-    "summary": "Create a new plan comptable",
-    "operationId": "createPlanComptable",
-    "description": "Create a new plan comptable with the provided data.",
+    "summary": "Create a new journal",
+    "operationId": "createJournal",
+    "description": "Create a new journal with the provided data.",
     "parameters": [
         {
             "$ref": "../../components/headers/content_type.json"
@@ -18,7 +18,7 @@
         "content": {
             "application/json": {
                 "schema": {
-                    "$ref": "../../components/requestBodies/plans_comptable/plan_comptable_request.json#/PlanComptableRequest"
+                    "$ref": "../../components/requestBodies/journaux/journal_request.json#/JournalRequest"
                 }
             }
         }
@@ -63,11 +63,11 @@
                             "message": {
                                 "type": "string",
                                 "description": "Additional information about the response.",
-                                "default": "Plan comptable created successfully",
-                                "example": "Plan comptable created successfully"
+                                "default": "Journal created successfully",
+                                "example": "Journal created successfully"
                             },
                             "data": {
-                                "$ref": "../../components/schemas/models/plan_comptable.json#/PlanComptable"
+                                "$ref": "../../components/schemas/models/journal.json#/Journal"
                             },
                             "status_code": {
                                 "type": "integer",
@@ -80,26 +80,26 @@
                 }
             },
             "links": {
-                "GetPlanComptableDetailsByPlanComptableId": {
-                    "operationId": "getPlanComptable",
+                "GetJournalDetailsByJournalId": {
+                    "operationId": "getJournal",
                     "parameters": {
-                        "planComptableId": "$response.body#/data/id"
+                        "journalId": "$response.body#/data/id"
                     },
-                    "description": "Link to get plan comptable information based on plan comptable ID."
+                    "description": "Link to get journal information based on journal ID."
                 },
-                "UpdatePlanComptableDetailsByPlanComptableId": {
-                    "operationId": "updatePlanComptable",
+                "UpdateJournalDetailsByJournalId": {
+                    "operationId": "updateJournal",
                     "parameters": {
-                        "planComptableId": "$response.body#/data/id"
+                        "journalId": "$response.body#/data/id"
                     },
-                    "description": "Link to update plan comptable information based on plan comptable ID."
+                    "description": "Link to update journal information based on journal ID."
                 },
-                "DeletePlanComptableByPlanComptableId": {
-                    "operationId": "deletePlanComptable",
+                "DeleteJournalByJournalId": {
+                    "operationId": "deleteJournal",
                     "parameters": {
-                        "planComptableId": "$response.body#/data/id"
+                        "journalId": "$response.body#/data/id"
                     },
-                    "description": "Link to delete plan comptable based on plan comptable ID."
+                    "description": "Link to delete journal based on journal ID."
                 }
             }
         },

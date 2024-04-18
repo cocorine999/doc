@@ -1,8 +1,21 @@
 {
-    "summary": "Create a new plan comptable",
-    "operationId": "createPlanComptable",
-    "description": "Create a new plan comptable with the provided data.",
+    "summary": "Retrive an existing journal by id",
+    "description": "Retrieve an existing journal by its unique identifier.",
+    "operationId": "getJournal",
     "parameters": [
+        {
+            "$ref": "../../components/parameters/journal_id.json#/JournalId"
+        },
+        {
+            "name": "fields",
+            "in": "query",
+            "description": "Comma-separated list of fields to include in the response.",
+            "required": false,
+            "schema": {
+                "type": "string"
+            },
+            "example": "id,name"
+        },
         {
             "$ref": "../../components/headers/content_type.json"
         },
@@ -13,19 +26,9 @@
             "$ref": "../../components/headers/origin.json"
         }
     ],
-    "requestBody": {
-        "required": true,
-        "content": {
-            "application/json": {
-                "schema": {
-                    "$ref": "../../components/requestBodies/plans_comptable/plan_comptable_request.json#/PlanComptableRequest"
-                }
-            }
-        }
-    },
     "responses": {
-        "201": {
-            "description": "Successfully Response",
+        "200": {
+            "description": "Successfully retrieved journal",
             "headers": {
                 "X-RateLimit-Limit": {
                     "$ref": "../../components/headers/x_ratelimit_limit.json"
@@ -63,43 +66,36 @@
                             "message": {
                                 "type": "string",
                                 "description": "Additional information about the response.",
-                                "default": "Plan comptable created successfully",
-                                "example": "Plan comptable created successfully"
+                                "default": "Journal retrieved successfully",
+                                "example": "Journal retrieved successfully"
                             },
                             "data": {
-                                "$ref": "../../components/schemas/models/plan_comptable.json#/PlanComptable"
+                                "$ref": "../../components/schemas/models/journal.json#/Journal"
                             },
                             "status_code": {
                                 "type": "integer",
                                 "description": "Indicates the HTTP status code of the response.",
-                                "default": 201,
-                                "example": 201
+                                "default": 200,
+                                "example": 200
                             }
                         }
                     }
                 }
             },
             "links": {
-                "GetPlanComptableDetailsByPlanComptableId": {
-                    "operationId": "getPlanComptable",
+                "UpdateJournalDetailsByJournalId": {
+                    "operationId": "updateJournal",
                     "parameters": {
-                        "planComptableId": "$response.body#/data/id"
+                        "journalId": "$response.body#/data/id"
                     },
-                    "description": "Link to get plan comptable information based on plan comptable ID."
+                    "description": "Link to update journal information based on journal ID."
                 },
-                "UpdatePlanComptableDetailsByPlanComptableId": {
-                    "operationId": "updatePlanComptable",
+                "DeleteJournalByJournalId": {
+                    "operationId": "deleteJournal",
                     "parameters": {
-                        "planComptableId": "$response.body#/data/id"
+                        "journalId": "$response.body#/data/id"
                     },
-                    "description": "Link to update plan comptable information based on plan comptable ID."
-                },
-                "DeletePlanComptableByPlanComptableId": {
-                    "operationId": "deletePlanComptable",
-                    "parameters": {
-                        "planComptableId": "$response.body#/data/id"
-                    },
-                    "description": "Link to delete plan comptable based on plan comptable ID."
+                    "description": "Link to delete journal based on journal ID."
                 }
             }
         },
@@ -112,14 +108,14 @@
         "403": {
             "$ref": "../../components/responses/errors/403.json#Forbidden"
         },
+        "404": {
+            "$ref": "../../components/responses/errors/404.json#NotFound"
+        },
         "405": {
             "$ref": "../../components/responses/errors/405.json#MethodNotAllowed"
         },
         "408": {
             "$ref": "../../components/responses/errors/408.json#RequestTimeout"
-        },
-        "422": {
-            "$ref": "../../components/responses/errors/422.json#UnprocessableEntity"
         },
         "429": {
             "$ref": "../../components/responses/errors/429.json#RateLimitExceeded"

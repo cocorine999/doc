@@ -1,0 +1,39 @@
+{
+    "EcritureComptableRequest": {
+        "type": "object",
+        "required": [
+            "libelle",
+            "date_ecriture",
+            "journal_id",
+            "lignes_ecriture"
+        ],
+        "properties": {
+            "libelle": {
+                "type": "string",
+                "nullable": false,
+                "default": "Achat de matiere premiere",
+                "description": "Intitule de l'ecriture comptable"
+            },
+            "date_ecriture": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "default": "2024-01-06",
+                "description": "Date debut ecriture comptable (YYYY-MM-DD)"
+            },
+            "journal_id": {
+                "type": "uuid",
+                "nullable": false,
+                "default": "Unique uuid id of journal",
+                "description": "Intitule de l'ecriture comptable"
+            },
+            "lignes_ecriture": {
+                "type": "array",
+                "minimum": 2,
+                "items": {
+                    "$ref": "../lignes_ecriture_comptable/ligne_ecriture_comptable_request.json#/LigneEcritureComptableRequest"
+                }
+            }
+        }
+    }
+}

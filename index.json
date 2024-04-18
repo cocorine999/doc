@@ -106,6 +106,7 @@
             "name": "DetachAccountsToPlanComptable",
             "description": "APIs related to comptes management. These endpoints allow clients to create, retrieve, update, and delete comptes."
         }
+        
     ],
     "paths": {
         "/permissions": {
@@ -2473,6 +2474,42 @@
                 "$ref": "paths/comptes/delete_compte.json"
             }
         },
+
+        "/journaux": {
+            "get": {
+                "tags": [
+                    "Journaux"
+                ],
+                "$ref": "paths/journaux/list.json"
+            },
+            "post": {
+                "tags": [
+                    "Journaux"
+                ],
+                "$ref": "paths/journaux/create_journal.json"
+            }
+        },
+        "/journaux/{journalId}": {
+            "get": {
+                "tags": [
+                    "Journaux"
+                ],
+                "$ref": "paths/journaux/find_journal.json"
+            },
+            "put": {
+                "tags": [
+                    "Journaux"
+                ],
+                "$ref": "paths/journaux/update_journal.json"
+            },
+            "delete": {
+                "tags": [
+                    "Journaux"
+                ],
+                "$ref": "paths/journaux/delete_journal.json"
+            }
+        },
+
         "/plans_comptable": {
             "get": {
                 "tags": [
@@ -2521,6 +2558,83 @@
                     "AttachAccountsToPlanComptable"
                 ],
                 "$ref": "paths/plans_comptable/accounts/attach_accounts.json"
+            }
+        },
+
+        "/plans_comptable/{planComptableId}/import-plan": {
+            "post": {
+                "$ref": "paths/plans_comptable/import.json"
+            }
+        },
+
+        "/plans_comptable/{planComptableId}/valider": {
+            "get": {
+                "$ref": "paths/plans_comptable/validate.json"
+            }
+        },
+
+        "/exercices_comptable": {
+            "get": {
+                "tags": [
+                    "Exercices comptable"
+                ],
+                "$ref": "paths/exercices_comptable/list.json"
+            },
+            "post": {
+                "tags": [
+                    "Exercices comptable"
+                ],
+                "$ref": "paths/exercices_comptable/create_exercice_comptable.json"
+            }
+        },
+        "/exercices_comptable/{exercice_comptableId}": {
+            "get": {
+                "tags": [
+                    "Exercices comptable"
+                ],
+                "$ref": "paths/exercices_comptable/find_exercice_comptable.json"
+            },
+            "put": {
+                "tags": [
+                    "Exercices comptable"
+                ],
+                "$ref": "paths/exercices_comptable/update_exercice_comptable.json"
+            },
+            "delete": {
+                "tags": [
+                    "Exercices comptable"
+                ],
+                "$ref": "paths/exercices_comptable/delete_exercice_comptable.json"
+            }
+        },
+
+        "/exercices_comptable/{exercice_comptableId}/ecritures-comptable": {
+            "get": {
+                "tags": [
+                    "Exercices comptable"
+                ],
+                "$ref": "paths/exercices_comptable/list_exercices_comptable.json"
+            },
+            "put": {
+                "tags": [
+                    "Exercices comptable"
+                ],
+                "$ref": "paths/exercices_comptable/create_exercice_comptable.json"
+            }
+        },
+
+        "/exercices_comptable/{exercice_comptableId}/journals": {
+            "get": {
+                "tags": [
+                    "Exercices omptable"
+                ],
+                "$ref": "paths/exercices_comptable/list_exercices_comptable.json"
+            },
+            "put": {
+                "tags": [
+                    "Exercices omptable"
+                ],
+                "$ref": "paths/exercices_comptable/create_exercice_comptable.json"
             }
         }
     },

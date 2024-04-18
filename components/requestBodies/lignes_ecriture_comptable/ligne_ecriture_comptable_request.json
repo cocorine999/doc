@@ -1,0 +1,24 @@
+{
+    "LigneEcritureComptableRequest": {
+        "type": "object",
+        "required": [
+            "montant",
+            "type_ecriture_compte"
+        ],
+        "properties": {
+            "montant": {
+                "$ref": "../amount.json#/Amount",
+                "default": 6000.00,
+                "description": "Montant"
+            },
+            "type_ecriture_compte": {
+                "enum": [
+                    "debit",
+                    "credit"
+                ],
+                "example": "debit",
+                "default": "debit"
+            }
+        }
+    }
+}

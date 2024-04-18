@@ -1,0 +1,40 @@
+{
+    "ExerciceComptableRequest": {
+        "type": "object",
+        "required": [
+            "fiscal_year",
+            "date_ouverture",
+            "status_exercice"
+        ],
+        "properties": {
+            "fiscal_year": {
+                "type": "integer",
+                "default": 2024,
+                "description": "Fiscal year"
+            },
+            "date_ouverture": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "default": "2024-01-01",
+                "description": "Date debut exercice comptable (YYYY-MM-DD)"
+            },
+            "date_fermeture": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "nullable": true,
+                "default": "2024-12-31",
+                "description": "Date fin exercice comptable (YYYY-MM-DD)"
+            },
+            "status_exercice": {
+                "enum": [
+                    "ouvert",
+                    "fermer"
+                ],
+                "example": "ouvert",
+                "default": "ouvert"
+            }
+        }
+    }
+}

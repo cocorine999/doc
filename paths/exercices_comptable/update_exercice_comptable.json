@@ -1,8 +1,11 @@
 {
-    "summary": "Create a new plan comptable",
-    "operationId": "createPlanComptable",
-    "description": "Create a new plan comptable with the provided data.",
+    "summary": "Update an existing exercice comptable",
+    "operationId": "updateExerciceComptable",
+    "description": "Update an existing exercice comptable with the provided data.",
     "parameters": [
+        {
+            "$ref": "../../components/parameters/exercice_comptable_id.json#/ExerciceComptableId"
+        },
         {
             "$ref": "../../components/headers/content_type.json"
         },
@@ -18,7 +21,7 @@
         "content": {
             "application/json": {
                 "schema": {
-                    "$ref": "../../components/requestBodies/plans_comptable/plan_comptable_request.json#/PlanComptableRequest"
+                    "$ref": "../../components/requestBodies/exercices_comptable/exercice_comptable_request.json#/ExerciceComptableRequest"
                 }
             }
         }
@@ -63,11 +66,11 @@
                             "message": {
                                 "type": "string",
                                 "description": "Additional information about the response.",
-                                "default": "Plan comptable created successfully",
-                                "example": "Plan comptable created successfully"
+                                "default": "Exercice comptable updated successfully",
+                                "example": "Exercice comptable updated successfully"
                             },
                             "data": {
-                                "$ref": "../../components/schemas/models/plan_comptable.json#/PlanComptable"
+                                "$ref": "../../components/schemas/models/exercice_comptable.json#/ExerciceComptable"
                             },
                             "status_code": {
                                 "type": "integer",
@@ -80,26 +83,19 @@
                 }
             },
             "links": {
-                "GetPlanComptableDetailsByPlanComptableId": {
-                    "operationId": "getPlanComptable",
+                "GetExerciceComptableIdDetailsByExerciceComptableId": {
+                    "operationId": "GetExerciceComptable",
                     "parameters": {
-                        "planComptableId": "$response.body#/data/id"
+                        "exerciceComptableId": "$response.body#/data/id"
                     },
-                    "description": "Link to get plan comptable information based on plan comptable ID."
+                    "description": "Link to get exercice comptable information based on exercice comptable ID."
                 },
-                "UpdatePlanComptableDetailsByPlanComptableId": {
-                    "operationId": "updatePlanComptable",
+                "DeleteExerciceComptableByExerciceComptableId": {
+                    "operationId": "deleteExerciceComptable",
                     "parameters": {
-                        "planComptableId": "$response.body#/data/id"
+                        "exerciceComptableId": "$response.body#/data/id"
                     },
-                    "description": "Link to update plan comptable information based on plan comptable ID."
-                },
-                "DeletePlanComptableByPlanComptableId": {
-                    "operationId": "deletePlanComptable",
-                    "parameters": {
-                        "planComptableId": "$response.body#/data/id"
-                    },
-                    "description": "Link to delete plan comptable based on plan comptable ID."
+                    "description": "Link to delete exercice comptable based on exercice comptable ID."
                 }
             }
         },
@@ -111,6 +107,9 @@
         },
         "403": {
             "$ref": "../../components/responses/errors/403.json#Forbidden"
+        },
+        "404": {
+            "$ref": "../../components/responses/errors/404.json#NotFound"
         },
         "405": {
             "$ref": "../../components/responses/errors/405.json#MethodNotAllowed"

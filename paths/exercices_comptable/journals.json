@@ -1,30 +1,33 @@
 {
-    "summary": "Create a new plan comptable",
-    "operationId": "createPlanComptable",
-    "description": "Create a new plan comptable with the provided data.",
+    "summary": "Retrieve journals of an exercice comptable",
+    "operationId": "fetchListOfJournals",
+    "description": "Retrieves exercice comptable journals information based on certain criteria.",
     "parameters": [
         {
-            "$ref": "../../components/headers/content_type.json"
+            "$ref": "../../components/parameters/page.json"
         },
         {
-            "$ref": "../../components/headers/accept.json"
+            "$ref": "../../components/parameters/per_page.json"
+        },
+        {
+            "name": "fields",
+            "in": "query",
+            "description": "Comma-separated list of fields to include in the response.",
+            "required": false,
+            "schema": {
+                "type": "string"
+            },
+            "example": "id,name"
+        },
+        {
+            "$ref": "../../components/headers/content_type.json"
         },
         {
             "$ref": "../../components/headers/origin.json"
         }
     ],
-    "requestBody": {
-        "required": true,
-        "content": {
-            "application/json": {
-                "schema": {
-                    "$ref": "../../components/requestBodies/plans_comptable/plan_comptable_request.json#/PlanComptableRequest"
-                }
-            }
-        }
-    },
     "responses": {
-        "201": {
+        "200": {
             "description": "Successfully Response",
             "headers": {
                 "X-RateLimit-Limit": {
@@ -63,54 +66,53 @@
                             "message": {
                                 "type": "string",
                                 "description": "Additional information about the response.",
-                                "default": "Plan comptable created successfully",
-                                "example": "Plan comptable created successfully"
+                                "nullable": true,
+                                "default": null,
+                                "example": "Journals of exercice comptable retrieve successfully"
                             },
                             "data": {
-                                "$ref": "../../components/schemas/models/plan_comptable.json#/PlanComptable"
+                                "type": "array",
+                                "description": "Journals of exercice comptable.",
+                                "items": {
+                                    "$ref": "../../components/schemas/models/journal.json#/Journal"
+                                }
                             },
                             "status_code": {
                                 "type": "integer",
-                                "description": "Indicates the HTTP status code of the response.",
-                                "default": 201,
-                                "example": 201
+                                "description": "Indicates whether the request was successful.",
+                                "default": 200,
+                                "example": 200
                             }
                         }
                     }
                 }
             },
             "links": {
-                "GetPlanComptableDetailsByPlanComptableId": {
-                    "operationId": "getPlanComptable",
+                "GetExerciceComptableDetailsByExerciceComptableId": {
+                    "operationId": "getExerciceComptable",
                     "parameters": {
-                        "planComptableId": "$response.body#/data/id"
+                        "exerciceComptableId": "$response.body#/data/data/0/id"
                     },
-                    "description": "Link to get plan comptable information based on plan comptable ID."
+                    "description": "Link to get exercice comptable information based on exercice comptable ID."
                 },
-                "UpdatePlanComptableDetailsByPlanComptableId": {
-                    "operationId": "updatePlanComptable",
+                "UpdateExerciceComptableDetailsByExerciceComptableId": {
+                    "operationId": "updateExerciceComptable",
                     "parameters": {
-                        "planComptableId": "$response.body#/data/id"
+                        "exerciceComptableId": "$response.body#/data/data/0/id"
                     },
-                    "description": "Link to update plan comptable information based on plan comptable ID."
+                    "description": "Link to update exercice comptable information based on exercice comptable ID."
                 },
-                "DeletePlanComptableByPlanComptableId": {
-                    "operationId": "deletePlanComptable",
+                "DeleteExerciceComptableByExerciceComptableId": {
+                    "operationId": "deleteExerciceComptable",
                     "parameters": {
-                        "planComptableId": "$response.body#/data/id"
+                        "exerciceComptableId": "$response.body#/data/data/0/id"
                     },
-                    "description": "Link to delete plan comptable based on plan comptable ID."
+                    "description": "Link to delete exercice comptable based on exercice comptable ID."
                 }
             }
         },
         "400": {
             "$ref": "../../components/responses/errors/400.json#BadRequest"
-        },
-        "401": {
-            "$ref": "../../components/responses/errors/401.json#Unauthorized"
-        },
-        "403": {
-            "$ref": "../../components/responses/errors/403.json#Forbidden"
         },
         "405": {
             "$ref": "../../components/responses/errors/405.json#MethodNotAllowed"

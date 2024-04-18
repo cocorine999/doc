@@ -1,0 +1,16 @@
+{
+    "JournalRequest": {
+        "required": [
+            "name"
+        ],
+        "type": "object",
+        "properties": {
+            "name": {
+                "$ref": "../../schemas/string.json#/String",
+                "example": "{{$randomBsNoun}}",
+                "default": "Production",
+                "description": "Name of the departement"
+            }
+        }
+    }
+}

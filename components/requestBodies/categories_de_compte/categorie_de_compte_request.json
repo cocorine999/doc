@@ -1,0 +1,17 @@
+{
+    "CategorieDeCompteRequest": {
+        "type": "object",
+        "required": [
+            "name"
+        ],
+        "properties": {
+            "name": {
+                "$ref": "../field_name.json#/FieldName",
+                "nullable": false,
+                "example": "Revenue",
+                "default": "Tresorie passif",
+                "description": "Nom de la categorie de compte"
+            }
+        }
+    }
+}

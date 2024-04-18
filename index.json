@@ -125,6 +125,10 @@
         {
             "name": "PeriodesExercice",
             "description": "APIs related to periodes exercice management. These endpoints allow clients to create, retrieve, update, and delete periodes exercice."
+        },
+        {
+            "name": "CategoriesDeCompte",
+            "description": "APIs related to categories de compte management. These endpoints allow clients to create, retrieve, update, and delete categories de compte."
         }
         
     ],
@@ -2395,6 +2399,41 @@
                     "PeriodesExercice"
                 ],
                 "$ref": "paths/periodes_exercice/delete_periode_exercice.json"
+            }
+        },
+
+        "/categories_de_compte": {
+            "get": {
+                "tags": [
+                    "CategoriesDeCompte"
+                ],
+                "$ref": "paths/categories_de_compte/list_categories_de_compte.json"
+            },
+            "post": {
+                "tags": [
+                    "CategoriesDeCompte"
+                ],
+                "$ref": "paths/categories_de_compte/create_categorie_de_compte.json"
+            }
+        },
+        "/categories_de_compte/{periodeExerciceId}": {
+            "get": {
+                "tags": [
+                    "CategoriesDeCompte"
+                ],
+                "$ref": "paths/categories_de_compte/find_categorie_de_compte.json"
+            },
+            "put": {
+                "tags": [
+                    "CategoriesDeCompte"
+                ],
+                "$ref": "paths/categories_de_compte/update_categorie_de_compte.json"
+            },
+            "delete": {
+                "tags": [
+                    "CategoriesDeCompte"
+                ],
+                "$ref": "paths/categories_de_compte/delete_categorie_de_compte.json"
             }
         }
     },

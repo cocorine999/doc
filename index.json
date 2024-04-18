@@ -154,7 +154,6 @@
             "name": "DetachAccountsToPlanComptable",
             "description": "APIs related to comptes management. These endpoints allow clients to create, retrieve, update, and delete comptes."
         }
-        
     ],
     "paths": {
         "/permissions": {
@@ -216,7 +215,6 @@
         "/unite_travailles/{{uniteTravailleId}}": {
             "$ref": "paths/Unite_travaille/unite_travailles.json"
         },
-
         "/departements": {
             "get": {
                 "tags": [
@@ -251,7 +249,6 @@
                 "$ref": "paths/departements/delete_departement.json"
             }
         },
-
         "/postes": {
             "get": {
                 "tags": [
@@ -295,17 +292,16 @@
         "/postes/{posteId}/detach-salaries": {
             "$ref": "paths/postes/detach_salaries.json"
         },
-
-        "/employees":{
+        "/employees": {
             "$ref": "paths/employees/employees.json"
         },
-        "/employee/{employee_id}":{
+        "/employee/{employee_id}": {
             "$ref": "paths/employees/employee.json"
         },
-        "/partners":{
+        "/partners": {
             "$ref": "paths/partners/partners.json"
         },
-        "/partners/{partnerId}":{
+        "/partners/{partnerId}": {
             "$ref": "paths/partners/partner.json"
         },
         "/users": {
@@ -2355,7 +2351,6 @@
                 }
             }
         },
-
         "/devises": {
             "get": {
                 "tags": [
@@ -2390,7 +2385,6 @@
                 "$ref": "paths/devises/delete_devise.json"
             }
         },
-
         "/periodes_exercice": {
             "get": {
                 "tags": [
@@ -2425,7 +2419,6 @@
                 "$ref": "paths/periodes_exercice/delete_periode_exercice.json"
             }
         },
-
         "/categories_de_compte": {
             "get": {
                 "tags": [
@@ -2460,7 +2453,6 @@
                 "$ref": "paths/categories_de_compte/delete_categorie_de_compte.json"
             }
         },
-
         "/classes_de_compte": {
             "get": {
                 "tags": [
@@ -2495,7 +2487,6 @@
                 "$ref": "paths/classes_de_compte/delete_classe_de_compte.json"
             }
         },
-
         "/comptes": {
             "get": {
                 "tags": [
@@ -2530,7 +2521,6 @@
                 "$ref": "paths/comptes/delete_compte.json"
             }
         },
-
         "/plans_comptable": {
             "get": {
                 "tags": [
@@ -2581,7 +2571,6 @@
                 "$ref": "paths/plans_comptable/accounts/attach_accounts.json"
             }
         }
-
     },
     "components": {
         "schemas": {
@@ -3287,10 +3276,21 @@
                 "type": "apiKey",
                 "in": "header",
                 "name": "X-Api-Key"
+            },
+            "bearerHttpAuthentication": {
+                "name": "Authorization",
+                "in": "header",
+                "type": "http",
+                "scheme": "Bearer",
+                "bearerFormat": "JWT",
+                "description": "Bearer token using a JWT"
             }
         }
     },
     "security": [
+        {
+            "bearerHttpAuthentication": []
+        },
         {
             "ApiKey": []
         }

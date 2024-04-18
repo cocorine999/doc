@@ -117,6 +117,10 @@
         {
             "name": "Postes",
             "description": "APIs related to postes management. These endpoints allow clients to create, retrieve, update, and delete postes."
+        },
+        {
+            "name": "Devises",
+            "description": "APIs related to devises management. These endpoints allow clients to create, retrieve, update, and delete devises."
         }
     ],
     "paths": {
@@ -212,6 +216,41 @@
                     "Departements"
                 ],
                 "$ref": "paths/departements/delete_departement.json"
+            }
+        },
+
+        "/devises": {
+            "get": {
+                "tags": [
+                    "Devises"
+                ],
+                "$ref": "paths/devises/list_devise.json"
+            },
+            "post": {
+                "tags": [
+                    "Devises"
+                ],
+                "$ref": "paths/devises/create_devise.json"
+            }
+        },
+        "/devises/{deviseId}": {
+            "get": {
+                "tags": [
+                    "Devises"
+                ],
+                "$ref": "paths/devises/find_devise.json"
+            },
+            "put": {
+                "tags": [
+                    "Devises"
+                ],
+                "$ref": "paths/devises/update_devise.json"
+            },
+            "delete": {
+                "tags": [
+                    "Devises"
+                ],
+                "$ref": "paths/devises/delete_devise.json"
             }
         },
 

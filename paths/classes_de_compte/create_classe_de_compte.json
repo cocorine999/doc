@@ -1,7 +1,7 @@
 {
-    "summary": "Create a new categorie de compte",
-    "operationId": "createCategorieDeCompte",
-    "description": "Create a new categorie de compte with the provided data.",
+    "summary": "Create a new classe de compte",
+    "operationId": "createClasseDeCompte",
+    "description": "Create a new classe de compte with the provided data.",
     "parameters": [
         {
             "$ref": "../../components/headers/authorization_header.json"
@@ -21,7 +21,7 @@
         "content": {
             "application/json": {
                 "schema": {
-                    "$ref": "../../components/requestBodies/categories_de_compte/categorie_de_compte_request.json#/CategorieDeCompteRequest"
+                    "$ref": "../../components/requestBodies/classes_de_compte/classe_de_compte_request.json#/ClasseDeCompteRequest"
                 }
             }
         }
@@ -66,11 +66,11 @@
                             "message": {
                                 "type": "string",
                                 "description": "Additional information about the response.",
-                                "default": "Categorie de compte created successfully",
-                                "example": "Categorie de compte created successfully"
+                                "default": "Classe de compte created successfully",
+                                "example": "Classe de compte created successfully"
                             },
                             "data": {
-                                "$ref": "../../components/schemas/models/categorie_de_compte.json#/CategorieDeCompte"
+                                "$ref": "../../components/schemas/models/classe_de_compte.json#/ClasseDeCompte"
                             },
                             "status_code": {
                                 "type": "integer",
@@ -83,26 +83,26 @@
                 }
             },
             "links": {
-                "GetCategorieDeCompteDetailsByCategorieDeCompteId": {
-                    "operationId": "getCategorieDeCompte",
+                "GetClasseDeCompteDetailsByClasseDeCompteId": {
+                    "operationId": "getClasseDeCompte",
                     "parameters": {
-                        "categorieDeCompteId": "$response.body#/data/id"
+                        "classeDeCompteId": "$response.body#/data/id"
                     },
-                    "description": "Link to get categorie de compte information based on categorie de compte ID."
+                    "description": "Link to get classe de compte information based on classe de compte ID."
                 },
-                "UpdateCategorieDeCompteDetailsByCategorieDeCompteId": {
-                    "operationId": "updateCategorieDeCompte",
+                "UpdateClasseDeCompteDetailsByClasseDeCompteId": {
+                    "operationId": "updateClasseDeCompte",
                     "parameters": {
-                        "categorieDeCompteId": "$response.body#/data/id"
+                        "classeDeCompteId": "$response.body#/data/id"
                     },
-                    "description": "Link to update categorie de compte information based on categorie de compte ID."
+                    "description": "Link to update classe de compte information based on classe de compte ID."
                 },
-                "DeleteCategorieDeCompteByCategorieDeCompteId": {
-                    "operationId": "deleteCategorieDeCompte",
+                "DeleteClasseDeCompteByClasseDeCompteId": {
+                    "operationId": "deleteClasseDeCompte",
                     "parameters": {
-                        "categorieDeCompteId": "$response.body#/data/id"
+                        "classeDeCompteId": "$response.body#/data/id"
                     },
-                    "description": "Link to delete categorie de compte based on categorie de compte ID."
+                    "description": "Link to delete classe de compte based on classe de compte ID."
                 }
             }
         },

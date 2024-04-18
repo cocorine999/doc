@@ -2,6 +2,7 @@
     "get": {
         "summary": "Fetch a poste salaries",
         "description": "Fetch a poste salaries information based on poste id.",
+        "operationId": "fetchPosteSalaries",
         "parameters": [
             {
                 "$ref": "../../components/parameters/page.json"

@@ -1,5 +1,5 @@
 {
-    "put": {
+    "patch": {
         "summary": "Detach salaries from a poste.",
         "description": "Detach salaries from a poste.",
         "operationId": "attachSalariesToPoste",

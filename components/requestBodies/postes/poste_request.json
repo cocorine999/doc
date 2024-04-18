@@ -12,8 +12,11 @@
                 "description": "Name of the departement"
             },
             "department_id": {
-                "$ref": "../../parameters/departement_id.json#/DepartementId",
-                "description": "Departement Id"
+                "description": "The unique identifier of the unite de mesure",
+                "required": true,
+                "schema": {
+                    "$ref": "../../schemas/identifier.json#/Identifier"
+                }
             }
         }
     }

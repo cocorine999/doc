@@ -12,12 +12,6 @@
                 "example": "Revenue",
                 "default": "Compte des immobilisations",
                 "description": "Nom de la categorie de compte"
-            },
-            "accounts": {
-                "type": "array",
-                "items": {
-                    "$ref": "account_request.json#/AccountRequest"
-                }
             }
         }
     }

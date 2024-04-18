@@ -16,7 +16,7 @@
             "$ref": "../../components/headers/accept.json"
         },
         {
-            "$ref": "../../components/headers/origin"
+            "$ref": "../../components/headers/origin.json"
         }
     ],
     "responses": {

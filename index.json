@@ -17,7 +17,7 @@
     },
     "servers": [
         {
-            "url": "http://localhost:{{port}}/api",
+            "url": "{{ip_address}}:{{port}}/api",
             "description": "Local development environment",
             "variables": {
                 "ip_address": {
@@ -35,60 +35,12 @@
             }
         },
         {
-            "url": "http://54.198.204.208:{{port}}/api",
-            "description": "Development code review environment",
-            "variables": {
-                "ip_address": {
-                    "enum": [
-                        "http://54.198.204.208",
-                        "https://dev.labelstrust.com"
-                    ],
-                    "default": "http://54.198.204.208",
-                    "description": "Ip address"
-                },
-                "port": {
-                    "enum": [
-                        "80",
-                        "8000",
-                        "8001"
-                    ],
-                    "default": "80"
-                }
-            }
-        },
-        {
-            "url": "https://test.labelstrust.com:{{port}}/api",
-            "description": "Testing environment",
-            "variables": {
-                "ip_address": {
-                    "default": "https://test.labelstrust.com",
-                    "description": "Ip address"
-                },
-                "port": {
-                    "enum": [
-                        "80",
-                        "8000",
-                        "8001"
-                    ],
-                    "default": "80"
-                }
-            }
-        },
-        {
-            "url": "https://staging.labelstrust.com:{{port}}/api",
+            "url": "{{ip_address}}/api",
             "description": "Staging environment",
             "variables": {
                 "ip_address": {
-                    "default": "https://staging.labelstrust.com",
+                    "default": "https://label-trust-api.ani-cashewpms.com",
                     "description": "Ip address"
-                },
-                "port": {
-                    "enum": [
-                        "80",
-                        "8000",
-                        "8001"
-                    ],
-                    "default": "80"
                 }
             }
         }

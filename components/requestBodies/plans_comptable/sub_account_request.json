@@ -8,7 +8,7 @@
         ],
         "properties": {
             "account_number": {
-                "$ref": "../../schemas/field_name.json#/FieldName",
+                "type": "string",
                 "default": "10",
                 "description": "Numero du compte"
             },

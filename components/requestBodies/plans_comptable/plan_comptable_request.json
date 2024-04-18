@@ -7,7 +7,7 @@
         ],
         "properties": {
             "name": {
-                "$ref": "../field_name.json#/FieldName",
+                "type": "string",
                 "nullable": false,
                 "example": "Revenue",
                 "default": "Compte des immobilisations",

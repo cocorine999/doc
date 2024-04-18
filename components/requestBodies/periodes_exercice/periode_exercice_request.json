@@ -8,7 +8,7 @@
         ],
         "properties": {
             "name": {
-                "$ref": "../field_name.json#/FieldName",
+                "type": "string",
                 "unique": true,
                 "example": "Annee Fiscal",
                 "default": "Annee Fiscal",

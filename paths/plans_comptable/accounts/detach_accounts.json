@@ -19,6 +19,24 @@
             "$ref": "../../components/headers/origin.json"
         }
     ],
+    "requestBody": {
+        "required": true,
+        "content": {
+            "application/json": {
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "accounts": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "../../components/requestBodies/plans_comptable/account_request.json#/AccountRequest"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
     "responses": {
         "200": {
             "description": "Successfully retrieved account",

@@ -116,34 +116,6 @@
                                         "example": "categories_de_compte?page=7",
                                         "default": "categories_de_compte?page=1"
                                     },
-                                    "links": {
-                                        "type": "array",
-                                        "items": {
-                                            "type": "object",
-                                            "properties": {
-                                                "url": {
-                                                    "type": "string",
-                                                    "description": "The URL of the page.",
-                                                    "nullable": true,
-                                                    "default": null,
-                                                    "example": null
-                                                },
-                                                "label": {
-                                                    "type": "string",
-                                                    "description": "The label of the page.",
-                                                    "nullable": true,
-                                                    "default": "1",
-                                                    "example": "&laquo; Previous"
-                                                },
-                                                "active": {
-                                                    "type": "boolean",
-                                                    "description": "Indicates whether the page is active.",
-                                                    "default": false,
-                                                    "example": true
-                                                }
-                                            }
-                                        }
-                                    },
                                     "next_page_url": {
                                         "type": "string",
                                         "description": "The URL to retrieve the next page of results.",

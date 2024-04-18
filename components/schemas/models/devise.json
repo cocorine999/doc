@@ -12,13 +12,13 @@
                 "description": "Unique identifier for the devise"
             },
             "name": {
-                "$ref": "../field_name.json#/FieldName",
+                "type": "string",
                 "unique": true,
                 "default": "Franc CFA",
                 "description": "Name of the devise"
             },
             "symbol": {
-                "$ref": "../field_name.json#/FieldName",
+                "type": "string",
                 "unique": true,
                 "default": "xof",
                 "description": "Symbol de la devise"

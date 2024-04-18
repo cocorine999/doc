@@ -7,9 +7,6 @@
             "$ref": "../../components/parameters/poste_id.json#/PosteId"
         },
         {
-            "$ref": "../../components/headers/authorization_header.json"
-        },
-        {
             "$ref": "../../components/headers/content_type.json"
         },
         {

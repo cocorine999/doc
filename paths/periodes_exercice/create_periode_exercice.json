@@ -4,9 +4,6 @@
     "description": "Create a new periode exercice with the provided data.",
     "parameters": [
         {
-            "$ref": "../../components/headers/authorization_header.json"
-        },
-        {
             "$ref": "../../components/headers/content_type.json"
         },
         {

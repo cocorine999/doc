@@ -1,0 +1,38 @@
+{
+    "Departement": {
+        "type": "object",
+        "required": [
+            "id",
+            "name",
+            "slug"
+        ],
+        "properties": {
+            "id": {
+                "$ref": "../identifier.json#/Identifier",
+                "description": "Unique identifier for the departement"
+            },
+            "name": {
+                "$ref": "../field_name.json#/FieldName",
+                "default": "Production",
+                "description": "Name of the departement"
+            },
+            "description": {
+                "type": "string",
+                "example": "This departement has employee privileges.",
+                "default": "No description provided",
+                "description": "Description of the departement"
+            },
+            "permissions": {
+                "type": "array",
+                "items": {
+                    "$ref": "./permission.json#/Permission"
+                },
+                "description": "List of permissions associated with the departement"
+            },
+            "created_at": {
+                "$ref": "../date_format.json#/DateFormat",
+                "description": "Date and time when the departement was created (YYYY-MM-DD HH:MM:SS)"
+            }
+        }
+    }
+}

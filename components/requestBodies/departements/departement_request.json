@@ -1,0 +1,22 @@
+{
+    "DepartementRequest": {
+        "required": [
+            "name"
+        ],
+        "type": "object",
+        "properties": {
+            "name": {
+                "$ref": "../../schemas/field_name.json#/FieldName",
+                "default": "Production",
+                "description": "Name of the departement"
+            },
+            "description": {
+                "type": "string",
+                "example": "Departement of production.",
+                "default": "No description provided",
+                "description": "Description of the departement",
+                "nullable": true
+            }
+        }
+    }
+}

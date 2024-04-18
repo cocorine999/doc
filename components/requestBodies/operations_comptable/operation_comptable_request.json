@@ -9,6 +9,7 @@
         "properties": {
             "libelle": {
                 "type": "string",
+                "example": "{{$randomBsBuzz}}",
                 "nullable": false,
                 "default": "Achat de matiere premiere",
                 "description": "Intitule de l'ecriture comptable"

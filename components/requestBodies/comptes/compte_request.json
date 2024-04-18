@@ -10,7 +10,7 @@
             "name": {
                 "type": "string",
                 "nullable": false,
-                "example": "Revenue",
+                "example": "{{$randomNoun}}",
                 "default": "Compte des immobilisations",
                 "description": "Nom de la categorie de compte"
             },

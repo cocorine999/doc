@@ -9,6 +9,7 @@
         "properties": {
             "fiscal_year": {
                 "type": "integer",
+                "example": 2024,
                 "default": 2024,
                 "description": "Fiscal year"
             },

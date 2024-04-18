@@ -8,6 +8,7 @@
         "properties": {
             "name": {
                 "$ref": "../../schemas/field_name.json#/FieldName",
+                "example": "{{$randomJobType}}",
                 "default": "Production",
                 "description": "Name of the departement"
             },

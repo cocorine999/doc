@@ -9,7 +9,7 @@
             "name": {
                 "type": "string",
                 "nullable": false,
-                "example": "Plan comptable",
+                "example": "{{$randomNoun}}",
                 "default": "Plan comptable",
                 "description": "Nom du plan comptable"
             },

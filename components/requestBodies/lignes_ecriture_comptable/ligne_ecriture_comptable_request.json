@@ -7,7 +7,9 @@
         ],
         "properties": {
             "montant": {
-                "$ref": "../amount.json#/Amount",
+                "type": "number",
+                "format": "double",
+                "example": "{{$randomPrice}}",
                 "default": 6000.00,
                 "description": "Montant"
             },

@@ -9,13 +9,13 @@
             "intitule": {
                 "type": "string",
                 "nullable": false,
-                "example": "Compte des capitaux",
+                "example": "{{$randomBsNoun}}",
                 "default": "Compte des capitaux",
                 "description": "Intitule of the classe de compte"
             },
             "class_number": {
                 "type": "integer",
-                "example": 1,
+                "example": "{{$randomInt}}",
                 "default": 1,
                 "description": "Numero de la classe de compte"
             }

@@ -2787,7 +2787,7 @@
                         "type": "string",
                         "description": "Description of the categories of employees",
                         "nullable": true,
-                        "example": "johndoe@gmail.com",
+                        "example": "{{$randomEmail}}",
                         "default": "user@gmail.com"
                     },
                     "phone_number": {
@@ -2803,7 +2803,7 @@
                             "number": {
                                 "type": "integer",
                                 "description": "Description of the categories of employees",
-                                "example": 94531209,
+                                "example": "{{$randomBankAccount}}",
                                 "default": 90000000
                             }
                         },

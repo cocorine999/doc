@@ -23,10 +23,10 @@
                 "schema": {
                     "type": "object",
                     "properties": {
-                        "accounts": {
+                        "comptes": {
                             "type": "array",
                             "items": {
-                                "$ref": "../../../components/requestBodies/plans_comptable/account_request.json#/AccountRequest"
+                                "type": "uuid"
                             }
                         }
                     }

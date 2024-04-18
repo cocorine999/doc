@@ -4,10 +4,13 @@
     "description": "Retrieves ecritures comptable information based on certain criteria.",
     "parameters": [
         {
-            "$ref": "../../components/parameters/page.json"
+            "$ref": "../../../components/parameters/exercice_comptable_id.json#/ExerciceComptableId"
         },
         {
-            "$ref": "../../components/parameters/per_page.json"
+            "$ref": "../../../components/parameters/page.json"
+        },
+        {
+            "$ref": "../../../components/parameters/per_page.json"
         },
         {
             "name": "fields",
@@ -20,10 +23,10 @@
             "example": "id,name"
         },
         {
-            "$ref": "../../components/headers/content_type.json"
+            "$ref": "../../../components/headers/content_type.json"
         },
         {
-            "$ref": "../../components/headers/origin.json"
+            "$ref": "../../../components/headers/origin.json"
         }
     ],
     "responses": {
@@ -31,25 +34,25 @@
             "description": "Successfully Response",
             "headers": {
                 "X-RateLimit-Limit": {
-                    "$ref": "../../components/headers/x_ratelimit_limit.json"
+                    "$ref": "../../../components/headers/x_ratelimit_limit.json"
                 },
                 "X-RateLimit-Remaining": {
-                    "$ref": "../../components/headers/x_ratelimit_remaining.json"
+                    "$ref": "../../../components/headers/x_ratelimit_remaining.json"
                 },
                 "Access-Control-Allow-Origin": {
-                    "$ref": "../../components/headers/access_control_allow_origin.json"
+                    "$ref": "../../../components/headers/access_control_allow_origin.json"
                 },
                 "Access-Control-Allow-Methods": {
-                    "$ref": "../../components/headers/access_control_allow_methods.json"
+                    "$ref": "../../../components/headers/access_control_allow_methods.json"
                 },
                 "Access-Control-Allow-Credentials": {
-                    "$ref": "../../components/headers/access_control_allow_credentials.json"
+                    "$ref": "../../../components/headers/access_control_allow_credentials.json"
                 },
                 "Access-Control-Max-Age": {
-                    "$ref": "../../components/headers/access_control_max_age.json"
+                    "$ref": "../../../components/headers/access_control_max_age.json"
                 },
                 "Access-Control-Allow-Headers": {
-                    "$ref": "../../components/headers/access_control_allow_headers.json"
+                    "$ref": "../../../components/headers/access_control_allow_headers.json"
                 }
             },
             "content": {
@@ -84,7 +87,7 @@
                                         "type": "array",
                                         "description": "List of ecritures comptable.",
                                         "items": {
-                                            "$ref": "../../components/schemas/models/exercice_comptable.json#/ExerciceComptable"
+                                            "$ref": "../../../components/schemas/models/exercice_comptable.json#/ExerciceComptable"
                                         }
                                     },
                                     "first_page_url": {
@@ -191,25 +194,25 @@
             }
         },
         "400": {
-            "$ref": "../../components/responses/errors/400.json#BadRequest"
+            "$ref": "../../../components/responses/errors/400.json#BadRequest"
         },
         "405": {
-            "$ref": "../../components/responses/errors/405.json#MethodNotAllowed"
+            "$ref": "../../../components/responses/errors/405.json#MethodNotAllowed"
         },
         "408": {
-            "$ref": "../../components/responses/errors/408.json#RequestTimeout"
+            "$ref": "../../../components/responses/errors/408.json#RequestTimeout"
         },
         "422": {
-            "$ref": "../../components/responses/errors/422.json#UnprocessableEntity"
+            "$ref": "../../../components/responses/errors/422.json#UnprocessableEntity"
         },
         "429": {
-            "$ref": "../../components/responses/errors/429.json#RateLimitExceeded"
+            "$ref": "../../../components/responses/errors/429.json#RateLimitExceeded"
         },
         "500": {
-            "$ref": "../../components/responses/errors/500.json#InternalServerError"
+            "$ref": "../../../components/responses/errors/500.json#InternalServerError"
         },
         "503": {
-            "$ref": "../../components/responses/errors/503.json#ServiceUnavailable"
+            "$ref": "../../../components/responses/errors/503.json#ServiceUnavailable"
         }
     }
 }

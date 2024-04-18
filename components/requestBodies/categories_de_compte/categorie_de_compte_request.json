@@ -5,18 +5,21 @@
             "name"
         ],
         "allOf": [
-          {
-            "$ref": "../../schemas/field_name.json#/FieldName"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "additionalProperty": {
-                "type": "string",
-                "description": "Additional property specific to CategorieDeCompteRequest"
-              }
+            {
+                "$ref": "../../schemas/field_name.json#/FieldName"
+            },
+            {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "$ref": "../../schemas/field_name.json#/FieldName",
+                        "nullable": false,
+                        "example": "Revenue",
+                        "default": "Tresorie passif",
+                        "description": "Nom de la categorie de compte"
+                    }
+                }
             }
-          }
         ]
     }
 }

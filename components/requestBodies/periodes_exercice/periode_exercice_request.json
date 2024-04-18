@@ -9,7 +9,7 @@
         "properties": {
             "name": {
                 "type": "string",
-                "unique": true,
+                "nullable": false,
                 "example": "Annee Fiscal",
                 "default": "Annee Fiscal",
                 "description": "Intitule of the periode exercice"

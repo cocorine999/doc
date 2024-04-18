@@ -1,6 +1,6 @@
 {
     "PosteId": {
-        "name": "poste",
+        "name": "posteId",
         "description": "The unique identifier of the poste",
         "in": "path",
         "required": true,

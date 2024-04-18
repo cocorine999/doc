@@ -1,6 +1,6 @@
 {
     "DepartementId": {
-        "name": "departement",
+        "name": "departementId",
         "description": "The unique identifier of the departement",
         "in": "path",
         "required": true,

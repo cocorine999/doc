@@ -1,6 +1,6 @@
 {
     "CategoryOfEmployeeId": {
-        "name": "category of employee",
+        "name": "categoryOfEmployeeId",
         "description": "The unique identifier of the category of employee",
         "in": "path",
         "required": true,

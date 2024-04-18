@@ -3276,12 +3276,17 @@
                 "type": "apiKey",
                 "in": "header",
                 "name": "X-Api-Key"
+            },
+            "bearerAuth": {
+              "type": "http",
+              "scheme": "bearer",
+              "bearerFormat": "JWT"
             }
         }
     },
     "security": [
         {
-            "ApiKey": []
+            "bearerAuth": []
         }
     ]
 }

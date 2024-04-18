@@ -112,11 +112,7 @@
         },
         {
             "name": "Departements",
-            "description": "APIs related to departements management. These endpoints allow clients to create, retrieve, update, and delete departement records."
-        },
-        {
-            "name": "Postes",
-            "description": "APIs related to postes management. These endpoints allow clients to create, retrieve, update, and delete poste records."
+            "description": "APIs related to departements management. These endpoints allow clients to create, retrieve, update, and delete departements."
         }
     ],
     "paths": {
@@ -214,51 +210,6 @@
                 "$ref": "paths/departements/delete_departement.json"
             }
         },
-
-        "/postes": {
-            "get": {
-                "tags": [
-                    "Postes"
-                ],
-                "$ref": "paths/postes/list_poste.json"
-            },
-            "post": {
-                "tags": [
-                    "Postes"
-                ],
-                "$ref": "paths/postes/create_poste.json"
-            }
-        },
-        "/postes/{posteId}": {
-            "get": {
-                "tags": [
-                    "Postes"
-                ],
-                "$ref": "paths/postes/find_poste.json"
-            },
-            "put": {
-                "tags": [
-                    "Postes"
-                ],
-                "$ref": "paths/postes/update_poste.json"
-            },
-            "delete": {
-                "tags": [
-                    "Postes"
-                ],
-                "$ref": "paths/postes/delete_poste.json"
-            }
-        },
-        "/postes/{posteId}/salaries": {
-            "$ref": "paths/postes/fetch_poste_salaries.json"
-        },
-        "/postes/{posteId}/attach-salaries": {
-            "$ref": "paths/postes/attach_salaries.json"
-        },
-        "/postes/{posteId}/detach-salaries": {
-            "$ref": "paths/postes/detach_salaries.json"
-        },
-
         "/employees":{
             "$ref": "paths/employees/employees.json"
         },

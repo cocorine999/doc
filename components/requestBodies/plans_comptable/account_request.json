@@ -19,6 +19,10 @@
             "compte_id": {
                 "$ref": "../../schemas/identifier.json#/Identifier",
                 "description": "The unique identifier of the compte"
+            },
+            "compte_data": {
+                "$ref": "../comptes/compte_request.json#/CompteRequest",
+                "description": "compte form data"
             }
         }
     }

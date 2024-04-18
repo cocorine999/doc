@@ -1,0 +1,11 @@
+{
+    "CategoryOfEmployeeId": {
+        "name": "category of employee",
+        "description": "The unique identifier of the category of employee",
+        "in": "path",
+        "required": true,
+        "schema": {
+            "$ref": "../../schemas/identifier.json#/Identifier"
+        }
+    }
+}

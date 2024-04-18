@@ -1,0 +1,11 @@
+{
+    "PosteId": {
+        "name": "poste",
+        "description": "The unique identifier of the poste",
+        "in": "path",
+        "required": true,
+        "schema": {
+            "$ref": "../schemas/identifier.json#/Identifier"
+        }
+    }
+}

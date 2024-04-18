@@ -11,7 +11,7 @@
                     "type": "object",
                     "properties": {
                         "salary_id": {
-                            "$ref": "../../schemas/Identifier",
+                            "$ref": "../../schemas/identifier.json#/Identifier",
                             "description": "Id du taux/salaires d'une unite travaille"
                         },
                         "est_le_salaire_de_base": {

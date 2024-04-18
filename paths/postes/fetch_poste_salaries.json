@@ -1,6 +1,6 @@
 {
     "summary": "Fetch a poste salaries",
-    "operationId": "fetchListOfPostes",
+    "operationId": "fetchListOfPosteSalaries",
     "description": "Fetch a poste salaries information based on poste id.",
     "parameters": [
         {

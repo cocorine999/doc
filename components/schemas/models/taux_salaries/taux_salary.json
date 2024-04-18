@@ -14,15 +14,15 @@
                 "description": "Unique identifier for the poste"
             },
             "hint": {
-                "type": "../../float.json#/Float",
+                "$ref": "../../float.json#/Float",
                 "description": "Hint value"
             },
             "rate": {
-                "type": "../../amount.json#/Amount",
+                "$ref": "../../amount.json#/Amount",
                 "description": "Hint rate value"
             },
             "rate_measure_unit_symbol": {
-                "type": "../../string.json#/String",
+                "$ref": "../../string.json#/String",
                 "unique": true,
                 "description": "Unit symbol"
             },
@@ -30,12 +30,12 @@
                 "type": "object",
                 "properties": {
                     "type": {
-                        "type": "../../string.json#/String",
+                        "$ref": "../../string.json#/String",
                         "unique": true,
                         "description": "Type unite travaille"
                     },
                     "symbol": {
-                        "type": "../../string.json#/String",
+                        "$ref": "../../string.json#/String",
                         "unique": true,
                         "description": "symbol de l'unite de mesure "
                     }

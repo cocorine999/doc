@@ -1,20 +1,15 @@
 {
-    "PeriodeExercice": {
+    "PeriodeExerciceRequest": {
         "type": "object",
         "required": [
-            "id",
             "name",
             "date_debut_periode",
             "date_fin_periode"
         ],
         "properties": {
-            "id": {
-                "$ref": "../identifier.json#/Identifier",
-                "description": "Unique identifier for the periode exercice"
-            },
             "name": {
                 "$ref": "../field_name.json#/FieldName",
-                "nullable": false,
+                "unique": true,
                 "example": "Annee Fiscal",
                 "default": "Annee Fiscal",
                 "description": "Intitule of the periode exercice"
@@ -32,10 +27,6 @@
                 "pattern": "^\\d{2}/\\d{2}$",
                 "nullable": false,
                 "description": "End date of the period (DD/MM)"
-            },
-            "created_at": {
-                "$ref": "../date_format.json#/DateFormat",
-                "description": "Date and time when the periode exercice was created (YYYY-MM-DD HH:MM:SS)"
             }
         }
     }

@@ -4,8 +4,6 @@
         "required": [
             "id",
             "libelle",
-            "total_debit",
-            "total_credit",
             "date_ecriture",
             "status_operation",
             "lignes_ecriture"

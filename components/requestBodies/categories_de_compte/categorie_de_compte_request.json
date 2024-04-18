@@ -4,21 +4,14 @@
         "required": [
             "name"
         ],
-        "allOf": [
-            {
-                "$ref": "../../schemas/field_name.json#/FieldName"
-            },
-            {
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "nullable": false,
-                        "example": "Revenue",
-                        "default": "Tresorie passif",
-                        "description": "Nom de la categorie de compte"
-                    }
-                }
+        "properties": {
+            "name": {
+                "type": "string",
+                "nullable": false,
+                "example": "Revenue",
+                "default": "Tresorie passif",
+                "description": "Nom de la categorie de compte"
             }
-        ]
+        }
     }
 }

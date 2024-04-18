@@ -7,13 +7,13 @@
         ],
         "properties": {
             "intitule": {
-                "$ref": "../../schemas/field_name.json#/FieldName",
+                "type": "string",
                 "nullable": false,
                 "default": "Compte des capitaux",
                 "description": "Intitule of the classe de compte"
             },
             "class_number": {
-                "$ref": "../../schemas/integer.json#/Integer",
+                "type": "integer",
                 "default": 1,
                 "description": "Numero de la classe de compte"
             }

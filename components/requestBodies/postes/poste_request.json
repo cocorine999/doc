@@ -1,7 +1,8 @@
 {
-    "DepartementRequest": {
+    "PosteRequest": {
         "required": [
-            "name"
+            "name",
+            "department_id"
         ],
         "type": "object",
         "properties": {
@@ -9,6 +10,10 @@
                 "$ref": "../../schemas/field_name.json#/FieldName",
                 "default": "Production",
                 "description": "Name of the departement"
+            },
+            "department_id": {
+                "$ref": "../../parameters/departement_id.json#/DepartementId",
+                "description": "Departement Id"
             }
         }
     }

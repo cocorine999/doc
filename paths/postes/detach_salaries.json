@@ -1,11 +1,11 @@
 {
     "put": {
-        "summary": "Revoke access from a role.",
-        "description": "Revoke permissions access from role.",
-        "operationId": "revokeAccessToRole",
+        "summary": "Detach salaries from a poste.",
+        "description": "Detach salaries from a poste.",
+        "operationId": "attachSalariesToPoste",
         "parameters": [
             {
-                "$ref": "../../components/parameters/role_id.json#/RoleId"
+                "$ref": "../../components/parameters/poste_id.json#/PosteId"
             },
             {
                 "$ref": "../../components/headers/authorization_header.json"
@@ -21,19 +21,11 @@
             }
         ],
         "requestBody": {
-            "description": "Update an existing role by revoked existing access from a role.",
+            "description": "Update an existing poste by attaching salaries to poste",
             "content": {
                 "application/json": {
                     "schema": {
-                        "properties": {
-                            "permissions": {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "../../components/schemas/Identifier"
-                                },
-                                "description": "UUID unique au sein de notre systeme"
-                            }
-                        }
+                        "$ref": "../../components/requestBodies/postes/poste_salary_request.json#/PosteSalaryRequest"
                     }
                 }
             },
@@ -79,8 +71,8 @@
                                 "message": {
                                     "type": "string",
                                     "description": "Additional information about the response.",
-                                    "example": "Access revoked from role successfully.",
-                                    "default": "Access revoked from role successfully."
+                                    "example": "Salaries detached to poste successfully",
+                                    "default": "Salaries detached to poste successfully"
                                 },
                                 "data": {
                                     "type": "boolean",

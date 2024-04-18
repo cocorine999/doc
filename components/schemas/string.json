@@ -1,0 +1,11 @@
+{
+    "String": {
+        "type": "string",
+        "example": "example",
+        "default": "default value",
+        "minLength": 1,
+        "maxLength": 255,
+        "pattern": "^[a-zA-Z0-9]+$",
+        "description": "The String field represents a text string."
+    }
+}

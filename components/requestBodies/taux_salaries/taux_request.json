@@ -1,0 +1,34 @@
+{
+    "TauxAndSalariesRequest": {
+        "required": [
+            "taux"
+        ],
+        "type": "object",
+        "properties": {
+            "taux": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "hint": {
+                            "$ref": "../../schemas/float.json#/Float"
+                        },
+                        "rate": {
+                            "type": "../../schemas/amount.json#/Amount",
+                            "example": 180000.00,
+                            "description": "Hint rate value"
+                        },
+                        "unite_mesure_id": {
+                            "description": "The unique identifier of the unite de mesure",
+                            "required": true,
+                            "schema": {
+                                "$ref": "../../schemas/identifier.json#/Identifier"
+                            }
+                        }
+                    }
+                },
+                "description": "Taux"
+            }
+        }
+    }
+}

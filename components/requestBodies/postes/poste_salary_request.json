@@ -1,0 +1,28 @@
+{
+    "PosteSalaryRequest": {
+        "required": [
+            "salaries"
+        ],
+        "type": "object",
+        "properties": {
+            "salaries": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "salary_id": {
+                            "$ref": "../../schemas/Identifier",
+                            "description": "Id du taux/salaires d'une unite travaille"
+                        },
+                        "est_le_salaire_de_base": {
+                            "type": "boolean",
+                            "default": false,
+                            "example": true,
+                            "description": "Le salaire de base"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,50 @@
+{
+    "TauxAndSalary": {
+        "type": "object",
+        "required": [
+            "id",
+            "hint",
+            "rate",
+            "rate_measure_unit_symbol",
+            "work_unit"
+        ],
+        "properties": {
+            "id": {
+                "$ref": "../../identifier.json#/Identifier",
+                "description": "Unique identifier for the poste"
+            },
+            "hint": {
+                "type": "../../float.json#/Float",
+                "description": "Hint value"
+            },
+            "rate": {
+                "type": "../../amount.json#/Amount",
+                "description": "Hint rate value"
+            },
+            "rate_measure_unit_symbol": {
+                "type": "../../string.json#/String",
+                "unique": true,
+                "description": "Unit symbol"
+            },
+            "work_unit": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "../../string.json#/String",
+                        "unique": true,
+                        "description": "Type unite travaille"
+                    },
+                    "symbol": {
+                        "type": "../../string.json#/String",
+                        "unique": true,
+                        "description": "symbol de l'unite de mesure "
+                    }
+                }
+            },
+            "created_at": {
+                "$ref": "../../date_format.json#/DateFormat",
+                "description": "Date and time when the poste was created (YYYY-MM-DD HH:MM:SS)"
+            }
+        }
+    }
+}

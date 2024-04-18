@@ -1,0 +1,9 @@
+{
+    "Amount": {
+        "type": "number",
+        "format": "double",
+        "example": 1500.00,
+        "default": 1500.00,
+        "minimum": 0
+    }
+}

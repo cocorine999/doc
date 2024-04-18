@@ -1,0 +1,11 @@
+{
+    "UniteMesureId": {
+        "name": "uniteMesureId",
+        "description": "The unique identifier of the unite de mesure",
+        "in": "path",
+        "required": true,
+        "schema": {
+            "$ref": "../schemas/identifier.json#/Identifier"
+        }
+    }
+}

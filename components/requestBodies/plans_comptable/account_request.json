@@ -23,13 +23,11 @@
             "compte_data": {
                 "$ref": "../comptes/compte_request.json#/CompteRequest",
                 "description": "compte form data"
-            }
-        },
-        "not": {
-            "required": ["compte_id"],
-            "properties": {
-                "compte_data": {
-                    "type": "object"
+            },
+            "sub_accounts": {
+                "type": "array",
+                "items": {
+                    "$ref": "sub_account_request.json#/SubAccountRequest"
                 }
             }
         }

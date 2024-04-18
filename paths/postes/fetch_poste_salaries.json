@@ -1,118 +1,120 @@
 {
-    "summary": "Fetch a poste salaries",
-    "description": "Fetch a poste salaries information based on poste id.",
-    "parameters": [
-        {
-            "$ref": "../../components/parameters/page.json"
-        },
-        {
-            "$ref": "../../components/parameters/per_page.json"
-        },
-        {
-            "name": "fields",
-            "in": "query",
-            "description": "Comma-separated list of fields to include in the response.",
-            "required": false,
-            "schema": {
-                "type": "string"
+    "get": {
+        "summary": "Fetch a poste salaries",
+        "description": "Fetch a poste salaries information based on poste id.",
+        "parameters": [
+            {
+                "$ref": "../../components/parameters/page.json"
             },
-            "example": "id,name,slug"
-        },
-        {
-            "$ref": "../../components/headers/authorization_header.json"
-        },
-        {
-            "$ref": "../../components/headers/content_type.json"
-        },
-        {
-            "$ref": "../../components/headers/accept.json"
-        },
-        {
-            "$ref": "../../components/headers/origin.json"
-        }
-    ],
-    "responses": {
-        "200": {
-            "description": "Successfully Response",
-            "headers": {
-                "X-RateLimit-Limit": {
-                    "$ref": "../../components/headers/x_ratelimit_limit.json"
-                },
-                "X-RateLimit-Remaining": {
-                    "$ref": "../../components/headers/x_ratelimit_remaining.json"
-                },
-                "Access-Control-Allow-Origin": {
-                    "$ref": "../../components/headers/access_control_allow_origin.json"
-                },
-                "Access-Control-Allow-Methods": {
-                    "$ref": "../../components/headers/access_control_allow_methods.json"
-                },
-                "Access-Control-Allow-Credentials": {
-                    "$ref": "../../components/headers/access_control_allow_credentials.json"
-                },
-                "Access-Control-Max-Age": {
-                    "$ref": "../../components/headers/access_control_max_age.json"
-                },
-                "Access-Control-Allow-Headers": {
-                    "$ref": "../../components/headers/access_control_allow_headers.json"
-                }
+            {
+                "$ref": "../../components/parameters/per_page.json"
             },
-            "content": {
-                "application/json": {
-                    "schema": {
-                        "type": "object",
-                        "properties": {
-                            "status": {
-                                "type": "boolean",
-                                "description": "Indicates the success status of the request.",
-                                "default": true,
-                                "example": true
-                            },
-                            "message": {
-                                "type": "string",
-                                "description": "Additional information about the response.",
-                                "nullable": true,
-                                "default": null,
-                                "example": "List of postes retrieve successfully"
-                            },
-                            "data": {
-                                "type": "array",
-                                "description": "List of a poste salaries.",
-                                "items": {
-                                    "$ref": "../../components/schemas/models/taux_salaries/taux_salary.json#/TauxAndSalary"
+            {
+                "name": "fields",
+                "in": "query",
+                "description": "Comma-separated list of fields to include in the response.",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "id,name,slug"
+            },
+            {
+                "$ref": "../../components/headers/authorization_header.json"
+            },
+            {
+                "$ref": "../../components/headers/content_type.json"
+            },
+            {
+                "$ref": "../../components/headers/accept.json"
+            },
+            {
+                "$ref": "../../components/headers/origin.json"
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "Successfully Response",
+                "headers": {
+                    "X-RateLimit-Limit": {
+                        "$ref": "../../components/headers/x_ratelimit_limit.json"
+                    },
+                    "X-RateLimit-Remaining": {
+                        "$ref": "../../components/headers/x_ratelimit_remaining.json"
+                    },
+                    "Access-Control-Allow-Origin": {
+                        "$ref": "../../components/headers/access_control_allow_origin.json"
+                    },
+                    "Access-Control-Allow-Methods": {
+                        "$ref": "../../components/headers/access_control_allow_methods.json"
+                    },
+                    "Access-Control-Allow-Credentials": {
+                        "$ref": "../../components/headers/access_control_allow_credentials.json"
+                    },
+                    "Access-Control-Max-Age": {
+                        "$ref": "../../components/headers/access_control_max_age.json"
+                    },
+                    "Access-Control-Allow-Headers": {
+                        "$ref": "../../components/headers/access_control_allow_headers.json"
+                    }
+                },
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "boolean",
+                                    "description": "Indicates the success status of the request.",
+                                    "default": true,
+                                    "example": true
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "description": "Additional information about the response.",
+                                    "nullable": true,
+                                    "default": null,
+                                    "example": "List of postes retrieve successfully"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "description": "List of a poste salaries.",
+                                    "items": {
+                                        "$ref": "../../components/schemas/models/taux_salaries/taux_salary.json#/TauxAndSalary"
+                                    }
+                                },
+                                "status_code": {
+                                    "type": "integer",
+                                    "description": "Indicates whether the request was successful.",
+                                    "default": 200,
+                                    "example": 200
                                 }
-                            },
-                            "status_code": {
-                                "type": "integer",
-                                "description": "Indicates whether the request was successful.",
-                                "default": 200,
-                                "example": 200
                             }
                         }
                     }
                 }
+            },
+            "400": {
+                "$ref": "../../components/responses/errors/400.json#BadRequest"
+            },
+            "405": {
+                "$ref": "../../components/responses/errors/405.json#MethodNotAllowed"
+            },
+            "408": {
+                "$ref": "../../components/responses/errors/408.json#RequestTimeout"
+            },
+            "422": {
+                "$ref": "../../components/responses/errors/422.json#UnprocessableEntity"
+            },
+            "429": {
+                "$ref": "../../components/responses/errors/429.json#RateLimitExceeded"
+            },
+            "500": {
+                "$ref": "../../components/responses/errors/500.json#InternalServerError"
+            },
+            "503": {
+                "$ref": "../../components/responses/errors/503.json#ServiceUnavailable"
             }
-        },
-        "400": {
-            "$ref": "../../components/responses/errors/400.json#BadRequest"
-        },
-        "405": {
-            "$ref": "../../components/responses/errors/405.json#MethodNotAllowed"
-        },
-        "408": {
-            "$ref": "../../components/responses/errors/408.json#RequestTimeout"
-        },
-        "422": {
-            "$ref": "../../components/responses/errors/422.json#UnprocessableEntity"
-        },
-        "429": {
-            "$ref": "../../components/responses/errors/429.json#RateLimitExceeded"
-        },
-        "500": {
-            "$ref": "../../components/responses/errors/500.json#InternalServerError"
-        },
-        "503": {
-            "$ref": "../../components/responses/errors/503.json#ServiceUnavailable"
         }
     }
 }

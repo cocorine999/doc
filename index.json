@@ -112,7 +112,7 @@
         },
         {
             "name": "Departements",
-            "description": "APIs related to departements management. These endpoints allow clients to create, retrieve, update, and delete departements."
+            "description": "APIs related to departements management. These endpoints allow clients to create, retrieve, update, and delete departement records."
         }
     ],
     "paths": {
@@ -210,6 +210,7 @@
                 "$ref": "paths/departements/delete_departement.json"
             }
         },
+
         "/employees":{
             "$ref": "paths/employees/employees.json"
         },

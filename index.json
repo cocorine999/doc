@@ -1122,19 +1122,19 @@
                 "tags": [
                     "Departements"
                 ],
-                "$ref": "paths/departements/find_departement.json"
+                "$ref": "paths/departement/find_departement.json"
             },
             "put": {
                 "tags": [
                     "Departements"
                 ],
-                "$ref": "paths/departements/update_departement.json"
+                "$ref": "paths/departement/update_departement.json"
             },
             "delete": {
                 "tags": [
                     "Departements"
                 ],
-                "$ref": "paths/departements/delete_departement.json"
+                "$ref": "paths/departement/delete_departement.json"
             }
         },
         "/postes": {

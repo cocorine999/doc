@@ -30,12 +30,12 @@
                 "properties": {
                     "type": {
                         "$ref": "../../string.json#/String",
-                        "unique": true,
+                        "nullable": false,
                         "description": "Type unite travaille"
                     },
                     "symbol": {
                         "$ref": "../../string.json#/String",
-                        "unique": true,
+                        "nullable": false,
                         "description": "symbol de l'unite de mesure "
                     }
                 }

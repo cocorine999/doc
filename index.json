@@ -3281,9 +3281,6 @@
     },
     "security": [
         {
-            "bearerAuth": []
-        },
-        {
             "ApiKey": []
         }
     ]

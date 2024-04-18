@@ -2560,6 +2560,22 @@
                 "$ref": "paths/plans_comptable/accounts/attach_accounts.json"
             }
         },
+        "/plans_comptable/{planComptableId}/update-accounts": {
+            "patch": {
+                "tags": [
+                    "Plan Comptable accounts"
+                ],
+                "$ref": "paths/plans_comptable/accounts/update_accounts.json"
+            }
+        },
+        "/plans_comptable/{planComptableId}/detach-accounts": {
+            "patch": {
+                "tags": [
+                    "Plan Comptable accounts"
+                ],
+                "$ref": "paths/plans_comptable/accounts/detach_accounts.json"
+            }
+        },
 
         "/exercices_comptable": {
             "get": {

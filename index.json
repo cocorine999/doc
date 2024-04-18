@@ -2416,7 +2416,7 @@
                 "$ref": "paths/categories_de_compte/create_categorie_de_compte.json"
             }
         },
-        "/categories_de_compte/{periodeExerciceId}": {
+        "/categories_de_compte/{categorieDeCompteId}": {
             "get": {
                 "tags": [
                     "CategoriesDeCompte"

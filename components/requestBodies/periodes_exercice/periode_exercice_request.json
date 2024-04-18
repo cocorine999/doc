@@ -19,6 +19,8 @@
                 "format": "date",
                 "pattern": "^\\d{2}/\\d{2}$",
                 "nullable": false,
+                "example": "01/01",
+                "default": "01/01",
                 "description": "Start date of the period (DD/MM)"
             },
             "date_fin_periode": {
@@ -26,6 +28,8 @@
                 "format": "date",
                 "pattern": "^\\d{2}/\\d{2}$",
                 "nullable": false,
+                "example": "31/12",
+                "default": "31/12",
                 "description": "End date of the period (DD/MM)"
             }
         }

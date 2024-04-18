@@ -1,7 +1,7 @@
 {
     "String": {
         "type": "string",
-        "example": "example",
+        "example": "{{$randomBsNoun}}",
         "default": "default value",
         "minLength": 1,
         "maxLength": 255,

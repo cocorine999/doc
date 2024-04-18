@@ -6,7 +6,8 @@
         "type": "object",
         "properties": {
             "name": {
-                "$ref": "../../schemas/field_name.json#/FieldName",
+                "$ref": "../../schemas/string.json#/String",
+                "example": "{{$randomBsNoun}}",
                 "default": "Production",
                 "description": "Name of the departement"
             }

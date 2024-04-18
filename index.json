@@ -2594,36 +2594,6 @@
                 ],
                 "$ref": "paths/exercices_comptable/delete_exercice_comptable.json"
             }
-        },
-
-        "/exercices_comptable/{exerciceComptableId}/ecritures-comptable": {
-            "get": {
-                "tags": [
-                    "Exercices comptable"
-                ],
-                "$ref": "paths/exercices_comptable/ecritures_comptable/entries.json"
-            },
-            "put": {
-                "tags": [
-                    "Exercices comptable"
-                ],
-                "$ref": "paths/exercices_comptable/ecritures_comptable/suivi.json"
-            }
-        },
-
-        "/exercices_comptable/{exerciceComptableId}/journals": {
-            "get": {
-                "tags": [
-                    "Exercices omptable"
-                ],
-                "$ref": "paths/exercices_comptable/list_exercices_comptable.json"
-            },
-            "put": {
-                "tags": [
-                    "Exercices omptable"
-                ],
-                "$ref": "paths/exercices_comptable/create_exercice_comptable.json"
-            }
         }
     },
     "components": {

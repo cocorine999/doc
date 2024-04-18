@@ -22,9 +22,6 @@
                     "properties": {
                         "name":{
                             "$ref": "../../components/schemas/string.json#/String"
-                        },
-                        "plan": {
-                            "type": "file"
                         }
                     }
                     

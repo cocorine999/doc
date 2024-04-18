@@ -6,7 +6,7 @@
         "type": "object",
         "properties": {
             "name": {
-                "$ref": "../../schemas/string.json#/String",
+                "type": "string",
                 "example": "{{$randomDepartment}}",
                 "default": "Production",
                 "description": "Name of the departement"

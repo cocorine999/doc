@@ -2513,6 +2513,41 @@
                 ],
                 "$ref": "paths/comptes/delete_compte.json"
             }
+        },
+
+        "/plans_comptable": {
+            "get": {
+                "tags": [
+                    "Plans Comptable"
+                ],
+                "$ref": "paths/plans_comptable/list_plans_comptable.json"
+            },
+            "post": {
+                "tags": [
+                    "Plans Comptable"
+                ],
+                "$ref": "paths/plans_comptable/create_plan_comptable.json"
+            }
+        },
+        "/plans_comptable/{planComptableId}": {
+            "get": {
+                "tags": [
+                    "Plans Comptable"
+                ],
+                "$ref": "paths/plans_comptable/find_plan_comptable.json"
+            },
+            "put": {
+                "tags": [
+                    "Plans Comptable"
+                ],
+                "$ref": "paths/plans_comptable/update_plan_comptable.json"
+            },
+            "delete": {
+                "tags": [
+                    "Plans Comptable"
+                ],
+                "$ref": "paths/plans_comptable/delete_plan_comptable.json"
+            }
         }
 
     },

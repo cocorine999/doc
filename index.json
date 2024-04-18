@@ -255,8 +255,8 @@
         "/postes/{posteId}/attach-salaries": {
             "$ref": "paths/postes/attach_salaries.json"
         },
-        "/postes/{posteId}/detach-access": {
-            "$ref": "paths/postes/detach_access.json"
+        "/postes/{posteId}/detach-salaries": {
+            "$ref": "paths/postes/detach_salaries.json"
         },
 
         "/employees":{

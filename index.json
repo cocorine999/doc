@@ -113,10 +113,6 @@
         {
             "name": "Departements",
             "description": "APIs related to departements management. These endpoints allow clients to create, retrieve, update, and delete departements."
-        },
-        {
-            "name": "Postes",
-            "description": "APIs related to postes management. These endpoints allow clients to create, retrieve, update, and delete postes."
         }
     ],
     "paths": {
@@ -178,6 +174,41 @@
         },
         "/unite_travailles/{{uniteTravailleId}}": {
             "$ref": "paths/Unite_travaille/unite_travailles.json"
+        },
+
+        "/departements": {
+            "get": {
+                "tags": [
+                    "Departements"
+                ],
+                "$ref": "paths/departements/list_departement.json"
+            },
+            "post": {
+                "tags": [
+                    "Departements"
+                ],
+                "$ref": "paths/departements/create_departement.json"
+            }
+        },
+        "/departements/{departementId}": {
+            "get": {
+                "tags": [
+                    "Departements"
+                ],
+                "$ref": "paths/departements/find_departement.json"
+            },
+            "put": {
+                "tags": [
+                    "Departements"
+                ],
+                "$ref": "paths/departements/update_departement.json"
+            },
+            "delete": {
+                "tags": [
+                    "Departements"
+                ],
+                "$ref": "paths/departements/delete_departement.json"
+            }
         },
         "/employees":{
             "$ref": "paths/employees/employees.json"
@@ -1101,40 +1132,6 @@
                         }
                     }
                 }
-            }
-        },
-        "/departements": {
-            "get": {
-                "tags": [
-                    "Departements"
-                ],
-                "$ref": "paths/departements/list_departement.json"
-            },
-            "post": {
-                "tags": [
-                    "Departements"
-                ],
-                "$ref": "paths/departements/create_departement.json"
-            }
-        },
-        "/departements/{departementId}": {
-            "get": {
-                "tags": [
-                    "Departements"
-                ],
-                "$ref": "paths/departement/find_departement.json"
-            },
-            "put": {
-                "tags": [
-                    "Departements"
-                ],
-                "$ref": "paths/departement/update_departement.json"
-            },
-            "delete": {
-                "tags": [
-                    "Departements"
-                ],
-                "$ref": "paths/departement/delete_departement.json"
             }
         },
         "/postes": {

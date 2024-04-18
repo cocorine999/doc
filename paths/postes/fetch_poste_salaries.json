@@ -5,6 +5,9 @@
         "operationId": "fetchPosteSalaries",
         "parameters": [
             {
+                "$ref": "../../components/parameters/poste_id.json#/PosteId"
+            },
+            {
                 "$ref": "../../components/parameters/page.json"
             },
             {

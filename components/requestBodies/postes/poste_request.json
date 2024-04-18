@@ -12,11 +12,8 @@
                 "description": "Name of the departement"
             },
             "department_id": {
-                "description": "The unique identifier of the unite de mesure",
-                "required": true,
-                "schema": {
-                    "$ref": "../../schemas/identifier.json#/Identifier"
-                }
+                "$ref": "../../schemas/identifier.json#/Identifier",
+                "description": "The unique identifier of the poste departement id"
             }
         }
     }

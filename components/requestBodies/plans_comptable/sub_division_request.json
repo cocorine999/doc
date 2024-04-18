@@ -30,14 +30,6 @@
                     "$ref": "sub_division_request.json#/SubAccountRequest"
                 }
             }
-        },
-        "not": {
-            "required": ["sous_compte_id"],
-            "properties": {
-                "compte_data": {
-                    "type": "object"
-                }
-            }
         }
     }
 }

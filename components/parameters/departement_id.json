@@ -1,0 +1,11 @@
+{
+    "DepartementId": {
+        "name": "departement",
+        "description": "The unique identifier of the departement",
+        "in": "path",
+        "required": true,
+        "schema": {
+            "$ref": "../schemas/identifier.json#/Identifier"
+        }
+    }
+}

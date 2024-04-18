@@ -13,14 +13,14 @@
             },
             "name": {
                 "type": "string",
-                "unique": true,
+                "nullable": false,
                 "example": "Franc CFA",
                 "default": "Franc CFA",
                 "description": "Name of the devise"
             },
             "symbol": {
                 "type": "string",
-                "unique": true,
+                "nullable": false,
                 "example": "xof",
                 "default": "xof",
                 "description": "Symbol de la devise"

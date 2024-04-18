@@ -224,7 +224,7 @@
                 "tags": [
                     "Devises"
                 ],
-                "$ref": "paths/devises/list_devise.json"
+                "$ref": "paths/devises/list_devises.json"
             },
             "post": {
                 "tags": [

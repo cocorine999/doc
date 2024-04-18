@@ -12,7 +12,6 @@
                 "type": "object",
                 "properties": {
                     "name": {
-                        "$ref": "../../schemas/field_name.json#/FieldName",
                         "nullable": false,
                         "example": "Revenue",
                         "default": "Tresorie passif",

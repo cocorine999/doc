@@ -137,6 +137,22 @@
         {
             "name": "Comptes",
             "description": "APIs related to comptes management. These endpoints allow clients to create, retrieve, update, and delete comptes."
+        },
+        {
+            "name": "Plans comptable",
+            "description": "APIs related to comptes management. These endpoints allow clients to create, retrieve, update, and delete comptes."
+        },
+        {
+            "name": "ListOfPlanComptableAccounts",
+            "description": "APIs related to comptes management. These endpoints allow clients to create, retrieve, update, and delete comptes."
+        },
+        {
+            "name": "AttachAccountsToPlanComptable",
+            "description": "APIs related to comptes management. These endpoints allow clients to create, retrieve, update, and delete comptes."
+        },
+        {
+            "name": "DetachAccountsToPlanComptable",
+            "description": "APIs related to comptes management. These endpoints allow clients to create, retrieve, update, and delete comptes."
         }
         
     ],
@@ -2552,12 +2568,20 @@
         "/plans_comptable/{planComptableId}/accounts": {
             "get": {
                 "tags": [
-                    "Plan Comptable accounts"
+                    "ListOfPlanComptableAccounts"
                 ],
                 "$ref": "paths/plans_comptable/accounts/list_accounts.json"
             }
+        },
+        "/plans_comptable/{planComptableId}/attach-accounts": {
+            "patch": {
+                "tags": [
+                    "AttachAccountsToPlanComptable"
+                ],
+                "$ref": "paths/plans_comptable/accounts/attach_accounts.json"
+            }
         }
-        
+
     },
     "components": {
         "schemas": {

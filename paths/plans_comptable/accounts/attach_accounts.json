@@ -24,7 +24,15 @@
         "content": {
             "application/json": {
                 "schema": {
-                    "$ref": "../../components/requestBodies/plans_comptable/account_request.json#/AccountRequest"
+                    "type": "object",
+                    "properties": {
+                        "accounts": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "../../components/requestBodies/plans_comptable/account_request.json#/AccountRequest"
+                            }
+                        }
+                    }
                 }
             }
         }

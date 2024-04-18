@@ -1,10 +1,10 @@
 {
-    "summary": "Soft-Delete an existing account by id",
-    "description": "Soft-Delete an existing account by its unique identifier.",
-    "operationId": "deleteAccount",
+    "summary": "Detach existing plan comptable accounts",
+    "description": "Detach existing plan comptable accounts.",
+    "operationId": "detachAccounts",
     "parameters": [
         {
-            "$ref": "../../components/parameters/account_id.json#/AccountId"
+            "$ref": "../../../components/parameters/plan_comptable_id.json#/PlanComptableId"
         },
         {
             "$ref": "../../components/headers/authorization_header.json"
@@ -59,8 +59,8 @@
                             "message": {
                                 "type": "string",
                                 "description": "Additional information about the response.",
-                                "default": "Records soft deleted successfully",
-                                "example": "Records soft deleted successfully"
+                                "default": "Accounts detached successfully from the plan comptable.",
+                                "example": "Accounts detached successfully from the plan comptable."
                             },
                             "data": {
                                 "type": "boolean",

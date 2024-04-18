@@ -1,20 +1,10 @@
 {
-    "summary": "Retrive an existing account by id",
-    "description": "Retrieve an existing account by its unique identifier.",
-    "operationId": "getAccount",
+    "summary": "Update an existing accounts",
+    "operationId": "updateAccounts",
+    "description": "Update an existing account with the provided data.",
     "parameters": [
         {
-            "$ref": "../../components/parameters/account_id.json#/AccountId"
-        },
-        {
-            "name": "fields",
-            "in": "query",
-            "description": "Comma-separated list of fields to include in the response.",
-            "required": false,
-            "schema": {
-                "type": "string"
-            },
-            "example": "id,name"
+            "$ref": "../../../components/parameters/plan_comptable_id.json#/PlanComptableId"
         },
         {
             "$ref": "../../components/headers/authorization_header.json"
@@ -29,9 +19,19 @@
             "$ref": "../../components/headers/origin.json"
         }
     ],
+    "requestBody": {
+        "required": true,
+        "content": {
+            "application/json": {
+                "schema": {
+                    "$ref": "../../components/requestBodies/plans_comptable/account_request.json#/AccountRequest"
+                }
+            }
+        }
+    },
     "responses": {
-        "200": {
-            "description": "Successfully retrieved account",
+        "201": {
+            "description": "Successfully Response",
             "headers": {
                 "X-RateLimit-Limit": {
                     "$ref": "../../components/headers/x_ratelimit_limit.json"
@@ -69,8 +69,8 @@
                             "message": {
                                 "type": "string",
                                 "description": "Additional information about the response.",
-                                "default": "Account retrieved successfully",
-                                "example": "Account retrieved successfully"
+                                "default": "Accounts updated successfully",
+                                "example": "Accounts updated successfully"
                             },
                             "data": {
                                 "$ref": "../../components/schemas/models/account.json#/Account"
@@ -78,27 +78,11 @@
                             "status_code": {
                                 "type": "integer",
                                 "description": "Indicates the HTTP status code of the response.",
-                                "default": 200,
-                                "example": 200
+                                "default": 201,
+                                "example": 201
                             }
                         }
                     }
-                }
-            },
-            "links": {
-                "UpdateAccountDetailsByAccountId": {
-                    "operationId": "updateAccount",
-                    "parameters": {
-                        "accountId": "$response.body#/data/id"
-                    },
-                    "description": "Link to update account information based on account ID."
-                },
-                "DeleteAccountByAccountId": {
-                    "operationId": "deleteAccount",
-                    "parameters": {
-                        "accountId": "$response.body#/data/id"
-                    },
-                    "description": "Link to delete account based on account ID."
                 }
             }
         },
@@ -119,6 +103,9 @@
         },
         "408": {
             "$ref": "../../components/responses/errors/408.json#RequestTimeout"
+        },
+        "422": {
+            "$ref": "../../components/responses/errors/422.json#UnprocessableEntity"
         },
         "429": {
             "$ref": "../../components/responses/errors/429.json#RateLimitExceeded"

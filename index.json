@@ -2548,8 +2548,16 @@
                 ],
                 "$ref": "paths/plans_comptable/delete_plan_comptable.json"
             }
+        },
+        "/plans_comptable/{planComptableId}/accounts": {
+            "get": {
+                "tags": [
+                    "Plan Comptable accounts"
+                ],
+                "$ref": "paths/plans_comptable/accounts/list_accounts.json"
+            }
         }
-
+        
     },
     "components": {
         "schemas": {

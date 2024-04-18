@@ -1,23 +1,10 @@
 {
-    "summary": "Retrieve list of accounts",
+    "summary": "Retrieve list of plan comptable accounts",
     "operationId": "fetchListOfAccounts",
     "description": "Retrieves accounts information based on certain criteria.",
     "parameters": [
         {
-            "$ref": "../../components/parameters/page.json"
-        },
-        {
-            "$ref": "../../components/parameters/per_page.json"
-        },
-        {
-            "name": "fields",
-            "in": "query",
-            "description": "Comma-separated list of fields to include in the response.",
-            "required": false,
-            "schema": {
-                "type": "string"
-            },
-            "example": "id,name"
+            "$ref": "../../../components/parameters/plan_comptable_id.json#/PlanComptableId"
         },
         {
             "$ref": "../../components/headers/authorization_header.json"
@@ -74,89 +61,10 @@
                                 "example": "List of accounts retrieve successfully"
                             },
                             "data": {
-                                "type": "object",
-                                "properties": {
-                                    "current_page": {
-                                        "type": "integer",
-                                        "description": "The current page number.",
-                                        "default": 1,
-                                        "minimum": 1,
-                                        "example": 2
-                                    },
-                                    "data": {
-                                        "type": "array",
-                                        "description": "List of accounts.",
-                                        "items": {
-                                            "$ref": "../../components/schemas/models/account.json#/Account"
-                                        }
-                                    },
-                                    "first_page_url": {
-                                        "type": "string",
-                                        "description": "The URL of the first page in the pagination.",
-                                        "example": "accounts?page=1",
-                                        "default": "accounts?page=1"
-                                    },
-                                    "from": {
-                                        "type": "integer",
-                                        "description": "The index of the first item in the current page.",
-                                        "nullable": true,
-                                        "default": null,
-                                        "example": 1
-                                    },
-                                    "last_page": {
-                                        "type": "integer",
-                                        "description": "The index of the last item in the current page.",
-                                        "minimum": 1,
-                                        "default": 1,
-                                        "example": 7
-                                    },
-                                    "last_page_url": {
-                                        "type": "string",
-                                        "description": "The URL of the last page in the pagination sequence.",
-                                        "example": "accounts?page=7",
-                                        "default": "accounts?page=1"
-                                    },
-                                    "next_page_url": {
-                                        "type": "string",
-                                        "description": "The URL to retrieve the next page of results.",
-                                        "nullable": true,
-                                        "default": null,
-                                        "example": "accounts?page=3"
-                                    },
-                                    "path": {
-                                        "type": "string",
-                                        "description": "The URL path of the current page.",
-                                        "example": "accounts"
-                                    },
-                                    "per_page": {
-                                        "type": "integer",
-                                        "description": "The total number of items available per page. Defaults to 15, with a minimum of 10 and a maximum of 25.",
-                                        "default": 15,
-                                        "example": 15,
-                                        "minimum": 10,
-                                        "maximum": 25
-                                    },
-                                    "prev_page_url": {
-                                        "type": "string",
-                                        "description": "The URL of the previous page.",
-                                        "nullable": true,
-                                        "default": null,
-                                        "example": "accounts?page=1"
-                                    },
-                                    "to": {
-                                        "type": "integer",
-                                        "description": "The ending index of the data on the current page. Example value is 2. Can be null.",
-                                        "example": 3,
-                                        "default": null,
-                                        "nullable": true
-                                    },
-                                    "total": {
-                                        "type": "integer",
-                                        "description": "The total number of items.",
-                                        "minimum": 0,
-                                        "default": 0,
-                                        "example": 100
-                                    }
+                                "type": "array",
+                                "description": "List of accounts.",
+                                "items": {
+                                    "$ref": "../../components/schemas/models/account.json#/Account"
                                 }
                             },
                             "status_code": {
@@ -167,29 +75,6 @@
                             }
                         }
                     }
-                }
-            },
-            "links": {
-                "GetAccountDetailsByAccountId": {
-                    "operationId": "getAccount",
-                    "parameters": {
-                        "accountId": "$response.body#/data/data/0/id"
-                    },
-                    "description": "Link to get account information based on account ID."
-                },
-                "UpdateAccountDetailsByAccountId": {
-                    "operationId": "updateAccount",
-                    "parameters": {
-                        "accountId": "$response.body#/data/data/0/id"
-                    },
-                    "description": "Link to update account information based on account ID."
-                },
-                "DeleteAccountByAccountId": {
-                    "operationId": "deleteAccount",
-                    "parameters": {
-                        "accountId": "$response.body#/data/data/0/id"
-                    },
-                    "description": "Link to delete account based on account ID."
                 }
             }
         },

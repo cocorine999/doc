@@ -1,10 +1,10 @@
 {
-    "summary": "Update an existing account",
-    "operationId": "updateAccount",
-    "description": "Update an existing account with the provided data.",
+    "summary": "Attach comptes to a plan comptable",
+    "operationId": "attachAccounts",
+    "description": "Attach accounts to a plan comptable.",
     "parameters": [
         {
-            "$ref": "../../components/parameters/account_id.json#/AccountId"
+            "$ref": "../../../components/parameters/plan_comptable_id.json#/PlanComptableId"
         },
         {
             "$ref": "../../components/headers/authorization_header.json"
@@ -69,8 +69,8 @@
                             "message": {
                                 "type": "string",
                                 "description": "Additional information about the response.",
-                                "default": "Account updated successfully",
-                                "example": "Account updated successfully"
+                                "default": "Accounts added successfully to the Plan Comptable.",
+                                "example": "Accounts added successfully to the Plan Comptable."
                             },
                             "data": {
                                 "$ref": "../../components/schemas/models/account.json#/Account"
@@ -84,22 +84,6 @@
                         }
                     }
                 }
-            },
-            "links": {
-                "GetAccountDetailsByAccountId": {
-                    "operationId": "getAccount",
-                    "parameters": {
-                        "accountId": "$response.body#/data/id"
-                    },
-                    "description": "Link to get account information based on account ID."
-                },
-                "DeleteAccountByAccountId": {
-                    "operationId": "deleteAccount",
-                    "parameters": {
-                        "accountId": "$response.body#/data/id"
-                    },
-                    "description": "Link to delete account based on account ID."
-                }
             }
         },
         "400": {
@@ -110,9 +94,6 @@
         },
         "403": {
             "$ref": "../../components/responses/errors/403.json#Forbidden"
-        },
-        "404": {
-            "$ref": "../../components/responses/errors/404.json#NotFound"
         },
         "405": {
             "$ref": "../../components/responses/errors/405.json#MethodNotAllowed"

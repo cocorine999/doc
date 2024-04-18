@@ -14,13 +14,11 @@
             "code": {
                 "type": "string",
                 "default": "JV_Vente",
-                "unique": true,
                 "description": "Journal code"
             },
             "name": {
                 "type": "string",
                 "default": "Production",
-                "unique": true,
                 "description": "Name of the journal"
             },
             "created_at": {

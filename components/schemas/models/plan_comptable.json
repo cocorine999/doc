@@ -13,7 +13,6 @@
             "name": {
                 "type": "string",
                 "default": "Tresorie passif",
-                "unique": true,
                 "description": "Nom du plan comptable"
             },
             "created_at": {

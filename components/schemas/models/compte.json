@@ -14,7 +14,7 @@
             },
             "name": {
                 "type": "string",
-                "unique": true,
+                "nullable": false,
                 "default": "Production",
                 "description": "Name of the devise"
             },

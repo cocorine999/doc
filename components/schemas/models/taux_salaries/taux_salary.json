@@ -23,7 +23,6 @@
             },
             "rate_measure_unit_symbol": {
                 "$ref": "../../string.json#/String",
-                "unique": true,
                 "description": "Unit symbol"
             },
             "work_unit": {

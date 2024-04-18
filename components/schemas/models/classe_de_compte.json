@@ -13,7 +13,6 @@
             },
             "intitule": {
                 "type": "string",
-                "unique": true,
                 "default": "Compte des capitaux",
                 "description": "Intitule of the classe de compte"
             },

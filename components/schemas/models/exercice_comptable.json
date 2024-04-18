@@ -14,7 +14,6 @@
             },
             "fiscal_year": {
                 "type": "integer",
-                "unique": true,
                 "default": 2024,
                 "description": "Fiscal year"
             },

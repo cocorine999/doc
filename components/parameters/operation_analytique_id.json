@@ -1,0 +1,11 @@
+{
+    "OperationAnalytiqueId": {
+        "name": "operationAnalytiqueId",
+        "description": "The unique identifier of the operation analytique ",
+        "in": "path",
+        "required": true,
+        "schema": {
+            "$ref": "../schemas/identifier.json#/Identifier"
+        }
+    }
+}

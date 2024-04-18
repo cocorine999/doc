@@ -1,0 +1,11 @@
+{
+    "EcritureComptableId": {
+        "name": "ecritureComptableId",
+        "description": "The unique identifier of the ecriture comptable ",
+        "in": "path",
+        "required": true,
+        "schema": {
+            "$ref": "../schemas/identifier.json#/Identifier"
+        }
+    }
+}

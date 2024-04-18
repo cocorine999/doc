@@ -1,0 +1,62 @@
+{
+    "Ammortissement": {
+        "type": "object",
+        "required": [
+            "id",
+            "montant",
+            "valeur_ammortissable",
+            "valeur_comptable",
+            "taux",
+            "annete",
+            "date_debut",
+            "date_fin"
+        ],
+        "properties": {
+            "id": {
+                "$ref": "../identifier.json#/Identifier",
+                "description": "Unique identifier for the exercice comptable"
+            },
+            "montant": {
+                "$ref": "../amount.json#/Amount",
+                "default": 12000.00,
+                "description": "Valeur d'origine"
+            },
+            "valeur_ammortissable": {
+                "$ref": "../amount.json#/Amount",
+                "default": 12000.00,
+                "description": "Valeur residuelle"
+            },
+            "valeur_comptable": {
+                "$ref": "../amount.json#/Amount",
+                "default": 12000.00,
+                "description": "Valeur residuelle"
+            },
+            "taux": {
+                "type": "integer",
+                "example": 5,
+                "default": 1,
+                "minimum": 1,
+                "description": "Duree de l'immobilisation"
+            },
+            "annete": {
+                "type": "integer",
+                "example": 1,
+                "default": 1,
+                "minimum": 1,
+                "description": "Duree de l'immobilisation"
+            },
+            "date_debut": {
+                "$ref": "../date_format.json#/DateFormat",
+                "description": "Date d'acquisition"
+            },
+            "date_fin": {
+                "$ref": "../date_format.json#/DateFormat",
+                "description": "Date depreciation"
+            },
+            "created_at": {
+                "$ref": "../date_format.json#/DateFormat",
+                "description": "Date and time when the exercice comptable was created (YYYY-MM-DD HH:MM:SS)"
+            }
+        }
+    }
+}

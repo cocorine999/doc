@@ -1,0 +1,34 @@
+{
+    "Devise": {
+        "type": "object",
+        "required": [
+            "id",
+            "name",
+            "type_de_compte"
+        ],
+        "properties": {
+            "id": {
+                "$ref": "../identifier.json#/Identifier",
+                "description": "Unique identifier for the devise"
+            },
+            "name": {
+                "$ref": "../field_name.json#/FieldName",
+                "unique": true,
+                "default": "Production",
+                "description": "Name of the devise"
+            },
+            "type_de_compte": {
+                "enum": [
+                    "generale",
+                    "analytique"
+                ],
+                "example": "generale",
+                "default": "generale"
+            },
+            "created_at": {
+                "$ref": "../date_format.json#/DateFormat",
+                "description": "Date and time when the devise was created (YYYY-MM-DD HH:MM:SS)"
+            }
+        }
+    }
+}

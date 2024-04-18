@@ -1,0 +1,11 @@
+{
+    "PlanComptableId": {
+        "name": "planComptableId",
+        "description": "The unique identifier of the plan comptable ",
+        "in": "path",
+        "required": true,
+        "schema": {
+            "$ref": "../schemas/identifier.json#/Identifier"
+        }
+    }
+}

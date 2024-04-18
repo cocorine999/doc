@@ -1,0 +1,56 @@
+{
+    "ExerciceComptable": {
+        "type": "object",
+        "required": [
+            "id",
+            "fiscal_year",
+            "date_ouverture",
+            "status_exercice"
+        ],
+        "properties": {
+            "id": {
+                "$ref": "../identifier.json#/Identifier",
+                "description": "Unique identifier for the exercice comptable"
+            },
+            "fiscal_year": {
+                "type": "integer",
+                "unique": true,
+                "default": 2024,
+                "description": "Fiscal year"
+            },
+            "date_ouverture": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "default": "2024-01-01",
+                "description": "Date debut exercice comptable (YYYY-MM-DD)"
+            },
+            "date_fermeture": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "nullable": true,
+                "default": "2024-12-31",
+                "description": "Date fin exercice comptable (YYYY-MM-DD)"
+            },
+            "status_exercice": {
+                "enum": [
+                    "ouvert",
+                    "fermer"
+                ],
+                "example": "ouvert",
+                "default": "ouvert"
+            },
+            "plan_name": {
+                "type": "string",
+                "nullable": false,
+                "default": "Plan comptable",
+                "description": "Plan comptable utiliser lors de l'exercice"
+            },
+            "created_at": {
+                "$ref": "../date_format.json#/DateFormat",
+                "description": "Date and time when the exercice comptable was created (YYYY-MM-DD HH:MM:SS)"
+            }
+        }
+    }
+}

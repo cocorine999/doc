@@ -1,0 +1,84 @@
+{
+    "Immobilisation": {
+        "type": "object",
+        "required": [
+            "id",
+            "name",
+            "valeur_origine",
+            "valeur_residuelle",
+            "type_immobilisation",
+            "methode_immobilisation",
+            "date_acquisition",
+            "date_depreciation",
+            "est_prorata_temporis",
+            "duree_ammortissement"
+        ],
+        "properties": {
+            "id": {
+                "$ref": "../identifier.json#/Identifier",
+                "description": "Unique identifier for the exercice comptable"
+            },
+            "name": {
+                "type": "string",
+                "description": "Nom de l'immobilisation"
+            },
+            "valeur_origine": {
+                "$ref": "../amount.json#/Amount",
+                "default": 12000.00,
+                "description": "Valeur d'origine"
+            },
+            "valeur_residuelle": {
+                "$ref": "../amount.json#/Amount",
+                "default": 12000.00,
+                "description": "Valeur residuelle"
+            },
+            "date_acquisition": {
+                "$ref": "../date_format.json#/DateFormat",
+                "description": "Date d'acquisition"
+            },
+            "date_depreciation": {
+                "$ref": "../date_format.json#/DateFormat",
+                "description": "Date depreciation"
+            },
+            "type_immobilisation": {
+                "enum": [
+                    "corporelle",
+                    "incorporelle",
+                    "financiere"
+                ],
+                "example": "corporelle",
+                "default": "corporelle"
+            },
+            "methode_immobilisation": {
+                "enum": [
+                    "lineaire",
+                    "degressif"
+                ],
+                "example": "lineaire",
+                "default": "lineaire"
+            },
+            "est_prorata_temporis": {
+                "type": "boolean",
+                "example": true,
+                "default": true
+            },
+            "duree_ammortissement": {
+                "type": "integer",
+                "example": 5,
+                "default": 1,
+                "minimum": 1,
+                "description": "Duree de l'immobilisation"
+            },
+            "ammortissements": {
+                "type": "array",
+                "items":{
+                    "$ref": "ammortissement.json#/Ammortissement"
+                }
+            },
+            "created_at": {
+                "$ref": "../date_format.json#/DateFormat",
+                "description": "Date and time when the exercice comptable was created (YYYY-MM-DD HH:MM:SS)"
+            }
+        }
+    }
+}

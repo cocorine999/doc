@@ -1,0 +1,62 @@
+{
+    "OperationComptableDisponible": {
+        "type": "object",
+        "required": [
+            "id",
+            "libelle",
+            "total_debit",
+            "total_credit",
+            "date_ecriture",
+            "status_operation",
+            "lignes_ecriture"
+        ],
+        "properties": {
+            "id": {
+                "$ref": "../identifier.json#/Identifier",
+                "description": "Unique identifier for the operation comptable disponible"
+            },
+            "libelle": {
+                "type": "string",
+                "default": "Achat de matiere premiere",
+                "description": "Intitule de l'operation comptable disponible"
+            },
+            "total_debit": {
+                "$ref": "../amount.json#/Amount",
+                "default": 12000.00,
+                "description": "Total debit de compte"
+            },
+            "total_credit": {
+                "$ref": "../amount.json#/Amount",
+                "default": 12000.00,
+                "description": "Total credit de compte"
+            },
+            "date_ecriture": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "default": "2024-01-06",
+                "description": "Date debut operation comptable disponible (YYYY-MM-DD)"
+            },
+            "status_operation": {
+                "enum": [
+                    "en_attente",
+                    "valider",
+                    "rejeter"
+                ],
+                "example": "en_attente",
+                "default": "en_attente"
+            },
+            "lignes_ecriture": {
+                "type": "array",
+                "minimum": 2,
+                "items":{
+                    "$ref": "ligne_ecriture_comptable.json#/LigneEcritureComptable"
+                }
+            },
+            "created_at": {
+                "$ref": "../date_format.json#/DateFormat",
+                "description": "Date and time when the operation comptable disponible was created (YYYY-MM-DD HH:MM:SS)"
+            }
+        }
+    }
+}

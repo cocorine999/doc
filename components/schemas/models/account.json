@@ -1,0 +1,48 @@
+{
+    "Account": {
+        "type": "object",
+        "required": [
+            "id",
+            "account_number",
+            "intitule",
+            "classe_de_compte",
+            "classe_number",
+            "categorie_de_compte"
+        ],
+        "properties": {
+            "id": {
+                "$ref": "../identifier.json#/Identifier",
+                "description": "Unique identifier for the plan comptable"
+            },
+            "account_number": {
+                "$ref": "../field_name.json#/FieldName",
+                "default": "10",
+                "description": "Numero du compte"
+            },
+            "intitule": {
+                "$ref": "../field_name.json#/FieldName",
+                "default": "10",
+                "description": "Compte des capitaux propres"
+            },
+            "classe_de_compte": {
+                "$ref": "../field_name.json#/FieldName",
+                "default": "10",
+                "description": "Classe 1 : Compte des capitaux propres"
+            },
+            "classe_number": {
+                "$ref": "../field_name.json#/FieldName",
+                "default": 1,
+                "description": "Numero de classe"
+            },
+            "categorie_de_compte": {
+                "$ref": "../field_name.json#/FieldName",
+                "default": "Actifs",
+                "description": "Categorie de compte"
+            },
+            "created_at": {
+                "$ref": "../date_format.json#/DateFormat",
+                "description": "Date and time when the plan comptable account was created (YYYY-MM-DD HH:MM:SS)"
+            }
+        }
+    }
+}

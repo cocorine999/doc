@@ -1,0 +1,39 @@
+{
+    "ProjetProduction": {
+        "type": "object",
+        "required": [
+            "id",
+            "intitule"
+        ],
+        "properties": {
+            "id": {
+                "$ref": "../identifier.json#/Identifier",
+                "description": "Unique identifier for the exercice comptable"
+            },
+            "intitule": {
+                "$ref": "../field_name.json#/FieldName"
+            },
+            "description": {
+                "$ref": "../field_name.json#/FieldName"
+            },
+            "ligne": {
+                "$ref": "../field_name.json#/FieldName"
+            },
+            "produit_fini": {
+                "$ref": "../field_name.json#/FieldName"
+            },
+            "date_debut": {
+                "$ref": "../date_format.json#/DateFormat",
+                "description": "Date debut"
+            },
+            "date_fin": {
+                "$ref": "../date_format.json#/DateFormat",
+                "description": "Date fin"
+            },
+            "created_at": {
+                "$ref": "../date_format.json#/DateFormat",
+                "description": "Date and time when the exercice comptable was created (YYYY-MM-DD HH:MM:SS)"
+            }
+        }
+    }
+}

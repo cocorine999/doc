@@ -1,0 +1,11 @@
+{
+    "JournalId": {
+        "name": "journalId",
+        "description": "The unique identifier of the journal",
+        "in": "path",
+        "required": true,
+        "schema": {
+            "$ref": "../schemas/identifier.json#/Identifier"
+        }
+    }
+}

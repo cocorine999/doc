@@ -1,0 +1,49 @@
+{
+    "BalanceDeCompte": {
+        "type": "object",
+        "required": [
+            "id",
+            "solde",
+            "type_solde_compte",
+            "date_report"
+        ],
+        "properties": {
+            "id": {
+                "$ref": "../identifier.json#/Identifier",
+                "description": "Unique identifier for the devise"
+            },
+            "solde": {
+                "$ref": "../amount.json#/Amount",
+                "default": 12000.00,
+                "description": "Solde de compte"
+            },
+            "type_solde_compte": {
+                "enum": [
+                    "debiteur",
+                    "crediteur"
+                ],
+                "example": "debiteur",
+                "default": "debiteur"
+            },
+            "date_report": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "default": "2024-01-01",
+                "description": "Date report de solde pendant un exercice comptable (YYYY-MM-DD)"
+            },
+            "date_cloture": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "nullable": true,
+                "default": "2024-12-31",
+                "description": "Date cloture exercice comptable (YYYY-MM-DD)"
+            },
+            "created_at": {
+                "$ref": "../date_format.json#/DateFormat",
+                "description": "Date and time when the devise was created (YYYY-MM-DD HH:MM:SS)"
+            }
+        }
+    }
+}

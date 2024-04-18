@@ -1,0 +1,11 @@
+{
+    "OperationComptableId": {
+        "name": "operationComptableId",
+        "description": "The unique identifier of the operation comptable ",
+        "in": "path",
+        "required": true,
+        "schema": {
+            "$ref": "../schemas/identifier.json#/Identifier"
+        }
+    }
+}

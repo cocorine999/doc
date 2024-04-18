@@ -1,0 +1,11 @@
+{
+    "AccountId": {
+        "name": "accountId",
+        "description": "The unique identifier of a plan comptable account",
+        "in": "path",
+        "required": true,
+        "schema": {
+            "$ref": "../schemas/identifier.json#/Identifier"
+        }
+    }
+}

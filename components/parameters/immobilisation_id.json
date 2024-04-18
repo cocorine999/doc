@@ -1,0 +1,11 @@
+{
+    "ImmobilisationId": {
+        "name": "immobilisationId",
+        "description": "The unique identifier of the immobilisation",
+        "in": "path",
+        "required": true,
+        "schema": {
+            "$ref": "../schemas/identifier.json#/Identifier"
+        }
+    }
+}

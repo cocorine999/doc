@@ -1,0 +1,11 @@
+{
+    "CompteId": {
+        "name": "compteId",
+        "description": "The unique identifier of the compte",
+        "in": "path",
+        "required": true,
+        "schema": {
+            "$ref": "../schemas/identifier.json#/Identifier"
+        }
+    }
+}

@@ -1,0 +1,57 @@
+{
+    "EcritureAnalytique": {
+        "type": "object",
+        "required": [
+            "id",
+            "libelle",
+            "montant",
+            "type_ecriture_compte",
+            "date_ecriture",
+            "status_operation"
+        ],
+        "properties": {
+            "id": {
+                "$ref": "../identifier.json#/Identifier",
+                "description": "Unique identifier for the operation comptable disponible"
+            },
+            "libelle": {
+                "type": "string",
+                "default": "Achat de matiere premiere",
+                "description": "Intitule de l'operation comptable disponible"
+            },
+            "montant": {
+                "$ref": "../amount.json#/Amount",
+                "default": 6000.00,
+                "description": "Montant"
+            },
+            "type_ecriture_compte": {
+                "enum": [
+                    "debit",
+                    "credit"
+                ],
+                "example": "debit",
+                "default": "debit"
+            },
+            "date_ecriture": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "default": "2024-01-06",
+                "description": "Date debut operation comptable disponible (YYYY-MM-DD)"
+            },
+            "status_operation": {
+                "enum": [
+                    "en_attente",
+                    "valider",
+                    "rejeter"
+                ],
+                "example": "en_attente",
+                "default": "en_attente"
+            },
+            "created_at": {
+                "$ref": "../date_format.json#/DateFormat",
+                "description": "Date and time when the operation comptable disponible was created (YYYY-MM-DD HH:MM:SS)"
+            }
+        }
+    }
+}

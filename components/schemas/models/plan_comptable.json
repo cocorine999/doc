@@ -1,5 +1,5 @@
 {
-    "Departement": {
+    "PlanComptable": {
         "type": "object",
         "required": [
             "id",
@@ -8,17 +8,17 @@
         "properties": {
             "id": {
                 "$ref": "../identifier.json#/Identifier",
-                "description": "Unique identifier for the departement"
+                "description": "Unique identifier for the plan comptable"
             },
             "name": {
                 "$ref": "../field_name.json#/FieldName",
+                "default": "Tresorie passif",
                 "unique": true,
-                "default": "Production",
-                "description": "Name of the departement"
+                "description": "Nom du plan comptable"
             },
             "created_at": {
                 "$ref": "../date_format.json#/DateFormat",
-                "description": "Date and time when the departement was created (YYYY-MM-DD HH:MM:SS)"
+                "description": "Date and time when the plan comptable was created (YYYY-MM-DD HH:MM:SS)"
             }
         }
     }

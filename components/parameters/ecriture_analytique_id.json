@@ -1,0 +1,11 @@
+{
+    "EcritureAnalytiqueId": {
+        "name": "ecritureAnalytiqueId",
+        "description": "The unique identifier of the ecriture analytique ",
+        "in": "path",
+        "required": true,
+        "schema": {
+            "$ref": "../schemas/identifier.json#/Identifier"
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "ClasseDeCompte": {
+        "type": "object",
+        "required": [
+            "id",
+            "intitule",
+            "class_number"
+        ],
+        "properties": {
+            "id": {
+                "$ref": "../identifier.json#/Identifier",
+                "description": "Unique identifier for the classe de compte"
+            },
+            "intitule": {
+                "$ref": "../field_name.json#/FieldName",
+                "unique": true,
+                "default": "Compte des capitaux",
+                "description": "Intitule of the classe de compte"
+            },
+            "class_number": {
+                "$ref": "../integer.json#/Integer",
+                "default": 1,
+                "description": "Numero de la classe de compte"
+            },
+            "created_at": {
+                "$ref": "../date_format.json#/DateFormat",
+                "description": "Date and time when the classe de compte was created (YYYY-MM-DD HH:MM:SS)"
+            }
+        }
+    }
+}

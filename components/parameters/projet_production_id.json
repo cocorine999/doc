@@ -1,0 +1,11 @@
+{
+    "ProjetProductionId": {
+        "name": "projetProductionId",
+        "description": "The unique identifier of the projet de production.",
+        "in": "path",
+        "required": true,
+        "schema": {
+            "$ref": "../schemas/identifier.json#/Identifier"
+        }
+    }
+}

@@ -1,5 +1,5 @@
 {
-    "Departement": {
+    "CategorieDeCompte": {
         "type": "object",
         "required": [
             "id",
@@ -8,17 +8,18 @@
         "properties": {
             "id": {
                 "$ref": "../identifier.json#/Identifier",
-                "description": "Unique identifier for the departement"
+                "description": "Unique identifier for the categorie de compte"
             },
             "name": {
                 "$ref": "../field_name.json#/FieldName",
                 "unique": true,
-                "default": "Production",
-                "description": "Name of the departement"
+                "example": "Revenue",
+                "default": "Tresorie passif",
+                "description": "Nom de la categorie de compte"
             },
             "created_at": {
                 "$ref": "../date_format.json#/DateFormat",
-                "description": "Date and time when the departement was created (YYYY-MM-DD HH:MM:SS)"
+                "description": "Date and time when the categorie de compte was created (YYYY-MM-DD HH:MM:SS)"
             }
         }
     }

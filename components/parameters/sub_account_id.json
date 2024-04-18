@@ -1,0 +1,11 @@
+{
+    "SubAccountId": {
+        "name": "subAccountId",
+        "description": "The unique identifier of a plan comptable account sub_account",
+        "in": "path",
+        "required": true,
+        "schema": {
+            "$ref": "../schemas/identifier.json#/Identifier"
+        }
+    }
+}

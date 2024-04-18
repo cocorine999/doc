@@ -1,0 +1,36 @@
+{
+    "SubAccount": {
+        "type": "object",
+        "required": [
+            "id",
+            "account_number",
+            "intitule",
+            "categorie_de_compte"
+        ],
+        "properties": {
+            "id": {
+                "$ref": "../identifier.json#/Identifier",
+                "description": "Unique identifier for the plan comptable"
+            },
+            "account_number": {
+                "$ref": "../field_name.json#/FieldName",
+                "default": "10",
+                "description": "Numero du compte"
+            },
+            "intitule": {
+                "$ref": "../field_name.json#/FieldName",
+                "default": "10",
+                "description": "Compte des capitaux propres"
+            },
+            "categorie_de_compte": {
+                "$ref": "../field_name.json#/FieldName",
+                "default": "Actifs",
+                "description": "Categorie de compte"
+            },
+            "created_at": {
+                "$ref": "../date_format.json#/DateFormat",
+                "description": "Date and time when the plan comptable sub_account was created (YYYY-MM-DD HH:MM:SS)"
+            }
+        }
+    }
+}

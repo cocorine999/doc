@@ -1,0 +1,11 @@
+{
+    "ClasseDeCompteId": {
+        "name": "classeDeCompteId",
+        "description": "The unique identifier of the classe de compte",
+        "in": "path",
+        "required": true,
+        "schema": {
+            "$ref": "../schemas/identifier.json#/Identifier"
+        }
+    }
+}

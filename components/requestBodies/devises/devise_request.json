@@ -1,0 +1,25 @@
+{
+    "DeviseRequest": {
+        "type": "object",
+        "required": [
+            "name",
+            "symbol"
+        ],
+        "properties": {
+            "name": {
+                "$ref": "../field_name.json#/FieldName",
+                "nullable": false,
+                "example": "Franc CFA",
+                "default": "Franc CFA",
+                "description": "Name of the devise"
+            },
+            "symbol": {
+                "$ref": "../field_name.json#/FieldName",
+                "nullable": false,
+                "example": "xof",
+                "default": "xof",
+                "description": "Symbol de la devise"
+            }
+        }
+    }
+}

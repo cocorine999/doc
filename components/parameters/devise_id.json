@@ -1,0 +1,11 @@
+{
+    "DeviseId": {
+        "name": "deviseId",
+        "description": "The unique identifier of the devise",
+        "in": "path",
+        "required": true,
+        "schema": {
+            "$ref": "../schemas/identifier.json#/Identifier"
+        }
+    }
+}

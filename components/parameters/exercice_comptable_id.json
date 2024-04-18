@@ -1,0 +1,11 @@
+{
+    "ExerciceComptableId": {
+        "name": "exerciceComptableId",
+        "description": "The unique identifier of the exercice comptable ",
+        "in": "path",
+        "required": true,
+        "schema": {
+            "$ref": "../schemas/identifier.json#/Identifier"
+        }
+    }
+}

@@ -1,0 +1,39 @@
+{
+    "LigneEcritureComptable": {
+        "type": "object",
+        "required": [
+            "id",
+            "montant",
+            "type_ecriture_compte",
+            "intitule"
+        ],
+        "properties": {
+            "id": {
+                "$ref": "../identifier.json#/Identifier",
+                "description": "Unique identifier for the exercice comptable"
+            },
+            "montant": {
+                "$ref": "../amount.json#/Amount",
+                "default": 6000.00,
+                "description": "Montant"
+            },
+            "type_ecriture_compte": {
+                "enum": [
+                    "debit",
+                    "credit"
+                ],
+                "example": "debit",
+                "default": "debit"
+            },
+            "intitule": {
+                "type": "string",
+                "default": "Plan comptable",
+                "description": "Plan comptable utiliser lors de l'exercice"
+            },
+            "created_at": {
+                "$ref": "../date_format.json#/DateFormat",
+                "description": "Date and time when the exercice comptable was created (YYYY-MM-DD HH:MM:SS)"
+            }
+        }
+    }
+}

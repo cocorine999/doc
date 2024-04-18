@@ -2414,40 +2414,6 @@
                     }
                 }
             },
-            "Departement": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "$ref": "#/components/schemas/Identifier",
-                        "description": "Unique identifier for the departement"
-                    },
-                    "name": {
-                        "type": "string",
-                        "description": "Name of the departement",
-                        "example": "Production",
-                        "default": "Production"
-                    }
-                }
-            },
-            "Poste": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "$ref": "#/components/schemas/Identifier",
-                        "description": "Unique identifier for the poste"
-                    },
-                    "name": {
-                        "type": "string",
-                        "description": "Name of the poste",
-                        "example": "Chef section",
-                        "default": "Chef section"
-                    },
-                    "department_id": {
-                        "$ref": "#/components/schemas/Identifier",
-                        "description": "Departement"
-                    }
-                }
-            },
             "CategoryOfEmployee": {
                 "type": "object",
                 "properties": {
@@ -2698,39 +2664,6 @@
                     }
                 }
             },
-            "SpacecraftId": {
-                "description": "The unique identifier of a spacecraft",
-                "type": "string"
-            },
-            "Spacecraft": {
-                "type": "object",
-                "required": [
-                    "id",
-                    "name",
-                    "type"
-                ],
-                "properties": {
-                    "id": {
-                        "$ref": "#/components/schemas/SpacecraftId"
-                    },
-                    "name": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "string",
-                        "enum": [
-                            "capsule",
-                            "probe",
-                            "satellite",
-                            "spaceplane",
-                            "station"
-                        ]
-                    },
-                    "description": {
-                        "type": "string"
-                    }
-                }
-            },
             "Identifier": {
                 "type": "string",
                 "pattern": "^[0-9a-f]{8}-[0-9a-x]{4}-[1-5][0-9a-z]{3}-[89AB][0-9a-q]{3}-[0-9a-f]{12}$",
@@ -2751,40 +2684,6 @@
                 "example": "2019/05/17 09h:23min",
                 "minLength": 20,
                 "maxLength": 50
-            },
-            "DepartementRequest": {
-                "required": [
-                    "name"
-                ],
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "type": "string",
-                        "minLength": 3,
-                        "maxLength": 50,
-                        "example": "Production",
-                        "default": "Production",
-                        "description": "Name of the departement."
-                    }
-                }
-            },
-            "PosteRequest": {
-                "required": [
-                    "name",
-                    "department_id"
-                ],
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "$ref": "#/components/schemas/FieldName",
-                        "example": "Nom du champ",
-                        "description": "Name of the poste"
-                    },
-                    "department_id": {
-                        "$ref": "#/components/schemas/Identifier",
-                        "description": "Unique identifier for the poste"
-                    }
-                }
             },
             "UserRequest": {
                 "required": [

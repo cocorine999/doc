@@ -1,0 +1,11 @@
+{
+    "CategorieDeCompteId": {
+        "name": "categorieDeCompteId",
+        "description": "The unique identifier of the categorie de compte",
+        "in": "path",
+        "required": true,
+        "schema": {
+            "$ref": "../schemas/identifier.json#/Identifier"
+        }
+    }
+}

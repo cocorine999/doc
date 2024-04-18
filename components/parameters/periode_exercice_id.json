@@ -1,0 +1,11 @@
+{
+    "PeriodeExerciceId": {
+        "name": "periodeExerciceId",
+        "description": "The unique identifier of a periode exercice",
+        "in": "path",
+        "required": true,
+        "schema": {
+            "$ref": "../schemas/identifier.json#/Identifier"
+        }
+    }
+}

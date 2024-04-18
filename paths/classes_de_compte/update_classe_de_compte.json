@@ -1,10 +1,10 @@
 {
-    "summary": "Soft-Delete an existing categorie de compte by id",
-    "description": "Soft-Delete an existing categorie de compte by its unique identifier.",
-    "operationId": "deleteCategorieDeCompte",
+    "summary": "Update an existing classe de compte",
+    "operationId": "updateClasseDeCompte",
+    "description": "Update an existing classe de compte with the provided data.",
     "parameters": [
         {
-            "$ref": "../../components/parameters/categorie_de_compte_id.json#/CategorieDeCompteId"
+            "$ref": "../../components/parameters/classe_de_compte_id.json#/ClasseDeCompteId"
         },
         {
             "$ref": "../../components/headers/authorization_header.json"
@@ -19,9 +19,19 @@
             "$ref": "../../components/headers/origin.json"
         }
     ],
+    "requestBody": {
+        "required": true,
+        "content": {
+            "application/json": {
+                "schema": {
+                    "$ref": "../../components/requestBodies/classes_de_compte/classe_de_compte_request.json#/ClasseDeCompteRequest"
+                }
+            }
+        }
+    },
     "responses": {
-        "200": {
-            "description": "Successfully retrieved categorie de compte",
+        "201": {
+            "description": "Successfully Response",
             "headers": {
                 "X-RateLimit-Limit": {
                     "$ref": "../../components/headers/x_ratelimit_limit.json"
@@ -59,23 +69,36 @@
                             "message": {
                                 "type": "string",
                                 "description": "Additional information about the response.",
-                                "default": "Records soft deleted successfully",
-                                "example": "Records soft deleted successfully"
+                                "default": "Classe de compte updated successfully",
+                                "example": "Classe de compte updated successfully"
                             },
                             "data": {
-                                "type": "boolean",
-                                "description": "Indicates the success status of the request.",
-                                "default": true,
-                                "example": true
+                                "$ref": "../../components/schemas/models/classe_de_compte.json#/ClasseDeCompte"
                             },
                             "status_code": {
                                 "type": "integer",
                                 "description": "Indicates the HTTP status code of the response.",
-                                "default": 200,
-                                "example": 200
+                                "default": 201,
+                                "example": 201
                             }
                         }
                     }
+                }
+            },
+            "links": {
+                "GetClasseDeCompteDetailsByClasseDeCompteId": {
+                    "operationId": "getClasseDeCompte",
+                    "parameters": {
+                        "classeDeCompteId": "$response.body#/data/id"
+                    },
+                    "description": "Link to get classe de compte information based on classe de compte ID."
+                },
+                "DeleteClasseDeCompteByClasseDeCompteId": {
+                    "operationId": "deleteClasseDeCompte",
+                    "parameters": {
+                        "classeDeCompteId": "$response.body#/data/id"
+                    },
+                    "description": "Link to delete classe de compte based on classe de compte ID."
                 }
             }
         },
@@ -96,6 +119,12 @@
         },
         "408": {
             "$ref": "../../components/responses/errors/408.json#RequestTimeout"
+        },
+        "422": {
+            "$ref": "../../components/responses/errors/422.json#UnprocessableEntity"
+        },
+        "429": {
+            "$ref": "../../components/responses/errors/429.json#RateLimitExceeded"
         },
         "500": {
             "$ref": "../../components/responses/errors/500.json#InternalServerError"

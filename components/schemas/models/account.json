@@ -21,23 +21,25 @@
             },
             "intitule": {
                 "$ref": "../field_name.json#/FieldName",
-                "default": "10",
-                "description": "Compte des capitaux propres"
+                "default": "Compte des capitaux propres",
+                "description": "Intitule du compte"
             },
             "classe_de_compte": {
                 "$ref": "../field_name.json#/FieldName",
-                "default": "10",
-                "description": "Classe 1 : Compte des capitaux propres"
+                "default": "Classe 1 : Compte des capitaux propres",
+                "description": "Intitule de la classe de compte"
             },
             "classe_number": {
                 "$ref": "../field_name.json#/FieldName",
+                "example": 1,
                 "default": 1,
                 "description": "Numero de classe"
             },
             "categorie_de_compte": {
                 "$ref": "../field_name.json#/FieldName",
+                "example": "Actifs",
                 "default": "Actifs",
-                "description": "Categorie de compte"
+                "description": "Name of categorie de compte"
             },
             "created_at": {
                 "$ref": "../date_format.json#/DateFormat",

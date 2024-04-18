@@ -1,0 +1,24 @@
+{
+    "PlanComptableRequest": {
+        "type": "object",
+        "required": [
+            "name",
+            "accounts"
+        ],
+        "properties": {
+            "name": {
+                "$ref": "../field_name.json#/FieldName",
+                "nullable": false,
+                "example": "Revenue",
+                "default": "Compte des immobilisations",
+                "description": "Nom de la categorie de compte"
+            },
+            "accounts": {
+                "type": "array",
+                "items": {
+                    "$ref": "account_request.json#/AccountRequest"
+                }
+            }
+        }
+    }
+}

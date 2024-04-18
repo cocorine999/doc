@@ -1,11 +1,8 @@
 {
-    "summary": "Soft-Delete an existing categorie de compte by id",
-    "description": "Soft-Delete an existing categorie de compte by its unique identifier.",
-    "operationId": "deleteCategorieDeCompte",
+    "summary": "Create a new categorie de compte",
+    "operationId": "createCategorieDeCompte",
+    "description": "Create a new categorie de compte with the provided data.",
     "parameters": [
-        {
-            "$ref": "../../components/parameters/categorie_de_compte_id.json#/CategorieDeCompteId"
-        },
         {
             "$ref": "../../components/headers/authorization_header.json"
         },
@@ -19,9 +16,19 @@
             "$ref": "../../components/headers/origin.json"
         }
     ],
+    "requestBody": {
+        "required": true,
+        "content": {
+            "application/json": {
+                "schema": {
+                    "$ref": "../../components/requestBodies/categories_de_compte/categorie_de_compte_request.json#/CategorieDeCompteRequest"
+                }
+            }
+        }
+    },
     "responses": {
-        "200": {
-            "description": "Successfully retrieved categorie de compte",
+        "201": {
+            "description": "Successfully Response",
             "headers": {
                 "X-RateLimit-Limit": {
                     "$ref": "../../components/headers/x_ratelimit_limit.json"
@@ -59,23 +66,43 @@
                             "message": {
                                 "type": "string",
                                 "description": "Additional information about the response.",
-                                "default": "Records soft deleted successfully",
-                                "example": "Records soft deleted successfully"
+                                "default": "Categorie de compte created successfully",
+                                "example": "Categorie de compte created successfully"
                             },
                             "data": {
-                                "type": "boolean",
-                                "description": "Indicates the success status of the request.",
-                                "default": true,
-                                "example": true
+                                "$ref": "../../components/schemas/models/categorie_de_compte.json#/CategorieDeCompte"
                             },
                             "status_code": {
                                 "type": "integer",
                                 "description": "Indicates the HTTP status code of the response.",
-                                "default": 200,
-                                "example": 200
+                                "default": 201,
+                                "example": 201
                             }
                         }
                     }
+                }
+            },
+            "links": {
+                "GetCategorieDeCompteDetailsByCategorieDeCompteId": {
+                    "operationId": "getCategorieDeCompte",
+                    "parameters": {
+                        "categorieDeCompteId": "$response.body#/data/id"
+                    },
+                    "description": "Link to get categorie de compte information based on categorie de compte ID."
+                },
+                "UpdateCategorieDeCompteDetailsByCategorieDeCompteId": {
+                    "operationId": "updateCategorieDeCompte",
+                    "parameters": {
+                        "categorieDeCompteId": "$response.body#/data/id"
+                    },
+                    "description": "Link to update categorie de compte information based on categorie de compte ID."
+                },
+                "DeleteCategorieDeCompteByCategorieDeCompteId": {
+                    "operationId": "deleteCategorieDeCompte",
+                    "parameters": {
+                        "categorieDeCompteId": "$response.body#/data/id"
+                    },
+                    "description": "Link to delete categorie de compte based on categorie de compte ID."
                 }
             }
         },
@@ -88,14 +115,17 @@
         "403": {
             "$ref": "../../components/responses/errors/403.json#Forbidden"
         },
-        "404": {
-            "$ref": "../../components/responses/errors/404.json#NotFound"
-        },
         "405": {
             "$ref": "../../components/responses/errors/405.json#MethodNotAllowed"
         },
         "408": {
             "$ref": "../../components/responses/errors/408.json#RequestTimeout"
+        },
+        "422": {
+            "$ref": "../../components/responses/errors/422.json#UnprocessableEntity"
+        },
+        "429": {
+            "$ref": "../../components/responses/errors/429.json#RateLimitExceeded"
         },
         "500": {
             "$ref": "../../components/responses/errors/500.json#InternalServerError"

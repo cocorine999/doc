@@ -6,7 +6,7 @@
         ],
         "properties": {
             "name": {
-                "$ref": "../field_name.json#/FieldName",
+                "$ref": "../../schemas/field_name.json#/FieldName",
                 "nullable": false,
                 "example": "Revenue",
                 "default": "Tresorie passif",

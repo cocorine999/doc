@@ -1,0 +1,31 @@
+{
+    "CompteRequest": {
+        "type": "object",
+        "required": [
+            "name",
+            "type_de_compte",
+            "categorie_de_compte_id"
+        ],
+        "properties": {
+            "name": {
+                "$ref": "../../schemas/field_name.json#/FieldName",
+                "nullable": false,
+                "example": "Revenue",
+                "default": "Compte des immobilisations",
+                "description": "Nom de la categorie de compte"
+            },
+            "type_de_compte": {
+                "enum": [
+                    "generale",
+                    "analytique"
+                ],
+                "example": "generale",
+                "default": "generale"
+            },
+            "categorie_de_compte_id": {
+                "$ref": "../../schemas/identifier.json#/Identifier",
+                "description": "The unique identifier of the categorie de compte"
+            }
+        }
+    }
+}

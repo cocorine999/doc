@@ -1,0 +1,35 @@
+{
+    "AccountRequest": {
+        "type": "object",
+        "required": [
+            "account_number",
+            "classe_id",
+            "categorie_de_compte_id"
+        ],
+        "properties": {
+            "account_number": {
+                "$ref": "../../schemas/field_name.json#/FieldName",
+                "default": "10",
+                "description": "Numero du compte"
+            },
+            "classe_id": {
+                "$ref": "../../schemas/identifier.json#/Identifier",
+                "description": "The unique identifier of the classe de compte"
+            },
+            "compte_id": {
+                "$ref": "../../schemas/identifier.json#/Identifier",
+                "description": "The unique identifier of the compte"
+            },
+            "compte_data": {
+                "$ref": "../comptes/compte_request.json#/CompteRequest",
+                "description": "compte form data"
+            },
+            "sub_accounts": {
+                "type": "array",
+                "items": {
+                    "$ref": "sub_account_request.json#/SubAccountRequest"
+                }
+            }
+        }
+    }
+}

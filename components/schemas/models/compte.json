@@ -4,7 +4,8 @@
         "required": [
             "id",
             "name",
-            "type_de_compte"
+            "type_de_compte",
+            "categorie_de_compte"
         ],
         "properties": {
             "id": {
@@ -24,6 +25,12 @@
                 ],
                 "example": "generale",
                 "default": "generale"
+            },
+            "categorie_de_compte": {
+                "$ref": "../field_name.json#/FieldName",
+                "example": "Actifs",
+                "default": "Actifs",
+                "description": "Name of categorie de compte"
             },
             "created_at": {
                 "$ref": "../date_format.json#/DateFormat",

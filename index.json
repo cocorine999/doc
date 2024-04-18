@@ -220,7 +220,7 @@
                 "tags": [
                     "Postes"
                 ],
-                "$ref": "paths/postes/list_poste.json"
+                "$ref": "paths/postes/list_postes.json"
             },
             "post": {
                 "tags": [

@@ -29,7 +29,7 @@
                             "permissions": {
                                 "type": "array",
                                 "items": {
-                                    "$ref": "../../components/schemas/Identifier"
+                                    "$ref": "../../components/schemas/identifier.json#/Identifier"
                                 },
                                 "description": "UUID unique au sein de notre systeme"
                             }

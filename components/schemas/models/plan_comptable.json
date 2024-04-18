@@ -11,7 +11,7 @@
                 "description": "Unique identifier for the plan comptable"
             },
             "name": {
-                "$ref": "../field_name.json#/FieldName",
+                "type": "string",
                 "default": "Tresorie passif",
                 "unique": true,
                 "description": "Nom du plan comptable"

@@ -13,7 +13,7 @@
                 "description": "Unique identifier for the devise"
             },
             "name": {
-                "$ref": "../field_name.json#/FieldName",
+                "type": "string",
                 "unique": true,
                 "default": "Production",
                 "description": "Name of the devise"
@@ -27,7 +27,7 @@
                 "default": "generale"
             },
             "categorie_de_compte": {
-                "$ref": "../field_name.json#/FieldName",
+                "type": "string",
                 "example": "Actifs",
                 "default": "Actifs",
                 "description": "Name of categorie de compte"

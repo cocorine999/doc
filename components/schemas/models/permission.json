@@ -7,7 +7,7 @@
                 "description": "Unique identifier for the permission"
             },
             "name": {
-                "$ref": "../field_name.json#/FieldName",
+                "type": "string",
                 "default": "Can create an user",
                 "description": "Name of the permission"
             },

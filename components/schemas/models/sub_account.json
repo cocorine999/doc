@@ -13,17 +13,20 @@
                 "description": "Unique identifier for the plan comptable"
             },
             "account_number": {
-                "$ref": "../field_name.json#/FieldName",
+                "type": "string",
+                "example": "10",
                 "default": "10",
                 "description": "Numero du compte"
             },
             "intitule": {
-                "$ref": "../field_name.json#/FieldName",
-                "default": "10",
-                "description": "Compte des capitaux propres"
+                "type": "string",
+                "example": "Compte des capitaux propres",
+                "default": "Compte des capitaux propres",
+                "description": "Intitule du compte"
             },
             "categorie_de_compte": {
-                "$ref": "../field_name.json#/FieldName",
+                "type": "string",
+                "example": "Actifs",
                 "default": "Actifs",
                 "description": "Categorie de compte"
             },

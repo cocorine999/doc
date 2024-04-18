@@ -11,7 +11,7 @@
                 "description": "Unique identifier for the departement"
             },
             "name": {
-                "$ref": "../field_name.json#/FieldName",
+                "type": "string",
                 "unique": true,
                 "default": "Production",
                 "description": "Name of the departement"

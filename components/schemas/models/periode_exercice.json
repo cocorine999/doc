@@ -13,7 +13,7 @@
                 "description": "Unique identifier for the periode exercice"
             },
             "name": {
-                "$ref": "../field_name.json#/FieldName",
+                "type": "string",
                 "nullable": false,
                 "example": "Annee Fiscal",
                 "default": "Annee Fiscal",

@@ -12,13 +12,13 @@
                 "description": "Unique identifier for the devise"
             },
             "code": {
-                "$ref": "../field_name.json#/FieldName",
+                "type": "string",
                 "default": "JV_Vente",
                 "unique": true,
                 "description": "Journal code"
             },
             "name": {
-                "$ref": "../field_name.json#/FieldName",
+                "type": "string",
                 "default": "Production",
                 "unique": true,
                 "description": "Name of the journal"

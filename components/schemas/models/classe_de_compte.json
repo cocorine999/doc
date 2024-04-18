@@ -12,7 +12,7 @@
                 "description": "Unique identifier for the classe de compte"
             },
             "intitule": {
-                "$ref": "../field_name.json#/FieldName",
+                "type": "string",
                 "unique": true,
                 "default": "Compte des capitaux",
                 "description": "Intitule of the classe de compte"

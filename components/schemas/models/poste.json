@@ -12,13 +12,16 @@
                 "description": "Unique identifier for the poste"
             },
             "name": {
-                "$ref": "../field_name.json#/FieldName",
-                "default": "Production",
+                "type": "string",
+                "example": "Comptable",
+                "default": "Comptable",
                 "description": "Name of the poste"
             },
             "departement_name": {
-                "$ref": "../field_name.json#/FieldName",
+                "type": "string",
                 "readOnly": true,
+                "example": "Finance",
+                "default": "Finance",
                 "description": "Poste departement name"
             },
             "created_at": {

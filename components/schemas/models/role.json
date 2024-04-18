@@ -12,7 +12,7 @@
                 "description": "Unique identifier for the role"
             },
             "name": {
-                "$ref": "../field_name.json#/FieldName",
+                "type": "string",
                 "default": "Employee",
                 "description": "Name of the role"
             },

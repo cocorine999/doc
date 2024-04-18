@@ -63,8 +63,8 @@
                             "message": {
                                 "type": "string",
                                 "description": "Additional information about the response.",
-                                "default": "Periode exercice created successfully",
-                                "example": "Periode exercice created successfully"
+                                "default": "Exercice comptable created successfully",
+                                "example": "Exercice comptable created successfully"
                             },
                             "data": {
                                 "$ref": "../../components/schemas/models/exercice_comptable.json#/ExerciceComptable"

@@ -2561,18 +2561,6 @@
             }
         },
 
-        "/plans_comptable/{planComptableId}/import-plan": {
-            "post": {
-                "$ref": "paths/plans_comptable/import.json"
-            }
-        },
-
-        "/plans_comptable/{planComptableId}/valider": {
-            "get": {
-                "$ref": "paths/plans_comptable/validate.json"
-            }
-        },
-
         "/exercices_comptable": {
             "get": {
                 "tags": [

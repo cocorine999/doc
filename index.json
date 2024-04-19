@@ -2576,6 +2576,14 @@
                 "$ref": "paths/plans_comptable/accounts/detach_accounts.json"
             }
         },
+        "/plans_comptable/{planComptableId}/accounts/{accountId}/sub-accounts": {
+            "get": {
+                "tags": [
+                    "ListOfPlanComptableAccountSubAccounts"
+                ],
+                "$ref": "paths/plans_comptable/accounts/sub_accounts/list.json"
+            }
+        },
 
         "/exercices_comptable": {
             "get": {

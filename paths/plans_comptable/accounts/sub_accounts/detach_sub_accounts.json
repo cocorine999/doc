@@ -1,19 +1,22 @@
 {
-    "summary": "Update an existing accounts",
-    "operationId": "updateAccounts",
-    "description": "Update an existing account with the provided data.",
+    "summary": "Detach existing subaccounts from a plan comptable accounts",
+    "description": "Detach existing subaccounts from a plan comptable accounts.",
+    "operationId": "detachSubAccounts",
     "parameters": [
         {
-            "$ref": "../../../components/parameters/plan_comptable_id.json#/PlanComptableId"
+            "$ref": "../../../../components/parameters/account_id.json#/AccountId"
         },
         {
-            "$ref": "../../../components/headers/content_type.json"
+            "$ref": "../../../../components/parameters/plan_comptable_id.json#/PlanComptableId"
         },
         {
-            "$ref": "../../../components/headers/accept.json"
+            "$ref": "../../../../components/headers/content_type.json"
         },
         {
-            "$ref": "../../../components/headers/origin.json"
+            "$ref": "../../../../components/headers/accept.json"
+        },
+        {
+            "$ref": "../../../../components/headers/origin.json"
         }
     ],
     "requestBody": {
@@ -23,10 +26,10 @@
                 "schema": {
                     "type": "object",
                     "properties": {
-                        "accounts": {
+                        "comptes": {
                             "type": "array",
                             "items": {
-                                "$ref": "../../../components/requestBodies/plans_comptable/account_request.json#/AccountRequest"
+                                "type": "uuid"
                             }
                         }
                     }
@@ -35,29 +38,29 @@
         }
     },
     "responses": {
-        "201": {
-            "description": "Successfully Response",
+        "200": {
+            "description": "Successfully retrieved",
             "headers": {
                 "X-RateLimit-Limit": {
-                    "$ref": "../../../components/headers/x_ratelimit_limit.json"
+                    "$ref": "../../../../components/headers/x_ratelimit_limit.json"
                 },
                 "X-RateLimit-Remaining": {
-                    "$ref": "../../../components/headers/x_ratelimit_remaining.json"
+                    "$ref": "../../../../components/headers/x_ratelimit_remaining.json"
                 },
                 "Access-Control-Allow-Origin": {
-                    "$ref": "../../../components/headers/access_control_allow_origin.json"
+                    "$ref": "../../../../components/headers/access_control_allow_origin.json"
                 },
                 "Access-Control-Allow-Methods": {
-                    "$ref": "../../../components/headers/access_control_allow_methods.json"
+                    "$ref": "../../../../components/headers/access_control_allow_methods.json"
                 },
                 "Access-Control-Allow-Credentials": {
-                    "$ref": "../../../components/headers/access_control_allow_credentials.json"
+                    "$ref": "../../../../components/headers/access_control_allow_credentials.json"
                 },
                 "Access-Control-Max-Age": {
-                    "$ref": "../../../components/headers/access_control_max_age.json"
+                    "$ref": "../../../../components/headers/access_control_max_age.json"
                 },
                 "Access-Control-Allow-Headers": {
-                    "$ref": "../../../components/headers/access_control_allow_headers.json"
+                    "$ref": "../../../../components/headers/access_control_allow_headers.json"
                 }
             },
             "content": {
@@ -74,8 +77,8 @@
                             "message": {
                                 "type": "string",
                                 "description": "Additional information about the response.",
-                                "default": "Accounts updated successfully",
-                                "example": "Accounts updated successfully"
+                                "default": "SubAccounts detached successfully from the plan comptable account.",
+                                "example": "SubAccounts detached successfully from the plan comptable account."
                             },
                             "data": {
                                 "type": "boolean",
@@ -86,8 +89,8 @@
                             "status_code": {
                                 "type": "integer",
                                 "description": "Indicates the HTTP status code of the response.",
-                                "default": 201,
-                                "example": 201
+                                "default": 200,
+                                "example": 200
                             }
                         }
                     }
@@ -95,34 +98,28 @@
             }
         },
         "400": {
-            "$ref": "../../../components/responses/errors/400.json#BadRequest"
+            "$ref": "../../../../components/responses/errors/400.json#BadRequest"
         },
         "401": {
-            "$ref": "../../../components/responses/errors/401.json#Unauthorized"
+            "$ref": "../../../../components/responses/errors/401.json#Unauthorized"
         },
         "403": {
-            "$ref": "../../../components/responses/errors/403.json#Forbidden"
+            "$ref": "../../../../components/responses/errors/403.json#Forbidden"
         },
         "404": {
-            "$ref": "../../../components/responses/errors/404.json#NotFound"
+            "$ref": "../../../../components/responses/errors/404.json#NotFound"
         },
         "405": {
-            "$ref": "../../../components/responses/errors/405.json#MethodNotAllowed"
+            "$ref": "../../../../components/responses/errors/405.json#MethodNotAllowed"
         },
         "408": {
-            "$ref": "../../../components/responses/errors/408.json#RequestTimeout"
-        },
-        "422": {
-            "$ref": "../../../components/responses/errors/422.json#UnprocessableEntity"
-        },
-        "429": {
-            "$ref": "../../../components/responses/errors/429.json#RateLimitExceeded"
+            "$ref": "../../../../components/responses/errors/408.json#RequestTimeout"
         },
         "500": {
-            "$ref": "../../../components/responses/errors/500.json#InternalServerError"
+            "$ref": "../../../../components/responses/errors/500.json#InternalServerError"
         },
         "503": {
-            "$ref": "../../../components/responses/errors/503.json#ServiceUnavailable"
+            "$ref": "../../../../components/responses/errors/503.json#ServiceUnavailable"
         }
     }
 }

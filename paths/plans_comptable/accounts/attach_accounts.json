@@ -78,7 +78,10 @@
                                 "example": "Accounts added successfully to the Plan Comptable."
                             },
                             "data": {
-                                "$ref": "../../../components/schemas/models/account.json#/Account"
+                                "type": "boolean",
+                                "description": "Indicates the success status of the request.",
+                                "default": true,
+                                "example": true
                             },
                             "status_code": {
                                 "type": "integer",

@@ -3282,31 +3282,6 @@
                 }
             }
         },
-        "/spacecrafts/{spacecraftId}": {
-            "parameters": [
-                {
-                    "name": "spacecraftId",
-                    "description": "The unique identifier of the spacecraft",
-                    "in": "path",
-                    "required": true,
-                    "schema": {
-                        "$ref": "#/components/schemas/SpacecraftId"
-                    }
-                }
-            ],
-            "get": {
-                "tags": [
-                    "Devises"
-                ],
-                "$ref": "paths/devises/list_devises.json"
-            },
-            "post": {
-                "tags": [
-                    "Devises"
-                ],
-                "$ref": "paths/devises/create_devise.json"
-            }
-        },
         "/devises/{deviseId}": {
             "get": {
                 "tags": [

@@ -1,17 +1,14 @@
 {
-    "ProjetProduction": {
+    "ProjetProductionRequest": {
         "type": "object",
         "required": [
-            "id",
             "intitule",
             "date_debut",
-            "date_fin"
+            "date_fin",
+            "ligne_de_production_id",
+            "article_id"
         ],
         "properties": {
-            "id": {
-                "$ref": "../identifier.json#/Identifier",
-                "description": "Unique identifier for the exercice comptable"
-            },
             "intitule": {
                 "type": "string",
                 "description": "Nom de l'immobilisation",
@@ -38,21 +35,25 @@
                 "example": "{{$randomDateRecent}}",
                 "description": "Date fin"
             },
-            "ligne": {
+            "ligne_de_production_id": {
                 "type": "string",
-                "description": "Nom de l'immobilisation",
-                "example": "{{$randomProductName}}",
-                "default": "Ligne 1"
+                "pattern": "^[0-9a-f]{8}-[0-9a-x]{4}-[1-5][0-9a-z]{3}-[89AB][0-9a-q]{3}-[0-9a-f]{12}$",
+                "minLength": 32,
+                "maxLength": 36,
+                "example": "{{$randomUUID}}",
+                "default": "b257f261-9r73-4e4-64d-d733b56fq3af",
+                "description": "UUID unique d'une ligne de production",
+                "nullable": false
             },
-            "produit_fini": {
+            "article_id": {
                 "type": "string",
-                "description": "Nom de l'immobilisation",
-                "example": "{{$randomProductName}}",
-                "default": "Jus d'ananas"
-            },
-            "created_at": {
-                "$ref": "../date_format.json#/DateFormat",
-                "description": "Date and time when the exercice comptable was created (YYYY-MM-DD HH:MM:SS)"
+                "pattern": "^[0-9a-f]{8}-[0-9a-x]{4}-[1-5][0-9a-z]{3}-[89AB][0-9a-q]{3}-[0-9a-f]{12}$",
+                "minLength": 32,
+                "maxLength": 36,
+                "example": "{{$randomUUID}}",
+                "default": "b257f261-9r73-4e4-64d-d733b56fq3af",
+                "description": "UUID unique d'un article",
+                "nullable": false
             }
         }
     }

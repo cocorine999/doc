@@ -17,27 +17,18 @@
                 "description": "Unique identifier for the exercice comptable"
             },
             "montant": {
-                "type": "number",
-                "format": "double",
-                "example": "{{$randomPrice}}",
+                "$ref": "../amount.json#/Amount",
                 "default": 12000.00,
-                "minimum": 0.00,
                 "description": "Valeur d'origine"
             },
             "valeur_ammortissable": {
-                "type": "number",
-                "format": "double",
-                "example": "{{$randomPrice}}",
+                "$ref": "../amount.json#/Amount",
                 "default": 12000.00,
-                "minimum": 0.00,
                 "description": "Valeur residuelle"
             },
             "valeur_comptable": {
-                "type": "number",
-                "format": "double",
-                "example": "{{$randomPrice}}",
+                "$ref": "../amount.json#/Amount",
                 "default": 12000.00,
-                "minimum": 0.00,
                 "description": "Valeur residuelle"
             },
             "taux": {
@@ -55,19 +46,11 @@
                 "description": "Duree de l'immobilisation"
             },
             "date_debut": {
-                "type": "string",
-                "format": "date",
-                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
-                "default": "2024-01-06",
-                "example": "{{$randomDateRecent}}",
+                "$ref": "../date_format.json#/DateFormat",
                 "description": "Date d'acquisition"
             },
             "date_fin": {
-                "type": "string",
-                "format": "date",
-                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
-                "default": "2024-01-06",
-                "example": "{{$randomDateRecent}}",
+                "$ref": "../date_format.json#/DateFormat",
                 "description": "Date depreciation"
             },
             "created_at": {

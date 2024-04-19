@@ -2653,6 +2653,15 @@
             }
         },
 
+        "/exercices_comptable/{exerciceComptableId}/cloture": {
+            "get": {
+                "tags": [
+                    "Cloture d'exercice"
+                ],
+                "$ref": "paths/exercices_comptable/cloture.json"
+            }
+        },
+
         "/exercices_comptable/{exerciceComptableId}/ecritures-comptable": {
             "get": {
                 "tags": [

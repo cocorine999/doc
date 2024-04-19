@@ -3683,13 +3683,13 @@
                 "tags": [
                     "Exercices analytique"
                 ],
-                "$ref": "paths/exercices_analytique/ecritures_analytique/entries.json"
+                "$ref": "paths/exercices_comptable/ecritures_analytique/entries.json"
             },
             "put": {
                 "tags": [
                     "Exercices analytique"
                 ],
-                "$ref": "paths/exercices_analytique/ecritures_analytique/new-entry.json"
+                "$ref": "paths/exercices_comptable/ecritures_analytique/new-entry.json"
             }
         },
 

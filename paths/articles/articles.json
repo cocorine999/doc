@@ -1,0 +1,161 @@
+{
+    "get": {
+        "summary": "Récupérer tous les articles",
+        "responses": {
+            "200": {
+                "description": "Success",
+                "headers": {
+                    "X-RateLimit-Limit": {
+                        "$ref": "../../components/headers/x_ratelimit_limit.json"
+                    },
+                    "X-RateLimit-Remaining": {
+                        "$ref": "../../components/headers/x_ratelimit_remaining.json"
+                    },
+                    "Access-Control-Allow-Origin": {
+                        "$ref": "../../components/headers/access_control_allow_origin.json"
+                    },
+                    "Access-Control-Allow-Methods": {
+                        "$ref": "../../components/headers/access_control_allow_methods.json"
+                    },
+                    "Access-Control-Allow-Credentials": {
+                        "$ref": "../../components/headers/access_control_allow_credentials.json"
+                    },
+                    "Access-Control-Max-Age": {
+                        "$ref": "../../components/headers/access_control_max_age.json"
+                    },
+                    "Access-Control-Allow-Headers": {
+                        "$ref": "../../components/headers/access_control_allow_headers.json"
+                    }
+                },
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "../../components/schemas/models/article.json#/ArticleListResponse"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "post": {
+        "summary": "Créer un nouvel article",
+        "requestBody": {
+            "required": true,
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "$ref": "../../components/requestBodies/articles/article.json#/ArticleCreate"
+                    }
+                }
+            }
+        },
+        "responses": {
+            "201": {
+                "description": "Article créé avec succès.",
+                "headers": {
+                    "X-RateLimit-Limit": {
+                        "$ref": "../../components/headers/x_ratelimit_limit.json"
+                    },
+                    "X-RateLimit-Remaining": {
+                        "$ref": "../../components/headers/x_ratelimit_remaining.json"
+                    },
+                    "Access-Control-Allow-Origin": {
+                        "$ref": "../../components/headers/access_control_allow_origin.json"
+                    },
+                    "Access-Control-Allow-Methods": {
+                        "$ref": "../../components/headers/access_control_allow_methods.json"
+                    },
+                    "Access-Control-Allow-Credentials": {
+                        "$ref": "../../components/headers/access_control_allow_credentials.json"
+                    },
+                    "Access-Control-Max-Age": {
+                        "$ref": "../../components/headers/access_control_max_age.json"
+                    },
+                    "Access-Control-Allow-Headers": {
+                        "$ref": "../../components/headers/access_control_allow_headers.json"
+                    }
+                },
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "boolean",
+                                    "description": "Indique le statut de réussite de la requête.",
+                                    "default": true,
+                                    "example": true
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "description": "Informations supplémentaires sur la réponse.",
+                                    "default": "Article créé avec succès.",
+                                    "example": "Article créé avec succès."
+                                },
+                                "data": {
+                                    "$ref": "../../components/schemas/models/article.json#/ArticleResponse"
+                                },
+                                "status_code": {
+                                    "type": "integer",
+                                    "description": "Indique le code d'état HTTP de la réponse.",
+                                    "default": 201,
+                                    "example": 201
+                                }
+                            }
+                        }
+                    }
+                },
+                "links": {
+                    "GetArticleDetailsById": {
+                        "operationId": "getArticle",
+                        "parameters": {
+                            "articleId": "$response.body#/data/id"
+                        },
+                        "description": "Lien pour obtenir les détails de l'article basé sur son ID."
+                    },
+                    "UpdateArticleDetailsById": {
+                        "operationId": "updateArticle",
+                        "parameters": {
+                            "articleId": "$response.body#/data/id"
+                        },
+                        "description": "Lien pour mettre à jour les détails de l'article basé sur son ID."
+                    },
+                    "DeleteArticleById": {
+                        "operationId": "deleteArticle",
+                        "parameters": {
+                            "articleId": "$response.body#/data/id"
+                        },
+                        "description": "Lien pour supprimer l'article basé sur son ID."
+                    }
+                }
+            },
+            "400": {
+                "$ref": "../../components/responses/errors/400.json#BadRequest"
+            },
+            "401": {
+                "$ref": "../../components/responses/errors/401.json#Unauthorized"
+            },
+            "403": {
+                "$ref": "../../components/responses/errors/403.json#Forbidden"
+            },
+            "405": {
+                "$ref": "../../components/responses/errors/405.json#MethodNotAllowed"
+            },
+            "408": {
+                "$ref": "../../components/responses/errors/408.json#RequestTimeout"
+            },
+            "422": {
+                "$ref": "../../components/responses/errors/422.json#UnprocessableEntity"
+            },
+            "429": {
+                "$ref": "../../components/responses/errors/429.json#RateLimitExceeded"
+            },
+            "500": {
+                "$ref": "../../components/responses/errors/500.json#InternalServerError"
+            },
+            "503": {
+                "$ref": "../../components/responses/errors/503.json#ServiceUnavailable"
+            }
+        }
+    }
+}

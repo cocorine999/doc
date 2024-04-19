@@ -1,0 +1,118 @@
+{
+    "MagasinListResponse": {
+        "type": "object",
+        "properties": {
+            "status": {
+                "type": "boolean",
+                "description": "Statut de la requête."
+            },
+            "message": {
+                "type": "string",
+                "nullable": true,
+                "description": "Message associé à la réponse."
+            },
+            "data": {
+                "type": "object",
+                "properties": {
+                    "current_page": {
+                        "type": "integer",
+                        "description": "Numéro de la page actuelle."
+                    },
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#MagasinResponse"
+                        },
+                        "description": "Liste des magasins."
+                    },
+                    "first_page_url": {
+                        "type": "string",
+                        "description": "URL de la première page."
+                    },
+                    "from": {
+                        "type": "integer",
+                        "description": "Index du premier élément de la page actuelle."
+                    },
+                    "last_page": {
+                        "type": "integer",
+                        "description": "Numéro de la dernière page."
+                    },
+                    "last_page_url": {
+                        "type": "string",
+                        "description": "URL de la dernière page."
+                    },
+                    "links": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "url": {
+                                    "type": "string",
+                                    "nullable": true,
+                                    "description": "URL du lien."
+                                },
+                                "label": {
+                                    "type": "string",
+                                    "description": "Libellé du lien."
+                                },
+                                "active": {
+                                    "type": "boolean",
+                                    "description": "Indicateur d'activation du lien."
+                                }
+                            }
+                        },
+                        "description": "Liste des liens de pagination."
+                    },
+                    "next_page_url": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "URL de la page suivante."
+                    },
+                    "path": {
+                        "type": "string",
+                        "description": "Chemin de la requête actuelle."
+                    },
+                    "per_page": {
+                        "type": "integer",
+                        "description": "Nombre d'éléments par page."
+                    },
+                    "prev_page_url": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "URL de la page précédente."
+                    },
+                    "to": {
+                        "type": "integer",
+                        "description": "Index du dernier élément de la page actuelle."
+                    },
+                    "total": {
+                        "type": "integer",
+                        "description": "Nombre total d'éléments."
+                    }
+                }
+            }
+        }
+    },
+    "MagasinResponse": {
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "string",
+                "description": "ID du magasin."
+            },
+            "name": {
+                "type": "string",
+                "description": "Nom du magasin."
+            },
+            "address": {
+                "type": "string",
+                "description": "Adresse du magasin."
+            },
+            "created_at": {
+                "type": "string",
+                "format": "date-time",
+                "description": "Date de création du magasin."
+            }
+        }
+    }
+}

@@ -1,0 +1,34 @@
+{
+    "MagasinCreate": {
+        "type": "object",
+        "properties": {
+            "name": {
+                "type": "string",
+                "description": "Nom du magasin."
+            },
+            "address": {
+                "type": "string",
+                "description": "Adresse du magasin."
+            }
+        },
+        "required": [
+            "name",
+            "address"
+        ]
+    },
+    "MagasinUpdate": {
+        "type": "object",
+        "properties": {
+            "name": {
+                "type": "string",
+                "nullable": true,
+                "description": "Nom du magasin."
+            },
+            "address": {
+                "type": "string",
+                "nullable": true,
+                "description": "Adresse du magasin."
+            }
+        }
+    }
+}

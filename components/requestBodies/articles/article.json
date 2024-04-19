@@ -1,0 +1,60 @@
+{
+    "ArticleUpdate": {
+        "type": "object",
+        "properties": {
+            "name": {
+                "type": "string",
+                "description": "Nom de l'article."
+            },
+            "price": {
+                "type": "number",
+                "description": "Prix de l'article."
+            },
+            "stock": {
+                "type": "integer",
+                "description": "Stock disponible de l'article."
+            },
+            "magasin_id": {
+                "type": "string",
+                "description": "ID du magasin auquel l'article est associé."
+            },
+            "categorie_article_id": {
+                "type": "string",
+                "description": "ID de la catégorie de l'article."
+            },
+            "description": {
+                "type": "string",
+                "description": "Description de l'article."
+            }
+        }
+    },
+    "ArticleCreate": {
+        "type": "object",
+        "properties": {
+            "name": {
+                "type": "string",
+                "description": "Nom de l'article."
+            },
+            "price": {
+                "type": "number",
+                "description": "Prix de l'article."
+            },
+            "stock": {
+                "type": "integer",
+                "description": "Stock disponible de l'article."
+            },
+            "magasin_id": {
+                "type": "string",
+                "description": "ID du magasin auquel l'article est associé."
+            },
+            "categorie_article_id": {
+                "type": "string",
+                "description": "ID de la catégorie de l'article."
+            },
+            "description": {
+                "type": "string",
+                "description": "Description de l'article."
+            }
+        }
+    }
+}

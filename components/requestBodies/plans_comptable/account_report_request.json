@@ -13,6 +13,7 @@
                 "description": "Numero du compte"
             },
             "type_ecriture_compte": {
+                "type": "string",
                 "enum": [
                     "debit",
                     "credit"

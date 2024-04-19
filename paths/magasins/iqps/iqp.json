@@ -93,7 +93,7 @@
             "content": {
                 "application/json": {
                     "schema": {
-                        "$ref": "#/components/schemas/IQPUpdate"
+                        "$ref": "../../../components/requestBodies/magasins/iqp.json#/IQPUpdate"
                     }
                 }
             }
@@ -127,7 +127,7 @@
                 "content": {
                     "application/json": {
                         "schema": {
-                            "$ref": "#/components/schemas/IQP"
+                            "$ref": "../../../components/schemas/models/iqp.json#/IQP"
                         }
                     }
                 }

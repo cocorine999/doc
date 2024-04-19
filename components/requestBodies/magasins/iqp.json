@@ -1,0 +1,23 @@
+{
+    "IQPUpdate": {
+        "type": "object",
+        "properties": {
+            "name": {
+                "type": "string",
+                "description": "The updated name of the IQP"
+            },
+            "description": {
+                "type": "string",
+                "description": "The updated description of the IQP"
+            },
+            "status": {
+                "type": "string",
+                "enum": [
+                    "active",
+                    "inactive"
+                ],
+                "description": "The updated status of the IQP"
+            }
+        }
+    }
+}

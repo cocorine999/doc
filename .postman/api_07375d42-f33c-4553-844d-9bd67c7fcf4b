@@ -36,6 +36,7 @@ files[] = {"path":"components/requestBodies/articles/categorie_articles/categori
 files[] = {"path":"components/requestBodies/employee/assign_post.json","metaData":{}}
 files[] = {"path":"components/requestBodies/employee/employees.json","metaData":{}}
 files[] = {"path":"components/requestBodies/magasins/articleiqp.json","metaData":{}}
+files[] = {"path":"components/requestBodies/magasins/iqp.json","metaData":{}}
 files[] = {"path":"components/requestBodies/magasins/magasin.json","metaData":{}}
 files[] = {"path":"components/requestBodies/partner/partner.json","metaData":{}}
 files[] = {"path":"components/requestBodies/roles/role_request.json","metaData":{}}

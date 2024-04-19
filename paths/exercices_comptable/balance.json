@@ -92,9 +92,9 @@
                                 "type": "array",
                                 "description": "Balance des comptes",
                                 "items": {
-                                    "$ref": "../../components/schemas/models/balance.json#/BalanceDeCompte"
+                                    "$ref": "../../components/schemas/models/balance_de_compte.json#/BalanceDeCompte"
                                 },
-                                "examples": {
+                                "example": {
                                     "BalanceDesComptesExamples": {
                                         "summary": "Example",
                                         "value": {}

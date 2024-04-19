@@ -14,12 +14,12 @@
             },
             "intitule": {
                 "type": "string",
-                "description": "Nom de l'immobilisation",
+                "description": "Nom du projet",
                 "example": "{{$randomProductName}}"
             },
             "description": {
                 "type": "string",
-                "description": "Nom de l'immobilisation",
+                "description": "Description du projet",
                 "example": "{{$randomProductName}}"
             },
             "date_debut": {
@@ -40,13 +40,13 @@
             },
             "ligne": {
                 "type": "string",
-                "description": "Nom de l'immobilisation",
+                "description": "Ligne de production",
                 "example": "{{$randomProductName}}",
                 "default": "Ligne 1"
             },
             "produit_fini": {
                 "type": "string",
-                "description": "Nom de l'immobilisation",
+                "description": "article",
                 "example": "{{$randomProductName}}",
                 "default": "Jus d'ananas"
             },

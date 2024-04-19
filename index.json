@@ -2747,7 +2747,6 @@
             }
         },
 
-
         "/exercices_comptable/{exerciceComptableId}/immobilisations": {
             "get": {
                 "tags": [
@@ -2780,6 +2779,41 @@
                     "Immobilisations"
                 ],
                 "$ref": "paths/immobilisations/delete_immobilisation.json"
+            }
+        },
+
+        "/projets_production": {
+            "get": {
+                "tags": [
+                    "ProjetsProduction"
+                ],
+                "$ref": "paths/projets_production/list.json"
+            },
+            "post": {
+                "tags": [
+                    "ProjetsProduction"
+                ],
+                "$ref": "paths/projets_production/create_projet_production.json"
+            }
+        },
+        "/projets_production/{projetProductionId}": {
+            "get": {
+                "tags": [
+                    "ProjetsProduction"
+                ],
+                "$ref": "paths/projets_production/find_projet_production.json"
+            },
+            "put": {
+                "tags": [
+                    "ProjetsProduction"
+                ],
+                "$ref": "paths/projets_production/update_projet_production.json"
+            },
+            "delete": {
+                "tags": [
+                    "ProjetsProduction"
+                ],
+                "$ref": "paths/projets_production/delete_projet_production.json"
             }
         }
 

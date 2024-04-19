@@ -1,5 +1,5 @@
 {
-    "summary": "Retrive an existing projet de production by id",
+    "summary": "Retrieve an existing projet de production by id",
     "description": "Retrieve an existing projet de production by its unique identifier.",
     "operationId": "getProjetProduction",
     "parameters": [

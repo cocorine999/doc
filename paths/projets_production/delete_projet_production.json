@@ -1,6 +1,6 @@
 {
-    "summary": "Soft-Delete an existing immobilisation by id",
-    "description": "Soft-Delete an existing immobilisation by its unique identifier.",
+    "summary": "Soft-Delete an existing projet production by id",
+    "description": "Soft-Delete an existing projet production by its unique identifier.",
     "operationId": "deleteProjetProduction",
     "parameters": [
         {
@@ -18,7 +18,7 @@
     ],
     "responses": {
         "200": {
-            "description": "Successfully retrieved immobilisation",
+            "description": "Successfully retrieved projet production",
             "headers": {
                 "X-RateLimit-Limit": {
                     "$ref": "../../components/headers/x_ratelimit_limit.json"

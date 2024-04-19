@@ -91,6 +91,14 @@
             "description": "APIs related to comptes management. These endpoints allow clients to create, retrieve, update, and delete comptes."
         },
         {
+            "name": "Journaux",
+            "description": "APIs related to journaux management. These endpoints allow clients to create, retrieve, update, and delete journaux."
+        },
+        {
+            "name": "PeriodesExercice",
+            "description": "APIs related to periodes d'exercice management. These endpoints allow clients to create, retrieve, update, and delete periodes d'exercice."
+        },
+        {
             "name": "Plans comptable",
             "description": "APIs related to comptes management. These endpoints allow clients to create, retrieve, update, and delete comptes."
         },
@@ -105,7 +113,16 @@
         {
             "name": "DetachAccountsToPlanComptable",
             "description": "APIs related to comptes management. These endpoints allow clients to create, retrieve, update, and delete comptes."
+        },
+        {
+            "name": "Immobilisations",
+            "description": "APIs related to immobilisations management. These endpoints allow clients to create, retrieve, update, and delete immobilisations."
+        },
+        {
+            "name": "ProjetsProduction",
+            "description": "APIs related to projets de production management. These endpoints allow clients to create, retrieve, update, and delete projets de production."
         }
+        
         
     ],
     "paths": {
@@ -2727,6 +2744,42 @@
                     "Validate operation comptable"
                 ],
                 "$ref": "paths/exercices_comptable/operations_analytique/validate.json"
+            }
+        },
+
+
+        "/immobilisations": {
+            "get": {
+                "tags": [
+                    "Journaux"
+                ],
+                "$ref": "paths/immobilisations/list.json"
+            },
+            "post": {
+                "tags": [
+                    "Journaux"
+                ],
+                "$ref": "paths/immobilisations/create_immobilisation.json"
+            }
+        },
+        "/immobilisations/{immobilisationId}": {
+            "get": {
+                "tags": [
+                    "Immobilisations"
+                ],
+                "$ref": "paths/immobilisations/find_immobilisation.json"
+            },
+            "put": {
+                "tags": [
+                    "Immobilisations"
+                ],
+                "$ref": "paths/immobilisations/update_immobilisation.json"
+            },
+            "delete": {
+                "tags": [
+                    "Immobilisations"
+                ],
+                "$ref": "paths/immobilisations/delete_immobilisation.json"
             }
         }
 

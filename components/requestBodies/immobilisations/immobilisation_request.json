@@ -1,6 +1,6 @@
 {
 
-    "Immobilisation": {
+    "ImmobilisationRequest": {
         "type": "object",
         "required": [
             "name",

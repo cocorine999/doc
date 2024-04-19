@@ -4,6 +4,9 @@
     "description": "Retrieves exercice comptable journals information based on certain criteria.",
     "parameters": [
         {
+            "$ref": "../../../components/parameters/exercice_comptable_id.json#/ExerciceComptableId"
+        },
+        {
             "$ref": "../../components/parameters/page.json"
         },
         {

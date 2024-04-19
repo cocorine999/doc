@@ -1,0 +1,79 @@
+{
+
+    "Immobilisation": {
+        "type": "object",
+        "required": [
+            "name",
+            "valeur_origine",
+            "valeur_residuelle",
+            "type_immobilisation",
+            "methode_immobilisation",
+            "date_acquisition",
+            "date_depreciation",
+            "duree_ammortissement",
+            "account_number"
+        ],
+        "properties": {
+            "name": {
+                "type": "string",
+                "description": "Nom de l'immobilisation",
+                "example": "{{$randomProductName}}"
+            },
+            "valeur_origine": {
+                "type": "number",
+                "format": "double",
+                "example": "{{$randomPrice}}",
+                "default": 12000.00,
+                "minimum": 0,
+                "description": "Valeur d'origine"
+            },
+            "valeur_residuelle": {
+                "type": "number",
+                "format": "double",
+                "example": "{{$randomPrice}}",
+                "default": 12000.00,
+                "minimum": 0.00,
+                "description": "Valeur residuelle"
+            },
+            "date_acquisition": {
+                "$ref": "../date_format.json#/DateFormat",
+                "example": "{{$randomDateRecent}}",
+                "description": "Date d'acquisition"
+            },
+            "date_depreciation": {
+                "$ref": "../date_format.json#/DateFormat",
+                "example": "{{$randomDateRecent}}",
+                "description": "Date depreciation"
+            },
+            "type_immobilisation": {
+                "enum": [
+                    "corporelle",
+                    "incorporelle",
+                    "financiere"
+                ],
+                "examples": ["corporelle", "incorporelle", "financiere"],
+                "default": "corporelle"
+            },
+            "methode_immobilisation": {
+                "enum": [
+                    "lineaire",
+                    "degressif"
+                ],
+                "examples": ["lineaire", "degressif"],
+                "default": "lineaire"
+            },
+            "est_prorata_temporis": {
+                "type": "boolean",
+                "example": "{{$randomBoolean}}",
+                "default": true
+            },
+            "duree_ammortissement": {
+                "type": "integer",
+                "examples":[1, 3, 5],
+                "default": 1,
+                "minimum": 1,
+                "description": "Duree de l'immobilisation"
+            }
+        }
+    }
+}

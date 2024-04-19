@@ -3,8 +3,8 @@
         "type": "object",
         "required": [
             "fiscal_year",
-            "date_ouverture",
-            "status_exercice"
+            "periode_exercice_id",
+            "plan_comptable_id"
         ],
         "properties": {
             "fiscal_year": {

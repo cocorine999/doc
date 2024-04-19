@@ -1,7 +1,7 @@
 {
-    "summary": "Retrieve list of comptes",
-    "operationId": "fetchListOfComptes",
-    "description": "Retrieves comptes information based on certain criteria.",
+    "summary": "Retrieve list of journaux",
+    "operationId": "fetchListOfJournals",
+    "description": "Retrieves journaux information based on certain criteria.",
     "parameters": [
         {
             "$ref": "../../components/parameters/page.json"
@@ -68,7 +68,7 @@
                                 "description": "Additional information about the response.",
                                 "nullable": true,
                                 "default": null,
-                                "example": "List of comptes retrieve successfully"
+                                "example": "List of journaux retrieve successfully"
                             },
                             "data": {
                                 "type": "object",
@@ -82,16 +82,16 @@
                                     },
                                     "data": {
                                         "type": "array",
-                                        "description": "List of comptes.",
+                                        "description": "List of journaux.",
                                         "items": {
-                                            "$ref": "../../components/schemas/models/compte.json#/Compte"
+                                            "$ref": "../../components/schemas/models/journal.json#/Journal"
                                         }
                                     },
                                     "first_page_url": {
                                         "type": "string",
                                         "description": "The URL of the first page in the pagination.",
-                                        "example": "comptes?page=1",
-                                        "default": "comptes?page=1"
+                                        "example": "journaux?page=1",
+                                        "default": "journaux?page=1"
                                     },
                                     "from": {
                                         "type": "integer",
@@ -110,20 +110,20 @@
                                     "last_page_url": {
                                         "type": "string",
                                         "description": "The URL of the last page in the pagination sequence.",
-                                        "example": "comptes?page=7",
-                                        "default": "comptes?page=1"
+                                        "example": "journaux?page=7",
+                                        "default": "journaux?page=1"
                                     },
                                     "next_page_url": {
                                         "type": "string",
                                         "description": "The URL to retrieve the next page of results.",
                                         "nullable": true,
                                         "default": null,
-                                        "example": "comptes?page=3"
+                                        "example": "journaux?page=3"
                                     },
                                     "path": {
                                         "type": "string",
                                         "description": "The URL path of the current page.",
-                                        "example": "comptes"
+                                        "example": "journaux"
                                     },
                                     "per_page": {
                                         "type": "integer",
@@ -138,7 +138,7 @@
                                         "description": "The URL of the previous page.",
                                         "nullable": true,
                                         "default": null,
-                                        "example": "comptes?page=1"
+                                        "example": "journaux?page=1"
                                     },
                                     "to": {
                                         "type": "integer",
@@ -167,26 +167,26 @@
                 }
             },
             "links": {
-                "GetCompteDetailsByCompteId": {
-                    "operationId": "getCompte",
+                "GetJournalDetailsByJournalId": {
+                    "operationId": "getJournal",
                     "parameters": {
-                        "compteId": "$response.body#/data/data/0/id"
+                        "journalId": "$response.body#/data/data/0/id"
                     },
-                    "description": "Link to get compte information based on compte ID."
+                    "description": "Link to get journal information based on journal ID."
                 },
-                "UpdateCompteDetailsByCompteId": {
-                    "operationId": "updateCompte",
+                "UpdateJournalDetailsByJournalId": {
+                    "operationId": "updateJournal",
                     "parameters": {
-                        "compteId": "$response.body#/data/data/0/id"
+                        "journalId": "$response.body#/data/data/0/id"
                     },
-                    "description": "Link to update compte information based on compte ID."
+                    "description": "Link to update journal information based on journal ID."
                 },
-                "DeleteCompteByCompteId": {
-                    "operationId": "deleteCompte",
+                "DeleteJournalByJournalId": {
+                    "operationId": "deleteJournal",
                     "parameters": {
-                        "compteId": "$response.body#/data/data/0/id"
+                        "journalId": "$response.body#/data/data/0/id"
                     },
-                    "description": "Link to delete compte based on compte ID."
+                    "description": "Link to delete journal based on journal ID."
                 }
             }
         },

@@ -1,5 +1,5 @@
 {
-    "summary": "Attach comptes to a plan comptable",
+    "summary": "Attach accounts to a plan comptable",
     "operationId": "attachAccounts",
     "description": "Attach accounts to a plan comptable.",
     "parameters": [

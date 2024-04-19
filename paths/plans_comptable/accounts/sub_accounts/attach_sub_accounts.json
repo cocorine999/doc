@@ -1,7 +1,7 @@
 {
-    "summary": "Attach sous comptes to a plan comptable",
+    "summary": "Attach sous comptes to a plan comptable compte",
     "operationId": "attachAccounts",
-    "description": "Attach sous comptes to a plan comptable.",
+    "description": "Attach sous comptes to a plan comptable compte.",
     "parameters": [
         {
             "$ref": "../../../../components/parameters/account_id.json#/AccountId"

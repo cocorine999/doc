@@ -1,7 +1,7 @@
 {
-    "summary": "Retrieve list of subaccounts of a plan comptable account",
+    "summary": "Retrieve list of sub accounts of a plan comptable accounts",
     "operationId": "fetchListOfSubAccounts",
-    "description": "Retrieves subaccounts information based on certain criteria.",
+    "description": "Retrieves sub accounts information based on certain criteria.",
     "parameters": [
         {
             "$ref": "../../../../components/parameters/account_id.json#/AccountId"

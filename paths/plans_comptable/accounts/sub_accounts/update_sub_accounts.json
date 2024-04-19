@@ -1,7 +1,7 @@
 {
-    "summary": "Update an existing sub_accounts",
+    "summary": "Update an existing plan comptable accounts sub accounts",
     "operationId": "updateAccounts",
-    "description": "Update an existing account with the provided data.",
+    "description": "Update an existing sub accounts with the provided data.",
     "parameters": [
         {
             "$ref": "../../../../components/parameters/account_id.json#/AccountId"
@@ -77,8 +77,8 @@
                             "message": {
                                 "type": "string",
                                 "description": "Additional information about the response.",
-                                "default": "Accounts updated successfully",
-                                "example": "Accounts updated successfully"
+                                "default": "Sub Accounts updated successfully",
+                                "example": "Sub Accounts updated successfully"
                             },
                             "data": {
                                 "type": "boolean",

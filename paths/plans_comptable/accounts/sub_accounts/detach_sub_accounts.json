@@ -1,6 +1,6 @@
 {
-    "summary": "Detach existing subaccounts from a plan comptable accounts",
-    "description": "Detach existing subaccounts from a plan comptable accounts.",
+    "summary": "Detach existing sub accounts from a plan comptable accounts",
+    "description": "Detach existing sub accounts from a plan comptable  account.",
     "operationId": "detachSubAccounts",
     "parameters": [
         {

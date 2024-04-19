@@ -22,10 +22,14 @@
                 "description": "Date debut ecriture comptable (YYYY-MM-DD)"
             },
             "journal_id": {
-                "type": "uuid",
-                "nullable": false,
-                "default": "Unique uuid id of journal",
-                "description": "Intitule de l'ecriture comptable"
+                "type": "string",
+                "pattern": "^[0-9a-f]{8}-[0-9a-x]{4}-[1-5][0-9a-z]{3}-[89AB][0-9a-q]{3}-[0-9a-f]{12}$",
+                "minLength": 32,
+                "maxLength": 36,
+                "example": "{{$randomUUID}}",
+                "default": "b257f261-9r73-4e4-64d-d733b56fq3af",
+                "description": "UUID unique d'un compte",
+                "nullable": false
             },
             "lignes_ecriture": {
                 "type": "array",

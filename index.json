@@ -2653,6 +2653,15 @@
             }
         },
 
+        "/exercices_comptable/{exerciceComptableId}/balance-des-comptes": {
+            "put": {
+                "tags": [
+                    "Report de solde au comptes"
+                ],
+                "$ref": "paths/exercices_comptable/balance.json"
+            }
+        },
+
         "/exercices_comptable/{exerciceComptableId}/ecritures-comptable": {
             "get": {
                 "tags": [

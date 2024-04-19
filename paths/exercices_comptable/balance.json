@@ -1,0 +1,131 @@
+{
+    "summary": "Consulter la balance des comptes",
+    "operationId": "BalanceDesComptes",
+    "description": "Retrieves balance des comptes d'un exercice comptable information based on certain criteria.",
+    "parameters": [
+        {
+            "$ref": "../../components/parameters/exercice_comptable_id.json#/ExerciceComptableId"
+        },
+        {
+            "$ref": "../../../components/parameters/sort.json"
+        },
+        {
+            "$ref": "../../../components/parameters/order.json"
+        },
+        {
+            "name": "from_date",
+            "in": "query",
+            "required": false,
+            "schema": {
+                "type": "string",
+                "default": "05/03/2024",
+                "example": "05/03/2024"
+            },
+            "example": "05/03/2024"
+        },
+        {
+            "name": "to_date",
+            "in": "query",
+            "required": false,
+            "schema": {
+                "type": "string",
+                "default": "05/03/2024",
+                "example": "05/03/2024"
+            },
+            "example": "14/10/2024"
+        },
+        {
+            "$ref": "../../components/headers/content_type.json"
+        },
+        {
+            "$ref": "../../components/headers/accept.json"
+        },
+        {
+            "$ref": "../../components/headers/origin.json"
+        }
+    ],
+    "responses": {
+        "200": {
+            "description": "Successfully Response",
+            "headers": {
+                "X-RateLimit-Limit": {
+                    "$ref": "../../components/headers/x_ratelimit_limit.json"
+                },
+                "X-RateLimit-Remaining": {
+                    "$ref": "../../components/headers/x_ratelimit_remaining.json"
+                },
+                "Access-Control-Allow-Origin": {
+                    "$ref": "../../components/headers/access_control_allow_origin.json"
+                },
+                "Access-Control-Allow-Methods": {
+                    "$ref": "../../components/headers/access_control_allow_methods.json"
+                },
+                "Access-Control-Allow-Credentials": {
+                    "$ref": "../../components/headers/access_control_allow_credentials.json"
+                },
+                "Access-Control-Max-Age": {
+                    "$ref": "../../components/headers/access_control_max_age.json"
+                },
+                "Access-Control-Allow-Headers": {
+                    "$ref": "../../components/headers/access_control_allow_headers.json"
+                }
+            },
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "status": {
+                                "type": "boolean",
+                                "description": "Indicates the success status of the request.",
+                                "default": true,
+                                "example": true
+                            },
+                            "message": {
+                                "type": "string",
+                                "description": "Additional information about the response.",
+                                "nullable": true,
+                                "default": null,
+                                "example": "Balance successfully query."
+                            },
+                            "data": {
+                                "type": "array",
+                                "description": "Balance des comptes",
+                                "items": {
+                                    "$ref": "../../components/schemas/models/plan_comptable.json#/PlanComptable"
+                                }
+                            },
+                            "status_code": {
+                                "type": "integer",
+                                "description": "Indicates whether the request was successful.",
+                                "default": 200,
+                                "example": 200
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "400": {
+            "$ref": "../../components/responses/errors/400.json#BadRequest"
+        },
+        "405": {
+            "$ref": "../../components/responses/errors/405.json#MethodNotAllowed"
+        },
+        "408": {
+            "$ref": "../../components/responses/errors/408.json#RequestTimeout"
+        },
+        "422": {
+            "$ref": "../../components/responses/errors/422.json#UnprocessableEntity"
+        },
+        "429": {
+            "$ref": "../../components/responses/errors/429.json#RateLimitExceeded"
+        },
+        "500": {
+            "$ref": "../../components/responses/errors/500.json#InternalServerError"
+        },
+        "503": {
+            "$ref": "../../components/responses/errors/503.json#ServiceUnavailable"
+        }
+    }
+}

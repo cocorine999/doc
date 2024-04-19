@@ -2644,6 +2644,15 @@
             }
         },
 
+        "/exercices_comptable/{exerciceComptableId}/report-des-soldes-aux-comptes": {
+            "put": {
+                "tags": [
+                    "Report de solde au comptes"
+                ],
+                "$ref": "paths/exercices_comptable/report.json"
+            }
+        },
+
         "/exercices_comptable/{exerciceComptableId}/ecritures-comptable": {
             "get": {
                 "tags": [
@@ -2708,6 +2717,7 @@
                 "$ref": "paths/exercices_comptable/operations_analytique/validate.json"
             }
         }
+
     },
     "components": {
         "schemas": {

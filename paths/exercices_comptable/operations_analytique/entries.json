@@ -83,7 +83,7 @@
                                         "type": "array",
                                         "description": "List of operations analytique.",
                                         "items": {
-                                            "$ref": "../../../components/schemas/models/operation_analytique.json#/OperationAnalytiqueDisponible"
+                                            "$ref": "../../../components/schemas/models/operation_analytique.json#/OperationAnalytique"
                                         }
                                     },
                                     "first_page_url": {

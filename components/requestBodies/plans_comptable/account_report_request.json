@@ -1,0 +1,32 @@
+{
+    "AccountReportRequest": {
+        "type": "object",
+        "required": [
+            "account_number",
+            "type_ecriture_compte",
+            "montant"
+        ],
+        "properties": {
+            "account_number": {
+                "type": "string",
+                "default": "10",
+                "description": "Numero du compte"
+            },
+            "type_ecriture_compte": {
+                "enum": [
+                    "debit",
+                    "credit"
+                ],
+                "example": "debit",
+                "default": "debit"
+            },
+            "montant": {
+                "type": "number",
+                "format": "double",
+                "example": "{{$randomPrice}}",
+                "default": 6000.00,
+                "description": "Montant"
+            }
+        }
+    }
+}

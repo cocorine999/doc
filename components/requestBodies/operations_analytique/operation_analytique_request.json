@@ -1,0 +1,46 @@
+{
+    "OperationAnalytiqueRequest": {
+        "type": "object",
+        "required": [
+            "libelle",
+            "account_number",
+            "date_ecriture",
+            "type_ecriture_compte",
+            "projet_production_id"
+        ],
+        "properties": {
+            "libelle": {
+                "type": "string",
+                "example": "{{$randomBsBuzz}}",
+                "nullable": false,
+                "default": "Achat de matiere premiere",
+                "description": "Intitule de l'ecriture comptable"
+            },
+            "account_number": {
+                "type": "string",
+                "default": "10",
+                "description": "Numero du compte"
+            },
+            "$ref": "../lignes_ecriture_comptable/ligne_ecriture_comptable_request.json#/LigneEcritureComptableRequest",
+            "date_ecriture": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "example": "{{$randomDateRecent}}",
+                "default": "2024-01-06",
+                "description": "Date debut ecriture comptable (YYYY-MM-DD)"
+            },
+            "projet_production_id": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{8}-[0-9a-x]{4}-[1-5][0-9a-z]{3}-[89AB][0-9a-q]{3}-[0-9a-f]{12}$",
+                "minLength": 32,
+                "maxLength": 36,
+                "example": "{{$randomUUID}}",
+                "default": "b257f261-9r73-4e4-64d-d733b56fq3af",
+                "description": "UUID unique d'un compte",
+                "nullable": false
+            }
+            
+        }
+    }
+}

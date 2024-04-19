@@ -149,6 +149,7 @@ files[] = {"path":"paths/devises/update_devise.json","metaData":{}}
 files[] = {"path":"paths/employees/employee.json","metaData":{}}
 files[] = {"path":"paths/employees/employees.json","metaData":{}}
 files[] = {"path":"paths/exercices_comptable/balance.json","metaData":{}}
+files[] = {"path":"paths/exercices_comptable/cloture.json","metaData":{}}
 files[] = {"path":"paths/exercices_comptable/create_exercice_comptable.json","metaData":{}}
 files[] = {"path":"paths/exercices_comptable/delete_exercice_comptable.json","metaData":{}}
 files[] = {"path":"paths/exercices_comptable/ecritures_comptable/entries.json","metaData":{}}

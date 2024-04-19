@@ -24,33 +24,68 @@
                     "$ref": "../../components/requestBodies/exercices_comptable/report_request.json#/ReportRequest"
                 },
                 "examples": {
-                  "ReportRequestExample": {
-                    "summary": "Example of a ReportRequest",
-                    "value": {
-                      "accounts": [
-                        {
-                          "id": 123,
-                          "name": "Account 1",
-                          "sub_accounts": [
-                            {
-                              "id": 456,
-                              "name": "Subaccount 1"
-                            }
-                          ]
-                        },
-                        {
-                          "id": 789,
-                          "name": "Account 2",
-                          "sub_accounts": [
-                            {
-                              "id": 101,
-                              "name": "Subaccount 2"
-                            }
-                          ]
+                    "ReportRequestExample": {
+                        "summary": "Example of a ReportRequest",
+                        "value": {
+                            "accounts": [
+                                {
+                                    "account_number": "10",
+                                    "type_solde_compte": "debiteur",
+                                    "solde": 630000,
+                                    "sub_accounts": [
+                                        {
+                                            "account_number": "102",
+                                            "type_solde_compte": "debiteur",
+                                            "solde": 630000,
+                                            "sub_divisions": [
+                                                {
+                                                    "account_number": "1021",
+                                                    "type_solde_compte": "debiteur",
+                                                    "solde": 630000,
+                                                    "sub_divisions": [
+                                                        {
+                                                            "account_number": "10211",
+                                                            "type_solde_compte": "debiteur",
+                                                            "solde": 630000
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "account_number": "103",
+                                            "type_solde_compte": "debiteur",
+                                            "solde": 630000,
+                                            "sub_divisions": [
+                                                {
+                                                    "account_number": "1031",
+                                                    "type_solde_compte": "debiteur",
+                                                    "solde": 630000
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "account_number": "11",
+                                    "type_solde_compte": "crediteur",
+                                    "solde": 30000,
+                                    "sub_accounts": [
+                                        {
+                                            "account_number": "110",
+                                            "type_solde_compte": "debiteur",
+                                            "solde": 10000
+                                        },
+                                        {
+                                            "account_number": "111",
+                                            "type_solde_compte": "debiteur",
+                                            "solde": 20000
+                                        }
+                                    ]
+                                }
+                            ]
                         }
-                      ]
                     }
-                  }
                 }
             }
         }

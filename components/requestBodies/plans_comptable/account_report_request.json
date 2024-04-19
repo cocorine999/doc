@@ -3,7 +3,7 @@
         "type": "object",
         "required": [
             "account_number",
-            "type_ecriture_compte",
+            "type_solde_compte",
             "montant"
         ],
         "properties": {
@@ -12,14 +12,14 @@
                 "default": "10",
                 "description": "Numero du compte"
             },
-            "type_ecriture_compte": {
+            "type_solde_compte": {
                 "type": "string",
                 "enum": [
-                    "debit",
-                    "credit"
+                    "debiteur",
+                    "crediteur"
                 ],
-                "example": "debit",
-                "default": "debit"
+                "example": "debiteur",
+                "default": "debiteur"
             },
             "montant": {
                 "type": "number",

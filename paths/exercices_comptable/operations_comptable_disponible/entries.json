@@ -1,10 +1,10 @@
 {
-    "summary": "Retrieve list of ecritures comptable",
-    "operationId": "fetchListOfEcrituresComptable",
-    "description": "Retrieves ecritures comptable information based on certain criteria.",
+    "summary": "Retrieve list of operations comptable",
+    "operationId": "fetchListOfOperationsComptable",
+    "description": "Retrieves operations comptable information based on certain criteria.",
     "parameters": [
         {
-            "$ref": "../../../components/parameters/exercice_comptable_id.json#/EcritureComptableId"
+            "$ref": "../../../components/parameters/exercice_comptable_id.json#/ExerciceComptableId"
         },
         {
             "$ref": "../../../components/parameters/page.json"
@@ -71,7 +71,7 @@
                                 "description": "Additional information about the response.",
                                 "nullable": true,
                                 "default": null,
-                                "example": "List of ecritures comptable retrieve successfully"
+                                "example": "List of operations comptable retrieve successfully"
                             },
                             "data": {
                                 "type": "object",
@@ -85,16 +85,16 @@
                                     },
                                     "data": {
                                         "type": "array",
-                                        "description": "List of ecritures comptable.",
+                                        "description": "List of operations comptable.",
                                         "items": {
-                                            "$ref": "../../../components/schemas/models/exercice_comptable.json#/EcritureComptable"
+                                            "$ref": "../../../components/schemas/models/operation_comptable.json#/OperationComptableDisponible"
                                         }
                                     },
                                     "first_page_url": {
                                         "type": "string",
                                         "description": "The URL of the first page in the pagination.",
-                                        "example": "ecritures_comptable?page=1",
-                                        "default": "ecritures_comptable?page=1"
+                                        "example": "operations_comptable?page=1",
+                                        "default": "operations_comptable?page=1"
                                     },
                                     "from": {
                                         "type": "integer",
@@ -113,20 +113,20 @@
                                     "last_page_url": {
                                         "type": "string",
                                         "description": "The URL of the last page in the pagination sequence.",
-                                        "example": "ecritures_comptable?page=7",
-                                        "default": "ecritures_comptable?page=1"
+                                        "example": "operations_comptable?page=7",
+                                        "default": "operations_comptable?page=1"
                                     },
                                     "next_page_url": {
                                         "type": "string",
                                         "description": "The URL to retrieve the next page of results.",
                                         "nullable": true,
                                         "default": null,
-                                        "example": "ecritures_comptable?page=3"
+                                        "example": "operations_comptable?page=3"
                                     },
                                     "path": {
                                         "type": "string",
                                         "description": "The URL path of the current page.",
-                                        "example": "ecritures_comptable"
+                                        "example": "operations_comptable"
                                     },
                                     "per_page": {
                                         "type": "integer",
@@ -141,7 +141,7 @@
                                         "description": "The URL of the previous page.",
                                         "nullable": true,
                                         "default": null,
-                                        "example": "ecritures_comptable?page=1"
+                                        "example": "operations_comptable?page=1"
                                     },
                                     "to": {
                                         "type": "integer",
@@ -170,26 +170,26 @@
                 }
             },
             "links": {
-                "GetEcritureComptableDetailsByEcritureComptableId": {
-                    "operationId": "getEcritureComptable",
+                "GetOperationComptableDetailsByOperationComptableId": {
+                    "operationId": "getOperationComptable",
                     "parameters": {
-                        "ecritureComptableId": "$response.body#/data/data/0/id"
+                        "operationComptableId": "$response.body#/data/data/0/id"
                     },
-                    "description": "Link to get ecriture comptable information based on ecriture comptable ID."
+                    "description": "Link to get operation comptable information based on operation comptable ID."
                 },
-                "UpdateEcritureComptableDetailsByEcritureComptableId": {
-                    "operationId": "updateEcritureComptable",
+                "UpdateOperationComptableDetailsByOperationComptableId": {
+                    "operationId": "updateOperationComptable",
                     "parameters": {
-                        "ecritureComptableId": "$response.body#/data/data/0/id"
+                        "operationComptableId": "$response.body#/data/data/0/id"
                     },
-                    "description": "Link to update ecriture comptable information based on ecriture comptable ID."
+                    "description": "Link to update operation comptable information based on operation comptable ID."
                 },
-                "DeleteEcritureComptableByEcritureComptableId": {
-                    "operationId": "deleteEcritureComptable",
+                "DeleteOperationComptableByOperationComptableId": {
+                    "operationId": "deleteOperationComptable",
                     "parameters": {
-                        "ecritureComptableId": "$response.body#/data/data/0/id"
+                        "operationComptableId": "$response.body#/data/data/0/id"
                     },
-                    "description": "Link to delete ecriture comptable based on ecriture comptable ID."
+                    "description": "Link to delete operation comptable based on operation comptable ID."
                 }
             }
         },

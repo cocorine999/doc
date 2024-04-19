@@ -2657,6 +2657,31 @@
                 ],
                 "$ref": "paths/exercices_comptable/ecritures_comptable/suivi.json"
             }
+        },
+
+        "/exercices_comptable/{exerciceComptableId}/operations_comptable_disponible": {
+            "get": {
+                "tags": [
+                    "Operations comptable"
+                ],
+                "$ref": "paths/exercices_comptable/operations_comptable_disponible/entries.json"
+            }
+        },
+        "/exercices_comptable/{exerciceComptableId}/suivi": {
+            "put": {
+                "tags": [
+                    "Suivi comptable"
+                ],
+                "$ref": "paths/exercices_comptable/operations_comptable_disponible/suivi.json"
+            }
+        },
+        "/exercices_comptable/{exerciceComptableId}/validate_operations_comptable_disponible/{operationComptableId}": {
+            "put": {
+                "tags": [
+                    "Validate operation comptable"
+                ],
+                "$ref": "paths/exercices_comptable/operations_comptable_disponible/validate.json"
+            }
         }
     },
     "components": {

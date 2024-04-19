@@ -1,7 +1,7 @@
 {
     "summary": "Consulter la balance des comptes",
     "operationId": "BalanceDesComptes",
-    "description": "Retrieves balance des comptes d'un exercice comptable information based on certain criteria.",
+    "description": "Retrieve balance des comptes d'un exercice comptable information based on certain criteria.",
     "parameters": [
         {
             "$ref": "../../components/parameters/exercice_comptable_id.json#/ExerciceComptableId"

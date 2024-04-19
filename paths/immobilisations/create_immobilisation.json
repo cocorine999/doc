@@ -21,7 +21,7 @@
         "content": {
             "application/json": {
                 "schema": {
-                    "$ref": "../../components/requestBodies/immovilisations/immobilisation_request.json#/ImmobilisationRequest"
+                    "$ref": "../../components/requestBodies/immobilisations/immobilisation_request.json#/ImmobilisationRequest"
                 }
             }
         }

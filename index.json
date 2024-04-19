@@ -2553,7 +2553,7 @@
             }
         },
         "/plans_comptable/{planComptableId}/attach-accounts": {
-            "patch": {
+            "put": {
                 "tags": [
                     "AttachAccountsToPlanComptable"
                 ],
@@ -2582,6 +2582,30 @@
                     "ListOfPlanComptableAccountSubAccounts"
                 ],
                 "$ref": "paths/plans_comptable/accounts/sub_accounts/list.json"
+            }
+        },
+        "/plans_comptable/{planComptableId}/accounts/{accountId}/attach-sub-accounts-to-an-account": {
+            "put": {
+                "tags": [
+                    "AttachAccountsToPlanComptable"
+                ],
+                "$ref": "paths/plans_comptable/accounts/sub_accounts/attach_sub_accounts.json"
+            }
+        },
+        "/plans_comptable/{planComptableId}/accounts/{accountId}/update-attach-sub-accounts-of-an-account": {
+            "patch": {
+                "tags": [
+                    "Plan Comptable accounts"
+                ],
+                "$ref": "paths/plans_comptable/accounts/sub_accounts/update_sub_accounts.json"
+            }
+        },
+        "/plans_comptable/{planComptableId}/accounts/{accountId}/detach-sub-accounts-from-an-account": {
+            "patch": {
+                "tags": [
+                    "Plan Comptable accounts"
+                ],
+                "$ref": "paths/plans_comptable/accounts/sub_accounts/detach_sub_accounts.json"
             }
         },
 

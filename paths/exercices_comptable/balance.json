@@ -93,6 +93,12 @@
                                 "description": "Balance des comptes",
                                 "items": {
                                     "$ref": "../../components/schemas/models/balance.json#/BalanceDeCompte"
+                                },
+                                "examples": {
+                                    "BalanceDesComptesExamples": {
+                                        "summary": "Example",
+                                        "value": {}
+                                    }
                                 }
                             },
                             "status_code": {

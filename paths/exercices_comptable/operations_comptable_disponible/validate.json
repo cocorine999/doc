@@ -1,7 +1,7 @@
 {
-    "summary": "Validation an operation comptable disponible",
+    "summary": "Validate an operation comptable disponible",
     "operationId": "validateOperationComptableDisponible",
-    "description": "Validation an operation comptable disponible with the provided data.",
+    "description": "Validate an operation comptable disponible with the provided data.",
     "parameters": [
         {
             "$ref": "../../../components/parameters/operation_comptable_id.json#/OperationComptableId"

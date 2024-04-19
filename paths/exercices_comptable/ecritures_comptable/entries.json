@@ -13,14 +13,29 @@
             "$ref": "../../../components/parameters/per_page.json"
         },
         {
-            "name": "fields",
+            "name": "filters",
             "in": "query",
-            "description": "Comma-separated list of fields to include in the response.",
             "required": false,
             "schema": {
-                "type": "string"
-            },
-            "example": "id,name"
+                "type": "object",
+                "properties": {
+                    "date_ecriture": {
+                        "type": "object",
+                        "properties": {
+                            "between": {
+                                "type":"array",
+                                "minimum": 1,
+                                "maximum": 2,
+                                "items": {
+                                    "type":"string",
+                                    "example": "2024-03-04",
+                                    "default": "2024-03-04"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         },
         {
             "$ref": "../../../components/headers/content_type.json"

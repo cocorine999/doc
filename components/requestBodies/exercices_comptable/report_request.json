@@ -15,7 +15,21 @@
                             "$ref": "../plans_comptable/account_report_request.json#/AccountReportRequest"
                         }
                     }
+                },
+                "examples": {
+                    "accounts" : [
+                        {
+                            "$ref": "../plans_comptable/account_report_request.json#/AccountReportRequest"
+                        },
+                        {
+                            "$ref": "../plans_comptable/account_report_request.json#/AccountReportRequest"
+                        },
+                        {
+                            "$ref": "../plans_comptable/account_report_request.json#/AccountReportRequest"
+                        }
+                    ]
                 }
+                
             }
         }
     }

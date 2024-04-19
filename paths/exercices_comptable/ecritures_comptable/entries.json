@@ -13,6 +13,12 @@
             "$ref": "../../../components/parameters/per_page.json"
         },
         {
+            "$ref": "../../../components/parameters/sort.json"
+        },
+        {
+            "$ref": "../../../components/parameters/order.json"
+        },
+        {
             "name": "filters",
             "in": "query",
             "required": false,

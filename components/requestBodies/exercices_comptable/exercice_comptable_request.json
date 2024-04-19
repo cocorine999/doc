@@ -13,30 +13,25 @@
                 "default": 2024,
                 "description": "Fiscal year"
             },
-            "date_ouverture": {
+            "periode_exercice_id": {
                 "type": "string",
-                "format": "date",
-                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
-                "example": "{{$randomDateRecent}}",
-                "default": "2024-01-01",
-                "description": "Date debut exercice comptable (YYYY-MM-DD)"
+                "pattern": "^[0-9a-f]{8}-[0-9a-x]{4}-[1-5][0-9a-z]{3}-[89AB][0-9a-q]{3}-[0-9a-f]{12}$",
+                "minLength": 32,
+                "maxLength": 36,
+                "example": "{{$randomUUID}}",
+                "default": "b257f261-9r73-4e4-64d-d733b56fq3af",
+                "description": "UUID unique de la periode",
+                "nullable": false
             },
-            "date_fermeture": {
+            "plan_comptable_id": {
                 "type": "string",
-                "format": "date",
-                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
-                "example": "{{$randomDateRecent}}",
-                "nullable": true,
-                "default": "2024-12-31",
-                "description": "Date fin exercice comptable (YYYY-MM-DD)"
-            },
-            "status_exercice": {
-                "enum": [
-                    "ouvert",
-                    "fermer"
-                ],
-                "example": "ouvert",
-                "default": "ouvert"
+                "pattern": "^[0-9a-f]{8}-[0-9a-x]{4}-[1-5][0-9a-z]{3}-[89AB][0-9a-q]{3}-[0-9a-f]{12}$",
+                "minLength": 32,
+                "maxLength": 36,
+                "example": "{{$randomUUID}}",
+                "default": "b257f261-9r73-4e4-64d-d733b56fq3af",
+                "description": "UUID unique d'un plan comptable",
+                "nullable": false
             }
         }
     }

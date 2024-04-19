@@ -1,0 +1,11 @@
+{
+    "name": "order",
+    "in": "query",
+    "description": "Ordering",
+    "required": false,
+    "schema": {
+        "enum": ["asc", "desc"],
+        "default": "desc",
+        "example": "desc"
+    }
+}

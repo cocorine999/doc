@@ -1,0 +1,11 @@
+{
+    "name": "sort",
+    "in": "query",
+    "description": "Sort",
+    "required": false,
+    "schema": {
+        "type": "string",
+        "default": "created_at",
+        "example": "created_at"
+    }
+}

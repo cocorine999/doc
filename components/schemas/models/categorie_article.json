@@ -4,7 +4,7 @@
         "properties": {
             "current_page": {
                 "type": "integer",
-                "description": "Numéro de la page actuelle."
+                "description": "Current page number."
             },
             "data": {
                 "type": "array",
@@ -13,35 +13,35 @@
                     "properties": {
                         "id": {
                             "type": "string",
-                            "description": "Identifiant de la catégorie d'article."
+                            "description": "Article category identifier."
                         },
                         "name": {
                             "type": "string",
-                            "description": "Nom de la catégorie d'article."
+                            "description": "Article category name."
                         },
                         "created_at": {
                             "type": "string",
                             "format": "date-time",
-                            "description": "Date et heure de création de la catégorie d'article."
+                            "description": "Date and time article category was created."
                         }
                     }
                 }
             },
             "first_page_url": {
                 "type": "string",
-                "description": "URL de la première page de résultats."
+                "description": "URL of the first page of results."
             },
             "from": {
                 "type": "integer",
-                "description": "Indice du premier élément dans la liste actuelle."
+                "description": "Index of the first item in the current list."
             },
             "last_page": {
                 "type": "integer",
-                "description": "Numéro de la dernière page."
+                "description": "Number of the last page."
             },
             "last_page_url": {
                 "type": "string",
-                "description": "URL de la dernière page de résultats."
+                "description": "URL of the last page of results."
             },
             "links": {
                 "type": "array",
@@ -50,42 +50,42 @@
                     "properties": {
                         "url": {
                             "type": "string",
-                            "description": "URL de la page."
+                            "description": "Page URL."
                         },
                         "label": {
                             "type": "string",
-                            "description": "Étiquette de la page."
+                            "description": "Page label."
                         },
                         "active": {
                             "type": "boolean",
-                            "description": "Indique si la page est active."
+                            "description": "Indicates if the page is active."
                         }
                     }
                 }
             },
             "next_page_url": {
                 "type": "string",
-                "description": "URL de la page suivante."
+                "description": "URL of the next page."
             },
             "path": {
                 "type": "string",
-                "description": "Chemin de base de l'API."
+                "description": "Base path of the API."
             },
             "per_page": {
                 "type": "integer",
-                "description": "Nombre d'éléments par page."
+                "description": "Number of items per page."
             },
             "prev_page_url": {
                 "type": "string",
-                "description": "URL de la page précédente."
+                "description": "URL of the previous page."
             },
             "to": {
                 "type": "integer",
-                "description": "Indice du dernier élément dans la liste actuelle."
+                "description": "Index of the last item in the current list."
             },
             "total": {
                 "type": "integer",
-                "description": "Nombre total d'éléments."
+                "description": "Total number of items."
             }
         }
     }

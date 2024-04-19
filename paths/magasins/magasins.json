@@ -44,7 +44,7 @@
             "content": {
                 "application/json": {
                     "schema": {
-                        "$ref": "../../components/requestBodies/magasin/magasin.json#/MagasinCreate"
+                        "$ref": "../../components/requestBodies/magasins/magasin.json#/MagasinCreate"
                     }
                 }
             }

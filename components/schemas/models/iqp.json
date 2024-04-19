@@ -4,13 +4,13 @@
         "properties": {
             "status": {
                 "type": "boolean",
-                "description": "Indique le statut de la requête.",
+                "description": "Indicates the status of the request.",
                 "default": true,
                 "example": true
             },
             "message": {
                 "type": "string",
-                "description": "Informations supplémentaires sur la réponse.",
+                "description": "Additional information about the response.",
                 "default": null,
                 "example": null
             },
@@ -19,30 +19,30 @@
                 "properties": {
                     "current_page": {
                         "type": "integer",
-                        "description": "Le numéro de la page actuelle."
+                        "description": "The current page number."
                     },
                     "data": {
                         "type": "array",
                         "items": {
-                            "$ref": "#IQP"
+                            "$ref": "#/IQP"
                         },
-                        "description": "Les données des IQPs."
+                        "description": "IQP data."
                     },
                     "first_page_url": {
                         "type": "string",
-                        "description": "L'URL de la première page."
+                        "description": "The URL of the first page."
                     },
                     "from": {
                         "type": "integer",
-                        "description": "L'indice du premier élément dans les résultats."
+                        "description": "The index of the first item in the results."
                     },
                     "last_page": {
                         "type": "integer",
-                        "description": "Le numéro de la dernière page."
+                        "description": "The number of the last page."
                     },
                     "last_page_url": {
                         "type": "string",
-                        "description": "L'URL de la dernière page."
+                        "description": "The URL of the last page."
                     },
                     "links": {
                         "type": "array",
@@ -51,49 +51,49 @@
                             "properties": {
                                 "url": {
                                     "type": "string",
-                                    "description": "L'URL de la page liée."
+                                    "description": "The URL of the linked page."
                                 },
                                 "label": {
                                     "type": "string",
-                                    "description": "Le libellé de la page liée."
+                                    "description": "The label of the linked page."
                                 },
                                 "active": {
                                     "type": "boolean",
-                                    "description": "Indique si la page liée est active."
+                                    "description": "Indicates if the linked page is active."
                                 }
                             }
                         },
-                        "description": "Les liens vers d'autres pages de résultats."
+                        "description": "Links to other result pages."
                     },
                     "next_page_url": {
                         "type": "string",
-                        "description": "L'URL de la page suivante."
+                        "description": "The URL of the next page."
                     },
                     "path": {
                         "type": "string",
-                        "description": "Le chemin de l'URL."
+                        "description": "The base URL path."
                     },
                     "per_page": {
                         "type": "integer",
-                        "description": "Le nombre d'éléments par page."
+                        "description": "The number of items per page."
                     },
                     "prev_page_url": {
                         "type": "string",
-                        "description": "L'URL de la page précédente."
+                        "description": "The URL of the previous page."
                     },
                     "to": {
                         "type": "integer",
-                        "description": "L'indice du dernier élément dans les résultats."
+                        "description": "The index of the last item in the results."
                     },
                     "total": {
                         "type": "integer",
-                        "description": "Le nombre total d'éléments."
+                        "description": "The total number of items."
                     }
                 }
             },
             "status_code": {
                 "type": "integer",
-                "description": "Le code d'état HTTP de la réponse.",
+                "description": "The HTTP status code of the response.",
                 "default": 200,
                 "example": 200
             }
@@ -104,23 +104,23 @@
         "properties": {
             "id": {
                 "type": "string",
-                "description": "L'identifiant de l'IQP."
+                "description": "The ID of the IQP."
             },
             "name": {
                 "type": "string",
-                "description": "Le nom de l'IQP."
+                "description": "The name of the IQP."
             },
             "type_of_iqp": {
                 "type": "string",
-                "description": "Le type de l'IQP."
+                "description": "The type of the IQP."
             },
             "created_at": {
                 "type": "string",
-                "description": "La date de création de l'IQP au format ISO 8601."
+                "description": "The creation date of the IQP in ISO 8601 format."
             },
             "iqp_type": {
                 "type": "string",
-                "description": "Le type de l'IQP."
+                "description": "The type of the IQP."
             }
         }
     }

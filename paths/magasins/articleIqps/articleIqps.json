@@ -48,7 +48,7 @@
             "content": {
                 "application/json": {
                     "schema": {
-                        "$ref": "../../../components/requestBodies/magasins/articleIqp.json#/ArticleIQPCreate"
+                        "$ref": "../../../components/requestBodies/magasins/articleiqp.json#/ArticleIQPCreate"
                     }
                 }
             }

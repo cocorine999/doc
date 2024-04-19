@@ -1,12 +1,12 @@
 {
     "get": {
-        "summary": "Récupérer une catégorie d'article par ID",
+        "summary": "Retrieve an article category by ID",
         "parameters": [
             {
                 "name": "categorieId",
                 "in": "path",
                 "required": true,
-                "description": "ID de la catégorie d'article",
+                "description": "Artticle Category ID",
                 "schema": {
                     "type": "string"
                 }
@@ -14,7 +14,7 @@
         ],
         "responses": {
             "200": {
-                "description": "Succès",
+                "description": "Success",
                 "headers": {
                     "X-RateLimit-Limit": {
                         "$ref": "../../../components/headers/x_ratelimit_limit.json"
@@ -76,13 +76,13 @@
         }
     },
     "put": {
-        "summary": "Modifier une catégorie d'article",
+        "summary": "Edit an item category",
         "parameters": [
             {
                 "name": "categorieId",
                 "in": "path",
                 "required": true,
-                "description": "ID de la catégorie d'article",
+                "description": "Artticle Category ID",
                 "schema": {
                     "type": "string"
                 }
@@ -171,7 +171,7 @@
                 "name": "categorieId",
                 "in": "path",
                 "required": true,
-                "description": "ID de la catégorie d'article",
+                "description": "Artticle Category ID",
                 "schema": {
                     "type": "string"
                 }
@@ -179,7 +179,7 @@
         ],
         "responses": {
             "200": {
-                "description": "Catégorie d'article supprimée avec succès",
+                "description": "Article category removed with Success",
                 "headers": {
                     "X-RateLimit-Limit": {
                         "$ref": "../../../components/headers/x_ratelimit_limit.json"
@@ -210,25 +210,25 @@
                             "properties": {
                                 "status": {
                                     "type": "boolean",
-                                    "description": "Indique le statut de succès de la requête.",
+                                    "description": "Indicates the Success status of the request.",
                                     "default": true,
                                     "example": true
                                 },
                                 "message": {
                                     "type": "string",
                                     "description": "Informations supplémentaires sur la réponse.",
-                                    "default": "Catégorie d'article supprimée avec succès.",
-                                    "example": "Catégorie d'article supprimée avec succès."
+                                    "default": "Article category removed with Success.",
+                                    "example": "Article category removed with Success."
                                 },
                                 "data": {
                                     "type": "boolean",
-                                    "description": "Indique le statut de succès de la requête.",
+                                    "description": "Indicates the Success status of the request.",
                                     "default": true,
                                     "example": true
                                 },
                                 "status_code": {
                                     "type": "integer",
-                                    "description": "Indique le code d'état HTTP de la réponse.",
+                                    "description": "Indicates the HTTP status code of the response.",
                                     "default": 200,
                                     "example": 200
                                 }

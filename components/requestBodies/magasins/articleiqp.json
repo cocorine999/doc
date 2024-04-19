@@ -4,27 +4,27 @@
         "properties": {
             "name": {
                 "type": "string",
-                "description": "Nom de l'article IQP."
+                "description": "Article Name IQP."
             },
             "norme": {
                 "type": "string",
-                "description": "Norme de l'article IQP."
+                "description": "IQP Article Standard."
             },
             "unite_mesure_id": {
                 "type": "string",
-                "description": "Identifiant de l'unité de mesure."
+                "description": "Unit of measurement identifier."
             },
             "article_id": {
                 "type": "string",
-                "description": "Identifiant de l'article associé."
+                "description": "Associated article identifier."
             },
             "iqp_id": {
                 "type": "string",
-                "description": "Identifiant de l'indice de qualité perçu associé."
+                "description": "Identifier of the associated perceived quality index."
             },
             "quantity_treated": {
                 "type": "string",
-                "description": "Quantité traitée de l'article IQP."
+                "description": "Processed quantity of IQP article."
             }
         }
     },
@@ -33,27 +33,27 @@
         "properties": {
             "name": {
                 "type": "string",
-                "description": "Nom de l'article IQP."
+                "description": "Article Name IQP."
             },
             "norme": {
                 "type": "string",
-                "description": "Norme de l'article IQP."
+                "description": "IQP Article Standard."
             },
             "unite_mesure_id": {
                 "type": "string",
-                "description": "Identifiant de l'unité de mesure."
+                "description": "Unit of measurement identifier."
             },
             "article_id": {
                 "type": "string",
-                "description": "Identifiant de l'article associé."
+                "description": "Associated article identifier."
             },
             "iqp_id": {
                 "type": "string",
-                "description": "Identifiant de l'indice de qualité perçu associé."
+                "description": "Identifier of the associated perceived quality index."
             },
             "quantity_treated": {
                 "type": "string",
-                "description": "Quantité traitée de l'article IQP."
+                "description": "Processed quantity of IQP article."
             }
         }
     }

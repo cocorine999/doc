@@ -4,12 +4,12 @@
         "properties": {
             "current_page": {
                 "type": "integer",
-                "description": "Numéro de la page actuelle."
+                "description": "Current page number."
             },
             "data": {
                 "type": "array",
                 "items": {
-                    "$ref": "#articleIqp.json/ArticleIQPS"
+                    "$ref": "#ArticleIQPS"
                 }
             },
             "first_page_url": {
@@ -18,15 +18,15 @@
             },
             "from": {
                 "type": "integer",
-                "description": "Indice du premier élément dans la liste actuelle."
+                "description": "Index of the first element in the current list."
             },
             "last_page": {
                 "type": "integer",
-                "description": "Numéro de la dernière page."
+                "description": "Last page number."
             },
             "last_page_url": {
                 "type": "string",
-                "description": "URL de la dernière page de résultats."
+                "description": "URL of the last results page."
             },
             "links": {
                 "type": "array",
@@ -36,27 +36,27 @@
             },
             "next_page_url": {
                 "type": "string",
-                "description": "URL de la page suivante."
+                "description": "Next page URL."
             },
             "path": {
                 "type": "string",
-                "description": "Chemin de base de l'API."
+                "description": "API base path."
             },
             "per_page": {
                 "type": "integer",
-                "description": "Nombre d'éléments par page."
+                "description": "Number of elements per page."
             },
             "prev_page_url": {
                 "type": "string",
-                "description": "URL de la page précédente."
+                "description": "URL of the previous page."
             },
             "to": {
                 "type": "integer",
-                "description": "Indice du dernier élément dans la liste actuelle."
+                "description": "Index of the last element in the current list."
             },
             "total": {
                 "type": "integer",
-                "description": "Nombre total d'éléments."
+                "description": "Total number of article."
             }
         }
     },
@@ -65,36 +65,36 @@
         "properties": {
             "id": {
                 "type": "string",
-                "description": "Identifiant de l'article IQPS."
+                "description": "IQPS article identifier."
             },
             "name": {
                 "type": "string",
-                "description": "Nom de l'article IQPS."
+                "description": "IQPS article name."
             },
             "norme": {
                 "type": "string",
-                "description": "Norme de l'article IQPS."
+                "description": "IQPS article Standard."
             },
             "unite_mesure_id": {
                 "type": "string",
-                "description": "Identifiant de l'unité de mesure."
+                "description": "Unit of measurement identifier."
             },
             "article_id": {
                 "type": "string",
-                "description": "Identifiant de l'article."
+                "description": "Article ID."
             },
             "iqp_id": {
                 "type": "string",
-                "description": "Identifiant de l'indice de qualité perçu."
+                "description": "Identifier of the perceived quality index."
             },
             "created_at": {
                 "type": "string",
                 "format": "date-time",
-                "description": "Date et heure de création de l'article IQPS."
+                "description": "Date and time the IQPS article was created."
             },
             "quantity_treated": {
                 "type": "string",
-                "description": "Quantité traitée de l'article IQPS."
+                "description": "Processed quantity of IQPS item."
             }
         }
     },
@@ -103,15 +103,15 @@
         "properties": {
             "url": {
                 "type": "string",
-                "description": "URL de la page."
+                "description": "Page URL."
             },
             "label": {
                 "type": "string",
-                "description": "Étiquette de la page."
+                "description": "Page label."
             },
             "active": {
                 "type": "boolean",
-                "description": "Indique si la page est active."
+                "description": "Indicates if the page is active."
             }
         }
     }

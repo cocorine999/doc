@@ -4,11 +4,11 @@
         "properties": {
             "name": {
                 "type": "string",
-                "description": "Nom du magasin."
+                "description": "Name of the shop."
             },
             "address": {
                 "type": "string",
-                "description": "Adresse du magasin."
+                "description": "Store address."
             }
         },
         "required": [
@@ -22,12 +22,12 @@
             "name": {
                 "type": "string",
                 "nullable": true,
-                "description": "Nom du magasin."
+                "description": "Name of the shop."
             },
             "address": {
                 "type": "string",
                 "nullable": true,
-                "description": "Adresse du magasin."
+                "description": "Store address."
             }
         }
     }

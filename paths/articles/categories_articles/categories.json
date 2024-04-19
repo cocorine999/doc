@@ -1,9 +1,9 @@
 {
     "get": {
-        "summary": "Récupérer toutes les catégories d'articles",
+        "summary": "Retrieve all article categories",
         "responses": {
             "200": {
-                "description": "Succès",
+                "description": "Success",
                 "headers": {
                     "X-RateLimit-Limit": {
                         "$ref": "../../../components/headers/x_ratelimit_limit.json"
@@ -65,7 +65,7 @@
         }
     },
     "post": {
-        "summary": "Créer une nouvelle catégorie d'article",
+        "summary": "Create a new article category",
         "requestBody": {
             "required": true,
             "content": {
@@ -78,7 +78,7 @@
         },
         "responses": {
             "201": {
-                "description": "Catégorie d'article créée avec succès.",
+                "description": "Article category created successfully.",
                 "headers": {
                     "X-RateLimit-Limit": {
                         "$ref": "../../../components/headers/x_ratelimit_limit.json"

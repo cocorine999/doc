@@ -4,7 +4,7 @@
         "properties": {
             "name": {
                 "type": "string",
-                "description": "Nouveau nom de la catégorie d'article."
+                "description": "New name of the article category."
             }
         }
     },
@@ -13,7 +13,7 @@
         "properties": {
             "name": {
                 "type": "string",
-                "description": "Nouveau nom de la catégorie d'article."
+                "description": "New name of the article category."
             }
         }
     }

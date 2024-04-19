@@ -51,7 +51,7 @@
                     "incorporelle",
                     "financiere"
                 ],
-                "examples": ["corporelle", "incorporelle", "financiere"],
+                "example": ["corporelle", "incorporelle", "financiere"],
                 "default": "corporelle"
             },
             "methode_immobilisation": {
@@ -59,7 +59,7 @@
                     "lineaire",
                     "degressif"
                 ],
-                "examples": ["lineaire", "degressif"],
+                "example": ["lineaire", "degressif"],
                 "default": "lineaire"
             },
             "est_prorata_temporis": {
@@ -69,7 +69,7 @@
             },
             "duree_ammortissement": {
                 "type": "integer",
-                "examples":[1, 3, 5],
+                "example":[1, 3, 5],
                 "default": 1,
                 "minimum": 1,
                 "description": "Duree de l'immobilisation"

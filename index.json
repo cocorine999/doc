@@ -2646,18 +2646,12 @@
 
         "/exercices_comptable/{exerciceComptableId}/report-des-soldes-aux-comptes": {
             "put": {
-                "tags": [
-                    "Report de solde au comptes"
-                ],
                 "$ref": "paths/exercices_comptable/report.json"
             }
         },
 
         "/exercices_comptable/{exerciceComptableId}/cloture": {
             "get": {
-                "tags": [
-                    "Cloture d'exercice"
-                ],
                 "$ref": "paths/exercices_comptable/cloture.json"
             }
         },

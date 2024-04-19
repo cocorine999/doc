@@ -1,6 +1,6 @@
 {
     "summary": "Soft-Delete an existing exercice comptable by id",
-    "description": "Soft-Delete an existing exercice comptable by its unique identifier.",
+    "description": "Soft delete an existing exercice comptable by it's unique identifier.",
     "operationId": "deleteExerciceComptable",
     "parameters": [
         {

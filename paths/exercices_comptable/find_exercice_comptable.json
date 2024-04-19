@@ -1,6 +1,6 @@
 {
     "summary": "Retrieve an existing exercice comptable by id",
-    "description": "Retrieve an existing exercice comptable by its unique identifier.",
+    "description": "Retrieve an existing exercice comptable by it's unique identifier.",
     "operationId": "getExerciceComptable",
     "parameters": [
         {

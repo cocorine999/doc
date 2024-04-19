@@ -42,7 +42,7 @@
                 "maxLength": 36,
                 "example": "{{$randomUUID}}",
                 "default": "b257f261-9r73-4e4-64d-d733b56fq3af",
-                "description": "UUID unique d'une ligne de production",
+                "description": "UUID unique de la ligne de production",
                 "nullable": false
             },
             "article_id": {
@@ -52,7 +52,7 @@
                 "maxLength": 36,
                 "example": "{{$randomUUID}}",
                 "default": "b257f261-9r73-4e4-64d-d733b56fq3af",
-                "description": "UUID unique d'un article",
+                "description": "UUID unique de l'article a produit article",
                 "nullable": false
             }
         }

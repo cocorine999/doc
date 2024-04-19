@@ -22,7 +22,21 @@
                 "default": "10",
                 "description": "Numero du compte"
             },
-            "$ref": "../lignes_ecriture_comptable/ligne_ecriture_comptable_request.json#/LigneEcritureComptableRequest",
+            "montant": {
+                "type": "number",
+                "format": "double",
+                "example": "{{$randomPrice}}",
+                "default": 6000.00,
+                "description": "Montant"
+            },
+            "type_ecriture_compte": {
+                "enum": [
+                    "debit",
+                    "credit"
+                ],
+                "example": "debit",
+                "default": "debit"
+            },
             "date_ecriture": {
                 "type": "string",
                 "format": "date",

@@ -1,10 +1,10 @@
 {
-    "summary": "Validate an operation comptable disponible",
-    "operationId": "validateOperationComptableDisponible",
-    "description": "Validate an operation comptable disponible with the provided data.",
+    "summary": "Validate an operation analytique",
+    "operationId": "validateOperationAnalytique",
+    "description": "Validate an operation analytique with the provided data.",
     "parameters": [
         {
-            "$ref": "../../../components/parameters/operation_comptable_id.json#/OperationComptableId"
+            "$ref": "../../../components/parameters/operation_analytique_id.json#/OperationAnalytiqueId"
         },
         {
             "$ref": "../../../components/parameters/exercice_comptable_id.json#/ExerciceComptableId"
@@ -24,7 +24,7 @@
         "content": {
             "application/json": {
                 "schema": {
-                    "$ref": "../../../components/requestBodies/operations_comptable/operation_comptable_request.json#/OperationComptableRequest"
+                    "$ref": "../../../components/requestBodies/operations_analytique/operation_analytique_request.json#/OperationAnalytiqueRequest"
                 }
             }
         }
@@ -69,8 +69,8 @@
                             "message": {
                                 "type": "string",
                                 "description": "Additional information about the response.",
-                                "default": "Operation comptable disponible created successfully",
-                                "example": "Operation comptable disponible created successfully"
+                                "default": "Operation analytique created successfully",
+                                "example": "Operation analytique created successfully"
                             },
                             "data": {
                                 "type": "boolean",

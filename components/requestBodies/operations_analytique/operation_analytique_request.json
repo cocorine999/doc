@@ -4,6 +4,7 @@
         "required": [
             "libelle",
             "account_number",
+            "montant",
             "date_ecriture",
             "type_ecriture_compte",
             "projet_production_id"
@@ -29,6 +30,15 @@
                 "example": "{{$randomDateRecent}}",
                 "default": "2024-01-06",
                 "description": "Date debut ecriture comptable (YYYY-MM-DD)"
+            },
+            "status_operation": {
+                "enum": [
+                    "en_attente",
+                    "valider",
+                    "rejeter"
+                ],
+                "example": "en_attente",
+                "default": "en_attente"
             },
             "projet_production_id": {
                 "type": "string",

@@ -11,6 +11,7 @@
             "libelle": {
                 "type": "string",
                 "nullable": false,
+                "example": "{{$randomProductName}}",
                 "default": "Achat de matiere premiere",
                 "description": "Intitule de l'ecriture comptable"
             },

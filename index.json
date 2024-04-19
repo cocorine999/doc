@@ -2748,21 +2748,21 @@
         },
 
 
-        "/immobilisations": {
+        "/exercices_comptable/{exerciceComptableId}/immobilisations": {
             "get": {
                 "tags": [
-                    "Journaux"
+                    "Immobilisations"
                 ],
                 "$ref": "paths/immobilisations/list.json"
             },
             "post": {
                 "tags": [
-                    "Journaux"
+                    "Immobilisations"
                 ],
                 "$ref": "paths/immobilisations/create_immobilisation.json"
             }
         },
-        "/immobilisations/{immobilisationId}": {
+        "/exercices_comptable/{exerciceComptableId}/immobilisations/{immobilisationId}": {
             "get": {
                 "tags": [
                     "Immobilisations"

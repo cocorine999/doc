@@ -3678,6 +3678,21 @@
             }
         },
 
+        "/exercices_comptable/{exerciceComptableId}/ecritures-analytique": {
+            "get": {
+                "tags": [
+                    "Exercices analytique"
+                ],
+                "$ref": "paths/exercices_analytique/ecritures_analytique/entries.json"
+            },
+            "put": {
+                "tags": [
+                    "Exercices analytique"
+                ],
+                "$ref": "paths/exercices_analytique/ecritures_analytique/new-entry.json"
+            }
+        },
+
         "/exercices_comptable/{exerciceComptableId}/operations-analytique": {
             "get": {
                 "tags": [

@@ -6,8 +6,7 @@
             "libelle",
             "montant",
             "type_ecriture_compte",
-            "date_ecriture",
-            "status_operation"
+            "date_ecriture"
         ],
         "properties": {
             "id": {

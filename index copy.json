@@ -185,6 +185,83 @@
         "/unite_travailles/{{uniteTravailleId}}": {
             "$ref": "paths/Unite_travaille/unite_travailles.json"
         },
+        "/departements": {
+            "get": {
+                "tags": [
+                    "Departements"
+                ],
+                "$ref": "paths/departements/list_departement.json"
+            },
+            "post": {
+                "tags": [
+                    "Departements"
+                ],
+                "$ref": "paths/departements/create_departement.json"
+            }
+        },
+        "/departements/{departementId}": {
+            "get": {
+                "tags": [
+                    "Departements"
+                ],
+                "$ref": "paths/departements/find_departement.json"
+            },
+            "put": {
+                "tags": [
+                    "Departements"
+                ],
+                "$ref": "paths/departements/update_departement.json"
+            },
+            "delete": {
+                "tags": [
+                    "Departements"
+                ],
+                "$ref": "paths/departements/delete_departement.json"
+            }
+        },
+        "/postes": {
+            "get": {
+                "tags": [
+                    "Postes"
+                ],
+                "$ref": "paths/postes/list_postes.json"
+            },
+            "post": {
+                "tags": [
+                    "Postes"
+                ],
+                "$ref": "paths/postes/create_poste.json"
+            }
+        },
+        "/postes/{posteId}": {
+            "get": {
+                "tags": [
+                    "Postes"
+                ],
+                "$ref": "paths/postes/find_poste.json"
+            },
+            "put": {
+                "tags": [
+                    "Postes"
+                ],
+                "$ref": "paths/postes/update_poste.json"
+            },
+            "delete": {
+                "tags": [
+                    "Postes"
+                ],
+                "$ref": "paths/postes/delete_poste.json"
+            }
+        },
+        "/postes/{posteId}/salaries": {
+            "$ref": "paths/postes/fetch_poste_salaries.json"
+        },
+        "/postes/{posteId}/attach-salaries": {
+            "$ref": "paths/postes/attach_salaries.json"
+        },
+        "/postes/{posteId}/detach-salaries": {
+            "$ref": "paths/postes/detach_salaries.json"
+        },
         "/employees": {
             "$ref": "paths/employees/employees.json"
         },
@@ -196,30 +273,6 @@
         },
         "/partners/{partnerId}": {
             "$ref": "paths/partners/partner.json"
-        },
-        "/magasins": {
-            "$ref": "paths/magasins/magasins.json"
-        },
-        "/magasins/{magasinId}": {
-            "$ref": "paths/magasins/magasin.json"
-        },
-        "/articles": {
-            "$ref": "paths/articles/articles.json"
-        },
-        "/articles/{articleId}": {
-            "$ref": "paths/articles/article.json"
-        },
-        "/categorie_articles": {
-            "$ref": "paths/articles/categories_articles/categories.json"
-        },
-        "/categorie_articles/{categorieId}": {
-            "$ref": "paths/articles/categories_articles/categorie.json"
-        },
-        "/article_iqps": {
-            "$ref": "paths/magasins/articleIqps/articleIqps.json"
-        },
-        "/article_iqps/{articleIqpId}": {
-            "$ref": "paths/magasins/articleIqps/articleIqp.json"
         },
         "/users": {
             "get": {
@@ -1122,1020 +1175,6 @@
                                         "status_code": {
                                             "type": "integer",
                                             "description": "",
-                                            "default": 200,
-                                            "example": 200
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/departements": {
-            "get": {
-                "summary": "Retrieve departements",
-                "description": "Retrieves departements information based on certain criteria.",
-                "parameters": [
-                    {
-                        "name": "page",
-                        "in": "query",
-                        "description": "Page number of departements.",
-                        "required": false,
-                        "schema": {
-                            "type": "integer",
-                            "default": 1
-                        }
-                    },
-                    {
-                        "name": "per_page",
-                        "in": "query",
-                        "description": "Number of departements per page.",
-                        "required": false,
-                        "schema": {
-                            "type": "integer",
-                            "default": 10
-                        }
-                    },
-                    {
-                        "name": "fields",
-                        "in": "query",
-                        "description": "Comma-separated list of fields to include in the response.",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "Content-Type",
-                        "in": "header",
-                        "description": "The content type of the request body.",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "default": "application/json"
-                        }
-                    },
-                    {
-                        "name": "Accept",
-                        "in": "header",
-                        "description": "The content types the client is willing to accept.",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "default": "application/json"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful response",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "status": {
-                                            "type": "boolean",
-                                            "description": "Indicates whether the request was successful.",
-                                            "default": true,
-                                            "example": false
-                                        },
-                                        "message": {
-                                            "type": "string",
-                                            "description": "Additional information about the response.",
-                                            "nullable": true,
-                                            "example": null
-                                        },
-                                        "data": {
-                                            "properties": {
-                                                "current_page": {
-                                                    "type": "integer",
-                                                    "description": "The current page number.",
-                                                    "default": 1,
-                                                    "minimum": 1,
-                                                    "example": 1
-                                                },
-                                                "data": {
-                                                    "type": "array",
-                                                    "description": "Additional information about the response.",
-                                                    "items": {
-                                                        "$ref": "#/components/schemas/Departement"
-                                                    }
-                                                },
-                                                "links": {
-                                                    "type": "array",
-                                                    "items": {
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "url": {
-                                                                "type": "string",
-                                                                "description": "The URL of the page.",
-                                                                "nullable": true
-                                                            },
-                                                            "label": {
-                                                                "type": "string",
-                                                                "description": "The label of the page.",
-                                                                "nullable": true
-                                                            },
-                                                            "active": {
-                                                                "type": "boolean",
-                                                                "description": "Indicates whether the page is active."
-                                                            }
-                                                        }
-                                                    }
-                                                },
-                                                "total": {
-                                                    "type": "integer",
-                                                    "description": "The total number of items per page. Defaults to 15.",
-                                                    "default": 15,
-                                                    "example": 36,
-                                                    "minimum": 1
-                                                },
-                                                "per_page": {
-                                                    "type": "integer",
-                                                    "description": "The total number of items available per page. Defaults to 15, with a minimum of 10 and a maximum of 25.",
-                                                    "default": 15,
-                                                    "example": 15,
-                                                    "minimum": 10,
-                                                    "maximum": 25
-                                                },
-                                                "next_page_url": {
-                                                    "type": "string",
-                                                    "description": "The URL of the next page. Can be null if there is no next page.",
-                                                    "nullable": true
-                                                },
-                                                "prev_page_url": {
-                                                    "type": "string",
-                                                    "description": "The URL of the previous page. Can be null if there is no previous page.",
-                                                    "nullable": true
-                                                },
-                                                "first_page_url": {
-                                                    "type": "string",
-                                                    "description": "The URL of the first page."
-                                                },
-                                                "from": {
-                                                    "type": "integer",
-                                                    "minimum": 1,
-                                                    "default": 1,
-                                                    "example": 1,
-                                                    "description": "The starting index of the data on the current page. Minimum value is 1."
-                                                },
-                                                "last_page": {
-                                                    "type": "integer",
-                                                    "minimum": 1,
-                                                    "default": 1,
-                                                    "example": 1,
-                                                    "description": "The last page number. Minimum value is 3."
-                                                },
-                                                "last_page_url": {
-                                                    "type": "string",
-                                                    "description": "The URL of the last page.",
-                                                    "nullable": true,
-                                                    "default": "{{baseUrl}}/departements?page=1",
-                                                    "example": "{{baseUrl}}/departements?page=1"
-                                                },
-                                                "path": {
-                                                    "type": "string",
-                                                    "description": "The path of the current page.",
-                                                    "default": "{{baseUrl}}/departements",
-                                                    "example": "{{baseUrl}}/departements"
-                                                },
-                                                "to": {
-                                                    "type": "integer",
-                                                    "description": "The ending index of the data on the current page. Example value is 2. Can be null.",
-                                                    "example": 2,
-                                                    "default": 1,
-                                                    "nullable": true
-                                                }
-                                            }
-                                        },
-                                        "status_code": {
-                                            "type": "integer",
-                                            "enum": [
-                                                200,
-                                                201,
-                                                204
-                                            ],
-                                            "default": 200,
-                                            "example": 200
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "post": {
-                "summary": "Retrieve departements",
-                "description": "Retrieves departements information based on certain criteria.",
-                "parameters": [
-                    {
-                        "name": "Content-Type",
-                        "in": "header",
-                        "description": "The content type of the request body.",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "default": "application/json"
-                        }
-                    },
-                    {
-                        "name": "Accept",
-                        "in": "header",
-                        "description": "The content types the client is willing to accept.",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "default": "application/json"
-                        }
-                    }
-                ],
-                "requestBody": {
-                    "description": "Create a new departement in the store",
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "description": "Indicates whether the request was successful.",
-                                "$ref": "#/components/schemas/DepartementRequest"
-                            }
-                        }
-                    },
-                    "required": true
-                },
-                "responses": {
-                    "201": {
-                        "description": "Successful response",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "status": {
-                                            "type": "boolean",
-                                            "description": "Indicates whether the request was successful.",
-                                            "default": true,
-                                            "example": false
-                                        },
-                                        "message": {
-                                            "type": "string",
-                                            "description": "Additional information about the response.",
-                                            "nullable": true,
-                                            "example": null
-                                        },
-                                        "data": {
-                                            "type": "object",
-                                            "$ref": "#/components/schemas/Departement",
-                                            "description": "Additional information about the response."
-                                        },
-                                        "status_code": {
-                                            "type": "integer",
-                                            "default": 201,
-                                            "example": 201
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/departements/{departementId}": {
-            "get": {
-                "summary": "Retrieve a departement",
-                "description": "Retrieve departement information based on certain criteria.",
-                "parameters": [
-                    {
-                        "name": "departementId",
-                        "description": "The unique identifier of the departement",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/components/schemas/Identifier"
-                        }
-                    },
-                    {
-                        "name": "fields",
-                        "in": "query",
-                        "description": "Comma-separated list of fields to include in the response.",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "Content-Type",
-                        "in": "header",
-                        "description": "The content type of the request body.",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "default": "application/json"
-                        }
-                    },
-                    {
-                        "name": "Accept",
-                        "in": "header",
-                        "description": "The content types the client is willing to accept.",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "default": "application/json"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful response",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "status": {
-                                            "type": "boolean",
-                                            "description": "Indicates whether the request was successful.",
-                                            "default": true,
-                                            "example": false
-                                        },
-                                        "message": {
-                                            "type": "string",
-                                            "description": "Additional information about the response.",
-                                            "nullable": true,
-                                            "example": null
-                                        },
-                                        "data": {
-                                            "description": "Additional information about the response.",
-                                            "$ref": "#/components/schemas/Departement"
-                                        },
-                                        "status_code": {
-                                            "type": "integer",
-                                            "default": 200,
-                                            "example": 200
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "put": {
-                "summary": "Update a departement",
-                "description": "Update departement information based on certain criteria.",
-                "parameters": [
-                    {
-                        "name": "departementId",
-                        "description": "The unique identifier of the departement",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/components/schemas/Identifier"
-                        }
-                    },
-                    {
-                        "name": "Content-Type",
-                        "in": "header",
-                        "description": "The content type of the request body.",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "default": "application/json"
-                        }
-                    },
-                    {
-                        "name": "Accept",
-                        "in": "header",
-                        "description": "The content types the client is willing to accept.",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "default": "application/json"
-                        }
-                    }
-                ],
-                "requestBody": {
-                    "description": "Update new departement in the store",
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "description": "Indicates whether the request was successful.",
-                                "$ref": "#/components/schemas/DepartementRequest"
-                            }
-                        }
-                    },
-                    "required": true
-                },
-                "responses": {
-                    "201": {
-                        "description": "Successful response",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "status": {
-                                            "type": "boolean",
-                                            "description": "Indicates whether the request was successful.",
-                                            "default": true,
-                                            "example": true
-                                        },
-                                        "message": {
-                                            "type": "string",
-                                            "description": "Additional information about the response.",
-                                            "nullable": true,
-                                            "example": null
-                                        },
-                                        "data": {
-                                            "$ref": "#/components/schemas/Departement",
-                                            "description": "Additional information about the response.",
-                                            "example": true
-                                        },
-                                        "status_code": {
-                                            "type": "integer",
-                                            "default": 201,
-                                            "example": 201
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "delete": {
-                "summary": "Delete a departement",
-                "description": "Delete departement information based on certain criteria.",
-                "parameters": [
-                    {
-                        "name": "departementId",
-                        "description": "The unique identifier of the departement",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/components/schemas/Identifier"
-                        }
-                    },
-                    {
-                        "name": "Content-Type",
-                        "in": "header",
-                        "description": "The content type of the request body.",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "default": "application/json"
-                        }
-                    },
-                    {
-                        "name": "Accept",
-                        "in": "header",
-                        "description": "The content types the client is willing to accept.",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "default": "application/json"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful response",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "status": {
-                                            "type": "boolean",
-                                            "description": "Indicates whether the request was successful.",
-                                            "default": true,
-                                            "example": true
-                                        },
-                                        "message": {
-                                            "type": "string",
-                                            "description": "Additional information about the response.",
-                                            "nullable": true,
-                                            "example": null
-                                        },
-                                        "data": {
-                                            "description": "Additional information about the response.",
-                                            "type": "boolean",
-                                            "nullable": true,
-                                            "default": null,
-                                            "example": null
-                                        },
-                                        "status_code": {
-                                            "type": "integer",
-                                            "default": 200,
-                                            "example": 200
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/postes": {
-            "get": {
-                "summary": "Retrieve postes",
-                "description": "Retrieves postes information based on certain criteria.",
-                "parameters": [
-                    {
-                        "name": "page",
-                        "in": "query",
-                        "description": "Page number of postes.",
-                        "required": false,
-                        "schema": {
-                            "type": "integer",
-                            "default": 1
-                        }
-                    },
-                    {
-                        "name": "per_page",
-                        "in": "query",
-                        "description": "Number of postes per page.",
-                        "required": false,
-                        "schema": {
-                            "type": "integer",
-                            "default": 10
-                        }
-                    },
-                    {
-                        "name": "fields",
-                        "in": "query",
-                        "description": "Comma-separated list of fields to include in the response.",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "Content-Type",
-                        "in": "header",
-                        "description": "The content type of the request body.",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "default": "application/json"
-                        }
-                    },
-                    {
-                        "name": "Accept",
-                        "in": "header",
-                        "description": "The content types the client is willing to accept.",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "default": "application/json"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful response",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "status": {
-                                            "type": "boolean",
-                                            "description": "Indicates whether the request was successful.",
-                                            "default": true,
-                                            "example": false
-                                        },
-                                        "message": {
-                                            "type": "string",
-                                            "description": "Additional information about the response.",
-                                            "nullable": true,
-                                            "example": null
-                                        },
-                                        "data": {
-                                            "properties": {
-                                                "current_page": {
-                                                    "type": "integer",
-                                                    "description": "The current page number.",
-                                                    "default": 1,
-                                                    "minimum": 1,
-                                                    "example": 1
-                                                },
-                                                "data": {
-                                                    "type": "array",
-                                                    "description": "Additional information about the response.",
-                                                    "items": {
-                                                        "$ref": "#/components/schemas/Poste"
-                                                    }
-                                                },
-                                                "links": {
-                                                    "type": "array",
-                                                    "items": {
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "url": {
-                                                                "type": "string",
-                                                                "description": "The URL of the page.",
-                                                                "nullable": true
-                                                            },
-                                                            "label": {
-                                                                "type": "string",
-                                                                "description": "The label of the page.",
-                                                                "nullable": true
-                                                            },
-                                                            "active": {
-                                                                "type": "boolean",
-                                                                "description": "Indicates whether the page is active."
-                                                            }
-                                                        }
-                                                    }
-                                                },
-                                                "total": {
-                                                    "type": "integer",
-                                                    "description": "The total number of items per page. Defaults to 15.",
-                                                    "default": 15,
-                                                    "example": 36,
-                                                    "minimum": 1
-                                                },
-                                                "per_page": {
-                                                    "type": "integer",
-                                                    "description": "The total number of items available per page. Defaults to 15, with a minimum of 10 and a maximum of 25.",
-                                                    "default": 15,
-                                                    "example": 15,
-                                                    "minimum": 10,
-                                                    "maximum": 25
-                                                },
-                                                "next_page_url": {
-                                                    "type": "string",
-                                                    "description": "The URL of the next page. Can be null if there is no next page.",
-                                                    "nullable": true
-                                                },
-                                                "prev_page_url": {
-                                                    "type": "string",
-                                                    "description": "The URL of the previous page. Can be null if there is no previous page.",
-                                                    "nullable": true
-                                                },
-                                                "first_page_url": {
-                                                    "type": "string",
-                                                    "description": "The URL of the first page."
-                                                },
-                                                "from": {
-                                                    "type": "integer",
-                                                    "minimum": 1,
-                                                    "default": 1,
-                                                    "example": 1,
-                                                    "description": "The starting index of the data on the current page. Minimum value is 1."
-                                                },
-                                                "last_page": {
-                                                    "type": "integer",
-                                                    "minimum": 1,
-                                                    "default": 1,
-                                                    "example": 1,
-                                                    "description": "The last page number. Minimum value is 3."
-                                                },
-                                                "last_page_url": {
-                                                    "type": "string",
-                                                    "description": "The URL of the last page.",
-                                                    "nullable": true,
-                                                    "default": "{{baseUrl}}/postes?page=1",
-                                                    "example": "{{baseUrl}}/postes?page=1"
-                                                },
-                                                "path": {
-                                                    "type": "string",
-                                                    "description": "The path of the current page.",
-                                                    "default": "{{baseUrl}}/postes",
-                                                    "example": "{{baseUrl}}/postes"
-                                                },
-                                                "to": {
-                                                    "type": "integer",
-                                                    "description": "The ending index of the data on the current page. Example value is 2. Can be null.",
-                                                    "example": 2,
-                                                    "default": 1,
-                                                    "nullable": true
-                                                }
-                                            }
-                                        },
-                                        "status_code": {
-                                            "type": "integer",
-                                            "enum": [
-                                                200,
-                                                201,
-                                                204
-                                            ],
-                                            "default": 200,
-                                            "example": 200
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "post": {
-                "summary": "Retrieve postes",
-                "description": "Retrieves postes information based on certain criteria.",
-                "parameters": [
-                    {
-                        "name": "Content-Type",
-                        "in": "header",
-                        "description": "The content type of the request body.",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "default": "application/json"
-                        }
-                    },
-                    {
-                        "name": "Accept",
-                        "in": "header",
-                        "description": "The content types the client is willing to accept.",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "default": "application/json"
-                        }
-                    }
-                ],
-                "requestBody": {
-                    "description": "Create a new poste in the store",
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "description": "Indicates whether the request was successful.",
-                                "$ref": "#/components/schemas/PosteRequest"
-                            }
-                        }
-                    },
-                    "required": true
-                },
-                "responses": {
-                    "201": {
-                        "description": "Successful response",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "status": {
-                                            "type": "boolean",
-                                            "description": "Indicates whether the request was successful.",
-                                            "default": true,
-                                            "example": false
-                                        },
-                                        "message": {
-                                            "type": "string",
-                                            "description": "Additional information about the response.",
-                                            "nullable": true,
-                                            "example": null
-                                        },
-                                        "data": {
-                                            "type": "object",
-                                            "$ref": "#/components/schemas/Poste",
-                                            "description": "Additional information about the response."
-                                        },
-                                        "status_code": {
-                                            "type": "integer",
-                                            "default": 201,
-                                            "example": 201
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/postes/{posteId}": {
-            "get": {
-                "summary": "Retrieve a poste",
-                "description": "Retrieve poste information based on certain criteria.",
-                "parameters": [
-                    {
-                        "name": "posteId",
-                        "description": "The unique identifier of the poste",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/components/schemas/Identifier"
-                        }
-                    },
-                    {
-                        "name": "fields",
-                        "in": "query",
-                        "description": "Comma-separated list of fields to include in the response.",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "Content-Type",
-                        "in": "header",
-                        "description": "The content type of the request body.",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "default": "application/json"
-                        }
-                    },
-                    {
-                        "name": "Accept",
-                        "in": "header",
-                        "description": "The content types the client is willing to accept.",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "default": "application/json"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful response",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "status": {
-                                            "type": "boolean",
-                                            "description": "Indicates whether the request was successful.",
-                                            "default": true,
-                                            "example": false
-                                        },
-                                        "message": {
-                                            "type": "string",
-                                            "description": "Additional information about the response.",
-                                            "nullable": true,
-                                            "example": null
-                                        },
-                                        "data": {
-                                            "description": "Additional information about the response.",
-                                            "$ref": "#/components/schemas/Poste"
-                                        },
-                                        "status_code": {
-                                            "type": "integer",
-                                            "default": 200,
-                                            "example": 200
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "put": {
-                "summary": "Update a poste",
-                "description": "Update poste information based on certain criteria.",
-                "parameters": [
-                    {
-                        "name": "posteId",
-                        "description": "The unique identifier of the poste",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/components/schemas/Identifier"
-                        }
-                    },
-                    {
-                        "name": "Content-Type",
-                        "in": "header",
-                        "description": "The content type of the request body.",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "default": "application/json"
-                        }
-                    },
-                    {
-                        "name": "Accept",
-                        "in": "header",
-                        "description": "The content types the client is willing to accept.",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "default": "application/json"
-                        }
-                    }
-                ],
-                "requestBody": {
-                    "description": "Update new poste in the store",
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "description": "Indicates whether the request was successful.",
-                                "$ref": "#/components/schemas/PosteRequest"
-                            }
-                        }
-                    },
-                    "required": true
-                },
-                "responses": {
-                    "201": {
-                        "description": "Successful response",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "status": {
-                                            "type": "boolean",
-                                            "description": "Indicates whether the request was successful.",
-                                            "default": true,
-                                            "example": true
-                                        },
-                                        "message": {
-                                            "type": "string",
-                                            "description": "Additional information about the response.",
-                                            "nullable": true,
-                                            "example": null
-                                        },
-                                        "data": {
-                                            "$ref": "#/components/schemas/Poste",
-                                            "description": "Additional information about the response.",
-                                            "example": true
-                                        },
-                                        "status_code": {
-                                            "type": "integer",
-                                            "default": 201,
-                                            "example": 201
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "delete": {
-                "summary": "Delete a poste",
-                "description": "Delete poste information based on certain criteria.",
-                "parameters": [
-                    {
-                        "name": "posteId",
-                        "description": "The unique identifier of the poste",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/components/schemas/Identifier"
-                        }
-                    },
-                    {
-                        "name": "Content-Type",
-                        "in": "header",
-                        "description": "The content type of the request body.",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "default": "application/json"
-                        }
-                    },
-                    {
-                        "name": "Accept",
-                        "in": "header",
-                        "description": "The content types the client is willing to accept.",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "default": "application/json"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful response",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "status": {
-                                            "type": "boolean",
-                                            "description": "Indicates whether the request was successful.",
-                                            "default": true,
-                                            "example": true
-                                        },
-                                        "message": {
-                                            "type": "string",
-                                            "description": "Additional information about the response.",
-                                            "nullable": true,
-                                            "example": null
-                                        },
-                                        "data": {
-                                            "description": "Additional information about the response.",
-                                            "type": "boolean",
-                                            "nullable": true,
-                                            "default": null,
-                                            "example": null
-                                        },
-                                        "status_code": {
-                                            "type": "integer",
                                             "default": 200,
                                             "example": 200
                                         }
@@ -3282,18 +2321,7 @@
                 }
             }
         },
-        "/spacecrafts/{spacecraftId}": {
-            "parameters": [
-                {
-                    "name": "spacecraftId",
-                    "description": "The unique identifier of the spacecraft",
-                    "in": "path",
-                    "required": true,
-                    "schema": {
-                        "$ref": "#/components/schemas/SpacecraftId"
-                    }
-                }
-            ],
+        "/devises": {
             "get": {
                 "tags": [
                     "Devises"
@@ -3788,6 +2816,7 @@
                 "$ref": "paths/projets_production/delete_projet_production.json"
             }
         }
+
     },
     "components": {
         "schemas": {
@@ -3884,40 +2913,6 @@
                     }
                 }
             },
-            "Departement": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "$ref": "#/components/schemas/Identifier",
-                        "description": "Unique identifier for the departement"
-                    },
-                    "name": {
-                        "type": "string",
-                        "description": "Name of the departement",
-                        "example": "Production",
-                        "default": "Production"
-                    }
-                }
-            },
-            "Poste": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "$ref": "#/components/schemas/Identifier",
-                        "description": "Unique identifier for the poste"
-                    },
-                    "name": {
-                        "type": "string",
-                        "description": "Name of the poste",
-                        "example": "Chef section",
-                        "default": "Chef section"
-                    },
-                    "department_id": {
-                        "$ref": "#/components/schemas/Identifier",
-                        "description": "Departement"
-                    }
-                }
-            },
             "CategoryOfEmployee": {
                 "type": "object",
                 "properties": {
@@ -3972,7 +2967,7 @@
                         "type": "string",
                         "description": "Description of the categories of employees",
                         "nullable": true,
-                        "example": "johndoe@gmail.com",
+                        "example": "{{$randomEmail}}",
                         "default": "user@gmail.com"
                     },
                     "phone_number": {
@@ -3988,7 +2983,7 @@
                             "number": {
                                 "type": "integer",
                                 "description": "Description of the categories of employees",
-                                "example": 94531209,
+                                "example": "{{$randomBankAccount}}",
                                 "default": 90000000
                             }
                         },
@@ -4168,39 +3163,6 @@
                     }
                 }
             },
-            "SpacecraftId": {
-                "description": "The unique identifier of a spacecraft",
-                "type": "string"
-            },
-            "Spacecraft": {
-                "type": "object",
-                "required": [
-                    "id",
-                    "name",
-                    "type"
-                ],
-                "properties": {
-                    "id": {
-                        "$ref": "#/components/schemas/SpacecraftId"
-                    },
-                    "name": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "string",
-                        "enum": [
-                            "capsule",
-                            "probe",
-                            "satellite",
-                            "spaceplane",
-                            "station"
-                        ]
-                    },
-                    "description": {
-                        "type": "string"
-                    }
-                }
-            },
             "Identifier": {
                 "type": "string",
                 "pattern": "^[0-9a-f]{8}-[0-9a-x]{4}-[1-5][0-9a-z]{3}-[89AB][0-9a-q]{3}-[0-9a-f]{12}$",
@@ -4221,40 +3183,6 @@
                 "example": "2019/05/17 09h:23min",
                 "minLength": 20,
                 "maxLength": 50
-            },
-            "DepartementRequest": {
-                "required": [
-                    "name"
-                ],
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "type": "string",
-                        "minLength": 3,
-                        "maxLength": 50,
-                        "example": "Production",
-                        "default": "Production",
-                        "description": "Name of the departement."
-                    }
-                }
-            },
-            "PosteRequest": {
-                "required": [
-                    "name",
-                    "department_id"
-                ],
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "$ref": "#/components/schemas/FieldName",
-                        "example": "Nom du champ",
-                        "description": "Name of the poste"
-                    },
-                    "department_id": {
-                        "$ref": "#/components/schemas/Identifier",
-                        "description": "Unique identifier for the poste"
-                    }
-                }
             },
             "UserRequest": {
                 "required": [
@@ -4594,12 +3522,17 @@
                 "type": "apiKey",
                 "in": "header",
                 "name": "X-Api-Key"
+            },
+            "bearerAuth": {
+              "type": "http",
+              "scheme": "bearer",
+              "bearerFormat": "JWT"
             }
         }
     },
     "security": [
         {
-            "ApiKey": []
+            "bearerAuth": []
         }
     ]
 }

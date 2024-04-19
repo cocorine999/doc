@@ -3683,7 +3683,7 @@
                 "tags": [
                     "Exercices analytique"
                 ],
-                "$ref": "paths/exercices_comptable/ecriture_analytique/entries.json"
+                "$ref": "paths/exercices_comptable/operations_analytique/entries.json"
             }
         },
 

@@ -164,29 +164,6 @@
                         }
                     }
                 }
-            },
-            "links": {
-                "GetEcritureAnalytiqueDetailsByEcritureAnalytiqueId": {
-                    "operationId": "getEcritureAnalytique",
-                    "parameters": {
-                        "ecritureAnalytiqueId": "$response.body#/data/data/0/id"
-                    },
-                    "description": "Link to get ecriture analytique information based on ecriture analytique ID."
-                },
-                "UpdateEcritureAnalytiqueDetailsByEcritureAnalytiqueId": {
-                    "operationId": "updateEcritureAnalytique",
-                    "parameters": {
-                        "ecritureAnalytiqueId": "$response.body#/data/data/0/id"
-                    },
-                    "description": "Link to update ecriture analytique information based on ecriture analytique ID."
-                },
-                "DeleteEcritureAnalytiqueByEcritureAnalytiqueId": {
-                    "operationId": "deleteEcritureAnalytique",
-                    "parameters": {
-                        "ecritureAnalytiqueId": "$response.body#/data/data/0/id"
-                    },
-                    "description": "Link to delete ecriture analytique based on ecriture analytique ID."
-                }
             }
         },
         "400": {

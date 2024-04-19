@@ -92,7 +92,7 @@
                                 "type": "array",
                                 "description": "Balance des comptes",
                                 "items": {
-                                    "$ref": "../../components/schemas/models/plan_comptable.json#/PlanComptable"
+                                    "$ref": "../../components/schemas/models/balance.json#/BalanceDeCompte"
                                 }
                             },
                             "status_code": {

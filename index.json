@@ -2653,24 +2653,6 @@
             }
         },
 
-        "/exercices_comptable/{exerciceComptableId}/balance-des-comptes": {
-            "put": {
-                "tags": [
-                    "Balance des comptes d'une periode d'exercice."
-                ],
-                "$ref": "paths/exercices_comptable/balance.json"
-            }
-        },
-
-        "/exercices_comptable/{exerciceComptableId}/cloture": {
-            "get": {
-                "tags": [
-                    "Cloture d'exercice"
-                ],
-                "$ref": "paths/exercices_comptable/cloture.json"
-            }
-        },
-
         "/exercices_comptable/{exerciceComptableId}/ecritures-comptable": {
             "get": {
                 "tags": [

@@ -1,0 +1,96 @@
+{
+    "get": {
+        "summary": "Récupérer tous les articles IQPS",
+        "responses": {
+            "200": {
+                "description": "Succès",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "../../../components/schemas/models/articleIqp.json#/ArticleIQPSListResponse"
+                        }
+                    }
+                }
+            },
+            "400": {
+                "$ref": "../../../components/responses/errors/400.json#BadRequest"
+            },
+            "401": {
+                "$ref": "../../../components/responses/errors/401.json#Unauthorized"
+            },
+            "403": {
+                "$ref": "../../../components/responses/errors/403.json#Forbidden"
+            },
+            "404": {
+                "$ref": "../../../components/responses/errors/404.json#NotFound"
+            },
+            "405": {
+                "$ref": "../../../components/responses/errors/405.json#MethodNotAllowed"
+            },
+            "408": {
+                "$ref": "../../../components/responses/errors/408.json#RequestTimeout"
+            },
+            "429": {
+                "$ref": "../../../components/responses/errors/429.json#RateLimitExceeded"
+            },
+            "500": {
+                "$ref": "../../../components/responses/errors/500.json#InternalServerError"
+            },
+            "503": {
+                "$ref": "../../../components/responses/errors/503.json#ServiceUnavailable"
+            }
+        }
+    },
+    "post": {
+        "summary": "Créer un nouvel article IQP",
+        "requestBody": {
+            "required": true,
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "$ref": "../../../components/requestBodies/magasins/articleIqp.json#/ArticleIQPCreate"
+                    }
+                }
+            }
+        },
+        "responses": {
+            "201": {
+                "description": "Enregistrement créé avec succès.",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "../../../components/schemas/models/articleIqp.json#/ArticleIQPResponse"
+                        }
+                    }
+                }
+            },
+            "400": {
+                "$ref": "../../../components/responses/errors/400.json#BadRequest"
+            },
+            "401": {
+                "$ref": "../../../components/responses/errors/401.json#Unauthorized"
+            },
+            "403": {
+                "$ref": "../../../components/responses/errors/403.json#Forbidden"
+            },
+            "405": {
+                "$ref": "../../../components/responses/errors/405.json#MethodNotAllowed"
+            },
+            "408": {
+                "$ref": "../../../components/responses/errors/408.json#RequestTimeout"
+            },
+            "422": {
+                "$ref": "../../../components/responses/errors/422.json#UnprocessableEntity"
+            },
+            "429": {
+                "$ref": "../../../components/responses/errors/429.json#RateLimitExceeded"
+            },
+            "500": {
+                "$ref": "../../../components/responses/errors/500.json#InternalServerError"
+            },
+            "503": {
+                "$ref": "../../../components/responses/errors/503.json#ServiceUnavailable"
+            }
+        }
+    }
+}

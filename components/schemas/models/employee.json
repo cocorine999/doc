@@ -112,5 +112,43 @@
                 "description": "List of employee contracts."
             }
         }
+    },
+    "AssignPostResponse": {
+        "type": "object",
+        "properties": {
+            "status": {
+                "type": "boolean",
+                "description": "Indicates the success status of the request.",
+                "default": true,
+                "example": true
+            },
+            "message": {
+                "type": "string",
+                "description": "Additional information about the response.",
+                "default": "New Post is assign successfully",
+                "example": "New Post is assign successfully"
+            },
+            "data": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "ID of the newly assigned post."
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "Date and time when the post was assigned."
+                    }
+                },
+                "description": "Details of the assigned post."
+            },
+            "status_code": {
+                "type": "integer",
+                "description": "Indicates the HTTP status code of the response.",
+                "default": 201,
+                "example": 201
+            }
+        }
     }
 }

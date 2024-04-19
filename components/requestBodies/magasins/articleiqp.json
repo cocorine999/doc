@@ -1,0 +1,60 @@
+{
+    "ArticleIQPCreate": {
+        "type": "object",
+        "properties": {
+            "name": {
+                "type": "string",
+                "description": "Nom de l'article IQP."
+            },
+            "norme": {
+                "type": "string",
+                "description": "Norme de l'article IQP."
+            },
+            "unite_mesure_id": {
+                "type": "string",
+                "description": "Identifiant de l'unité de mesure."
+            },
+            "article_id": {
+                "type": "string",
+                "description": "Identifiant de l'article associé."
+            },
+            "iqp_id": {
+                "type": "string",
+                "description": "Identifiant de l'indice de qualité perçu associé."
+            },
+            "quantity_treated": {
+                "type": "string",
+                "description": "Quantité traitée de l'article IQP."
+            }
+        }
+    },
+    "ArticleIQPUpdate": {
+        "type": "object",
+        "properties": {
+            "name": {
+                "type": "string",
+                "description": "Nom de l'article IQP."
+            },
+            "norme": {
+                "type": "string",
+                "description": "Norme de l'article IQP."
+            },
+            "unite_mesure_id": {
+                "type": "string",
+                "description": "Identifiant de l'unité de mesure."
+            },
+            "article_id": {
+                "type": "string",
+                "description": "Identifiant de l'article associé."
+            },
+            "iqp_id": {
+                "type": "string",
+                "description": "Identifiant de l'indice de qualité perçu associé."
+            },
+            "quantity_treated": {
+                "type": "string",
+                "description": "Quantité traitée de l'article IQP."
+            }
+        }
+    }
+}

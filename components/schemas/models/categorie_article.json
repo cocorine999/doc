@@ -1,0 +1,92 @@
+{
+    "CategorieArticleListResponse": {
+        "type": "object",
+        "properties": {
+            "current_page": {
+                "type": "integer",
+                "description": "Numéro de la page actuelle."
+            },
+            "data": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "description": "Identifiant de la catégorie d'article."
+                        },
+                        "name": {
+                            "type": "string",
+                            "description": "Nom de la catégorie d'article."
+                        },
+                        "created_at": {
+                            "type": "string",
+                            "format": "date-time",
+                            "description": "Date et heure de création de la catégorie d'article."
+                        }
+                    }
+                }
+            },
+            "first_page_url": {
+                "type": "string",
+                "description": "URL de la première page de résultats."
+            },
+            "from": {
+                "type": "integer",
+                "description": "Indice du premier élément dans la liste actuelle."
+            },
+            "last_page": {
+                "type": "integer",
+                "description": "Numéro de la dernière page."
+            },
+            "last_page_url": {
+                "type": "string",
+                "description": "URL de la dernière page de résultats."
+            },
+            "links": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "url": {
+                            "type": "string",
+                            "description": "URL de la page."
+                        },
+                        "label": {
+                            "type": "string",
+                            "description": "Étiquette de la page."
+                        },
+                        "active": {
+                            "type": "boolean",
+                            "description": "Indique si la page est active."
+                        }
+                    }
+                }
+            },
+            "next_page_url": {
+                "type": "string",
+                "description": "URL de la page suivante."
+            },
+            "path": {
+                "type": "string",
+                "description": "Chemin de base de l'API."
+            },
+            "per_page": {
+                "type": "integer",
+                "description": "Nombre d'éléments par page."
+            },
+            "prev_page_url": {
+                "type": "string",
+                "description": "URL de la page précédente."
+            },
+            "to": {
+                "type": "integer",
+                "description": "Indice du dernier élément dans la liste actuelle."
+            },
+            "total": {
+                "type": "integer",
+                "description": "Nombre total d'éléments."
+            }
+        }
+    }
+}

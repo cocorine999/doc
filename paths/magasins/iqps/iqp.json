@@ -1,0 +1,186 @@
+{
+    "get": {
+        "summary": "Récupérer un IQP par ID",
+        "parameters": [
+            {
+                "name": "iqpId",
+                "in": "path",
+                "required": true,
+                "description": "ID de l'IQP",
+                "schema": {
+                    "type": "string"
+                }
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "Succès",
+                "headers": {
+                    "X-RateLimit-Limit": {
+                        "$ref": "../../components/headers/x_ratelimit_limit.json"
+                    },
+                    "X-RateLimit-Remaining": {
+                        "$ref": "../../components/headers/x_ratelimit_remaining.json"
+                    },
+                    "Access-Control-Allow-Origin": {
+                        "$ref": "../../components/headers/access_control_allow_origin.json"
+                    },
+                    "Access-Control-Allow-Methods": {
+                        "$ref": "../../components/headers/access_control_allow_methods.json"
+                    },
+                    "Access-Control-Allow-Credentials": {
+                        "$ref": "../../components/headers/access_control_allow_credentials.json"
+                    },
+                    "Access-Control-Max-Age": {
+                        "$ref": "../../components/headers/access_control_max_age.json"
+                    },
+                    "Access-Control-Allow-Headers": {
+                        "$ref": "../../components/headers/access_control_allow_headers.json"
+                    }
+                },
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "../../../components/schemas/models/iqp.json#/IQP"
+                        }
+                    }
+                }
+            },
+            "400": {
+                "$ref": "../../../components/responses/errors/400.json#BadRequest"
+            },
+            "401": {
+                "$ref": "../../../components/responses/errors/401.json#Unauthorized"
+            },
+            "403": {
+                "$ref": "../../../components/responses/errors/403.json#Forbidden"
+            },
+            "404": {
+                "$ref": "../../../components/responses/errors/404.json#NotFound"
+            },
+            "405": {
+                "$ref": "../../../components/responses/errors/405.json#MethodNotAllowed"
+            },
+            "408": {
+                "$ref": "../../../components/responses/errors/408.json#RequestTimeout"
+            },
+            "429": {
+                "$ref": "../../../components/responses/errors/429.json#RateLimitExceeded"
+            },
+            "500": {
+                "$ref": "../../../components/responses/errors/500.json#InternalServerError"
+            },
+            "503": {
+                "$ref": "../../../components/responses/errors/503.json#ServiceUnavailable"
+            }
+        }
+    },
+    "put": {
+        "summary": "Modifier un IQP",
+        "parameters": [
+            {
+                "name": "iqpId",
+                "in": "path",
+                "required": true,
+                "description": "ID de l'IQP à mettre à jour",
+                "schema": {
+                    "type": "string"
+                }
+            }
+        ],
+        "requestBody": {
+            "required": true,
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "$ref": "#/components/schemas/IQPUpdate"
+                    }
+                }
+            }
+        },
+        "responses": {
+            "200": {
+                "description": "Mise à jour réussie",
+                "headers": {
+                    "X-RateLimit-Limit": {
+                        "$ref": "../../components/headers/x_ratelimit_limit.json"
+                    },
+                    "X-RateLimit-Remaining": {
+                        "$ref": "../../components/headers/x_ratelimit_remaining.json"
+                    },
+                    "Access-Control-Allow-Origin": {
+                        "$ref": "../../components/headers/access_control_allow_origin.json"
+                    },
+                    "Access-Control-Allow-Methods": {
+                        "$ref": "../../components/headers/access_control_allow_methods.json"
+                    },
+                    "Access-Control-Allow-Credentials": {
+                        "$ref": "../../components/headers/access_control_allow_credentials.json"
+                    },
+                    "Access-Control-Max-Age": {
+                        "$ref": "../../components/headers/access_control_max_age.json"
+                    },
+                    "Access-Control-Allow-Headers": {
+                        "$ref": "../../components/headers/access_control_allow_headers.json"
+                    }
+                },
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/IQP"
+                        }
+                    }
+                }
+            },
+            "400": {
+                "$ref": "../../../components/responses/errors/400.json#BadRequest"
+            },
+            "401": {
+                "$ref": "../../../components/responses/errors/401.json#Unauthorized"
+            },
+            "403": {
+                "$ref": "../../../components/responses/errors/403.json#Forbidden"
+            },
+            "404": {
+                "$ref": "../../../components/responses/errors/404.json#NotFound"
+            },
+            "405": {
+                "$ref": "../../../components/responses/errors/405.json#MethodNotAllowed"
+            },
+            "408": {
+                "$ref": "../../../components/responses/errors/408.json#RequestTimeout"
+            },
+            "429": {
+                "$ref": "../../../components/responses/errors/429.json#RateLimitExceeded"
+            },
+            "500": {
+                "$ref": "../../../components/responses/errors/500.json#InternalServerError"
+            },
+            "503": {
+                "$ref": "../../../components/responses/errors/503.json#ServiceUnavailable"
+            }
+        }
+    },
+    "delete": {
+        "summary": "Supprimer un IQP",
+        "parameters": [
+            {
+                "name": "iqpId",
+                "in": "path",
+                "required": true,
+                "description": "ID de l'IQP à supprimer",
+                "schema": {
+                    "type": "string"
+                }
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "IQP supprimé avec succès"
+            },
+            "404": {
+                "$ref": "#/components/responses/errors/NotFound"
+            }
+        }
+    }
+}

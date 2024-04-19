@@ -1,0 +1,20 @@
+{
+    "CategorieArticleUpdate": {
+        "type": "object",
+        "properties": {
+            "name": {
+                "type": "string",
+                "description": "Nouveau nom de la catégorie d'article."
+            }
+        }
+    },
+    "CategorieArticleCreate": {
+        "type": "object",
+        "properties": {
+            "name": {
+                "type": "string",
+                "description": "Nouveau nom de la catégorie d'article."
+            }
+        }
+    }
+}

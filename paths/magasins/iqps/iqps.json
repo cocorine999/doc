@@ -1,36 +1,115 @@
 {
     "get": {
-        "summary": "Récupérer tous les IQPs",
+        "summary": "Get all imaginary quality products",
         "responses": {
             "200": {
-                "description": "Succès",
+                "description": "Success",
                 "headers": {
                     "X-RateLimit-Limit": {
-                        "$ref": "../../components/headers/x_ratelimit_limit.json"
+                        "$ref": "../../../components/headers/x_ratelimit_limit.json"
                     },
                     "X-RateLimit-Remaining": {
-                        "$ref": "../../components/headers/x_ratelimit_remaining.json"
+                        "$ref": "../../../components/headers/x_ratelimit_remaining.json"
                     },
                     "Access-Control-Allow-Origin": {
-                        "$ref": "../../components/headers/access_control_allow_origin.json"
+                        "$ref": "../../../components/headers/access_control_allow_origin.json"
                     },
                     "Access-Control-Allow-Methods": {
-                        "$ref": "../../components/headers/access_control_allow_methods.json"
+                        "$ref": "../../../components/headers/access_control_allow_methods.json"
                     },
                     "Access-Control-Allow-Credentials": {
-                        "$ref": "../../components/headers/access_control_allow_credentials.json"
+                        "$ref": "../../../components/headers/access_control_allow_credentials.json"
                     },
                     "Access-Control-Max-Age": {
-                        "$ref": "../../components/headers/access_control_max_age.json"
-                    },
-                    "Access-Control-Allow-Headers": {
-                        "$ref": "../../components/headers/access_control_allow_headers.json"
+                        "$ref": "../../../components/headers/access_control_max_age.json"
                     }
                 },
                 "content": {
                     "application/json": {
                         "schema": {
-                            "$ref": "../../../components/schemas/models/iqp.json#/IQPListResponse"
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "boolean",
+                                    "description": "Indicates the success status of the request."
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "description": "Additional information about the response."
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "../../../components/schemas/models/iqp.json#/IQP"
+                                    }
+                                },
+                                "status_code": {
+                                    "type": "integer",
+                                    "description": "Indicates the HTTP status code of the response."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "post": {
+        "summary": "Create a new imaginary quality product",
+        "requestBody": {
+            "required": true,
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "$ref": "../../../components/requestBodies/magasins/iqp.json#/IQPInput"
+                    }
+                }
+            }
+        },
+        "responses": {
+            "201": {
+                "description": "Imaginary quality product created successfully.",
+                "headers": {
+                    "X-RateLimit-Limit": {
+                        "$ref": "../../../components/headers/x_ratelimit_limit.json"
+                    },
+                    "X-RateLimit-Remaining": {
+                        "$ref": "../../../components/headers/x_ratelimit_remaining.json"
+                    },
+                    "Access-Control-Allow-Origin": {
+                        "$ref": "../../../components/headers/access_control_allow_origin.json"
+                    },
+                    "Access-Control-Allow-Methods": {
+                        "$ref": "../../../components/headers/access_control_allow_methods.json"
+                    },
+                    "Access-Control-Allow-Credentials": {
+                        "$ref": "../../../components/headers/access_control_allow_credentials.json"
+                    },
+                    "Access-Control-Max-Age": {
+                        "$ref": "../../../components/headers/access_control_max_age.json"
+                    }
+                },
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "boolean",
+                                    "description": "Indicates the success status of the request."
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "description": "Additional information about the response."
+                                },
+                                "data": {
+                                    "$ref": "../../../components/schemas/models/iqp.json#/IQP"
+                                },
+                                "status_code": {
+                                    "type": "integer",
+                                    "description": "Indicates the HTTP status code of the response."
+                                }
+                            }
                         }
                     }
                 }
@@ -52,6 +131,9 @@
             },
             "408": {
                 "$ref": "../../../components/responses/errors/408.json#RequestTimeout"
+            },
+            "422": {
+                "$ref": "../../../components/responses/errors/422.json#UnprocessableEntity"
             },
             "429": {
                 "$ref": "../../../components/responses/errors/429.json#RateLimitExceeded"

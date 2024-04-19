@@ -1,126 +1,23 @@
 {
-    "IQPListResponse": {
-        "type": "object",
-        "properties": {
-            "status": {
-                "type": "boolean",
-                "description": "Indicates the status of the request.",
-                "default": true,
-                "example": true
-            },
-            "message": {
-                "type": "string",
-                "description": "Additional information about the response.",
-                "default": null,
-                "example": null
-            },
-            "data": {
-                "type": "object",
-                "properties": {
-                    "current_page": {
-                        "type": "integer",
-                        "description": "The current page number."
-                    },
-                    "data": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/IQP"
-                        },
-                        "description": "IQP data."
-                    },
-                    "first_page_url": {
-                        "type": "string",
-                        "description": "The URL of the first page."
-                    },
-                    "from": {
-                        "type": "integer",
-                        "description": "The index of the first item in the results."
-                    },
-                    "last_page": {
-                        "type": "integer",
-                        "description": "The number of the last page."
-                    },
-                    "last_page_url": {
-                        "type": "string",
-                        "description": "The URL of the last page."
-                    },
-                    "links": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "url": {
-                                    "type": "string",
-                                    "description": "The URL of the linked page."
-                                },
-                                "label": {
-                                    "type": "string",
-                                    "description": "The label of the linked page."
-                                },
-                                "active": {
-                                    "type": "boolean",
-                                    "description": "Indicates if the linked page is active."
-                                }
-                            }
-                        },
-                        "description": "Links to other result pages."
-                    },
-                    "next_page_url": {
-                        "type": "string",
-                        "description": "The URL of the next page."
-                    },
-                    "path": {
-                        "type": "string",
-                        "description": "The base URL path."
-                    },
-                    "per_page": {
-                        "type": "integer",
-                        "description": "The number of items per page."
-                    },
-                    "prev_page_url": {
-                        "type": "string",
-                        "description": "The URL of the previous page."
-                    },
-                    "to": {
-                        "type": "integer",
-                        "description": "The index of the last item in the results."
-                    },
-                    "total": {
-                        "type": "integer",
-                        "description": "The total number of items."
-                    }
-                }
-            },
-            "status_code": {
-                "type": "integer",
-                "description": "The HTTP status code of the response.",
-                "default": 200,
-                "example": 200
-            }
-        }
-    },
     "IQP": {
         "type": "object",
         "properties": {
             "id": {
                 "type": "string",
-                "description": "The ID of the IQP."
+                "format": "uuid",
+                "description": "Unique identifier of the imaginary quality product."
             },
             "name": {
                 "type": "string",
-                "description": "The name of the IQP."
+                "description": "Name of the imaginary quality product."
             },
             "type_of_iqp": {
                 "type": "string",
-                "description": "The type of the IQP."
-            },
-            "created_at": {
-                "type": "string",
-                "description": "The creation date of the IQP in ISO 8601 format."
+                "description": "Type of the imaginary quality product."
             },
             "iqp_type": {
                 "type": "string",
-                "description": "The type of the IQP."
+                "description": "Performance type of the imaginary quality product."
             }
         }
     }

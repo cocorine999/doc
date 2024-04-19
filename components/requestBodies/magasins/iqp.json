@@ -1,22 +1,18 @@
 {
-    "IQPUpdate": {
+    "IQPInput": {
         "type": "object",
         "properties": {
             "name": {
                 "type": "string",
-                "description": "The updated name of the IQP"
+                "description": "Name of the imaginary quality product."
             },
-            "description": {
+            "type_of_iqp": {
                 "type": "string",
-                "description": "The updated description of the IQP"
+                "description": "Type of the imaginary quality product."
             },
-            "status": {
+            "iqp_type": {
                 "type": "string",
-                "enum": [
-                    "active",
-                    "inactive"
-                ],
-                "description": "The updated status of the IQP"
+                "description": "Performance type of the imaginary quality product."
             }
         }
     }

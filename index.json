@@ -122,8 +122,6 @@
             "name": "ProjetsProduction",
             "description": "APIs related to projets de production management. These endpoints allow clients to create, retrieve, update, and delete projets de production."
         }
-        
-        
     ],
     "paths": {
         "/permissions": {
@@ -220,6 +218,12 @@
         },
         "/article_iqps/{articleIqpId}": {
             "$ref": "paths/magasins/articleIqps/articleIqp.json"
+        },
+        "/iqps": {
+            "$ref": "paths/magasins/iqps/iqps.json"
+        },
+        "/iqps/{iqpId}": {
+            "$ref": "paths/magasins/iqps/iqp.json"
         },
         "/users": {
             "get": {
@@ -3438,7 +3442,6 @@
                 "$ref": "paths/comptes/delete_compte.json"
             }
         },
-
         "/journaux": {
             "get": {
                 "tags": [
@@ -3473,7 +3476,6 @@
                 "$ref": "paths/journaux/delete_journal.json"
             }
         },
-
         "/plans_comptable": {
             "get": {
                 "tags": [
@@ -3572,7 +3574,6 @@
                 "$ref": "paths/plans_comptable/accounts/sub_accounts/detach_sub_accounts.json"
             }
         },
-
         "/exercices_comptable": {
             "get": {
                 "tags": [
@@ -3607,13 +3608,11 @@
                 "$ref": "paths/exercices_comptable/delete_exercice_comptable.json"
             }
         },
-
         "/exercices_comptable/{exerciceComptableId}/report-des-soldes-aux-comptes": {
             "put": {
                 "$ref": "paths/exercices_comptable/report.json"
             }
         },
-        
         "/exercices_comptable/{exerciceComptableId}/balance-des-comptes": {
             "put": {
                 "tags": [
@@ -3622,13 +3621,11 @@
                 "$ref": "paths/exercices_comptable/balance.json"
             }
         },
-
         "/exercices_comptable/{exerciceComptableId}/cloture": {
             "get": {
                 "$ref": "paths/exercices_comptable/cloture.json"
             }
         },
-
         "/exercices_comptable/{exerciceComptableId}/journals": {
             "get": {
                 "tags": [
@@ -3637,7 +3634,6 @@
                 "$ref": "paths/exercices_comptable/journals.json"
             }
         },
-
         "/exercices_comptable/{exerciceComptableId}/ecritures-comptable": {
             "get": {
                 "tags": [
@@ -3652,7 +3648,6 @@
                 "$ref": "paths/exercices_comptable/ecritures_comptable/suivi.json"
             }
         },
-
         "/exercices_comptable/{exerciceComptableId}/operations_comptable_disponible": {
             "get": {
                 "tags": [
@@ -3677,7 +3672,6 @@
                 "$ref": "paths/exercices_comptable/operations_comptable_disponible/validate.json"
             }
         },
-
         "/exercices_comptable/{exerciceComptableId}/operations-analytique": {
             "get": {
                 "tags": [
@@ -3702,7 +3696,6 @@
                 "$ref": "paths/exercices_comptable/operations_analytique/validate.json"
             }
         },
-
         "/exercices_comptable/{exerciceComptableId}/immobilisations": {
             "get": {
                 "tags": [
@@ -3737,7 +3730,6 @@
                 "$ref": "paths/immobilisations/delete_immobilisation.json"
             }
         },
-
         "/projets_production": {
             "get": {
                 "tags": [

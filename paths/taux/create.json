@@ -1,0 +1,123 @@
+{
+    "put": {
+        "summary": "Create taux.",
+        "description": "Create taux.",
+        "operationId": "createTaux",
+        "parameters": [
+            {
+                "$ref": "../../components/parameters/unite_travaille_id.json#/UniteTravailleId"
+            },
+            {
+                "$ref": "../../components/headers/content_type.json"
+            },
+            {
+                "$ref": "../../components/headers/accept.json"
+            },
+            {
+                "$ref": "../../components/headers/origin.json"
+            }
+        ],
+        "requestBody": {
+            "description": "Add taux request body",
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "$ref": "../../components/requestBodies/taux_salaries/taux_request.json#/TauxAndSalariesRequest"
+                    }
+                }
+            },
+            "required": true
+        },
+        "responses": {
+            "201": {
+                "description": "Successfully Response",
+                "headers": {
+                    "X-RateLimit-Limit": {
+                        "$ref": "../../components/headers/x_ratelimit_limit.json"
+                    },
+                    "X-RateLimit-Remaining": {
+                        "$ref": "../../components/headers/x_ratelimit_remaining.json"
+                    },
+                    "Access-Control-Allow-Origin": {
+                        "$ref": "../../components/headers/access_control_allow_origin.json"
+                    },
+                    "Access-Control-Allow-Methods": {
+                        "$ref": "../../components/headers/access_control_allow_methods.json"
+                    },
+                    "Access-Control-Allow-Credentials": {
+                        "$ref": "../../components/headers/access_control_allow_credentials.json"
+                    },
+                    "Access-Control-Max-Age": {
+                        "$ref": "../../components/headers/access_control_max_age.json"
+                    },
+                    "Access-Control-Allow-Headers": {
+                        "$ref": "../../components/headers/access_control_allow_headers.json"
+                    }
+                },
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "boolean",
+                                    "description": "Indicates the success status of the request.",
+                                    "default": true,
+                                    "example": true
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "description": "Additional information about the response.",
+                                    "example": "Taux added to unite travaille successfully",
+                                    "default": "Taux added to unite travaille successfully"
+                                },
+                                "data": {
+                                    "type": "boolean",
+                                    "description": "Indicates the success status of the request.",
+                                    "default": true,
+                                    "example": true
+                                },
+                                "status_code": {
+                                    "type": "integer",
+                                    "description": "Indicates the HTTP status code of the response.",
+                                    "default": 201,
+                                    "example": 201
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "400": {
+                "$ref": "../../components/responses/errors/400.json#BadRequest"
+            },
+            "401": {
+                "$ref": "../../components/responses/errors/401.json#Unauthorized"
+            },
+            "403": {
+                "$ref": "../../components/responses/errors/403.json#Forbidden"
+            },
+            "404": {
+                "$ref": "../../components/responses/errors/404.json#NotFound"
+            },
+            "405": {
+                "$ref": "../../components/responses/errors/405.json#MethodNotAllowed"
+            },
+            "408": {
+                "$ref": "../../components/responses/errors/408.json#RequestTimeout"
+            },
+            "422": {
+                "$ref": "../../components/responses/errors/422.json#UnprocessableEntity"
+            },
+            "429": {
+                "$ref": "../../components/responses/errors/429.json#RateLimitExceeded"
+            },
+            "500": {
+                "$ref": "../../components/responses/errors/500.json#InternalServerError"
+            },
+            "503": {
+                "$ref": "../../components/responses/errors/503.json#ServiceUnavailable"
+            }
+        }
+    }
+}

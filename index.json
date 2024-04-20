@@ -183,6 +183,16 @@
         "/unite_travailles/{{uniteTravailleId}}": {
             "$ref": "paths/Unite_travaille/unite_travailles.json"
         },
+
+        "/unite_travailles/{uniteTravailleId}/add-taux": {
+            "$ref": "paths/taux/create.json"
+        },
+        "/unite_travailles/{uniteTravailleId}/edit-taux": {
+            "$ref": "paths/taux/update.json"
+        },
+        "/unite_travailles/{uniteTravailleId}/remove-taux": {
+            "$ref": "paths/taux/delete.json"
+        },
         "/employees": {
             "$ref": "paths/employees/employees.json"
         },
@@ -2000,7 +2010,7 @@
             }
         },
         "/categories_of_employees/{categoryOfEmployeeId}/revoke-taux": {
-            "delete": {
+            "patch": {
                 "summary": "Revoke taux from category of employees.",
                 "description": "Revoke roles from user.",
                 "parameters": [

@@ -195,36 +195,6 @@
         "/partners/{partnerId}": {
             "$ref": "paths/partners/partner.json"
         },
-        "/magasins": {
-            "$ref": "paths/magasins/magasins.json"
-        },
-        "/magasins/{magasinId}": {
-            "$ref": "paths/magasins/magasin.json"
-        },
-        "/articles": {
-            "$ref": "paths/articles/articles.json"
-        },
-        "/articles/{articleId}": {
-            "$ref": "paths/articles/article.json"
-        },
-        "/categorie_articles": {
-            "$ref": "paths/articles/categories_articles/categories.json"
-        },
-        "/categorie_articles/{categorieArticleId}": {
-            "$ref": "paths/articles/categories_articles/categorie.json"
-        },
-        "/article_iqps": {
-            "$ref": "paths/magasins/articleIqps/articleIqps.json"
-        },
-        "/article_iqps/{articleIQPId}": {
-            "$ref": "paths/magasins/articleIqps/articleIqp.json"
-        },
-        "/iqps": {
-            "$ref": "paths/magasins/iqps/iqps.json"
-        },
-        "/iqps/{iqpId}": {
-            "$ref": "paths/magasins/iqps/iqp.json"
-        },
         "/users": {
             "get": {
                 "summary": "Retrieve users",

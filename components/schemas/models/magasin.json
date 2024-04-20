@@ -1,117 +1,24 @@
 {
-    "MagasinListResponse": {
-        "type": "object",
-        "properties": {
-            "status": {
-                "type": "boolean",
-                "description": "Status of the request."
-            },
-            "message": {
-                "type": "string",
-                "nullable": true,
-                "description": "Message associated with the response."
-            },
-            "data": {
-                "type": "object",
-                "properties": {
-                    "current_page": {
-                        "type": "integer",
-                        "description": "Current page number."
-                    },
-                    "data": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#MagasinResponse"
-                        },
-                        "description": "List of magasins."
-                    },
-                    "first_page_url": {
-                        "type": "string",
-                        "description": "URL of the first page."
-                    },
-                    "from": {
-                        "type": "integer",
-                        "description": "Index of the first item on the current page."
-                    },
-                    "last_page": {
-                        "type": "integer",
-                        "description": "Last page number."
-                    },
-                    "last_page_url": {
-                        "type": "string",
-                        "description": "URL of the last page."
-                    },
-                    "links": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "url": {
-                                    "type": "string",
-                                    "nullable": true,
-                                    "description": "URL of the link."
-                                },
-                                "label": {
-                                    "type": "string",
-                                    "description": "Label of the link."
-                                },
-                                "active": {
-                                    "type": "boolean",
-                                    "description": "Indicator of link activation."
-                                }
-                            }
-                        },
-                        "description": "List of pagination links."
-                    },
-                    "next_page_url": {
-                        "type": "string",
-                        "nullable": true,
-                        "description": "URL of the next page."
-                    },
-                    "path": {
-                        "type": "string",
-                        "description": "Current request path."
-                    },
-                    "per_page": {
-                        "type": "integer",
-                        "description": "Number of items per page."
-                    },
-                    "prev_page_url": {
-                        "type": "string",
-                        "nullable": true,
-                        "description": "URL of the previous page."
-                    },
-                    "to": {
-                        "type": "integer",
-                        "description": "Index of the last item on the current page."
-                    },
-                    "total": {
-                        "type": "integer",
-                        "description": "Total number of items."
-                    }
-                }
-            }
-        }
-    },
-    "MagasinResponse": {
+    "Magasin": {
         "type": "object",
         "properties": {
             "id": {
                 "type": "string",
-                "description": "ID of the magasin."
+                "format": "uuid",
+                "description": "Identifiant unique du magasin"
             },
             "name": {
                 "type": "string",
-                "description": "Name of the magasin."
+                "description": "Nom du magasin"
             },
             "address": {
                 "type": "string",
-                "description": "Address of the magasin."
+                "description": "Adresse du magasin"
             },
             "created_at": {
                 "type": "string",
                 "format": "date-time",
-                "description": "Date the magasin was created."
+                "description": "Date et heure de création du magasin"
             }
         }
     }

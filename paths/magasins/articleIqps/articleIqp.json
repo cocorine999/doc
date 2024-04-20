@@ -1,25 +1,85 @@
 {
     "get": {
-        "summary": "Récupérer un article IQP par ID",
+        "summary": "Retrieve an IQP article by ID",
         "parameters": [
             {
-                "name": "articleIqpId",
+                "name": "articleIQPId",
                 "in": "path",
                 "required": true,
-                "description": "ID de l'article IQP",
                 "schema": {
-                    "type": "string"
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "The ID of the article IQP to retrieve"
                 }
             }
         ],
         "responses": {
             "200": {
-                "description": "Succès",
+                "description": "Success",
+                "headers": {
+                    "X-RateLimit-Limit": {
+                        "$ref": "../../../components/headers/x_ratelimit_limit.json"
+                    },
+                    "X-RateLimit-Remaining": {
+                        "$ref": "../../../components/headers/x_ratelimit_remaining.json"
+                    },
+                    "Access-Control-Allow-Origin": {
+                        "$ref": "../../../components/headers/access_control_allow_origin.json"
+                    },
+                    "Access-Control-Allow-Methods": {
+                        "$ref": "../../../components/headers/access_control_allow_methods.json"
+                    },
+                    "Access-Control-Allow-Credentials": {
+                        "$ref": "../../../components/headers/access_control_allow_credentials.json"
+                    },
+                    "Access-Control-Max-Age": {
+                        "$ref": "../../../components/headers/access_control_max_age.json"
+                    }
+                },
                 "content": {
                     "application/json": {
                         "schema": {
-                            "$ref": "../../../components/schemas/models/articleIqp.json#/ArticleIQPResponse"
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "boolean",
+                                    "description": "Indicates the success status of the request.",
+                                    "default": true,
+                                    "example": true
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "description": "Additional information about the response.",
+                                    "default": "IQP article retrieved successfully",
+                                    "example": "IQP article retrieved successfully"
+                                },
+                                "data": {
+                                    "$ref": "../../../components/schemas/models/articleIqp.json#/ArticleIQP"
+                                },
+                                "status_code": {
+                                    "type": "integer",
+                                    "description": "Indicates the HTTP status code of the response.",
+                                    "default": 200,
+                                    "example": 200
+                                }
+                            }
                         }
+                    }
+                },
+                "links": {
+                    "UpdateArticleIQPDetailsById": {
+                        "operationId": "updateArticleIQP",
+                        "parameters": {
+                            "articleIQPId": "$response.body#/data/id"
+                        },
+                        "description": "Link to update article IQP information based on its ID."
+                    },
+                    "DeleteArticleIQPById": {
+                        "operationId": "deleteArticleIQP",
+                        "parameters": {
+                            "articleIQPId": "$response.body#/data/id"
+                        },
+                        "description": "Link to delete article IQP based on its ID."
                     }
                 }
             },
@@ -53,15 +113,15 @@
         }
     },
     "put": {
-        "summary": "Modifier un article IQP",
+        "summary": "Update an IQP article by ID",
         "parameters": [
             {
-                "name": "articleIqpId",
+                "name": "articleIQPId",
                 "in": "path",
                 "required": true,
-                "description": "ID de l'article IQP",
                 "schema": {
-                    "type": "string"
+                    "type": "string",
+                    "format": "uuid"
                 }
             }
         ],
@@ -70,14 +130,14 @@
             "content": {
                 "application/json": {
                     "schema": {
-                        "$ref": "../../../components/requestBodies/magasins/articleIqp.json#/ArticleIQPUpdate"
+                        "$ref": "../../../components/requestBodies/magasins/articleiqp.json#/ArticleIQPInput"
                     }
                 }
             }
         },
         "responses": {
-            "201": {
-                "description": "Successful update",
+            "200": {
+                "description": "Success",
                 "headers": {
                     "X-RateLimit-Limit": {
                         "$ref": "../../../components/headers/x_ratelimit_limit.json"
@@ -96,38 +156,12 @@
                     },
                     "Access-Control-Max-Age": {
                         "$ref": "../../../components/headers/access_control_max_age.json"
-                    },
-                    "Access-Control-Allow-Headers": {
-                        "$ref": "../../../components/headers/access_control_allow_headers.json"
                     }
                 },
                 "content": {
                     "application/json": {
                         "schema": {
-                            "type": "object",
-                            "properties": {
-                                "status": {
-                                    "type": "boolean",
-                                    "description": "Indicates the success status of the request.",
-                                    "default": true,
-                                    "example": true
-                                },
-                                "message": {
-                                    "type": "string",
-                                    "description": "Additional information about the response.",
-                                    "default": "Partner updated successfully.",
-                                    "example": "Partner updated successfully."
-                                },
-                                "data": {
-                                    "$ref": "../../../components/schemas/models/articleIqp.json#/ArticleIQPResponse"
-                                },
-                                "status_code": {
-                                    "type": "integer",
-                                    "description": "Indicates the HTTP status code of the response.",
-                                    "default": 201,
-                                    "example": 201
-                                }
-                            }
+                            "$ref": "../../../components/schemas/models/articleIqp.json#/ArticleIQP"
                         }
                     }
                 }
@@ -165,21 +199,21 @@
         }
     },
     "delete": {
-        "summary": "Supprimer un article IQP",
+        "summary": "Delete an IQP article by ID",
         "parameters": [
             {
-                "name": "articleIqpId",
+                "name": "articleIQPId",
                 "in": "path",
                 "required": true,
-                "description": "ID de l'article IQP",
                 "schema": {
-                    "type": "string"
+                    "type": "string",
+                    "format": "uuid"
                 }
             }
         ],
         "responses": {
             "200": {
-                "description": "articleIqp deleted successfully",
+                "description": "Success",
                 "headers": {
                     "X-RateLimit-Limit": {
                         "$ref": "../../../components/headers/x_ratelimit_limit.json"
@@ -217,8 +251,8 @@
                                 "message": {
                                     "type": "string",
                                     "description": "Additional information about the response.",
-                                    "default": "Partner deleted successfully.",
-                                    "example": "Partner deleted successfully."
+                                    "default": "Unit of work deleted successfully.",
+                                    "example": "Unit of work deleted successfully."
                                 },
                                 "data": {
                                     "type": "boolean",

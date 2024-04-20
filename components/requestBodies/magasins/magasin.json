@@ -1,33 +1,19 @@
 {
-    "MagasinCreate": {
+    "MagasinInput": {
         "type": "object",
         "properties": {
             "name": {
                 "type": "string",
-                "description": "Name of the shop."
+                "description": "Name of the store"
             },
             "address": {
                 "type": "string",
-                "description": "Store address."
-            }
-        },
-        "required": [
-            "name",
-            "address"
-        ]
-    },
-    "MagasinUpdate": {
-        "type": "object",
-        "properties": {
-            "name": {
-                "type": "string",
-                "nullable": true,
-                "description": "Name of the shop."
+                "description": "Address of the store"
             },
-            "address": {
+            "created_at": {
                 "type": "string",
-                "nullable": true,
-                "description": "Store address."
+                "format": "date-time",
+                "description": "Date and time when the store was created"
             }
         }
     }

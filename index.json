@@ -210,13 +210,13 @@
         "/categorie_articles": {
             "$ref": "paths/articles/categories_articles/categories.json"
         },
-        "/categorie_articles/{categorieId}": {
+        "/categorie_articles/{categorieArticleId}": {
             "$ref": "paths/articles/categories_articles/categorie.json"
         },
         "/article_iqps": {
             "$ref": "paths/magasins/articleIqps/articleIqps.json"
         },
-        "/article_iqps/{articleIqpId}": {
+        "/article_iqps/{articleIQPId}": {
             "$ref": "paths/magasins/articleIqps/articleIqp.json"
         },
         "/iqps": {

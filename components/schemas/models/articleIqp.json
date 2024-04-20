@@ -1,117 +1,35 @@
 {
-    "ArticleIQPSListResponse": {
-        "type": "object",
-        "properties": {
-            "current_page": {
-                "type": "integer",
-                "description": "Current page number."
-            },
-            "data": {
-                "type": "array",
-                "items": {
-                    "$ref": "#ArticleIQPS"
-                }
-            },
-            "first_page_url": {
-                "type": "string",
-                "description": "URL de la première page de résultats."
-            },
-            "from": {
-                "type": "integer",
-                "description": "Index of the first element in the current list."
-            },
-            "last_page": {
-                "type": "integer",
-                "description": "Last page number."
-            },
-            "last_page_url": {
-                "type": "string",
-                "description": "URL of the last results page."
-            },
-            "links": {
-                "type": "array",
-                "items": {
-                    "$ref": "#articleIqp.json/PageLink"
-                }
-            },
-            "next_page_url": {
-                "type": "string",
-                "description": "Next page URL."
-            },
-            "path": {
-                "type": "string",
-                "description": "API base path."
-            },
-            "per_page": {
-                "type": "integer",
-                "description": "Number of elements per page."
-            },
-            "prev_page_url": {
-                "type": "string",
-                "description": "URL of the previous page."
-            },
-            "to": {
-                "type": "integer",
-                "description": "Index of the last element in the current list."
-            },
-            "total": {
-                "type": "integer",
-                "description": "Total number of article."
-            }
-        }
-    },
-    "ArticleIQPS": {
+    "ArticleIQP": {
         "type": "object",
         "properties": {
             "id": {
                 "type": "string",
-                "description": "IQPS article identifier."
+                "format": "uuid",
+                "description": "Unique identifier of the IQP article"
             },
             "name": {
                 "type": "string",
-                "description": "IQPS article name."
+                "description": "Name of the IQP article"
             },
             "norme": {
                 "type": "string",
-                "description": "IQPS article Standard."
+                "description": "Standard of the IQP article"
             },
             "unite_mesure_id": {
                 "type": "string",
-                "description": "Unit of measurement identifier."
+                "description": "Identifier of the associated unit of measurement"
             },
             "article_id": {
                 "type": "string",
-                "description": "Article ID."
+                "description": "Associated article identifier"
             },
             "iqp_id": {
                 "type": "string",
-                "description": "Identifier of the perceived quality index."
-            },
-            "created_at": {
-                "type": "string",
-                "format": "date-time",
-                "description": "Date and time the IQPS article was created."
+                "description": "Associated IQP identifier"
             },
             "quantity_treated": {
-                "type": "string",
-                "description": "Processed quantity of IQPS item."
-            }
-        }
-    },
-    "PageLink": {
-        "type": "object",
-        "properties": {
-            "url": {
-                "type": "string",
-                "description": "Page URL."
-            },
-            "label": {
-                "type": "string",
-                "description": "Page label."
-            },
-            "active": {
-                "type": "boolean",
-                "description": "Indicates if the page is active."
+                "type": "integer",
+                "description": "Quantity treated by the IQP article"
             }
         }
     }

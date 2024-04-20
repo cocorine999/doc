@@ -1,59 +1,30 @@
 {
-    "ArticleIQPCreate": {
+    "ArticleIQPInput": {
         "type": "object",
         "properties": {
             "name": {
                 "type": "string",
-                "description": "Article Name IQP."
+                "description": "Name of the IQP article"
             },
             "norme": {
                 "type": "string",
-                "description": "IQP Article Standard."
+                "description": "Standard of the IQP article"
             },
             "unite_mesure_id": {
                 "type": "string",
-                "description": "Unit of measurement identifier."
+                "description": "Identifier of the associated unit of measurement"
             },
             "article_id": {
                 "type": "string",
-                "description": "Associated article identifier."
+                "description": "Associated article identifier"
             },
             "iqp_id": {
                 "type": "string",
-                "description": "Identifier of the associated perceived quality index."
+                "description": "Associated IQP identifier"
             },
             "quantity_treated": {
-                "type": "string",
-                "description": "Processed quantity of IQP article."
-            }
-        }
-    },
-    "ArticleIQPUpdate": {
-        "type": "object",
-        "properties": {
-            "name": {
-                "type": "string",
-                "description": "Article Name IQP."
-            },
-            "norme": {
-                "type": "string",
-                "description": "IQP Article Standard."
-            },
-            "unite_mesure_id": {
-                "type": "string",
-                "description": "Unit of measurement identifier."
-            },
-            "article_id": {
-                "type": "string",
-                "description": "Associated article identifier."
-            },
-            "iqp_id": {
-                "type": "string",
-                "description": "Identifier of the associated perceived quality index."
-            },
-            "quantity_treated": {
-                "type": "string",
-                "description": "Processed quantity of IQP article."
+                "type": "integer",
+                "description": "Quantity treated by the IQP article"
             }
         }
     }

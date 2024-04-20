@@ -1,91 +1,20 @@
 {
-    "CategorieArticleListResponse": {
+    "CategorieArticle": {
         "type": "object",
         "properties": {
-            "current_page": {
-                "type": "integer",
-                "description": "Current page number."
-            },
-            "data": {
-                "type": "array",
-                "items": {
-                    "type": "object",
-                    "properties": {
-                        "id": {
-                            "type": "string",
-                            "description": "Article category identifier."
-                        },
-                        "name": {
-                            "type": "string",
-                            "description": "Article category name."
-                        },
-                        "created_at": {
-                            "type": "string",
-                            "format": "date-time",
-                            "description": "Date and time article category was created."
-                        }
-                    }
-                }
-            },
-            "first_page_url": {
+            "id": {
                 "type": "string",
-                "description": "URL of the first page of results."
+                "format": "uuid",
+                "description": "Unique identifier of the category article"
             },
-            "from": {
-                "type": "integer",
-                "description": "Index of the first item in the current list."
-            },
-            "last_page": {
-                "type": "integer",
-                "description": "Number of the last page."
-            },
-            "last_page_url": {
+            "name": {
                 "type": "string",
-                "description": "URL of the last page of results."
+                "description": "Name of the category article"
             },
-            "links": {
-                "type": "array",
-                "items": {
-                    "type": "object",
-                    "properties": {
-                        "url": {
-                            "type": "string",
-                            "description": "Page URL."
-                        },
-                        "label": {
-                            "type": "string",
-                            "description": "Page label."
-                        },
-                        "active": {
-                            "type": "boolean",
-                            "description": "Indicates if the page is active."
-                        }
-                    }
-                }
-            },
-            "next_page_url": {
+            "created_at": {
                 "type": "string",
-                "description": "URL of the next page."
-            },
-            "path": {
-                "type": "string",
-                "description": "Base path of the API."
-            },
-            "per_page": {
-                "type": "integer",
-                "description": "Number of items per page."
-            },
-            "prev_page_url": {
-                "type": "string",
-                "description": "URL of the previous page."
-            },
-            "to": {
-                "type": "integer",
-                "description": "Index of the last item in the current list."
-            },
-            "total": {
-                "type": "integer",
-                "description": "Total number of items."
+                "format": "date-time",
+                "description": "Date and time when the category article was created"
             }
         }
     }

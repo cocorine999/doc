@@ -1,19 +1,10 @@
 {
-    "CategorieArticleUpdate": {
+    "CategorieArticleInput": {
         "type": "object",
         "properties": {
             "name": {
                 "type": "string",
                 "description": "New name of the Article category."
-            }
-        }
-    },
-    "CategorieArticleCreate": {
-        "type": "object",
-        "properties": {
-            "name": {
-                "type": "string",
-                "description": "New name of the article category."
             }
         }
     }

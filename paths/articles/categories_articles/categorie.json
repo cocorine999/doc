@@ -1,14 +1,14 @@
 {
     "get": {
-        "summary": "Retrieve an article category by ID",
+        "summary": "Retrieve a category article by ID",
         "parameters": [
             {
-                "name": "categorieId",
+                "name": "categorieArticleId",
                 "in": "path",
                 "required": true,
-                "description": "Artticle Category ID",
                 "schema": {
-                    "type": "string"
+                    "type": "string",
+                    "format": "uuid"
                 }
             }
         ],
@@ -41,8 +41,47 @@
                 "content": {
                     "application/json": {
                         "schema": {
-                            "$ref": "../../../components/schemas/models/categorie_article.json#/CategorieArticleResponse"
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "boolean",
+                                    "description": "Indicates the success status of the request.",
+                                    "default": true,
+                                    "example": true
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "description": "Additional information about the response.",
+                                    "default": "Category article retrieved successfully",
+                                    "example": "Category article retrieved successfully"
+                                },
+                                "data": {
+                                    "$ref": "../../../components/schemas/models/categorie_article.json#/CategorieArticle"
+                                },
+                                "status_code": {
+                                    "type": "integer",
+                                    "description": "Indicates the HTTP status code of the response.",
+                                    "default": 200,
+                                    "example": 200
+                                }
+                            }
                         }
+                    }
+                },
+                "links": {
+                    "UpdateCategorieDetailsByCategorieId": {
+                        "operationId": "updateCategorie",
+                        "parameters": {
+                            "CategorieId": "$response.body#/data/id"
+                        },
+                        "description": "Link to update category article information based on category article ID."
+                    },
+                    "DeleteCategorieByCategorieId": {
+                        "operationId": "deleteCategorie",
+                        "parameters": {
+                            "CategorieId": "$response.body#/data/id"
+                        },
+                        "description": "Link to delete category article based on category article ID."
                     }
                 }
             },
@@ -76,15 +115,15 @@
         }
     },
     "put": {
-        "summary": "Edit an item category",
+        "summary": "Edit an existing category article",
         "parameters": [
             {
-                "name": "categorieId",
+                "name": "categorieArticleId",
                 "in": "path",
                 "required": true,
-                "description": "Artticle Category ID",
                 "schema": {
-                    "type": "string"
+                    "type": "string",
+                    "format": "uuid"
                 }
             }
         ],
@@ -93,14 +132,14 @@
             "content": {
                 "application/json": {
                     "schema": {
-                        "$ref": "../../../components/requestBodies/articles/categorie_articles/categorie_article.json#/CategorieArticleUpdate"
+                        "$ref": "../../../components/requestBodies/articles/categorie_articles/categorie_article.json#/CategorieArticleInput"
                     }
                 }
             }
         },
         "responses": {
-            "200": {
-                "description": "Mise à jour réussie",
+            "201": {
+                "description": "Successful update",
                 "headers": {
                     "X-RateLimit-Limit": {
                         "$ref": "../../../components/headers/x_ratelimit_limit.json"
@@ -127,7 +166,30 @@
                 "content": {
                     "application/json": {
                         "schema": {
-                            "$ref": "../../../components/schemas/models/categorie_article.json#/CategorieArticleResponse"
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "boolean",
+                                    "description": "Indicates the success status of the request.",
+                                    "default": true,
+                                    "example": true
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "description": "Additional information about the response.",
+                                    "default": "Category article updated successfully",
+                                    "example": "Category article updated successfully"
+                                },
+                                "data": {
+                                    "$ref": "../../../components/schemas/models/categorie_article.json#/CategorieArticle"
+                                },
+                                "status_code": {
+                                    "type": "integer",
+                                    "description": "Indicates the HTTP status code of the response.",
+                                    "default": 201,
+                                    "example": 201
+                                }
+                            }
                         }
                     }
                 }
@@ -165,21 +227,21 @@
         }
     },
     "delete": {
-        "summary": "Supprimer une catégorie d'article",
+        "summary": "Delete an existing category article",
         "parameters": [
             {
-                "name": "categorieId",
+                "name": "categorieArticleId",
                 "in": "path",
                 "required": true,
-                "description": "Artticle Category ID",
                 "schema": {
-                    "type": "string"
+                    "type": "string",
+                    "format": "uuid"
                 }
             }
         ],
         "responses": {
             "200": {
-                "description": "Article category removed with Success",
+                "description": "Category article deleted with Success",
                 "headers": {
                     "X-RateLimit-Limit": {
                         "$ref": "../../../components/headers/x_ratelimit_limit.json"
@@ -210,19 +272,19 @@
                             "properties": {
                                 "status": {
                                     "type": "boolean",
-                                    "description": "Indicates the Success status of the request.",
+                                    "description": "Indicates the success status of the request.",
                                     "default": true,
                                     "example": true
                                 },
                                 "message": {
                                     "type": "string",
-                                    "description": "Informations supplémentaires sur la réponse.",
-                                    "default": "Article category removed with Success.",
-                                    "example": "Article category removed with Success."
+                                    "description": "Additional information about the response.",
+                                    "default": "Category article deleted successfully.",
+                                    "example": "Category article deleted successfully."
                                 },
                                 "data": {
                                     "type": "boolean",
-                                    "description": "Indicates the Success status of the request.",
+                                    "description": "Indicates the success status of the request.",
                                     "default": true,
                                     "example": true
                                 },

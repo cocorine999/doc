@@ -42,21 +42,43 @@
                             "properties": {
                                 "status": {
                                     "type": "boolean",
-                                    "description": "Indicates the success status of the request."
+                                    "description": "Indicates the success status of the request.",
+                                    "default": true,
+                                    "example": true
                                 },
                                 "message": {
                                     "type": "string",
-                                    "description": "Additional information about the response."
+                                    "description": "Additional information about the response.",
+                                    "default": "Unit of work retrieved successfully",
+                                    "example": "Unit of work retrieved successfully"
                                 },
                                 "data": {
                                     "$ref": "../../../components/schemas/models/iqp.json#/IQP"
                                 },
                                 "status_code": {
                                     "type": "integer",
-                                    "description": "Indicates the HTTP status code of the response."
+                                    "description": "Indicates the HTTP status code of the response.",
+                                    "default": 200,
+                                    "example": 200
                                 }
                             }
                         }
+                    }
+                },
+                "links": {
+                    "UpdateIQPDetailsByUnitId": {
+                        "operationId": "updateIQP",
+                        "parameters": {
+                            "unitId": "$response.body#/data/id"
+                        },
+                        "description": "Link to update IQP information based on its ID."
+                    },
+                    "DeleteIQPByUnitId": {
+                        "operationId": "deleteIQP",
+                        "parameters": {
+                            "unitId": "$response.body#/data/id"
+                        },
+                        "description": "Link to delete IQP based on its ID."
                     }
                 }
             }
@@ -111,7 +133,30 @@
                 "content": {
                     "application/json": {
                         "schema": {
-                            "$ref": "#/components/schemas/IQP"
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "boolean",
+                                    "description": "Indicates the success status of the request.",
+                                    "default": true,
+                                    "example": true
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "description": "Additional information about the response.",
+                                    "default": "Iqp updated successfully",
+                                    "example": "Iqp updated successfully"
+                                },
+                                "data": {
+                                    "$ref": "../../../components/schemas/models/iqp.json#/IQP"
+                                },
+                                "status_code": {
+                                    "type": "integer",
+                                    "description": "Indicates the HTTP status code of the response.",
+                                    "default": 201,
+                                    "example": 201
+                                }
+                            }
                         }
                     }
                 }
@@ -182,6 +227,39 @@
                     },
                     "Access-Control-Max-Age": {
                         "$ref": "../../../components/headers/access_control_max_age.json"
+                    }
+                },
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "boolean",
+                                    "description": "Indicates the success status of the request.",
+                                    "default": true,
+                                    "example": true
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "description": "Additional information about the response.",
+                                    "default": "Iqp deleted successfully.",
+                                    "example": "Iqp deleted successfully."
+                                },
+                                "data": {
+                                    "type": "boolean",
+                                    "description": "Indicates the success status of the request.",
+                                    "default": true,
+                                    "example": true
+                                },
+                                "status_code": {
+                                    "type": "integer",
+                                    "description": "Indicates the HTTP status code of the response.",
+                                    "default": 200,
+                                    "example": 200
+                                }
+                            }
+                        }
                     }
                 }
             }
